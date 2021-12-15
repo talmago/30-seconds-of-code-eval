@@ -1,19 +1,19 @@
-from collections import defaultdict, Counter
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List, Union, Iterable, Dict
 import itertools
-
 import numpy as np
+import srsly
 import tqdm
 
-from human_eval.data import HUMAN_EVAL, read_problems, stream_jsonl, write_jsonl
+from collections import defaultdict, Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import List, Union
+
 from human_eval.execution import check_correctness
 
 
 def estimate_pass_at_k(
-    num_samples: Union[int, List[int], np.ndarray],
-    num_correct: Union[List[int], np.ndarray],
-    k: int
+        num_samples: Union[int, List[int], np.ndarray],
+        num_correct: Union[List[int], np.ndarray],
+        k: int
 ) -> np.ndarray:
     """
     Estimates pass@k of each problem and returns them in an array.
@@ -37,18 +37,20 @@ def estimate_pass_at_k(
 
 
 def evaluate_functional_correctness(
-    sample_file: str,
-    k: List[int] = [1, 10, 100],
-    n_workers: int = 4,
-    timeout: float = 3.0,
-    problem_file: str = HUMAN_EVAL,
+        sample_file: str,
+        problem_file: str,
+        k: List[int] = [1, 10, 100],
+        n_workers: int = 4,
+        timeout: float = 3.0
 ):
     """
     Evaluates the functional correctness of generated samples, and writes
     results to f"{sample_file}_results.jsonl.gz"
     """
-
-    problems = read_problems(problem_file)
+    problems = {
+        task["task_id"]: task
+        for task in srsly.read_jsonl(problem_file)
+    }
 
     # Check the generated samples against test suites.
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
@@ -59,7 +61,7 @@ def evaluate_functional_correctness(
         results = defaultdict(list)
 
         print("Reading samples...")
-        for sample in tqdm.tqdm(stream_jsonl(sample_file)):
+        for sample in tqdm.tqdm(srsly.read_jsonl(sample_file)):
             task_id = sample["task_id"]
             completion = sample["completion"]
             args = (problems[task_id], completion, timeout, completion_id[task_id])
@@ -91,7 +93,7 @@ def evaluate_functional_correctness(
 
     # Finally, save the results in one file:
     def combine_results():
-        for sample in stream_jsonl(sample_file):
+        for sample in srsly.read_jsonl(sample_file):
             task_id = sample["task_id"]
             result = results[task_id].pop(0)
             sample["result"] = result[1]["result"]
@@ -100,6 +102,6 @@ def evaluate_functional_correctness(
 
     out_file = sample_file + "_results.jsonl"
     print(f"Writing results to {out_file}...")
-    write_jsonl(out_file, tqdm.tqdm(combine_results(), total=n_samples))
+    srsly.write_jsonl(out_file, tqdm.tqdm(combine_results(), total=n_samples))
 
     return pass_at_k

@@ -1,0 +1,300 @@
+{"task_id":"task/1","completion":"\n\ns = s[:len(s)-l]\n\nreturn s\n\n}\n\nfunc main() {\n\nfmt.Println(PadRight(\"12345\", 3))\n\nfmt.Println("}
+{"task_id":"task/1","completion":"\n\nr := make([]byte, len(s)+l)\n\ncopy(r, s)\n\nreturn string(r)\n\n}\n\nfunc main() {\n\nfmt.Println(PadRight(\""}
+{"task_id":"task/1","completion":"\n\nfor i := len(s) - l; i >= 0; i-- {\n\ns = s[:i] + \" \"\n\n}\n\nreturn s\n\n}\n\nfunc Equal(a, b string"}
+{"task_id":"task/1","completion":"\n\nreturn strings.Repeat(\" \", l - len(s)) + s\n\n}\n\nfunc main() {\n\ns := \"Foo\"\n\ns = PadRight(s, 32)\n\nfmt.Print"}
+{"task_id":"task/1","completion":"\n\nreturn s[:l] + string(padLeft(s, l, ' '))\n\n}\n\nfunc padLeft(s string, l int, pad string) string {\n\nreturn s[:l] +"}
+{"task_id":"task/2","completion":" \"math\" \"sort\" \"strings\" \"unicode\" ) // A BDD represents a set of boolean values. type BDD map[string]bool // BDDs are designed to be compared in the same way that sets are,"}
+{"task_id":"task/2","completion":" \"errors\" \"fmt\" \"io\" \"net/http\" \"net/url\" \"strings\" ) func main() { var client = &http.Client{} client.Get( \"https://httpbin.org/get"}
+{"task_id":"task/2","completion":" ' twitter ' ) # Let's create a Twitter App (NOT necessary) app = Twitter( app_key = ' ' , app_secret = ' ' , api_key = ' ' , api_secret = ' ' ) # Let's"}
+{"task_id":"task/2","completion":" \"errors\" \"fmt\" \"runtime\" \"sync\" \"time\" ) var mu sync.Mutex // Mutex to synchronize writes to global deadlines var nanotime = runtime.Now().UnixNano() // deadline returns the"}
+{"task_id":"task/2","completion":" \"fmt\" ) func main() { var b [10]int a := make([]int, 3) for i := range a { a[i] = i } fmt.Println(len(a)) fmt.Println"}
+{"task_id":"task/3","completion":"\n\n// rand.Intn is not parallel safe; see issue 8774.\n\n// Use this implementation to guarantee sequential consistency.\n\n// The number of returned ints might be smaller than n.\n\n// See the Go 1"}
+{"task_id":"task/3","completion":"\n\nr := rand.New(rand.NewSource(time.Now().UnixNano()))\n\nreturn r.Intn(n)\n\n}\n\npackage main\n\n\n\nimport (\n\n\"fmt\""}
+{"task_id":"task/3","completion":"\n\n// the closed interval [min, max] contains at least n+1 values\n\n// so we can generate a random integer in this range at least\n\n// n times.\n\n//\n\n// The algorithm is as follows"}
+{"task_id":"task/3","completion":"\n\nreturn make([]int, n)\n\nfor i := min; i < max; i++ {\n\nn--\n\nn*=10\n\nn+=i\n\n}\n\nreturn\n\n}\n\n"}
+{"task_id":"task/3","completion":"\n\nreturn RandInts(uint(min), uint(max), n)\n\n}\n\nfunc RandUintSliceInRange(min, max uint, n int) []uint {\n\nreturn RandUints(uint"}
+{"task_id":"task/4","completion":"\n\nreturn strings.ToLower(strings.Replace(s, \" \", \"_\"))\n\n}\n\nfunc main() {\n\nfmt.Println(ToSnake(\"Hello World\"))\n\n}\n\nTranslation of:"}
+{"task_id":"task/4","completion":"\n\nreturn strings.ToSnakeCase(s)\n\n}\n\nThe most common use of these functions is when working with the arguments to a function or a method.\n\nfunc Add(left, right int) int {\n\n"}
+{"task_id":"task/4","completion":"\n\nreturn strings.ToSnakeCase(s)\n\n}\n\ncase is Snake\n\n// \"snakecase\" or \"snake_case\"\n\n// ToSnakeCase is a snake-case conversion function.\n\n"}
+{"task_id":"task/4","completion":"\n\nsp := strings.Split(s, \" \")\n\nfor i := len(sp) - 1; i >= 0; i-- {\n\nif sp[i] == \",\" {\n\nreturn sp[i+"}
+{"task_id":"task/4","completion":"\n\nif s == \"\" {\n\nreturn \"\"\n\n}\n\nlast := \"^\"\n\nfor i := 0; i < len(s); i++ {\n\nc := s[i]\n\nif c =="}
+{"task_id":"task/5","completion":"\n\nout := make([]int, len(arr))\n\nfor i, v := range arr {\n\nif f(v) {\n\nout[i] = v\n\n}\n\n}\n\nreturn out\n"}
+{"task_id":"task/5","completion":"\n\nvar result []int\n\nfor _, i := range arr {\n\nif f(i) {\n\nresult = append(result, i)\n\n}\n\n}\n\nreturn result\n\n}\n\nfunc"}
+{"task_id":"task/5","completion":" // f returns true for ints less than 'a' for i, _ := range arr { if f(i) { return append(arr[0:i], filterInt(arr[i+1:], f)) } } return"}
+{"task_id":"task/5","completion":"\n\nfor _, x := range arr {\n\nif f(x) {\n\nreturn append(arr, x)\n\n}\n\n}\n\nreturn arr\n\n}\n\nfunc TestFilterInt(t *testing"}
+{"task_id":"task/5","completion":"\n\nreturn sort.Ints(sort.Reverse(sort.IntSlice(arr)))\n\n}\n\nfmt.Println(FilterInt(fmt.Sprint([]int{5, 6, 7"}
+{"task_id":"task/6","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, fmt.Errorf(\"Failed to find integer: %v\","}
+{"task_id":"task/6","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, fmt.Errorf(\"no such element: %v\", arr)"}
+{"task_id":"task/6","completion":"\n\nfor i, x := range arr {\n\nif f(x) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, errors.New(\"Not found\")\n\n}\n\npackage main"}
+{"task_id":"task/6","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, fmt.Errorf(\"can't find %v\", f)\n"}
+{"task_id":"task/6","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, fmt.Errorf(\"FindInt: not found\")\n\n}"}
+{"task_id":"task/7","completion":"\n\nif y == 0 {\n\nreturn x\n\n}\n\nreturn gcd(y, x%y)\n\n}\n\nUse in Go:\n\npackage main\n\n\n\nimport \"fmt\"\n\n\n\n"}
+{"task_id":"task/7","completion":"\n\nif y == 0 {\n\nreturn x\n\n}\n\nreturn gcd(y, x%y)\n\n}\n\n\u201cBut,\u201d you protest, \u201cthen the compiler won\u2019t be"}
+{"task_id":"task/7","completion":"\n\nif y == 0 {\n\nreturn x\n\n}\n\nreturn gcd(y, x%y)\n\n}\n\nThe output is:\n\nEnter two positive integers > 15 11 > x=15 > y"}
+{"task_id":"task/7","completion":"\n\nfor x != y {\n\nfor x > y {\n\ny, x = x, y\n\n}\n\n}\n\nreturn x\n\n}\n\nfunc main() {\n\nfor _, n := range"}
+{"task_id":"task/7","completion":" if y == 0 { return x } return gcd(y, x%y) }\n\nMake sure you understand how this works, and that it doesn\u2019t work for negative numbers. If you\u2019re curious, the reason"}
+{"task_id":"task/8","completion":"\n\nreturn math.MaxFloat64 < a && a < math.MinFloat64 ? a : b\n\n}\n\nconst (\n\nminCubicEval = 1e3\n\nmaxCubicEval = 1e"}
+{"task_id":"task/8","completion":"\n\nif n < a {\n\nreturn a\n\n}\n\nif n > b {\n\nreturn b\n\n}\n\nreturn n\n\n}\n\nfunc main() {\n\nfmt.Println(Cl"}
+{"task_id":"task/8","completion":"\n\nif n < a {\n\nreturn a\n\n}\n\nif n > b {\n\nreturn b\n\n}\n\nreturn n\n\n}\n\n}\n\nfunc main() {\n\nd := []float"}
+{"task_id":"task/8","completion":" if n < a { n = a } if n > b { n = b } return n }\n\nfunc main() { var s, c = 100, 20000 s = -c / 2 / 2 * (1 - 1 /"}
+{"task_id":"task/8","completion":"\n\nif n < a {\n\nreturn a\n\n}\n\nif n > b {\n\nreturn b\n\n}\n\nreturn n\n\n}\n\ntype Matrix struct {\n\nM *Matrix\n\nRows"}
+{"task_id":"task/9","completion":"\n\nif len(params) == 0 {\n\nreturn make([][]interface{}, 0)\n\n}\n\n// TODO: Handle errors in params\n\nvar sizes = make([]int, 0, len(params"}
+{"task_id":"task/9","completion":"\n\nswitch len(params) {\n\ncase 0:\n\nreturn nil\n\ncase 1:\n\nreturn params[0]\n\ndefault:\n\nfor i, v := range params {\n\nif i > 0 {"}
+{"task_id":"task/9","completion":"\n\nres := make([][]interface{}, 0)\n\nfor i, s := range params {\n\nv := reflect.ValueOf(s)\n\nif len(v.Kind() & reflect.SliceKind)"}
+{"task_id":"task/9","completion":"\n\nreturn New(nil).Call(params).Interface()\n\n}\n\n// Example usage:\n\n// params := []string{\"http://www.google.com\", \"http://www.yahoo.com\"}\n\n//"}
+{"task_id":"task/9","completion":"\n\n// Zip the parameters\n\nm := make([]interface{}, len(params))\n\nfor i, n := range params {\n\nm[i] = params[n]\n\n}\n\nreturn m\n\n"}
+{"task_id":"task/10","completion":"\n\nreturn fmt.Sprintf(\"%s%d\", s, l)\n\n}\n\nfunc main() {\n\nvar s = \"Hello World\"\n\nfmt.Println(PadLeft(s, 12))"}
+{"task_id":"task/10","completion":"\n\nreturn string(s[:l])\n\n}\n\nfunc PadRight(s string, l int) string {\n\nreturn string(s[l:])\n\n}\n\ntype value struct {\n\nf float"}
+{"task_id":"task/10","completion":"\n\nreturn s[:l]\n\n}\n\nfunc main() {\n\nfmt.Println(PadLeft(\"A\", 1))\n\nfmt.Println(PadLeft(\"A\", 5))\n\nf"}
+{"task_id":"task/10","completion":"\n\nif l < len(s) {\n\nreturn string(s[:l]) + \" \"\n\n}\n\nreturn s\n\n}\n\nfunc main() {\n\nfmt.Println(PadLeft(\""}
+{"task_id":"task/10","completion":"\n\nreturn string(l*s)\n\n}\n\nfunc main() {\n\nvar s = \"ABCD\"\n\nfmt.Println(s.PadLeft(10, '.'))\n\n}\n\n"}
+{"task_id":"task/11","completion":"\n\nm := make(map[int]int)\n\nfor _, v := range arr {\n\nm[v] = fn(v)\n\n}\n\nreturn m\n\n}\n\nWithin a goroutine,"}
+{"task_id":"task/11","completion":" m := make(map[int]int) for i, v := range arr { m[v] = fn(v) } return m } func main() { arr := []int{1, 2, 3} m := MapInt"}
+{"task_id":"task/11","completion":"\n\nt := make([]int, len(arr))\n\nfor i, v := range arr {\n\nt[i] = fn(v)\n\n}\n\nreturn t\n\n}\n\nfunc main() {"}
+{"task_id":"task/11","completion":" m := make(map[int]int) for i, v := range arr { m[v] = fn(v) } return m } func main() { var values []int = []int{0, 1, 2, 3"}
+{"task_id":"task/11","completion":"\n\nresult := make([]int, len(arr))\n\nfor i, v := range arr {\n\nresult[i] = fn(v)\n\n}\n\nreturn result\n\n}\n\nMapInt is a"}
+{"task_id":"task/12","completion":"\n\nreturn strings.TrimSuffix(strings.TrimSpace(str), \"\"\")\n\n}\n\nPlease, feel free to use these functions in your project.\n\nHappy New Year!"}
+{"task_id":"task/12","completion":"\n\nreturn rxSpaceSpaces.FindStringSubmatch(str)\n\n}\n\nfunc TrimWhiteSpace(str string) string {\n\nreturn TrimSpace(CompactWhiteSpace(str))\n\n}\n"}
+{"task_id":"task/12","completion":"\n\nreturn strings.Replace(str, \" \", \"\", -1)\n\n}\n\nThe CompactWhiteSpace function takes a string as input and replaces all whitespace characters with a single space. The regexp.Replace function"}
+{"task_id":"task/12","completion":"\n\nstr = strings.Replace(str, \"\n\n\", \" \", -1)\n\nstr = strings.Replace(str, \"\\r\", \" \", -1)\n\nstr = strings.Replace(str,"}
+{"task_id":"task/12","completion":"\n\nreturn strings.Replace(str, \" \", \"\", -1)\n\n}\n\nHere are two examples of how to use the CompactWhiteSpace function.\n\nfmt.Println(CompactWhiteSpace(\"Hello"}
+{"task_id":"task/13","completion":"\n\nfor _, m := range [1 << iota]n {\n\nreturn n&m == m\n\n}\n\nreturn false\n\n}\n\nfunc isOdd(n int) bool {\n\nreturn n"}
+{"task_id":"task/13","completion":"\n\nfor i := 0; i < n; i++ {\n\nswitch n & 1 {\n\ncase 1:\n\nreturn false\n\n}\n\n}\n\nreturn true\n\n}\n\n// IsBigPowerOf"}
+{"task_id":"task/13","completion":"\n\nreturn n%2 == 0\n\n}\n\nfunc IsEven(n int) bool {\n\nreturn n%2 == 0\n\n}\n\nfunc IsMultipleOf3(n int) bool {\n\nreturn n"}
+{"task_id":"task/13","completion":"\n\nreturn n%2 == 0\n\n}\n\n// IsPowerOf2 reports whether n is a power of 2.\n\nfunc main() {\n\nfmt.Println(IsPowerOf2(2))\n\n"}
+{"task_id":"task/13","completion":"\n\nreturn n&(n-1) == 0\n\n}\n\nfunc Filter(n int, f func(int) bool) int {\n\nfor i := 0; i < n; i++ {\n\nif f"}
+{"task_id":"task/14","completion":"\n\nreturn strings.ToUpper(s)\n\n}\n\nOutput:\n\ndef capitalize = { s -> s. capitalize } capitalize(\"foo\") capitalize(\"Foo\") capitalize(\"fooBar\") capitalize(\"fooBar\")\n"}
+{"task_id":"task/14","completion":"\n\nfor i := 0; i < len(s); i++ {\n\ns[i] = strings.ToUpper(s[i])\n\n}\n\nreturn s\n\n}\n\nThat\u2019s it"}
+{"task_id":"task/14","completion":"\n\nreturn strings.ToUpper(s)\n\n}\n\nfunc main() {\n\n// Local variables:\n\nvar s string = \"Hello, world!\"\n\nfmt.Println(Capitalize(s))"}
+{"task_id":"task/14","completion":"\n\nif len(s) == 0 {\n\nreturn \"\"\n\n}\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] < 'a' || s[i] >"}
+{"task_id":"task/14","completion":"\n\nreturn strings.ToUpper(s)\n\n}\n\nfunc main() {\n\nfmt.Println(Capitalize(\"now\"))\n\n}\n\nOutput:\n\nNOW\n\nThe top-level name"}
+{"task_id":"task/15","completion":"\n\nif l <= 0 {\n\nreturn s\n\n}\n\nreturn s[:l]\n\n}\n\nfunc Truncate(s, l int) string {\n\nreturn TruncateString(s, l"}
+{"task_id":"task/15","completion":"\n\nif l < 0 {\n\nl = len(s)\n\n}\n\nr := make([]byte, 0, l)\n\nfor i := 0; i < l; i++ {\n\nr = append"}
+{"task_id":"task/15","completion":"\n\nif l <= 0 {\n\nreturn s\n\n}\n\nr := make([]byte, 0, l)\n\nn := copy(r, s)\n\nr = r[n:]\n\nreturn string("}
+{"task_id":"task/15","completion":"\n\nreturn string(s[:l])\n\n}\n\nfunc TruncateStringBySpace(s string, l int) string {\n\nreturn string(s[:l])\n\n}\n\nfunc Truncate"}
+{"task_id":"task/15","completion":"\n\nreturn strconv.FormatInt(strconv.Itoa(int(l)), 10) + s\n\n}\n\nfunc main() {\n\nfmt.Println(TruncateString(\"An example string\", 7"}
+{"task_id":"task/16","completion":" a := make([]int, 0, s) for i := f; i < t; i++ { a = append(a, i) } return a }\n\nWe've now reduced the maximum runtime to O(f).\n"}
+{"task_id":"task/16","completion":"\n\nif f < t {\n\nreturn []int{f}\n\n}\n\nif f == t {\n\nreturn []int{t}\n\n}\n\nreturn []int{f, t}\n\n}\n"}
+{"task_id":"task/16","completion":" return nil } const ( LowestBits = int((1<<63)-1) MaxVal = 1<<(63-1) ) // Wrap an int64 as a *big.Int func Size(x int64) *big."}
+{"task_id":"task/16","completion":"\n\nr := make([]int, 0, len(t))\n\nfor i := t; i < s; i++ {\n\nr = append(r, f(i))\n\n}\n\nreturn r\n\n"}
+{"task_id":"task/16","completion":" + for i := t; i < s; i++ { + r := f(i) + r2 := r + if r2 > i { + r2 = i + } + if r2 < t { + r2 ="}
+{"task_id":"task/17","completion":"\n\nreturn n >= a && n <= b\n\n}\n\n// Euclidean distance between two points\n\nfunc Dist(p, q Point) float64 {\n\nd := p.x - q.x\n\nd"}
+{"task_id":"task/17","completion":"\n\nreturn n >= a && n <= b\n\n}\n\nfunc constApprox(n, a, b float64) float64 {\n\nif IsInRange(n, a, b) {\n\nreturn n\n"}
+{"task_id":"task/17","completion":"\n\nif a < b {\n\nreturn false\n\n}\n\nif a > b {\n\nreturn true\n\n}\n\nif n < a {\n\nreturn false\n\n}\n\nif n > b {\n"}
+{"task_id":"task/17","completion":"\n\nreturn n > a && n < b\n\n}\n\nfunc main() {\n\nfor i := 0; i < 3; i++ {\n\nif IsInRange(i, 0, 1) {\n\nf"}
+{"task_id":"task/17","completion":"\n\nif n < a || n > b {\n\nreturn false\n\n}\n\nreturn true\n\n}\n\nfunc ScaleVec(vec, n float64) {\n\nfor i := 0; i < len("}
+{"task_id":"task/18","completion":"\n\nif params == nil {\n\npanic(\"reflect: index of nil interface\")\n\n}\n\nv := reflect.ValueOf(params[0])\n\nif v.Kind() != reflect.Interface {\n\npanic(\""}
+{"task_id":"task/18","completion":"\n\nfor i, v := range params {\n\nif v == nil {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\nThere are a few advantages to this change:\n\nIt's"}
+{"task_id":"task/18","completion":"\n\nvar list []int\n\nfor _, x := range params {\n\nlist = append(list, x.(int))\n\n}\n\nreturn list[0]\n\n}\n\nCan you guess how it works?"}
+{"task_id":"task/18","completion":"\n\nindex := len(params)\n\nfor i := 0; i < index; i++ {\n\nif params[i] == nil {\n\nreturn -1\n\n}\n\n}\n\nreturn 0\n\n}"}
+{"task_id":"task/18","completion":"\n\nreturn reflect.Indirect(reflect.ValueOf(params)).(int)\n\n}\n\nNow we can index into slices directly as if they were maps:\n\nfunc main() {\n\n// mySlice := []"}
+{"task_id":"task/19","completion":"\n\nreturn strings.ToLower(strings.Replace(s, \" \", \"-\", -1))\n\n}\n\nfunc main() {\n\nfor i := 0; i < 5; i++ {\n\nfmt."}
+{"task_id":"task/19","completion":"\n\nfor _, r := range s {\n\nif !unicode.IsLetter(r) {\n\nreturn s\n\n}\n\n}\n\nreturn s\n\n}\n\nfunc main() {\n\nk,"}
+{"task_id":"task/19","completion":"\n\nreturn strings.ToLower(s)\n\n}\n\nAnd it works! As you can see, the blank identifier _ is used as a placeholder.\n\nIf your input has a struct tag (other than the blank identifier),"}
+{"task_id":"task/19","completion":"\n\n// replace all spaces in string with an underscore\n\nreturn strings.Replace(s, \" \", \"_\", -1)\n\n}\n\nThe replace function is part of the Go standard library. It takes three arguments: the"}
+{"task_id":"task/19","completion":"\n\nreturn s\n\n}\n\nfunc main() {\n\nkebab := ToKebab(\"some long string\")\n\nfmt.Println(kebab)\n\n}\n\n2. Read data from"}
+{"task_id":"task/20","completion":"\n\nm := make(map[int]int)\n\nfor _, v := range arr {\n\nm[v] = 1\n\n}\n\nreturn m\n\n}\n\nfunc main() {\n\narr :="}
+{"task_id":"task/20","completion":"\n\ns := make(map[int]int)\n\nfor i, v := range arr {\n\ns[v] = i\n\n}\n\nreturn s\n\n}\n\nfunc main() {\n\nfreqs"}
+{"task_id":"task/20","completion":"\n\nm := make(map[int]int)\n\nfor _, v := range arr {\n\nm[v] = 1\n\n}\n\nreturn m\n\n}\n\nfunc FrequenciesFloat64(arr []"}
+{"task_id":"task/20","completion":" m := make(map[int]int) for i, v := range arr { m[v] = i } return m } // func PrintFrequencies(f FrequenciesInt) { // fmt.Println(f) //"}
+{"task_id":"task/20","completion":"\n\nvar freqs map[int]int\n\nfreqs = make(map[int]int)\n\nfor _, v := range arr {\n\nfreqs[v] = freq\n\n}\n\nreturn fre"}
+{"task_id":"task/21","completion":"\n\nreturn strings.ContainsAny(str, unicode.IsSpace)\n\n}\n\n// A pair of type-safe functions to make quick work of \"is this a\n\n// space, a newline, or neither"}
+{"task_id":"task/21","completion":"\n\nreturn strings.HasPrefix(str, \" \") || strings.HasSuffix(str, \" \")\n\n}\n\nAs you can see from the code snippet above, you are free to use any package or"}
+{"task_id":"task/21","completion":"\n\nreturn !strings.ContainsAny(str, []byte(\"\\u0020\"))\n\n}\n\n// Fuzzed files:\n\n// len | string 'cafe\\u0020bacon'\n\n//"}
+{"task_id":"task/21","completion":"\n\nreturn regexp.IsSpace(str)\n\n}\n\nfunction matchesCss(str string, css *css.Selector, selector *css.Selector) bool {\n\nfor {\n\nselector ="}
+{"task_id":"task/21","completion":"\n\nreturn strings.ContainsAny(str, unicode.IsSpace)\n\n}\n\nfunc main() {\n\nfmt.Println(ContainsWhiteSpace(\"\"))\n\nfmt.Println(Contains"}
+{"task_id":"task/22","completion":" return sums[len(nums)-1] } func main() { sum, _ := Sum(1, 2, 3, 4, 5) fmt.Println(sum) }\n\nIf you\u2019re familiar with the basics"}
+{"task_id":"task/22","completion":" return math.Sum(nums...) } func Factorial(n int) float64 { if n <= 1 { return 1 } return math.Factorial(n-1) * n } func main() { f := Factorial(5"}
+{"task_id":"task/22","completion":"\n\nfor _, x := range nums {\n\nfmt.Printf(\"Sum = %.2f\n\n\", x)\n\n}\n\nreturn 0\n\n}\n\nHere\u2019s the complete code listing"}
+{"task_id":"task/22","completion":"\n\nsum := 0.0\n\nfor _, v := range nums {\n\nsum += v\n\n}\n\nreturn sum\n\n}\n\nfmt.Println(sum(1.1, 2.2"}
+{"task_id":"task/22","completion":"\n\nreturn SumFloat64(nums...)\n\n}\n\ntype SumFloat64 struct {\n\nsum float64\n\nnums []float64\n\n}\n\nfunc (s SumFloat64) Sum() float64 {"}
+{"task_id":"task/23","completion":" \" sync \" \" time \" )\n\n// Settable enables you to specify a `persistent` field in your struct\n\n// which can be set to change the behavior of the struct.\n\n//\n\n// This is used to"}
+{"task_id":"task/23","completion":" \"//base/test:test_support/test_runner\" ) func TestDataEncoder(t *testing.T) { // TestDataEncoder should create correct version and not change the test data. for _, tt :="}
+{"task_id":"task/23","completion":" \" github.com/google/go-cmp/cmp \" )\n\nvar (\n\nsrc = [] byte ( \" package main; func main() { } \" )\n\nexpected = [] byte ( \" package main; func main()"}
+{"task_id":"task/23","completion":" \"//third_party/webdriver/chromedriver/src/chromedriver/base.googlesource.com/chromedriver/version.pb.cc\" )\n\nsrc_test := \"//third_party"}
+{"task_id":"task/23","completion":" + \" fmt \" + \" log \" + \" math \" + \" os \" + \" regexp \" + \" strconv \" + \" strings \" + \" sync \" + \" time \" + ) + +var outputBytes = make ([] byte"}
+{"task_id":"task/24","completion":"\n\nreturn rand.Intn(max-min+1) + min\n\n}\n\nfunc RandIntInRange16(min, max int16) int16 {\n\nreturn rand.Intn(max-min+1"}
+{"task_id":"task/24","completion":"\n\nvar i int\n\nfor i = min; i < max; i++ {\n\nrand.Intn(int(uint(rand.Int31()) * (max - min + 1)))\n\n}\n\nreturn i"}
+{"task_id":"task/24","completion":"\n\nreturn rand.Intn(max-min) + min\n\n}\n\nfunc RandFloatInRange(min, max float64) float64 {\n\nreturn rand.Float64In(min, max)\n\n}"}
+{"task_id":"task/24","completion":"\n\nreturn rand.Intn(max-min+1) + min\n\n}\n\nfunc RandIntInRangeEven(min, max int) int {\n\nreturn rand.Intn(max-min+1) +"}
+{"task_id":"task/24","completion":"\n\nreturn rand.Intn(max-min+1) + min\n\n}\n\nThe library function\u2019s name is prefixed with an underscore (\u201c_\u201d) to prevent it from conflicting with the same-"}
+{"task_id":"task/25","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] >= 'a' && s[i] <= 'z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/25","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] >= 'a' && s[i] <= 'z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/25","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nswitch s[i] {\n\ncase 'a' ... 'z':\n\nreturn true\n\n}\n\n}\n\nreturn false\n\n"}
+{"task_id":"task/25","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] >= 'a' && s[i] <= 'z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/25","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nc := s[i]\n\nif c >= 'a' && c <= 'z' {\n\nreturn false\n\n}\n\n}\n"}
+{"task_id":"task/26","completion":" var sum float64 for _, v := range nums { sum += v } return sum / float64(len(nums)) }\n\nWith this in place, we can create histograms of varying lengths with the following code:\n"}
+{"task_id":"task/26","completion":"\n\nreturn math.Sqrt(sum(nums))\n\n}\n\nfunc sum(nums ...float64) float64 {\n\nreturn 0.0\n\n}\n\nfunc main() {\n\nfmt"}
+{"task_id":"task/26","completion":" sum := 0.0 for _, v := range nums { sum += v } return sum / float64(len(nums)) }\n\nThis is not only easy to read, but it is also far more efficient.\n\n"}
+{"task_id":"task/26","completion":" avg := 0.0 for _, v := range nums { avg += v } return avg / float64(len(nums)) }\n\nfunc StdDev(nums ...float64) float64 { avg := 0."}
+{"task_id":"task/26","completion":" return sum(nums) / len(nums) }\n\nfunc Sum(nums ...float64) float64 {\n\nvar total float64\n\nfor _, v := range nums {\n\ntotal += v\n"}
+{"task_id":"task/27","completion":"\n\nreturn append(reflect.MakeSlice(reflect.TypeOf(params), 0, params), params...)\n\n}\n\n// A database represents a directory on the filesystem.\n\ntype Database struct {\n\npath string\n"}
+{"task_id":"task/27","completion":"\n\nvar ret = make([]int, 0)\n\nfor _, value := range params {\n\nret = append(ret, reflect.ValueOf(value).Elem().Index(reflect.ValueOf(value)))\n"}
+{"task_id":"task/27","completion":"\n\nreturn make([]int, 0, len(params))\n\n}\n\nfunc doIndexOfAll(params ...interface{}) (int, error) {\n\nfor _, v := range params {\n\nif i"}
+{"task_id":"task/27","completion":"\n\nvar result []int\n\nfor _, element := range params {\n\nresult = append(result, element)\n\n}\n\nreturn result\n\n}\n\nvar names = []string{\"Alice\", \"Bob\", \""}
+{"task_id":"task/27","completion":"\n\n// All arguments are non-nil, so they should all be indexed.\n\n// If there's more than one...\n\nif len(params) > 1 {\n\n// ...we should definitely have a slice\n\n//"}
+{"task_id":"task/28","completion":" for _, x := range arr { if fn(x) { return true } } return false } func main() { fmt.Println(addEvenNumbers(0, 2)) fmt.Println(addEvenNumbers(0, 2"}
+{"task_id":"task/28","completion":" for _, x := range arr { if fn(x) { return true } } return false } func main() { arr := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9,"}
+{"task_id":"task/28","completion":" for _, v := range arr { if !fn(v) { return false } } return true } func main() { var a [2]int a[0] = 1 a[1] = 2 var b = []int{"}
+{"task_id":"task/28","completion":" for _, x := range arr { if !fn(x) { return false } } return true } type MyInt int func (x MyInt) String() string { return fmt.Sprintf(\"MyInt(%d)\", x)"}
+{"task_id":"task/28","completion":"\n\nfor i, v := range arr {\n\nif fn(v) {\n\nreturn true\n\n}\n\n}\n\nreturn false\n\n}\n\n// recursive\n\n\nfunc AnyInts(arr []int,"}
+{"task_id":"task/29","completion":"\n\nr := make([]byte, len(s))\n\nfor i, c := range s {\n\nr[i] = c\n\n}\n\nreturn string(r)\n\n}\n\nThe implementation of Reverse"}
+{"task_id":"task/29","completion":"\n\nreturn strings.NewString(strings.Replace(s, \" \", \"\", -1))\n\n}\n\nfunc ExampleStartStop() {\n\nstart := time.Now()\n\ndefer func() {\n\n"}
+{"task_id":"task/29","completion":" return s[len(s)-1] }\n\nfunc ReverseByteSlice(bs []byte) []byte { return bs[len(bs)-1:] }\n\nfunc ReverseInt(i int) int { return int("}
+{"task_id":"task/29","completion":"\n\nreturn strings.Replace(s, []byte(\"\"), []byte(\"\"), -1)\n\n}\n\nfunc Reverse(s string) string {\n\nreturn ReverseString(s)\n\n}\n\nfunc ReverseFloat"}
+{"task_id":"task/29","completion":"\n\nr := new(bytes.Buffer)\n\nfor i := 0; i < len(s); i++ {\n\nr.WriteByte(s[i])\n\n}\n\nreturn string(r.Bytes())\n"}
+{"task_id":"task/30","completion":"\n\nreturn strings.ToLower(strings.Replace(s, \"[^a-zA-Z]\", \"\", -1))\n\n}\n\nfunc ToDashes(s string) string {\n\nreturn strings."}
+{"task_id":"task/30","completion":"\n\nreturn strings.ToLower(strings.Replace(s, \"-\", \"_\", -1))\n\n}\n\nfunc ToCamelCase(s string) string {\n\nreturn strings.ToLower(strings.Replace"}
+{"task_id":"task/30","completion":"\n\nc := strings.ToLower(s)\n\nif c != \"go\" {\n\nc = \"go\"\n\n}\n\nreturn c\n\n}\n\nThe tricky part is figuring out how to take that list"}
+{"task_id":"task/30","completion":"\n\nvar letters []rune\n\nfor _, r := range s {\n\nletters = append(letters, r)\n\n}\n\nswitch {\n\ncase len(letters) == 0:\n\nreturn \"\"\n\n"}
+{"task_id":"task/30","completion":"\n\nif s == \"\" {\n\nreturn \"\";\n\n}\n\nif s[0] != '[' {\n\nreturn s;\n\n}\n\nif s[1] != ']' {\n\nreturn s;"}
+{"task_id":"task/31","completion":"\n\nvar m map[int]interface{}\n\nfor _, i := range params {\n\nm[i] = params[i]\n\n}\n\nreturn m\n\n}\n\n// Preserve the existing ordering"}
+{"task_id":"task/31","completion":"\n\nindex := make(map[int]interface{})\n\nfor _, v := range params {\n\nindex[v.Index()] = v\n\n}\n\nreturn index\n\n}\n\nThe rest of the"}
+{"task_id":"task/31","completion":"\n\nreturn params[0].(map[int]interface{})\n\n}\n\nfunc f() {\n\nt := time.Now()\n\nseconds := time.Duration(t.Unix()).Seconds()\n\n"}
+{"task_id":"task/31","completion":"\n\nindex := params[0]\n\ndata := params[1:]\n\ndata = make(map[int]interface{}, len(data))\n\nfor i, v := range data {\n\ndata[i] ="}
+{"task_id":"task/31","completion":"\n\ni := params[0]\n\nreturn MakeMap(reflect.MakeSlice(i, params[1:]...), reflect.Zero(reflect.TypeOf(i))).Interface()\n\n}\n\nfunc MakeMap"}
+{"task_id":"task/32","completion":"\n\nfor i > 0 {\n\ns = s + \" \"\n\ni--\n\n}\n\nreturn s\n\n}\n\nfunc main() {\n\nfmt.Println(Indent(\"I have\", 2"}
+{"task_id":"task/32","completion":"\n\nreturn strings.Repeat(\" \", i) + s\n\n}\n\nfunc main() {\n\nfmt.Println(Indent(\n\n\"hello\",\n\n))\n\n}\n\nNote that while this code"}
+{"task_id":"task/32","completion":"\n\nreturn s + strings.Repeat(\" \", i)\n\n}\n\nfunc Parser(s string) (value interface{}, ok bool) {\n\nvar buf bytes.Buffer\n\nvar err error\n\nif err ="}
+{"task_id":"task/32","completion":"\n\nif i == \"\" {\n\nreturn s\n\n}\n\nreturn fmt.Sprintf(\"%s%d%s\", s, i, s[i:])\n\n}\n\nfunc main() {\n\nconst"}
+{"task_id":"task/32","completion":"\n\nif i == \"\" {\n\nreturn s\n\n}\n\nif i[0] == '*' {\n\nif len(i) >= 2 && i[1] == '*' {\n\nreturn strings."}
+{"task_id":"task/33","completion":" return append(a, append(b, 0)) } func AddInts(a,b []int) []int { return append(a, append(b, 0)) } func Multiplicities(n []int) []int"}
+{"task_id":"task/33","completion":"\n\nreturn append(a,b...)\n\n}\n\nfunc ConcatInts(a,b []int) []int {\n\nreturn append(a,b...)\n\n}\n\nfunc ConcatSlice(a"}
+{"task_id":"task/33","completion":" c := make([]int,len(a)+len(b)) copy(c,a) copy(c[len(a):],b) return c } func ConcatFloat(a,b []float64) []float64"}
+{"task_id":"task/33","completion":" return append(a,b...) } func ConcatString(a,b string) string { return a + b } func Concat(a,b ...interface{}) interface{} { for _, x := range a { b ="}
+{"task_id":"task/33","completion":" + return a + b +} + +func ConcatString(a,b string) string { + return a + b +} + +func ConcatFloat(a,b float64) float64 { + return a + b +"}
+{"task_id":"task/34","completion":"\n\nreturn math.Pow(d, float64(math.Pi))\n\n}\n\nfunc Rads2Degrees(r float64) float64 {\n\nreturn r * 180 / math.Pi\n\n}"}
+{"task_id":"task/34","completion":"\n\nreturn d * pi / 180.0\n\n}\n\nfunc Degrees(d float64) float64 {\n\nreturn d * 180.0 / pi\n\n}\n\nvar dt float64 = 0.001"}
+{"task_id":"task/34","completion":"\n\nreturn math.Pow(math.Pi * d, 1.0 / 3.0)\n\n}\n\nvar radians float64 = Rads(1)\n\n// Constants:\n\nvar Pi float64"}
+{"task_id":"task/34","completion":"\n\nreturn d * math.Pi / 180.0\n\n}\n\nfunc RadDeg(d float64) float64 {\n\nreturn d * 180.0 / math.Pi\n\n}\n\nfunc cosDeg"}
+{"task_id":"task/34","completion":"\n\nreturn float64(d) * math.Pi / 180.0\n\n}\n\nfunc Radians(d float64) float64 {\n\nreturn d * math.Pi / 180.0\n\n}\n\nfunc"}
+{"task_id":"task/35","completion":"\n\nlast := len(arr) - 1\n\nfor i := 0; i < last; i++ {\n\nif f(arr[i]) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n"}
+{"task_id":"task/35","completion":"\n\nindex := -1\n\nfor _, x := range arr {\n\nif f(x) {\n\nindex = index + 1\n\n}\n\n}\n\nreturn index\n\n}\n\nfunc main() {"}
+{"task_id":"task/35","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\nfunc main() {\n\nvar arr = []int{"}
+{"task_id":"task/35","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\nfunc GetAverage(numbers []int) (average int"}
+{"task_id":"task/35","completion":"\n\nfor i, x := range arr {\n\nif f(x) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\nfunc FindLastIndexFloat64(arr []float64,"}
+{"task_id":"task/36","completion":"\n\nb := make([]byte, len(cc)*2+2)\n\nfor i := 0; i < n; i++ {\n\nb[i] = '?'\n\n}\n\nswitch cc[0]"}
+{"task_id":"task/36","completion":"\n\nif n <= 0 {\n\nreturn \"\"]\"\n\n}\n\nif m < utf8.RuneSelf {\n\nm = '?'\n\n}\n\nif n == 1 {\n\nreturn cc["}
+{"task_id":"task/36","completion":"\n\nif m == 0 {\n\nreturn cc\n\n}\n\nruneMask := rune(0xFF)\n\nfor m < len(cc) {\n\nif cc[m] == m {\n\ncontinue\n"}
+{"task_id":"task/36","completion":"\n\nr := rune(m)\n\nfor i := 0; i < n; i++ {\n\ncc = cc[0:i] + cc[i+1:] + r\n\n}\n\nreturn cc\n\n"}
+{"task_id":"task/36","completion":"\n\ncc = strings.ToLower(cc)\n\nrunes := make([]rune, n)\n\nfor i := 0; i < n; i++ {\n\nrunes[i] = rune(cc["}
+{"task_id":"task/37","completion":"\n\nreturn new(squared)\n\n}\n\nfunc main() {\n\nc := []string{\"a\", \"b\", \"c\"}\n\nx := XProduct(c)\n\nfmt.Println(x"}
+{"task_id":"task/37","completion":"\n\nreturn params\n\n}\n\nIn this example, we use the reflect package to process the params in XProduct.\n\n\n\ntype alias ServerParam =\n\n{\n\nserverAddress: string\n\n, sessId:"}
+{"task_id":"task/37","completion":"\n\nreturn reflect.ValueOf(params).Pairs()\n\n}\n\nfunc YProduct(params ...interface{}) [][]interface{} {\n\nreturn reflect.ValueOf(params).Pairs()\n\n}"}
+{"task_id":"task/37","completion":"\n\nps := make([][]interface{}, len(params))\n\nfor i, p := range params {\n\nps[i] = make([]interface{}, len(p))\n\nfor j, n := range"}
+{"task_id":"task/37","completion":"\n\nreturn make([][]interface{}, len(params))\n\n}\n\nfunc XMap(mapping func(i interface{}, j int) interface{}, data ...interface{}) [][]interface{} {\n"}
+{"task_id":"task/38","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] < 'A' || s[i] > 'Z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/38","completion":"\n\nreturn strings.ToUpper(s) == s\n\n}\n\nfunc main() {\n\nfmt.Println(IsUpper(\"hello\"))\n\n}\n\nOutput:\n\ntrue\n\nExplan"}
+{"task_id":"task/38","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] >= 'a' && s[i] <= 'z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/38","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] >= 'A' && s[i] <= 'Z' {\n\nreturn true\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/38","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] < 'A' || s[i] > 'Z' {\n\nreturn false\n\n}\n\n}\n\nreturn"}
+{"task_id":"task/39","completion":" for _, v := range arr { if fn(v) { return true } } return false }\n\nNote: the function func NoneInt(arr []int, fn func(int) bool) bool is the same as func(arr"}
+{"task_id":"task/39","completion":"\n\nfor i, v := range arr {\n\nif fn(v) {\n\nreturn true\n\n}\n\n}\n\nreturn false\n\n}\n\nfunc main() {\n\narr := []int{5,"}
+{"task_id":"task/39","completion":"\n\nfor i, v := range arr {\n\nif fn(v) {\n\nreturn true\n\n}\n\n}\n\nreturn false\n\n}\n\n// func NoneString(arr []string, fn func(string"}
+{"task_id":"task/39","completion":" for _, x := range arr { if fn(x) { return true } } return false }\n\nThe second parameter of the filter function is an anonymous function that accepts one parameter of type int and returns a bool . It is called for"}
+{"task_id":"task/39","completion":" // ... } func filterInt(arr []int, pred func(int) bool) []int { // ... } // ... var a, b = func([]int) int { // ... }([]int{1, 2, 3"}
+{"task_id":"task/40","completion":"\n\nreturn reflect.DeepEqual(params, params)\n\n}\n\nAllSame is an example of a helper function that makes use of the reflect package to do its job. AllSame takes a slice of parameters and checks if all"}
+{"task_id":"task/40","completion":"\n\nsig := reflect.TypeOf(params).String()\n\nreturn sig == \"*\"\n\n}\n\n// AllSame returns whether all of the values are the same.\n\nfunc AllSame(params ...interface{"}
+{"task_id":"task/40","completion":"\n\nreturn reflect.DeepEqual(params, params)\n\n}\n\nfunc Float32(float64) float32 {\n\nreturn float32(float64)\n\n}\n\nfunc Float64(float32) float"}
+{"task_id":"task/40","completion":"\n\nreturn reflect.DeepEqual(params, params)\n\n}\n\nI\u2019m not sure if this is the best way to handle it but it works. I know there is a way to use the reflect package but I"}
+{"task_id":"task/40","completion":"\n\nvar s, ok bool\n\nfor _, param := range params {\n\ns, ok = param.(string)\n\nif !ok {\n\nreturn false\n\n}\n\n}\n\nreturn s == \"all"}
+{"task_id":"task/41","completion":" \"bytes\"\n\n\"crypto/rand\"\n\n\"crypto/sha256\"\n\n\"crypto/sha512\"\n\n\"encoding/base64\"\n\n\"errors\"\n\n\"fmt\"\n"}
+{"task_id":"task/41","completion":" \"//build/config/nacl/nacl_constants.gni\" )\n\nif (is_nacl) {\n\n# We don't want to build anything on Android, because it's not\n\n# supported"}
+{"task_id":"task/41","completion":" \"fmt\" ) type A struct { Name string } func ( a A ) String () string { return fmt . Sprintf ( \"A(%s)\" , a . Name ) } func main () { a := A { Name : \""}
+{"task_id":"task/41","completion":" \"fmt\" ) func main() { names := []string{\"Harry\", \"Ron\", \"Hermione\", \"Luna\", \"Neville\", \"Ginny\", \"Cho\", \"Draco\", \"Pansy\", \"Pad"}
+{"task_id":"task/41","completion":" \"errors\" \"io\" \"log\" \"net/http\" \"os\" \"strings\" \"time\" ) // ToDoURL returns the user's todo URL. func ToDoURL(c *gin.Context) string { return"}
+{"task_id":"task/42","completion":"\n\nif len(params) == 0 {\n\nreturn nil\n\n}\n\ncompact := make([]reflect.Value, 0, len(params))\n\nfor i := 0; i < len(params); i++"}
+{"task_id":"task/42","completion":"\n\nreturn []reflect.Value{}\n\n}\n\nfunc GetIface(gdb *debug.Debugger, val reflect.Value) string {\n\nreturn gdb.Interface(val)\n\n}\n\nfunc"}
+{"task_id":"task/42","completion":"\n\nvar ps []reflect.Value\n\nfor _, p := range params {\n\nps = append(ps, reflect.ValueOf(p))\n\n}\n\nreturn ps\n\n}\n\n// Duplicate copies a"}
+{"task_id":"task/42","completion":"\n\nreturn params[0].([]reflect.Value)\n\n}\n\nfunc main() {\n\n// Print elements in compacted slice\n\nfmt.Println(Compact([]reflect.Value{\n\n//"}
+{"task_id":"task/42","completion":"\n\np := make([]reflect.Value, 0, len(params))\n\nfor i, v := range params {\n\np = append(p, reflect.ValueOf(v))\n\n}\n\nreturn p\n"}
+{"task_id":"task/43","completion":" return n%2 == 0 }\n\nIsEven returns true if n is even.\n\nIsOdd returns true if n is odd.\n\nNote that Go requires the integer literals to be in decimal. For\n\nexample,"}
+{"task_id":"task/43","completion":"\n\nreturn n%2 == 0\n\n}\n\nfunc main() {\n\nfmt.Println(IsEven(6))\n\n}\n\nOutput:\n\nfalse\n\nLazy evaluation\n\nTo understand L"}
+{"task_id":"task/43","completion":" return n%2 == 0 }\n\nfunc IsOdd(n int) bool { return n%2 == 1 }\n\n// IsOddEven reports whether n is odd or even.\n\nfunc IsOddEven(n"}
+{"task_id":"task/43","completion":"\n\nreturn n%2 == 0\n\n}\n\nfunc main() {\n\nfmt.Println(IsEven(10))\n\n}\n\nfunc myMap(fn func(int) int, m []int)"}
+{"task_id":"task/43","completion":"\n\nreturn n%2 == 0\n\n}\n\nfunc LogEven(n int) {\n\nif IsEven(n) {\n\nLog(n)\n\n}\n\n}\n\nfunc main() {\n\n"}
+{"task_id":"task/44","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, errors.New(\"int array not found\")\n\n}\n\n"}
+{"task_id":"task/44","completion":"\n\ni := len(arr) - 1\n\nfor i > 0 && f(arr[i]) {\n\ni--\n\n}\n\nreturn arr[i], nil\n\n}\n\nvar arrs = []int"}
+{"task_id":"task/44","completion":"\n\ni := len(arr) - 1\n\nfor ; i >= 0; i-- {\n\nif f(arr[i]) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn 0, fmt."}
+{"task_id":"task/44","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn 0, fmt.Errorf(\"findLastInt: not found\")\n\n}"}
+{"task_id":"task/44","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i, nil\n\n}\n\n}\n\nreturn -1, fmt.Errorf(\"find last int: not found\")\n\n"}
+{"task_id":"task/45","completion":" //\u4ee5\u4e0b\u662ffindIndex\u51fd\u6570\u8bbe\u8ba1\u7684\u5173\u952e //\u4ece1\u5f00\u59cb\uff0c\u5728arr\u4e2d\u627e\u51fa\u5176\u4e2d\u7b2c\u4e00"}
+{"task_id":"task/45","completion":" for i, v := range arr { if f(i) { return i } } return -1 } func main() { fmt.Println(FindIndexInt([]int{3, 4, 5}, func(i int) bool"}
+{"task_id":"task/45","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\nfunc main() {\n\nfmt.Println("}
+{"task_id":"task/45","completion":"\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i\n\n}\n\n}\n\nreturn -1\n\n}\n\n// Run this a few times to get a profile:\n"}
+{"task_id":"task/45","completion":"\n\nif len(arr) < 2 {\n\nreturn -1\n\n}\n\nfor i, v := range arr {\n\nif f(v) {\n\nreturn i\n\n}\n\n}\n\nreturn -"}
+{"task_id":"task/46","completion":" return d * 1.8 + 32 } func main() { f := FahrenheitToCelsius(-50) fmt.Println(f) }\n\n$ go run test.go -42\n\nmap\n\nmap is a built-"}
+{"task_id":"task/46","completion":" return d * 1.8 + 32 } func main() { f := FahrenheitToCelsius(32) fmt.Println(f) }\n\nAs you can see, we now have two new type declarations. The first is called Celsius"}
+{"task_id":"task/46","completion":" return 32.0 * d / (d + 459.0) } // ftoa64 is defined in the standard library. func main() { f := ftoa64(FahrenheitToCelsius(32)) fmt."}
+{"task_id":"task/46","completion":" if d < 32 { return 32 + (d-32)/1.8 } return 32 + (d-32)/1.8 * 5 }\n\nIf you have a simple type to which you want to add a simple method, you"}
+{"task_id":"task/46","completion":" return math.Min(d, -273.15) * 1.8 + 32 } func CelsiusToFahrenheit(c float64) float64 { return c * 1.8 + 32 } func main() { fahrenheit :="}
+{"task_id":"task/47","completion":" \"sync\" \"time\" ) // WaitUntilSync is a custom Sync that times out after 30 seconds. type WaitUntilSync struct { sync . Mutex // This value must be set externally once the WaitUntilSync // object is created. Once"}
+{"task_id":"task/47","completion":" \"errors\" \"io\" \"net/http\" \"strings\" \"time\" ) // ErrNoSuchUser is the error returned when a user is not found. var ErrNoSuchUser = errors . New ( \"no such user\" )"}
+{"task_id":"task/47","completion":" \"sync\" \"time\" )\n\nvar (\n\nmu sync.Mutex\n\nscheduler = time.NewTicker( 5 * time.Second)\n\n)\n\n// Do not alter this method.\n\n"}
+{"task_id":"task/47","completion":" \"github.com/fsnotify/fsnotify\" ) type AsyncFswatcher struct { sync.Mutex // contains filtered or unexported fields } func NewAsyncFswatcher(w fsnotify.Watcher) *"}
+{"task_id":"task/47","completion":" \"bytes\" \"errors\" \"io\" \"os\" \"path/filepath\" \"strings\" \"sync\" \"time\" ) func main() { // Build command cmd := exec.Command( \"git\" , \"init\" , \""}
+{"task_id":"task/48","completion":"\n\nreturn n%2 == 1\n\n}\n\nfunc IsEven(n int) bool {\n\nreturn n%2 == 0\n\n}\n\nfunc Swap(i, j int) {\n\ntemp := a["}
+{"task_id":"task/48","completion":" return n%2 == 1 } func main() { for i := 0; i < 10; i++ { fmt.Println(IsOdd(i)) } }\n\n\u901a\u8fc7\u8fd9\u4e2a\u7a0b"}
+{"task_id":"task/48","completion":"\n\nreturn n%2 == 1\n\n}\n\nfunc mul(x, y int) int {\n\nreturn x * y\n\n}\n\nfunc fact(n int) int {\n\nif n <= 1 {\n"}
+{"task_id":"task/48","completion":"\n\nreturn n%2 == 1\n\n}\n\nfunc IsEven(n int) bool {\n\nreturn n%2 == 0\n\n}\n\nfunc main() {\n\nfor i := 0; i < 10;"}
+{"task_id":"task/48","completion":"\n\nif n%2 == 0 {\n\nreturn false\n\n}\n\nreturn true\n\n}\n\nfunc main() {\n\nfor i := 0; i < 10; i++ {\n\nfmt.Println"}
+{"task_id":"task/49","completion":"\n\nh := 0\n\nfor _, n := range arr {\n\nh += fn(n)\n\n}\n\nreturn h == len(arr)\n\n}\n\nfunc BenchmarkAllInt(b *testing."}
+{"task_id":"task/49","completion":" var n int for i, v := range arr { if fn(v) { n++ } } return n == len(arr) } func main() { fmt.Println(AllInt([1, 2, 3], func(a"}
+{"task_id":"task/49","completion":" for _, v := range arr { if !fn(v) { return false } } return true } func main() { arr := []int{5, 1, 4, 3, 9} var isEven bool for i, v :="}
+{"task_id":"task/49","completion":" for _, v := range arr { if !fn(v) { return false } } return true } // Output: // false fmt.Println(AllInt([]int{1, 2, 3}, func(x int) bool"}
+{"task_id":"task/49","completion":" for _, v := range arr { if !fn(v) { return false } } return true } func main() { var a [10]int a[0] = 1 // Use direct index access. if AllInt(a,"}
+{"task_id":"task/50","completion":"\n\nif len(nums) == 0 {\n\nreturn 0\n\n}\n\nif len(nums) == 1 {\n\nreturn nums[0]\n\n}\n\nreturn Min(nums...)\n\n"}
+{"task_id":"task/50","completion":"\n\nreturn math.Min(nums)\n\n}\n\nfunc MaxOf(nums ...float64) float64 {\n\nreturn math.Max(nums)\n\n}\n\nfunc sumOf(nums ..."}
+{"task_id":"task/50","completion":"\n\nif n := len(nums); n == 0 {\n\nreturn 0\n\n}\n\nif n > 1 {\n\nfor _, num := range nums {\n\nif num < 0 {\n\nreturn num"}
+{"task_id":"task/50","completion":"\n\nm := new(big.Float).Sub(nums[0], nums[1])\n\nm.Div(nums[0], nums[1])\n\nreturn m\n\n}\n\nfunc main()"}
+{"task_id":"task/50","completion":"\n\nmin := float64(nums[0])\n\nfor _, v := range nums[1:] {\n\nif v < min {\n\nmin = v\n\n}\n\n}\n\nreturn min\n\n"}
+{"task_id":"task/51","completion":"\n\nvar isTrue bool\n\nfor _, v := range params {\n\nswitch v := v.(type) {\n\ncase bool:\n\nisTrue = v\n\ncase string:\n\nisTrue = v == \""}
+{"task_id":"task/51","completion":"\n\nif len(params) == 0 {\n\nreturn false\n\n}\n\nreturn reflect.DeepEqual(params, nil)\n\n}\n\nYou can check out the awesome documentation for the reflect package to learn more about"}
+{"task_id":"task/51","completion":"\n\nvar result bool\n\nfor _, item := range params {\n\nif item == nil {\n\ncontinue\n\n}\n\nif !reflect.DeepEqual(item, nil) {\n\nresult = false\n\n"}
+{"task_id":"task/51","completion":"\n\nif len(params) == 0 {\n\nreturn false\n\n}\n\nfor _, value := range params {\n\nswitch value.(type) {\n\ncase bool:\n\nreturn value.(bool)\n\ncase"}
+{"task_id":"task/51","completion":"\n\nfor _, p := range params {\n\nswitch v := p.(type) {\n\ncase bool:\n\nreturn v == true\n\ncase int:\n\nreturn v == int(v)\n\ncase []int"}
+{"task_id":"task/52","completion":" if d < 0 { // handle negative values } f := (d - 32)/1.8 return f } func main() { fmt.Println(celsiusToFahrenheit(-20)) }\n\nIf you look at the"}
+{"task_id":"task/52","completion":" return 32.0 * d / (fahrenheit + 273.15) } func main() { celsius := CelsiusToFahrenheit(-40) fahrenheit := CelsiusToFahrenheit(212) fmt.Println(cel"}
+{"task_id":"task/52","completion":" return d*9.0/5.0 + 32.0 } func main() { f, _ := tempfile.Open(\"celsius\") // f, _ := tempfile.Open(\"fahrenheit\") t := CelsiusTo"}
+{"task_id":"task/52","completion":" return math.FToC(d-32)/1.8+32 } func main() { fahrenheit := CelsiusToFahrenheit(58) fmt.Println(fahrenheit) }\n\nConvertFrom returns the"}
+{"task_id":"task/52","completion":" d *= 9.0 / 5.0 + 32.0 } func main() { fahrenheit := CelsiusToFahrenheit(100.0) celsius := CelsiusToCelsius(fahrenheit) fmt.Println("}
+{"task_id":"task/53","completion":"\n\nreturn r * pi / 180\n\n}\n\nfunc Radians(r float64) float64 {\n\nreturn r * 180 / pi\n\n}\n\nfunc main() {\n\nr := 180\n\nfmt"}
+{"task_id":"task/53","completion":"\n\nreturn r * (180.0 / 3.1415926535897932384626433832795028841971)\n\n}\n\nfunc Radians(r float64) float64 {\n\nreturn r *"}
+{"task_id":"task/53","completion":"\n\nreturn (r * 180.0) / math.Pi\n\n}\n\nfunc Radians(r float64) float64 {\n\nreturn (r * math.Pi) / 180.0\n\n}\n\nfunc"}
+{"task_id":"task/53","completion":"\n\nreturn r * 180 / float64(Pi)\n\n}\n\nfunc Radians(degrees float64) float64 {\n\nreturn degrees * Pi / 180\n\n}\n\nfunc isTrue(value bool) bool"}
+{"task_id":"task/53","completion":"\n\nif r < -180 {\n\nreturn -180\n\n}\n\nif r > 180 {\n\nreturn 180\n\n}\n\nreturn r\n\n}\n\n// Radians converts degrees to radians.\n\n"}
+{"task_id":"task/54","completion":"\n\n// maxStringLength is a global variable, so this will cause a\n\n// compile-time error if it isn't defined.\n\nvar maxStringLength = len(strings.ToLower(strings.ToUpper(s"}
+{"task_id":"task/54","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nif s[i] != s[len(s)-i-1] {\n\nreturn false\n\n}\n\n}\n\nreturn true\n"}
+{"task_id":"task/54","completion":"\n\nif len(s) < 2 {\n\nreturn false\n\n}\n\nfor i := 0; i < len(s); i++ {\n\nj := i\n\nfor j < len(s) && s["}
+{"task_id":"task/54","completion":"\n\n// the string will be in reverse order\n\n// the reverse of a string is obtained by reverse()\n\n// the function Reverse() of the string is\n\n// called with a string to reverse\n\n// the result is a"}
+{"task_id":"task/54","completion":"\n\nreturn len(s) == len(strings.ToLower(s))\n\n}\n\nFoo(func(args ...interface{}) {\n\nif len(args) != 2 {\n\nreturn fmt.Errorf"}
+{"task_id":"task/55","completion":"\n\nr := strings.Replace(s, \"a\", \"A\", -1)\n\nr = strings.Replace(r, \"e\", \"E\", -1)\n\nr = strings.Replace(r"}
+{"task_id":"task/55","completion":"\n\nfor i := 0; i < len(s); i++ {\n\nswitch s[i] {\n\ncase 'C', 'c', 'B', 'b', 'P', 'p', 'H', 'h"}
+{"task_id":"task/55","completion":"\n\nreturn strings.ToLower(s)\n\n}\n\nThe types.T struct is a struct type but it's also an interface type and a predicate type. The interface is named T and it contains one method named T , which"}
+{"task_id":"task/55","completion":"\n\nreturn strings.ToLower(strings.Replace(s, \" \", \"_\", -1))\n\n}\n\nThe imported \"strings\" package provides the Replace function that replaces all occurrences of a string with another. The -1"}
+{"task_id":"task/55","completion":"\n\nif !unicode.IsLetter(s[0]) {\n\nreturn s\n\n}\n\ncaps := unicode.ToLower(s[0])\n\nfor i := 1; i < len(s); i"}
+{"task_id":"task/56","completion":" var ( o float64 iMax, iMin = float64(1e6), num = float64(num) ) for iMin <= iMax { if iMin <= iMax && iMin < num { iMin++ } if"}
+{"task_id":"task/56","completion":"\n\n2654 if num < iMin {\n\n2655 panic(\"MapNumRange: index out of range\")\n\n2656 }\n\n2657 if num > iMax {\n\n2658 panic(\"MapNumRange:"}
+{"task_id":"task/56","completion":"\n\nm, err := strconv.ParseFloat(num, 'f', 0)\n\nif err != nil {\n\nreturn 0\n\n}\n\nreturn oMin + (oMax - oMin) * m\n"}
+{"task_id":"task/56","completion":"\n\nreturn (float64(num) - float64(iMin)) / (float64(iMax) - float64(iMin)) * (float64(oMin) - float64(oMax)) + float64("}
+{"task_id":"task/56","completion":" iMin, iMax = clamp(iMin, 0, math.MaxInt64) iMax, oMin = clamp(oMin, 0, math.MaxInt64) if iMin < iMax { return num + math."}
+{"task_id":"task/57","completion":"\n\nif v == nil {\n\nreturn \"nil\"\n\n}\n\nswitch x := v.(type) {\n\ncase bool:\n\nreturn x == true ? \"true\" : \"false\"\n\ncase int:"}
+{"task_id":"task/57","completion":"\n\nswitch t := v.(type) {\n\ncase *[]byte:\n\nif len(t) == 0 {\n\nreturn \"\"\n\n}\n\nreturn fmt.Sprintf(\"[%v]\", string(t"}
+{"task_id":"task/57","completion":"\n\nif reflect.TypeOf(v).Kind() == reflect.Ptr {\n\nif v.IsNil() {\n\nreturn \"<nil>\"\n\n}\n\nt := v.Elem()\n\nif t."}
+{"task_id":"task/57","completion":"\n\nswitch v := v.(type) {\n\ncase nil:\n\nreturn \"nil\"\n\ncase bool:\n\nreturn strconv.FormatBool(v)\n\ncase int:\n\nreturn strconv.Format"}
+{"task_id":"task/57","completion":"\n\nswitch t := v.(type) {\n\ncase int:\n\ns := fmt.Sprintf(\"%d\", t)\n\ncase int8:\n\ns := fmt.Sprintf(\"%d\", t)\n"}
+{"task_id":"task/58","completion":"\n\nif len(nums) == 0 {\n\nreturn math.Inf(1)\n\n}\n\nmax := nums[0]\n\nfor _, v := range nums[1:] {\n\nif v"}
+{"task_id":"task/58","completion":"\n\nmax := nums[0]\n\nfor _, v := range nums[1:] {\n\nif v > max {\n\nmax = v\n\n}\n\n}\n\nreturn max\n\n}\n\n"}
+{"task_id":"task/58","completion":"\n\nvar max float64\n\nfor _, v := range nums {\n\nif v > max {\n\nmax = v\n\n}\n\n}\n\nreturn max\n\n}\n\nThe only difference here is that"}
+{"task_id":"task/58","completion":"\n\nmax := nums[0]\n\nfor _, x := range nums[1:] {\n\nif x > max {\n\nmax = x\n\n}\n\n}\n\nreturn max\n\n}\n\n"}
+{"task_id":"task/58","completion":"\n\nvar max float64\n\nfor _, x := range nums {\n\nif x > max {\n\nmax = x\n\n}\n\n}\n\nreturn max\n\n}\n\nMaxOf(1,2"}
+{"task_id":"task/59","completion":"\n\nif y == 0 {\n\nreturn x\n\n}\n\nreturn gcd(y, x%y)\n\n}\n\nvar zero = NewInt(0)\n\nfunc main() {\n\nfmt."}
+{"task_id":"task/59","completion":"\n\nfor y != 0 {\n\nx, y = y, x%y\n\n}\n\nreturn x\n\n}\n\nSample usage:\n\npackage main\n\n\n\nimport \"fmt\"\n\n\n\nfunc main"}
+{"task_id":"task/59","completion":"\n\nfor y != 0 {\n\nx, y = y, x%y\n\n}\n\nreturn x\n\n}\n\npackage main\n\n\n\nimport (\n\n\"fmt\"\n\n\"math/big\""}
+{"task_id":"task/59","completion":"\n\nfor y != 0 {\n\nt := y\n\ny = x % y\n\nx = t\n\n}\n\nreturn x\n\n}\n\n```\n\n```go\n\nfunc gcd(x"}
+{"task_id":"task/59","completion":"\n\nreturn x - y * int(x/y)\n\n}\n\nfor i := n; i > 0; i-- {\n\nfmt.Printf(\"%d: %d\\n\", i, gcd"}
+{"task_id":"task/60","completion":"\n\nl := len(arr)\n\nif l < 2 {\n\nreturn arr\n\n}\n\ncopy(arr, arr[0:l/2])\n\nfor i := l - 1; i >= 2; i"}
+{"task_id":"task/60","completion":"\n\nfor _, x := range arr {\n\nif len(x) == 1 {\n\narr[0] = x[0]\n\nreturn arr\n\n}\n\n}\n\nreturn arr\n\n}\n\n"}
+{"task_id":"task/60","completion":"\n\ndeDup := make([]int, len(arr))\n\nfor i, x := range arr {\n\ndeDup[i] = x\n\n}\n\nreturn deDup\n\n}\n\nfunc"}
+{"task_id":"task/60","completion":"\n\nreturn append([]int{}, DedupeInts(arr[1:])...)\n\n}\n\nfunc main() {\n\nfmt.Println(DedupeInts([1, 2, 3,"}
+{"task_id":"task/60","completion":"\n\na := make([]int, len(arr))\n\nfor i, v := range arr {\n\na[i] = v\n\n}\n\nreturn a\n\n}\n\n// Case 2: Slices"}

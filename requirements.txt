@@ -1,3 +1,7 @@
 tqdm
 fire
 numpy
+marko
+srsly
+more_itertools
+bs4
