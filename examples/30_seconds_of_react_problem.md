@@ -50,6 +50,7 @@
 +    return () => {
 +      window.removeEventListener('beforeunload', fn);
 +    };
++ 
 ```
 
 #### useUnload (task/1)
@@ -89,7 +90,8 @@
 +      callback()
 +    }
 +  }
-+      useEffect(() => {
++
++  useEffect(() => {
 ```
 
 #### useClickOutside (task/2)
@@ -104,6 +106,7 @@
 +        return;
 +      }
 +      callback();
++   
 ```
 
 #### useClickOutside (task/2)
@@ -131,7 +134,8 @@
 +            callback();
 +        }
 +    };
-+        useEffect(() => {
++
++    useEffect(() => {
 ```
 
 #### useSessionStorage (task/3)
@@ -192,7 +196,8 @@
 +    const value = sessionStorage.getItem(keyName);
 +    return value === null ? defaultValue : value;
 +  });
-+      const set
++
++  const set
 ```
 
 #### useTitle (task/4)
@@ -205,7 +210,8 @@
 +    document.title = title;
 +  }, [title]);
 +};
-+    const useTheme = () => {
++
++const useTheme = () => {
 +  const [theme, setTheme] = useState(null);
 ```
 
@@ -219,7 +225,8 @@
 +        document.title = title;
 +    }, [title]);
 +};
-+    export default useTitle;
++
++export default useTitle;
 ```
 
 #### useTitle (task/4)
@@ -232,8 +239,10 @@
 +    document.title = title;
 +  }, [title]);
 +};
-+    const toggle = (toggled, click) => {
++
++const toggle = (toggled, click) => {
 +  if (toggled) {
++   
 ```
 
 #### useTitle (task/4)
@@ -246,7 +255,8 @@
 +    document.title = title;
 +  }, [title]);
 +};
-+    const useFetch = (url, init) => {
++
++const useFetch = (url, init) => {
 +  const [response, setResponse] = use
 ```
 
@@ -284,7 +294,8 @@
 +const useEffectOnce = (callback, when) => {
 +
 +    const didRun = useRef(false);
-+        useEffect(() => {
++
++    useEffect(() => {
 +        if (didRun.current) return;
 +        didRun.current = true;
 +        return callback();
@@ -299,7 +310,8 @@
 +
 +  useEffect(callback, [], when);
 +};
-+    export default useEffectOnce;
++
++export default useEffectOnce;
 ```
 
 #### useEffectOnce (task/5)
@@ -309,7 +321,8 @@
 +const useEffectOnce = (callback, when) => {
 +
 +  const active = useRef(true);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (active.current) {
 +      when && callback();
 +      active.current = false;
@@ -325,9 +338,11 @@
 +
 +  useEffect(callback, [when]);
 +};
-+    const useMounted = () => {
++
++const useMounted = () => {
 +  const [mounted, setMounted] = useState(false);
 +  useEffectOnce(() => {
++   
 ```
 
 #### Accordion (task/6)
@@ -364,7 +379,8 @@
 +    event.preventDefault();
 +    handleClick(label);
 +  };
-+      return (
++
++  return (
 +    <>
 +      <h4 className="accordion
 ```
@@ -376,10 +392,12 @@
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +
 +  const [isActive, setIsActive] = useState(false);
-+      const toggle = () => {
++
++  const toggle = () => {
 +    setIsActive(!isActive);
 +  };
-+      return (
++
++  return (
 +    <AccordionItem
 ```
 
@@ -401,7 +419,8 @@
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
 + typeof window !== 'undefined' && (window as any).document ? React.useLayoutEffect : React.useEffect;
-+    const createCtx = <T>(defaultValue: T): [T, React.Dispatch
++
++const createCtx = <T>(defaultValue: T): [T, React.Dispatch
 ```
 
 #### useIsomporphicEffect (task/7)
@@ -410,9 +429,12 @@
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
 + typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
-+    const PREFIX = 'inline-block'
-+    export interface InlineBlockProps {
++
++const PREFIX = 'inline-block'
++
++export interface InlineBlockProps {
 +  className?: string
++ 
 ```
 
 #### useIsomporphicEffect (task/7)
@@ -421,7 +443,8 @@
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
 + typeof window !== 'undefined' ? useEffect : useLayoutEffect;
-+    export function useEvent(eventName: string, handler: EventHandler, options?: EventOptions): void {
++
++export function useEvent(eventName: string, handler: EventHandler, options?: EventOptions): void {
 +  useIsomorphicEffect(()
 ```
 
@@ -431,7 +454,8 @@
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
 + typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect
-+    function getOuterSizes(node: HTMLElement) {
++
++function getOuterSizes(node: HTMLElement) {
 +  const size = {
 +    width: node.
 ```
@@ -444,7 +468,8 @@
 + typeof window !== 'undefined' &&
 +  typeof window.document !== 'undefined' &&
 +  typeof window.document.createElement !== 'undefined'
-+    /**
++
++/**
 + * Custom hook for reading
 ```
 
@@ -455,9 +480,11 @@
 +const useGetSet = initialState => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [state, setState];
++
++  return [state, setState];
 +};
-+    export default useGetSet;
++
++export default useGetSet;
 ```
 
 #### useGetSet (task/8)
@@ -469,7 +496,8 @@
 +  const [state, setState] = useState(initialState);
 +  return [state, setState];
 +};
-+    export default useGetSet;
++
++export default useGetSet;
 ```
 
 #### useGetSet (task/8)
@@ -479,9 +507,11 @@
 +const useGetSet = initialState => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [state, setState];
++
++  return [state, setState];
 +};
-+    export default useGetSet;
++
++export default useGetSet;
 ```
 
 #### useGetSet (task/8)
@@ -491,9 +521,11 @@
 +const useGetSet = initialState => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [state, setState];
++
++  return [state, setState];
 +};
-+    export default useGetSet;
++
++export default useGetSet;
 ```
 
 #### useGetSet (task/8)
@@ -503,9 +535,11 @@
 +const useGetSet = initialState => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [state, setState];
++
++  return [state, setState];
 +};
-+    export default useGetSet;
++
++export default useGetSet;
 ```
 
 #### useInterval (task/9)
@@ -515,11 +549,13 @@
 +const useInterval = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useInterval (task/9)
@@ -529,11 +565,13 @@
 +const useInterval = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useInterval (task/9)
@@ -543,11 +581,13 @@
 +const useInterval = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useInterval (task/9)
@@ -557,11 +597,13 @@
 +const useInterval = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useInterval (task/9)
@@ -571,11 +613,13 @@
 +const useInterval = (callback, delay) => {
 +
 +    const savedCallback = useRef();
-+        // Remember the latest callback.
++
++    // Remember the latest callback.
 +    useEffect(() => {
 +        savedCallback.current = callback;
 +    }, [callback]);
-+        // Set up the interval.
++
++    // Set up the interval.
 ```
 
 #### Loader (task/10)
@@ -657,7 +701,8 @@
 +      onClose();
 +    }
 +  };
-+      return (
++
++  return (
 +    <div className={`
 ```
 
@@ -683,7 +728,8 @@
 +  const closeModal = () => {
 +    onClose && onClose();
 +  };
-+      return (
++
++  return (
 +    <ModalWrapper
 +      style={{
 +        display: isVisible ? "flex" :
@@ -698,7 +744,8 @@
 +  const handleClose = useCallback(() => {
 +    onClose()
 +  }, [onClose])
-+      return (
++
++  return (
 +    <ModalBlock
 +      isVisible={isVisible}
 +      onClose={
@@ -713,7 +760,8 @@
 +  const handleClose = () => {
 +    onClose();
 +  };
-+      return (
++
++  return (
 +    <ModalWrapper isVisible={isVisible}>
 +      <ModalOverlay />
 +      <Mod
@@ -738,7 +786,8 @@
 +
 +  const [intersection, setIntersection] = useState(null);
 +  const observer = useRef(null);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (ref.current) {
 +      observer.current
 ```
@@ -751,7 +800,8 @@
 +
 +  const [entry, setEntry] = useState(null);
 +  const [isIntersecting, setIsIntersecting] = useState(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const observer =
 ```
 
@@ -762,7 +812,8 @@
 +const useIntersectionObserver = (ref, options) => {
 +
 +  const [isIntersecting, setIsIntersecting] = useState(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const observer = new IntersectionObserver(entries => {
 +      entries.for
 ```
@@ -803,6 +854,7 @@
 +    height: '100%',
 +    position: 'absolute',
 +    top: 0,
++   
 ```
 
 #### Slider (task/13)
@@ -845,8 +897,10 @@
 +const useToggler = initialState => {
 +
 +  const [isVisible, setIsVisible] = useState(initialState);
-+      const toggle = () => setIsVisible(!isVisible);
-+      return { isVisible, toggle };
++
++  const toggle = () => setIsVisible(!isVisible);
++
++  return { isVisible, toggle };
 +};
 ```
 
@@ -857,10 +911,12 @@
 +const useToggler = initialState => {
 +
 +	const [state, setState] = useState(initialState);
-+    	const toggle = useCallback(() => {
++
++	const toggle = useCallback(() => {
 +		setState(s => !s);
 +	}, []);
-+    	return [state,
++
++	return [state,
 ```
 
 #### useToggler (task/14)
@@ -870,10 +926,13 @@
 +const useToggler = initialState => {
 +
 +	const [state, setState] = useState(initialState);
-+    	const toggle = () => setState(!state);
-+    	return [state, toggle];
++
++	const toggle = () => setState(!state);
++
++	return [state, toggle];
 +};
-+    export default useToggler;
++
++export default useToggler;
 ```
 
 #### useToggler (task/14)
@@ -883,9 +942,11 @@
 +const useToggler = initialState => {
 +
 +	const [state, setState] = useState(initialState);
-+    	const setTrue = () => setState(true);
++
++	const setTrue = () => setState(true);
 +	const setFalse = () => setState(false);
-+    	return [state, set
++
++	return [state, set
 ```
 
 #### useToggler (task/14)
@@ -895,10 +956,12 @@
 +const useToggler = initialState => {
 +
 +  const [toggler, setToggler] = useState(initialState);
-+      const toggle = () => {
++
++  const toggle = () => {
 +    setToggler(!toggler);
 +  };
-+      return [togg
++
++  return [togg
 ```
 
 #### useHover (task/15)
@@ -911,6 +974,7 @@
 +  const onMouseOver = () => setValue(true);
 +  const onMouseOut = () => setValue(false);
 +  return {
++   
 ```
 
 #### useHover (task/15)
@@ -922,8 +986,10 @@
 +  const [state, setState] = useState({
 +    isHovering: false,
 +  });
-+      const [hovered, setHovered] = useState(false);
-+      const handleHover =
++
++  const [hovered, setHovered] = useState(false);
++
++  const handleHover =
 ```
 
 #### useHover (task/15)
@@ -956,10 +1022,12 @@
 +const useHover = () => {
 +
 +  const [hovered, setHovered] = useState(false);
-+      const handleHover = () => {
++
++  const handleHover = () => {
 +    setHovered(!hovered);
 +  };
-+      return { hovered, handleH
++
++  return { hovered, handleH
 ```
 
 #### usePrevious (task/16)
@@ -974,7 +1042,8 @@
 +  });
 +  return ref.current;
 +};
-+    export default usePrevious;
++
++export default usePrevious;
 ```
 
 #### usePrevious (task/16)
@@ -989,7 +1058,9 @@
 +  });
 +  return ref.current;
 +};
-+    const useDate = (date) => {
++
++const useDate = (date) => {
++ 
 ```
 
 #### usePrevious (task/16)
@@ -1004,7 +1075,8 @@
 +  });
 +  return ref.current;
 +};
-+    export default usePrevious;
++
++export default usePrevious;
 ```
 
 #### usePrevious (task/16)
@@ -1019,7 +1091,8 @@
 +  });
 +  return ref.current;
 +};
-+    export default usePrevious;
++
++export default usePrevious;
 ```
 
 #### usePrevious (task/16)
@@ -1034,7 +1107,8 @@
 +    });
 +    return ref.current;
 +};
-+    export default usePrevious;
++
++export default usePrevious;
 ```
 
 #### useMediaQuery (task/17)
@@ -1046,7 +1120,8 @@
 +  const matches = useMedia(query);
 +  return matches ? whenTrue : whenFalse;
 +};
-+    const Container = styled.div`
++
++const Container = styled.div`
 +  position: relative;
 +  width: 100%;
 +  height: 100
@@ -1060,7 +1135,8 @@
 +
 +  return useContext(MediaQueryContext) === query ? whenTrue : whenFalse;
 +};
-+    const useKeyHandler = (callback, key, action) => {
++
++const useKeyHandler = (callback, key, action) => {
 +  useEffect(() => {
 +    const handler
 ```
@@ -1074,7 +1150,9 @@
 +  const breakpoint = window.matchMedia(query);
 +  return breakpoint.matches ? whenTrue : whenFalse;
 +};
-+    const ResponsiveMenu = ({ className, ...props }) => {
++
++const ResponsiveMenu = ({ className, ...props }) => {
++ 
 ```
 
 #### useMediaQuery (task/17)
@@ -1085,7 +1163,8 @@
 +
 +  const mediaQuery = window.matchMedia(query);
 +  const [matches, setMatches] = useState(mediaQuery.matches);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handler = event =>
 ```
 
@@ -1098,7 +1177,8 @@
 +  const mql = window.matchMedia(query);
 +  return mql.matches ? whenTrue : whenFalse;
 +};
-+    const useWidth = () => {
++
++const useWidth = () => {
 +  const isLg = useMediaQuery
 ```
 
@@ -1110,10 +1190,12 @@
 +
 +    return initialState === undefined ? defaultState : initialState;
 +};
-+    const useMappedState = (state, mapFn) => {
++
++const useMappedState = (state, mapFn) => {
 +    return mapFn(state);
 +};
-+    const useMap
++
++const useMap
 ```
 
 #### useDefault (task/18)
@@ -1125,9 +1207,11 @@
 +  if (initialState === undefined) {
 +    return defaultState;
 +  }
-+      return initialState;
++
++  return initialState;
 +};
-+    export default useDefault;
++
++export default useDefault;
 ```
 
 #### useDefault (task/18)
@@ -1139,9 +1223,11 @@
 +  if (initialState === undefined) {
 +    return defaultState;
 +  }
-+      return initialState;
++
++  return initialState;
 +};
-+    export const useList = (state = [], { type, payload } = {}) => {
++
++export const useList = (state = [], { type, payload } = {}) => {
 ```
 
 #### useDefault (task/18)
@@ -1155,7 +1241,8 @@
 +    }
 +    return initialState;
 +};
-+    export default useDefault;
++
++export default useDefault;
 ```
 
 #### useDefault (task/18)
@@ -1169,7 +1256,8 @@
 +  }
 +  return initialState;
 +};
-+    const useLocalStorage = (key, initialState) => {
++
++const useLocalStorage = (key, initialState) => {
 +  const
 ```
 
@@ -1181,7 +1269,8 @@
 +
 +  const [tag, setTag] = useState('');
 +  const [tagList, setTagList] = useState(tags);
-+      const handleAddTag = (e) => {
++
++  const handleAddTag = (e) => {
 +    e.pre
 ```
 
@@ -1193,7 +1282,8 @@
 +
 +  const [input, setInput] = useState('');
 +  const [newTag, setNewTag] = useState([]);
-+      const addTag = (tag) => {
++
++  const addTag = (tag) => {
 +    setNewTag((
 ```
 
@@ -1205,7 +1295,8 @@
 +
 +  const [currentTag, setCurrentTag] = useState('');
 +  const [tagsList, setTagsList] = useState(tags);
-+      const addTag = (e) => {
++
++  const addTag = (e) => {
 +    e.
 ```
 
@@ -1217,7 +1308,8 @@
 +
 +  const [input, setInput] = useState('');
 +  const [selected, setSelected] = useState([]);
-+      const onChange = (e) => {
++
++  const onChange = (e) => {
 +    setInput(e.
 ```
 
@@ -1240,7 +1332,8 @@
 +
 +  const classes = useStyles();
 +  const [checked, setChecked] = useState([]);
-+      const handleToggle = value => () => {
++
++  const handleToggle = value => () => {
 +    const currentIndex = checked.indexOf(value
 ```
 
@@ -1251,8 +1344,10 @@
 +const MultiselectCheckbox = ({ options, onChange }) => {
 +
 +  const { state, dispatch } = useOvermind();
-+      const checked = state.selectedItems;
-+      const handleChange = (event) => {
++
++  const checked = state.selectedItems;
++
++  const handleChange = (event) => {
 +    const { target } = event;
 +    const selected = state
 ```
@@ -1264,7 +1359,8 @@
 +const MultiselectCheckbox = ({ options, onChange }) => {
 +
 +  const [selected, setSelected] = useState([]);
-+      const onSelect = (selectedValue) => {
++
++  const onSelect = (selectedValue) => {
 +    if (selected.includes(selectedValue)) {
 +      setSelected(selected.filter
 ```
@@ -1276,7 +1372,8 @@
 +const MultiselectCheckbox = ({ options, onChange }) => {
 +
 +  const [selectedOptions, setSelectedOptions] = useState([]);
-+      const onSelect = option => {
++
++  const onSelect = option => {
 +    const index = selectedOptions.indexOf(option);
 +    if (index >= 0) {
 ```
@@ -1288,11 +1385,13 @@
 +const MultiselectCheckbox = ({ options, onChange }) => {
 +
 +    const [state, setState] = useState({});
-+        const toggle = (key) => {
++
++    const toggle = (key) => {
 +        setState({
 +            ...state,
 +            [key]: !state[key]
 +        });
++   
 ```
 
 #### DataList (task/21)
@@ -1342,7 +1441,8 @@
 +
 +  const [isOpen, setIsOpen] = useState(true);
 +  const [isOrderedByDate, setIsOrderedByDate] = useState(isOrdered);
-+      return (
++
++  return (
 +    <
 ```
 
@@ -1358,6 +1458,7 @@
 +      <StyledHeader>
 +        <span>Data</span>
 +      </StyledHeader>
++     
 ```
 
 #### Carousel (task/22)
@@ -1369,7 +1470,8 @@
 +  const [index, setIndex] = useState(0);
 +  const [translateValue, setTranslateValue] = useState(0);
 +  const { width } = useWindowDimensions();
-+      const
++
++  const
 ```
 
 #### Carousel (task/22)
@@ -1380,7 +1482,8 @@
 +
 +  const [slideIndex, setSlideIndex] = useState(0);
 +  const { isMobile } = useMobile();
-+      const onClickLeft = () => {
++
++  const onClickLeft = () => {
 +    if (slideIndex > 0
 ```
 
@@ -1421,6 +1524,7 @@
 +  const [active, setActive] = useState(0);
 +  const [interval, setInterval] = useState(0);
 +  const [direction, setDirection] = useState(false);
++
 ```
 
 #### useMergeState (task/23)
@@ -1430,7 +1534,8 @@
 +const useMergeState = (initialState = {}) => {
 +
 +  const [state, setState] = useState(initialState);
-+      const update = (updater) => {
++
++  const update = (updater) => {
 +    const newState = Object.assign({}, state, updater);
 +    setState
 ```
@@ -1455,7 +1560,8 @@
 +const useMergeState = (initialState = {}) => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [
++
++  return [
 +    state,
 +    (newState) => {
 +      setState((prevState) => {
@@ -1469,12 +1575,14 @@
 +const useMergeState = (initialState = {}) => {
 +
 +  const [state, setState] = useState(initialState);
-+      return [
++
++  return [
 +    state,
 +    useCallback(
 +      (newState) => {
 +        setState({
 +          ...state,
++         
 ```
 
 #### useMergeState (task/23)
@@ -1484,8 +1592,10 @@
 +const useMergeState = (initialState = {}) => {
 +
 +  const [state, setState] = useState(initialState);
-+      const mergeState = (newState) => {
++
++  const mergeState = (newState) => {
 +    setState((oldState) => ({ ...oldState, ...newState }));
++ 
 ```
 
 #### useAsync (task/24)
@@ -1497,6 +1607,8 @@
 +  const [loading, setLoading] = useState(false);
 +  const [value, setValue] = useState(undefined);
 +  const [error, setError] = useState(undefined);
++
++ 
 ```
 
 #### useAsync (task/24)
@@ -1522,7 +1634,8 @@
 +  const [loading, setLoading] = useState(false);
 +  const [error, setError] = useState(null);
 +  const [result, setResult] = useState(null);
-+      useEffect
++
++  useEffect
 ```
 
 #### useAsync (task/24)
@@ -1545,7 +1658,8 @@
 +  const [loading, setLoading] = useState(false);
 +  const [error, setError] = useState(null);
 +  const [result, setResult] = useState(null);
-+      const handle
++
++  const handle
 ```
 
 #### useBodyScrollLock (task/25)
@@ -1568,7 +1682,8 @@
 +const useBodyScrollLock = () => {
 +
 +  const [isScrollFreeze, setIsScrollFreeze] = useState(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    window.addEventListener('scroll', handleScroll);
 +    return () => {
 ```
@@ -1605,7 +1720,8 @@
 +const useBodyScrollLock = () => {
 +
 +  const [isBodyOverflowHidden, setIsBodyOverflowHidden] = useState(false);
-+      const hideBodyOverflow = () => {
++
++  const hideBodyOverflow = () => {
 +    if (!isBodyOverflowHidden) {
 +      setIs
 ```
@@ -1617,7 +1733,8 @@
 +const useForm = initialValues => {
 +
 +  const [values, setValues] = useState(initialValues);
-+      const handleChange = e => {
++
++  const handleChange = e => {
 +    setValues({
 +      ...values,
 +      [e.target.name]: e.target.value
@@ -1630,7 +1747,8 @@
 +const useForm = initialValues => {
 +
 +    const [values, setValues] = useState(initialValues);
-+        const onChange = e => {
++
++    const onChange = e => {
 +        setValues({
 +            ...values,
 +            [e.target.name]: e.target.value
@@ -1643,7 +1761,8 @@
 +const useForm = initialValues => {
 +
 +  const [values, setValues] = useState(initialValues);
-+      const handleChange = event => {
++
++  const handleChange = event => {
 +    setValues({
 +      ...values,
 +      [event.target.name]: event.target.value
@@ -1656,7 +1775,8 @@
 +const useForm = initialValues => {
 +
 +  const [values, setValues] = useState(initialValues);
-+      const handleChange = e => {
++
++  const handleChange = e => {
 +    setValues({
 +      ...values,
 +      [e.target.name]: e.target.value
@@ -1669,7 +1789,8 @@
 +const useForm = initialValues => {
 +
 +    const [values, setValues] = useState(initialValues);
-+        const handleInputChange = event => {
++
++    const handleInputChange = event => {
 +        event.persist();
 +        setValues(values => ({
 +            ...values,
@@ -1710,6 +1831,7 @@
 +  useEffect(() => {
 +    const node = elRef.current;
 +    if (node && el) {
++     
 ```
 
 #### usePortal (task/27)
@@ -1794,7 +1916,8 @@
 +
 +  const subjectValue = subject.trim()
 +  const bodyValue = body.trim()
-+      const handleMailto = () => {
++
++  const handleMailto = () => {
 +    if (subjectValue) {
 +      window.location.href = `
 ```
@@ -1806,7 +1929,8 @@
 +const useKeyPress = targetKey => {
 +
 +  const isPressed = React.useRef(false);
-+      const onKeyPress = React.useCallback(
++
++  const onKeyPress = React.useCallback(
 +    e => {
 +      if (e.key === targetKey) {
 +        isPressed.
@@ -1819,7 +1943,8 @@
 +const useKeyPress = targetKey => {
 +
 +	const [keyPressed, setKeyPressed] = useState(false);
-+    	const onKeyDown = (event) => {
++
++	const onKeyDown = (event) => {
 +		if (event.key === targetKey) {
 +			set
 ```
@@ -1831,7 +1956,8 @@
 +const useKeyPress = targetKey => {
 +
 +  const [keyPressed, setKeyPressed] = useState(false);
-+      const keyPress = ({ key }) => {
++
++  const keyPress = ({ key }) => {
 +    if (key === targetKey) {
 +      setKeyPressed(true);
 ```
@@ -1845,7 +1971,8 @@
 +  const pressHandlers = useCallback(() => {
 +    console.log(`Key pressed ${targetKey}`);
 +  }, [targetKey]);
-+      const upHandlers = useCallback(() => {
++
++  const upHandlers = useCallback(() => {
 ```
 
 #### useKeyPress (task/29)
@@ -1855,7 +1982,8 @@
 +const useKeyPress = targetKey => {
 +
 +  const [keyPressed, setKeyPressed] = useState(false);
-+      const keyDownHandler = ({ key }) => {
++
++  const keyDownHandler = ({ key }) => {
 +    if (key === targetKey) {
 +      setKeyPressed(true
 ```
@@ -1867,7 +1995,8 @@
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +
 +  const [timeLeft, setTimeLeft] = useState(0);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const interval = setInterval(() => {
 +      setTimeLeft(initialTime => initialTime -
 ```
@@ -1883,7 +2012,8 @@
 +    minutes,
 +    seconds,
 +  };
-+      return (
++
++  return (
 +    <>
 +      <Row className="justify-content-center">
 +        <Col>
@@ -1921,7 +2051,8 @@
 +
 +  const [timer, setTimer] = useState(0);
 +  const [isCounting, setIsCounting] = useState(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (isCounting
 ```
 
@@ -1934,7 +2065,8 @@
 +  const [show, setShow] = useState(isDefaultShown);
 +  const onMouseEnter = () => setShow(true);
 +  const onMouseLeave = () => setShow(false);
-+      use
++
++  use
 ```
 
 #### Alert (task/31)
@@ -1945,7 +2077,8 @@
 +
 +  const [isShown, setIsShown] = useState(isDefaultShown);
 +  const [isTimeoutShown, setIsTimeoutShown] = useState(false);
-+      useEffect(()
++
++  useEffect(()
 ```
 
 #### Alert (task/31)
@@ -1956,7 +2089,9 @@
 +
 +  const [isVisible, setIsVisible] = useState(isDefaultShown);
 +  const [timeLeft, setTimeLeft] = useState(timeout);
-+      useEffect(() => {
++
++  useEffect(() => {
++   
 ```
 
 #### Alert (task/31)
@@ -1971,7 +2106,8 @@
 +    type: type,
 +    message: message,
 +  });
-+      useEffect(()
++
++  useEffect(()
 ```
 
 #### Alert (task/31)
@@ -1982,7 +2118,8 @@
 +
 +  const [isShown, setIsShown] = useState(isDefaultShown);
 +  const toggleIsShown = () => setIsShown(!isShown);
-+      useEffect(() =>
++
++  useEffect(() =>
 ```
 
 #### useHash (task/32)
@@ -1992,7 +2129,8 @@
 +const useHash = () => {
 +
 +  const [hash, setHash] = useState(window.location.hash.substr(1));
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handler = () => setHash(window.location.hash.sub
 ```
 
@@ -2003,7 +2141,8 @@
 +const useHash = () => {
 +
 +  const [hash, setHash] = useState('');
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const { pathname, hash } = window.location;
 +    const uri = `${pathname}${
 ```
@@ -2015,7 +2154,8 @@
 +const useHash = () => {
 +
 +  const [hash, setHash] = useState<string | null>(null);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    setHash(window.location.hash);
 +    window.addEventListener('hashchange',
 ```
@@ -2051,7 +2191,8 @@
 +
 +  const [state, setState] = useState(initialState);
 +  const [show, setShow] = useState(condition);
-+      const action = useCallback(() => {
++
++  const action = useCallback(() => {
 +    setShow(true);
 ```
 
@@ -2076,7 +2217,8 @@
 +
 +  const [value, setValue] = useState(initialState);
 +  const [delayedValue, setDelayedValue] = useState(initialState);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const timeout =
 ```
 
@@ -2088,8 +2230,10 @@
 +
 +  const [state, setState] = useState(initialState);
 +  const isReady = useRef(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (!isReady.current && condition) {
++     
 ```
 
 #### useDelayedState (task/33)
@@ -2100,7 +2244,8 @@
 +
 +  const [state, setState] = useState(initialState);
 +  const [delayedState, setDelayedState] = useState(initialState);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const timer =
 ```
 
@@ -2112,7 +2257,8 @@
 +
 +  const [searchParams, setSearchParams] = useState([]);
 +  const [searchParam, setSearchParam] = useState(param);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const { search
 ```
 
@@ -2128,7 +2274,8 @@
 +    const params = new URLSearchParams(search);
 +    return params.get(param);
 +};
-+    const useParams =
++
++const useParams =
 ```
 
 #### useSearchParam (task/34)
@@ -2139,7 +2286,8 @@
 +
 +    return useMemo(() => queryString.parse(param), [param]);
 +};
-+    const useSearchParamValue = param => {
++
++const useSearchParamValue = param => {
 +    const parsed = useSearchParam(param);
 +    return useMemo
 ```
@@ -2167,7 +2315,8 @@
 +  const searchParams = new URLSearchParams(location.search);
 +  return searchParams.get(param);
 +};
-+    const useQuery
++
++const useQuery
 ```
 
 #### useUpdate (task/35)
@@ -2180,6 +2329,7 @@
 +  const forceUpdate = useCallback(() => setUpdate(v => !v), []);
 +  return [update, forceUpdate];
 +};
++
 ```
 
 #### useUpdate (task/35)
@@ -2228,7 +2378,8 @@
 +    content: '',
 +    isUpdate: false,
 +  });
-+      const onChange = (e:
++
++  const onChange = (e:
 ```
 
 #### Select (task/36)
@@ -2240,7 +2391,8 @@
 +  const handleChange = (value) => {
 +    onValueChange(value);
 +  };
-+      return (
++
++  return (
 +    <SelectBase
 +      {...rest}
 +      name={rest.name}
@@ -2256,7 +2408,8 @@
 +  const handleChange = value => {
 +    onValueChange(value);
 +  };
-+      return (
++
++  return (
 +    <SelectComp
 +      {...rest}
 +      values={values}
@@ -2270,7 +2423,8 @@
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +
 +  const [valuesArray, setValuesArray] = useState([]);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (Array.isArray(values)) {
 +      setValuesArray(values);
 +    }
@@ -2285,7 +2439,8 @@
 +  const classes = useStyles()
 +  const theme = useTheme()
 +  const [open, setOpen] = useState(false)
-+      const openMenu = () => {
++
++  const openMenu = () => {
 +    setOpen(true)
 ```
 
@@ -2297,9 +2452,11 @@
 +
 +  const [isOpen, setIsOpen] = useState(false);
 +  const ref = useRef();
-+      const handleToggle = () => {
++
++  const handleToggle = () => {
 +    setIsOpen(!isOpen);
 +  };
++
 ```
 
 #### LimitedWordTextarea (task/37)
@@ -2310,8 +2467,10 @@
 +
 +  const [errors, setErrors] = useState([]);
 +  const ref = useRef();
-+      const onChange = (e) => {
++
++  const onChange = (e) => {
 +    const newValue = e.target.value;
++   
 ```
 
 #### LimitedWordTextarea (task/37)
@@ -2322,7 +2481,8 @@
 +
 +  const [warning, setWarning] = useState(false);
 +  const [text, setText] = useState(value);
-+      const handleChange = (e) => {
++
++  const handleChange = (e) => {
 +    const { value } = e
 ```
 
@@ -2348,7 +2508,8 @@
 +
 +  const [text, setText] = useState(value);
 +  const [isOver, setIsOver] = useState(false);
-+      const handleChange = (e) => {
++
++  const handleChange = (e) => {
 +    setText(e
 ```
 
@@ -2377,7 +2538,8 @@
 +const useOnWindowScroll = callback => {
 +
 +	const [scrollTop, setScrollTop] = useState(0);
-+    	useEffect(() => {
++
++	useEffect(() => {
 +		const onScroll = () => {
 +			const scrollHeight = document.documentElement.scroll
 ```
@@ -2448,7 +2610,8 @@
 +      callback();
 +    }
 +  };
-+      useEffect(() =>
++
++  useEffect(() =>
 ```
 
 #### useClickInside (task/39)
@@ -2462,7 +2625,8 @@
 +            callback();
 +        }
 +    };
-+        useEffect(() => {
++
++    useEffect(() => {
 ```
 
 #### useClickInside (task/39)
@@ -2476,7 +2640,8 @@
 +      callback();
 +    }
 +  };
-+      useEffect(() =>
++
++  useEffect(() =>
 ```
 
 #### useClickInside (task/39)
@@ -2490,7 +2655,8 @@
 +      callback();
 +    }
 +  };
-+      useEffect(() => {
++
++  useEffect(() => {
 ```
 
 #### useClickInside (task/39)
@@ -2504,7 +2670,8 @@
 +            callback()
 +        }
 +    }
-+        useEffect(() =>
++
++    useEffect(() =>
 ```
 
 #### useSSR (task/40)
@@ -2517,8 +2684,10 @@
 +  window.document &&
 +  window.document.createElement
 +);
-+    const USE_DOM = isDOMavailable && IS_BROWSER;
-+    const shared
++
++const USE_DOM = isDOMavailable && IS_BROWSER;
++
++const shared
 ```
 
 #### useSSR (task/40)
@@ -2531,7 +2700,8 @@
 +  window.document &&
 +  window.document.createElement
 +);
-+    /**
++
++/**
 + * DESIGN NOTES
 + *
 + * The following is a description of the algorithm
@@ -2543,7 +2713,8 @@
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
 +typeof window !== 'undefined' && window.document && window.document.createElement);
-+    const ReactDOMServer = {
++
++const ReactDOMServer = {
 +  renderToString: (element: React.ReactElement<any>) => {
 ```
 
@@ -2557,7 +2728,8 @@
 +  window.document &&
 +  window.document.createElement
 +);
-+    const dom = {
++
++const dom = {
 +  isReal: isDOMavailable,
 +  isTest: false
 ```
@@ -2568,8 +2740,10 @@
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
 +typeof window !== 'undefined' && window.document && window.document.createElement);
-+    module.exports = isDOMavailable;
-+    },{}],21:[function(require,module,exports){
++
++module.exports = isDOMavailable;
++
++},{}],21:[function(require,module,exports){
 ```
 
 #### LimitedTextarea (task/41)
@@ -2594,6 +2768,7 @@
 +  return (
 +    <textarea
 +      className="limited-textarea"
++     
 ```
 
 #### LimitedTextarea (task/41)
@@ -2604,7 +2779,8 @@
 +
 +  const [count, setCount] = useState(value.length);
 +  const [valueSaved, setValueSaved] = useState(value);
-+      const handleChange = e => {
++
++  const handleChange = e => {
 +    const text
 ```
 
@@ -2627,7 +2803,8 @@
 +
 +  const [text, setText] = useState(value);
 +  const [truncated, setTruncated] = useState(false);
-+      const onChange = (e) => {
++
++  const onChange = (e) => {
 +    setText
 ```
 
@@ -2638,7 +2815,8 @@
 +const useComponentDidMount = onMountHandler => {
 +
 +  const mounted = useRef(false);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (!mounted.current) {
 +      mounted.current = true;
 +    } else {
@@ -2671,9 +2849,11 @@
 +      onMountHandler();
 +    }, []);
 +  };
-+      return useOnMount;
++
++  return useOnMount;
 +};
-+    export default useComponentDidMount
++
++export default useComponentDidMount
 ```
 
 #### useComponentDidMount (task/42)
@@ -2688,7 +2868,8 @@
 +    }
 +  }, []);
 +};
-+    export default useComponentDidMount;
++
++export default useComponentDidMount;
 ```
 
 #### useComponentDidMount (task/42)
@@ -2701,7 +2882,8 @@
 +    onMountHandler()
 +  }, [])
 +}
-+    export default useComponentDidMount
++
++export default useComponentDidMount
 ```
 
 #### FileDrop (task/43)
@@ -2714,7 +2896,8 @@
 +    onDrop,
 +    accept: "image/*",
 +  });
-+      return (
++
++  return (
 +    <div {...get
 ```
 
@@ -2725,7 +2908,8 @@
 +const FileDrop = ({ onDrop }) => {
 +
 +  const drop = useRef(null);
-+      const handleDrop = (e) => {
++
++  const handleDrop = (e) => {
 +    e.preventDefault();
 +    e.stopPropagation();
 +    onDrop(e.dataTransfer.files
@@ -2751,10 +2935,12 @@
 +const FileDrop = ({ onDrop }) => {
 +
 +  const fileRef = useRef(null);
-+      const onDragOver = (e) => {
++
++  const onDragOver = (e) => {
 +    e.preventDefault();
 +  };
-+      const onDropFile = (e) => {
++
++  const onDropFile = (e) => {
 +    e
 ```
 
@@ -2767,7 +2953,8 @@
 +  const classes = useStyles();
 +  const [file, setFile] = useState();
 +  const [dragOver, setDragOver] = useState(false);
-+      const handleDrop = (e)
++
++  const handleDrop = (e)
 ```
 
 #### TreeView (task/44)
@@ -2864,7 +3051,8 @@
 +  const [value, setValue] = useState(
 +    JSON.parse(window.localStorage.getItem(name)) || defaultValue
 +  );
-+      const setValueToLocalStorage = useCallback(() =>
++
++  const setValueToLocalStorage = useCallback(() =>
 ```
 
 #### usePersistedState (task/45)
@@ -2903,7 +3091,8 @@
 +    width: undefined,
 +    height: undefined,
 +  });
-+      useEffect(() => {
++
++  useEffect(() => {
 +    function handleResize() {
 +      set
 ```
@@ -2915,7 +3104,8 @@
 +const useWindowSize = () => {
 +
 +  const [size, setSize] = useState(window.innerWidth);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handleResize = () => {
 +      setSize(window.innerWidth);
 +    };
@@ -2931,7 +3121,8 @@
 +    width: undefined,
 +    height: undefined,
 +  });
-+      useEffect(() => {
++
++  useEffect(() => {
 +    function handleResize() {
 +      set
 ```
@@ -2946,7 +3137,8 @@
 +    width: window.innerWidth,
 +    height: window.innerHeight,
 +  });
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handleResize =
 ```
 
@@ -2960,7 +3152,8 @@
 +    width: window.innerWidth,
 +    height: window.innerHeight,
 +  });
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const onResize =
 ```
 
@@ -2976,7 +3169,8 @@
 +    },
 +    [onValueChange]
 +  );
-+      return <input value={value
++
++  return <input value={value
 ```
 
 #### ControlledInput (task/47)
@@ -2988,8 +3182,10 @@
 +  const handleChange = e => {
 +    onValueChange(e.target.value);
 +  };
-+      return <input value={value} onChange={handleChange} {...rest} />;
++
++  return <input value={value} onChange={handleChange} {...rest} />;
 +};
++
 ```
 
 #### ControlledInput (task/47)
@@ -2999,10 +3195,12 @@
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +
 +  const [internalValue, setInternalValue] = useState(value);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    setInternalValue(value);
 +  }, [value]);
-+      const onChange = event => {
++
++  const onChange = event => {
 ```
 
 #### ControlledInput (task/47)
@@ -3015,7 +3213,8 @@
 +    const { target: { value } } = event;
 +    onValueChange(value);
 +  };
-+      return (
++
++  return (
 +    <input value={value} onChange={on
 ```
 
@@ -3050,7 +3249,8 @@
 +  const classes = useStyles();
 +  const [page, setPage] = useState(0);
 +  const [rowsPerPage, setRowsPerPage] = useState(5);
-+      const handleChange
++
++  const handleChange
 ```
 
 #### DataTable (task/48)
@@ -3067,6 +3267,7 @@
 +      },
 +      {
 +        Header: 'Age',
++       
 ```
 
 #### DataTable (task/48)
@@ -3098,6 +3299,7 @@
 +      },
 +      {
 +        Header: 'Stock',
++       
 ```
 
 #### useComponentWillUnmount (task/49)
@@ -3138,7 +3340,8 @@
 +    };
 +  }, []);
 +};
-+    export default useComponentWillUnmount;
++
++export default useComponentWillUnmount;
 ```
 
 #### useComponentWillUnmount (task/49)
@@ -3150,8 +3353,10 @@
 +  const {
 +    current: { onUnmount = () => {} }
 +  } = React.useRef(onUnmountHandler);
-+      React.useEffect(() => {
++
++  React.useEffect(() => {
 +    return () => {
++     
 ```
 
 #### useComponentWillUnmount (task/49)
@@ -3166,7 +3371,8 @@
 +    }
 +  }, [])
 +}
-+    export default useComponentWillUnmount
++
++export default useComponentWillUnmount
 ```
 
 #### Tabs (task/50)
@@ -3180,7 +3386,8 @@
 +const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 +
 +  const [activeIndex, setActiveIndex] = useState(defaultIndex);
-+      const _onTabClick = index => {
++
++  const _onTabClick = index => {
 +    setActiveIndex(index);
 +    onTabClick && onTabClick(index);
 ```
@@ -3196,7 +3403,8 @@
 +const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 +
 +  const [currentIndex, setCurrentIndex] = useState(defaultIndex);
-+      const getTabItems = () => {
++
++  const getTabItems = () => {
 +    return React.Children.map(children, (child, index) => {
 +      return
 ```
@@ -3212,7 +3420,8 @@
 +const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 +
 +  const [activeIndex, setActiveIndex] = useState(defaultIndex);
-+      const handleTabClick = index => {
++
++  const handleTabClick = index => {
 +    setActiveIndex(index);
 +    onTabClick && onTabClick(index);
 ```
@@ -3228,11 +3437,14 @@
 +const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 +
 +  const [active, setActive] = useState(defaultIndex);
-+      const onClick = index => {
++
++  const onClick = index => {
 +    setActive(index);
 +    onTabClick(index);
 +  };
-+      return (
++
++  return (
++   
 ```
 
 #### Tabs (task/50)
@@ -3246,10 +3458,12 @@
 +const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {
 +
 +  const [current, setCurrent] = useState(defaultIndex);
-+      const handleTabClick = index => {
++
++  const handleTabClick = index => {
 +    setCurrent(index);
 +    onTabClick && onTabClick(index);
 +  };
++
 ```
 
 #### useNavigatorOnLine (task/51)
@@ -3302,7 +3516,8 @@
 +  }
 +  return false;
 +};
-+    export default function Online
++
++export default function Online
 ```
 
 #### useNavigatorOnLine (task/51)
@@ -3313,7 +3528,8 @@
 + {
 +  return true;
 +};
-+    export const getData = (params: any) => {
++
++export const getData = (params: any) => {
 +  return new Promise((resolve, reject) => {
 +    setTimeout(() => {
 +      const list = JSON.
@@ -3326,10 +3542,12 @@
 +const PasswordRevealer = ({ value }) => {
 +
 +  const [showPassword, setShowPassword] = useState(false);
-+      const handleClick = () => {
++
++  const handleClick = () => {
 +    setShowPassword(!showPassword);
 +  };
-+      return (
++
++  return (
 +    <div>
 ```
 
@@ -3340,7 +3558,8 @@
 +const PasswordRevealer = ({ value }) => {
 +
 +  const [show, setShow] = useState(false);
-+      return (
++
++  return (
 +    <div className="password-revealer">
 +      <input
 +        type={show ? "text" : "password"}
@@ -3353,7 +3572,8 @@
 +const PasswordRevealer = ({ value }) => {
 +
 +  const [reveal, setReveal] = useState(false);
-+      return (
++
++  return (
 +    <div>
 +      <TextField
 +        id="standard-password-input"
@@ -3367,7 +3587,8 @@
 +const PasswordRevealer = ({ value }) => {
 +
 +  const [showPassword, setShowPassword] = useState(false);
-+      const handleClick = (e) => {
++
++  const handleClick = (e) => {
 +    e.preventDefault();
 +    setShowPassword(!showPassword);
 +  };
@@ -3381,7 +3602,8 @@
 +
 +    const [show, setShow] = useState(false);
 +    const onClick = () => setShow(!show);
-+        return (
++
++    return (
 +        <div className="password-revealer">
 +            <div
 ```
@@ -3416,7 +3638,8 @@
 +  const classNames = marked ? 'star marked' : 'star';
 +  return <div className={classNames}>{starId}</div>;
 +};
-+    export default Star;
++
++export default Star;
 ```
 
 #### StarRating (task/53)
@@ -3427,7 +3650,8 @@
 +
 +  const { onMarked, onUnmarked } = useMarkedCallback(starId);
 +  const isMarked = marked;
-+      return (
++
++  return (
 +    <div className="star" onClick={isMarked
 ```
 
@@ -3451,11 +3675,13 @@
 +  const didUpdate = useCallback(() => {
 +    callback();
 +  }, [callback]);
-+      if (condition) {
++
++  if (condition) {
 +    useEffect(didUpdate, [condition]);
 +  }
 +};
-+    export default
++
++export default
 ```
 
 #### useComponentDidUpdate (task/54)
@@ -3483,10 +3709,12 @@
 +    prevProps: null,
 +    prevState: null,
 +  });
-+      if (condition) {
++
++  if (condition) {
 +    callback();
 +  }
-+      useEffect(() => {
++
++  useEffect(() => {
 ```
 
 #### useComponentDidUpdate (task/54)
@@ -3500,6 +3728,7 @@
 +      callback(prevProps, prevState);
 +    }
 +  };
++
 ```
 
 #### useComponentDidUpdate (task/54)
@@ -3510,7 +3739,8 @@
 +
 +  const prevProps = useRef(props);
 +  const prevState = useRef(state);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (condition(prevProps.current, prevState.current))
 ```
 
@@ -3521,8 +3751,11 @@
 +const Toggle = ({ defaultToggled = false }) => {
 +
 +  const [isToggled, setIsToggled] = useState(defaultToggled);
-+      const toggle = () => setIsToggled(!isToggled);
-+      return (
++
++  const toggle = () => setIsToggled(!isToggled);
++
++  return (
++   
 ```
 
 #### Toggle (task/55)
@@ -3532,10 +3765,12 @@
 +const Toggle = ({ defaultToggled = false }) => {
 +
 +  const [toggled, setToggled] = useState(defaultToggled);
-+      const handleClick = () => {
++
++  const handleClick = () => {
 +    setToggled(!toggled);
 +  };
-+      return
++
++  return
 ```
 
 #### Toggle (task/55)
@@ -3545,8 +3780,10 @@
 +const Toggle = ({ defaultToggled = false }) => {
 +
 +  const [toggled, setToggled] = useState(defaultToggled);
-+      const toggle = () => setToggled(!toggled);
-+      return (
++
++  const toggle = () => setToggled(!toggled);
++
++  return (
 +    <Container onClick
 ```
 
@@ -3557,10 +3794,12 @@
 +const Toggle = ({ defaultToggled = false }) => {
 +
 +  const [toggled, setToggled] = useState(defaultToggled);
-+      const handleClick = () => {
++
++  const handleClick = () => {
 +    setToggled(!toggled);
 +  };
-+      return
++
++  return
 ```
 
 #### Toggle (task/55)
@@ -3570,7 +3809,8 @@
 +const Toggle = ({ defaultToggled = false }) => {
 +
 +  const [isToggled, setIsToggled] = useState(defaultToggled);
-+      const handleToggle = () => {
++
++  const handleToggle = () => {
 +    setIsToggled(!isToggled);
 ```
 
@@ -3649,7 +3889,8 @@
 +  el.addEventListener(type, handler);
 +  return () => el.removeEventListener(type, handler);
 +};
-+    const useEffect = (callback, dependencies) => {
++
++const useEffect = (callback, dependencies) => {
 +  useLayoutEffect(callback
 ```
 
@@ -3675,7 +3916,8 @@
 +    el.addEventListener(type, handler);
 +    return () => el.removeEventListener(type, handler);
 +};
-+    class ProjectRow extends Component {
++
++class ProjectRow extends Component {
 +    constructor(props) {
 +        super(
 ```
@@ -3689,7 +3931,8 @@
 +  el.addEventListener(type, handler);
 +  return () => el.removeEventListener(type, handler);
 +};
-+    const preventHtml5Dnd = (event) => {
++
++const preventHtml5Dnd = (event) => {
 +  event.pre
 ```
 
@@ -3703,7 +3946,8 @@
 +  el.addEventListener(type, listener);
 +  return () => el.removeEventListener(type, listener);
 +};
-+    export default useEventListener
++
++export default useEventListener
 ```
 
 #### Callto (task/58)
@@ -3744,7 +3988,8 @@
 +    </a>
 +  );
 +};
-+    export default Call
++
++export default Call
 ```
 
 #### Callto (task/58)
@@ -3759,7 +4004,8 @@
 +    </Link>
 +  );
 +};
-+    export default
++
++export default
 ```
 
 #### Callto (task/58)
@@ -3774,6 +4020,7 @@
 +      target="_blank"
 +      rel="noopener noreferrer"
 +      className="callto"
++   
 ```
 
 #### useOnWindowResize (task/59)
@@ -3799,8 +4046,10 @@
 +  const windowResizeEvent = () => {
 +    callback();
 +  };
-+      window.addEventListener('resize', windowResizeEvent);
-+      return () => {
++
++  window.addEventListener('resize', windowResizeEvent);
++
++  return () => {
 +    window.removeEventListener('res
 ```
 
@@ -3814,7 +4063,8 @@
 +		const { innerWidth: width, innerHeight: height } = window;
 +		callback({ width, height });
 +	};
-+    	useEffect(() => {
++
++	useEffect(() => {
 ```
 
 #### useOnWindowResize (task/59)
@@ -3828,6 +4078,7 @@
 +		const node = window;
 +		const win = node.window;
 +		const doc = node.document;
++		
 ```
 
 #### useOnWindowResize (task/59)
@@ -3849,7 +4100,8 @@
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +
 +  const [value, setValue] = useState(defaultValue);
-+      const handleChange = e => {
++
++  const handleChange = e => {
 +    setValue(e.target.value);
 +    onValueChange(e.target.value);
 ```
@@ -3861,7 +4113,8 @@
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +
 +  const [value, setValue] = useState(defaultValue);
-+      const onChange = (event) => {
++
++  const onChange = (event) => {
 +    setValue(event.target.value);
 +    onValueChange(event.target.value
 ```
@@ -3873,7 +4126,8 @@
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +
 +  const [value, setValue] = useState(defaultValue);
-+      const handleChange = (e) => {
++
++  const handleChange = (e) => {
 +    const { value } = e.target;
 +    setValue(value);
 +    onValue
@@ -3886,7 +4140,8 @@
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +
 +  const [value, setValue] = useState(defaultValue);
-+      const handleChange = e => {
++
++  const handleChange = e => {
 +    setValue(e.target.value);
 +    onValueChange(e.target.value);
 ```
@@ -3898,7 +4153,8 @@
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +
 +  const [value, setValue] = useState(defaultValue)
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (value !== defaultValue) {
 +      setValue(defaultValue)
 +    }
@@ -3985,7 +4241,8 @@
 +
 +  const [ready, setReady] = useState(false)
 +  const [failed, setFailed] = useState(false)
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (!ready && !failed) {
 ```
 
@@ -3999,7 +4256,8 @@
 +  const script = document.createElement('script');
 +  script.async = true;
 +  script.src = src;
-+      // Then append it to the DOM.
++
++  // Then append it to the DOM.
 ```
 
 #### useScript (task/62)
@@ -4052,7 +4310,8 @@
 +    return () => cancelAnimationFrame(handle);
 +  }, [callback]);
 +};
-+    const PostDetails = ({ match }) => {
++
++const PostDetails = ({ match }) => {
 ```
 
 #### useRequestAnimationFrame (task/63)
@@ -4064,7 +4323,8 @@
 +    const handle = requestAnimationFrame(callback);
 +    return () => cancelAnimationFrame(handle);
 +};
-+    export const toPercent = (min, max, value) => {
++
++export const toPercent = (min, max, value) => {
 +    return ((value - min) /
 ```
 
@@ -4091,6 +4351,7 @@
 +
 +  const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 +  const raf = requestAnimationFrame(callback);
++ 
 ```
 
 #### useRequestAnimationFrame (task/63)
@@ -4115,7 +4376,8 @@
 +  const [value, setValue] = useState(initialValue);
 +  return [value, setValue];
 +};
-+    const useToggle = initialValue => {
++
++const useToggle = initialValue => {
 +  const [value, setValue] = use
 ```
 
@@ -4128,7 +4390,8 @@
 +    const [state, setState] = useState(initialValue);
 +    return [state, setState];
 +};
-+    export default useSet;
++
++export default useSet;
 ```
 
 #### useSet (task/64)
@@ -4140,7 +4403,8 @@
 +  const [state, setState] = useState(initialValue);
 +  return [state, setState];
 +};
-+    export default useSet;
++
++export default useSet;
 ```
 
 #### useSet (task/64)
@@ -4152,7 +4416,8 @@
 +  const [data, setData] = useState(initialValue);
 +  return [data, setData];
 +};
-+    export const useAuth = () => {
++
++export const useAuth = () => {
 +  const [data, setData] = useState
 ```
 
@@ -4165,7 +4430,8 @@
 +  const [state, setState] = useState(initialValue);
 +  return [state, setState];
 +};
-+    const reducer = (state, action) => {
++
++const reducer = (state, action) => {
 +  switch (action.type) {
 ```
 
@@ -4178,7 +4444,8 @@
 +  const [value, setValue] = useState(
 +    localStorage.getItem(keyName) || defaultValue
 +  );
-+      const setValueToLocalStorage = value => {
++
++  const setValueToLocalStorage = value => {
 +    localStorage.setItem
 ```
 
@@ -4189,9 +4456,11 @@
 +const useLocalStorage = (keyName, defaultValue) => {
 +
 +  const [value, setValue] = useState(defaultValue);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const storageValue = localStorage.getItem(keyName);
 +    if (storageValue) {
++     
 ```
 
 #### useLocalStorage (task/65)
@@ -4238,7 +4507,8 @@
 +
 +  const [height, setHeight] = useState(null);
 +  const node = useRef();
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (!collapsed) {
 +      setHeight(node.current.scroll
 ```
@@ -4252,7 +4522,8 @@
 +  const classes = useStyles();
 +  const theme = useTheme();
 +  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-+      const [open, setOpen] = useState
++
++  const [open, setOpen] = useState
 ```
 
 #### Collapse (task/66)
@@ -4262,12 +4533,15 @@
 +const Collapse = ({ collapsed, children }) => {
 +
 +  const [open, setOpen] = useState(false);
-+      const handleClick = () => {
++
++  const handleClick = () => {
 +    setOpen(!open);
 +  };
-+      return (
++
++  return (
 +    <>
 +      <div
++       
 ```
 
 #### Collapse (task/66)
@@ -4279,7 +4553,8 @@
 +  const classes = useStyles();
 +  const theme = useTheme();
 +  const [open, setOpen] = React.useState(false);
-+      const handleClick = () => {
++
++  const handleClick = () => {
 +    setOpen(!
 ```
 
@@ -4295,7 +4570,8 @@
 +    padding: '0',
 +    transition: 'height .4s ease',
 +  };
-+      const expandedSty
++
++  const expandedSty
 ```
 
 #### RippleButton (task/67)
@@ -4320,7 +4596,8 @@
 +  const [hover, setHover] = useState(false);
 +  const onMouseEnter = () => setHover(true);
 +  const onMouseLeave = () => setHover(false);
-+      return
++
++  return
 ```
 
 #### RippleButton (task/67)
@@ -4344,7 +4621,8 @@
 +
 +  const [startRipple, setStartRipple] = useState(false);
 +  const rippleRef = useRef(null);
-+      const classes = classNames({
++
++  const classes = classNames({
 +    'whitespace-no-wrap text
 ```
 
@@ -4355,11 +4633,13 @@
 +const RippleButton = ({ children, onClick }) => {
 +
 +  const [isPressed, setIsPressed] = useState(false);
-+      const onButtonPress = () => {
++
++  const onButtonPress = () => {
 +    setIsPressed(true);
 +    onClick();
 +  };
-+      const
++
++  const
 ```
 
 #### useMutationObserver (task/68)
@@ -4384,6 +4664,7 @@
 +  const observer = new MutationObserver(() => {
 +    const array = Array.from(element?.children ?? []);
 +    element?.children = array;
++ 
 ```
 
 #### useMutationObserver (task/68)
@@ -4394,7 +4675,8 @@
 +): [boolean, Function] => {
 +  const isSupported = typeof MutationObserver !== 'undefined';
 +  const isMutated = false;
-+      if (isSupported) {
++
++  if (isSupported) {
 +    const callback =
 ```
 
@@ -4409,7 +4691,8 @@
 +      scrollToRef(ref)
 +    }
 +  })
-+      return mutation
++
++  return mutation
 ```
 
 #### useMutationObserver (task/68)
@@ -4421,7 +4704,8 @@
 +  const handleRefresh = () => {
 +    callback(element);
 +  };
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const observer = new MutationObserver(handleRefresh);
 ```
 
@@ -4436,6 +4720,7 @@
 +      {children}
 +      <span className="tooltiptext">{text}</span>
 +    </div>
++ 
 ```
 
 #### Tooltip (task/69)
@@ -4449,6 +4734,7 @@
 +      {children}
 +      <span className="tooltiptext">{text}</span>
 +    </div>
++ 
 ```
 
 #### Tooltip (task/69)
@@ -4479,7 +4765,8 @@
 +    </Wrapper>
 +  );
 +};
-+    export default Tooltip;
++
++export default Tooltip;
 ```
 
 #### Tooltip (task/69)
@@ -4504,11 +4791,13 @@
 +const useTimeout = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useTimeout (task/70)
@@ -4520,7 +4809,8 @@
 +  const timer = setTimeout(callback, delay);
 +  return () => clearTimeout(timer);
 +};
-+    const useFocus = (ref, onFocus) => {
++
++const useFocus = (ref, onFocus) => {
 +  const handleFocus = useCallback(() =>
 ```
 
@@ -4531,11 +4821,13 @@
 +const useTimeout = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useTimeout (task/70)
@@ -4545,11 +4837,13 @@
 +const useTimeout = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useTimeout (task/70)
@@ -4559,11 +4853,13 @@
 +const useTimeout = (callback, delay) => {
 +
 +  const savedCallback = useRef();
-+      // Remember the latest callback.
++
++  // Remember the latest callback.
 +  useEffect(() => {
 +    savedCallback.current = callback;
 +  }, [callback]);
-+      // Set up the interval.
++
++  // Set up the interval.
 ```
 
 #### useError (task/71)
@@ -4576,7 +4872,8 @@
 +    console.log(err);
 +  }, [err]);
 +};
-+    export default useError;
++
++export default useError;
 ```
 
 #### useError (task/71)
@@ -4602,7 +4899,8 @@
 +  const [error, setError] = useState(err);
 +  return [error, setError];
 +};
-+    const useActiveUser = () => {
++
++const useActiveUser = () => {
 +  const [activeUser, setActiveUser] = use
 ```
 
@@ -4616,7 +4914,8 @@
 +    status: "",
 +    message: "",
 +  });
-+      useEffect(() => {
++
++  useEffect(() => {
 +    if (err) {
 +      setState({
 ```
@@ -4630,7 +4929,8 @@
 +  const [error, setError] = useState(err);
 +  return [error, setError];
 +};
-+    export default useError;
++
++export default useError;
 ```
 
 #### useCopyToClipboard (task/72)
@@ -4653,7 +4953,8 @@
 +const useCopyToClipboard = text => {
 +
 +	const [copied, setCopied] = useState(false);
-+    	const copyToClipboard = () => {
++
++	const copyToClipboard = () => {
 +		const textArea = document.createElement('textarea');
 +		textArea
 ```
@@ -4677,7 +4978,8 @@
 +const useCopyToClipboard = text => {
 +
 +  const [isCopied, setIsCopied] = useState(false);
-+      const handleCopy = () => {
++
++  const handleCopy = () => {
 +    navigator.clipboard.writeText(text);
 +    setIsCopied(true
 ```
@@ -4689,7 +4991,8 @@
 +const useCopyToClipboard = text => {
 +
 +  const [isCopied, setIsCopied] = useState(false);
-+      const copyToClipboard = () => {
++
++  const copyToClipboard = () => {
 +    copy(text);
 +    setIsCopied(true);
 +    set
@@ -4729,8 +5032,10 @@
 +const useMap = initialValue => {
 +
 +  const [map, setMap] = useState(initialValue);
-+      const getMap = () => map;
-+      const setMapValue = (key, value) => {
++
++  const getMap = () => map;
++
++  const setMapValue = (key, value) => {
 +    setMap({
 +      ...map
 ```
@@ -4757,7 +5062,8 @@
 +const useMap = initialValue => {
 +
 +  const [results, setResults] = useState(initialValue);
-+      const add = (...args) => {
++
++  const add = (...args) => {
 +    const key = args[0];
 +    if (key === undefined) {
 +      throw new
@@ -4772,7 +5078,8 @@
 +  const handleClick = useCallback(() => {
 +    window.open(text);
 +  }, [text]);
-+      return (
++
++  return (
 +    <Button size="small" variant="outlined" onClick={handleClick}
 ```
 
@@ -4830,9 +5137,11 @@
 +const useDebounce = (value, delay) => {
 +
 +    const [debouncedValue, setDebouncedValue] = useState(value);
-+        useEffect(() => {
++
++    useEffect(() => {
 +        const handler = setTimeout(() => {
 +            setDebouncedValue(value);
++       
 ```
 
 #### useDebounce (task/75)
@@ -4842,9 +5151,11 @@
 +const useDebounce = (value, delay) => {
 +
 +  const [debouncedValue, setDebouncedValue] = useState(value);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handler = setTimeout(() => {
 +      setDebouncedValue(value);
++   
 ```
 
 #### useDebounce (task/75)
@@ -4854,9 +5165,11 @@
 +const useDebounce = (value, delay) => {
 +
 +  const [debouncedValue, setDebouncedValue] = useState(value);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handler = setTimeout(() => {
 +      setDebouncedValue(value);
++   
 ```
 
 #### useDebounce (task/75)
@@ -4866,9 +5179,11 @@
 +const useDebounce = (value, delay) => {
 +
 +    const [debouncedValue, setDebouncedValue] = useState(value);
-+        useEffect(() => {
++
++    useEffect(() => {
 +        const handler = setTimeout(() => {
 +            setDebouncedValue(value);
++       
 ```
 
 #### useDebounce (task/75)
@@ -4878,9 +5193,11 @@
 +const useDebounce = (value, delay) => {
 +
 +  const [debouncedValue, setDebouncedValue] = useState(value);
-+      useEffect(() => {
++
++  useEffect(() => {
 +    const handler = setTimeout(() => {
 +      setDebouncedValue(value);
++   
 ```
 
 #### useFetch (task/76)
@@ -4892,7 +5209,8 @@
 +  const [data, setData] = useState(null);
 +  const [error, setError] = useState(null);
 +  const [loading, setLoading] = useState(false);
-+      useEffect
++
++  useEffect
 ```
 
 #### useFetch (task/76)
@@ -4904,7 +5222,8 @@
 +  const [data, setData] = useState(null);
 +  const [loading, setLoading] = useState(true);
 +  const [error, setError] = useState(null);
-+      useEffect
++
++  useEffect
 ```
 
 #### useFetch (task/76)
@@ -4916,7 +5235,8 @@
 +  const [data, setData] = useState(null);
 +  const [error, setError] = useState(null);
 +  const [loading, setLoading] = useState(false);
-+      useEffect
++
++  useEffect
 ```
 
 #### useFetch (task/76)
@@ -4928,6 +5248,8 @@
 +  const [response, setResponse] = useState(null);
 +  const [error, setError] = useState(null);
 +  const [isLoading, setIsLoading] = useState(false);
++
++ 
 ```
 
 #### useFetch (task/76)
@@ -4939,7 +5261,8 @@
 +  const [response, setResponse] = useState({})
 +  const [error, setError] = useState(null)
 +  const [isLoading, setIsLoading] = useState(false)
-+      use
++
++  use
 ```
 
 #### useOnGlobalEvent (task/77)
@@ -4966,8 +5289,10 @@
 +  if (useGlobalEventListeners[type]) {
 +    throw new Error(`The event ${type} is already being listened`);
 +  }
-+      const { once } = options || {};
-+      useEffect
++
++  const { once } = options || {};
++
++  useEffect
 ```
 
 #### useOnGlobalEvent (task/77)
@@ -4981,7 +5306,10 @@
 +      callback(e);
 +    }
 +  };
-+      window.addEventListener(type, handler, options);
++
++  window.addEventListener(type, handler, options);
++
++ 
 ```
 
 #### useOnGlobalEvent (task/77)

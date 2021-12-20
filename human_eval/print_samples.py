@@ -76,15 +76,15 @@ if __name__ == "__main__":
         completion = sample["completion"]
         problem = problems[task_id]
         prompt = problem["prompt"]
-        completion = sample["completion"].replace("\n\n", "\n    ")
-
-        try:
-            pos = completion.index("def ")
-            completion = completion[:pos]
-        except ValueError:
-            pass
-
-        completion = completion.rstrip()
+        # completion = sample["completion"].replace("\n\n", "\n    ")
+        #
+        # try:
+        #     pos = completion.index("def ")
+        #     completion = completion[:pos]
+        # except ValueError:
+        #     pass
+        #
+        # completion = completion.rstrip()
 
         if completion:
             if out_file == sys.stdout:
