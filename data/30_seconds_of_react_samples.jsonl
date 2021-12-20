@@ -1,385 +1,385 @@
-{"task_id":"task/1","completion":"\n\nfor ( let i = 0 ; i < R . length ; i ++ ) {\n\nif ( R [i] === fn) {\n\nR . splice (i, 1 );\n\nbreak ;\n\n}\n"}
-{"task_id":"task/1","completion":"\n\nconst unload = [ ' backgroundImage ' , ' backgroundSize ' , ' borderImageOutset ' , ' borderImageWidth ' , ' borderRadius ' , ' boxShadow ' , ' clip ' , ' direction ' , '"}
-{"task_id":"task/1","completion":" const unloadFunction = () => { if ( typeof fn === 'function' ) { fn () } else { if ( a . event . add ) { a . event . add ( a . el , 'unload' , unload"}
-{"task_id":"task/1","completion":" let previousReturnedObject; return function () { if (previousReturnedObject === undefined) { previousReturnedObject = this; } previousReturnedObject = undefined; fn.apply(this, arguments); }; }; const useReturn ="}
-{"task_id":"task/1","completion":" let { node, isImmediate } = useWithNode(fn); return node.useUnload() || isImmediate ? Unload(node) : fn(...arguments); };\n\nThis technique is also useful for code that"}
-{"task_id":"task/2","completion":" ref.use(callback) .click(callback) .click(callback) .click(callback) .click(callback) .click(callback) .click(callback) .click(callback) .click(callback) .click(callback"}
-{"task_id":"task/2","completion":"\n\nlet _ref = ref;\n\nfunction _callback () {\n\ncallback.call(_ref);\n\n_ref = null;\n\n}\n\nref.addEventListener('click', _callback);\n\n};\n"}
-{"task_id":"task/2","completion":"\n\nconst el = document.querySelector('.grid-col-axis-page');\n\nconst col = el.querySelector('.grid-col-axis-page-column');\n\nconst parent = col.parent"}
-{"task_id":"task/2","completion":"\n\nlet start = Date.now();\n\nref.on(\"click\", () => {\n\nlet stop = Date.now();\n\ncallback && callback();\n\ncallback = null;\n\nlet diff = stop - start;"}
-{"task_id":"task/2","completion":"\n\nlet previousButton = ref.querySelector('.material-ui-button-primary-outer');\n\nif (previousButton.closest('[class*=\"js-use-click-outside\"]').length >"}
-{"task_id":"task/3","completion":"\n\nreturn new Promise((resolve, reject) => {\n\nconst sessionStorage = window.sessionStorage ||\n\nwindow.localStorage;\n\nif (sessionStorage.setItem) {\n\nsessionStorage.setItem("}
-{"task_id":"task/3","completion":"\n\nreturn new Promise((resolve, reject) => {\n\nsessionStorage.setItem(keyName, value)\n\n.then(() => {\n\nif (value !== null) {\n\nresolve(value"}
-{"task_id":"task/3","completion":" let _key = keyName; if (typeof localStorage[_key] === 'undefined') { localStorage[_key] = defaultValue; } return localStorage[_key]; }; const getItem = keyName => {"}
-{"task_id":"task/3","completion":"\n\nconst storage = localStorage.getItem(keyName);\n\nif (!storage) {\n\nreturn defaultValue;\n\n}\n\nreturn JSON.parse(storage);\n\n};\n\nconst logSessionStorage = ("}
-{"task_id":"task/3","completion":"\n\nconst key = new Map()\n\nreturn sessionStorage.getItem(keyName) || (key.set(keyName, defaultValue) && key.get(keyName))\n\n}\n\nconst isServer = ()"}
-{"task_id":"task/4","completion":"\n\nconst s = document.querySelector('h1').textContent;\n\nreturn title === s ? '<h1>' + title + '</h1>' : null;\n\n};\n\nconst useH"}
-{"task_id":"task/4","completion":"\n\nconst {\n\nsite,\n\n} = makeApiUrl (title)\n\nconst titleAndSite = ` ${ site . title } / ${ title } `\n\nreturn titleAndSite\n\n}\n\nconst use"}
-{"task_id":"task/4","completion":"\n\nconst txt = useState(title);\n\nconst { isFirst } = useState(false);\n\nconst { count } = useState(0);\n\nconst {\n\nnext,\n\ndone,\n\n"}
-{"task_id":"task/4","completion":" if (title) { return < h1 className = {styles.header} > {title} < / h1 > ; } else { return < h1 className = {styles.header} > Loading < / h1 > ;"}
-{"task_id":"task/4","completion":"\n\nconst input = dom.get(`input.title`);\n\nconst placeholder = dom.get(`input.placeholder`);\n\ninput.value = title;\n\ninput.setAttribute('placeholder', placeholder"}
-{"task_id":"task/5","completion":" let once = false; return () => { if (once) { return; } once = true; callback(); when(); }; }; function addOne() { console.log(1); } const useEffectOncePromise = () => { let"}
-{"task_id":"task/5","completion":"\n\nconst memoizedCallback = memoize(callback);\n\nconst handleCalls = (previousState, ...nextArgs) => {\n\nif (typeof previousState === 'function') {\n\nconst call = previousState"}
-{"task_id":"task/5","completion":" const action = () => { callback(); }; return () => { if (when.fire()) { action(); } }; }; const oneTimeUse = useEffectOnce(() => { console.log('once') }, 0); oneTimeUse();"}
-{"task_id":"task/5","completion":"\n\nlet id;\n\nif (when) {\n\nid = setInterval(() => {\n\ncallback();\n\n}, 1000);\n\n} else {\n\ncallback();\n\n}\n\nreturn () => {"}
-{"task_id":"task/5","completion":"\n\nconst effect = useEffect(() => {\n\ncallback();\n\n}, when);\n\neffect.then(() => {\n\neffect = null;\n\n});\n\nreturn effect;\n\n};\n\n//"}
-{"task_id":"task/6","completion":" const { onClick } = this.props; return ( <div className=\"accordion-item\"> <div className=\"accordion-title\"> { label } </div> <div className=\"accordion-"}
-{"task_id":"task/6","completion":" const content = isCollapsed ? \"\" : children return ( <div className=\"accordion-item\"> <div className=\"accordion-item-heading\"> <h3 className=\"accordion-heading\">{label"}
-{"task_id":"task/6","completion":" const propTypes = { isCollapsed: PropTypes.bool.isRequired, label: PropTypes.string.isRequired, handleClick: PropTypes.func.isRequired, children: PropTypes.any.isRequired }; return ("}
-{"task_id":"task/6","completion":" return ( <li> <div className=\"panel panel-default\"> <div className=\"panel-heading\"> <h3 className=\"panel-title\">{label}</h3> </div> <div className=\"panel"}
-{"task_id":"task/6","completion":"\n\nconst className = isCollapsed ? \"expanded\" : \"collapsed\";\n\nreturn (\n\n<div className={className} onClick={() => handleClick(label)}>\n\n{children}\n"}
-{"task_id":"task/7","completion":" require ( ' use-isomorphic-effect ' ) ;\n\nuseEffect\n\nuseEffect is mostly the same as useEffect , except it adds a cleanup function to the effect if the value is not needed anymore.\n\nExample:\n"}
-{"task_id":"task/7","completion":" () => {\n\nconst register = (store) => {\n\nif (store.isomorphic) {\n\nconst {\n\n...customData,\n\n...defaultData\n\n} = useEffect(() => {\n\n"}
-{"task_id":"task/7","completion":" require ( ' use-isomorphic-effect ' ) ;\n\nimport { log } from ' ./util ' ;\n\nimport { bindActionCreators } from ' ./reducers ' ;\n\nimport { connect } from ' react"}
-{"task_id":"task/7","completion":" require ( ' use-isomorphic-effect ' )\n\nconst isomorphicEffect = useIsomorphicEffect (isomorphicEffect)\n\n// import { createStore } from 'redux'\n\n// const store = createStore(root"}
-{"task_id":"task/7","completion":" (() => import( ' isomorphic-fetch ' ));\n\nexport const mockAxios = () => {\n\nreturn {\n\nget: jest.fn(),\n\n};\n\n};\n\nconst initialState = {"}
-{"task_id":"task/8","completion":"\n\nconst [state, setState] = useState(initialState);\n\nreturn {\n\nset(state, value) {\n\nsetState(state, value);\n\n},\n\nget() {\n\nreturn state"}
-{"task_id":"task/8","completion":"\n\nconst [ value , setValue ] = useState ( initialState );\n\nreturn {\n\nget : () => value ,\n\nset : ( newValue ) => setValue ( newValue )\n\n};\n\n};\n"}
-{"task_id":"task/8","completion":" const { set, get } = call(store, initialState); return { ...initialState, [get] : get, [set] : set }; };\n\nAnd now we have one less action to build!\n\n// In the"}
-{"task_id":"task/8","completion":" return { ...initialState, [actionName] : initialState[actionName] } } const action = useReducer(useGetSet, initialState)\n\nKeep in mind that this is a solution for the simplest use case, but"}
-{"task_id":"task/8","completion":"\n\nconst { value } = initialState;\n\nreturn {\n\n[ Symbol . iterator ] : function * ( ) {\n\nlet { done , value } = useState ( false ) ;\n\nlet next = value;\n"}
-{"task_id":"task/9","completion":"\n\nlet interval = setInterval(() => {\n\ncallback();\n\nif (delay === 1000) {\n\nclearInterval(interval);\n\n}\n\n}, delay);\n\n};\n\nHere\u2019"}
-{"task_id":"task/9","completion":"\n\nconst id = setInterval(() => {\n\ncallback();\n\n}, delay);\n\nreturn id;\n\n};\n\n// ...\n\nfunction *startSearch(query) {\n\nconst [currentPage,"}
-{"task_id":"task/9","completion":"\n\nlet i = setInterval(() => {\n\ncallback();\n\nif (delay > 0) {\n\nlet time = new Date().getTime() - i;\n\ni = setInterval(() => {"}
-{"task_id":"task/9","completion":"\n\nif (delay <= 0) {\n\nreturn setInterval(callback, 0);\n\n}\n\nreturn new Promise(resolve => {\n\nclearInterval(intervalId);\n\ncallback();\n\nres"}
-{"task_id":"task/9","completion":"\n\nlet timer = setInterval(() => {\n\ncallback();\n\n}, delay);\n\nif (timer) {\n\ncallback();\n\n}\n\n};\n\n// Simulate an expensive operation\n\nuseInter"}
-{"task_id":"task/10","completion":"\n\nif (size) {\n\nreturn <Loader size={size} />;\n\n} else {\n\nreturn <Loader />;\n\n}\n\n};\n\nconst Loader = ({ loader }) => {\n\nreturn"}
-{"task_id":"task/10","completion":"\n\nconst { width, height } = size;\n\nconst options = {\n\ncanvas: {\n\nwidth,\n\nheight,\n\n},\n\n};\n\nreturn class extends React.Component {\n\nconstructor"}
-{"task_id":"task/10","completion":" const el = DOM.div( {class: 'loader'}, Loader.step() ); return el; }; return Loader; };\n\nTo use this component:\n\n<Loader />\n\nWe could use it with a component"}
-{"task_id":"task/10","completion":" const loader = createLoader (size); return { get : () => { return loader . load (); }, }; };\n\nNow we're ready to write our component's getInitialState and componentWillMount :\n\nclass App extends Component { state"}
-{"task_id":"task/10","completion":"\n\nconst { height, width } = size\n\nreturn (\n\n<div>\n\n<img src={require('../assets/img/s.png')} />\n\n<p>some text</p>\n\n"}
-{"task_id":"task/11","completion":" const show = () => { isVisible = true title = `Your mind is open` content = `This is what is needed to fix your problem.` footer = `The answer is in the reflection.` } const hide = ()"}
-{"task_id":"task/11","completion":" const closeHandler = () => { isVisible = false; } return ( <div className=\"modal\"> <div className=\"modal-content\"> <div className=\"modal-header\"> <button type=\"button\""}
-{"task_id":"task/11","completion":" const overlay = () => { const modal = document.createElement('div'); modal.classList.add('modal-box'); modal.classList.add('modal-overlay'); return modal; }; return"}
-{"task_id":"task/11","completion":" const showDialog = () => { isVisible = true; }; const hideDialog = () => { isVisible = false; }; const closeDialog = () => { onClose() }; return ( <> <header> <h1>"}
-{"task_id":"task/11","completion":" const open = () => { isVisible = true; }; const close = () => { isVisible = false; }; return ( <div className=\"modal\"> <div className=\"modal-header\"> <button onClick"}
-{"task_id":"task/12","completion":" return useRef(() => { const [prevValue, observer, oldValue] = useState([0]); const nextValue = ref.current.get(); if (nextValue === oldValue) { return; } const diff = nextValue"}
-{"task_id":"task/12","completion":"\n\nconst observer = new IntersectionObserver(\n\n(entries) => {\n\nconst [, _ref] = entries;\n\nif (!_ref) {\n\nreturn;\n\n}\n\nconst [,"}
-{"task_id":"task/12","completion":"\n\nconst target = ref.target;\n\nconst observer = new IntersectionObserver(\n\n(entries, observer) => {\n\nif (entries.length === 0) {\n\nreturn;\n\n}\n"}
-{"task_id":"task/12","completion":"\n\nconst observer = new IntersectionObserver(\n\n(entries) => {\n\nconst [, target] = entries;\n\n// Do stuff with the target element\n\n}\n\n);\n\nobserver.ob"}
-{"task_id":"task/12","completion":" let observer = new IntersectionObserver(intersectionHandler, options); let parent = ref.parent; while (parent && !parent.disconnect) { parent = parent.parent; } return !!observer; }; const onScroll ="}
-{"task_id":"task/13","completion":"\tvalue, \tmin, \tmax, \tstep, \torientation, \t... \tchildren }) => (\n\nconst min = value < min ? value : min;\n\nconst max = value > max"}
-{"task_id":"task/13","completion":"ids }) => ( <div> <SliderGroup size={[ids.length, 4]}> { [ids.map((id, i) => ( <Slider key={id} value={id} onChange={(id)"}
-{"task_id":"task/13","completion":"xtype }) => {\n\nconst Slider = ({ xtype }) => {\n\nconst slider = createElement ( xtype , {\n\nconst slider = createElement ( xtype , {\n\nvalue : 0 ,"}
-{"task_id":"task/13","completion":"xtype, start, change, end, min, max, value, xtype, start, change, end, min, max, value, ... }, ...) => ( < React.Fragment > < React.Fragment > <"}
-{"task_id":"task/13","completion":"xtype, min, max, value, step, dir, floating, show, animate, duration, callback, extraParams, ease, onStart, onChange, onEnd, onTick }) => {\n\nconst _this ="}
-{"task_id":"task/14","completion":" const { toggleOpen, toggleClose } = state.use; return { ...initialState, toggleOpen, toggleClose }; }; const toggleState = useToggler(undefined); useToggler(toggleState); // \ud83d\udcc4"}
-{"task_id":"task/14","completion":"\n\nlet toggler = useToggler(initialState)\n\nif (toggler) {\n\nconst [isOpen, setIsOpen] = useState(false)\n\nconst [closing, setCl"}
-{"task_id":"task/14","completion":"\n\nconst { isOpen, toggle, ...state } = state;\n\nconst { isOpen, toggle, ...restState } = restState;\n\nreturn { ...state, ...restState, isOpen, toggle };\n\n"}
-{"task_id":"task/14","completion":"\n\nconst [ show , setShow ] = useState ( false );\n\nconst [ hide , setHide ] = useState ( true );\n\nreturn {\n\nshow,\n\nhide,\n\nsetShow,\n\nset"}
-{"task_id":"task/14","completion":"\n\nconst [ toggled , setToggled ] = useState ( false );\n\nreturn {\n\n... initialState ,\n\n[ toggled ]: useState ( initialState [ toggled ]),\n\n"}
-{"task_id":"task/15","completion":" return { onMouseEnter: useHover, onMouseLeave: () => { useHover() }, }; } export default useHover;\n\nAnd finally, in my main.js file, I imported all the components and told React"}
-{"task_id":"task/15","completion":" const doc = document . querySelector ( '.text-editor' ); if ( doc . querySelector ( '.has-focus' )) { let focusStyle = doc . querySelector ( '.has-focus' ). style ; focusStyle"}
-{"task_id":"task/15","completion":"\n\nconst hover = document.querySelector('[use-hover]');\n\nif (hover) {\n\nhover.removeAttribute('use-hover');\n\n}\n\n};\n\nconst onError = (error)"}
-{"task_id":"task/15","completion":" // this is my \"event handler\" (it's a function) if (this.classList.contains('hoverable')) { // this is my \"event callback\" (it's a function) this.classList.remove('"}
-{"task_id":"task/15","completion":" document.getElementById('usehover').addEventListener('click', () => { document.getElementById('usehover').removeAttribute('disabled'); }) } const useBackground = () => { document.getElementById('usebackground')."}
-{"task_id":"task/16","completion":" return { ...value, usePrevious }; }; return { ...user, [ ' usePrevious ' ] = usePrevious }; }; }\n\nThe following snippet shows a computed property that depends on the presence of another computed property ( foo ):\n\nclass"}
-{"task_id":"task/16","completion":" return (previous < value) ? previous : value; }, output = usePrevious(0); // first usePrevious(1); // second usePrevious(2); // third\n\nAs you can see, the outputs don\u2019t need"}
-{"task_id":"task/16","completion":" const previousValue = useValue(); const valueToReturn = previousValue; const newValue = value; if (previousValue !== value) { const store = useStore(); // SetState is used to set State on the class instance."}
-{"task_id":"task/16","completion":"\n\nlet current = this . previousValue ();\n\nlet next = this . value ();\n\nif ( current === next ) {\n\n// No need to set it, because it's already the same.\n\nreturn ;\n\n"}
-{"task_id":"task/16","completion":"\n\nif ( _ . isUndefined (value)) {\n\nreturn store . getters . usePrevious ;\n\n}\n\nreturn store . getters . usePrevious . call (store, value);\n\n};\n\n/**"}
-{"task_id":"task/17","completion":" const value = mediaQueryList[query] || 0; if (value > 0) { return whenTrue(value); } else { return whenFalse(value); } };\n\nAnd that\u2019s it! We are now ready to"}
-{"task_id":"task/17","completion":"\n\nconst el = document.createElement('link');\n\nel.media = {\n\ntype: 'all',\n\nrel: 'stylesheet',\n\nhref: `${path}/style.css`\n\n};"}
-{"task_id":"task/17","completion":" let isTrue = false; // do this first, so that when you add a media query to the array, it won't be evaluated as true (allowing you to progressively increase max-width) if (query.matches) { is"}
-{"task_id":"task/17","completion":"\n\nconst { media } = query;\n\nconst shouldUseMedia = (srcWidth, srcHeight) =>\n\nwhenTrue(srcWidth >= media.minWidth && srcHeight >= media.minHeight) ||\n\nwhenFalse"}
-{"task_id":"task/17","completion":" return () => { if (query.matches(`only screen and (min-width: ${window.innerWidth})`)) { whenTrue(); } else { whenFalse(); } }; };\n\nAlternatively, a function can be returned"}
-{"task_id":"task/18","completion":" let get = key => state => state[key]; let put = (key, value) => state => ({ [key]: value }); let use = (action, callback) => { let default = {}; if (typeof action === '"}
-{"task_id":"task/18","completion":" return { ...defaultState, ...initialState } } const store = compose( connect( useDefault( {} , { users: [] } ), loadUsers ), mapStateToProps, mapDispatchToProps, )(TodoApp)"}
-{"task_id":"task/18","completion":"\n\nconst state = initialState || defaultState;\n\nreturn (state, action) => {\n\nswitch (action.type) {\n\ncase 'FETCH_DATA':\n\nreturn fetchData(state, action);"}
-{"task_id":"task/18","completion":" let {defaultState, initialState} = defaultState; defaultState.setState(initialState); return defaultState; }; const reducer = createReducer(initialState, { [actions.SET_STATE] (state, action)"}
-{"task_id":"task/18","completion":"\n\nconst [state, dispatch] = useReducer(\n\nreducer,\n\ninitialState,\n\ngetProps(defaultState),\n\n);\n\nreturn { state, dispatch };\n\n};\n\nconst use"}
-{"task_id":"task/19","completion":" let tagList = []; tags.forEach((tag) => { tagList.push( <span className=\"tag\" key={tag.name}>{tag.name}</span> ); }); return ( <div className=\""}
-{"task_id":"task/19","completion":" const input = document . createElement ( 'input' ); input . setAttribute ( 'type' , 'hidden' ); input . setAttribute ( 'name' , 'tags' ); input . setAttribute ( 'value' , Object . keys"}
-{"task_id":"task/19","completion":" const input = input || document . createElement ( 'input' ); const tags = tags || []; return ( < input value = { input . value } onChange = { e => tags . push ( e . target . value )} /> );"}
-{"task_id":"task/19","completion":"\n\nconst [ value , setValue ] = useState ( ' ' );\n\nconst handleChange = event => {\n\nconst tag = event . target . value ;\n\nsetValue ( tag );\n\n};\n\nreturn ("}
-{"task_id":"task/19","completion":" return ( < div > < input type = \"text\" value = { tags } onChange = { e => this . setState ({ tags : e . target . value })} / > < /div > ); };\n\nNext, we"}
-{"task_id":"task/20","completion":"\n\nreturn (\n\n<input\n\ntype=\"checkbox\"\n\nchecked={onChange(false)}\n\nonChange={onChange}\n\n/>\n\n);\n\n};\n\nexport default MultiselectCheckbox"}
-{"task_id":"task/20","completion":"\n\nconst { checked } = options.values;\n\nreturn (\n\n<form onSubmit={onChange}>\n\n{Object.keys(options).map(key => {\n\nreturn (\n\n<div>\n"}
-{"task_id":"task/20","completion":" const { checked, isSelected } = options . filter (option => option . selected ) . reduce (( a , b ) => { a . isSelected = b . isSelected || ( a . isSelected && ! b ."}
-{"task_id":"task/20","completion":" const _onChange = onChange; return ( < form > < input type = \" checkbox \" id = \" check \" value = { null } onChange = { onChange } /> < div className = \" options \" > { options"}
-{"task_id":"task/20","completion":" const group = options.group || ''; const label = options.label || ''; const onChangeHandler = (value) => { console.log(value); onChange(value); }; return ( <div> <div className=\""}
-{"task_id":"task/21","completion":" const data = isOrdered ? data.slice(0, data.length - 1) : data; const isCollapsed = data.length > 10; return ( <div className=\"list-group\"> {isCollapsed && ("}
-{"task_id":"task/21","completion":" if (isOrdered) { return ( <Ordered.List data={data} key=\"data.id\" /> ); } return ( <div> <ul> {data.map(item => ( <li key={item.id"}
-{"task_id":"task/21","completion":"\n\nif (isOrdered) {\n\nreturn data.map((d) => {\n\nreturn (<div key={d.id}>{d.name}</div>);\n\n});\n\n} else {\n"}
-{"task_id":"task/21","completion":" const isValid = isOrdered && !isValid(data); if (isValid) { return { isValid, data }; } else { return { isValid: false, data }; } };\n\nTo use it, import it into"}
-{"task_id":"task/21","completion":" const isOrdered = isOrdered === undefined ? false : isOrdered; const isDragging = false; const isEndReached = false; const _data = data || []; const _dragData = []; const _lastItem"}
-{"task_id":"task/22","completion":" const carouselItems = carouselItems.concat(...rest); return ( <div className={`flex-container`}> <div className=\"flex-item\" onClick={() => carouselItems.push(0"}
-{"task_id":"task/22","completion":" const carouselDirection = rest.carouselDirection || 'vertical'; const animationDuration = rest.animationDuration || 300; return ( <div className={'carousel ' + carouselDirection}> {carousel"}
-{"task_id":"task/22","completion":"\n\nconst { onPaginationClick, onSlideClick, onSlideBefore, onSlideAfter, onSlideNext, onSlidePrev } = rest;\n\nreturn (\n\n<CarouselPage\n\n"}
-{"task_id":"task/22","completion":" // ... }\n\nWhen creating a Carousel component, you\u2019ll use the spread operator ( ...rest ) to pass in any additional props or a data object to the Carousel . You can then pass these properties down as props to the"}
-{"task_id":"task/22","completion":" const [ carousel, carouselItems ] = rest; return ( <div className=\"carousel\"> <div className=\"carousel-inner\"> {carouselItems.map((item, index) => ( <div key={index"}
-{"task_id":"task/23","completion":"\n\nreturn {\n\n...initialState,\n\nuser: {\n\n...initialState.user,\n\nsaved: false\n\n}\n\n}\n\n}\n\nA mergeState function is used in reducers to"}
-{"task_id":"task/23","completion":" const mergeState = initialState; const reducer = (state = mergeState, action) => { switch (action.type) { case 'INCREMENT': return mergeState + 1; case 'DECREMENT': return mergeState -"}
-{"task_id":"task/23","completion":" const [state, dispatch] = useState(initialState); const mergeState = (nextState, update) => { const { dispatch } = nextState; return { ...state, [dispatch] : mergeDispatch(dispatch, update"}
-{"task_id":"task/23","completion":"\n\nconst mergedState = initialState\n\nconst changedKeys = Object.keys(initialState)\n\n.filter(key => !Object.isFrozen(initialState[key]))\n\n.map(key => [key"}
-{"task_id":"task/23","completion":"\n\nconst mergedState = initialState || {};\n\nlet actionTypes = [...Array(7)].map(type => typeof type);\n\nconst actionTypeNames = actionTypes.map(type => type.toLowerCase"}
-{"task_id":"task/24","completion":" let __data; return function ( ) { return __data = fn( ); __data && __data(); } } ; const test = async( ) => { const data = await useAsync( ( ) => { let result = await useAsync"}
-{"task_id":"task/24","completion":"\n\nreturn new Promise (( resolve , reject ) => {\n\nlet done = false ;\n\nfn ( done , resolve , reject );\n\nsetTimeout (() => {\n\nif ( done ) {\n\ndone ( resolve ,"}
-{"task_id":"task/24","completion":"\n\nif ( typeof fn !== ' function ' ) {\n\nthrow new TypeError ( ' Expecting a function, got ' +\n\n( typeof fn === ' object ' ?\n\n' an object with a ' +"}
-{"task_id":"task/24","completion":" let nextId = 0; return { then: next => { setTimeout(() => { next(nextId++); }, 1000); } }; }; // await \u662f Promise.resolve \u6240\u63d0\u4f9b\u7684"}
-{"task_id":"task/24","completion":"\n\nlet result = fn ();\n\nif ( ! result . done ) {\n\nreturn function () {\n\nresult . done = true ;\n\nresult . value ;\n\n};\n\n}\n\n};\n\nfunction chain"}
-{"task_id":"task/25","completion":" let {main} = window; const body = main.document.body; if (BodyScrollLock.isCurrentlyEnabled()) { return false; } BodyScrollLock.enable(); const bodyScroll = (x) => { const diff = x"}
-{"task_id":"task/25","completion":" setUseBodyScrollLock(true); };\n\nsetUseBodyScrollLock ( true ) ;\n\n} ;\n\n} ) ;\n\n} ,\n\nerror : function ( xhr , err , p ) {\n\nconsole"}
-{"task_id":"task/25","completion":"\n\nif ( this . useBodyScroll ) {\n\nthis . useBodyScroll = false ;\n\nthis . bodyScrollOffset = 0 ;\n\n}\n\n};\n\n// Disable scrolling when content is fixed\n\nuseBody"}
-{"task_id":"task/25","completion":" if (document.body.scrollTop > document.body.scrollHeight - window.innerHeight) { document.body.scrollTop = document.body.scrollHeight - window.innerHeight; } }; </script> </body> </"}
-{"task_id":"task/25","completion":"\n\nconst observer = new MutationObserver(mutation => {\n\nif (mutation.attributeName === 'scrollLock' &&\n\nmutation.oldValue !== '1' &&\n\nmutation.newValue"}
-{"task_id":"task/26","completion":" let form = null; for (let field of initialValues) { if (field.type === 'Number') { form = <input type=\"number\" name={field.name} value={field.value} onChange={this.handle"}
-{"task_id":"task/26","completion":"\n\nlet { setForm, setField } = arguments\n\nlet {\n\nform,\n\nerrors\n\n} = useForm(initialValues)\n\nreturn {\n\nform,\n\nerrors\n\n}\n\n}"}
-{"task_id":"task/26","completion":"\n\nconst form = createForm();\n\nform.onSubmit(newValue => {\n\nconst currentValues = useValue(initialValues, newValue);\n\nconst validated = validate(currentValues);\n\n// ...\n\n"}
-{"task_id":"task/26","completion":" const { email, password } = initialValues; return { email, password }; }; const { email, password } = useForm(initialValues); if (email.trim().length > 0 && password.trim().length > 0)"}
-{"task_id":"task/26","completion":" const { target, ...data } = getState(context); const [input, setInput] = React.useState(initialValues); const checkbox = target.checked ? data.input : null; const getConfig = input => {"}
-{"task_id":"task/27","completion":"\n\nconst target = el . querySelector ( ' .target ' );\n\nif ( ! target) {\n\nreturn ;\n\n}\n\nconst [ name , isExact ] = target . getAttribute ( ' data-"}
-{"task_id":"task/27","completion":"\n\nreturn el.querySelector('[data-portal]');\n\n};\n\nconst actions = {\n\nopenPortal: portal => {\n\nusePortal(portal).style.display = 'block';"}
-{"task_id":"task/27","completion":"\n\nconst [portal, setPortal] = useValue(el.portal);\n\nconst [portalScroll, setPortalScroll] = usePortal(el);\n\nconst [portalKey, setPort"}
-{"task_id":"task/27","completion":"\n\nreturn (el.querySelector('a').getAttribute('href') === '#');\n\n}\n\nconst isCurrentPage = path => path.includes('/current')\n\nconst useCurrentPage = el => {"}
-{"task_id":"task/27","completion":" const testID = el.querySelector(\".test-id\"); const testName = el.querySelector(\".test-name\"); const testDescription = el.querySelector(\".test-description\"); const testButton = el"}
-{"task_id":"task/28","completion":"\n\nreturn {\n\n...state,\n\n...Mailto.initialState,\n\nsubject,\n\nbody,\n\nchildren\n\n};\n\n};\n\nI don\u2019t have to worry about setting the initial state"}
-{"task_id":"task/28","completion":" return ( <div className=\"mailto\"> <input type=\"text\" value={email} onChange={e => this.onChange(e)} /> <input type=\"text\" value={subject} onChange={e => this."}
-{"task_id":"task/28","completion":" return ( <div className=\"mailto\"> <p> <a href={`mailto:${email}?subject=${subject}&body=${body}`}>{email}</a> </p> <p"}
-{"task_id":"task/28","completion":" return ( <div className=\"mailto\"> <input type=\"text\" className=\"input\" placeholder=\"Email\" value={email} onChange={(e) => this.setState({ email: e.target.value })}"}
-{"task_id":"task/28","completion":"\n\nconst emailRegex = /^(([^<>()[\\]\\\\.,;:\\s@\\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\\"]+)*)|(\\\".+\\\""}
-{"task_id":"task/29","completion":"\n\nconst isDown = KeyEvent.isDown(targetKey);\n\nconst isUp = KeyEvent.isUp(targetKey);\n\nreturn isDown || isUp;\n\n};\n\nconst mouseDown = (target"}
-{"task_id":"task/29","completion":"\n\nconst debouncedFunction = debounce ( targetKey => {\n\nif ( hasKey (targetKey)) {\n\nif ( window . event ) {\n\nevent . preventDefault ();\n\nevent . stopPropagation ();"}
-{"task_id":"task/29","completion":"\n\nlet { value } = props ;\n\nconst ret = value === true ? ' ' : targetKey;\n\nif (ret === targetKey) {\n\nreturn {\n\n... props ,\n\n... action (targetKey"}
-{"task_id":"task/29","completion":" return () => { if (key => { if (key === targetKey) { return true ; } }) return false ; }; }; const modifiers = { alt: useKeyPress( 13 ), shift: useKeyPress( 16 ), control: use"}
-{"task_id":"task/29","completion":"\n\nif ( ! targetKey) {\n\nreturn false ;\n\n}\n\nconst handler = {\n\n[targetKey] : event => {\n\nconst { name, ... props } = event.target;\n\nif"}
-{"task_id":"task/30","completion":" const format = d3.time.format(\"h:mm:ss\"); const now = moment(); let remaining; return ( <div className=\"countdown\"> <div className=\"col-xs-12\"> <div className=\""}
-{"task_id":"task/30","completion":"\n\nreturn (\n\n<div className=\"countdown\">\n\n<div className=\"countdown-display\">\n\n<span className=\"countdown-hours\">{hours}h</span>\n\n<span class"}
-{"task_id":"task/30","completion":" return <div> <p>{hours} hours</p> <p>{minutes} minutes</p> <p>{seconds} seconds</p> </div>; }; export default CountDown;\n\nWe could ref"}
-{"task_id":"task/30","completion":" if (hours > 0) { return <div>{hours} hour{s} left</div> } if (minutes > 0) { return <div>{minutes} minute{s} left</div> } if ("}
-{"task_id":"task/30","completion":" let hours = hours || 12; let minutes = minutes || 60; let seconds = seconds || 0; return ( <div className=\"countdown\"> <span className=\"counter\">{hours} hours {minutes} minutes</span>"}
-{"task_id":"task/31","completion":" return ( <div className=\"alert alert-warning\"> <button type=\"button\" className=\"close\" onClick={() => this.setState({ isDefaultShown: false })}>\u00d7</button> <h4 class"}
-{"task_id":"task/31","completion":" let showAlert = () => { const dialogRef = this.alertRef; dialogRef.showAlert(type, message, { isDefaultShown: isDefaultShown, timeout }); }; return ( <div> <a href=\"#\""}
-{"task_id":"task/31","completion":" const duration = () => { const { isDefaultShown, timeout } = this; if (isDefaultShown) { clearTimeout(timeout); } timeout = setTimeout(duration, timeout); }; const show = () => { isDefault"}
-{"task_id":"task/31","completion":" const { isDefaultShown, type, message } = options; if (isDefaultShown) { return <div onClick={() => { setTimeout(() => { if (message !== null) { alert(message); }"}
-{"task_id":"task/31","completion":" const { type, message } = typeof type === 'function' ? type(message) : type; if (isDefaultShown) { return { closeButton: true, closeText: '\u5220\u9664', type: type"}
-{"task_id":"task/32","completion":" const check = new URL(url).searchParams.get(hash) === null; return check; };\n\nThis will throw an error if the URL does not have a hash, but does work if it does have a hash.\n"}
-{"task_id":"task/32","completion":" return () => { const query = new URLSearchParams ( window . location . search ) if ( ! query . has ( 'search' )) { return } const [ url , ... rest ] = query . get ( 'search' )"}
-{"task_id":"task/32","completion":"\n\nconst { data , error } = use ( window . fetch );\n\nif ( error ) {\n\nthrow error ;\n\n}\n\nreturn { data , error };\n\n};\n\nconst update = ( id , data"}
-{"task_id":"task/32","completion":" console . log ( ' useHash ' ); }; // \u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u521d\u671f\u5316 const instance = new Instance (); // \u547c\u3073\u51fa\u3057\uff08\u30b3\u30fc\u30eb\u30d0\u30c3\u30af"}
-{"task_id":"task/32","completion":"\n\nlet url = document.location.href;\n\nlet hash = url.hash;\n\nif (hash) {\n\nhash = decodeURIComponent(hash);\n\nif (hash === '!2') {"}
-{"task_id":"task/33","completion":"\n\nconst [state, setState] = useState(initialState);\n\nif (condition()) {\n\nsetState(initialState);\n\n}\n\nreturn state;\n\n};\n\nconst createDelayedState ="}
-{"task_id":"task/33","completion":"\n\nconst state = initialState\n\nconst [lastValue, setLastValue] = useState(state)\n\nconst [state, setState] = useState(state)\n\nconst [lastAction, setLastAction]"}
-{"task_id":"task/33","completion":"\n\nconst [state, setState] = useState(initialState);\n\nconst callbacks = [];\n\nlet conditionState = initialState;\n\nconst promise = new Promise((resolve, reject) => {\n\nif"}
-{"task_id":"task/33","completion":" let delayedState = initialState; return function delayedFn() { if (condition()) { return delayedState; } else { return delayedState; } } }\n\nconst useWithErrorState = (initialState, condition, callback) =>"}
-{"task_id":"task/33","completion":"\n\nconst [state, setState] = useState(initialState);\n\nconst [action, dispatch] = useAction(condition);\n\nreturn {\n\n...state,\n\n[action](data) {\n\nif"}
-{"task_id":"task/34","completion":"\n\nconst { name, value } = param;\n\nreturn name === 'search' && value === 'true';\n\n};\n\n}\n\n}\n\n\n\n// Test the use of the create-react-app test environment"}
-{"task_id":"task/34","completion":" const [value, setValue] = param.split('=') let [key, setKey] = value.split('&') // Add a description field if it is not present if (!key) { const description = new SearchParams"}
-{"task_id":"task/34","completion":" const [searchQuery, setSearchQuery] = param.split('?'); return setSearchQuery ? searchQuery : '#&?from=post_tag'; }; const useIndex = (state, action) => { const newState ="}
-{"task_id":"task/34","completion":" let { searchParam } = param ; return searchParam || '' ; } ; useSearchParam ( { searchParam : 'hello' } ) ; useSearchParam ( { searchParam : { hello : 'what' } } ) ;\n\n"}
-{"task_id":"task/34","completion":"\n\nreturn param.split('=').shift() || 'true';\n\n};\n\nconst searchQuery = value =>\n\nuseSearchParam(value) ?\n\n`${String(value).trim()} {query}"}
-{"task_id":"task/35","completion":" return { type: types.DELETE_TODO, payload: { id } }; }; // No payload is required for the update. const destroyTodo = id => { return { type: types.DELETE_TOD"}
-{"task_id":"task/35","completion":"\n\nif ( ! this . $scope . $id ) {\n\nthis . $scope . $id = 1 ;\n\n}\n\nthis . $rootScope . $broadcast ( ' use ' , this . $scope ."}
-{"task_id":"task/35","completion":"\n\nconst n = useReducer (reducer, initialState);\n\nif ( n . isValid ) {\n\n// use it\n\nreturn n;\n\n}\n\n// try reducer again\n\nreturn useRed"}
-{"task_id":"task/35","completion":"\n\nconst update = () => {\n\nconst me = this ;\n\nme . x += 1 ;\n\nme . y += 1 ;\n\n};\n\nreturn function ( input ) {\n\nconst state = { x :"}
-{"task_id":"task/35","completion":"\n\nthis . useBigNumber ();\n\nthis . useHelper ();\n\nthis . useQuery ();\n\nthis . useView ();\n\n}\n\nit ( ' has to check for extend mode ' , () => {\n\n"}
-{"task_id":"task/36","completion":" const onSelect = (index) => { const value = values[index]; selectedValue = value; onValueChange(value); }; return ( <div> <div>{values.map( (value, index) => ( <div"}
-{"task_id":"task/36","completion":"\n\nconst {\n\n[thrown] : onValueChangeThrown\n\n} = values;\n\nreturn (\n\n<div>\n\n<Select.Input value={selectedValue} onChange={onValueChange} />"}
-{"task_id":"task/36","completion":" let value = null; if (onValueChange) { value = onValueChange(values); } if (selectedValue) { value = selectedValue; } return { value, onChange(value) { onValueChange(value); },"}
-{"task_id":"task/36","completion":" const [selectedValue, setSelectedValue] = rest; const getValue = () => values[selectedValue]; return ( <div> <div className=\"select-wrapper\"> <div className=\"select-input\"> <label html"}
-{"task_id":"task/36","completion":" const { onValueChange, selectedValue } = rest return ( <div> <h2>Select</h2> <div> <p> {values.join(', ')} </p> <span onClick={onValueChange"}
-{"task_id":"task/37","completion":" let { rows, cols, value, limit } = this.props return ( <div className=\"textarea\"> <div className=\"textarea-preview\"> {JSON.stringify(value, null, 2)} </"}
-{"task_id":"task/37","completion":" const rows = Math.max(Math.ceil(cols / 10), 2); const cols = Math.max(rows / 10, 20); const value = value.toString().split('').reverse().join(''"}
-{"task_id":"task/37","completion":" const numChars = value.length; const minChars = rows * cols; const maxChars = Math.ceil(numChars / limit); return ( <div className=\"textarea-wrapper\"> <div class"}
-{"task_id":"task/37","completion":" return { cols: cols, rows: rows, value: value, limit: limit } } // Validate the length of the input const validateLength = (input) => { const rows = input.rows const cols = input."}
-{"task_id":"task/37","completion":" let textarea = value || ''; if (rows && cols) { return textarea.split( '\n\n' ).map(line => { if (line.length <= limit) { return line; } else { return ` ${"}
-{"task_id":"task/38","completion":"\n\nconst host = document.activeElement;\n\nif (host) {\n\ncallback();\n\n}\n\n};\n\nconst useOnMouseMove = callback => {\n\nconst el = event.target;\n\nif"}
-{"task_id":"task/38","completion":" // callback(true); // callback(false); // callback(0); // callback(2147483647); // callback(0, \"something\"); // callback(0, null); // callback(0, undefined); // callback(0"}
-{"task_id":"task/38","completion":"\n\nconst r = callback ( document . documentElement , ' scroll ' );\n\nreturn r;\n\n};\n\nconst useOnWebMouseScroll = callback => {\n\nconst r = callback ( document . documentElement , ' web"}
-{"task_id":"task/38","completion":"\n\ndocument . addEventListener ( 'scroll' , callback)\n\n}\n\nfunction toggleUseOnWindowScroll () {\n\nuseOnWindowScroll . cancel ()\n\nuseOnWindowScroll . currentTarget . removeEventListener ("}
-{"task_id":"task/38","completion":"\n\nconst beforeWindowScroll = callback ();\n\nconst windowRef = window . _UIReady ? window . _UIReady . bind ( window ) : window ;\n\nwindowRef . scroll ( 0 , windowRef ."}
-{"task_id":"task/39","completion":"\n\nlet previousKey;\n\nconst isDown = () => {\n\nif (previousKey === undefined) {\n\npreviousKey = ref.current;\n\n}\n\nreturn previousKey === ref.current;\n"}
-{"task_id":"task/39","completion":"\n\nconst useClickOutside = (ref, callback) => {\n\nconst useClickX = (ref, callback) => {\n\nconst useClickY = (ref, callback) => {\n\nconst useClickXOutside ="}
-{"task_id":"task/39","completion":" var onMouseDown = useState(true); var onMouseUp = useState(false); var onMouseMove = useState(0); const [onMouseDown, onMouseUp] = useRef(onMouseDown, onMouse"}
-{"task_id":"task/39","completion":"\n\nlet [{key, ...data}] = ref.get();\n\nconst handle = data[key];\n\nif (handle) {\n\ncallback(handle);\n\n}\n\n};\n\nfunction mapStateTo"}
-{"task_id":"task/39","completion":"\n\nif (ref.currentItem.children[0]._clickable) {\n\nreturn callback();\n\n}\n\nelse {\n\nref.currentItem.children[0]._clickable = true;\n\nreturn"}
-{"task_id":"task/40","completion":"() => DOM.document.createElement(\"div\"));\n\nconst isWebSocketAvailable = !!(() => new WebSocket(\"ws://localhost:8080\"));\n\nconst isMessageChannelAvailable = !!(() => new Message"}
-{"task_id":"task/40","completion":"window.DOM && window.document);\n\n1.1.6.1.6. Opera\n\ndocument.all is not supported.\n\nis not supported. navigator.appCodeName is not supported.\n\nis not"}
-{"task_id":"task/40","completion":"kVersionNumber & 0x800000);\n\n3109 if (!isDOMavailable)\n\n3110 return nullptr ;\n\n3111\n\n3112 if (isDOMavailable) {\n\n3113 if (compiler"}
-{"task_id":"task/40","completion":"window.document.createElement && window.document.createEvent && window.document.getElementById && window.navigator.mimeTypes && document.implementation && document.implementation.createDocument);\n\nThe script checks whether"}
-{"task_id":"task/40","completion":"window.document && document.createElement && document.createEvent && window.XMLHttpRequest); const isPointerAvailable = !!window.PointerEvent; const isMouseAvailable = !!window.MouseEvent; const isKeyboardAvailable"}
-{"task_id":"task/41","completion":" const ROWS = rows || 10; const COLS = cols || 100; const textarea = document.createElement('textarea'); textarea.style.width = `${COLS}px`; textarea.style.height"}
-{"task_id":"task/41","completion":" let value = value.split('\n\n'); // Strips out all lines except the first and last let result = [ value[0], value[value.length - 1] ]; // Gets the total amount of rows and columns let rows ="}
-{"task_id":"task/41","completion":" const onChange = e => { const { value } = e.target const { rows, cols } = this.props const len = value.length if (value.length > limit) { value = value.slice(0,"}
-{"task_id":"task/41","completion":" let max = rows * cols; return ( <div> <p>You have ${max} characters left.</p> <textarea rows={rows} cols={cols} value={value} onChange={(event) =>"}
-{"task_id":"task/41","completion":" const rows = rows || 16; const cols = cols || 32; return ( <div className=\"textarea\"> <textarea className=\"textarea col s12\" rows={rows} cols={cols} value={"}
-{"task_id":"task/42","completion":" this.setState({ isInitialMount: true }); window.setInterval(() => { if (this.state.isInitialMount) { this.setState({ isInitialMount: false }); } }, 1000); }; const useEffect"}
-{"task_id":"task/42","completion":"\n\nconsole . log ( 'Did mount' );\n\n// ...\n\n}\n\nconst useComponentWillUpdate = onUpdateHandler => {\n\nconsole . log ( 'Will update' );\n\n// ...\n\n}\n"}
-{"task_id":"task/42","completion":"\n\nif ( component ) {\n\ncomponent . useEffect ( ( ) => {\n\nif ( component . useContext ) {\n\ncomponent . useContext ( 'foo' ) ;\n\n}\n\ncomponent . onMountHandler"}
-{"task_id":"task/42","completion":"\n\ndocument.addEventListener('click', () => {\n\n// Do something.\n\n})\n\nreturn () => {\n\ndocument.removeEventListener('click', onMountHandler)\n\n}\n\n}\n\n"}
-{"task_id":"task/42","completion":" const { setState } = onMountHandler . context ; setState ( { myState : { foo : ' bar ' } } ) ; } ; const { setState } = onMountHandler . context ; const useReducer = ( state"}
-{"task_id":"task/43","completion":" return { dragOver : onDrop ( _ => false ), drop : onDrop ( _ => { // \u30c9\u30e9\u30c3\u30b0\u7d42\u4e86\u6642\u306b\u3001\u30d5\u30a1\u30a4\u30eb\u306e\u8ffd\u52a0\u3092\u30a2\u30cb\u30e1\u30fc\u30b7\u30e7"}
-{"task_id":"task/43","completion":"\n\nreturn {\n\nonDragEnter ( e ) {\n\n// If the file is moved on to this element, it means that it\n\n// should be loaded.\n\n// If the file is dragged in past this element,"}
-{"task_id":"task/43","completion":" return { draggable : true , onDrop : onDrop }; }; export default FileDrop ;\n\nWhat we're doing here is just creating a custom component using a render prop, which will then be imported into the App component where we'll"}
-{"task_id":"task/43","completion":" return class WithDrop extends React . Component { onDrop = onDrop; render () { return ( < div onClick = { this . onDrop } > Drop Files Here < / div > ); } }; };\n\nYou can now use the"}
-{"task_id":"task/43","completion":"\n\nonDrop = onDrop || noop;\n\nreturn class extends React.Component {\n\nstate = {\n\nfile: {\n\ntype: null,\n\nname: null,\n\n},\n\n};\n\n"}
-{"task_id":"task/44","completion":" items, view }) => { return ( <div> <ul> {items.map((item, index) => ( <li key={index}> <TreeItem key={item.id} item={item} /> </li> ))"}
-{"task_id":"task/44","completion":" id, level }) => ( <View style={styles.treeview}> <View style={styles.treeview_contents}> <View style={styles.treeview_contents_header}> <Text style={styles."}
-{"task_id":"task/44","completion":" children, hidden, selected, userFocus, userActive }) => { // nothing to do in the constructor return class extends React.Component { render() { return ( <div> <div> <h2>{hidden ? 'Hidden' :"}
-{"task_id":"task/44","completion":" action, onChange, ...rest }) => ( < div > < select onChange = {onChange} > {rest} </ select > < button onClick = {action} > Change </ button > </ div > ); export default TreeView"}
-{"task_id":"task/44","completion":" items }) => ( < div > { items . map ( item => < div > < h3 > { item . text } < /h3> < /div> )} < /div> ); // If a prop is passed, we"}
-{"task_id":"task/45","completion":" // ... }; const useState = (initialState, [usePersistedState]) => { // ... };\n\nYou could also use useState in combination with useReducer to build a Redux-like state management library.\n\nHow do"}
-{"task_id":"task/45","completion":"\n\nconst storage = storage.get(name);\n\nif (storage) {\n\nreturn storage.getItem(name);\n\n}\n\nreturn defaultValue;\n\n};\n\n// Return the actual value from the storage"}
-{"task_id":"task/45","completion":"\n\nconst state = useState(defaultValue);\n\nconst persistedState = useCallback(() => {\n\nstate.replace(name, useReducer(name, state));\n\n}, [name]);\n\nreturn persistedState"}
-{"task_id":"task/45","completion":" if (persistedState[name] !== undefined) { return persistedState[name]; } return defaultValue; }; this.setPersistedState = (name, value) => { if (persistedState[name] === undefined)"}
-{"task_id":"task/45","completion":"\n\nconst val = localStorage.getItem(name) || defaultValue\n\nreturn val !== undefined ? val : defaultValue\n\n}\n\n/**\n\n* Create a store from given state.\n\n* @param {"}
-{"task_id":"task/46","completion":"\n\nconst {\n\nwinWidth,\n\nwinHeight\n\n} = await window.matchMedia('(max-width: 500px)');\n\nreturn { width: winWidth, height: winHeight };\n\n};\n"}
-{"task_id":"task/46","completion":" const {width, height} = window.innerWidth; return useWindowSize; }\n\nconst useWindowSize = require('./useWindowSize');\n\nimport { useWindowSize } from './useWindowSize';\n\n"}
-{"task_id":"task/46","completion":" const DOM = React.createElement('div', { style: { width: '100%', height: '100%' } }, document.body); ReactDOM.render(DOM, null); }; const useWindowSize = () => {"}
-{"task_id":"task/46","completion":" const [ w , h ] = window . innerWidth , window . innerHeight ; return { w , h }; }; const useWindowSize = () => { const [ w , h ] = window . innerWidth , window . innerHeight ; return"}
-{"task_id":"task/46","completion":"\n\nconst { center, width, height } = useWindowSize();\n\nreturn center + 'px ' + width + 'px ' + height + 'px';\n\n};\n\nconst makeImage = input => `\n\n<"}
-{"task_id":"task/47","completion":"\n\nconst [inputValue, setInputValue] = useState(value);\n\nconst [onChange, setOnChange] = useState(() => {});\n\nconst [onBlur, setOnBlur] ="}
-{"task_id":"task/47","completion":" const [ checked, setChecked ] = useState(value) let onChange = e => setChecked(e.target.checked) const render = () => ( <div> <label htmlFor=\"checkbox-example-input"}
-{"task_id":"task/47","completion":" ...rest }\n\nconst el = document.createElement('input')\n\nconst onChange = (e) => { ... }\n\nconst ControlledInput = ({ value, onValueChange, ...rest }) => {\n\nel."}
-{"task_id":"task/47","completion":" return Controlled.of( { value: value, onValueChange: onValueChange, ...rest }, ) }\n\nAs a result, we can remove the function call from our application model, thus creating more readable code.\n\nconst application"}
-{"task_id":"task/47","completion":" // lets use the input if value is truthy return onValueChange && <input {...rest} value={value} />; }; ControlledInput.propTypes = { value: PropTypes.bool.isRequired, onValueChange: Prop"}
-{"task_id":"task/48","completion":" let dataTable = this.table = new DataTable(data); return dataTable; }; DataTable.prototype.columns = [ { header: 'Titel', dataIndex: 'Titel' }, { header: 'ID"}
-{"task_id":"task/48","completion":" let columns = [...Array(data.length)].map(d => d.name); let dataTable = new DataTable(); dataTable.addColumns(columns); dataTable.addRows(data); return dataTable;"}
-{"task_id":"task/48","completion":" let rows = []; return ( <table id=\"my-data-table\"> <thead> <tr> <th>Name</th> <th>Age</th> </tr> </thead> <tbody> {rows"}
-{"task_id":"task/48","completion":"\n\nreturn (\n\n<div>\n\n<h1>Data Table</h1>\n\n<table>\n\n<thead>\n\n<tr>\n\n<th>Name</th>\n\n<th"}
-{"task_id":"task/48","completion":" const filter = data.filter || []; return ( <table> <thead> <tr> <th> #{filter.length ? `${filter.join(',')}` : 'No Results'} </th> </tr"}
-{"task_id":"task/49","completion":" if (onUnmountHandler) { console . log ( ' Use componentWillUnmount handler ' ); } };\n\nExample\n\nimport { useState } from ' react-native-use-state ' ; import React , { Component }"}
-{"task_id":"task/49","completion":"\n\nif ( onUnmountHandler && onUnmountHandler () === false ) {\n\nReactDOM . unmountComponentAtNode ( this . getDOMNode ());\n\n}\n\n};\n\nuseEffect (() => {"}
-{"task_id":"task/49","completion":"\n\nuseEffect(() => {\n\nif (onUnmountHandler) {\n\nconst [unmountComponent, setUnmountComponent] = useCallback(() => {\n\nif (onUnmountHandler) {\n\n"}
-{"task_id":"task/49","completion":" if ( componentWillUnmount ) { componentWillUnmount ( ) ; } if ( ! componentWillUnmount ) { onUnmountHandler ( ) ; } } ; import { useState , useCallback } from 'react' ; import {"}
-{"task_id":"task/49","completion":"\n\nconst component = onUnmountHandler.context;\n\nif (component && component.use) {\n\ncomponent.use();\n\n}\n\n};\n\n/**\n\n* @interface\n\n* @name ReactUp"}
-{"task_id":"task/50","completion":"\n\nconst p = (props) => (\n\n<TabItem\n\nkey={props.index}\n\nindex={props.index}\n\nonTabClick={onTabClick}\n\n{...props"}
-{"task_id":"task/50","completion":"\n\nconst { getByName } = indexByName;\n\nconst tabIndex = getByName(defaultIndex);\n\nconst { getTabIndex, getTabName } = tabIndex;\n\nconst { index, value }"}
-{"task_id":"task/50","completion":"\n\nconst getTab = id => id === defaultIndex ? undefined : id;\n\nconst getIndex = id => id === defaultIndex ? -1 : id;\n\nconst getChildren = id => getTab(id) !=="}
-{"task_id":"task/50","completion":"\n\nconst tab = '#tabs-container';\n\nconst tabs = [];\n\nreturn (\n\n<div>\n\n<div className=\"tabs\">\n\n{tabs.map((tab, index) =>"}
-{"task_id":"task/50","completion":"\n\nconst [index, setIndex] = useState(defaultIndex);\n\nconst { show, hide } = useState(false);\n\nconst onClick = e => {\n\nconst { index } = e.target;"}
-{"task_id":"task/51","completion":" $ ( ' .slider .on ' ). text () === ' Offline ' ;\n\nconst getOnLineStatus = () => $ ( ' .slider .on ' ). text () === ' \u5149\u7ea4\u7ebf"}
-{"task_id":"task/51","completion":"\n\ngetLogger()\n\n.message(\"Getting online status...\")\n\n.info(\"On-line status: \" + onLineStatus);\n\nThe only difference between them is that the first one returns a Promise, while the"}
-{"task_id":"task/51","completion":" { const { isOnline } = firebase . firestore . document ( 'statuses' ) if ( isOnline ) { return 'online' } else { return 'offline' } } const getNickname = firebase . firestore"}
-{"task_id":"task/51","completion":" ({offline: false});\n\n\nNext, let's update the state by adding a new method named updateStatus:\n\nupdateStatus = (status) => {\n\nthis.setState({\n\nstatus: status\n\n});\n"}
-{"task_id":"task/51","completion":" { const status = statusText.substring(0, statusText.length - 4); const onLine = status === 'online'; return { onLine, status }; }; module.exports = { getOnLineStatus };\n\nThis"}
-{"task_id":"task/52","completion":" const [ input , show ] = value . split ( ' ' ); return ( < div > < div > Type password < input ref = { node => node . focus ()} value = { input } onChange = { event => show ? event"}
-{"task_id":"task/52","completion":" const status = value === \"done\" ? \"done\" : \"to-do\" ; return < div > < span > { status } </ span > < input onChange = { event => { this . setState ({ value : event ."}
-{"task_id":"task/52","completion":" const [ _ , value ] = value . split ( ':' ) return value || _ } const req = new XMLHttpRequest () req . open ( 'GET' , '/api/password' , true ) req . setRequestHeader ( '"}
-{"task_id":"task/52","completion":" let { type, value } = value; return ( <button onClick={type === 'Password'? 'reveal' : 'hide'} type={type} value={value}> {type === 'Password'? value : ''} </"}
-{"task_id":"task/52","completion":" return ( < div > < input value = { value } onChange = { ( e ) => this . onChange ( e ) } /> < label > { this . getPassword ()} < /label > < /div > ); }; Password"}
-{"task_id":"task/53","completion":" const className = marked ? 'star' : ''; return ( <button type=\"button\" className={className} onClick={() => starId(starId)}> <i className=\"fa fa-star\" aria"}
-{"task_id":"task/53","completion":" return ( <TouchableOpacity onPress={() => this.props.marked(true, starId)}> <View style={styles.star}> <Text style={styles.name}>{this.props.star"}
-{"task_id":"task/53","completion":" return <Star key={starId} marked={marked} />; };\n\nThe container pattern\n\nYou might be familiar with the container pattern from React. It is a way to wrap the state of a component in a parent component and pass"}
-{"task_id":"task/53","completion":" return ( <div className=\"star\"> <img src={ marked ? markedImage : altImage } alt=\"star\" /> <strong>{ starId }</strong> </div> ); }; export default Star;\n\nNow let"}
-{"task_id":"task/53","completion":" const { onChange } = this.props; return ( <span className=\"star\" onClick={onChange} {...this.props} /> ); };\n\nAll we have done here is added some new props to our"}
-{"task_id":"task/54","completion":" // Your updated component will be returned to this callback. return () => { // Only re-render if `condition` evaluates to true. // Note: This is just an example. Use shouldComponentUpdate() // or PureComponent instead. if ("}
-{"task_id":"task/54","completion":" // `useEffect` guarantees that `callback` runs after the first update of the component. // Even if `callback` or `condition` causes an update, the current value of the local variables of the component will be used. // It is"}
-{"task_id":"task/54","completion":"\n\nconst instance = ReactDOM.findDOMNode(this);\n\nif (condition.call(instance)) {\n\ncallback.call(instance);\n\n}\n\n};\n\nexport default useComponentDidUpdate;\n\n"}
-{"task_id":"task/54","completion":"\n\nif (condition()) {\n\ncallback();\n\n}\n\n};\n\n// 3. Render\n\nconst render = (component, ) => {\n\ncomponent.once('didMount', () => {\n\n// 4"}
-{"task_id":"task/54","completion":"\n\nconst instance = ReactDOM.findDOMNode(this);\n\nif (instance) {\n\ninstance.addEventListener(\n\ncondition,\n\n() => {\n\ncallback(instance);\n\n},\n\nfalse"}
-{"task_id":"task/55","completion":" return ( < div > < div > < button type = \"button\" onClick = {() => toggle . defaultToggled = ! toggle . defaultToggled } > { toggle . defaultToggled ? 'ON' : '"}
-{"task_id":"task/55","completion":" return { render : function () { if ( this . defaultToggled ) { return < input type = \"checkbox\" defaultChecked = { this . defaultToggled } /> } else { return < input type = \"checkbox"}
-{"task_id":"task/55","completion":" const { toggled } = this.props.onToggleChange const { show } = this.props.children if (toggled === false) { show = true } else { show = false } return ( <button"}
-{"task_id":"task/55","completion":" return ( < div > < button onClick = {() => { this . setState ({ defaultToggled : ! this . state . defaultToggled }) }} > Toggle </ button > < p > You have { this . state ."}
-{"task_id":"task/55","completion":" const toggled = !defaultToggled; return ( <div> <h3>Toggle switch</h3> <button onClick={toggleToggled}>Toggle</button> </div> ); };\n\n"}
-{"task_id":"task/56","completion":" const classes = propertyNames.filter(p => p.startsWith('_')); return ( <div className={classes.join(' ')}> { data.map(({ id, value }) => ( <div key={id"}
-{"task_id":"task/56","completion":" const classNames = propertyNames.map(prop => prop.toLowerCase()); return classNames.join(' '); }; export default MappedTable;\n\nThen, we can import it in our component:\n\nimport { Mapped"}
-{"task_id":"task/56","completion":" const mappedTable = {}; Object.keys(data).forEach(key => { mappedTable[key] = data[key]; }); return mappedTable; }; const CategoryTable = ({ data, propertyNames }) => { const mappedTable ="}
-{"task_id":"task/56","completion":" const { propertyNames } = getObjToPropMap (data); return prop (prop (map ( propertyNames ))); };\n\nBy defining a prop function that takes a path and applies prop to each property on that path, we create a"}
-{"task_id":"task/56","completion":" const index = _.indexBy(data, propertyNames); return { getItemAtIndex: (_, index) => data[index], setItemAtIndex: (_, index, value) => data[index] = value, getCount"}
-{"task_id":"task/57","completion":" const eventHandler = e => e.target.removeEventListener(type, eventHandler); return el.addEventListener(type, eventHandler, false); }; const mixin = (...mixins) => (...args) => mix"}
-{"task_id":"task/57","completion":" let eventType = type.toLowerCase(); if (typeof el.addEventListener !== 'undefined') { el.addEventListener(eventType, handler, false); } else if (typeof el.attachEvent !"}
-{"task_id":"task/57","completion":"\n\nif (el) {\n\ndocument.addEventListener(type, handler, false);\n\n} else {\n\nwindow.addEventListener(type, handler, false);\n\n}\n\n};\n\nuseEvent"}
-{"task_id":"task/57","completion":"\n\nconst special = el.addEventListener;\n\nif (special) {\n\nspecial(type, handler);\n\n} else {\n\nel.attachEvent('on' + type, handler);\n\n}\n\n"}
-{"task_id":"task/57","completion":" let isHandled = false; // set default for handler, if not given if (!handler) { handler = () => {}; } el.addEventListener(type, handler, {capture: true}); el.addEventListener("}
-{"task_id":"task/58","completion":" const { country, format } = window.device.telephony; const [ phone, format ] = Callto.children.map( child => child.attr('value') ); const country = window.navigator.onLine ? 'yes"}
-{"task_id":"task/58","completion":" return children.filter(callto => callto.phone === phone); }; export default Callto;\n\nThere are a few things to notice here. First, we defined the Callto component as a function.\n\n<Callto phone"}
-{"task_id":"task/58","completion":" return ( <div className=\"contact-detail\"> <div className=\"contact-phone\"> <div className=\"contact-phone-container\"> <div className=\"contact-phone-header\">{phone}</div> <div"}
-{"task_id":"task/58","completion":"\n\nreturn (\n\n<div>\n\n<h2>Call to</h2>\n\n<div>\n\n<button onClick={() => alert(phone)}>\n\nAlert\n\n</button>\n\n"}
-{"task_id":"task/58","completion":" return children.map(child => <div key={child.id}> <input type=\"text\" value={child.phone} onChange={event => this.handleChange(event.target.value)} /> </div>); };"}
-{"task_id":"task/59","completion":"\n\nconst { window } = ReactDOM.findDOMNode(this);\n\nif (window.innerWidth > window.innerHeight) {\n\ncallback();\n\n} else {\n\ncallback(true);\n\n}\n"}
-{"task_id":"task/59","completion":"\n\n// We need to read the innerHTML of a DIV element for the callback\n\n// to do its job. It's a bad idea to re-read the DOM because that\n\n// triggers expensive layout and paint operations.\n"}
-{"task_id":"task/59","completion":"\n\nconst form = document.querySelector('#form');\n\nconst childForm = document.querySelector('#child-form');\n\n// This is the form that will be attached to the window\n\n// when the"}
-{"task_id":"task/59","completion":" if (isPointerAvailable()) { if (isPointerAvailable(PointerEventType.pointermove)) { callback(PointerEventType.pointermove); } else if (isPointerAvailable(PointerEventType.pointerdown"}
-{"task_id":"task/59","completion":"\n\nconst { width, height } = window.innerWidth;\n\ncallback(width, height);\n\n};\n\nconst useOnScroll = callback => {\n\nconst { x, y } = window.scrollY;\n"}
-{"task_id":"task/60","completion":" const value = new FormControl(); onValueChange(value); return value; }; export const ControlledInput = ({ defaultValue, onValueChange, ...rest }) => { const value = new FormControl(); onValueChange(value); return value"}
-{"task_id":"task/60","completion":"\n\nconst { value } = rest[ 0 ];\n\nreturn < input type = \" text \" defaultValue = {value} onValueChange = {onValueChange} { ... rest } />;\n\n};\n\n// The next"}
-{"task_id":"task/60","completion":"\n\nreturn {\n\ndefaultValue,\n\nonValueChange,\n\n...rest\n\n};\n\n};\n\nexport const ControlledInput = ({ defaultValue, onValueChange, ...rest }) => {\n\nreturn {\n"}
-{"task_id":"task/60","completion":" const [defaultValue, setDefaultValue] = rest; return { onValueChange: onValueChange, defaultValue, value: defaultValue, ...rest }; }; export const ControlledInput = ({ defaultValue, onValueChange, value: string"}
-{"task_id":"task/60","completion":" const [value, setValue] = rest; const onValueChange = e => setValue(value = e.target.value); return { value, onValueChange }; };\n\nWe can use that in several different ways, with different"}
-{"task_id":"task/61","completion":" value, ...rest }) => ( <div className=\"textarea\"> <textarea className=\"example-textarea\" value={value} onChange={e => value = e.target.value} onKeyDown={e => {"}
-{"task_id":"task/61","completion":" value, error, updateTarget, onChange }) => ( <div> <textarea value={value} onChange={e => onChange(e.target.value)} /> <p>{error ? <p style={{color:"}
-{"task_id":"task/61","completion":" children, value, editor, onEdit }) => { const { height, value } = editor; const { setValue } = onEdit; return ( <textarea editorState={editor} value={value} onChange={e => setValue"}
-{"task_id":"task/61","completion":"value, onChange, onKeyDown, onKeyUp, ...rest}) => <div> <input type=\"text\" onChange={onChange} value={value}/> <span onKeyDown={onKeyDown} onKeyUp"}
-{"task_id":"task/61","completion":" input }) => ( < textarea oninput = { input . bind ( this )} value = { input . current . value } oninput = { input . current . bind ( this )} > { input . current . value } < /"}
-{"task_id":"task/62","completion":" const script = document.createElement('script'); script.src = src; document.head.appendChild(script); }; const getScript = url => { const script = document.createElement('script'); script.src = url; document"}
-{"task_id":"task/62","completion":" + let script = document.createElement('script'); + script.src = src; + return script; + }; + + useScript('foo'); + + // Source: https://developer.mozilla.org/en-US/"}
-{"task_id":"task/62","completion":" return new Promise(resolve => { document.querySelector('head').appendChild(src) .then(resolve) }) } const el = document.querySelector('#main') const img = document.createElement('img"}
-{"task_id":"task/62","completion":"\n\nif ( ! useScript) {\n\nreturn false ;\n\n}\n\nconst { fallback : fallbackSrc } = src;\n\nif ( fallbackSrc . length > 0 ) {\n\nreturn {"}
-{"task_id":"task/62","completion":"\n\nconst cacheKey = `${src}-loader`;\n\nreturn {\n\nrequest: request => {\n\nif (request.url.includes(cacheKey)) {\n\nreturn request;\n\n}\n\nreturn"}
-{"task_id":"task/63","completion":" requestAnimationFrame(callback); };\n\nThis is a very clever fix and saves the developer from having to do any manual scheduling, but it has the potential to cause some serious headaches.\n\nThe reason is that callbacks can hang around after"}
-{"task_id":"task/63","completion":"\n\ncallback ();\n\nwindow . requestAnimationFrame ( callback );\n\n};\n\n/**\n\n* Used to determine if a coordinate has a valid position in the window,\n\n* while accounting for scrolling and transforms.\n\n*"}
-{"task_id":"task/63","completion":" let startTime = Date.now(); while (Date.now() - startTime < 1000) { callback(); } };\n\nrequestAnimationFrame(useRequestAnimationFrame);\n\nThis is what we're missing. Without this, the callback"}
-{"task_id":"task/63","completion":" // inside useRequestAnimationFrame var callbacks = {}; callbacks[callback] = true; // must be true to use it later (see below) return requestAnimationFrame(callback); }; var animation = useRequestAnimationFrame(callback);"}
-{"task_id":"task/63","completion":"\n\ncallback ();\n\nreturn window . requestAnimationFrame ( callback );\n\n};\n\nrequestAnimationFrame (() => {\n\nconst box = new Box ( 50 , 50 );\n\nuseBox ( box , render );\n\n"}
-{"task_id":"task/64","completion":"\n\nconst set = new Map ();\n\nset . set ( initialValue , initialValue );\n\nreturn set ;\n\n};\n\nconst mapSet = useSet ( Map ());\n\nconst original = mapSet . get ( '"}
-{"task_id":"task/64","completion":"\n\nconst nextValue = useValue (initialValue);\n\nconst hasChanged = nextValue !== nextValue;\n\nif (hasChanged) {\n\nnextValue = useValue (nextValue);\n\n}\n\nreturn"}
-{"task_id":"task/64","completion":"\n\nconst wrappedValue = new Set (initialValue);\n\nconst {\n\n[ Symbol . iterator ] : () => {\n\nreturn wrappedValue;\n\n}\n\n} = wrappedValue;\n\nreturn {\n\n["}
-{"task_id":"task/64","completion":"\n\nconst use = set (initialValue);\n\nconst newInitialValue = use . get ();\n\nreturn { ... use, newInitialValue };\n\n};\n\n// ---------------------------------------------------------------------------------------------------------------------\n\n// Wrap a getter using"}
-{"task_id":"task/64","completion":"\n\nconst [result, set] = useSet(initialValue);\n\nreturn result;\n\n}\n\nconst initialValue = {\n\na: 1,\n\nb: 2,\n\nc: 3\n\n};"}
-{"task_id":"task/65","completion":"\n\nlet localStorageKey = keyName.toLowerCase();\n\nreturn (localStorage.getItem(localStorageKey) ||\n\nlocalStorage.getItem(localStorageKey + \"__default__\") ||\n\nlocal"}
-{"task_id":"task/65","completion":" if (localStorage.getItem(keyName)) { return localStorage.getItem(keyName); } else { return defaultValue; } }; const useSessionStorage = (keyName, defaultValue) => { return sessionStorage.get"}
-{"task_id":"task/65","completion":"\n\nconst value = localStorage.getItem(keyName);\n\nif (value === null) {\n\nreturn defaultValue;\n\n}\n\nreturn value;\n\n};\n\nconst getInt = (keyName,"}
-{"task_id":"task/65","completion":"\n\nlet localStorageKey = keyName + '-user'\n\n// Set localStorageKey to defaultValue or a default value if it's undefined\n\nlocalStorageKey = localStorageKey || defaultValue\n\nreturn localStorageKey"}
-{"task_id":"task/65","completion":"\n\nconst useLocalStorage = value => {\n\nreturn new Promise((resolve, reject) => {\n\nif (localStorage.getItem(keyName)) {\n\nlocalStorage.setItem(keyName, JSON."}
-{"task_id":"task/66","completion":" if (collapsed) { return children; } return ( <div> {children} </div> ); };\n\nAnd here is how you would use it:\n\n<Collapse> <h1>Hello</h1> <"}
-{"task_id":"task/66","completion":" let { children } = this; children.forEach(child => { if (child.isCollapsed) { return; } child.show(); }); this.setProps({ collapsed, children }); }; const Header = ({ children }) =>"}
-{"task_id":"task/66","completion":" return isCollapsed ? < div > {children} < / div> : < Collapse isCollapsed = {isCollapsed} expanded = {false} > {children} < / Collapse>; }; const Button = ({ label,"}
-{"task_id":"task/66","completion":" if (collapsed) { return null; } return ( <div> {children} </div> ); }; const rowCount = ({ children }) => { return children.map(i => <div key={i}> {i} </"}
-{"task_id":"task/66","completion":"\n\nconst hasChildren = children.length > 0\n\nreturn (\n\n<div className={`collapse ${hasChildren ? 'show' : 'hide'}`}>\n\n{!collapsed && children}\n"}
-{"task_id":"task/67","completion":"\n\nreturn (\n\n<RippleButton label=\"Press Me\" onClick={onClick}>\n\n{children}\n\n</RippleButton>\n\n);\n\n};\n\n// Left-aligned RippleButton\n\n"}
-{"task_id":"task/67","completion":" return ( <TouchableOpacity onPress={onClick}> <View style={styles.ripple}> <Text style={styles.rippleText}>{children}</Text> </View> </TouchableOpacity>"}
-{"task_id":"task/67","completion":" return ( <TouchableOpacity onPress={onClick}> <View style={styles.ripple}> {children} </View> </TouchableOpacity> ); }; var styles = StyleSheet.create({ ripple: {"}
-{"task_id":"task/67","completion":" return ( <TouchableOpacity onPress={onClick}> <View style={styles.ripple}> <CircleAvatar size={30} color=\"#ffa51a\" /> <Text style={styles.rippleText"}
-{"task_id":"task/67","completion":" return ( <div onClick={onClick}> {children} </div> ); };\n\nPassing Children\n\nIn the example above, we passed children in via the second argument of the JSX function. This will pass the first"}
-{"task_id":"task/68","completion":"() => { let { parent , child , mutation } = useWindow ; return function () { return parent . observe ( child , mutation ); }; })();\n\nI've also modified this code to use a more powerful API that lets you pass"}
-{"task_id":"task/68","completion":" target , /* callback */ ) => { const observer = new MutationObserver ( observerCallback ); observer . observe ( target , { subtree : true , childList : true }); return observer ; }; const observeMutation = async ( target ,"}
-{"task_id":"task/68","completion":" ) => { const root = document . querySelector ( '#root' ) ; const observer = new MutationObserver ( ( mutations ) => { mutations . forEach ( ( mutation ) => { mutation . addedNodes . forEach"}
-{"task_id":"task/68","completion":" ) => { if ( ! window . mutationObserver ) { window . mutationObserver = new MutationObserver ( ( mutations ) => { for ( const mutation of mutations ) { const mutationTarget = mutation . target ; if ( mutationTarget"}
-{"task_id":"task/68","completion":" fn ) => { const node = target . querySelector ( ' .js-mutation-observer-target ' ); const observer = new MutationObserver (fn); return observer . observe (node, { childList : true ,"}
-{"task_id":"task/69","completion":"\n\nconst style = {\n\nposition: 'absolute',\n\nbackgroundColor: `rgb(${rgb.hexToRgb(text)}), ${rgb.hexToRgb(text)}`,\n\nborderRad"}
-{"task_id":"task/69","completion":"\n\nconst content = children && children . map ( child => child . node . content ) || [];\n\nreturn (\n\n< div className = { ` tooltip ${ styles . tooltip } ` } >\n\n< div className ="}
-{"task_id":"task/69","completion":" const { html, css } = this.props; const content = html`<div class=\"tooltip ${css.tooltip}\" ${css.tooltipShadow}>${text}</div>`; return ( <div"}
-{"task_id":"task/69","completion":"\n\nlet textSplit = text.split(/\\s+/);\n\nlet wrapper = document.createElement('div');\n\nwrapper.className = 'tooltip';\n\nlet inputStyle = {\n\n'color"}
-{"task_id":"task/69","completion":" const { icon, icon_class, style, ...rest } = rest return ( <div className={style}> <div className={style}><span>{text}</span></div> <span className={style}"}
-{"task_id":"task/70","completion":"\n\nreturn new Promise((resolve, reject) => {\n\nsetTimeout(() => {\n\nif (callback()) {\n\nresolve(true);\n\n} else {\n\nreject(false);\n\n}"}
-{"task_id":"task/70","completion":"\n\nconst id = setTimeout(() => {\n\ncallback();\n\n}, delay);\n\nreturn () => clearTimeout(id);\n\n};\n\nconst event = {};\n\nThe useTimeout function accepts two arguments,"}
-{"task_id":"task/70","completion":"\n\nlet timeout\n\nconst cancel = () => {\n\nclearTimeout(timeout)\n\ncallback()\n\n}\n\nsetTimeout(() => {\n\ncancel()\n\ncallback()\n\n}, delay)\n\n"}
-{"task_id":"task/70","completion":" return new Promise((resolve, reject) => { if (delay <= 0) { return reject(new Error('Request took too long')) } setTimeout(() => { resolve(callback()) }, delay) }) }\n\nWe need"}
-{"task_id":"task/70","completion":"\n\nlet timeoutId;\n\nlet timeout;\n\nif (delay) {\n\ntimeoutId = setTimeout(() => {\n\ncallback();\n\ntimeout = null;\n\n}, delay);\n\n} else {\n"}
-{"task_id":"task/71","completion":"\n\nconsole.error(err);\n\nreturn Promise.reject(err);\n\n};\n\n...\n\n}\n\n\n\nconst doSomethingAsync = () => {\n\nreturn new Promise((resolve, reject) =>"}
-{"task_id":"task/71","completion":" throw new Error(err); });\n\nUse of for...of\n\nES6 includes a new for...of loop, which is more useful for iterating over arrays and arrays-like objects than the traditional for...in loop.\n\n"}
-{"task_id":"task/71","completion":"\n\nif (err) {\n\nthrow new Error(err);\n\n}\n\n}\n\nconst getUser = () => {\n\nreturn usePromise(userService.getUser())\n\n.then(user =>"}
-{"task_id":"task/71","completion":"\n\nconsole.error(err);\n\nprocess.exit(1);\n\n};\n\nconst handleError = err => {\n\nif (err.code === 'EADDRINUSE') {\n\nuseError(err"}
-{"task_id":"task/71","completion":"\n\n// do something\n\nthrow err;\n\n};\n\nconst makeError = err => new Error(`${err.message}`);\n\nconst makeUseError = err => {\n\nuseError(err);\n"}
-{"task_id":"task/72","completion":"\n\nconst selection = document.selection ? document.selection.createRange() : false;\n\nselection.text = text;\n\nconst promise = document.execCommand(\"copy\");\n\nreturn promise;\n\n};\n\nconst"}
-{"task_id":"task/72","completion":" const htmlText = text . toString (). trim (); if ( ! htmlText ) { return false ; } // Use \"process\" to convert the html string to a Uint8Array of // `const u8` since that type is required"}
-{"task_id":"task/72","completion":" let plainText = text . toString (); let unformattedText = plainText . replace ( /\n\n/g , ' ' ). replace ( /\\r/g , ' ' ); let formattedText = unformattedText . replace"}
-{"task_id":"task/72","completion":"\n\nconst dataURI = new DataURI(text);\n\nconst fragment = document.createDocumentFragment();\n\nfragment.appendChild(dataURI.fragment);\n\nfragment.querySelector("}
-{"task_id":"task/72","completion":"\n\nconst textArea = document.getElementById('textArea');\n\ntextArea.value = text;\n\ntextArea.focus();\n\nreturn () => {\n\ntextArea.select();\n\ntextArea.scroll"}
-{"task_id":"task/73","completion":"\n\nconst uninitialized = new Map ();\n\nconst update = ( key , value ) => {\n\nuninitialized . set ( key , value );\n\nreturn uninitialized ;\n\n};\n\nreturn ( map ) => {\n"}
-{"task_id":"task/73","completion":" const result = initialValue ; if ( state . isLoading ) { result = { ... result , loading : true } ; } else if ( state . isFetching ) { result = { ... result , loading : true } ; } return"}
-{"task_id":"task/73","completion":" const newValue = useMap(initialValue); return newValue; }; const run = useMap(run);\n\nuseMemo\n\nuseMemo(fn, args, initialValue)\n\nUse memoized version of the supplied"}
-{"task_id":"task/73","completion":" const newMap = new Map (); newMap . set ( initialValue , initialValue ); return newMap ; }; const useWeakMap = initialValue => { const newMap = new WeakMap (); newMap . set ( initialValue , initialValue"}
-{"task_id":"task/73","completion":"\n\nconst map = new Map ();\n\nfor ( const [ key , value ] of initialValue) {\n\nmap . set (key, value);\n\n}\n\nreturn map;\n\n};\n\n/**\n\n*"}
-{"task_id":"task/74","completion":" if (text.length <= 2) { return false; } return text.slice(0, 2).toLowerCase() === 'http'; }; const isInLink = (el, arr) => arr.includes(el); const is"}
-{"task_id":"task/74","completion":" const text = text.toLowerCase(); return text.match(/\\blink$|\\bno-link$|\\bbig\\b/); };\n\n// To use the AutoLinker, import it and call the"}
-{"task_id":"task/74","completion":" return < div > < span > { text } </ span > </ div > } const Link = ({ url }) => { return < a href = { url } > { text } </ a > } const LinkAuto = ({ url }) => <"}
-{"task_id":"task/74","completion":" const link = new IntersectionObserver(observer => { observer.observe(document.querySelector('body'), { childList: true, subtree: true }); observer.disconnect(); }) link.observe("}
-{"task_id":"task/74","completion":" let potentialLinks = text. split ( / [ \\s\\S ] +/ ) . filter ( text => text ) return potentialLinks . reduce (( last , current ) => { if ( current . length < 3 ) { return last } return"}
-{"task_id":"task/75","completion":" let callback = null if (delay > 0) { setTimeout(() => { callback = () => { if (isNaN(value) || value < 0) { stopDebounce(callback) } else { setTimeout(() =>"}
-{"task_id":"task/75","completion":" let currentValue = 0; const debouncedValue = (event) => { if (currentValue !== value) { currentValue = value; } return event.target.value; }; return debouncedValue; }; export default useDebounce"}
-{"task_id":"task/75","completion":"\n\nlet [prev, set] = useState(value)\n\nreturn function debounce(callback) {\n\nconst [prev, set] = useState(value)\n\nif (prev !== set) {\n\n"}
-{"task_id":"task/75","completion":"\n\nreturn value\n\n.debounce(delay, _.debounce(update, 1000))\n\n.map(value => {\n\nreturn { ...value, status: true };\n\n});\n\n};\n\n"}
-{"task_id":"task/75","completion":"\n\nreturn new Promise((resolve, reject) => {\n\nsetTimeout(() => {\n\nif (value !== prev) {\n\nprev = value;\n\nresolve(prev);\n\n}\n\n},"}
-{"task_id":"task/76","completion":" return new Promise((resolve, reject) => { fetch(url, options).then(res => { resolve(res.text()); }).catch(reject); }); };\n\nConclusion\n\nWorking with async/await is a"}
-{"task_id":"task/76","completion":" return request(url, options) .then(response => response.json()) .then(json => { if (json.success) { return json.payload } return null }) .catch(error => { return null }) }\n\n"}
-{"task_id":"task/76","completion":" let config = { method: 'GET', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' } }; return fetch(url, config) .then(response => response.json()) .then"}
-{"task_id":"task/76","completion":" options.headers.set('Accept', 'application/json') if (url.indexOf('?') === -1) { url += '?' } options.query = url } return (select) => { const fetch = useFetch"}
-{"task_id":"task/76","completion":"\n\nconst id = Object.assign({}, options.data, {\n\n_id: url.id\n\n});\n\nreturn new Promise((resolve, reject) => {\n\naxios.get(url).then"}
-{"task_id":"task/77","completion":" if (typeof options === 'undefined') { options = { context: this }; } let target = { event: event, topic: topic, payload: payload }; // if the item already has a custom handler, we'll call it if"}
-{"task_id":"task/77","completion":"\n\nlet next = null;\n\nif (options.all) {\n\nnext = this.globalEvents.next(type, callback, options);\n\n} else {\n\nconst key = options.getKey || type;"}
-{"task_id":"task/77","completion":" const eventHandler = options.eventHandler; const eventType = options.eventType; const wrapper = document.createElement('div'); wrapper.className = 'statue-in-use'; wrapper.addEventListener(eventType,"}
-{"task_id":"task/77","completion":"\n\n- this.router.on(`global-event-${type}`, options.useOnGlobalEvent, callback);\n\n-};\n\n-\n\n-exports.useOnGlobalEvent = useOnGlobalEvent"}
-{"task_id":"task/77","completion":"\n\nif (typeof options === 'function') {\n\ncallback = options;\n\noptions = {};\n\n}\n\nif (type === 'browser:navigate') {\n\noptions.main = type;\n\n"}
+{"task_id":"task/1","completion":"\n  useEffect(() => {\n    const handler = e => {\n      if (e.key === 'Escape') {\n        fn();\n      }\n    };\n    window.addEventListener('keydown"}
+{"task_id":"task/1","completion":"\n  const unload = e => {\n    e.preventDefault();\n    e.returnValue = '',\n    fn();\n  };\n  window.addEventListener('beforeunload', unload);\n"}
+{"task_id":"task/1","completion":"\n    const unloadHandler = (event) => {\n        event.preventDefault();\n        event.returnValue = 'Are you sure you want to leave this page?';\n        return 'Are you sure you want to"}
+{"task_id":"task/1","completion":"\n  React.useEffect(() => {\n    window.addEventListener('beforeunload', fn);\n    return () => {\n      window.removeEventListener('beforeunload', fn);\n    };\n "}
+{"task_id":"task/1","completion":"\n  const [, forceUpdate] = useState(null);\n  useEffect(() => {\n    window.addEventListener('beforeunload', fn);\n    return () => {\n      window.removeEventListener"}
+{"task_id":"task/2","completion":"\n    useEffect(() => {\n        const handleClickOutside = (event) => {\n            if (ref.current && !ref.current.contains(event.target)) {\n                callback();\n            }\n"}
+{"task_id":"task/2","completion":"\n  const handleClick = e => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback()\n    }\n  }\n\n  useEffect(() => {\n"}
+{"task_id":"task/2","completion":"\n  useEffect(() => {\n    const handler = event => {\n      if (!ref.current || ref.current.contains(event.target)) {\n        return;\n      }\n      callback();\n   "}
+{"task_id":"task/2","completion":"\n  useEffect(() => {\n    const handleClickOutside = event => {\n      if (ref.current && !ref.current.contains(event.target)) {\n        callback();\n      }\n    };"}
+{"task_id":"task/2","completion":"\n    const clickHandler = event => {\n        if (ref.current && !ref.current.contains(event.target)) {\n            callback();\n        }\n    };\n\n    useEffect(() => {\n"}
+{"task_id":"task/3","completion":"\n  const [value, setValue] = useState(() => {\n    try {\n      const item = sessionStorage.getItem(keyName);\n      return item ? JSON.parse(item) : defaultValue;"}
+{"task_id":"task/3","completion":"\n  const [storedValue, setStoredValue] = useState(() => {\n    try {\n      const item = window.sessionStorage.getItem(keyName);\n      return item ? JSON.parse("}
+{"task_id":"task/3","completion":"\n  const [value, setValue] = useState(() => {\n    const stored = sessionStorage.getItem(keyName);\n    return stored ? JSON.parse(stored) : defaultValue;\n  });"}
+{"task_id":"task/3","completion":"\n  const value = sessionStorage.getItem(keyName);\n  if (value === null) {\n    sessionStorage.setItem(keyName, JSON.stringify(defaultValue));\n    return defaultValue;\n"}
+{"task_id":"task/3","completion":"\n  const [value, setValue] = useState(() => {\n    const value = sessionStorage.getItem(keyName);\n    return value === null ? defaultValue : value;\n  });\n\n  const set"}
+{"task_id":"task/4","completion":"\n  useEffect(() => {\n    document.title = title;\n  }, [title]);\n};\n\nconst useTheme = () => {\n  const [theme, setTheme] = useState(null);\n"}
+{"task_id":"task/4","completion":"\n    useEffect(() => {\n        document.title = title;\n    }, [title]);\n};\n\nexport default useTitle;"}
+{"task_id":"task/4","completion":"\n  useEffect(() => {\n    document.title = title;\n  }, [title]);\n};\n\nconst toggle = (toggled, click) => {\n  if (toggled) {\n   "}
+{"task_id":"task/4","completion":"\n  useEffect(() => {\n    document.title = title;\n  }, [title]);\n};\n\nconst useFetch = (url, init) => {\n  const [response, setResponse] = use"}
+{"task_id":"task/4","completion":"\n\tconst [pageTitle, setPageTitle] = useState(title);\n\tuseEffect(() => {\n\t\tdocument.title = `${pageTitle} | Echterhoff.dev`;\n\t},"}
+{"task_id":"task/5","completion":"\n  const mounted = useRef(false);\n  useEffect(() => {\n    if (mounted.current) return;\n    mounted.current = true;\n    callback();\n  }, [when]);\n};\n"}
+{"task_id":"task/5","completion":"\n    const didRun = useRef(false);\n\n    useEffect(() => {\n        if (didRun.current) return;\n        didRun.current = true;\n        return callback();\n    }, when);"}
+{"task_id":"task/5","completion":"\n  useEffect(callback, [], when);\n};\n\nexport default useEffectOnce;"}
+{"task_id":"task/5","completion":"\n  const active = useRef(true);\n\n  useEffect(() => {\n    if (active.current) {\n      when && callback();\n      active.current = false;\n    }\n  }, [when"}
+{"task_id":"task/5","completion":"\n  useEffect(callback, [when]);\n};\n\nconst useMounted = () => {\n  const [mounted, setMounted] = useState(false);\n  useEffectOnce(() => {\n   "}
+{"task_id":"task/6","completion":"\n  const iconClass = isCollapsed ? 'icon-plus' : 'icon-minus';\n  return (\n    <li>\n      <div onClick={handleClick} className={classNames({ 'accord"}
+{"task_id":"task/6","completion":"\n  const itemClass = isCollapsed ? \"collapsed\" : \"\";\n  return (\n    <div className={`accordion-item ${itemClass}`}>\n      <button className=\"acc"}
+{"task_id":"task/6","completion":"\n  const handleToggle = (event) => {\n    event.preventDefault();\n    handleClick(label);\n  };\n\n  return (\n    <>\n      <h4 className=\"accordion"}
+{"task_id":"task/6","completion":"\n  const [isActive, setIsActive] = useState(false);\n\n  const toggle = () => {\n    setIsActive(!isActive);\n  };\n\n  return (\n    <AccordionItem"}
+{"task_id":"task/6","completion":"\n  const buttonClass = isCollapsed ? 'button collapsed' : 'button';\n  return (\n    <div className=\"accordion-item\">\n      <button className={buttonClass} onClick={handle"}
+{"task_id":"task/7","completion":" typeof window !== 'undefined' && (window as any).document ? React.useLayoutEffect : React.useEffect;\n\nconst createCtx = <T>(defaultValue: T): [T, React.Dispatch"}
+{"task_id":"task/7","completion":" typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect\n\nconst PREFIX = 'inline-block'\n\nexport interface InlineBlockProps {\n  className?: string\n "}
+{"task_id":"task/7","completion":" typeof window !== 'undefined' ? useEffect : useLayoutEffect;\n\nexport function useEvent(eventName: string, handler: EventHandler, options?: EventOptions): void {\n  useIsomorphicEffect(()"}
+{"task_id":"task/7","completion":" typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect\n\nfunction getOuterSizes(node: HTMLElement) {\n  const size = {\n    width: node."}
+{"task_id":"task/7","completion":" typeof window !== 'undefined' &&\n  typeof window.document !== 'undefined' &&\n  typeof window.document.createElement !== 'undefined'\n\n/**\n * Custom hook for reading"}
+{"task_id":"task/8","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [state, setState];\n};\n\nexport default useGetSet;"}
+{"task_id":"task/8","completion":"\n  const [state, setState] = useState(initialState);\n  return [state, setState];\n};\n\nexport default useGetSet;"}
+{"task_id":"task/8","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [state, setState];\n};\n\nexport default useGetSet;"}
+{"task_id":"task/8","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [state, setState];\n};\n\nexport default useGetSet;"}
+{"task_id":"task/8","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [state, setState];\n};\n\nexport default useGetSet;"}
+{"task_id":"task/9","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/9","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/9","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/9","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/9","completion":"\n    const savedCallback = useRef();\n\n    // Remember the latest callback.\n    useEffect(() => {\n        savedCallback.current = callback;\n    }, [callback]);\n\n    // Set up the interval.\n"}
+{"task_id":"task/10","completion":"\n  return (\n    <View\n      style={{\n        alignItems: 'center',\n        justifyContent: 'center',\n        backgroundColor: 'rgba(0,0,0,0.8)',"}
+{"task_id":"task/10","completion":"\n  return (\n    <div className=\"loader\">\n      <style jsx>{`\n        .loader {\n          margin: 0 auto;\n          width: ${size}px;\n          height: ${size"}
+{"task_id":"task/10","completion":"\n  return (\n    <div className=\"loader-container\">\n      <svg\n        className=\"loader\"\n        width={size}\n        height={size}\n        viewBox=\"0 0 100 100\""}
+{"task_id":"task/10","completion":"\n  return (\n    <div className={`w-6 h-6 border-2 border-white flex items-center justify-center bg-white ${size}`}>\n      <div className=\"animate"}
+{"task_id":"task/10","completion":"\n  return (\n    <div className={`loader ${size}`}>\n      <div className=\"spinner\">\n        <div className=\"bounce1\" />\n        <div className=\"b"}
+{"task_id":"task/11","completion":"\n  const close = (e) => {\n    if (e.target.className === 'modal') {\n      onClose();\n    }\n  };\n\n  return (\n    <div className={`"}
+{"task_id":"task/11","completion":"\n  const classes = useStyles();\n  return (\n    <Dialog open={isVisible}>\n      <DialogTitle>{title}</DialogTitle>\n      <DialogContent>{content}</DialogContent"}
+{"task_id":"task/11","completion":"\n  const closeModal = () => {\n    onClose && onClose();\n  };\n\n  return (\n    <ModalWrapper\n      style={{\n        display: isVisible ? \"flex\" :"}
+{"task_id":"task/11","completion":"\n  const handleClose = useCallback(() => {\n    onClose()\n  }, [onClose])\n\n  return (\n    <ModalBlock\n      isVisible={isVisible}\n      onClose={"}
+{"task_id":"task/11","completion":"\n  const handleClose = () => {\n    onClose();\n  };\n\n  return (\n    <ModalWrapper isVisible={isVisible}>\n      <ModalOverlay />\n      <Mod"}
+{"task_id":"task/12","completion":"\n    const [entry, setEntry] = useState({});\n    const [intersectionRatio, setIntersectionRatio] = useState(0);\n    const [isIntersecting, setIsIntersecting"}
+{"task_id":"task/12","completion":"\n  const [intersection, setIntersection] = useState(null);\n  const observer = useRef(null);\n\n  useEffect(() => {\n    if (ref.current) {\n      observer.current"}
+{"task_id":"task/12","completion":"\n  const [entry, setEntry] = useState(null);\n  const [isIntersecting, setIsIntersecting] = useState(false);\n\n  useEffect(() => {\n    const observer ="}
+{"task_id":"task/12","completion":"\n  const [isIntersecting, setIsIntersecting] = useState(false);\n\n  useEffect(() => {\n    const observer = new IntersectionObserver(entries => {\n      entries.for"}
+{"task_id":"task/12","completion":"\n  const callback = useCallback(\n    (entries) => {\n      entries.forEach((entry) => {\n        if (entry.isIntersecting) {\n          options.onIntersecting()\n"}
+{"task_id":"task/13","completion":"name, label, value, onChange, min, max, step, id, error }) => {\n  return (\n    <div className=\"form-group\">\n      <label htmlFor={name}>{label}</"}
+{"task_id":"task/13","completion":"style, ...props }) => {\n  const styles = {\n    ...style,\n    width: '100%',\n    height: '100%',\n    position: 'absolute',\n    top: 0,\n   "}
+{"task_id":"task/13","completion":"label, onChange, value, options, type, className, ...rest }) => {\n  const [currentValue, setCurrentValue] = useState(value);\n  const [left, setLeft] = useState(value"}
+{"task_id":"task/13","completion":"name, label, value, onChange, min, max, step }) => {\n  return (\n    <div className=\"slider\">\n      <div className=\"form-group\">\n        <label htmlFor={name"}
+{"task_id":"task/13","completion":"children, ...props }) => {\n  return (\n    <div className={cx(styles.wrapper, 'slider')}>\n      <ReactSlick {...props}>{children}</Re"}
+{"task_id":"task/14","completion":"\n  const [isVisible, setIsVisible] = useState(initialState);\n\n  const toggle = () => setIsVisible(!isVisible);\n\n  return { isVisible, toggle };\n};"}
+{"task_id":"task/14","completion":"\n\tconst [state, setState] = useState(initialState);\n\n\tconst toggle = useCallback(() => {\n\t\tsetState(s => !s);\n\t}, []);\n\n\treturn [state,"}
+{"task_id":"task/14","completion":"\n\tconst [state, setState] = useState(initialState);\n\n\tconst toggle = () => setState(!state);\n\n\treturn [state, toggle];\n};\n\nexport default useToggler;"}
+{"task_id":"task/14","completion":"\n\tconst [state, setState] = useState(initialState);\n\n\tconst setTrue = () => setState(true);\n\tconst setFalse = () => setState(false);\n\n\treturn [state, set"}
+{"task_id":"task/14","completion":"\n  const [toggler, setToggler] = useState(initialState);\n\n  const toggle = () => {\n    setToggler(!toggler);\n  };\n\n  return [togg"}
+{"task_id":"task/15","completion":"\n  const [value, setValue] = useState(false);\n  const onMouseOver = () => setValue(true);\n  const onMouseOut = () => setValue(false);\n  return {\n   "}
+{"task_id":"task/15","completion":"\n  const [state, setState] = useState({\n    isHovering: false,\n  });\n\n  const [hovered, setHovered] = useState(false);\n\n  const handleHover ="}
+{"task_id":"task/15","completion":"\n    const [hover, setHover] = useState(false);\n    const onMouseEnter = () => setHover(true);\n    const onMouseLeave = () => setHover(false);\n    return"}
+{"task_id":"task/15","completion":"\n    const [hover, setHover] = useState(false);\n    const toggleHover = useCallback(() => setHover(!hover), [hover]);\n    return { hover, toggleHover };\n"}
+{"task_id":"task/15","completion":"\n  const [hovered, setHovered] = useState(false);\n\n  const handleHover = () => {\n    setHovered(!hovered);\n  };\n\n  return { hovered, handleH"}
+{"task_id":"task/16","completion":"\n  const ref = useRef();\n  useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n};\n\nexport default usePrevious;"}
+{"task_id":"task/16","completion":"\n  const ref = useRef();\n  useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n};\n\nconst useDate = (date) => {\n "}
+{"task_id":"task/16","completion":"\n  const ref = useRef();\n  useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n};\n\nexport default usePrevious;"}
+{"task_id":"task/16","completion":"\n  const ref = useRef();\n  useEffect(() => {\n    ref.current = value;\n  });\n  return ref.current;\n};\n\nexport default usePrevious;"}
+{"task_id":"task/16","completion":"\n    const ref = useRef();\n    useEffect(() => {\n        ref.current = value;\n    });\n    return ref.current;\n};\n\nexport default usePrevious;"}
+{"task_id":"task/17","completion":"\n  const matches = useMedia(query);\n  return matches ? whenTrue : whenFalse;\n};\n\nconst Container = styled.div`\n  position: relative;\n  width: 100%;\n  height: 100"}
+{"task_id":"task/17","completion":"\n  return useContext(MediaQueryContext) === query ? whenTrue : whenFalse;\n};\n\nconst useKeyHandler = (callback, key, action) => {\n  useEffect(() => {\n    const handler"}
+{"task_id":"task/17","completion":"\n  const breakpoint = window.matchMedia(query);\n  return breakpoint.matches ? whenTrue : whenFalse;\n};\n\nconst ResponsiveMenu = ({ className, ...props }) => {\n "}
+{"task_id":"task/17","completion":"\n  const mediaQuery = window.matchMedia(query);\n  const [matches, setMatches] = useState(mediaQuery.matches);\n\n  useEffect(() => {\n    const handler = event =>"}
+{"task_id":"task/17","completion":"\n  const mql = window.matchMedia(query);\n  return mql.matches ? whenTrue : whenFalse;\n};\n\nconst useWidth = () => {\n  const isLg = useMediaQuery"}
+{"task_id":"task/18","completion":"\n    return initialState === undefined ? defaultState : initialState;\n};\n\nconst useMappedState = (state, mapFn) => {\n    return mapFn(state);\n};\n\nconst useMap"}
+{"task_id":"task/18","completion":"\n  if (initialState === undefined) {\n    return defaultState;\n  }\n\n  return initialState;\n};\n\nexport default useDefault;"}
+{"task_id":"task/18","completion":"\n  if (initialState === undefined) {\n    return defaultState;\n  }\n\n  return initialState;\n};\n\nexport const useList = (state = [], { type, payload } = {}) => {"}
+{"task_id":"task/18","completion":"\n    if (initialState === undefined) {\n        return defaultState;\n    }\n    return initialState;\n};\n\nexport default useDefault;"}
+{"task_id":"task/18","completion":"\n  if (typeof initialState === 'undefined') {\n    return defaultState;\n  }\n  return initialState;\n};\n\nconst useLocalStorage = (key, initialState) => {\n  const"}
+{"task_id":"task/19","completion":"\n  const [tag, setTag] = useState('');\n  const [tagList, setTagList] = useState(tags);\n\n  const handleAddTag = (e) => {\n    e.pre"}
+{"task_id":"task/19","completion":"\n  const [input, setInput] = useState('');\n  const [newTag, setNewTag] = useState([]);\n\n  const addTag = (tag) => {\n    setNewTag(("}
+{"task_id":"task/19","completion":"\n  const [currentTag, setCurrentTag] = useState('');\n  const [tagsList, setTagsList] = useState(tags);\n\n  const addTag = (e) => {\n    e."}
+{"task_id":"task/19","completion":"\n  const [input, setInput] = useState('');\n  const [selected, setSelected] = useState([]);\n\n  const onChange = (e) => {\n    setInput(e."}
+{"task_id":"task/19","completion":"\n  const [newTag, setNewTag] = useState('');\n  const [editing, setEditing] = useState(false);\n  const [inputRef, setInputRef] = useState("}
+{"task_id":"task/20","completion":"\n  const classes = useStyles();\n  const [checked, setChecked] = useState([]);\n\n  const handleToggle = value => () => {\n    const currentIndex = checked.indexOf(value"}
+{"task_id":"task/20","completion":"\n  const { state, dispatch } = useOvermind();\n\n  const checked = state.selectedItems;\n\n  const handleChange = (event) => {\n    const { target } = event;\n    const selected = state"}
+{"task_id":"task/20","completion":"\n  const [selected, setSelected] = useState([]);\n\n  const onSelect = (selectedValue) => {\n    if (selected.includes(selectedValue)) {\n      setSelected(selected.filter"}
+{"task_id":"task/20","completion":"\n  const [selectedOptions, setSelectedOptions] = useState([]);\n\n  const onSelect = option => {\n    const index = selectedOptions.indexOf(option);\n    if (index >= 0) {"}
+{"task_id":"task/20","completion":"\n    const [state, setState] = useState({});\n\n    const toggle = (key) => {\n        setState({\n            ...state,\n            [key]: !state[key]\n        });\n   "}
+{"task_id":"task/21","completion":"\n  const buildData = (data, count = 0) => {\n    if (data) {\n      return data.map((item, i) => {\n        const list = buildData(item.children, count +"}
+{"task_id":"task/21","completion":"\n  return (\n    <>\n      {isOrdered ? (\n        <ol>\n          {data.map((item, i) => (\n            <li key={i}>{item}</li>"}
+{"task_id":"task/21","completion":"\n  const renderData = () => {\n    if (isOrdered) {\n      return data.map((item, i) => (\n        <OrderedItem key={i} data={item} />\n      ));"}
+{"task_id":"task/21","completion":"\n  const [isOpen, setIsOpen] = useState(true);\n  const [isOrderedByDate, setIsOrderedByDate] = useState(isOrdered);\n\n  return (\n    <"}
+{"task_id":"task/21","completion":"\n  const ordered = isOrdered ? 'ol' : 'ul';\n  return (\n    <>\n      <StyledHeader>\n        <span>Data</span>\n      </StyledHeader>\n     "}
+{"task_id":"task/22","completion":"\n  const [index, setIndex] = useState(0);\n  const [translateValue, setTranslateValue] = useState(0);\n  const { width } = useWindowDimensions();\n\n  const"}
+{"task_id":"task/22","completion":"\n  const [slideIndex, setSlideIndex] = useState(0);\n  const { isMobile } = useMobile();\n\n  const onClickLeft = () => {\n    if (slideIndex > 0"}
+{"task_id":"task/22","completion":"\n  const isSlide = carouselItems.length > 1;\n  const [currentSlide, setCurrentSlide] = useState(0);\n  const [currentDirection, setCurrentDirection] = use"}
+{"task_id":"task/22","completion":"\n  const {\n    carousel,\n    carouselImage,\n    carouselContent,\n    carouselTitle,\n    carouselContentContainer,\n    carouselContainer,\n    carouselButton,\n    car"}
+{"task_id":"task/22","completion":"\n  const [active, setActive] = useState(0);\n  const [interval, setInterval] = useState(0);\n  const [direction, setDirection] = useState(false);\n\n"}
+{"task_id":"task/23","completion":"\n  const [state, setState] = useState(initialState);\n\n  const update = (updater) => {\n    const newState = Object.assign({}, state, updater);\n    setState"}
+{"task_id":"task/23","completion":"\n  const [state, setState] = useState(initialState);\n  const setMergeState = (obj = {}) => {\n    setState({ ...state, ...obj });\n  };\n  return ["}
+{"task_id":"task/23","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [\n    state,\n    (newState) => {\n      setState((prevState) => {\n        const updatedState = {"}
+{"task_id":"task/23","completion":"\n  const [state, setState] = useState(initialState);\n\n  return [\n    state,\n    useCallback(\n      (newState) => {\n        setState({\n          ...state,\n         "}
+{"task_id":"task/23","completion":"\n  const [state, setState] = useState(initialState);\n\n  const mergeState = (newState) => {\n    setState((oldState) => ({ ...oldState, ...newState }));\n "}
+{"task_id":"task/24","completion":"\n  const [loading, setLoading] = useState(false);\n  const [value, setValue] = useState(undefined);\n  const [error, setError] = useState(undefined);\n\n "}
+{"task_id":"task/24","completion":"\n  const hook = useCallback(async () => {\n    const task = fn();\n    if (task) {\n      hook.loading = true;\n      await task;\n      hook.loading = false;\n"}
+{"task_id":"task/24","completion":"\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState(null);\n  const [result, setResult] = useState(null);\n\n  useEffect"}
+{"task_id":"task/24","completion":"\n  const [isLoading, setIsLoading] = useState(false);\n  const [error, setError] = useState(null);\n  const [isLoaded, setIsLoaded] = useState("}
+{"task_id":"task/24","completion":"\n  const [loading, setLoading] = useState(false);\n  const [error, setError] = useState(null);\n  const [result, setResult] = useState(null);\n\n  const handle"}
+{"task_id":"task/25","completion":"\n  const lockBodyScroll = useCallback(() => {\n    const currentTarget = event.currentTarget;\n    const { body } = document;\n    const { activeElement } = document;\n    if (activeElement"}
+{"task_id":"task/25","completion":"\n  const [isScrollFreeze, setIsScrollFreeze] = useState(false);\n\n  useEffect(() => {\n    window.addEventListener('scroll', handleScroll);\n    return () => {\n"}
+{"task_id":"task/25","completion":"\n  const [state, setState] = useState(false);\n  const handleScroll = () => {\n    if (\n      window.scrollY === 0 ||\n      document.documentElement.scrollTop === 0 ||"}
+{"task_id":"task/25","completion":"\n    const originalStyle = window.getComputedStyle(document.body).overflow;\n    document.body.style.overflow = 'hidden';\n    return () => {\n        document.body.style.over"}
+{"task_id":"task/25","completion":"\n  const [isBodyOverflowHidden, setIsBodyOverflowHidden] = useState(false);\n\n  const hideBodyOverflow = () => {\n    if (!isBodyOverflowHidden) {\n      setIs"}
+{"task_id":"task/26","completion":"\n  const [values, setValues] = useState(initialValues);\n\n  const handleChange = e => {\n    setValues({\n      ...values,\n      [e.target.name]: e.target.value"}
+{"task_id":"task/26","completion":"\n    const [values, setValues] = useState(initialValues);\n\n    const onChange = e => {\n        setValues({\n            ...values,\n            [e.target.name]: e.target.value"}
+{"task_id":"task/26","completion":"\n  const [values, setValues] = useState(initialValues);\n\n  const handleChange = event => {\n    setValues({\n      ...values,\n      [event.target.name]: event.target.value"}
+{"task_id":"task/26","completion":"\n  const [values, setValues] = useState(initialValues);\n\n  const handleChange = e => {\n    setValues({\n      ...values,\n      [e.target.name]: e.target.value"}
+{"task_id":"task/26","completion":"\n    const [values, setValues] = useState(initialValues);\n\n    const handleInputChange = event => {\n        event.persist();\n        setValues(values => ({\n            ...values,\n            ["}
+{"task_id":"task/27","completion":"\n  const hasPortal = el.closest('.portal')\n  const portal = hasPortal ? hasPortal : document.createElement('div')\n  portal.classList.add('portal')"}
+{"task_id":"task/27","completion":"\n  const documentFragment = document.createDocumentFragment();\n  const container = document.createElement('div');\n  const root = document.createElement('div');\n  root.classList.add('portal"}
+{"task_id":"task/27","completion":"\n  if (!el) return null;\n  const elRef = useRef(null);\n  useEffect(() => {\n    const node = elRef.current;\n    if (node && el) {\n     "}
+{"task_id":"task/27","completion":"\n  if (!el) return;\n  if (el.hasAttribute('data-portal')) return;\n  el.setAttribute('data-portal', 'true');\n  if (document.body.cont"}
+{"task_id":"task/27","completion":"\n  if (!el) return;\n  if (el.nodeType === 1) {\n    el.removeAttribute('aria-hidden');\n    el.setAttribute('aria-modal', true);\n    el."}
+{"task_id":"task/28","completion":"\n  return (\n    <a\n      href={`mailto:${email}?subject=${subject}&body=${body}`}\n      className=\"text-blue-400 hover:text-blue-"}
+{"task_id":"task/28","completion":"\n  return (\n    <a\n      href={`mailto:${email}?subject=${subject}&body=${body}`}\n      rel=\"noopener noreferrer\"\n      target=\""}
+{"task_id":"task/28","completion":"\n  const subjectAttr = (subject) ? `subject=${subject}` : '';\n  const bodyAttr = (body) ? `body=${body}` : '';\n  const mailtoString ="}
+{"task_id":"task/28","completion":"\n  return (\n    <a\n      href={`mailto:${email}?subject=${subject}&body=${body}`}\n      target=\"_blank\"\n      rel=\"noopener nore"}
+{"task_id":"task/28","completion":"\n  const subjectValue = subject.trim()\n  const bodyValue = body.trim()\n\n  const handleMailto = () => {\n    if (subjectValue) {\n      window.location.href = `"}
+{"task_id":"task/29","completion":"\n  const isPressed = React.useRef(false);\n\n  const onKeyPress = React.useCallback(\n    e => {\n      if (e.key === targetKey) {\n        isPressed."}
+{"task_id":"task/29","completion":"\n\tconst [keyPressed, setKeyPressed] = useState(false);\n\n\tconst onKeyDown = (event) => {\n\t\tif (event.key === targetKey) {\n\t\t\tset"}
+{"task_id":"task/29","completion":"\n  const [keyPressed, setKeyPressed] = useState(false);\n\n  const keyPress = ({ key }) => {\n    if (key === targetKey) {\n      setKeyPressed(true);"}
+{"task_id":"task/29","completion":"\n  const pressHandlers = useCallback(() => {\n    console.log(`Key pressed ${targetKey}`);\n  }, [targetKey]);\n\n  const upHandlers = useCallback(() => {\n"}
+{"task_id":"task/29","completion":"\n  const [keyPressed, setKeyPressed] = useState(false);\n\n  const keyDownHandler = ({ key }) => {\n    if (key === targetKey) {\n      setKeyPressed(true"}
+{"task_id":"task/30","completion":"\n  const [timeLeft, setTimeLeft] = useState(0);\n\n  useEffect(() => {\n    const interval = setInterval(() => {\n      setTimeLeft(initialTime => initialTime -"}
+{"task_id":"task/30","completion":"\n  const time = {\n    hours,\n    minutes,\n    seconds,\n  };\n\n  return (\n    <>\n      <Row className=\"justify-content-center\">\n        <Col>\n"}
+{"task_id":"task/30","completion":"\n  const formattedTime = `${formatNumber(hours)}:${formatNumber(minutes)}:${formatNumber(seconds)}`;\n  return (\n    <div className=\"countdown\">\n      <span class"}
+{"task_id":"task/30","completion":"\n  const [time, setTime] = useState({ hours, minutes, seconds });\n  const getTimeUntil = () => {\n    const { hours, minutes, seconds } = time;\n    const timeRemaining ="}
+{"task_id":"task/30","completion":"\n  const [timer, setTimer] = useState(0);\n  const [isCounting, setIsCounting] = useState(false);\n\n  useEffect(() => {\n    if (isCounting"}
+{"task_id":"task/31","completion":"\n  const [show, setShow] = useState(isDefaultShown);\n  const onMouseEnter = () => setShow(true);\n  const onMouseLeave = () => setShow(false);\n\n  use"}
+{"task_id":"task/31","completion":"\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const [isTimeoutShown, setIsTimeoutShown] = useState(false);\n\n  useEffect(()"}
+{"task_id":"task/31","completion":"\n  const [isVisible, setIsVisible] = useState(isDefaultShown);\n  const [timeLeft, setTimeLeft] = useState(timeout);\n\n  useEffect(() => {\n   "}
+{"task_id":"task/31","completion":"\n  const [state, setState] = useState({\n    show: isDefaultShown,\n    timeout: timeout,\n    type: type,\n    message: message,\n  });\n\n  useEffect(()"}
+{"task_id":"task/31","completion":"\n  const [isShown, setIsShown] = useState(isDefaultShown);\n  const toggleIsShown = () => setIsShown(!isShown);\n\n  useEffect(() =>"}
+{"task_id":"task/32","completion":"\n  const [hash, setHash] = useState(window.location.hash.substr(1));\n\n  useEffect(() => {\n    const handler = () => setHash(window.location.hash.sub"}
+{"task_id":"task/32","completion":"\n  const [hash, setHash] = useState('');\n\n  useEffect(() => {\n    const { pathname, hash } = window.location;\n    const uri = `${pathname}${"}
+{"task_id":"task/32","completion":"\n  const [hash, setHash] = useState<string | null>(null);\n\n  useEffect(() => {\n    setHash(window.location.hash);\n    window.addEventListener('hashchange',"}
+{"task_id":"task/32","completion":"\n  const [hash, setHash] = useState('');\n  const [page, setPage] = useState(1);\n  const [isNextPage, setIsNextPage] = useState(true);"}
+{"task_id":"task/32","completion":"\n  const history = useHistory();\n  const hash = useLocation().hash;\n  const hashMatch = hash.match(/^#\\/?(.+)/);\n  const hashLink = hashMatch ? hashMatch"}
+{"task_id":"task/33","completion":"\n  const [state, setState] = useState(initialState);\n  const [show, setShow] = useState(condition);\n\n  const action = useCallback(() => {\n    setShow(true);"}
+{"task_id":"task/33","completion":"\n  const [state, setState] = useState(initialState);\n  useEffect(() => {\n    const timeout = setTimeout(() => {\n      if (condition) {\n        setState(!state"}
+{"task_id":"task/33","completion":"\n  const [value, setValue] = useState(initialState);\n  const [delayedValue, setDelayedValue] = useState(initialState);\n\n  useEffect(() => {\n    const timeout ="}
+{"task_id":"task/33","completion":"\n  const [state, setState] = useState(initialState);\n  const isReady = useRef(false);\n\n  useEffect(() => {\n    if (!isReady.current && condition) {\n     "}
+{"task_id":"task/33","completion":"\n  const [state, setState] = useState(initialState);\n  const [delayedState, setDelayedState] = useState(initialState);\n\n  useEffect(() => {\n    const timer ="}
+{"task_id":"task/34","completion":"\n  const [searchParams, setSearchParams] = useState([]);\n  const [searchParam, setSearchParam] = useState(param);\n\n  useEffect(() => {\n    const { search"}
+{"task_id":"task/34","completion":"\n    const {\n        location: { search },\n    } = window;\n    const params = new URLSearchParams(search);\n    return params.get(param);\n};\n\nconst useParams ="}
+{"task_id":"task/34","completion":"\n    return useMemo(() => queryString.parse(param), [param]);\n};\n\nconst useSearchParamValue = param => {\n    const parsed = useSearchParam(param);\n    return useMemo"}
+{"task_id":"task/34","completion":"\n  const url = window.location.href;\n  const searchParam = url.split(\"?\")[1];\n  if (searchParam) {\n    const params = searchParam.split(\"&\");\n    const result"}
+{"task_id":"task/34","completion":"\n  const { location } = useReactRouter();\n  const searchParams = new URLSearchParams(location.search);\n  return searchParams.get(param);\n};\n\nconst useQuery"}
+{"task_id":"task/35","completion":"\n  const [update, setUpdate] = useState(false);\n  const forceUpdate = useCallback(() => setUpdate(v => !v), []);\n  return [update, forceUpdate];\n};\n\n"}
+{"task_id":"task/35","completion":"\n  const [createData, setCreateData] = useState(init.create);\n  const [updateData, setUpdateData] = useState(init.update);\n  const [deleteData, setDeleteData]"}
+{"task_id":"task/35","completion":"\n  const [update, { loading }] = useMutation(UPDATE_DEVICE, {\n    refetchQueries: [{ query: GET_DEVICES }],\n    awaitRefetchQueries: true,\n"}
+{"task_id":"task/35","completion":"\n  const [updating, setUpdating] = useState(false);\n  const set = useCallback(\n    (update: string) => {\n      setUpdating(true);\n      window.fetch("}
+{"task_id":"task/35","completion":"\n  const [state, setState] = useState<ISetState>({\n    id: '',\n    content: '',\n    isUpdate: false,\n  });\n\n  const onChange = (e:"}
+{"task_id":"task/36","completion":"\n  const handleChange = (value) => {\n    onValueChange(value);\n  };\n\n  return (\n    <SelectBase\n      {...rest}\n      name={rest.name}\n      value={"}
+{"task_id":"task/36","completion":"\n  const handleChange = value => {\n    onValueChange(value);\n  };\n\n  return (\n    <SelectComp\n      {...rest}\n      values={values}\n      onChange={handleChange}"}
+{"task_id":"task/36","completion":"\n  const [valuesArray, setValuesArray] = useState([]);\n\n  useEffect(() => {\n    if (Array.isArray(values)) {\n      setValuesArray(values);\n    }\n"}
+{"task_id":"task/36","completion":"\n  const classes = useStyles()\n  const theme = useTheme()\n  const [open, setOpen] = useState(false)\n\n  const openMenu = () => {\n    setOpen(true)\n"}
+{"task_id":"task/36","completion":"\n  const [isOpen, setIsOpen] = useState(false);\n  const ref = useRef();\n\n  const handleToggle = () => {\n    setIsOpen(!isOpen);\n  };\n\n"}
+{"task_id":"task/37","completion":"\n  const [errors, setErrors] = useState([]);\n  const ref = useRef();\n\n  const onChange = (e) => {\n    const newValue = e.target.value;\n   "}
+{"task_id":"task/37","completion":"\n  const [warning, setWarning] = useState(false);\n  const [text, setText] = useState(value);\n\n  const handleChange = (e) => {\n    const { value } = e"}
+{"task_id":"task/37","completion":"\n  return (\n    <TextareaAutosize\n      value={value}\n      onChange={e => {\n        if (e.target.value.length > limit) {\n          e.target.value ="}
+{"task_id":"task/37","completion":"\n  const [text, setText] = useState(value);\n  const [isOver, setIsOver] = useState(false);\n\n  const handleChange = (e) => {\n    setText(e"}
+{"task_id":"task/37","completion":"\n  return (\n    <Fragment>\n      <ReactQuill\n        value={value}\n        readOnly\n        modules={{\n          toolbar: false,\n        }}\n        style={{\n          width"}
+{"task_id":"task/38","completion":"\n\tconst [scrollTop, setScrollTop] = useState(0);\n\n\tuseEffect(() => {\n\t\tconst onScroll = () => {\n\t\t\tconst scrollHeight = document.documentElement.scroll"}
+{"task_id":"task/38","completion":"\n  useEffect(() => {\n    const handleScroll = () => {\n      const inner = window.innerHeight;\n      const height = document.documentElement.scrollHeight;\n      const scrolled = (window."}
+{"task_id":"task/38","completion":"\n  useEffect(() => {\n    const handleScroll = () => {\n      callback();\n    };\n    window.addEventListener('scroll', handleScroll);\n    return () => {\n      window.removeEvent"}
+{"task_id":"task/38","completion":"\n  useEffect(() => {\n    const handleScroll = () => {\n      callback();\n    };\n    window.addEventListener('scroll', handleScroll);\n    return () => {\n      window.removeEvent"}
+{"task_id":"task/38","completion":"\n  const handleScroll = () => {\n    const { scrollY } = window;\n    const isScrolledToBottom = scrollY >= window.innerHeight;\n    const isAtTop = scrollY === 0;\n"}
+{"task_id":"task/39","completion":"\n  const handleClick = (e) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n\n  useEffect(() =>"}
+{"task_id":"task/39","completion":"\n    const handleClick = e => {\n        if (ref.current && !ref.current.contains(e.target)) {\n            callback();\n        }\n    };\n\n    useEffect(() => {\n"}
+{"task_id":"task/39","completion":"\n  const handleClick = (e) => {\n    if (ref.current && !ref.current.contains(e.target)) {\n      callback();\n    }\n  };\n\n  useEffect(() =>"}
+{"task_id":"task/39","completion":"\n  const handleClick = event => {\n    if (ref.current && !ref.current.contains(event.target)) {\n      callback();\n    }\n  };\n\n  useEffect(() => {\n"}
+{"task_id":"task/39","completion":"\n    const handleClick = (e) => {\n        if (ref.current && !ref.current.contains(e.target)) {\n            callback()\n        }\n    }\n\n    useEffect(() =>"}
+{"task_id":"task/40","completion":"\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\n\nconst USE_DOM = isDOMavailable && IS_BROWSER;\n\nconst shared"}
+{"task_id":"task/40","completion":"\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\n\n/**\n * DESIGN NOTES\n *\n * The following is a description of the algorithm"}
+{"task_id":"task/40","completion":"typeof window !== 'undefined' && window.document && window.document.createElement);\n\nconst ReactDOMServer = {\n  renderToString: (element: React.ReactElement<any>) => {\n"}
+{"task_id":"task/40","completion":"\n  typeof window !== 'undefined' &&\n  window.document &&\n  window.document.createElement\n);\n\nconst dom = {\n  isReal: isDOMavailable,\n  isTest: false"}
+{"task_id":"task/40","completion":"typeof window !== 'undefined' && window.document && window.document.createElement);\n\nmodule.exports = isDOMavailable;\n\n},{}],21:[function(require,module,exports){"}
+{"task_id":"task/41","completion":"\n  const rowsArray = new Array(rows).fill('');\n  const rowsString = rowsArray.join('\\n');\n  const text = `${rowsString}${value}`;\n  const [line"}
+{"task_id":"task/41","completion":"\n  const limitedValue = value.length > limit ? `${value.substring(0, limit)}...` : value;\n  return (\n    <textarea\n      className=\"limited-textarea\"\n     "}
+{"task_id":"task/41","completion":"\n  const [count, setCount] = useState(value.length);\n  const [valueSaved, setValueSaved] = useState(value);\n\n  const handleChange = e => {\n    const text"}
+{"task_id":"task/41","completion":"\n  const [isEmpty, setIsEmpty] = useState(true);\n  const [isOverflow, setIsOverflow] = useState(false);\n  const [isEmptyLimit, setIsEmptyLimit]"}
+{"task_id":"task/41","completion":"\n  const [text, setText] = useState(value);\n  const [truncated, setTruncated] = useState(false);\n\n  const onChange = (e) => {\n    setText"}
+{"task_id":"task/42","completion":"\n  const mounted = useRef(false);\n\n  useEffect(() => {\n    if (!mounted.current) {\n      mounted.current = true;\n    } else {\n      onMountHandler();\n    }"}
+{"task_id":"task/42","completion":"\n  return (WrappedComponent) => {\n    return (props) => {\n      useEffect(() => {\n        onMountHandler(props);\n      }, []);\n      return <WrappedComponent {"}
+{"task_id":"task/42","completion":"\n  const useOnMount = () => {\n    useEffect(() => {\n      onMountHandler();\n    }, []);\n  };\n\n  return useOnMount;\n};\n\nexport default useComponentDidMount"}
+{"task_id":"task/42","completion":"\n  useEffect(() => {\n    if (onMountHandler) {\n      onMountHandler();\n    }\n  }, []);\n};\n\nexport default useComponentDidMount;"}
+{"task_id":"task/42","completion":"\n  useEffect(() => {\n    onMountHandler()\n  }, [])\n}\n\nexport default useComponentDidMount"}
+{"task_id":"task/43","completion":"\n  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({\n    onDrop,\n    accept: \"image/*\",\n  });\n\n  return (\n    <div {...get"}
+{"task_id":"task/43","completion":"\n  const drop = useRef(null);\n\n  const handleDrop = (e) => {\n    e.preventDefault();\n    e.stopPropagation();\n    onDrop(e.dataTransfer.files"}
+{"task_id":"task/43","completion":"\n  const onDropHandler = useCallback(\n    acceptedFiles => {\n      const file = acceptedFiles[0];\n      const reader = new FileReader();\n      reader.onabort = () => console.log('"}
+{"task_id":"task/43","completion":"\n  const fileRef = useRef(null);\n\n  const onDragOver = (e) => {\n    e.preventDefault();\n  };\n\n  const onDropFile = (e) => {\n    e"}
+{"task_id":"task/43","completion":"\n  const classes = useStyles();\n  const [file, setFile] = useState();\n  const [dragOver, setDragOver] = useState(false);\n\n  const handleDrop = (e)"}
+{"task_id":"task/44","completion":" data, labelKey, onClick }) => {\n  const [{ isDragging }, drag] = useDrag({\n    item: { type: ItemTypes.CARD, data },\n    end: (item, monitor) =>"}
+{"task_id":"task/44","completion":"\n  tree,\n  onNodeChange,\n  onNodeDelete,\n  onNodeCreate,\n  onNodeUp,\n  onNodeDown,\n  onNodeEdit,\n  onNodeDragStart,\n  on"}
+{"task_id":"task/44","completion":" treeData, setTreeData, folder, setFolder }) => {\n  const { path, name } = folder;\n  const [isExpanded, setIsExpanded] = useState(false);\n  const [isRen"}
+{"task_id":"task/44","completion":" id, children, className, onChange, data, field, value, onToggle, onExpand }) => {\n  const [state, setState] = useState({ expandedKeys: [], selectedKeys: [] });\n"}
+{"task_id":"task/44","completion":"\n  classes,\n  className,\n  children,\n  ...rest\n}: TreeViewProps): ReactElement => {\n  const cls = clsx(classes.root, className);\n  return (\n"}
+{"task_id":"task/45","completion":"\n  const [state, setState] = useState(() => {\n    const persistState = JSON.parse(localStorage.getItem(name));\n    return persistState !== null ? persistState : defaultValue;"}
+{"task_id":"task/45","completion":"\n  const [state, setState] = useState(() => {\n    const persistedState = localStorage.getItem(name);\n    return persistedState !== null ? JSON.parse(persistedState) : default"}
+{"task_id":"task/45","completion":"\n  const [value, setValue] = useState(\n    JSON.parse(window.localStorage.getItem(name)) || defaultValue\n  );\n\n  const setValueToLocalStorage = useCallback(() =>"}
+{"task_id":"task/45","completion":"\n  const [state, setState] = useState(() => {\n    try {\n      const storageValue = localStorage.getItem(name);\n      if (storageValue) {\n        return JSON.parse("}
+{"task_id":"task/45","completion":"\n  const [state, setState] = useState(() => {\n    try {\n      const serializedState = localStorage.getItem(name);\n      if (serializedState === null) {\n        return"}
+{"task_id":"task/46","completion":"\n  const [windowSize, setWindowSize] = useState({\n    width: undefined,\n    height: undefined,\n  });\n\n  useEffect(() => {\n    function handleResize() {\n      set"}
+{"task_id":"task/46","completion":"\n  const [size, setSize] = useState(window.innerWidth);\n\n  useEffect(() => {\n    const handleResize = () => {\n      setSize(window.innerWidth);\n    };"}
+{"task_id":"task/46","completion":"\n  const [windowSize, setWindowSize] = useState({\n    width: undefined,\n    height: undefined,\n  });\n\n  useEffect(() => {\n    function handleResize() {\n      set"}
+{"task_id":"task/46","completion":"\n  const [size, setSize] = useState({\n    width: window.innerWidth,\n    height: window.innerHeight,\n  });\n\n  useEffect(() => {\n    const handleResize ="}
+{"task_id":"task/46","completion":"\n  const [size, setSize] = useState({\n    width: window.innerWidth,\n    height: window.innerHeight,\n  });\n\n  useEffect(() => {\n    const onResize ="}
+{"task_id":"task/47","completion":"\n  const onChange = useCallback(\n    (e) => {\n      onValueChange(e.target.value);\n    },\n    [onValueChange]\n  );\n\n  return <input value={value"}
+{"task_id":"task/47","completion":"\n  const handleChange = e => {\n    onValueChange(e.target.value);\n  };\n\n  return <input value={value} onChange={handleChange} {...rest} />;\n};\n\n"}
+{"task_id":"task/47","completion":"\n  const [internalValue, setInternalValue] = useState(value);\n\n  useEffect(() => {\n    setInternalValue(value);\n  }, [value]);\n\n  const onChange = event => {\n"}
+{"task_id":"task/47","completion":"\n  const onChange = event => {\n    const { target: { value } } = event;\n    onValueChange(value);\n  };\n\n  return (\n    <input value={value} onChange={on"}
+{"task_id":"task/47","completion":"\n  const [isFocused, setIsFocused] = useState(false);\n  const onBlur = () => setIsFocused(false);\n  const onFocus = () => setIsFocused(true"}
+{"task_id":"task/48","completion":"\n  const [sorted, setSorted] = useState([])\n  const [searchQuery, setSearchQuery] = useState('')\n  const [checked, setChecked] = useState([])\n"}
+{"task_id":"task/48","completion":"\n  const classes = useStyles();\n  const [page, setPage] = useState(0);\n  const [rowsPerPage, setRowsPerPage] = useState(5);\n\n  const handleChange"}
+{"task_id":"task/48","completion":"\n  const columns = React.useMemo(\n    () => [\n      {\n        Header: 'Name',\n        accessor: 'name',\n      },\n      {\n        Header: 'Age',\n       "}
+{"task_id":"task/48","completion":"\n  return (\n    <div className=\"data-table\">\n      <table>\n        <thead>\n          <tr>\n            <th>name</th>\n            <th>price</th>"}
+{"task_id":"task/48","completion":"\n  const columns = React.useMemo(\n    () => [\n      {\n        Header: 'Date',\n        accessor: 'date',\n      },\n      {\n        Header: 'Stock',\n       "}
+{"task_id":"task/49","completion":"\n  const componentWillUnmount = componentProps => {\n    // componentWillUnmount is called when unmounting. However, we have already ran componentWillUnmount\n    // from componentWillUnmount. So we can"}
+{"task_id":"task/49","completion":"\n  const ref = useRef(null);\n  useEffect(() => {\n    ref.current = onUnmountHandler;\n    return () => {\n      ref.current();\n    };\n  }, []);"}
+{"task_id":"task/49","completion":"\n  return useEffect(() => {\n    return () => {\n      onUnmountHandler();\n    };\n  }, []);\n};\n\nexport default useComponentWillUnmount;"}
+{"task_id":"task/49","completion":"\n  const {\n    current: { onUnmount = () => {} }\n  } = React.useRef(onUnmountHandler);\n\n  React.useEffect(() => {\n    return () => {\n     "}
+{"task_id":"task/49","completion":"\n  useEffect(() => {\n    return () => {\n      onUnmountHandler()\n    }\n  }, [])\n}\n\nexport default useComponentWillUnmount"}
+{"task_id":"task/50","completion":"\n  const [activeIndex, setActiveIndex] = useState(defaultIndex);\n\n  const _onTabClick = index => {\n    setActiveIndex(index);\n    onTabClick && onTabClick(index);"}
+{"task_id":"task/50","completion":"\n  const [currentIndex, setCurrentIndex] = useState(defaultIndex);\n\n  const getTabItems = () => {\n    return React.Children.map(children, (child, index) => {\n      return"}
+{"task_id":"task/50","completion":"\n  const [activeIndex, setActiveIndex] = useState(defaultIndex);\n\n  const handleTabClick = index => {\n    setActiveIndex(index);\n    onTabClick && onTabClick(index);\n"}
+{"task_id":"task/50","completion":"\n  const [active, setActive] = useState(defaultIndex);\n\n  const onClick = index => {\n    setActive(index);\n    onTabClick(index);\n  };\n\n  return (\n   "}
+{"task_id":"task/50","completion":"\n  const [current, setCurrent] = useState(defaultIndex);\n\n  const handleTabClick = index => {\n    setCurrent(index);\n    onTabClick && onTabClick(index);\n  };\n\n"}
+{"task_id":"task/51","completion":" {\n  return (dispatch: any) => {\n    dispatch(getOnLineStatusRequest());\n    // eslint-disable-next-line\n    setTimeout(() => {\n      dispatch(getOnLineStatus"}
+{"task_id":"task/51","completion":" {\n  return async (dispatch: ThunkDispatch<{}, {}, any>) => {\n    const localInfo = await wx.getSystemInfo();\n    const status = localInfo.networkType === 'none' ?"}
+{"task_id":"task/51","completion":" {\n  let onLine = false;\n  try {\n    if (typeof window !== 'undefined') {\n      onLine = navigator.onLine;\n    }\n  } catch (e) {\n"}
+{"task_id":"task/51","completion":" {\n  let onlineStatus = document.body.getAttribute('online-status');\n  if (onlineStatus === 'on') {\n    return true;\n  }\n  return false;\n};\n\nexport default function Online"}
+{"task_id":"task/51","completion":" {\n  return true;\n};\n\nexport const getData = (params: any) => {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      const list = JSON."}
+{"task_id":"task/52","completion":"\n  const [showPassword, setShowPassword] = useState(false);\n\n  const handleClick = () => {\n    setShowPassword(!showPassword);\n  };\n\n  return (\n    <div>\n"}
+{"task_id":"task/52","completion":"\n  const [show, setShow] = useState(false);\n\n  return (\n    <div className=\"password-revealer\">\n      <input\n        type={show ? \"text\" : \"password\"}\n"}
+{"task_id":"task/52","completion":"\n  const [reveal, setReveal] = useState(false);\n\n  return (\n    <div>\n      <TextField\n        id=\"standard-password-input\"\n        type={reveal ?"}
+{"task_id":"task/52","completion":"\n  const [showPassword, setShowPassword] = useState(false);\n\n  const handleClick = (e) => {\n    e.preventDefault();\n    setShowPassword(!showPassword);\n  };"}
+{"task_id":"task/52","completion":"\n    const [show, setShow] = useState(false);\n    const onClick = () => setShow(!show);\n\n    return (\n        <div className=\"password-revealer\">\n            <div"}
+{"task_id":"task/53","completion":"\n  const className = `react-star-rating__star ${marked ? 'react-star-rating__star--active' : ''}`;\n  return (\n    <svg className={className} xml"}
+{"task_id":"task/53","completion":"\n  const colors = ['#ffaf61', '#ffd08b', '#ffffbf', '#d9ef8b', '#a6d96a'];\n  const backgroundColor = colors[star"}
+{"task_id":"task/53","completion":"\n  const classNames = marked ? 'star marked' : 'star';\n  return <div className={classNames}>{starId}</div>;\n};\n\nexport default Star;"}
+{"task_id":"task/53","completion":"\n  const { onMarked, onUnmarked } = useMarkedCallback(starId);\n  const isMarked = marked;\n\n  return (\n    <div className=\"star\" onClick={isMarked"}
+{"task_id":"task/53","completion":"\n  const starStyle = {\n    backgroundColor: marked ? \"#4ca984\" : \"#fff\",\n    border: marked ? \"1px solid transparent\" : \"1px solid #c1c1c1\","}
+{"task_id":"task/54","completion":"\n  const didUpdate = useCallback(() => {\n    callback();\n  }, [callback]);\n\n  if (condition) {\n    useEffect(didUpdate, [condition]);\n  }\n};\n\nexport default"}
+{"task_id":"task/54","completion":"\n  const didUpdate = useCallback(\n    (prevProps, prevState) => {\n      if (condition) {\n        callback(prevProps, prevState);\n      }\n    },\n    [callback"}
+{"task_id":"task/54","completion":"\n  const result = useRef({\n    prevProps: null,\n    prevState: null,\n  });\n\n  if (condition) {\n    callback();\n  }\n\n  useEffect(() => {\n"}
+{"task_id":"task/54","completion":"\n  const componentDidUpdate = (prevProps, prevState) => {\n    if (condition(prevProps, prevState)) {\n      callback(prevProps, prevState);\n    }\n  };\n\n"}
+{"task_id":"task/54","completion":"\n  const prevProps = useRef(props);\n  const prevState = useRef(state);\n\n  useEffect(() => {\n    if (condition(prevProps.current, prevState.current))"}
+{"task_id":"task/55","completion":"\n  const [isToggled, setIsToggled] = useState(defaultToggled);\n\n  const toggle = () => setIsToggled(!isToggled);\n\n  return (\n   "}
+{"task_id":"task/55","completion":"\n  const [toggled, setToggled] = useState(defaultToggled);\n\n  const handleClick = () => {\n    setToggled(!toggled);\n  };\n\n  return"}
+{"task_id":"task/55","completion":"\n  const [toggled, setToggled] = useState(defaultToggled);\n\n  const toggle = () => setToggled(!toggled);\n\n  return (\n    <Container onClick"}
+{"task_id":"task/55","completion":"\n  const [toggled, setToggled] = useState(defaultToggled);\n\n  const handleClick = () => {\n    setToggled(!toggled);\n  };\n\n  return"}
+{"task_id":"task/55","completion":"\n  const [isToggled, setIsToggled] = useState(defaultToggled);\n\n  const handleToggle = () => {\n    setIsToggled(!isToggled);\n"}
+{"task_id":"task/56","completion":"\n  const mappedTableData = data.map(item => {\n    const mappedItem = {};\n    propertyNames.forEach(propertyName => {\n      mappedItem[propertyName] = item[propertyName];\n"}
+{"task_id":"task/56","completion":"\n  const { getMappedData } = useBulkActions();\n  const mappedData = getMappedData(data, propertyNames);\n  return <BulkTable data={mappedData} />;\n};"}
+{"task_id":"task/56","completion":"\n  const { data: mappedData, columns } = useTable(data, propertyNames);\n  return (\n    <table>\n      <thead>\n        <tr>\n          {columns.map((column"}
+{"task_id":"task/56","completion":"\n  const mappedArray = data.map(row => {\n    return propertyNames.map(propertyName => {\n      return (\n        <tr key={propertyName}>\n          <td>{propertyName}</"}
+{"task_id":"task/56","completion":"\n  return (\n    <TableWrapper>\n      <Table>\n        <thead>\n          <tr>\n            {propertyNames.map(propertyName => (\n              <TableHeader key={propertyName}"}
+{"task_id":"task/57","completion":"\n  el.addEventListener(type, handler);\n  return () => el.removeEventListener(type, handler);\n};\n\nconst useEffect = (callback, dependencies) => {\n  useLayoutEffect(callback"}
+{"task_id":"task/57","completion":"\n  const callback = event => handler(event);\n  useEffect(() => {\n    el.addEventListener(type, callback);\n    return () => {\n      el.removeEventListener(type, callback);"}
+{"task_id":"task/57","completion":"\n    el.addEventListener(type, handler);\n    return () => el.removeEventListener(type, handler);\n};\n\nclass ProjectRow extends Component {\n    constructor(props) {\n        super("}
+{"task_id":"task/57","completion":"\n  el.addEventListener(type, handler);\n  return () => el.removeEventListener(type, handler);\n};\n\nconst preventHtml5Dnd = (event) => {\n  event.pre"}
+{"task_id":"task/57","completion":"\n  const listener = (event) => handler(event);\n  el.addEventListener(type, listener);\n  return () => el.removeEventListener(type, listener);\n};\n\nexport default useEventListener"}
+{"task_id":"task/58","completion":"\n  return (\n    <ButtonBase\n      href={`tel:${phone}`}\n      onClick={(e) => {\n        e.preventDefault();\n        sendGAEvent('callto-button"}
+{"task_id":"task/58","completion":"\n  return (\n    <a\n      href={`tel:${phone}`}\n      className=\"text-theme-7 text-lg leading-7 font-medium hover:text-theme-9\"\n"}
+{"task_id":"task/58","completion":"\n  return (\n    <a href={`tel:${phone}`}>\n      <button className=\"button\">{children}</button>\n    </a>\n  );\n};\n\nexport default Call"}
+{"task_id":"task/58","completion":"\n  return (\n    <Link href={`tel:${phone}`}>\n      <a className=\"callto\">{children}</a>\n    </Link>\n  );\n};\n\nexport default"}
+{"task_id":"task/58","completion":"\n  return (\n    <a\n      href={`tel:${phone}`}\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n      className=\"callto\"\n   "}
+{"task_id":"task/59","completion":"\n\tuseEffect(() => {\n\t\tconst handleResize = () => {\n\t\t\tcallback();\n\t\t};\n\t\twindow.addEventListener('resize', handleResize);\n\t\treturn"}
+{"task_id":"task/59","completion":"\n  const windowResizeEvent = () => {\n    callback();\n  };\n\n  window.addEventListener('resize', windowResizeEvent);\n\n  return () => {\n    window.removeEventListener('res"}
+{"task_id":"task/59","completion":"\n\tconst handleResize = () => {\n\t\tconst { innerWidth: width, innerHeight: height } = window;\n\t\tcallback({ width, height });\n\t};\n\n\tuseEffect(() => {\n"}
+{"task_id":"task/59","completion":"\n\tconst eventName = 'resize';\n\tconst listener = () => {\n\t\tconst node = window;\n\t\tconst win = node.window;\n\t\tconst doc = node.document;\n\t\t"}
+{"task_id":"task/59","completion":"\n  const resizeTimer = {};\n  const onResize = (window.innerWidth, window.innerHeight) => {\n    clearTimeout(resizeTimer.timer);\n    resizeTimer.timer = setTimeout("}
+{"task_id":"task/60","completion":"\n  const [value, setValue] = useState(defaultValue);\n\n  const handleChange = e => {\n    setValue(e.target.value);\n    onValueChange(e.target.value);\n"}
+{"task_id":"task/60","completion":"\n  const [value, setValue] = useState(defaultValue);\n\n  const onChange = (event) => {\n    setValue(event.target.value);\n    onValueChange(event.target.value"}
+{"task_id":"task/60","completion":"\n  const [value, setValue] = useState(defaultValue);\n\n  const handleChange = (e) => {\n    const { value } = e.target;\n    setValue(value);\n    onValue"}
+{"task_id":"task/60","completion":"\n  const [value, setValue] = useState(defaultValue);\n\n  const handleChange = e => {\n    setValue(e.target.value);\n    onValueChange(e.target.value);\n"}
+{"task_id":"task/60","completion":"\n  const [value, setValue] = useState(defaultValue)\n\n  useEffect(() => {\n    if (value !== defaultValue) {\n      setValue(defaultValue)\n    }\n  },"}
+{"task_id":"task/61","completion":"\n  name,\n  label,\n  onChange,\n  placeholder,\n  error,\n  value,\n  rows,\n  cols,\n  id,\n  style,\n  type,\n  valueType"}
+{"task_id":"task/61","completion":" name, label, error, ...rest }) => {\n  return (\n    <div className=\"form-group\">\n      <label htmlFor={name}>{label}</label>\n      <textarea\n        {"}
+{"task_id":"task/61","completion":" name, value, onChange, placeholder, error, rows }) => {\n  return (\n    <div className=\"form-group\">\n      <textarea\n        className=\"form-control\"\n        placeholder={placeholder"}
+{"task_id":"task/61","completion":" name, label, error, ...rest }) => {\n  return (\n    <div className=\"form-group\">\n      <label htmlFor={name}>{label}</label>\n      <textarea\n        {"}
+{"task_id":"task/61","completion":" name, label, error, ...rest }) => {\n  return (\n    <div className=\"form-group\">\n      <label htmlFor={name}>{label}</label>\n      <textarea\n        {"}
+{"task_id":"task/62","completion":"\n  const [ready, setReady] = useState(false)\n  const [failed, setFailed] = useState(false)\n\n  useEffect(() => {\n    if (!ready && !failed) {"}
+{"task_id":"task/62","completion":"\n  // We create a new script element.\n  const script = document.createElement('script');\n  script.async = true;\n  script.src = src;\n\n  // Then append it to the DOM."}
+{"task_id":"task/62","completion":"\n  useEffect(() => {\n    const script = document.createElement('script');\n    script.src = src;\n    script.async = true;\n    document.body.appendChild(script);\n"}
+{"task_id":"task/62","completion":"\n  useEffect(() => {\n    if (!document.getElementById(src)) {\n      const script = document.createElement('script');\n      script.id = src;\n      script.src = src;"}
+{"task_id":"task/62","completion":"\n  useEffect(() => {\n    const s = document.createElement('script');\n    s.src = src;\n    s.async = true;\n    document.body.appendChild(s);\n"}
+{"task_id":"task/63","completion":"\n  useEffect(() => {\n    const handle = requestAnimationFrame(callback);\n    return () => cancelAnimationFrame(handle);\n  }, [callback]);\n};\n\nconst PostDetails = ({ match }) => {"}
+{"task_id":"task/63","completion":"\n    const handle = requestAnimationFrame(callback);\n    return () => cancelAnimationFrame(handle);\n};\n\nexport const toPercent = (min, max, value) => {\n    return ((value - min) /"}
+{"task_id":"task/63","completion":"\n  useEffect(() => {\n    let requestId;\n    const animationFrame = () => {\n      requestId = requestAnimationFrame(animationFrame);\n      callback();\n    };\n    requestId = request"}
+{"task_id":"task/63","completion":"\n  const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;\n  const raf = requestAnimationFrame(callback);\n "}
+{"task_id":"task/63","completion":"\n  let requestAnimationFrame;\n  let canceled = false;\n  let isCanceled = () => canceled;\n  const raf = (...args) => {\n    if (canceled) return;\n"}
+{"task_id":"task/64","completion":"\n  const [value, setValue] = useState(initialValue);\n  return [value, setValue];\n};\n\nconst useToggle = initialValue => {\n  const [value, setValue] = use"}
+{"task_id":"task/64","completion":"\n    const [state, setState] = useState(initialValue);\n    return [state, setState];\n};\n\nexport default useSet;"}
+{"task_id":"task/64","completion":"\n  const [state, setState] = useState(initialValue);\n  return [state, setState];\n};\n\nexport default useSet;"}
+{"task_id":"task/64","completion":"\n  const [data, setData] = useState(initialValue);\n  return [data, setData];\n};\n\nexport const useAuth = () => {\n  const [data, setData] = useState"}
+{"task_id":"task/64","completion":"\n  const [state, setState] = useState(initialValue);\n  return [state, setState];\n};\n\nconst reducer = (state, action) => {\n  switch (action.type) {"}
+{"task_id":"task/65","completion":"\n  const [value, setValue] = useState(\n    localStorage.getItem(keyName) || defaultValue\n  );\n\n  const setValueToLocalStorage = value => {\n    localStorage.setItem"}
+{"task_id":"task/65","completion":"\n  const [value, setValue] = useState(defaultValue);\n\n  useEffect(() => {\n    const storageValue = localStorage.getItem(keyName);\n    if (storageValue) {\n     "}
+{"task_id":"task/65","completion":"\n  const [value, setValue] = useState(() => {\n    try {\n      const item = window.localStorage.getItem(keyName);\n      return item ? JSON.parse(item) : default"}
+{"task_id":"task/65","completion":"\n  if (typeof window === 'undefined') return defaultValue;\n  if (!localStorage.getItem(keyName)) {\n    localStorage.setItem(keyName, JSON.stringify(defaultValue));"}
+{"task_id":"task/65","completion":"\n  const [value, setValue] = useState(() => {\n    try {\n      const storageValue = localStorage.getItem(keyName);\n      if (storageValue) {\n        return JSON.parse"}
+{"task_id":"task/66","completion":"\n  const [height, setHeight] = useState(null);\n  const node = useRef();\n\n  useEffect(() => {\n    if (!collapsed) {\n      setHeight(node.current.scroll"}
+{"task_id":"task/66","completion":"\n  const classes = useStyles();\n  const theme = useTheme();\n  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));\n\n  const [open, setOpen] = useState"}
+{"task_id":"task/66","completion":"\n  const [open, setOpen] = useState(false);\n\n  const handleClick = () => {\n    setOpen(!open);\n  };\n\n  return (\n    <>\n      <div\n       "}
+{"task_id":"task/66","completion":"\n  const classes = useStyles();\n  const theme = useTheme();\n  const [open, setOpen] = React.useState(false);\n\n  const handleClick = () => {\n    setOpen(!"}
+{"task_id":"task/66","completion":"\n  const collapseStyles = {\n    overflow: 'hidden',\n    height: '0px',\n    padding: '0',\n    transition: 'height .4s ease',\n  };\n\n  const expandedSty"}
+{"task_id":"task/67","completion":"\n  const classes = useStyles();\n  return (\n    <div className={classes.root}>\n      <div className={classes.content}>\n        <Button onClick={onClick}>{"}
+{"task_id":"task/67","completion":"\n  const [hover, setHover] = useState(false);\n  const onMouseEnter = () => setHover(true);\n  const onMouseLeave = () => setHover(false);\n\n  return"}
+{"task_id":"task/67","completion":"\n  const [, updateState] = useState();\n  const [startTransition] = useTransition(() => Date.now(), null, {\n    from: {\n      opacity: 0,\n      transform:"}
+{"task_id":"task/67","completion":"\n  const [startRipple, setStartRipple] = useState(false);\n  const rippleRef = useRef(null);\n\n  const classes = classNames({\n    'whitespace-no-wrap text"}
+{"task_id":"task/67","completion":"\n  const [isPressed, setIsPressed] = useState(false);\n\n  const onButtonPress = () => {\n    setIsPressed(true);\n    onClick();\n  };\n\n  const"}
+{"task_id":"task/68","completion":"\n  container: HTMLElement,\n  callback: (event: MutationObserverInit) => void\n) => {\n  const mutationObserver = new MutationObserver(callback);\n  mutationObserver."}
+{"task_id":"task/68","completion":"element: Element | null) => {\n  const observer = new MutationObserver(() => {\n    const array = Array.from(element?.children ?? []);\n    element?.children = array;\n "}
+{"task_id":"task/68","completion":"): [boolean, Function] => {\n  const isSupported = typeof MutationObserver !== 'undefined';\n  const isMutated = false;\n\n  if (isSupported) {\n    const callback ="}
+{"task_id":"task/68","completion":"ref: any) => {\n  const mutationObserver = new MutationObserver(() => {\n    if (ref.current) {\n      scrollToRef(ref)\n    }\n  })\n\n  return mutation"}
+{"task_id":"task/68","completion":"element, callback) => {\n  const handleRefresh = () => {\n    callback(element);\n  };\n\n  useEffect(() => {\n    const observer = new MutationObserver(handleRefresh);\n"}
+{"task_id":"task/69","completion":"\n  return (\n    <div className=\"tooltip\" {...rest}>\n      {children}\n      <span className=\"tooltiptext\">{text}</span>\n    </div>\n "}
+{"task_id":"task/69","completion":"\n  return (\n    <div className=\"tooltip\" {...rest}>\n      {children}\n      <span className=\"tooltiptext\">{text}</span>\n    </div>\n "}
+{"task_id":"task/69","completion":"\n  return (\n    <TooltipWrapper {...rest}>\n      {children}\n      <TooltipText>{text}</TooltipText>\n    </TooltipWrapper>\n  );\n};"}
+{"task_id":"task/69","completion":"\n  return (\n    <Wrapper {...rest}>\n      {children}\n      <Text>{text}</Text>\n    </Wrapper>\n  );\n};\n\nexport default Tooltip;"}
+{"task_id":"task/69","completion":"\n  return (\n    <TooltipWrapper {...rest}>\n      {children}\n      <TooltipText>{text}</TooltipText>\n    </TooltipWrapper>\n  );\n};"}
+{"task_id":"task/70","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/70","completion":"\n  const timer = setTimeout(callback, delay);\n  return () => clearTimeout(timer);\n};\n\nconst useFocus = (ref, onFocus) => {\n  const handleFocus = useCallback(() =>"}
+{"task_id":"task/70","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/70","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/70","completion":"\n  const savedCallback = useRef();\n\n  // Remember the latest callback.\n  useEffect(() => {\n    savedCallback.current = callback;\n  }, [callback]);\n\n  // Set up the interval.\n"}
+{"task_id":"task/71","completion":"\n  useEffect(() => {\n    console.log(err);\n  }, [err]);\n};\n\nexport default useError;"}
+{"task_id":"task/71","completion":"\n\tif (typeof err === 'string') {\n\t\treturn {\n\t\t\tvalue: undefined,\n\t\t\thasError: true,\n\t\t\ttype: 'string',\n\t\t\tmessage:"}
+{"task_id":"task/71","completion":"\n  const [error, setError] = useState(err);\n  return [error, setError];\n};\n\nconst useActiveUser = () => {\n  const [activeUser, setActiveUser] = use"}
+{"task_id":"task/71","completion":"\n  const [state, setState] = useState({\n    status: \"\",\n    message: \"\",\n  });\n\n  useEffect(() => {\n    if (err) {\n      setState({\n"}
+{"task_id":"task/71","completion":"\n  const [error, setError] = useState(err);\n  return [error, setError];\n};\n\nexport default useError;"}
+{"task_id":"task/72","completion":"\n  const [copied, setCopied] = useState(false);\n  const handleClick = () => {\n    setCopied(true);\n    copy(text);\n    setTimeout(() => setCop"}
+{"task_id":"task/72","completion":"\n\tconst [copied, setCopied] = useState(false);\n\n\tconst copyToClipboard = () => {\n\t\tconst textArea = document.createElement('textarea');\n\t\ttextArea"}
+{"task_id":"task/72","completion":"\n  const [copied, setCopied] = useState(false);\n  const onCopy = () => {\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);"}
+{"task_id":"task/72","completion":"\n  const [isCopied, setIsCopied] = useState(false);\n\n  const handleCopy = () => {\n    navigator.clipboard.writeText(text);\n    setIsCopied(true"}
+{"task_id":"task/72","completion":"\n  const [isCopied, setIsCopied] = useState(false);\n\n  const copyToClipboard = () => {\n    copy(text);\n    setIsCopied(true);\n    set"}
+{"task_id":"task/73","completion":"\n  const store = useRef({\n    ...initialValue,\n    get: key => store.current[key],\n    set: (key, value) => (store.current[key] = value),\n    remove"}
+{"task_id":"task/73","completion":"\n\tlet key = 0;\n\treturn {\n\t\tmap: new Map(),\n\t\tset: value => {\n\t\t\tconst nextKey = key++;\n\t\t\tconst nextValue = initialValue ? initial"}
+{"task_id":"task/73","completion":"\n  const [map, setMap] = useState(initialValue);\n\n  const getMap = () => map;\n\n  const setMapValue = (key, value) => {\n    setMap({\n      ...map"}
+{"task_id":"task/73","completion":"\n  const [state, setState] = useState(initialValue);\n  const set = key => value => {\n    setState({\n      ...state,\n      [key]: value,\n    });\n  };"}
+{"task_id":"task/73","completion":"\n  const [results, setResults] = useState(initialValue);\n\n  const add = (...args) => {\n    const key = args[0];\n    if (key === undefined) {\n      throw new"}
+{"task_id":"task/74","completion":"\n  const handleClick = useCallback(() => {\n    window.open(text);\n  }, [text]);\n\n  return (\n    <Button size=\"small\" variant=\"outlined\" onClick={handleClick}"}
+{"task_id":"task/74","completion":"\n  return (\n    <a\n      href={`https://www.google.com/search?q=${text}`}\n      target=\"_blank\"\n      rel=\"noopener noreferrer\""}
+{"task_id":"task/74","completion":"\n  const { email } = parse(text);\n  const isEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2"}
+{"task_id":"task/74","completion":"\n  const output = text.split(' ').map((word) => {\n    if (word.match(/^https?:\\/\\//)) {\n      return (\n        <a\n          key={word}"}
+{"task_id":"task/74","completion":"\n  const Link = props => {\n    const match = props.match.match(/(?<=^|\\s|\\()([\\w\\.\\:\\/]+)/)\n    if (match && isValidURL"}
+{"task_id":"task/75","completion":"\n    const [debouncedValue, setDebouncedValue] = useState(value);\n\n    useEffect(() => {\n        const handler = setTimeout(() => {\n            setDebouncedValue(value);\n       "}
+{"task_id":"task/75","completion":"\n  const [debouncedValue, setDebouncedValue] = useState(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n   "}
+{"task_id":"task/75","completion":"\n  const [debouncedValue, setDebouncedValue] = useState(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n   "}
+{"task_id":"task/75","completion":"\n    const [debouncedValue, setDebouncedValue] = useState(value);\n\n    useEffect(() => {\n        const handler = setTimeout(() => {\n            setDebouncedValue(value);\n       "}
+{"task_id":"task/75","completion":"\n  const [debouncedValue, setDebouncedValue] = useState(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n   "}
+{"task_id":"task/76","completion":"\n  const [data, setData] = useState(null);\n  const [error, setError] = useState(null);\n  const [loading, setLoading] = useState(false);\n\n  useEffect"}
+{"task_id":"task/76","completion":"\n  const [data, setData] = useState(null);\n  const [loading, setLoading] = useState(true);\n  const [error, setError] = useState(null);\n\n  useEffect"}
+{"task_id":"task/76","completion":"\n  const [data, setData] = useState(null);\n  const [error, setError] = useState(null);\n  const [loading, setLoading] = useState(false);\n\n  useEffect"}
+{"task_id":"task/76","completion":"\n  const [response, setResponse] = useState(null);\n  const [error, setError] = useState(null);\n  const [isLoading, setIsLoading] = useState(false);\n\n "}
+{"task_id":"task/76","completion":"\n  const [response, setResponse] = useState({})\n  const [error, setError] = useState(null)\n  const [isLoading, setIsLoading] = useState(false)\n\n  use"}
+{"task_id":"task/77","completion":"\n  const callbackRef = useRef();\n  useEffect(() => {\n    const el = document.body;\n    const handleEvent = () => {\n      callbackRef.current();\n    };\n    el."}
+{"task_id":"task/77","completion":"\n  if (useGlobalEventListeners[type]) {\n    throw new Error(`The event ${type} is already being listened`);\n  }\n\n  const { once } = options || {};\n\n  useEffect"}
+{"task_id":"task/77","completion":"\n  const handler = (e) => {\n    if (e.type === type) {\n      callback(e);\n    }\n  };\n\n  window.addEventListener(type, handler, options);\n\n "}
+{"task_id":"task/77","completion":"\n  const { capture = false, once = false } = options || {}\n  const handle = (event) => {\n    if (event.type === type) {\n      callback(event)\n      if (once)"}
+{"task_id":"task/77","completion":"\n  const event = typeof type === 'string' ? new CustomEvent(type, options) : type\n  document.addEventListener(event.type, callback)\n  return () => document.removeEventListener(event"}

@@ -14,7 +14,7 @@ def generate(
         num_results=5,
         temperature=0.8,
         top_p=0.9,
-        model_name="davinci",
+        model_name="davinci-codex",
         line=False
 ):
     """Generate a snippet with Codex."""
@@ -55,7 +55,7 @@ def parse_arguments():
     parser.add_argument(
         "--model_name",
         type=str,
-        default="davinci",
+        default="davinci-codex",
         help="Codex model",
     )
 
