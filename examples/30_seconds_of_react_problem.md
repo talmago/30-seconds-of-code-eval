@@ -1,7 +1,7 @@
 ### useUnload (task/1)
 
 #### canonical solution
-```react
+```javascript
 const useUnload = fn => {  const cb = React.useRef(fn);
 
   React.useEffect(() => {
@@ -112,7 +112,7 @@ const useUnload = fn => {  const cb = React.useRef(fn);
 ### useClickOutside (task/2)
 
 #### canonical solution
-```react
+```javascript
 const useClickOutside = (ref, callback) => {  const handleClick = e => {
     if (ref.current && !ref.current.contains(e.target)) {
       callback();
@@ -240,7 +240,7 @@ const useClickOutside = (ref, callback) => {  const handleClick = e => {
 ### useSessionStorage (task/3)
 
 #### canonical solution
-```react
+```javascript
 const useSessionStorage = (keyName, defaultValue) => {  const [storedValue, setStoredValue] = React.useState(() => {
     try {
       const value = window.sessionStorage.getItem(keyName);
@@ -367,7 +367,7 @@ const useSessionStorage = (keyName, defaultValue) => {  const [storedValue, setS
 ### useTitle (task/4)
 
 #### canonical solution
-```react
+```javascript
 const useTitle = title => {  const documentDefined = typeof document !== 'undefined';
   const originalTitle = React.useRef(documentDefined ? document.title : null);
 
@@ -473,7 +473,7 @@ const useTitle = title => {  const documentDefined = typeof document !== 'undefi
 ### useEffectOnce (task/5)
 
 #### canonical solution
-```react
+```javascript
 const useEffectOnce = (callback, when) => {  const hasRunOnce = React.useRef(false);
   React.useEffect(() => {
     if (when && !hasRunOnce.current) {
@@ -571,7 +571,7 @@ const useEffectOnce = (callback, when) => {  const hasRunOnce = React.useRef(fal
 ### Accordion (task/6)
 
 #### canonical solution
-```react
+```javascript
 const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {  return (
     <>
       <button className="accordion-button" onClick={handleClick}>
@@ -710,7 +710,7 @@ const Accordion = ({ defaultIndex, onItemClick, children }) => {
 ### useIsomporphicEffect (task/7)
 
 #### canonical solution
-```react
+```javascript
 const useIsomorphicEffect =  typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
 ```
 
@@ -811,7 +811,7 @@ const useIsomorphicEffect =  typeof window !== 'undefined' ? React.useLayoutEffe
 ### useGetSet (task/8)
 
 #### canonical solution
-```react
+```javascript
 const useGetSet = initialState => {  const state = React.useRef(initialState);
   const [, update] = React.useReducer(() => ({}));
 
@@ -900,7 +900,7 @@ const useGetSet = initialState => {  const state = React.useRef(initialState);
 ### useInterval (task/9)
 
 #### canonical solution
-```react
+```javascript
 const useInterval = (callback, delay) => {  const savedCallback = React.useRef();
 
   React.useEffect(() => {
@@ -1032,7 +1032,7 @@ const useInterval = (callback, delay) => {  const savedCallback = React.useRef()
 ### Loader (task/10)
 
 #### canonical solution
-```react
+```javascript
 const Loader = ({ size }) => {  return (
     <svg
       className="loader"
@@ -1156,7 +1156,7 @@ const Loader = ({ size }) => {  return (
 ### Modal (task/11)
 
 #### canonical solution
-```react
+```javascript
 const Modal = ({ isVisible = false, title, content, footer, onClose }) => {  const keydownHandler = ({ key }) => {
     switch (key) {
       case 'Escape':
@@ -1280,7 +1280,7 @@ const Modal = ({ isVisible = false, title, content, footer, onClose }) => {  con
 ### useIntersectionObserver (task/12)
 
 #### canonical solution
-```react
+```javascript
 const useIntersectionObserver = (ref, options) => {  const [isIntersecting, setIsIntersecting] = React.useState(false);
 
   React.useEffect(() => {
@@ -1400,7 +1400,7 @@ const useIntersectionObserver = (ref, options) => {  const [isIntersecting, setI
 ### Slider (task/13)
 
 #### canonical solution
-```react
+```javascript
 const Slider = ({   min = 0,
   max = 100,
   defaultValue,
@@ -1525,7 +1525,7 @@ const Slider = ({   min = 0,
 ### useToggler (task/14)
 
 #### canonical solution
-```react
+```javascript
 const useToggler = initialState => {  const [value, setValue] = React.useState(initialState);
 
   const toggleValue = React.useCallback(() => setValue(prev => !prev), []);
@@ -1619,7 +1619,7 @@ const useToggler = initialState => {  const [value, setValue] = React.useState(i
 ### useHover (task/15)
 
 #### canonical solution
-```react
+```javascript
 const useHover = () => {  const [isHovering, setIsHovering] = React.useState(false);
 
   const handleMouseOver = React.useCallback(() => setIsHovering(true), []);
@@ -1742,7 +1742,7 @@ const useHover = () => {  const [isHovering, setIsHovering] = React.useState(fal
 ### usePrevious (task/16)
 
 #### canonical solution
-```react
+```javascript
 const usePrevious = value => {  const ref = React.useRef();
   React.useEffect(() => {
     ref.current = value;
@@ -1852,7 +1852,7 @@ const usePrevious = value => {  const ref = React.useRef();
 ### useMediaQuery (task/17)
 
 #### canonical solution
-```react
+```javascript
 const useMediaQuery = (query, whenTrue, whenFalse) => {  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined')
     return whenFalse;
 
@@ -1961,7 +1961,7 @@ const useMediaQuery = (query, whenTrue, whenFalse) => {  if (typeof window === '
 ### useDefault (task/18)
 
 #### canonical solution
-```react
+```javascript
 const useDefault = (defaultState, initialState) => {  const [value, setValue] = React.useState(initialState);
   const isValueEmpty = value === undefined || value === null;
   return [isValueEmpty ? defaultState : value, setValue];
@@ -2054,7 +2054,7 @@ const useDefault = (defaultState, initialState) => {  const [value, setValue] = 
 ### TagInput (task/19)
 
 #### canonical solution
-```react
+```javascript
 const TagInput = ({ tags }) => {  const [tagData, setTagData] = React.useState(tags);
   const removeTagData = indexToRemove => {
     setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
@@ -2181,7 +2181,7 @@ const TagInput = ({ tags }) => {  const [tagData, setTagData] = React.useState(t
 ### MultiselectCheckbox (task/20)
 
 #### canonical solution
-```react
+```javascript
 const MultiselectCheckbox = ({ options, onChange }) => {  const [data, setData] = React.useState(options);
 
   const toggle = index => {
@@ -2317,7 +2317,7 @@ const MultiselectCheckbox = ({ options, onChange }) => {  const [data, setData] 
 ### DataList (task/21)
 
 #### canonical solution
-```react
+```javascript
 const DataList = ({ isOrdered = false, data }) => {  const list = data.map((val, i) => <li key={`${i}_${val}`}>{val}</li>);
   return isOrdered ? <ol>{list}</ol> : <ul>{list}</ul>;
 };
@@ -2407,7 +2407,7 @@ const DataList = ({ isOrdered = false, data }) => {  const list = data.map((val,
 ### Carousel (task/22)
 
 #### canonical solution
-```react
+```javascript
 const Carousel = ({ carouselItems, ...rest }) => {  const [active, setActive] = React.useState(0);
   let scrollInterval = null;
 
@@ -2522,7 +2522,7 @@ const Carousel = ({ carouselItems, ...rest }) => {  const [active, setActive] = 
 ### useMergeState (task/23)
 
 #### canonical solution
-```react
+```javascript
 const useMergeState = (initialState = {}) => {  const [value, setValue] = React.useState(initialState);
 
   const mergeState = newState => {
@@ -2621,7 +2621,7 @@ const useMergeState = (initialState = {}) => {  const [value, setValue] = React.
 ### useAsync (task/24)
 
 #### canonical solution
-```react
+```javascript
 const useAsync = fn => {  const initialState = { loading: false, error: null, value: null };
   const stateReducer = (_, action) => {
     switch (action.type) {
@@ -2751,7 +2751,7 @@ const useAsync = fn => {  const initialState = { loading: false, error: null, va
 ### useBodyScrollLock (task/25)
 
 #### canonical solution
-```react
+```javascript
 const useBodyScrollLock = () => {  React.useLayoutEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     document.body.style.overflow = 'hidden';
@@ -2856,7 +2856,7 @@ const useBodyScrollLock = () => {  React.useLayoutEffect(() => {
 ### useForm (task/26)
 
 #### canonical solution
-```react
+```javascript
 const useForm = initialValues => {  const [values, setValues] = React.useState(initialValues);
 
   return [
@@ -2988,7 +2988,7 @@ const useForm = initialValues => {  const [values, setValues] = React.useState(i
 ### usePortal (task/27)
 
 #### canonical solution
-```react
+```javascript
 const usePortal = el => {  const [portal, setPortal] = React.useState({
     render: () => null,
     remove: () => null,
@@ -3108,7 +3108,7 @@ const usePortal = el => {  const [portal, setPortal] = React.useState({
 ### Mailto (task/28)
 
 #### canonical solution
-```react
+```javascript
 const Mailto = ({ email, subject = '', body = '', children }) => {  let params = subject || body ? '?' : '';
   if (subject) params += `subject=${encodeURIComponent(subject)}`;
   if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
@@ -3209,7 +3209,7 @@ const Mailto = ({ email, subject = '', body = '', children }) => {  let params =
 ### useKeyPress (task/29)
 
 #### canonical solution
-```react
+```javascript
 const useKeyPress = targetKey => {  const [keyPressed, setKeyPressed] = React.useState(false);
 
   const downHandler = ({ key }) => {
@@ -3342,7 +3342,7 @@ const useKeyPress = targetKey => {  const [keyPressed, setKeyPressed] = React.us
 ### CountDown (task/30)
 
 #### canonical solution
-```react
+```javascript
 const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {  const [paused, setPaused] = React.useState(false);
   const [over, setOver] = React.useState(false);
   const [[h, m, s], setTime] = React.useState([hours, minutes, seconds]);
@@ -3472,7 +3472,7 @@ const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {  const [paused,
 ### Alert (task/31)
 
 #### canonical solution
-```react
+```javascript
 const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {  const [isShown, setIsShown] = React.useState(isDefaultShown);
   const [isLeaving, setIsLeaving] = React.useState(false);
 
@@ -3606,7 +3606,7 @@ const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {  c
 ### useHash (task/32)
 
 #### canonical solution
-```react
+```javascript
 const useHash = () => {  const [hash, setHash] = React.useState(() => window.location.hash);
 
   const hashChangeHandler = React.useCallback(() => {
@@ -3719,7 +3719,7 @@ const useHash = () => {  const [hash, setHash] = React.useState(() => window.loc
 ### useDelayedState (task/33)
 
 #### canonical solution
-```react
+```javascript
 const useDelayedState = (initialState, condition) => {  const [{ state, loaded }, setState] = React.useState({
     state: null,
     loaded: false,
@@ -3841,7 +3841,7 @@ const useDelayedState = (initialState, condition) => {  const [{ state, loaded }
 ### useSearchParam (task/34)
 
 #### canonical solution
-```react
+```javascript
 const useSearchParam = param => {  const getValue = React.useCallback(
     () => new URLSearchParams(window.location.search).get(param),
     [param]
@@ -3952,7 +3952,7 @@ const useSearchParam = param => {  const getValue = React.useCallback(
 ### useUpdate (task/35)
 
 #### canonical solution
-```react
+```javascript
 const useUpdate = () => {  const [, update] = React.useReducer(() => ({}));
   return update;
 };
@@ -4050,7 +4050,7 @@ const useUpdate = () => {  const [, update] = React.useReducer(() => ({}));
 ### Select (task/36)
 
 #### canonical solution
-```react
+```javascript
 const Select = ({ values, onValueChange, selectedValue, ...rest }) => {  return (
     <select
       defaultValue={selectedValue}
@@ -4180,7 +4180,7 @@ const Select = ({ values, onValueChange, selectedValue, ...rest }) => {  return 
 ### LimitedWordTextarea (task/37)
 
 #### canonical solution
-```react
+```javascript
 const LimitedWordTextarea = ({ rows, cols, value, limit }) => {  const [{ content, wordCount }, setContent] = React.useState({
     content: value,
     wordCount: 0
@@ -4315,7 +4315,7 @@ const LimitedWordTextarea = ({ rows, cols, value, limit }) => {  const [{ conten
 ### useOnWindowScroll (task/38)
 
 #### canonical solution
-```react
+```javascript
 const useOnWindowScroll = callback => {  const listener = React.useRef(null);
 
   React.useEffect(() => {
@@ -4429,7 +4429,7 @@ const useOnWindowScroll = callback => {  const listener = React.useRef(null);
 ### useClickInside (task/39)
 
 #### canonical solution
-```react
+```javascript
 const useClickInside = (ref, callback) => {  const handleClick = e => {
     if (ref.current && ref.current.contains(e.target)) {
       callback();
@@ -4561,7 +4561,7 @@ const useClickInside = (ref, callback) => {  const handleClick = e => {
 ### useSSR (task/40)
 
 #### canonical solution
-```react
+```javascript
 const isDOMavailable = !!(  typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
@@ -4695,7 +4695,7 @@ const useSSR = () => {
 ### LimitedTextarea (task/41)
 
 #### canonical solution
-```react
+```javascript
 const LimitedTextarea = ({ rows, cols, value, limit }) => {  const [content, setContent] = React.useState(value.slice(0, limit));
 
   const setFormattedContent = React.useCallback(
@@ -4817,7 +4817,7 @@ const LimitedTextarea = ({ rows, cols, value, limit }) => {  const [content, set
 ### useComponentDidMount (task/42)
 
 #### canonical solution
-```react
+```javascript
 const useComponentDidMount = onMountHandler => {  React.useEffect(() => {
     onMountHandler();
   }, []);
@@ -4914,7 +4914,7 @@ const useComponentDidMount = onMountHandler => {  React.useEffect(() => {
 ### FileDrop (task/43)
 
 #### canonical solution
-```react
+```javascript
 const FileDrop = ({ onDrop }) => {  const [drag, setDrag] = React.useState(false);
   const [filename, setFilename] = React.useState('');
   let dropRef = React.createRef();
@@ -5086,7 +5086,7 @@ const FileDrop = ({ onDrop }) => {  const [drag, setDrag] = React.useState(false
 ### TreeView (task/44)
 
 #### canonical solution
-```react
+```javascript
 const TreeView = ({  data,
   toggled = true,
   name = null,
@@ -5235,7 +5235,7 @@ const TreeView = ({  data,
 ### usePersistedState (task/45)
 
 #### canonical solution
-```react
+```javascript
 const usePersistedState = (name, defaultValue) => {  const [value, setValue] = React.useState(defaultValue);
   const nameRef = React.useRef(name);
 
@@ -5366,7 +5366,7 @@ const usePersistedState = (name, defaultValue) => {  const [value, setValue] = R
 ### useWindowSize (task/46)
 
 #### canonical solution
-```react
+```javascript
 const useWindowSize = () => {  const [windowSize, setWindowSize] = React.useState({
     width: undefined,
     height: undefined,
@@ -5503,7 +5503,7 @@ const useWindowSize = () => {  const [windowSize, setWindowSize] = React.useStat
 ### ControlledInput (task/47)
 
 #### canonical solution
-```react
+```javascript
 const ControlledInput = ({ value, onValueChange, ...rest }) => {  return (
     <input
       value={value}
@@ -5623,7 +5623,7 @@ const ControlledInput = ({ value, onValueChange, ...rest }) => {  return (
 ### DataTable (task/48)
 
 #### canonical solution
-```react
+```javascript
 const DataTable = ({ data }) => {  return (
     <table>
       <thead>
@@ -5750,7 +5750,7 @@ const DataTable = ({ data }) => {  return (
 ### useComponentWillUnmount (task/49)
 
 #### canonical solution
-```react
+```javascript
 const useComponentWillUnmount = onUnmountHandler => {  React.useEffect(
     () => () => {
       onUnmountHandler();
@@ -5854,7 +5854,7 @@ const useComponentWillUnmount = onUnmountHandler => {  React.useEffect(
 ### Tabs (task/50)
 
 #### canonical solution
-```react
+```javascript
 const TabItem = props => <div {...props} />;
 
 const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {  const [bindIndex, setBindIndex] = React.useState(defaultIndex);
@@ -6011,7 +6011,7 @@ const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {  const [bindIndex
 ### useNavigatorOnLine (task/51)
 
 #### canonical solution
-```react
+```javascript
 const getOnLineStatus = () =>  typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean'
     ? navigator.onLine
     : true;
@@ -6145,7 +6145,7 @@ const useNavigatorOnLine = () => {
 ### PasswordRevealer (task/52)
 
 #### canonical solution
-```react
+```javascript
 const PasswordRevealer = ({ value }) => {  const [shown, setShown] = React.useState(false);
   return (
     <>
@@ -6256,7 +6256,7 @@ const PasswordRevealer = ({ value }) => {  const [shown, setShown] = React.useSt
 ### StarRating (task/53)
 
 #### canonical solution
-```react
+```javascript
 const Star = ({ marked, starId }) => {  return (
     <span data-star-id={starId} className="star" role="button">
       {marked ? '\u2605' : '\u2606'}
@@ -6373,7 +6373,7 @@ const StarRating = ({ value }) => {
 ### useComponentDidUpdate (task/54)
 
 #### canonical solution
-```react
+```javascript
 const useComponentDidUpdate = (callback, condition) => {  const mounted = React.useRef(false);
   React.useEffect(() => {
     if (mounted.current) callback();
@@ -6485,7 +6485,7 @@ const useComponentDidUpdate = (callback, condition) => {  const mounted = React.
 ### Toggle (task/55)
 
 #### canonical solution
-```react
+```javascript
 const Toggle = ({ defaultToggled = false }) => {  const [isToggleOn, setIsToggleOn] = React.useState(defaultToggled);
 
   return (
@@ -6598,7 +6598,7 @@ const Toggle = ({ defaultToggled = false }) => {  const [isToggleOn, setIsToggle
 ### MappedTable (task/56)
 
 #### canonical solution
-```react
+```javascript
 const MappedTable = ({ data, propertyNames }) => {  let filteredData = data.map(v =>
     Object.keys(v)
       .filter(k => propertyNames.includes(k))
@@ -6724,7 +6724,7 @@ const MappedTable = ({ data, propertyNames }) => {  let filteredData = data.map(
 ### useEventListener (task/57)
 
 #### canonical solution
-```react
+```javascript
 const useEventListener = (type, handler, el = window) => {  const savedHandler = React.useRef();
 
   React.useEffect(() => {
@@ -6833,7 +6833,7 @@ const useEventListener = (type, handler, el = window) => {  const savedHandler =
 ### Callto (task/58)
 
 #### canonical solution
-```react
+```javascript
 const Callto = ({ phone, children }) => {  return <a href={`tel:${phone}`}>{children}</a>;
 };
 ```
@@ -6928,7 +6928,7 @@ const Callto = ({ phone, children }) => {  return <a href={`tel:${phone}`}>{chil
 ### useOnWindowResize (task/59)
 
 #### canonical solution
-```react
+```javascript
 const useOnWindowResize = callback => {  const listener = React.useRef(null);
 
   React.useEffect(() => {
@@ -7052,7 +7052,7 @@ const useOnWindowResize = callback => {  const listener = React.useRef(null);
 ### UncontrolledInput (task/60)
 
 #### canonical solution
-```react
+```javascript
 const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {  return (
     <input
       defaultValue={defaultValue}
@@ -7168,7 +7168,7 @@ const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {  retur
 ### TextArea (task/61)
 
 #### canonical solution
-```react
+```javascript
 const TextArea = ({  cols = 20,
   rows = 2,
   defaultValue,
@@ -7281,7 +7281,7 @@ const TextArea = ({  cols = 20,
 ### useScript (task/62)
 
 #### canonical solution
-```react
+```javascript
 const useScript = src => {  const [status, setStatus] = React.useState(src ? 'loading' : 'idle');
 
   React.useEffect(() => {
@@ -7442,7 +7442,7 @@ const useScript = src => {  const [status, setStatus] = React.useState(src ? 'lo
 ### useRequestAnimationFrame (task/63)
 
 #### canonical solution
-```react
+```javascript
 const useRequestAnimationFrame = callback => {  const requestRef = React.useRef();
   const previousTimeRef = React.useRef();
 
@@ -7557,7 +7557,7 @@ const useRequestAnimationFrame = callback => {  const requestRef = React.useRef(
 ### useSet (task/64)
 
 #### canonical solution
-```react
+```javascript
 const useSet = initialValue => {  const [set, setSet] = React.useState(new Set(initialValue));
 
   const actions = React.useMemo(
@@ -7646,7 +7646,7 @@ const useSet = initialValue => {  const [set, setSet] = React.useState(new Set(i
 ### useLocalStorage (task/65)
 
 #### canonical solution
-```react
+```javascript
 const useLocalStorage = (keyName, defaultValue) => {  const [storedValue, setStoredValue] = React.useState(() => {
     try {
       const value = window.localStorage.getItem(keyName);
@@ -7772,7 +7772,7 @@ const useLocalStorage = (keyName, defaultValue) => {  const [storedValue, setSto
 ### Collapse (task/66)
 
 #### canonical solution
-```react
+```javascript
 const Collapse = ({ collapsed, children }) => {  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
 
   return (
@@ -7887,7 +7887,7 @@ const Collapse = ({ collapsed, children }) => {  const [isCollapsed, setIsCollap
 ### RippleButton (task/67)
 
 #### canonical solution
-```react
+```javascript
 const RippleButton = ({ children, onClick }) => {  const [coords, setCoords] = React.useState({ x: -1, y: -1 });
   const [isRippling, setIsRippling] = React.useState(false);
 
@@ -8036,7 +8036,7 @@ const RippleButton = ({ children, onClick }) => {  const [coords, setCoords] = R
 ### useMutationObserver (task/68)
 
 #### canonical solution
-```react
+```javascript
 const useMutationObserver = (  ref,
   callback,
   options = {
@@ -8148,7 +8148,7 @@ const useMutationObserver = (  ref,
 ### Tooltip (task/69)
 
 #### canonical solution
-```react
+```javascript
 const Tooltip = ({ children, text, ...rest }) => {  const [show, setShow] = React.useState(false);
 
   return (
@@ -8277,7 +8277,7 @@ const Tooltip = ({ children, text, ...rest }) => {  const [show, setShow] = Reac
 ### useTimeout (task/70)
 
 #### canonical solution
-```react
+```javascript
 const useTimeout = (callback, delay) => {  const savedCallback = React.useRef();
 
   React.useEffect(() => {
@@ -8409,7 +8409,7 @@ const useTimeout = (callback, delay) => {  const savedCallback = React.useRef();
 ### useError (task/71)
 
 #### canonical solution
-```react
+```javascript
 const useError = err => {  const [error, setError] = React.useState(err);
 
   React.useEffect(() => {
@@ -8514,7 +8514,7 @@ const useError = err => {  const [error, setError] = React.useState(err);
 ### useCopyToClipboard (task/72)
 
 #### canonical solution
-```react
+```javascript
 const useCopyToClipboard = text => {  const copyToClipboard = str => {
     const el = document.createElement('textarea');
     el.value = str;
@@ -8646,7 +8646,7 @@ const useCopyToClipboard = text => {  const copyToClipboard = str => {
 ### useMap (task/73)
 
 #### canonical solution
-```react
+```javascript
 const useMap = initialValue => {  const [map, setMap] = React.useState(new Map(initialValue));
 
   const actions = React.useMemo(
@@ -8762,7 +8762,7 @@ const useMap = initialValue => {  const [map, setMap] = React.useState(new Map(i
 ### AutoLink (task/74)
 
 #### canonical solution
-```react
+```javascript
 const AutoLink = ({ text }) => {  const delimiter = /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
 
   return (
@@ -8864,7 +8864,7 @@ const AutoLink = ({ text }) => {  const delimiter = /((?:https?:\/\/)?(?:(?:[a-z
 ### useDebounce (task/75)
 
 #### canonical solution
-```react
+```javascript
 const useDebounce = (value, delay) => {  const [debouncedValue, setDebouncedValue] = React.useState(value);
 
   React.useEffect(() => {
@@ -8999,7 +8999,7 @@ const useDebounce = (value, delay) => {  const [debouncedValue, setDebouncedValu
 ### useFetch (task/76)
 
 #### canonical solution
-```react
+```javascript
 const useFetch = (url, options) => {  const [response, setResponse] = React.useState(null);
   const [error, setError] = React.useState(null);
 
@@ -9113,7 +9113,7 @@ const useFetch = (url, options) => {  const [response, setResponse] = React.useS
 ### useOnGlobalEvent (task/77)
 
 #### canonical solution
-```react
+```javascript
 const useOnGlobalEvent = (type, callback, options) => {  const listener = React.useRef(null);
   const previousProps = React.useRef({ type, options });
 

@@ -53,6 +53,9 @@ def parse_arguments():
         "30_seconds_of_(.+)_samples.jsonl", args.sample_file
     ).group(1)
 
+    if args.language_name == "react":
+        args.language_name = "javascript"
+
     return args
 
 

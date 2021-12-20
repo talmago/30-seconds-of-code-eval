@@ -1,5 +1,11 @@
-#### index_of_all (task/1)
+### index_of_all (task/1)
 
+#### canonical solution
+```python
+def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == value]
+```
+
+#### solution 0
 ```diff
 -def index_of_all(lst, value):
 +def index_of_all(lst, value):
@@ -10,8 +16,7 @@
 +    main()
 ```
 
-#### index_of_all (task/1)
-
+#### solution 1
 ```diff
 -def index_of_all(lst, value):
 +def index_of_all(lst, value):
@@ -24,8 +29,7 @@
 +    make_simulated_path(size,
 ```
 
-#### index_of_all (task/1)
-
+#### solution 2
 ```diff
 -def index_of_all(lst, value):
 +def index_of_all(lst, value):
@@ -38,8 +42,7 @@
 +    indexes
 ```
 
-#### index_of_all (task/1)
-
+#### solution 3
 ```diff
 -def index_of_all(lst, value):
 +def index_of_all(lst, value):
@@ -50,8 +53,7 @@
 +def read_seq(filename):
 ```
 
-#### index_of_all (task/1)
-
+#### solution 4
 ```diff
 -def index_of_all(lst, value):
 +def index_of_all(lst, value):
@@ -65,8 +67,14 @@
 +def find_sub_list(sl,l):
 ```
 
-#### head (task/2)
+### head (task/2)
 
+#### canonical solution
+```python
+def head(lst):  return lst[0]
+```
+
+#### solution 0
 ```diff
 -def head(lst):
 +def head(lst):
@@ -82,8 +90,7 @@
 +def
 ```
 
-#### head (task/2)
-
+#### solution 1
 ```diff
 -def head(lst):
 +def head(lst):
@@ -99,8 +106,7 @@
 +def sum_list(lst):
 ```
 
-#### head (task/2)
-
+#### solution 2
 ```diff
 -def head(lst):
 +def head(lst):
@@ -115,8 +121,7 @@
 +
 ```
 
-#### head (task/2)
-
+#### solution 3
 ```diff
 -def head(lst):
 +def head(lst):
@@ -132,8 +137,7 @@
 +def last(lst):
 ```
 
-#### head (task/2)
-
+#### solution 4
 ```diff
 -def head(lst):
 +def head(lst):
@@ -150,8 +154,14 @@
 +   
 ```
 
-#### max_n (task/3)
+### max_n (task/3)
 
+#### canonical solution
+```python
+def max_n(lst, n = 1):  return sorted(lst, reverse = True)[:n]
+```
+
+#### solution 0
 ```diff
 -def max_n(lst, n = 1):
 +def max_n(lst, n = 1):
@@ -163,8 +173,7 @@
 +   
 ```
 
-#### max_n (task/3)
-
+#### solution 1
 ```diff
 -def max_n(lst, n = 1):
 +def max_n(lst, n = 1):
@@ -180,8 +189,7 @@
 +    return
 ```
 
-#### max_n (task/3)
-
+#### solution 2
 ```diff
 -def max_n(lst, n = 1):
 +def max_n(lst, n = 1):
@@ -195,8 +203,7 @@
 +    return heap
 ```
 
-#### max_n (task/3)
-
+#### solution 3
 ```diff
 -def max_n(lst, n = 1):
 +def max_n(lst, n = 1):
@@ -209,8 +216,7 @@
 +    >>> max_
 ```
 
-#### max_n (task/3)
-
+#### solution 4
 ```diff
 -def max_n(lst, n = 1):
 +def max_n(lst, n = 1):
@@ -222,8 +228,16 @@
 +    return max_n
 ```
 
-#### to_iso_date (task/4)
+### to_iso_date (task/4)
 
+#### canonical solution
+```python
+from datetime import datetime
+
+def to_iso_date(d):  return d.isoformat()
+```
+
+#### solution 0
 ```diff
 -from datetime import datetime
 -
@@ -239,8 +253,7 @@
 +    print(f"Fetching: {url}")
 ```
 
-#### to_iso_date (task/4)
-
+#### solution 1
 ```diff
 -from datetime import datetime
 -
@@ -257,8 +270,7 @@
 +        return d.
 ```
 
-#### to_iso_date (task/4)
-
+#### solution 2
 ```diff
 -from datetime import datetime
 -
@@ -275,8 +287,7 @@
 +def get_content(link):
 ```
 
-#### to_iso_date (task/4)
-
+#### solution 3
 ```diff
 -from datetime import datetime
 -
@@ -291,8 +302,7 @@
 +    return datetime.strptime(s, '%Y-%m-%d')
 ```
 
-#### to_iso_date (task/4)
-
+#### solution 4
 ```diff
 -from datetime import datetime
 -
@@ -309,8 +319,18 @@
 +        return datetime.strptime(d, '%Y-%m-%d').date()
 ```
 
-#### median (task/5)
+### median (task/5)
 
+#### canonical solution
+```python
+def median(list):  list.sort()
+  list_length = len(list)
+  if list_length % 2 == 0:
+    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+  return float(list[int(list_length / 2)])
+```
+
+#### solution 0
 ```diff
 -def median(list):
 +def median(list):
@@ -321,8 +341,7 @@
 +    else:
 ```
 
-#### median (task/5)
-
+#### solution 1
 ```diff
 -def median(list):
 +def median(list):
@@ -336,8 +355,7 @@
 +    else
 ```
 
-#### median (task/5)
-
+#### solution 2
 ```diff
 -def median(list):
 +def median(list):
@@ -351,8 +369,7 @@
 +    # check for even list length and calculate
 ```
 
-#### median (task/5)
-
+#### solution 3
 ```diff
 -def median(list):
 +def median(list):
@@ -365,8 +382,7 @@
 +        median = (list[
 ```
 
-#### median (task/5)
-
+#### solution 4
 ```diff
 -def median(list):
 +def median(list):
@@ -377,8 +393,14 @@
 +    else:
 ```
 
-#### longest_item (task/6)
+### longest_item (task/6)
 
+#### canonical solution
+```python
+def longest_item(*args):  return max(args, key = len)
+```
+
+#### solution 0
 ```diff
 -def longest_item(*args):
 +def longest_item(*args):
@@ -393,8 +415,7 @@
 +    return max(
 ```
 
-#### longest_item (task/6)
-
+#### solution 1
 ```diff
 -def longest_item(*args):
 +def longest_item(*args):
@@ -408,8 +429,7 @@
 +print(longest_item("one", "two", "three
 ```
 
-#### longest_item (task/6)
-
+#### solution 2
 ```diff
 -def longest_item(*args):
 +def longest_item(*args):
@@ -423,8 +443,7 @@
 +# [3, 3, 5
 ```
 
-#### longest_item (task/6)
-
+#### solution 3
 ```diff
 -def longest_item(*args):
 +def longest_item(*args):
@@ -441,8 +460,7 @@
 +    :param a:
 ```
 
-#### longest_item (task/6)
-
+#### solution 4
 ```diff
 -def longest_item(*args):
 +def longest_item(*args):
@@ -454,8 +472,17 @@
 +    return max(args
 ```
 
-#### powerset (task/7)
+### powerset (task/7)
 
+#### canonical solution
+```python
+from itertools import chain, combinations
+
+def powerset(iterable):  s = list(iterable)
+  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
+```
+
+#### solution 0
 ```diff
 -from itertools import chain, combinations
 -
@@ -471,8 +498,7 @@
 +b = list(
 ```
 
-#### powerset (task/7)
-
+#### solution 1
 ```diff
 -from itertools import chain, combinations
 -
@@ -485,8 +511,7 @@
 +    s = list
 ```
 
-#### powerset (task/7)
-
+#### solution 2
 ```diff
 -from itertools import chain, combinations
 -
@@ -501,8 +526,7 @@
 +#print(list(powerset(['a','
 ```
 
-#### powerset (task/7)
-
+#### solution 3
 ```diff
 -from itertools import chain, combinations
 -
@@ -519,8 +543,7 @@
 +   
 ```
 
-#### powerset (task/7)
-
+#### solution 4
 ```diff
 -from itertools import chain, combinations
 -
@@ -535,8 +558,14 @@
 +def select_from_list(l, n):
 ```
 
-#### find_index_of_all (task/8)
+### find_index_of_all (task/8)
 
+#### canonical solution
+```python
+def find_index_of_all(lst, fn):  return [i for i, x in enumerate(lst) if fn(x)]
+```
+
+#### solution 0
 ```diff
 -def find_index_of_all(lst, fn):
 +def find_index_of_all(lst, fn):
@@ -548,8 +577,7 @@
 +            indices.
 ```
 
-#### find_index_of_all (task/8)
-
+#### solution 1
 ```diff
 -def find_index_of_all(lst, fn):
 +def find_index_of_all(lst, fn):
@@ -561,8 +589,7 @@
 +def find_index_of
 ```
 
-#### find_index_of_all (task/8)
-
+#### solution 2
 ```diff
 -def find_index_of_all(lst, fn):
 +def find_index_of_all(lst, fn):
@@ -577,8 +604,7 @@
 +def all
 ```
 
-#### find_index_of_all (task/8)
-
+#### solution 3
 ```diff
 -def find_index_of_all(lst, fn):
 +def find_index_of_all(lst, fn):
@@ -593,8 +619,7 @@
 +        A
 ```
 
-#### find_index_of_all (task/8)
-
+#### solution 4
 ```diff
 -def find_index_of_all(lst, fn):
 +def find_index_of_all(lst, fn):
@@ -608,8 +633,14 @@
 +def iif(condition, true_
 ```
 
-#### take (task/9)
+### take (task/9)
 
+#### canonical solution
+```python
+def take(itr, n = 1):  return itr[:n]
+```
+
+#### solution 0
 ```diff
 -def take(itr, n = 1):
 +def take(itr, n = 1):
@@ -622,8 +653,7 @@
 +def tabulate
 ```
 
-#### take (task/9)
-
+#### solution 1
 ```diff
 -def take(itr, n = 1):
 +def take(itr, n = 1):
@@ -635,8 +665,7 @@
 +    :return: The first n
 ```
 
-#### take (task/9)
-
+#### solution 2
 ```diff
 -def take(itr, n = 1):
 +def take(itr, n = 1):
@@ -650,8 +679,7 @@
 +    return [int
 ```
 
-#### take (task/9)
-
+#### solution 3
 ```diff
 -def take(itr, n = 1):
 +def take(itr, n = 1):
@@ -663,8 +691,7 @@
 +def take_nth(itr, n = 1):
 ```
 
-#### take (task/9)
-
+#### solution 4
 ```diff
 -def take(itr, n = 1):
 +def take(itr, n = 1):
@@ -678,8 +705,14 @@
 +def nth(itr,
 ```
 
-#### last (task/10)
+### last (task/10)
 
+#### canonical solution
+```python
+def last(lst):  return lst[-1]
+```
+
+#### solution 0
 ```diff
 -def last(lst):
 +def last(lst):
@@ -692,8 +725,7 @@
 +        [lst] + [lst[:k] + lst
 ```
 
-#### last (task/10)
-
+#### solution 1
 ```diff
 -def last(lst):
 +def last(lst):
@@ -708,8 +740,7 @@
 +        if not result.has_key
 ```
 
-#### last (task/10)
-
+#### solution 2
 ```diff
 -def last(lst):
 +def last(lst):
@@ -725,8 +756,7 @@
 +def isa(
 ```
 
-#### last (task/10)
-
+#### solution 3
 ```diff
 -def last(lst):
 +def last(lst):
@@ -742,8 +772,7 @@
 +def is_number(x):
 ```
 
-#### last (task/10)
-
+#### solution 4
 ```diff
 -def last(lst):
 +def last(lst):
@@ -757,8 +786,17 @@
 +    return lst[-
 ```
 
-#### delay (task/11)
+### delay (task/11)
 
+#### canonical solution
+```python
+from time import sleep
+
+def delay(fn, ms, *args):  sleep(ms / 1000)
+  return fn(*args)
+```
+
+#### solution 0
 ```diff
 -from time import sleep
 -
@@ -776,8 +814,7 @@
 +    for d
 ```
 
-#### delay (task/11)
-
+#### solution 1
 ```diff
 -from time import sleep
 -
@@ -794,8 +831,7 @@
 +    :param args
 ```
 
-#### delay (task/11)
-
+#### solution 2
 ```diff
 -from time import sleep
 -
@@ -816,8 +852,7 @@
 +# hello
 ```
 
-#### delay (task/11)
-
+#### solution 3
 ```diff
 -from time import sleep
 -
@@ -836,8 +871,7 @@
 +        print("Something is happening before
 ```
 
-#### delay (task/11)
-
+#### solution 4
 ```diff
 -from time import sleep
 -
@@ -856,8 +890,16 @@
 +    return sorted(d.items
 ```
 
-#### curry (task/12)
+### curry (task/12)
 
+#### canonical solution
+```python
+from functools import partial
+
+def curry(fn, *args):  return partial(fn, *args)
+```
+
+#### solution 0
 ```diff
 -from functools import partial
 -
@@ -876,8 +918,7 @@
 +   
 ```
 
-#### curry (task/12)
-
+#### solution 1
 ```diff
 -from functools import partial
 -
@@ -897,8 +938,7 @@
 +    def __repr__(
 ```
 
-#### curry (task/12)
-
+#### solution 2
 ```diff
 -from functools import partial
 -
@@ -918,8 +958,7 @@
 +   
 ```
 
-#### curry (task/12)
-
+#### solution 3
 ```diff
 -from functools import partial
 -
@@ -935,8 +974,7 @@
 +# curry = lambda fn, *args: lambda *more_args: fn(*(args + more
 ```
 
-#### curry (task/12)
-
+#### solution 4
 ```diff
 -from functools import partial
 -
@@ -956,8 +994,14 @@
 +
 ```
 
-#### find (task/13)
+### find (task/13)
 
+#### canonical solution
+```python
+def find(lst, fn):  return next(x for x in lst if fn(x))
+```
+
+#### solution 0
 ```diff
 -def find(lst, fn):
 +def find(lst, fn):
@@ -972,8 +1016,7 @@
 +   
 ```
 
-#### find (task/13)
-
+#### solution 1
 ```diff
 -def find(lst, fn):
 +def find(lst, fn):
@@ -989,8 +1032,7 @@
 +def rev(l
 ```
 
-#### find (task/13)
-
+#### solution 2
 ```diff
 -def find(lst, fn):
 +def find(lst, fn):
@@ -1006,8 +1048,7 @@
 +        C, D,
 ```
 
-#### find (task/13)
-
+#### solution 3
 ```diff
 -def find(lst, fn):
 +def find(lst, fn):
@@ -1023,8 +1064,7 @@
 +    elif p.
 ```
 
-#### find (task/13)
-
+#### solution 4
 ```diff
 -def find(lst, fn):
 +def find(lst, fn):
@@ -1039,8 +1079,14 @@
 +       
 ```
 
-#### capitalize_every_word (task/14)
+### capitalize_every_word (task/14)
 
+#### canonical solution
+```python
+def capitalize_every_word(s):  return s.title()
+```
+
+#### solution 0
 ```diff
 -def capitalize_every_word(s):
 +def capitalize_every_word(s):
@@ -1051,8 +1097,7 @@
 +    if len(s1) < len(s2):
 ```
 
-#### capitalize_every_word (task/14)
-
+#### solution 1
 ```diff
 -def capitalize_every_word(s):
 +def capitalize_every_word(s):
@@ -1064,8 +1109,7 @@
 +
 ```
 
-#### capitalize_every_word (task/14)
-
+#### solution 2
 ```diff
 -def capitalize_every_word(s):
 +def capitalize_every_word(s):
@@ -1078,8 +1122,7 @@
 +    def __init__(self
 ```
 
-#### capitalize_every_word (task/14)
-
+#### solution 3
 ```diff
 -def capitalize_every_word(s):
 +def capitalize_every_word(s):
@@ -1091,8 +1134,7 @@
 +    return ' '.join([w[0].upper() + w[1
 ```
 
-#### capitalize_every_word (task/14)
-
+#### solution 4
 ```diff
 -def capitalize_every_word(s):
 +def capitalize_every_word(s):
@@ -1103,8 +1145,18 @@
 +    return normalize_full_name(name
 ```
 
-#### is_prime (task/15)
+### is_prime (task/15)
 
+#### canonical solution
+```python
+from math import sqrt
+
+def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2): 
+    return False
+  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
+```
+
+#### solution 0
 ```diff
 -from math import sqrt
 -
@@ -1122,8 +1174,7 @@
 +   
 ```
 
-#### is_prime (task/15)
-
+#### solution 1
 ```diff
 -from math import sqrt
 -
@@ -1139,8 +1190,7 @@
 +           
 ```
 
-#### is_prime (task/15)
-
+#### solution 2
 ```diff
 -from math import sqrt
 -
@@ -1159,8 +1209,7 @@
 +        if n %
 ```
 
-#### is_prime (task/15)
-
+#### solution 3
 ```diff
 -from math import sqrt
 -
@@ -1178,8 +1227,7 @@
 +   
 ```
 
-#### is_prime (task/15)
-
+#### solution 4
 ```diff
 -from math import sqrt
 -
@@ -1198,8 +1246,17 @@
 +print
 ```
 
-#### includes_all (task/16)
+### includes_all (task/16)
 
+#### canonical solution
+```python
+def includes_all(lst, values):  for v in values:
+    if v not in lst:
+      return False
+  return True
+```
+
+#### solution 0
 ```diff
 -def includes_all(lst, values):
 +def includes_all(lst, values):
@@ -1215,8 +1272,7 @@
 +    if value not in l
 ```
 
-#### includes_all (task/16)
-
+#### solution 1
 ```diff
 -def includes_all(lst, values):
 +def includes_all(lst, values):
@@ -1230,8 +1286,7 @@
 +def plot_gene_means(data, gene, bins=50, ax=None, plot_mean
 ```
 
-#### includes_all (task/16)
-
+#### solution 2
 ```diff
 -def includes_all(lst, values):
 +def includes_all(lst, values):
@@ -1246,8 +1301,7 @@
 +def includes_any(l
 ```
 
-#### includes_all (task/16)
-
+#### solution 3
 ```diff
 -def includes_all(lst, values):
 +def includes_all(lst, values):
@@ -1263,8 +1317,7 @@
 +    """Check
 ```
 
-#### includes_all (task/16)
-
+#### solution 4
 ```diff
 -def includes_all(lst, values):
 +def includes_all(lst, values):
@@ -1281,8 +1334,16 @@
 +    from .__
 ```
 
-#### is_weekend (task/17)
+### is_weekend (task/17)
 
+#### canonical solution
+```python
+from datetime import datetime
+
+def is_weekend(d = datetime.today()):  return d.weekday() > 4
+```
+
+#### solution 0
 ```diff
 -from datetime import datetime
 -
@@ -1300,8 +1361,7 @@
 +    df = pd.read
 ```
 
-#### is_weekend (task/17)
-
+#### solution 1
 ```diff
 -from datetime import datetime
 -
@@ -1319,8 +1379,7 @@
 +    if
 ```
 
-#### is_weekend (task/17)
-
+#### solution 2
 ```diff
 -from datetime import datetime
 -
@@ -1335,8 +1394,7 @@
 +    return d.weekday() in [0, 1, 2, 3, 4]
 ```
 
-#### is_weekend (task/17)
-
+#### solution 3
 ```diff
 -from datetime import datetime
 -
@@ -1354,8 +1412,7 @@
 +    print(is_week
 ```
 
-#### is_weekend (task/17)
-
+#### solution 4
 ```diff
 -from datetime import datetime
 -
@@ -1373,8 +1430,17 @@
 +    if (year % 4 == 0
 ```
 
-#### spread (task/18)
+### spread (task/18)
 
+#### canonical solution
+```python
+def spread(arg):  ret = []
+  for i in arg:
+    ret.extend(i) if isinstance(i, list) else ret.append(i)
+  return ret
+```
+
+#### solution 0
 ```diff
 -def spread(arg):
 +def spread(arg):
@@ -1390,8 +1456,7 @@
 +    return
 ```
 
-#### spread (task/18)
-
+#### solution 1
 ```diff
 -def spread(arg):
 +def spread(arg):
@@ -1404,8 +1469,7 @@
 +def args_to_lists(args
 ```
 
-#### spread (task/18)
-
+#### solution 2
 ```diff
 -def spread(arg):
 +def spread(arg):
@@ -1419,8 +1483,7 @@
 +    :return: The iterable
 ```
 
-#### spread (task/18)
-
+#### solution 3
 ```diff
 -def spread(arg):
 +def spread(arg):
@@ -1434,8 +1497,7 @@
 +    # Comments
 ```
 
-#### spread (task/18)
-
+#### solution 4
 ```diff
 -def spread(arg):
 +def spread(arg):
@@ -1450,8 +1512,16 @@
 +            prev =
 ```
 
-#### reverse_number (task/19)
+### reverse_number (task/19)
 
+#### canonical solution
+```python
+from math import copysign
+
+def reverse_number(n):  return copysign(float(str(n)[::-1].replace('-', '')), n)
+```
+
+#### solution 0
 ```diff
 -from math import copysign
 -
@@ -1469,8 +1539,7 @@
 +    for i
 ```
 
-#### reverse_number (task/19)
-
+#### solution 1
 ```diff
 -from math import copysign
 -
@@ -1488,8 +1557,7 @@
 +    for i
 ```
 
-#### reverse_number (task/19)
-
+#### solution 2
 ```diff
 -from math import copysign
 -
@@ -1506,8 +1574,7 @@
 +        if n ==
 ```
 
-#### reverse_number (task/19)
-
+#### solution 3
 ```diff
 -from math import copysign
 -
@@ -1526,8 +1593,7 @@
 +
 ```
 
-#### reverse_number (task/19)
-
+#### solution 4
 ```diff
 -from math import copysign
 -
@@ -1544,8 +1610,16 @@
 +def test_reverse_number():
 ```
 
-#### words (task/20)
+### words (task/20)
 
+#### canonical solution
+```python
+import re
+
+def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
+```
+
+#### solution 0
 ```diff
 -import re
 -
@@ -1562,8 +1636,7 @@
 +        yield line
 ```
 
-#### words (task/20)
-
+#### solution 1
 ```diff
 -import re
 -
@@ -1579,8 +1652,7 @@
 +    return (number[0], number[1])
 ```
 
-#### words (task/20)
-
+#### solution 2
 ```diff
 -import re
 -
@@ -1595,8 +1667,7 @@
 +    phone_pattern = re.compile(r'\d{3}-\d{3}-\d{4
 ```
 
-#### words (task/20)
-
+#### solution 3
 ```diff
 -import re
 -
@@ -1611,8 +1682,7 @@
 +    pattern = '^\s*(?:\+?(\d{1,3}))?[-. (]*(\
 ```
 
-#### words (task/20)
-
+#### solution 4
 ```diff
 -import re
 -
@@ -1627,8 +1697,16 @@
 +def articles(s, pattern = '\s+([a-zA-Z]+\s*){1,3}
 ```
 
-#### sample (task/21)
+### sample (task/21)
 
+#### canonical solution
+```python
+from random import choice
+
+def sample(lst):  return choice(lst)
+```
+
+#### solution 0
 ```diff
 -from random import choice
 -
@@ -1646,8 +1724,7 @@
 +    index_
 ```
 
-#### sample (task/21)
-
+#### solution 1
 ```diff
 -from random import choice
 -
@@ -1664,8 +1741,7 @@
 +        word = sample(cf
 ```
 
-#### sample (task/21)
-
+#### solution 2
 ```diff
 -from random import choice
 -
@@ -1685,8 +1761,7 @@
 +    Generate a sentence
 ```
 
-#### sample (task/21)
-
+#### solution 3
 ```diff
 -from random import choice
 -
@@ -1705,8 +1780,7 @@
 +
 ```
 
-#### sample (task/21)
-
+#### solution 4
 ```diff
 -from random import choice
 -
@@ -1723,8 +1797,16 @@
 +        new_lst.append(sample(lst
 ```
 
-#### days_ago (task/22)
+### days_ago (task/22)
 
+#### canonical solution
+```python
+from datetime import timedelta, date
+
+def days_ago(n):  return date.today() - timedelta(n)
+```
+
+#### solution 0
 ```diff
 -from datetime import timedelta, date
 -
@@ -1742,8 +1824,7 @@
 +       
 ```
 
-#### days_ago (task/22)
-
+#### solution 1
 ```diff
 -from datetime import timedelta, date
 -
@@ -1761,8 +1842,7 @@
 +    'start
 ```
 
-#### days_ago (task/22)
-
+#### solution 2
 ```diff
 -from datetime import timedelta, date
 -
@@ -1780,8 +1860,7 @@
 +可见，如果
 ```
 
-#### days_ago (task/22)
-
+#### solution 3
 ```diff
 -from datetime import timedelta, date
 -
@@ -1799,8 +1878,7 @@
 +        date_string {
 ```
 
-#### days_ago (task/22)
-
+#### solution 4
 ```diff
 -from datetime import timedelta, date
 -
@@ -1818,8 +1896,14 @@
 +    from django.db
 ```
 
-#### key_in_dict (task/23)
+### key_in_dict (task/23)
 
+#### canonical solution
+```python
+def key_in_dict(d, key):  return (key in d)
+```
+
+#### solution 0
 ```diff
 -def key_in_dict(d, key):
 +def key_in_dict(d, key):
@@ -1833,8 +1917,7 @@
 +            if key not in dict.keys():
 ```
 
-#### key_in_dict (task/23)
-
+#### solution 1
 ```diff
 -def key_in_dict(d, key):
 +def key_in_dict(d, key):
@@ -1847,8 +1930,7 @@
 +        "SELECT *
 ```
 
-#### key_in_dict (task/23)
-
+#### solution 2
 ```diff
 -def key_in_dict(d, key):
 +def key_in_dict(d, key):
@@ -1865,8 +1947,7 @@
 +def read_dict_data(path):
 ```
 
-#### key_in_dict (task/23)
-
+#### solution 3
 ```diff
 -def key_in_dict(d, key):
 +def key_in_dict(d, key):
@@ -1882,8 +1963,7 @@
 +        l.append(item
 ```
 
-#### key_in_dict (task/23)
-
+#### solution 4
 ```diff
 -def key_in_dict(d, key):
 +def key_in_dict(d, key):
@@ -1895,8 +1975,16 @@
 +    return key_in_dict(os.environ, 'SERVER_SOFTWARE') and not os.
 ```
 
-#### factorial (task/24)
+### factorial (task/24)
 
+#### canonical solution
+```python
+def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
+    raise Exception("Number can't be floating point or negative.")
+  return 1 if num == 0 else num * factorial(num - 1)
+```
+
+#### solution 0
 ```diff
 -def factorial(num):
 +def factorial(num):
@@ -1910,8 +1998,7 @@
 +    num = int(input("Enter a number
 ```
 
-#### factorial (task/24)
-
+#### solution 1
 ```diff
 -def factorial(num):
 +def factorial(num):
@@ -1923,8 +2010,7 @@
 +print(factorial(n))
 ```
 
-#### factorial (task/24)
-
+#### solution 2
 ```diff
 -def factorial(num):
 +def factorial(num):
@@ -1937,8 +2023,7 @@
 +print(factorial(5))
 ```
 
-#### factorial (task/24)
-
+#### solution 3
 ```diff
 -def factorial(num):
 +def factorial(num):
@@ -1952,8 +2037,7 @@
 +print(factorial(user
 ```
 
-#### factorial (task/24)
-
+#### solution 4
 ```diff
 -def factorial(num):
 +def factorial(num):
@@ -1967,8 +2051,14 @@
 +    return factorial(m + n) / (
 ```
 
-#### initial (task/25)
+### initial (task/25)
 
+#### canonical solution
+```python
+def initial(lst):  return lst[:-1]
+```
+
+#### solution 0
 ```diff
 -def initial(lst):
 +def initial(lst):
@@ -1979,8 +2069,7 @@
 +    return
 ```
 
-#### initial (task/25)
-
+#### solution 1
 ```diff
 -def initial(lst):
 +def initial(lst):
@@ -1993,8 +2082,7 @@
 +    os.system('cls' if os.name
 ```
 
-#### initial (task/25)
-
+#### solution 2
 ```diff
 -def initial(lst):
 +def initial(lst):
@@ -2007,8 +2095,7 @@
 +    >>> add_vectors([1, 0],
 ```
 
-#### initial (task/25)
-
+#### solution 3
 ```diff
 -def initial(lst):
 +def initial(lst):
@@ -2021,8 +2108,7 @@
 +
 ```
 
-#### initial (task/25)
-
+#### solution 4
 ```diff
 -def initial(lst):
 +def initial(lst):
@@ -2034,8 +2120,16 @@
 +            lst[
 ```
 
-#### pad (task/26)
+### pad (task/26)
 
+#### canonical solution
+```python
+from math import floor
+
+def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
+```
+
+#### solution 0
 ```diff
 -from math import floor
 -
@@ -2052,8 +2146,7 @@
 +    There is a box protected by a password. The password is n digits, where each letter can
 ```
 
-#### pad (task/26)
-
+#### solution 1
 ```diff
 -from math import floor
 -
@@ -2070,8 +2163,7 @@
 +    assert(
 ```
 
-#### pad (task/26)
-
+#### solution 2
 ```diff
 -from math import floor
 -
@@ -2088,8 +2180,7 @@
 +    if alignment == 'left
 ```
 
-#### pad (task/26)
-
+#### solution 3
 ```diff
 -from math import floor
 -
@@ -2109,8 +2200,7 @@
 +	
 ```
 
-#### pad (task/26)
-
+#### solution 4
 ```diff
 -from math import floor
 -
@@ -2127,8 +2217,16 @@
 +def bar(value, length = 10, min = 0,
 ```
 
-#### degrees_to_rads (task/27)
+### degrees_to_rads (task/27)
 
+#### canonical solution
+```python
+from math import pi
+
+def degrees_to_rads(deg):  return (deg * pi) / 180.0
+```
+
+#### solution 0
 ```diff
 -from math import pi
 -
@@ -2145,8 +2243,7 @@
 +n = int(input
 ```
 
-#### degrees_to_rads (task/27)
-
+#### solution 1
 ```diff
 -from math import pi
 -
@@ -2165,8 +2262,7 @@
 +    This method calculates the great circle distance
 ```
 
-#### degrees_to_rads (task/27)
-
+#### solution 2
 ```diff
 -from math import pi
 -
@@ -2182,8 +2278,7 @@
 +    https://stackoverflow.com/questions/19412462/getting-
 ```
 
-#### degrees_to_rads (task/27)
-
+#### solution 3
 ```diff
 -from math import pi
 -
@@ -2201,8 +2296,7 @@
 +    return (6
 ```
 
-#### degrees_to_rads (task/27)
-
+#### solution 4
 ```diff
 -from math import pi
 -
@@ -2219,8 +2313,17 @@
 +    print("{} degrees is {}
 ```
 
-#### lcm (task/28)
+### lcm (task/28)
 
+#### canonical solution
+```python
+from functools import reduce
+from math import gcd
+
+def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
+```
+
+#### solution 0
 ```diff
 -from functools import reduce
 -from math import gcd
@@ -2237,8 +2340,7 @@
 +    w,
 ```
 
-#### lcm (task/28)
-
+#### solution 1
 ```diff
 -from functools import reduce
 -from math import gcd
@@ -2257,8 +2359,7 @@
 +    for i in
 ```
 
-#### lcm (task/28)
-
+#### solution 2
 ```diff
 -from functools import reduce
 -from math import gcd
@@ -2274,8 +2375,7 @@
 +print(lcm([3, 6, 8]))
 ```
 
-#### lcm (task/28)
-
+#### solution 3
 ```diff
 -from functools import reduce
 -from math import gcd
@@ -2293,8 +2393,7 @@
 +   
 ```
 
-#### lcm (task/28)
-
+#### solution 4
 ```diff
 -from functools import reduce
 -from math import gcd
@@ -2311,8 +2410,14 @@
 +    return lcm(range(start
 ```
 
-#### most_frequent (task/29)
+### most_frequent (task/29)
 
+#### canonical solution
+```python
+def most_frequent(lst):  return max(set(lst), key = lst.count)
+```
+
+#### solution 0
 ```diff
 -def most_frequent(lst):
 +def most_frequent(lst):
@@ -2326,8 +2431,7 @@
 +def random_
 ```
 
-#### most_frequent (task/29)
-
+#### solution 1
 ```diff
 -def most_frequent(lst):
 +def most_frequent(lst):
@@ -2343,8 +2447,7 @@
 +    Main program.
 ```
 
-#### most_frequent (task/29)
-
+#### solution 2
 ```diff
 -def most_frequent(lst):
 +def most_frequent(lst):
@@ -2355,8 +2458,7 @@
 +    return np.array([area[0] + (area[2] - area[0]) / 2
 ```
 
-#### most_frequent (task/29)
-
+#### solution 3
 ```diff
 -def most_frequent(lst):
 +def most_frequent(lst):
@@ -2370,8 +2472,7 @@
 +def get_q_table(mdp, states
 ```
 
-#### most_frequent (task/29)
-
+#### solution 4
 ```diff
 -def most_frequent(lst):
 +def most_frequent(lst):
@@ -2386,8 +2487,16 @@
 +def
 ```
 
-#### rads_to_degrees (task/30)
+### rads_to_degrees (task/30)
 
+#### canonical solution
+```python
+from math import pi
+
+def rads_to_degrees(rad):  return (rad * 180.0) / pi
+```
+
+#### solution 0
 ```diff
 -from math import pi
 -
@@ -2406,8 +2515,7 @@
 +    main
 ```
 
-#### rads_to_degrees (task/30)
-
+#### solution 1
 ```diff
 -from math import pi
 -
@@ -2425,8 +2533,7 @@
 +    def __init__(self, x,
 ```
 
-#### rads_to_degrees (task/30)
-
+#### solution 2
 ```diff
 -from math import pi
 -
@@ -2444,8 +2551,7 @@
 +    def __init__(self, x=0,
 ```
 
-#### rads_to_degrees (task/30)
-
+#### solution 3
 ```diff
 -from math import pi
 -
@@ -2463,8 +2569,7 @@
 +    return s.
 ```
 
-#### rads_to_degrees (task/30)
-
+#### solution 4
 ```diff
 -from math import pi
 -
@@ -2482,8 +2587,14 @@
 +    return [[i[0], i[1
 ```
 
-#### n_times_string (task/31)
+### n_times_string (task/31)
 
+#### canonical solution
+```python
+def n_times_string(s, n):  return (s * n)
+```
+
+#### solution 0
 ```diff
 -def n_times_string(s, n):
 +def n_times_string(s, n):
@@ -2494,8 +2605,7 @@
 +print(n_times_string('123', 4))
 ```
 
-#### n_times_string (task/31)
-
+#### solution 1
 ```diff
 -def n_times_string(s, n):
 +def n_times_string(s, n):
@@ -2510,8 +2620,7 @@
 +# Arguments can be made optional by
 ```
 
-#### n_times_string (task/31)
-
+#### solution 2
 ```diff
 -def n_times_string(s, n):
 +def n_times_string(s, n):
@@ -2524,8 +2633,7 @@
 +# We can give `n_times_string` a different argument name (like
 ```
 
-#### n_times_string (task/31)
-
+#### solution 3
 ```diff
 -def n_times_string(s, n):
 +def n_times_string(s, n):
@@ -2541,8 +2649,7 @@
 +def repeat_string(s, n
 ```
 
-#### n_times_string (task/31)
-
+#### solution 4
 ```diff
 -def n_times_string(s, n):
 +def n_times_string(s, n):
@@ -2559,8 +2666,14 @@
 +# # 3.3
 ```
 
-#### map_values (task/32)
+### map_values (task/32)
 
+#### canonical solution
+```python
+def map_values(obj, fn):  return dict((k, fn(v)) for k, v in obj.items())
+```
+
+#### solution 0
 ```diff
 -def map_values(obj, fn):
 +def map_values(obj, fn):
@@ -2575,8 +2688,7 @@
 +        return
 ```
 
-#### map_values (task/32)
-
+#### solution 1
 ```diff
 -def map_values(obj, fn):
 +def map_values(obj, fn):
@@ -2592,8 +2704,7 @@
 +    """
 ```
 
-#### map_values (task/32)
-
+#### solution 2
 ```diff
 -def map_values(obj, fn):
 +def map_values(obj, fn):
@@ -2604,8 +2715,7 @@
 +        return [map_
 ```
 
-#### map_values (task/32)
-
+#### solution 3
 ```diff
 -def map_values(obj, fn):
 +def map_values(obj, fn):
@@ -2618,8 +2728,7 @@
 +   
 ```
 
-#### map_values (task/32)
-
+#### solution 4
 ```diff
 -def map_values(obj, fn):
 +def map_values(obj, fn):
@@ -2631,8 +2740,14 @@
 +    type that can be indexed with a number, string, or tuple of numbers or
 ```
 
-#### hex_to_rgb (task/33)
+### hex_to_rgb (task/33)
 
+#### canonical solution
+```python
+def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
+```
+
+#### solution 0
 ```diff
 -def hex_to_rgb(hex):
 +def hex_to_rgb(hex):
@@ -2643,8 +2758,7 @@
 +    return "#"+"".join(["
 ```
 
-#### hex_to_rgb (task/33)
-
+#### solution 1
 ```diff
 -def hex_to_rgb(hex):
 +def hex_to_rgb(hex):
@@ -2655,8 +2769,7 @@
 +    image = image.convert('RGBA
 ```
 
-#### hex_to_rgb (task/33)
-
+#### solution 2
 ```diff
 -def hex_to_rgb(hex):
 +def hex_to_rgb(hex):
@@ -2666,8 +2779,7 @@
 +    return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen,
 ```
 
-#### hex_to_rgb (task/33)
-
+#### solution 3
 ```diff
 -def hex_to_rgb(hex):
 +def hex_to_rgb(hex):
@@ -2678,8 +2790,7 @@
 +def rgb_to_hex(rgb):
 ```
 
-#### hex_to_rgb (task/33)
-
+#### solution 4
 ```diff
 -def hex_to_rgb(hex):
 +def hex_to_rgb(hex):
@@ -2689,8 +2800,23 @@
 +    return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen,
 ```
 
-#### shuffle (task/34)
+### shuffle (task/34)
 
+#### canonical solution
+```python
+from copy import deepcopy
+from random import randint
+
+def shuffle(lst):  temp_lst = deepcopy(lst)
+  m = len(temp_lst)
+  while (m):
+    m -= 1
+    i = randint(0, m)
+    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+  return temp_lst
+```
+
+#### solution 0
 ```diff
 -from copy import deepcopy
 -from random import randint
@@ -2708,8 +2834,7 @@
 +        lst
 ```
 
-#### shuffle (task/34)
-
+#### solution 1
 ```diff
 -from copy import deepcopy
 -from random import randint
@@ -2729,8 +2854,7 @@
 +        lst = deepcopy(l
 ```
 
-#### shuffle (task/34)
-
+#### solution 2
 ```diff
 -from copy import deepcopy
 -from random import randint
@@ -2750,8 +2874,7 @@
 +        index = randint
 ```
 
-#### shuffle (task/34)
-
+#### solution 3
 ```diff
 -from copy import deepcopy
 -from random import randint
@@ -2771,8 +2894,7 @@
 +        j
 ```
 
-#### shuffle (task/34)
-
+#### solution 4
 ```diff
 -from copy import deepcopy
 -from random import randint
@@ -2789,8 +2911,14 @@
 +            new_l
 ```
 
-#### find_index (task/35)
+### find_index (task/35)
 
+#### canonical solution
+```python
+def find_index(lst, fn):  return next(i for i, x in enumerate(lst) if fn(x))
+```
+
+#### solution 0
 ```diff
 -def find_index(lst, fn):
 +def find_index(lst, fn):
@@ -2805,8 +2933,7 @@
 +        self.by_
 ```
 
-#### find_index (task/35)
-
+#### solution 1
 ```diff
 -def find_index(lst, fn):
 +def find_index(lst, fn):
@@ -2821,8 +2948,7 @@
 +    for path in glob.glob(
 ```
 
-#### find_index (task/35)
-
+#### solution 2
 ```diff
 -def find_index(lst, fn):
 +def find_index(lst, fn):
@@ -2837,8 +2963,7 @@
 +       
 ```
 
-#### find_index (task/35)
-
+#### solution 3
 ```diff
 -def find_index(lst, fn):
 +def find_index(lst, fn):
@@ -2852,8 +2977,7 @@
 +    for i, value in enumer
 ```
 
-#### find_index (task/35)
-
+#### solution 4
 ```diff
 -def find_index(lst, fn):
 +def find_index(lst, fn):
@@ -2867,8 +2991,15 @@
 +    with open(file_name, 'r
 ```
 
-#### num_to_range (task/36)
+### num_to_range (task/36)
 
+#### canonical solution
+```python
+def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+                  - outMin))
+```
+
+#### solution 0
 ```diff
 -def num_to_range(num, inMin, inMax, outMin, outMax):
 +def num_to_range(num, inMin, inMax, outMin, outMax):
@@ -2880,8 +3011,7 @@
 +    if
 ```
 
-#### num_to_range (task/36)
-
+#### solution 1
 ```diff
 -def num_to_range(num, inMin, inMax, outMin, outMax):
 +def num_to_range(num, inMin, inMax, outMin, outMax):
@@ -2893,8 +3023,7 @@
 +    return (num - inMin) * (outMax - outMin
 ```
 
-#### num_to_range (task/36)
-
+#### solution 2
 ```diff
 -def num_to_range(num, inMin, inMax, outMin, outMax):
 +def num_to_range(num, inMin, inMax, outMin, outMax):
@@ -2904,8 +3033,7 @@
 +def map_range(value, from_min, from_max, to_min, to
 ```
 
-#### num_to_range (task/36)
-
+#### solution 3
 ```diff
 -def num_to_range(num, inMin, inMax, outMin, outMax):
 +def num_to_range(num, inMin, inMax, outMin, outMax):
@@ -2917,8 +3045,7 @@
 +        return
 ```
 
-#### num_to_range (task/36)
-
+#### solution 4
 ```diff
 -def num_to_range(num, inMin, inMax, outMin, outMax):
 +def num_to_range(num, inMin, inMax, outMin, outMax):
@@ -2929,8 +3056,14 @@
 +#     f = open(device_file, '
 ```
 
-#### transpose (task/37)
+### transpose (task/37)
 
+#### canonical solution
+```python
+def transpose(lst):  return list(zip(*lst))
+```
+
+#### solution 0
 ```diff
 -def transpose(lst):
 +def transpose(lst):
@@ -2943,8 +3076,7 @@
 +       
 ```
 
-#### transpose (task/37)
-
+#### solution 1
 ```diff
 -def transpose(lst):
 +def transpose(lst):
@@ -2958,8 +3090,7 @@
 +        transposed list of lists
 ```
 
-#### transpose (task/37)
-
+#### solution 2
 ```diff
 -def transpose(lst):
 +def transpose(lst):
@@ -2972,8 +3103,7 @@
 +               
 ```
 
-#### transpose (task/37)
-
+#### solution 3
 ```diff
 -def transpose(lst):
 +def transpose(lst):
@@ -2983,8 +3113,7 @@
 +   
 ```
 
-#### transpose (task/37)
-
+#### solution 4
 ```diff
 -def transpose(lst):
 +def transpose(lst):
@@ -2996,8 +3125,14 @@
 +    return list
 ```
 
-#### is_even (task/38)
+### is_even (task/38)
 
+#### canonical solution
+```python
+def is_even(num):  return num % 2 == 0
+```
+
+#### solution 0
 ```diff
 -def is_even(num):
 +def is_even(num):
@@ -3011,8 +3146,7 @@
 +    number = int(input("Enter a number to check if it is even
 ```
 
-#### is_even (task/38)
-
+#### solution 1
 ```diff
 -def is_even(num):
 +def is_even(num):
@@ -3023,8 +3157,7 @@
 +evens = list(
 ```
 
-#### is_even (task/38)
-
+#### solution 2
 ```diff
 -def is_even(num):
 +def is_even(num):
@@ -3041,8 +3174,7 @@
 +print(is_even
 ```
 
-#### is_even (task/38)
-
+#### solution 3
 ```diff
 -def is_even(num):
 +def is_even(num):
@@ -3058,8 +3190,7 @@
 +        return False
 ```
 
-#### is_even (task/38)
-
+#### solution 4
 ```diff
 -def is_even(num):
 +def is_even(num):
@@ -3073,8 +3204,14 @@
 +def is
 ```
 
-#### max_element_index (task/39)
+### max_element_index (task/39)
 
+#### canonical solution
+```python
+def max_element_index(arr):  return arr.index(max(arr))
+```
+
+#### solution 0
 ```diff
 -def max_element_index(arr):
 +def max_element_index(arr):
@@ -3086,8 +3223,7 @@
 +            max_val =
 ```
 
-#### max_element_index (task/39)
-
+#### solution 1
 ```diff
 -def max_element_index(arr):
 +def max_element_index(arr):
@@ -3100,8 +3236,7 @@
 +        if
 ```
 
-#### max_element_index (task/39)
-
+#### solution 2
 ```diff
 -def max_element_index(arr):
 +def max_element_index(arr):
@@ -3113,8 +3248,7 @@
 +            max_element = arr
 ```
 
-#### max_element_index (task/39)
-
+#### solution 3
 ```diff
 -def max_element_index(arr):
 +def max_element_index(arr):
@@ -3126,8 +3260,7 @@
 +            max_value = arr
 ```
 
-#### max_element_index (task/39)
-
+#### solution 4
 ```diff
 -def max_element_index(arr):
 +def max_element_index(arr):
@@ -3139,8 +3272,14 @@
 +            max_element = arr
 ```
 
-#### min_n (task/40)
+### min_n (task/40)
 
+#### canonical solution
+```python
+def min_n(lst, n = 1):  return sorted(lst, reverse = False)[:n]
+```
+
+#### solution 0
 ```diff
 -def min_n(lst, n = 1):
 +def min_n(lst, n = 1):
@@ -3153,8 +3292,7 @@
 +    lst = list(set
 ```
 
-#### min_n (task/40)
-
+#### solution 1
 ```diff
 -def min_n(lst, n = 1):
 +def min_n(lst, n = 1):
@@ -3168,8 +3306,7 @@
 +def max_n(
 ```
 
-#### min_n (task/40)
-
+#### solution 2
 ```diff
 -def min_n(lst, n = 1):
 +def min_n(lst, n = 1):
@@ -3183,8 +3320,7 @@
 +    if len
 ```
 
-#### min_n (task/40)
-
+#### solution 3
 ```diff
 -def min_n(lst, n = 1):
 +def min_n(lst, n = 1):
@@ -3197,8 +3333,7 @@
 +def add_to_
 ```
 
-#### min_n (task/40)
-
+#### solution 4
 ```diff
 -def min_n(lst, n = 1):
 +def min_n(lst, n = 1):
@@ -3211,8 +3346,14 @@
 +            if lst
 ```
 
-#### take_right (task/41)
+### take_right (task/41)
 
+#### canonical solution
+```python
+def take_right(itr, n = 1):  return itr[-n:]
+```
+
+#### solution 0
 ```diff
 -def take_right(itr, n = 1):
 +def take_right(itr, n = 1):
@@ -3227,8 +3368,7 @@
 +    Return the
 ```
 
-#### take_right (task/41)
-
+#### solution 1
 ```diff
 -def take_right(itr, n = 1):
 +def take_right(itr, n = 1):
@@ -3240,8 +3380,7 @@
 +    for _
 ```
 
-#### take_right (task/41)
-
+#### solution 2
 ```diff
 -def take_right(itr, n = 1):
 +def take_right(itr, n = 1):
@@ -3254,8 +3393,7 @@
 +        itr, _ = itertools.tee(it
 ```
 
-#### take_right (task/41)
-
+#### solution 3
 ```diff
 -def take_right(itr, n = 1):
 +def take_right(itr, n = 1):
@@ -3268,8 +3406,7 @@
 +    if
 ```
 
-#### take_right (task/41)
-
+#### solution 4
 ```diff
 -def take_right(itr, n = 1):
 +def take_right(itr, n = 1):
@@ -3286,8 +3423,16 @@
 +# ----------------------------------------------------------------
 ```
 
-#### filter_unique (task/42)
+### filter_unique (task/42)
 
+#### canonical solution
+```python
+from collections import Counter
+
+def filter_unique(lst):  return [item for item, count in Counter(lst).items() if count > 1]
+```
+
+#### solution 0
 ```diff
 -from collections import Counter
 -
@@ -3304,8 +3449,7 @@
 +        self.datap
 ```
 
-#### filter_unique (task/42)
-
+#### solution 1
 ```diff
 -from collections import Counter
 -
@@ -3321,8 +3465,7 @@
 +def load_vocab(vocab_
 ```
 
-#### filter_unique (task/42)
-
+#### solution 2
 ```diff
 -from collections import Counter
 -
@@ -3339,8 +3482,7 @@
 +    return [x for
 ```
 
-#### filter_unique (task/42)
-
+#### solution 3
 ```diff
 -from collections import Counter
 -
@@ -3355,8 +3497,7 @@
 +    return [item for item, count in Counter(lst).items
 ```
 
-#### filter_unique (task/42)
-
+#### solution 4
 ```diff
 -from collections import Counter
 -
@@ -3373,8 +3514,14 @@
 +    return lst[
 ```
 
-#### arithmetic_progression (task/43)
+### arithmetic_progression (task/43)
 
+#### canonical solution
+```python
+def arithmetic_progression(n, lim):  return list(range(n, lim + 1, n))
+```
+
+#### solution 0
 ```diff
 -def arithmetic_progression(n, lim):
 +def arithmetic_progression(n, lim):
@@ -3387,8 +3534,7 @@
 +    return arithmetic_progression(n, 1)
 ```
 
-#### arithmetic_progression (task/43)
-
+#### solution 1
 ```diff
 -def arithmetic_progression(n, lim):
 +def arithmetic_progression(n, lim):
@@ -3405,8 +3551,7 @@
 +def pentagonal_
 ```
 
-#### arithmetic_progression (task/43)
-
+#### solution 2
 ```diff
 -def arithmetic_progression(n, lim):
 +def arithmetic_progression(n, lim):
@@ -3418,8 +3563,7 @@
 +arithmetic_progression(n, lim)
 ```
 
-#### arithmetic_progression (task/43)
-
+#### solution 3
 ```diff
 -def arithmetic_progression(n, lim):
 +def arithmetic_progression(n, lim):
@@ -3433,8 +3577,7 @@
 +
 ```
 
-#### arithmetic_progression (task/43)
-
+#### solution 4
 ```diff
 -def arithmetic_progression(n, lim):
 +def arithmetic_progression(n, lim):
@@ -3451,8 +3594,17 @@
 +    ls =
 ```
 
-#### merge_dictionaries (task/44)
+### merge_dictionaries (task/44)
 
+#### canonical solution
+```python
+def merge_dictionaries(*dicts):  res = dict()
+  for d in dicts:
+    res.update(d)
+  return res
+```
+
+#### solution 0
 ```diff
 -def merge_dictionaries(*dicts):
 +def merge_dictionaries(*dicts):
@@ -3464,8 +3616,7 @@
 +    left.
 ```
 
-#### merge_dictionaries (task/44)
-
+#### solution 1
 ```diff
 -def merge_dictionaries(*dicts):
 +def merge_dictionaries(*dicts):
@@ -3479,8 +3630,7 @@
 +        result.
 ```
 
-#### merge_dictionaries (task/44)
-
+#### solution 2
 ```diff
 -def merge_dictionaries(*dicts):
 +def merge_dictionaries(*dicts):
@@ -3495,8 +3645,7 @@
 +def generate_password(password_length=20):
 ```
 
-#### merge_dictionaries (task/44)
-
+#### solution 3
 ```diff
 -def merge_dictionaries(*dicts):
 +def merge_dictionaries(*dicts):
@@ -3509,8 +3658,7 @@
 +        'model': {
 ```
 
-#### merge_dictionaries (task/44)
-
+#### solution 4
 ```diff
 -def merge_dictionaries(*dicts):
 +def merge_dictionaries(*dicts):
@@ -3527,8 +3675,15 @@
 +def random_
 ```
 
-#### sort_by_indexes (task/45)
+### sort_by_indexes (task/45)
 
+#### canonical solution
+```python
+def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+          x[0], reverse=reverse)]
+```
+
+#### solution 0
 ```diff
 -def sort_by_indexes(lst, indexes, reverse=False):
 +def sort_by_indexes(lst, indexes, reverse=False):
@@ -3540,8 +3695,7 @@
 +def chunks
 ```
 
-#### sort_by_indexes (task/45)
-
+#### solution 1
 ```diff
 -def sort_by_indexes(lst, indexes, reverse=False):
 +def sort_by_indexes(lst, indexes, reverse=False):
@@ -3553,8 +3707,7 @@
 +    ordered_indexes = sorted(range
 ```
 
-#### sort_by_indexes (task/45)
-
+#### solution 2
 ```diff
 -def sort_by_indexes(lst, indexes, reverse=False):
 +def sort_by_indexes(lst, indexes, reverse=False):
@@ -3567,8 +3720,7 @@
 +                           [
 ```
 
-#### sort_by_indexes (task/45)
-
+#### solution 3
 ```diff
 -def sort_by_indexes(lst, indexes, reverse=False):
 +def sort_by_indexes(lst, indexes, reverse=False):
@@ -3580,8 +3732,7 @@
 +    pairs.sort(reverse
 ```
 
-#### sort_by_indexes (task/45)
-
+#### solution 4
 ```diff
 -def sort_by_indexes(lst, indexes, reverse=False):
 +def sort_by_indexes(lst, indexes, reverse=False):
@@ -3594,8 +3745,17 @@
 +
 ```
 
-#### get (task/46)
+### get (task/46)
 
+#### canonical solution
+```python
+from functools import reduce 
+from operator import getitem
+
+def get(d, selectors):  return reduce(getitem, selectors, d)
+```
+
+#### solution 0
 ```diff
 -from functools import reduce 
 -from operator import getitem
@@ -3614,8 +3774,7 @@
 +    get(
 ```
 
-#### get (task/46)
-
+#### solution 1
 ```diff
 -from functools import reduce 
 -from operator import getitem
@@ -3634,8 +3793,7 @@
 +def load
 ```
 
-#### get (task/46)
-
+#### solution 2
 ```diff
 -from functools import reduce 
 -from operator import getitem
@@ -3654,8 +3812,7 @@
 +def main
 ```
 
-#### get (task/46)
-
+#### solution 3
 ```diff
 -from functools import reduce 
 -from operator import getitem
@@ -3673,8 +3830,7 @@
 +    """
 ```
 
-#### get (task/46)
-
+#### solution 4
 ```diff
 -from functools import reduce 
 -from operator import getitem
@@ -3695,8 +3851,17 @@
 +    ----------
 ```
 
-#### bifurcate_by (task/47)
+### bifurcate_by (task/47)
 
+#### canonical solution
+```python
+def bifurcate_by(lst, fn):  return [
+    [x for x in lst if fn(x)],
+    [x for x in lst if not fn(x)]
+  ]
+```
+
+#### solution 0
 ```diff
 -def bifurcate_by(lst, fn):
 +def bifurcate_by(lst, fn):
@@ -3710,8 +3875,7 @@
 +def bifurcate(lst, fn
 ```
 
-#### bifurcate_by (task/47)
-
+#### solution 1
 ```diff
 -def bifurcate_by(lst, fn):
 +def bifurcate_by(lst, fn):
@@ -3725,8 +3889,7 @@
 +    return [item
 ```
 
-#### bifurcate_by (task/47)
-
+#### solution 2
 ```diff
 -def bifurcate_by(lst, fn):
 +def bifurcate_by(lst, fn):
@@ -3739,8 +3902,7 @@
 +def partition_by(lst, fn):
 ```
 
-#### bifurcate_by (task/47)
-
+#### solution 3
 ```diff
 -def bifurcate_by(lst, fn):
 +def bifurcate_by(lst, fn):
@@ -3755,8 +3917,7 @@
 +# ----------------------------------------------------------------
 ```
 
-#### bifurcate_by (task/47)
-
+#### solution 4
 ```diff
 -def bifurcate_by(lst, fn):
 +def bifurcate_by(lst, fn):
@@ -3769,8 +3930,20 @@
 +# A representation of a single Node in the network.
 ```
 
-#### fibonacci (task/48)
+### fibonacci (task/48)
 
+#### canonical solution
+```python
+def fibonacci(n):  if n <= 0:
+    return [0]
+  sequence = [0, 1]
+  while len(sequence) <= n:
+    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+    sequence.append(next_value)
+  return sequence
+```
+
+#### solution 0
 ```diff
 -def fibonacci(n):
 +def fibonacci(n):
@@ -3785,8 +3958,7 @@
 +print
 ```
 
-#### fibonacci (task/48)
-
+#### solution 1
 ```diff
 -def fibonacci(n):
 +def fibonacci(n):
@@ -3800,8 +3972,7 @@
 +    n = int
 ```
 
-#### fibonacci (task/48)
-
+#### solution 2
 ```diff
 -def fibonacci(n):
 +def fibonacci(n):
@@ -3815,8 +3986,7 @@
 +        return fibonacci(n-1) + fib
 ```
 
-#### fibonacci (task/48)
-
+#### solution 3
 ```diff
 -def fibonacci(n):
 +def fibonacci(n):
@@ -3834,8 +4004,7 @@
 +print(f
 ```
 
-#### fibonacci (task/48)
-
+#### solution 4
 ```diff
 -def fibonacci(n):
 +def fibonacci(n):
@@ -3849,8 +4018,14 @@
 +fibonacci(2000)
 ```
 
-#### invert_dictionary (task/49)
+### invert_dictionary (task/49)
 
+#### canonical solution
+```python
+def invert_dictionary(obj):  return { value: key for key, value in obj.items() }
+```
+
+#### solution 0
 ```diff
 -def invert_dictionary(obj):
 +def invert_dictionary(obj):
@@ -3865,8 +4040,7 @@
 +    return np.array(string.split('
 ```
 
-#### invert_dictionary (task/49)
-
+#### solution 1
 ```diff
 -def invert_dictionary(obj):
 +def invert_dictionary(obj):
@@ -3879,8 +4053,7 @@
 +    the
 ```
 
-#### invert_dictionary (task/49)
-
+#### solution 2
 ```diff
 -def invert_dictionary(obj):
 +def invert_dictionary(obj):
@@ -3894,8 +4067,7 @@
 +    return {v: k for k, v in
 ```
 
-#### invert_dictionary (task/49)
-
+#### solution 3
 ```diff
 -def invert_dictionary(obj):
 +def invert_dictionary(obj):
@@ -3909,8 +4081,7 @@
 +    return {v: k for k, v in obj.items()
 ```
 
-#### invert_dictionary (task/49)
-
+#### solution 4
 ```diff
 -def invert_dictionary(obj):
 +def invert_dictionary(obj):
@@ -3931,8 +4102,17 @@
 +    return
 ```
 
-#### camel (task/50)
+### camel (task/50)
 
+#### canonical solution
+```python
+from re import sub
+
+def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+  return ''.join([s[0].lower(), s[1:]])
+```
+
+#### solution 0
 ```diff
 -from re import sub
 -
@@ -3945,8 +4125,7 @@
 +    return sub('([a-z0-9])([A-Z])', r'
 ```
 
-#### camel (task/50)
-
+#### solution 1
 ```diff
 -from re import sub
 -
@@ -3961,8 +4140,7 @@
 +    return sub(r'([A-Z])',
 ```
 
-#### camel (task/50)
-
+#### solution 2
 ```diff
 -from re import sub
 -
@@ -3977,8 +4155,7 @@
 +    # This function is used to
 ```
 
-#### camel (task/50)
-
+#### solution 3
 ```diff
 -from re import sub
 -
@@ -3994,8 +4171,7 @@
 +    return sub(r'\s', '', sub(r'\W+', '', s)).lower()
 ```
 
-#### camel (task/50)
-
+#### solution 4
 ```diff
 -from re import sub
 -
@@ -4010,8 +4186,14 @@
 +    app.connect('autodoc-process
 ```
 
-#### key_of_min (task/51)
+### key_of_min (task/51)
 
+#### canonical solution
+```python
+def key_of_min(d):  return min(d, key = d.get)
+```
+
+#### solution 0
 ```diff
 -def key_of_min(d):
 +def key_of_min(d):
@@ -4024,8 +4206,7 @@
 +def readfile
 ```
 
-#### key_of_min (task/51)
-
+#### solution 1
 ```diff
 -def key_of_min(d):
 +def key_of_min(d):
@@ -4044,8 +4225,7 @@
 +        The key of
 ```
 
-#### key_of_min (task/51)
-
+#### solution 2
 ```diff
 -def key_of_min(d):
 +def key_of_min(d):
@@ -4059,8 +4239,7 @@
 +def
 ```
 
-#### key_of_min (task/51)
-
+#### solution 3
 ```diff
 -def key_of_min(d):
 +def key_of_min(d):
@@ -4073,8 +4252,7 @@
 +def key_
 ```
 
-#### key_of_min (task/51)
-
+#### solution 4
 ```diff
 -def key_of_min(d):
 +def key_of_min(d):
@@ -4087,8 +4265,14 @@
 +    for key,
 ```
 
-#### capitalize (task/52)
+### capitalize (task/52)
 
+#### canonical solution
+```python
+def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
+```
+
+#### solution 0
 ```diff
 -def capitalize(s, lower_rest = False):
 +def capitalize(s, lower_rest = False):
@@ -4099,8 +4283,7 @@
 +def clean
 ```
 
-#### capitalize (task/52)
-
+#### solution 1
 ```diff
 -def capitalize(s, lower_rest = False):
 +def capitalize(s, lower_rest = False):
@@ -4111,8 +4294,7 @@
 +    return os.path.join
 ```
 
-#### capitalize (task/52)
-
+#### solution 2
 ```diff
 -def capitalize(s, lower_rest = False):
 +def capitalize(s, lower_rest = False):
@@ -4123,8 +4305,7 @@
 +    """Checks that obj is
 ```
 
-#### capitalize (task/52)
-
+#### solution 3
 ```diff
 -def capitalize(s, lower_rest = False):
 +def capitalize(s, lower_rest = False):
@@ -4135,8 +4316,7 @@
 +    changed_files = sub
 ```
 
-#### capitalize (task/52)
-
+#### solution 4
 ```diff
 -def capitalize(s, lower_rest = False):
 +def capitalize(s, lower_rest = False):
@@ -4147,8 +4327,14 @@
 +    parts = kls.split('.')
 ```
 
-#### celsius_to_fahrenheit (task/53)
+### celsius_to_fahrenheit (task/53)
 
+#### canonical solution
+```python
+def celsius_to_fahrenheit(degrees):  return ((degrees * 1.8) + 32)
+```
+
+#### solution 0
 ```diff
 -def celsius_to_fahrenheit(degrees):
 +def celsius_to_fahrenheit(degrees):
@@ -4163,8 +4349,7 @@
 +    def __
 ```
 
-#### celsius_to_fahrenheit (task/53)
-
+#### solution 1
 ```diff
 -def celsius_to_fahrenheit(degrees):
 +def celsius_to_fahrenheit(degrees):
@@ -4176,8 +4361,7 @@
 +    test(celsius_to_f
 ```
 
-#### celsius_to_fahrenheit (task/53)
-
+#### solution 2
 ```diff
 -def celsius_to_fahrenheit(degrees):
 +def celsius_to_fahrenheit(degrees):
@@ -4189,8 +4373,7 @@
 +    return (degrees - 32) * 5 / 9
 ```
 
-#### celsius_to_fahrenheit (task/53)
-
+#### solution 3
 ```diff
 -def celsius_to_fahrenheit(degrees):
 +def celsius_to_fahrenheit(degrees):
@@ -4206,8 +4389,7 @@
 +    user_input =
 ```
 
-#### celsius_to_fahrenheit (task/53)
-
+#### solution 4
 ```diff
 -def celsius_to_fahrenheit(degrees):
 +def celsius_to_fahrenheit(degrees):
@@ -4221,8 +4403,14 @@
 +
 ```
 
-#### every_nth (task/54)
+### every_nth (task/54)
 
+#### canonical solution
+```python
+def every_nth(lst, nth):  return lst[nth - 1::nth]
+```
+
+#### solution 0
 ```diff
 -def every_nth(lst, nth):
 +def every_nth(lst, nth):
@@ -4232,8 +4420,7 @@
 +def make_sublattice_z(atom_type, atom_x, atom_y, data_
 ```
 
-#### every_nth (task/54)
-
+#### solution 1
 ```diff
 -def every_nth(lst, nth):
 +def every_nth(lst, nth):
@@ -4243,8 +4430,7 @@
 +def every_nth(lst, nth):
 ```
 
-#### every_nth (task/54)
-
+#### solution 2
 ```diff
 -def every_nth(lst, nth):
 +def every_nth(lst, nth):
@@ -4258,8 +4444,7 @@
 +    return lst[::2]
 ```
 
-#### every_nth (task/54)
-
+#### solution 3
 ```diff
 -def every_nth(lst, nth):
 +def every_nth(lst, nth):
@@ -4275,8 +4460,7 @@
 +# 
 ```
 
-#### every_nth (task/54)
-
+#### solution 4
 ```diff
 -def every_nth(lst, nth):
 +def every_nth(lst, nth):
@@ -4287,8 +4471,14 @@
 +    [3, 6,
 ```
 
-#### union (task/55)
+### union (task/55)
 
+#### canonical solution
+```python
+def union(a, b):  return list(set(a + b))
+```
+
+#### solution 0
 ```diff
 -def union(a, b):
 +def union(a, b):
@@ -4299,8 +4489,7 @@
 +def get_file_name_from_dates(date_from, date_to, publisher=None, extension
 ```
 
-#### union (task/55)
-
+#### solution 1
 ```diff
 -def union(a, b):
 +def union(a, b):
@@ -4312,8 +4501,7 @@
 +    return min(a[0], b[0]), max(a[1
 ```
 
-#### union (task/55)
-
+#### solution 2
 ```diff
 -def union(a, b):
 +def union(a, b):
@@ -4324,8 +4512,7 @@
 +union(first, second)
 ```
 
-#### union (task/55)
-
+#### solution 3
 ```diff
 -def union(a, b):
 +def union(a, b):
@@ -4339,8 +4526,7 @@
 +def intersection(
 ```
 
-#### union (task/55)
-
+#### solution 4
 ```diff
 -def union(a, b):
 +def union(a, b):
@@ -4359,8 +4545,14 @@
 +def symmetric_difference(a, b):
 ```
 
-#### drop (task/56)
+### drop (task/56)
 
+#### canonical solution
+```python
+def drop(a, n = 1):  return a[n:]
+```
+
+#### solution 0
 ```diff
 -def drop(a, n = 1):
 +def drop(a, n = 1):
@@ -4374,8 +4566,7 @@
 +    return lambda x: f(g(x
 ```
 
-#### drop (task/56)
-
+#### solution 1
 ```diff
 -def drop(a, n = 1):
 +def drop(a, n = 1):
@@ -4391,8 +4582,7 @@
 +def lwr(a):
 ```
 
-#### drop (task/56)
-
+#### solution 2
 ```diff
 -def drop(a, n = 1):
 +def drop(a, n = 1):
@@ -4407,8 +4597,7 @@
 +        a
 ```
 
-#### drop (task/56)
-
+#### solution 3
 ```diff
 -def drop(a, n = 1):
 +def drop(a, n = 1):
@@ -4421,8 +4610,7 @@
 +def drop_right(a, n
 ```
 
-#### drop (task/56)
-
+#### solution 4
 ```diff
 -def drop(a, n = 1):
 +def drop(a, n = 1):
@@ -4437,8 +4625,19 @@
 +    while b
 ```
 
-#### frequencies (task/57)
+### frequencies (task/57)
 
+#### canonical solution
+```python
+from collections import defaultdict
+
+def frequencies(lst):  freq = defaultdict(int)
+  for val in lst:
+    freq[val] += 1
+  return dict(freq)
+```
+
+#### solution 0
 ```diff
 -from collections import defaultdict
 -
@@ -4456,8 +4655,7 @@
 +    return [(x,y) for
 ```
 
-#### frequencies (task/57)
-
+#### solution 1
 ```diff
 -from collections import defaultdict
 -
@@ -4477,8 +4675,7 @@
 +    output
 ```
 
-#### frequencies (task/57)
-
+#### solution 2
 ```diff
 -from collections import defaultdict
 -
@@ -4496,8 +4693,7 @@
 +    freq =
 ```
 
-#### frequencies (task/57)
-
+#### solution 3
 ```diff
 -from collections import defaultdict
 -
@@ -4516,8 +4712,7 @@
 +    parser.add
 ```
 
-#### frequencies (task/57)
-
+#### solution 4
 ```diff
 -from collections import defaultdict
 -
@@ -4535,8 +4730,14 @@
 +    def __init__(self, freq, left
 ```
 
-#### initialize_list_with_range (task/58)
+### initialize_list_with_range (task/58)
 
+#### canonical solution
+```python
+def initialize_list_with_range(end, start = 0, step = 1):  return list(range(start, end + 1, step))
+```
+
+#### solution 0
 ```diff
 -def initialize_list_with_range(end, start = 0, step = 1):
 +def initialize_list_with_range(end, start = 0, step = 1):
@@ -4549,8 +4750,7 @@
 +       
 ```
 
-#### initialize_list_with_range (task/58)
-
+#### solution 1
 ```diff
 -def initialize_list_with_range(end, start = 0, step = 1):
 +def initialize_list_with_range(end, start = 0, step = 1):
@@ -4567,8 +4767,7 @@
 +    while start
 ```
 
-#### initialize_list_with_range (task/58)
-
+#### solution 2
 ```diff
 -def initialize_list_with_range(end, start = 0, step = 1):
 +def initialize_list_with_range(end, start = 0, step = 1):
@@ -4580,8 +4779,7 @@
 +    :param step: The step
 ```
 
-#### initialize_list_with_range (task/58)
-
+#### solution 3
 ```diff
 -def initialize_list_with_range(end, start = 0, step = 1):
 +def initialize_list_with_range(end, start = 0, step = 1):
@@ -4595,8 +4793,7 @@
 +print initialize_list_with
 ```
 
-#### initialize_list_with_range (task/58)
-
+#### solution 4
 ```diff
 -def initialize_list_with_range(end, start = 0, step = 1):
 +def initialize_list_with_range(end, start = 0, step = 1):
@@ -4611,8 +4808,16 @@
 +def initialize_dict_with_pairs(pairs):
 ```
 
-#### cumsum (task/59)
+### cumsum (task/59)
 
+#### canonical solution
+```python
+from itertools import accumulate
+
+def cumsum(lst):  return list(accumulate(lst))
+```
+
+#### solution 0
 ```diff
 -from itertools import accumulate
 -
@@ -4628,8 +4833,7 @@
 +
 ```
 
-#### cumsum (task/59)
-
+#### solution 1
 ```diff
 -from itertools import accumulate
 -
@@ -4648,8 +4852,7 @@
 +a = list
 ```
 
-#### cumsum (task/59)
-
+#### solution 2
 ```diff
 -from itertools import accumulate
 -
@@ -4668,8 +4871,7 @@
 +       
 ```
 
-#### cumsum (task/59)
-
+#### solution 3
 ```diff
 -from itertools import accumulate
 -
@@ -4686,8 +4888,7 @@
 +    y = list(map(int,
 ```
 
-#### cumsum (task/59)
-
+#### solution 4
 ```diff
 -from itertools import accumulate
 -
@@ -4702,8 +4903,16 @@
 +print(cumsum(l
 ```
 
-#### months_diff (task/60)
+### months_diff (task/60)
 
+#### canonical solution
+```python
+from math import ceil
+
+def months_diff(start, end):  return ceil((end - start).days / 30)
+```
+
+#### solution 0
 ```diff
 -from math import ceil
 -
@@ -4722,8 +4931,7 @@
 +   
 ```
 
-#### months_diff (task/60)
-
+#### solution 1
 ```diff
 -from math import ceil
 -
@@ -4741,8 +4949,7 @@
 +    return 12 * (end
 ```
 
-#### months_diff (task/60)
-
+#### solution 2
 ```diff
 -from math import ceil
 -
@@ -4758,8 +4965,7 @@
 +        result
 ```
 
-#### months_diff (task/60)
-
+#### solution 3
 ```diff
 -from math import ceil
 -
@@ -4775,8 +4981,7 @@
 +    start = start.replace(hour=0, minute=0, second=0, microsecond=0
 ```
 
-#### months_diff (task/60)
-
+#### solution 4
 ```diff
 -from math import ceil
 -
@@ -4792,8 +4997,19 @@
 +    down_payment = int(input())
 ```
 
-#### collect_dictionary (task/61)
+### collect_dictionary (task/61)
 
+#### canonical solution
+```python
+from collections import defaultdict
+
+def collect_dictionary(obj):  inv_obj = defaultdict(list)
+  for key, value in obj.items():
+    inv_obj[value].append(key)
+  return dict(inv_obj)
+```
+
+#### solution 0
 ```diff
 -from collections import defaultdict
 -
@@ -4809,8 +5025,7 @@
 +            text = obj.as_html
 ```
 
-#### collect_dictionary (task/61)
-
+#### solution 1
 ```diff
 -from collections import defaultdict
 -
@@ -4826,8 +5041,7 @@
 +    else:
 ```
 
-#### collect_dictionary (task/61)
-
+#### solution 2
 ```diff
 -from collections import defaultdict
 -
@@ -4842,8 +5056,7 @@
 +    return [collect_
 ```
 
-#### collect_dictionary (task/61)
-
+#### solution 3
 ```diff
 -from collections import defaultdict
 -
@@ -4859,8 +5072,7 @@
 +    # If it's a dictionary, just
 ```
 
-#### collect_dictionary (task/61)
-
+#### solution 4
 ```diff
 -from collections import defaultdict
 -
@@ -4878,8 +5090,16 @@
 +        :obj:`dict` of
 ```
 
-#### binomial_coefficient (task/62)
+### binomial_coefficient (task/62)
 
+#### canonical solution
+```python
+from math import comb
+
+def binomial_coefficient(n, k):  return comb(n, k)
+```
+
+#### solution 0
 ```diff
 -from math import comb
 -
@@ -4896,8 +5116,7 @@
 +# We can use this function to implement the nCk function as follows
 ```
 
-#### binomial_coefficient (task/62)
-
+#### solution 1
 ```diff
 -from math import comb
 -
@@ -4915,8 +5134,7 @@
 +        for element in range
 ```
 
-#### binomial_coefficient (task/62)
-
+#### solution 2
 ```diff
 -from math import comb
 -
@@ -4932,8 +5150,7 @@
 +print(binomial_coefficient(n, k))
 ```
 
-#### binomial_coefficient (task/62)
-
+#### solution 3
 ```diff
 -from math import comb
 -
@@ -4949,8 +5166,7 @@
 +    print(i, binomial_coefficient(i,
 ```
 
-#### binomial_coefficient (task/62)
-
+#### solution 4
 ```diff
 -from math import comb
 -
@@ -4966,8 +5182,14 @@
 +    print(binomial_coefficient(*map(int, input().split())))
 ```
 
-#### find_keys (task/63)
+### find_keys (task/63)
 
+#### canonical solution
+```python
+def find_keys(dict, val):  return list(key for key, value in dict.items() if value == val)
+```
+
+#### solution 0
 ```diff
 -def find_keys(dict, val):
 +def find_keys(dict, val):
@@ -4980,8 +5202,7 @@
 +    for p in list(model.parameters()):
 ```
 
-#### find_keys (task/63)
-
+#### solution 1
 ```diff
 -def find_keys(dict, val):
 +def find_keys(dict, val):
@@ -4994,8 +5215,7 @@
 +    return [k for k, v in dict.items
 ```
 
-#### find_keys (task/63)
-
+#### solution 2
 ```diff
 -def find_keys(dict, val):
 +def find_keys(dict, val):
@@ -5008,8 +5228,7 @@
 +    """Check whether the
 ```
 
-#### find_keys (task/63)
-
+#### solution 3
 ```diff
 -def find_keys(dict, val):
 +def find_keys(dict, val):
@@ -5021,8 +5240,7 @@
 +        return None
 ```
 
-#### find_keys (task/63)
-
+#### solution 4
 ```diff
 -def find_keys(dict, val):
 +def find_keys(dict, val):
@@ -5034,8 +5252,14 @@
 +def get_gene_name(
 ```
 
-#### when (task/64)
+### when (task/64)
 
+#### canonical solution
+```python
+def when(predicate, when_true):  return lambda x: when_true(x) if predicate(x) else x
+```
+
+#### solution 0
 ```diff
 -def when(predicate, when_true):
 +def when(predicate, when_true):
@@ -5046,8 +5270,7 @@
 +    return lambda x: list_of_when_true
 ```
 
-#### when (task/64)
-
+#### solution 1
 ```diff
 -def when(predicate, when_true):
 +def when(predicate, when_true):
@@ -5060,8 +5283,7 @@
 +                return fn
 ```
 
-#### when (task/64)
-
+#### solution 2
 ```diff
 -def when(predicate, when_true):
 +def when(predicate, when_true):
@@ -5072,8 +5294,7 @@
 +    The difference is that *
 ```
 
-#### when (task/64)
-
+#### solution 3
 ```diff
 -def when(predicate, when_true):
 +def when(predicate, when_true):
@@ -5090,8 +5311,7 @@
 +    Return
 ```
 
-#### when (task/64)
-
+#### solution 4
 ```diff
 -def when(predicate, when_true):
 +def when(predicate, when_true):
@@ -5107,8 +5327,20 @@
 +    What would
 ```
 
-#### chunk_into_n (task/65)
+### chunk_into_n (task/65)
 
+#### canonical solution
+```python
+from math import ceil
+
+def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
+  return list(
+    map(lambda x: lst[x * size:x * size + size],
+    list(range(n)))
+  )
+```
+
+#### solution 0
 ```diff
 -from math import ceil
 -
@@ -5126,8 +5358,7 @@
 +def
 ```
 
-#### chunk_into_n (task/65)
-
+#### solution 1
 ```diff
 -from math import ceil
 -
@@ -5142,8 +5373,7 @@
 +    return lst[:n]
 ```
 
-#### chunk_into_n (task/65)
-
+#### solution 2
 ```diff
 -from math import ceil
 -
@@ -5161,8 +5391,7 @@
 +    '''
 ```
 
-#### chunk_into_n (task/65)
-
+#### solution 3
 ```diff
 -from math import ceil
 -
@@ -5177,8 +5406,7 @@
 +    return '\n'.join(map(
 ```
 
-#### chunk_into_n (task/65)
-
+#### solution 4
 ```diff
 -from math import ceil
 -
@@ -5196,8 +5424,14 @@
 +    return
 ```
 
-#### km_to_miles (task/66)
+### km_to_miles (task/66)
 
+#### canonical solution
+```python
+def km_to_miles(km):  return km * 0.621371
+```
+
+#### solution 0
 ```diff
 -def km_to_miles(km):
 +def km_to_miles(km):
@@ -5210,8 +5444,7 @@
 +    print("The distance
 ```
 
-#### km_to_miles (task/66)
-
+#### solution 1
 ```diff
 -def km_to_miles(km):
 +def km_to_miles(km):
@@ -5227,8 +5460,7 @@
 +    return lbs *
 ```
 
-#### km_to_miles (task/66)
-
+#### solution 2
 ```diff
 -def km_to_miles(km):
 +def km_to_miles(km):
@@ -5245,8 +5477,7 @@
 +def miles_to_km(miles):
 ```
 
-#### km_to_miles (task/66)
-
+#### solution 3
 ```diff
 -def km_to_miles(km):
 +def km_to_miles(km):
@@ -5260,8 +5491,7 @@
 +    return kmh
 ```
 
-#### km_to_miles (task/66)
-
+#### solution 4
 ```diff
 -def km_to_miles(km):
 +def km_to_miles(km):
@@ -5272,8 +5502,14 @@
 +    print(km_to_miles(5))
 ```
 
-#### max_by (task/67)
+### max_by (task/67)
 
+#### canonical solution
+```python
+def max_by(lst, fn):  return max(map(fn, lst))
+```
+
+#### solution 0
 ```diff
 -def max_by(lst, fn):
 +def max_by(lst, fn):
@@ -5285,8 +5521,7 @@
 +        if max_result == None or
 ```
 
-#### max_by (task/67)
-
+#### solution 1
 ```diff
 -def max_by(lst, fn):
 +def max_by(lst, fn):
@@ -5299,8 +5534,7 @@
 +            return_val
 ```
 
-#### max_by (task/67)
-
+#### solution 2
 ```diff
 -def max_by(lst, fn):
 +def max_by(lst, fn):
@@ -5312,8 +5546,7 @@
 +        return reduce(lambda a, b: a if fn(a) > fn(b)
 ```
 
-#### max_by (task/67)
-
+#### solution 3
 ```diff
 -def max_by(lst, fn):
 +def max_by(lst, fn):
@@ -5325,8 +5558,7 @@
 +   
 ```
 
-#### max_by (task/67)
-
+#### solution 4
 ```diff
 -def max_by(lst, fn):
 +def max_by(lst, fn):
@@ -5338,8 +5570,14 @@
 +    return reduce(lambda x, y: x if fn(x) > fn(y) else y, lst)
 ```
 
-#### min_element_index (task/68)
+### min_element_index (task/68)
 
+#### canonical solution
+```python
+def min_element_index(arr):  return arr.index(min(arr))
+```
+
+#### solution 0
 ```diff
 -def min_element_index(arr):
 +def min_element_index(arr):
@@ -5353,8 +5591,7 @@
 +
 ```
 
-#### min_element_index (task/68)
-
+#### solution 1
 ```diff
 -def min_element_index(arr):
 +def min_element_index(arr):
@@ -5368,8 +5605,7 @@
 +
 ```
 
-#### min_element_index (task/68)
-
+#### solution 2
 ```diff
 -def min_element_index(arr):
 +def min_element_index(arr):
@@ -5381,8 +5617,7 @@
 +    return min_
 ```
 
-#### min_element_index (task/68)
-
+#### solution 3
 ```diff
 -def min_element_index(arr):
 +def min_element_index(arr):
@@ -5394,8 +5629,7 @@
 +            min_e
 ```
 
-#### min_element_index (task/68)
-
+#### solution 4
 ```diff
 -def min_element_index(arr):
 +def min_element_index(arr):
@@ -5407,8 +5641,14 @@
 +            min_index =
 ```
 
-#### initialize_2d_list (task/69)
+### initialize_2d_list (task/69)
 
+#### canonical solution
+```python
+def initialize_2d_list(w, h, val = None):  return [[val for x in range(w)] for y in range(h)]
+```
+
+#### solution 0
 ```diff
 -def initialize_2d_list(w, h, val = None):
 +def initialize_2d_list(w, h, val = None):
@@ -5420,8 +5660,7 @@
 +def initialize_3d_list(w, h, d, val = None
 ```
 
-#### initialize_2d_list (task/69)
-
+#### solution 1
 ```diff
 -def initialize_2d_list(w, h, val = None):
 +def initialize_2d_list(w, h, val = None):
@@ -5433,8 +5672,7 @@
 +    grid = initialize_2d_list(
 ```
 
-#### initialize_2d_list (task/69)
-
+#### solution 2
 ```diff
 -def initialize_2d_list(w, h, val = None):
 +def initialize_2d_list(w, h, val = None):
@@ -5449,8 +5687,7 @@
 +#   get_chunks_indexes_to_remove
 ```
 
-#### initialize_2d_list (task/69)
-
+#### solution 3
 ```diff
 -def initialize_2d_list(w, h, val = None):
 +def initialize_2d_list(w, h, val = None):
@@ -5461,8 +5698,7 @@
 +    return np.full((h, w), val)
 ```
 
-#### initialize_2d_list (task/69)
-
+#### solution 4
 ```diff
 -def initialize_2d_list(w, h, val = None):
 +def initialize_2d_list(w, h, val = None):
@@ -5477,8 +5713,14 @@
 +   
 ```
 
-#### dict_to_list (task/70)
+### dict_to_list (task/70)
 
+#### canonical solution
+```python
+def dict_to_list(d):  return list(d.items())
+```
+
+#### solution 0
 ```diff
 -def dict_to_list(d):
 +def dict_to_list(d):
@@ -5490,8 +5732,7 @@
 +# If it fails, the value -1 is returned.
 ```
 
-#### dict_to_list (task/70)
-
+#### solution 1
 ```diff
 -def dict_to_list(d):
 +def dict_to_list(d):
@@ -5503,8 +5744,7 @@
 +def dict_to_args(d):
 ```
 
-#### dict_to_list (task/70)
-
+#### solution 2
 ```diff
 -def dict_to_list(d):
 +def dict_to_list(d):
@@ -5518,8 +5758,7 @@
 +        for k,
 ```
 
-#### dict_to_list (task/70)
-
+#### solution 3
 ```diff
 -def dict_to_list(d):
 +def dict_to_list(d):
@@ -5533,8 +5772,7 @@
 +    reg_ex = r'^%
 ```
 
-#### dict_to_list (task/70)
-
+#### solution 4
 ```diff
 -def dict_to_list(d):
 +def dict_to_list(d):
@@ -5552,8 +5790,14 @@
 +    ret =
 ```
 
-#### average (task/71)
+### average (task/71)
 
+#### canonical solution
+```python
+def average(*args):  return sum(args, 0.0) / len(args)
+```
+
+#### solution 0
 ```diff
 -def average(*args):
 +def average(*args):
@@ -5569,8 +5813,7 @@
 +    A function
 ```
 
-#### average (task/71)
-
+#### solution 1
 ```diff
 -def average(*args):
 +def average(*args):
@@ -5585,8 +5828,7 @@
 +print(average(1, 2
 ```
 
-#### average (task/71)
-
+#### solution 2
 ```diff
 -def average(*args):
 +def average(*args):
@@ -5601,8 +5843,7 @@
 +# If a function does not explicitly
 ```
 
-#### average (task/71)
-
+#### solution 3
 ```diff
 -def average(*args):
 +def average(*args):
@@ -5618,8 +5859,7 @@
 +print(average(1,
 ```
 
-#### average (task/71)
-
+#### solution 4
 ```diff
 -def average(*args):
 +def average(*args):
@@ -5634,8 +5874,15 @@
 +    return a/n,
 ```
 
-#### intersection (task/72)
+### intersection (task/72)
 
+#### canonical solution
+```python
+def intersection(a, b):  _a, _b = set(a), set(b)
+  return list(_a & _b)
+```
+
+#### solution 0
 ```diff
 -def intersection(a, b):
 +def intersection(a, b):
@@ -5646,8 +5893,7 @@
 +a = np.array([[1,2,3],[4,5,6],[7
 ```
 
-#### intersection (task/72)
-
+#### solution 1
 ```diff
 -def intersection(a, b):
 +def intersection(a, b):
@@ -5657,8 +5903,7 @@
 +    return (b.x-a.x)*(a.y-b.y)/(a.y*b.x-
 ```
 
-#### intersection (task/72)
-
+#### solution 2
 ```diff
 -def intersection(a, b):
 +def intersection(a, b):
@@ -5669,8 +5914,7 @@
 +    hi = min(a['hi
 ```
 
-#### intersection (task/72)
-
+#### solution 3
 ```diff
 -def intersection(a, b):
 +def intersection(a, b):
@@ -5682,8 +5926,7 @@
 +    r2_start, r
 ```
 
-#### intersection (task/72)
-
+#### solution 4
 ```diff
 -def intersection(a, b):
 +def intersection(a, b):
@@ -5696,8 +5939,14 @@
 +    :param filenames
 ```
 
-#### hamming_distance (task/73)
+### hamming_distance (task/73)
 
+#### canonical solution
+```python
+def hamming_distance(a, b):  return bin(a ^ b).count('1')
+```
+
+#### solution 0
 ```diff
 -def hamming_distance(a, b):
 +def hamming_distance(a, b):
@@ -5709,8 +5958,7 @@
 +    for i in range(len(c
 ```
 
-#### hamming_distance (task/73)
-
+#### solution 1
 ```diff
 -def hamming_distance(a, b):
 +def hamming_distance(a, b):
@@ -5722,8 +5970,7 @@
 +def get_
 ```
 
-#### hamming_distance (task/73)
-
+#### solution 2
 ```diff
 -def hamming_distance(a, b):
 +def hamming_distance(a, b):
@@ -5735,8 +5982,7 @@
 +    return sum(a[i] != b
 ```
 
-#### hamming_distance (task/73)
-
+#### solution 3
 ```diff
 -def hamming_distance(a, b):
 +def hamming_distance(a, b):
@@ -5748,8 +5994,7 @@
 +    """split the given data into train and test sets
 ```
 
-#### hamming_distance (task/73)
-
+#### solution 4
 ```diff
 -def hamming_distance(a, b):
 +def hamming_distance(a, b):
@@ -5760,8 +6005,14 @@
 +    return sum(ch1 !=
 ```
 
-#### digitize (task/74)
+### digitize (task/74)
 
+#### canonical solution
+```python
+def digitize(n):  return list(map(int, str(n)))
+```
+
+#### solution 0
 ```diff
 -def digitize(n):
 +def digitize(n):
@@ -5778,8 +6029,7 @@
 +if __name__ == '__
 ```
 
-#### digitize (task/74)
-
+#### solution 1
 ```diff
 -def digitize(n):
 +def digitize(n):
@@ -5795,8 +6045,7 @@
 +def get_sum_of
 ```
 
-#### digitize (task/74)
-
+#### solution 2
 ```diff
 -def digitize(n):
 +def digitize(n):
@@ -5813,8 +6062,7 @@
 +    s = 0
 ```
 
-#### digitize (task/74)
-
+#### solution 3
 ```diff
 -def digitize(n):
 +def digitize(n):
@@ -5828,8 +6076,7 @@
 +    >>> l = [[randint(1,10) for i
 ```
 
-#### digitize (task/74)
-
+#### solution 4
 ```diff
 -def digitize(n):
 +def digitize(n):
@@ -5841,8 +6088,14 @@
 +        n[i] = int(n[i
 ```
 
-#### roll (task/75)
+### roll (task/75)
 
+#### canonical solution
+```python
+def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
+```
+
+#### solution 0
 ```diff
 -def roll(lst, offset):
 +def roll(lst, offset):
@@ -5855,8 +6108,7 @@
 +def deal
 ```
 
-#### roll (task/75)
-
+#### solution 1
 ```diff
 -def roll(lst, offset):
 +def roll(lst, offset):
@@ -5868,8 +6120,7 @@
 +    """E
 ```
 
-#### roll (task/75)
-
+#### solution 2
 ```diff
 -def roll(lst, offset):
 +def roll(lst, offset):
@@ -5882,8 +6133,7 @@
 +    return
 ```
 
-#### roll (task/75)
-
+#### solution 3
 ```diff
 -def roll(lst, offset):
 +def roll(lst, offset):
@@ -5896,8 +6146,7 @@
 +    if offset
 ```
 
-#### roll (task/75)
-
+#### solution 4
 ```diff
 -def roll(lst, offset):
 +def roll(lst, offset):
@@ -5912,8 +6161,14 @@
 +def
 ```
 
-#### some (task/76)
+### some (task/76)
 
+#### canonical solution
+```python
+def some(lst, fn = lambda x: x):  return any(map(fn, lst))
+```
+
+#### solution 0
 ```diff
 -def some(lst, fn = lambda x: x):
 +def some(lst, fn = lambda x: x):
@@ -5928,8 +6183,7 @@
 +def every(lst, fn = lambda
 ```
 
-#### some (task/76)
-
+#### solution 1
 ```diff
 -def some(lst, fn = lambda x: x):
 +def some(lst, fn = lambda x: x):
@@ -5942,8 +6196,7 @@
 +    lambda x: x
 ```
 
-#### some (task/76)
-
+#### solution 2
 ```diff
 -def some(lst, fn = lambda x: x):
 +def some(lst, fn = lambda x: x):
@@ -5956,8 +6209,7 @@
 +    return some(
 ```
 
-#### some (task/76)
-
+#### solution 3
 ```diff
 -def some(lst, fn = lambda x: x):
 +def some(lst, fn = lambda x: x):
@@ -5972,8 +6224,7 @@
 +        self.wc = Wc
 ```
 
-#### some (task/76)
-
+#### solution 4
 ```diff
 -def some(lst, fn = lambda x: x):
 +def some(lst, fn = lambda x: x):
@@ -5986,8 +6237,20 @@
 +def without(l
 ```
 
-#### combine_values (task/77)
+### combine_values (task/77)
 
+#### canonical solution
+```python
+from collections import defaultdict
+
+def combine_values(*dicts):  res = defaultdict(list)
+  for d in dicts:
+    for key in d:
+      res[key].append(d[key])
+  return dict(res)
+```
+
+#### solution 0
 ```diff
 -from collections import defaultdict
 -
@@ -6004,8 +6267,7 @@
 +        return combine_
 ```
 
-#### combine_values (task/77)
-
+#### solution 1
 ```diff
 -from collections import defaultdict
 -
@@ -6023,8 +6285,7 @@
 +            d[k].append(
 ```
 
-#### combine_values (task/77)
-
+#### solution 2
 ```diff
 -from collections import defaultdict
 -
@@ -6039,8 +6300,7 @@
 +    return {k: [v] if v is not None else [] for k, v in reduce(lambda x, y: x + y, [
 ```
 
-#### combine_values (task/77)
-
+#### solution 3
 ```diff
 -from collections import defaultdict
 -
@@ -6058,8 +6318,7 @@
 +#dictionaries = [
 ```
 
-#### combine_values (task/77)
-
+#### solution 4
 ```diff
 -from collections import defaultdict
 -
@@ -6078,8 +6337,14 @@
 +       
 ```
 
-#### flatten (task/78)
+### flatten (task/78)
 
+#### canonical solution
+```python
+def flatten(lst):  return [x for y in lst for x in y]
+```
+
+#### solution 0
 ```diff
 -def flatten(lst):
 +def flatten(lst):
@@ -6093,8 +6358,7 @@
 +def flatten
 ```
 
-#### flatten (task/78)
-
+#### solution 1
 ```diff
 -def flatten(lst):
 +def flatten(lst):
@@ -6105,8 +6369,7 @@
 +    '''system : SYSTEM WORD
 ```
 
-#### flatten (task/78)
-
+#### solution 2
 ```diff
 -def flatten(lst):
 +def flatten(lst):
@@ -6118,8 +6381,7 @@
 +            new_list.append(j
 ```
 
-#### flatten (task/78)
-
+#### solution 3
 ```diff
 -def flatten(lst):
 +def flatten(lst):
@@ -6131,8 +6393,7 @@
 +    >>> x = [1, [2, 3], 4
 ```
 
-#### flatten (task/78)
-
+#### solution 4
 ```diff
 -def flatten(lst):
 +def flatten(lst):
@@ -6145,8 +6406,16 @@
 +            yield x
 ```
 
-#### symmetric_difference_by (task/79)
+### symmetric_difference_by (task/79)
 
+#### canonical solution
+```python
+def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+  return [item for item in a if fn(item) not in _b] + [item
+          for item in b if fn(item) not in _a]
+```
+
+#### solution 0
 ```diff
 -def symmetric_difference_by(a, b, fn):
 +def symmetric_difference_by(a, b, fn):
@@ -6165,8 +6434,7 @@
 +def take_
 ```
 
-#### symmetric_difference_by (task/79)
-
+#### solution 1
 ```diff
 -def symmetric_difference_by(a, b, fn):
 +def symmetric_difference_by(a, b, fn):
@@ -6178,8 +6446,7 @@
 +def symmetric_difference
 ```
 
-#### symmetric_difference_by (task/79)
-
+#### solution 2
 ```diff
 -def symmetric_difference_by(a, b, fn):
 +def symmetric_difference_by(a, b, fn):
@@ -6191,8 +6458,7 @@
 +def symmetric_difference
 ```
 
-#### symmetric_difference_by (task/79)
-
+#### solution 3
 ```diff
 -def symmetric_difference_by(a, b, fn):
 +def symmetric_difference_by(a, b, fn):
@@ -6205,8 +6471,7 @@
 +    return symmetric_difference(a
 ```
 
-#### symmetric_difference_by (task/79)
-
+#### solution 4
 ```diff
 -def symmetric_difference_by(a, b, fn):
 +def symmetric_difference_by(a, b, fn):
@@ -6217,8 +6482,14 @@
 +    return symmetric_difference(a, b).sort
 ```
 
-#### find_last_index (task/80)
+### find_last_index (task/80)
 
+#### canonical solution
+```python
+def find_last_index(lst, fn):  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
+```
+
+#### solution 0
 ```diff
 -def find_last_index(lst, fn):
 +def find_last_index(lst, fn):
@@ -6232,8 +6503,7 @@
 +            res
 ```
 
-#### find_last_index (task/80)
-
+#### solution 1
 ```diff
 -def find_last_index(lst, fn):
 +def find_last_index(lst, fn):
@@ -6248,8 +6518,7 @@
 +def find_last_number(l
 ```
 
-#### find_last_index (task/80)
-
+#### solution 2
 ```diff
 -def find_last_index(lst, fn):
 +def find_last_index(lst, fn):
@@ -6263,8 +6532,7 @@
 +def get_parser():
 ```
 
-#### find_last_index (task/80)
-
+#### solution 3
 ```diff
 -def find_last_index(lst, fn):
 +def find_last_index(lst, fn):
@@ -6279,8 +6547,7 @@
 +       
 ```
 
-#### find_last_index (task/80)
-
+#### solution 4
 ```diff
 -def find_last_index(lst, fn):
 +def find_last_index(lst, fn):
@@ -6293,8 +6560,14 @@
 +    return lst[
 ```
 
-#### weighted_average (task/81)
+### weighted_average (task/81)
 
+#### canonical solution
+```python
+def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
+```
+
+#### solution 0
 ```diff
 -def weighted_average(nums, weights):
 +def weighted_average(nums, weights):
@@ -6307,8 +6580,7 @@
 +def iterate(func, start
 ```
 
-#### weighted_average (task/81)
-
+#### solution 1
 ```diff
 -def weighted_average(nums, weights):
 +def weighted_average(nums, weights):
@@ -6319,8 +6591,7 @@
 +average = weighted_average([1, 2,
 ```
 
-#### weighted_average (task/81)
-
+#### solution 2
 ```diff
 -def weighted_average(nums, weights):
 +def weighted_average(nums, weights):
@@ -6332,8 +6603,7 @@
 +   
 ```
 
-#### weighted_average (task/81)
-
+#### solution 3
 ```diff
 -def weighted_average(nums, weights):
 +def weighted_average(nums, weights):
@@ -6344,8 +6614,7 @@
 +    return sum(abs(a - p) for a,
 ```
 
-#### weighted_average (task/81)
-
+#### solution 4
 ```diff
 -def weighted_average(nums, weights):
 +def weighted_average(nums, weights):
@@ -6357,8 +6626,17 @@
 +def get_
 ```
 
-#### bifurcate (task/82)
+### bifurcate (task/82)
 
+#### canonical solution
+```python
+def bifurcate(lst, filter):  return [
+    [x for x, flag in zip(lst, filter) if flag],
+    [x for x, flag in zip(lst, filter) if not flag]
+  ]
+```
+
+#### solution 0
 ```diff
 -def bifurcate(lst, filter):
 +def bifurcate(lst, filter):
@@ -6368,8 +6646,7 @@
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
-#### bifurcate (task/82)
-
+#### solution 1
 ```diff
 -def bifurcate(lst, filter):
 +def bifurcate(lst, filter):
@@ -6379,8 +6656,7 @@
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
-#### bifurcate (task/82)
-
+#### solution 2
 ```diff
 -def bifurcate(lst, filter):
 +def bifurcate(lst, filter):
@@ -6395,8 +6671,7 @@
 +        [x for i, x in enumerate
 ```
 
-#### bifurcate (task/82)
-
+#### solution 3
 ```diff
 -def bifurcate(lst, filter):
 +def bifurcate(lst, filter):
@@ -6406,8 +6681,7 @@
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
-#### bifurcate (task/82)
-
+#### solution 4
 ```diff
 -def bifurcate(lst, filter):
 +def bifurcate(lst, filter):
@@ -6417,8 +6691,14 @@
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
-#### all_equal (task/83)
+### all_equal (task/83)
 
+#### canonical solution
+```python
+def all_equal(lst):  return len(set(lst)) == 1
+```
+
+#### solution 0
 ```diff
 -def all_equal(lst):
 +def all_equal(lst):
@@ -6430,8 +6710,7 @@
 +    ranges: [[0, 1
 ```
 
-#### all_equal (task/83)
-
+#### solution 1
 ```diff
 -def all_equal(lst):
 +def all_equal(lst):
@@ -6442,8 +6721,7 @@
 +    return len(lst) == len(set(lst))
 ```
 
-#### all_equal (task/83)
-
+#### solution 2
 ```diff
 -def all_equal(lst):
 +def all_equal(lst):
@@ -6454,8 +6732,7 @@
 +# unless the iterator is empty in which case return the
 ```
 
-#### all_equal (task/83)
-
+#### solution 3
 ```diff
 -def all_equal(lst):
 +def all_equal(lst):
@@ -6467,8 +6744,7 @@
 +    concat_bits takes a list of bit lists
 ```
 
-#### all_equal (task/83)
-
+#### solution 4
 ```diff
 -def all_equal(lst):
 +def all_equal(lst):
@@ -6483,8 +6759,15 @@
 +# Drop rows with missing
 ```
 
-#### difference (task/84)
+### difference (task/84)
 
+#### canonical solution
+```python
+def difference(a, b):  _b = set(b)
+  return [item for item in a if item not in _b]
+```
+
+#### solution 0
 ```diff
 -def difference(a, b):
 +def difference(a, b):
@@ -6494,8 +6777,7 @@
 +# -- end code --
 ```
 
-#### difference (task/84)
-
+#### solution 1
 ```diff
 -def difference(a, b):
 +def difference(a, b):
@@ -6511,8 +6793,7 @@
 +@app.route('/', methods=['
 ```
 
-#### difference (task/84)
-
+#### solution 2
 ```diff
 -def difference(a, b):
 +def difference(a, b):
@@ -6528,8 +6809,7 @@
 +    while i < n -
 ```
 
-#### difference (task/84)
-
+#### solution 3
 ```diff
 -def difference(a, b):
 +def difference(a, b):
@@ -6543,8 +6823,7 @@
 +print(difference([1,2,3], [1,2,
 ```
 
-#### difference (task/84)
-
+#### solution 4
 ```diff
 -def difference(a, b):
 +def difference(a, b):
@@ -6558,8 +6837,19 @@
 +        prediction = np.array
 ```
 
-#### kebab (task/85)
+### kebab (task/85)
 
+#### canonical solution
+```python
+from re import sub
+
+def kebab(s):  return '-'.join(
+    sub(r"(\s|_|-)+"," ",
+    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+    lambda mo: ' ' + mo.group(0).lower(), s)).split())
+```
+
+#### solution 0
 ```diff
 -from re import sub
 -
@@ -6572,8 +6862,7 @@
 +               sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\
 ```
 
-#### kebab (task/85)
-
+#### solution 1
 ```diff
 -from re import sub
 -
@@ -6586,8 +6875,7 @@
 +    return ''.join(x.lower() if i == 0 else ('-' + x.lower() if x.isupper() else x) for i, x in enumerate(sub('[A
 ```
 
-#### kebab (task/85)
-
+#### solution 2
 ```diff
 -from re import sub
 -
@@ -6600,8 +6888,7 @@
 +    s = sub(r"[A-Z]",lambda m: "_" + m.group(0).lower(),s)
 ```
 
-#### kebab (task/85)
-
+#### solution 3
 ```diff
 -from re import sub
 -
@@ -6613,8 +6900,7 @@
 +    return sub(r"(\s|_|-)+","-",sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|
 ```
 
-#### kebab (task/85)
-
+#### solution 4
 ```diff
 -from re import sub
 -
@@ -6628,8 +6914,14 @@
 +        s = sub(r'\-+', '
 ```
 
-#### miles_to_km (task/86)
+### miles_to_km (task/86)
 
+#### canonical solution
+```python
+def miles_to_km(miles):  return miles * 1.609344
+```
+
+#### solution 0
 ```diff
 -def miles_to_km(miles):
 +def miles_to_km(miles):
@@ -6644,8 +6936,7 @@
 +m
 ```
 
-#### miles_to_km (task/86)
-
+#### solution 1
 ```diff
 -def miles_to_km(miles):
 +def miles_to_km(miles):
@@ -6658,8 +6949,7 @@
 +    return miles
 ```
 
-#### miles_to_km (task/86)
-
+#### solution 2
 ```diff
 -def miles_to_km(miles):
 +def miles_to_km(miles):
@@ -6675,8 +6965,7 @@
 +print
 ```
 
-#### miles_to_km (task/86)
-
+#### solution 3
 ```diff
 -def miles_to_km(miles):
 +def miles_to_km(miles):
@@ -6690,8 +6979,7 @@
 +#18.619788802909413
 ```
 
-#### miles_to_km (task/86)
-
+#### solution 4
 ```diff
 -def miles_to_km(miles):
 +def miles_to_km(miles):
@@ -6707,8 +6995,14 @@
 +# convert function
 ```
 
-#### sum_of_powers (task/87)
+### sum_of_powers (task/87)
 
+#### canonical solution
+```python
+def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in range(start, end + 1)])
+```
+
+#### solution 0
 ```diff
 -def sum_of_powers(end, power = 2, start = 1):
 +def sum_of_powers(end, power = 2, start = 1):
@@ -6722,8 +7016,7 @@
 +    end:
 ```
 
-#### sum_of_powers (task/87)
-
+#### solution 1
 ```diff
 -def sum_of_powers(end, power = 2, start = 1):
 +def sum_of_powers(end, power = 2, start = 1):
@@ -6734,8 +7027,7 @@
 +    the function should return 14, because the powers of two between
 ```
 
-#### sum_of_powers (task/87)
-
+#### solution 2
 ```diff
 -def sum_of_powers(end, power = 2, start = 1):
 +def sum_of_powers(end, power = 2, start = 1):
@@ -6746,8 +7038,7 @@
 +# limit
 ```
 
-#### sum_of_powers (task/87)
-
+#### solution 3
 ```diff
 -def sum_of_powers(end, power = 2, start = 1):
 +def sum_of_powers(end, power = 2, start = 1):
@@ -6760,8 +7051,7 @@
 +def sum_of_
 ```
 
-#### sum_of_powers (task/87)
-
+#### solution 4
 ```diff
 -def sum_of_powers(end, power = 2, start = 1):
 +def sum_of_powers(end, power = 2, start = 1):
@@ -6774,8 +7064,16 @@
 +    else
 ```
 
-#### compose (task/88)
+### compose (task/88)
 
+#### canonical solution
+```python
+from functools import reduce
+
+def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
+```
+
+#### solution 0
 ```diff
 -from functools import reduce
 -
@@ -6794,8 +7092,7 @@
 +   
 ```
 
-#### compose (task/88)
-
+#### solution 1
 ```diff
 -from functools import reduce
 -
@@ -6812,8 +7109,7 @@
 +        return reduce(lambda f,
 ```
 
-#### compose (task/88)
-
+#### solution 2
 ```diff
 -from functools import reduce
 -
@@ -6830,8 +7126,7 @@
 +        return reduce(lambda f,
 ```
 
-#### compose (task/88)
-
+#### solution 3
 ```diff
 -from functools import reduce
 -
@@ -6848,8 +7143,7 @@
 +    return x + 1
 ```
 
-#### compose (task/88)
-
+#### solution 4
 ```diff
 -from functools import reduce
 -
@@ -6866,8 +7160,14 @@
 +        return reduce(lambda f,
 ```
 
-#### similarity (task/89)
+### similarity (task/89)
 
+#### canonical solution
+```python
+def similarity(a, b):  return [item for item in a if item in b]
+```
+
+#### solution 0
 ```diff
 -def similarity(a, b):
 +def similarity(a, b):
@@ -6877,8 +7177,7 @@
 +# X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1],
 ```
 
-#### similarity (task/89)
-
+#### solution 1
 ```diff
 -def similarity(a, b):
 +def similarity(a, b):
@@ -6889,8 +7188,7 @@
 +    main()
 ```
 
-#### similarity (task/89)
-
+#### solution 2
 ```diff
 -def similarity(a, b):
 +def similarity(a, b):
@@ -6900,8 +7198,7 @@
 +assert similarity({'x', 'y', 'z'}, {'w', 'x', 'y', 'z'}) == 1.0
 ```
 
-#### similarity (task/89)
-
+#### solution 3
 ```diff
 -def similarity(a, b):
 +def similarity(a, b):
@@ -6914,8 +7211,7 @@
 +    filename
 ```
 
-#### similarity (task/89)
-
+#### solution 4
 ```diff
 -def similarity(a, b):
 +def similarity(a, b):
@@ -6926,8 +7222,17 @@
 +    return np
 ```
 
-#### have_same_contents (task/90)
+### have_same_contents (task/90)
 
+#### canonical solution
+```python
+def have_same_contents(a, b):  for v in set(a + b):
+    if a.count(v) != b.count(v):
+      return False
+  return True
+```
+
+#### solution 0
 ```diff
 -def have_same_contents(a, b):
 +def have_same_contents(a, b):
@@ -6942,8 +7247,7 @@
 +    """
 ```
 
-#### have_same_contents (task/90)
-
+#### solution 1
 ```diff
 -def have_same_contents(a, b):
 +def have_same_contents(a, b):
@@ -6957,8 +7261,7 @@
 +    except FileNot
 ```
 
-#### have_same_contents (task/90)
-
+#### solution 2
 ```diff
 -def have_same_contents(a, b):
 +def have_same_contents(a, b):
@@ -6972,8 +7275,7 @@
 +        return
 ```
 
-#### have_same_contents (task/90)
-
+#### solution 3
 ```diff
 -def have_same_contents(a, b):
 +def have_same_contents(a, b):
@@ -6988,8 +7290,7 @@
 +def _
 ```
 
-#### have_same_contents (task/90)
-
+#### solution 4
 ```diff
 -def have_same_contents(a, b):
 +def have_same_contents(a, b):
@@ -7003,8 +7304,16 @@
 +    except Type
 ```
 
-#### days_from_now (task/91)
+### days_from_now (task/91)
 
+#### canonical solution
+```python
+from datetime import timedelta, date
+
+def days_from_now(n):  return date.today() + timedelta(n)
+```
+
+#### solution 0
 ```diff
 -from datetime import timedelta, date
 -
@@ -7017,8 +7326,7 @@
 +    return d.strftime("%Y-%m-%d")
 ```
 
-#### days_from_now (task/91)
-
+#### solution 1
 ```diff
 -from datetime import timedelta, date
 -
@@ -7030,8 +7338,7 @@
 +    return date.today() + timedelta(days=n)
 ```
 
-#### days_from_now (task/91)
-
+#### solution 2
 ```diff
 -from datetime import timedelta, date
 -
@@ -7043,8 +7350,7 @@
 +    return date.today() + timedelta(days=n)
 ```
 
-#### days_from_now (task/91)
-
+#### solution 3
 ```diff
 -from datetime import timedelta, date
 -
@@ -7058,8 +7364,7 @@
 +# In case you need dates that fall on a particular weekday in the next n days, replace the timedelta with a TimeDelta that uses one of the constants in
 ```
 
-#### days_from_now (task/91)
-
+#### solution 4
 ```diff
 -from datetime import timedelta, date
 -
@@ -7075,8 +7380,14 @@
 +    d = date.today()
 ```
 
-#### cast_list (task/92)
+### cast_list (task/92)
 
+#### canonical solution
+```python
+def cast_list(val):  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
+```
+
+#### solution 0
 ```diff
 -def cast_list(val):
 +def cast_list(val):
@@ -7092,8 +7403,7 @@
 +
 ```
 
-#### cast_list (task/92)
-
+#### solution 1
 ```diff
 -def cast_list(val):
 +def cast_list(val):
@@ -7107,8 +7417,7 @@
 +        if not path.exists(filename):
 ```
 
-#### cast_list (task/92)
-
+#### solution 2
 ```diff
 -def cast_list(val):
 +def cast_list(val):
@@ -7124,8 +7433,7 @@
 +    if isinstance(val,
 ```
 
-#### cast_list (task/92)
-
+#### solution 3
 ```diff
 -def cast_list(val):
 +def cast_list(val):
@@ -7143,8 +7451,7 @@
 +
 ```
 
-#### cast_list (task/92)
-
+#### solution 4
 ```diff
 -def cast_list(val):
 +def cast_list(val):
@@ -7157,8 +7464,14 @@
 +        secret += choice(SEC
 ```
 
-#### sort_dict_by_value (task/93)
+### sort_dict_by_value (task/93)
 
+#### canonical solution
+```python
+def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
+```
+
+#### solution 0
 ```diff
 -def sort_dict_by_value(d, reverse = False):
 +def sort_dict_by_value(d, reverse = False):
@@ -7168,8 +7481,7 @@
 +    sort_kv_list = sorted(kv_list, key = lambda kv:
 ```
 
-#### sort_dict_by_value (task/93)
-
+#### solution 1
 ```diff
 -def sort_dict_by_value(d, reverse = False):
 +def sort_dict_by_value(d, reverse = False):
@@ -7181,8 +7493,7 @@
 +    sorted
 ```
 
-#### sort_dict_by_value (task/93)
-
+#### solution 2
 ```diff
 -def sort_dict_by_value(d, reverse = False):
 +def sort_dict_by_value(d, reverse = False):
@@ -7193,8 +7504,7 @@
 +    return sorted(d.items(), key =
 ```
 
-#### sort_dict_by_value (task/93)
-
+#### solution 3
 ```diff
 -def sort_dict_by_value(d, reverse = False):
 +def sort_dict_by_value(d, reverse = False):
@@ -7207,8 +7517,7 @@
 +def sort_dict_by_key(d,
 ```
 
-#### sort_dict_by_value (task/93)
-
+#### solution 4
 ```diff
 -def sort_dict_by_value(d, reverse = False):
 +def sort_dict_by_value(d, reverse = False):
@@ -7221,8 +7530,20 @@
 +
 ```
 
-#### slugify (task/94)
+### slugify (task/94)
 
+#### canonical solution
+```python
+import re
+
+def slugify(s):  s = s.lower().strip()
+  s = re.sub(r'[^\w\s-]', '', s)
+  s = re.sub(r'[\s_-]+', '-', s)
+  s = re.sub(r'^-+|-+$', '', s)
+  return s
+```
+
+#### solution 0
 ```diff
 -import re
 -
@@ -7237,8 +7558,7 @@
 +   
 ```
 
-#### slugify (task/94)
-
+#### solution 1
 ```diff
 -import re
 -
@@ -7253,8 +7573,7 @@
 +    s = re.sub('\W', '',
 ```
 
-#### slugify (task/94)
-
+#### solution 2
 ```diff
 -import re
 -
@@ -7268,8 +7587,7 @@
 +    s =
 ```
 
-#### slugify (task/94)
-
+#### solution 3
 ```diff
 -import re
 -
@@ -7284,8 +7602,7 @@
 +    return s.replace('"', '\\"')
 ```
 
-#### slugify (task/94)
-
+#### solution 4
 ```diff
 -import re
 -
@@ -7301,8 +7618,33 @@
 +def find_
 ```
 
-#### to_roman_numeral (task/95)
+### to_roman_numeral (task/95)
 
+#### canonical solution
+```python
+def to_roman_numeral(num):  lookup = [
+    (1000, 'M'),
+    (900, 'CM'),
+    (500, 'D'),
+    (400, 'CD'),
+    (100, 'C'),
+    (90, 'XC'),
+    (50, 'L'),
+    (40, 'XL'),
+    (10, 'X'),
+    (9, 'IX'),
+    (5, 'V'),
+    (4, 'IV'),
+    (1, 'I'),
+  ]
+  res = ''
+  for (n, roman) in lookup:
+    (d, num) = divmod(num, n)
+    res += roman * d
+  return res
+```
+
+#### solution 0
 ```diff
 -def to_roman_numeral(num):
 +def to_roman_numeral(num):
@@ -7315,8 +7657,7 @@
 +    ints = (1000, 900, 500, 400, 100, 90,
 ```
 
-#### to_roman_numeral (task/95)
-
+#### solution 1
 ```diff
 -def to_roman_numeral(num):
 +def to_roman_numeral(num):
@@ -7330,8 +7671,7 @@
 +        90: 'XC',
 ```
 
-#### to_roman_numeral (task/95)
-
+#### solution 2
 ```diff
 -def to_roman_numeral(num):
 +def to_roman_numeral(num):
@@ -7340,8 +7680,7 @@
 +    roman_list = ["M", "CM", "D
 ```
 
-#### to_roman_numeral (task/95)
-
+#### solution 3
 ```diff
 -def to_roman_numeral(num):
 +def to_roman_numeral(num):
@@ -7352,8 +7691,7 @@
 +    if not
 ```
 
-#### to_roman_numeral (task/95)
-
+#### solution 4
 ```diff
 -def to_roman_numeral(num):
 +def to_roman_numeral(num):
@@ -7366,8 +7704,14 @@
 +        (factor, num) =
 ```
 
-#### check_prop (task/96)
+### check_prop (task/96)
 
+#### canonical solution
+```python
+def check_prop(fn, prop):  return lambda obj: fn(obj[prop])
+```
+
+#### solution 0
 ```diff
 -def check_prop(fn, prop):
 +def check_prop(fn, prop):
@@ -7377,8 +7721,7 @@
 +            raise ValueError('%s is not defined on %s' % (prop, self.__class__
 ```
 
-#### check_prop (task/96)
-
+#### solution 1
 ```diff
 -def check_prop(fn, prop):
 +def check_prop(fn, prop):
@@ -7394,8 +7737,7 @@
 +        return True
 ```
 
-#### check_prop (task/96)
-
+#### solution 2
 ```diff
 -def check_prop(fn, prop):
 +def check_prop(fn, prop):
@@ -7406,8 +7748,7 @@
 +        if val.startswith('0
 ```
 
-#### check_prop (task/96)
-
+#### solution 3
 ```diff
 -def check_prop(fn, prop):
 +def check_prop(fn, prop):
@@ -7423,8 +7764,7 @@
 +def check_
 ```
 
-#### check_prop (task/96)
-
+#### solution 4
 ```diff
 -def check_prop(fn, prop):
 +def check_prop(fn, prop):
@@ -7438,8 +7778,14 @@
 +    prop = set
 ```
 
-#### count_occurrences (task/97)
+### count_occurrences (task/97)
 
+#### canonical solution
+```python
+def count_occurrences(lst, val):  return lst.count(val)
+```
+
+#### solution 0
 ```diff
 -def count_occurrences(lst, val):
 +def count_occurrences(lst, val):
@@ -7453,8 +7799,7 @@
 +    >>>
 ```
 
-#### count_occurrences (task/97)
-
+#### solution 1
 ```diff
 -def count_occurrences(lst, val):
 +def count_occurrences(lst, val):
@@ -7470,8 +7815,7 @@
 +    for item
 ```
 
-#### count_occurrences (task/97)
-
+#### solution 2
 ```diff
 -def count_occurrences(lst, val):
 +def count_occurrences(lst, val):
@@ -7483,8 +7827,7 @@
 +    >>> count_occurrences([2, 3, 3, 3, 2, 4, 2], 2)
 ```
 
-#### count_occurrences (task/97)
-
+#### solution 3
 ```diff
 -def count_occurrences(lst, val):
 +def count_occurrences(lst, val):
@@ -7497,8 +7840,7 @@
 +    if lst is
 ```
 
-#### count_occurrences (task/97)
-
+#### solution 4
 ```diff
 -def count_occurrences(lst, val):
 +def count_occurrences(lst, val):
@@ -7513,8 +7855,19 @@
 +print(
 ```
 
-#### find_parity_outliers (task/98)
+### find_parity_outliers (task/98)
 
+#### canonical solution
+```python
+from collections import Counter
+
+def find_parity_outliers(nums):  return [
+    x for x in nums
+    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+  ]
+```
+
+#### solution 0
 ```diff
 -from collections import Counter
 -
@@ -7530,8 +7883,7 @@
 +    parity = {
 ```
 
-#### find_parity_outliers (task/98)
-
+#### solution 1
 ```diff
 -from collections import Counter
 -
@@ -7547,8 +7899,7 @@
 +            out.append(
 ```
 
-#### find_parity_outliers (task/98)
-
+#### solution 2
 ```diff
 -from collections import Counter
 -
@@ -7564,8 +7915,7 @@
 +    mode = c.
 ```
 
-#### find_parity_outliers (task/98)
-
+#### solution 3
 ```diff
 -from collections import Counter
 -
@@ -7578,8 +7928,7 @@
 +    return [k for k, v in c.items() if v % 2 != 0]
 ```
 
-#### find_parity_outliers (task/98)
-
+#### solution 4
 ```diff
 -from collections import Counter
 -
@@ -7594,8 +7943,14 @@
 +def find_outl
 ```
 
-#### to_dictionary (task/99)
+### to_dictionary (task/99)
 
+#### canonical solution
+```python
+def to_dictionary(keys, values):  return dict(zip(keys, values))
+```
+
+#### solution 0
 ```diff
 -def to_dictionary(keys, values):
 +def to_dictionary(keys, values):
@@ -7609,8 +7964,7 @@
 +    for i in range(len
 ```
 
-#### to_dictionary (task/99)
-
+#### solution 1
 ```diff
 -def to_dictionary(keys, values):
 +def to_dictionary(keys, values):
@@ -7626,8 +7980,7 @@
 +        dict: dictionary
 ```
 
-#### to_dictionary (task/99)
-
+#### solution 2
 ```diff
 -def to_dictionary(keys, values):
 +def to_dictionary(keys, values):
@@ -7640,8 +7993,7 @@
 +    """
 ```
 
-#### to_dictionary (task/99)
-
+#### solution 3
 ```diff
 -def to_dictionary(keys, values):
 +def to_dictionary(keys, values):
@@ -7652,8 +8004,7 @@
 +    >>> to_dictionary(['one', 'two', 'three'], [1, 2, 3
 ```
 
-#### to_dictionary (task/99)
-
+#### solution 4
 ```diff
 -def to_dictionary(keys, values):
 +def to_dictionary(keys, values):
@@ -7667,8 +8018,17 @@
 +    print(to_
 ```
 
-#### geometric_progression (task/100)
+### geometric_progression (task/100)
 
+#### canonical solution
+```python
+from math import floor, log
+
+def geometric_progression(end, start=1, step=2):  return [start * step ** i for i in range(floor(log(end / start)
+          / log(step)) + 1)]
+```
+
+#### solution 0
 ```diff
 -from math import floor, log
 -
@@ -7680,8 +8040,7 @@
 +    return [start * step ** k for k in range(0, floor(log(end, step)) + 1)]
 ```
 
-#### geometric_progression (task/100)
-
+#### solution 1
 ```diff
 -from math import floor, log
 -
@@ -7698,8 +8057,7 @@
 +    return geometric_progression(m)
 ```
 
-#### geometric_progression (task/100)
-
+#### solution 2
 ```diff
 -from math import floor, log
 -
@@ -7712,8 +8070,7 @@
 +    return [start * (step ** n) for n in range(0, floor(log(end, step)) + 1)]
 ```
 
-#### geometric_progression (task/100)
-
+#### solution 3
 ```diff
 -from math import floor, log
 -
@@ -7733,8 +8090,7 @@
 +    elif n < 2 or
 ```
 
-#### geometric_progression (task/100)
-
+#### solution 4
 ```diff
 -from math import floor, log
 -
@@ -7750,8 +8106,14 @@
 +def triangular
 ```
 
-#### find_last (task/101)
+### find_last (task/101)
 
+#### canonical solution
+```python
+def find_last(lst, fn):  return next(x for x in lst[::-1] if fn(x))
+```
+
+#### solution 0
 ```diff
 -def find_last(lst, fn):
 +def find_last(lst, fn):
@@ -7762,8 +8124,7 @@
 +    return next(iter(list(filter(fn, lst))))
 ```
 
-#### find_last (task/101)
-
+#### solution 1
 ```diff
 -def find_last(lst, fn):
 +def find_last(lst, fn):
@@ -7777,8 +8138,7 @@
 +    while
 ```
 
-#### find_last (task/101)
-
+#### solution 2
 ```diff
 -def find_last(lst, fn):
 +def find_last(lst, fn):
@@ -7790,8 +8150,7 @@
 +    return len(lst) - 1 - next(i for i, e
 ```
 
-#### find_last (task/101)
-
+#### solution 3
 ```diff
 -def find_last(lst, fn):
 +def find_last(lst, fn):
@@ -7808,8 +8167,7 @@
 +    for val
 ```
 
-#### find_last (task/101)
-
+#### solution 4
 ```diff
 -def find_last(lst, fn):
 +def find_last(lst, fn):
@@ -7823,8 +8181,14 @@
 +    """Rewrite a file adding a line to its
 ```
 
-#### sort_dict_by_key (task/102)
+### sort_dict_by_key (task/102)
 
+#### canonical solution
+```python
+def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse = reverse))
+```
+
+#### solution 0
 ```diff
 -def sort_dict_by_key(d, reverse = False):
 +def sort_dict_by_key(d, reverse = False):
@@ -7836,8 +8200,7 @@
 +def sort_dict_by_value(d, reverse = False):
 ```
 
-#### sort_dict_by_key (task/102)
-
+#### solution 1
 ```diff
 -def sort_dict_by_key(d, reverse = False):
 +def sort_dict_by_key(d, reverse = False):
@@ -7848,8 +8211,7 @@
 +    return sorted(d.items(), key
 ```
 
-#### sort_dict_by_key (task/102)
-
+#### solution 2
 ```diff
 -def sort_dict_by_key(d, reverse = False):
 +def sort_dict_by_key(d, reverse = False):
@@ -7861,8 +8223,7 @@
 +    return
 ```
 
-#### sort_dict_by_key (task/102)
-
+#### solution 3
 ```diff
 -def sort_dict_by_key(d, reverse = False):
 +def sort_dict_by_key(d, reverse = False):
@@ -7873,8 +8234,7 @@
 +    return sorted(d.items(), key=
 ```
 
-#### sort_dict_by_key (task/102)
-
+#### solution 4
 ```diff
 -def sort_dict_by_key(d, reverse = False):
 +def sort_dict_by_key(d, reverse = False):
@@ -7885,8 +8245,14 @@
 +    return sorted(d.items(), key=
 ```
 
-#### split_lines (task/103)
+### split_lines (task/103)
 
+#### canonical solution
+```python
+def split_lines(s):  return s.split('\n')
+```
+
+#### solution 0
 ```diff
 -def split_lines(s):
 +def split_lines(s):
@@ -7901,8 +8267,7 @@
 +        if c
 ```
 
-#### split_lines (task/103)
-
+#### solution 1
 ```diff
 -def split_lines(s):
 +def split_lines(s):
@@ -7917,8 +8282,7 @@
 +def remove_whites
 ```
 
-#### split_lines (task/103)
-
+#### solution 2
 ```diff
 -def split_lines(s):
 +def split_lines(s):
@@ -7931,8 +8295,7 @@
 +            if s[i] ==
 ```
 
-#### split_lines (task/103)
-
+#### solution 3
 ```diff
 -def split_lines(s):
 +def split_lines(s):
@@ -7946,8 +8309,7 @@
 +    Only the name of this class is
 ```
 
-#### split_lines (task/103)
-
+#### solution 4
 ```diff
 -def split_lines(s):
 +def split_lines(s):
@@ -7959,8 +8321,17 @@
 +    line that
 ```
 
-#### includes_any (task/104)
+### includes_any (task/104)
 
+#### canonical solution
+```python
+def includes_any(lst, values):  for v in values:
+    if v in lst:
+      return True
+  return False
+```
+
+#### solution 0
 ```diff
 -def includes_any(lst, values):
 +def includes_any(lst, values):
@@ -7975,8 +8346,7 @@
 +    cols = ['"%s
 ```
 
-#### includes_any (task/104)
-
+#### solution 1
 ```diff
 -def includes_any(lst, values):
 +def includes_any(lst, values):
@@ -7992,8 +8362,7 @@
 +        self.assert
 ```
 
-#### includes_any (task/104)
-
+#### solution 2
 ```diff
 -def includes_any(lst, values):
 +def includes_any(lst, values):
@@ -8005,8 +8374,7 @@
 +    :returns: True if any value in lst is in values
 ```
 
-#### includes_any (task/104)
-
+#### solution 3
 ```diff
 -def includes_any(lst, values):
 +def includes_any(lst, values):
@@ -8022,8 +8390,7 @@
 +        if value not in lst
 ```
 
-#### includes_any (task/104)
-
+#### solution 4
 ```diff
 -def includes_any(lst, values):
 +def includes_any(lst, values):
@@ -8038,8 +8405,20 @@
 +def index(request):
 ```
 
-#### merge (task/105)
+### merge (task/105)
 
+#### canonical solution
+```python
+def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args])
+  result = []
+  for i in range(max_length):
+    result.append([
+      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+    ])
+  return result
+```
+
+#### solution 0
 ```diff
 -def merge(*args, fill_value = None):
 +def merge(*args, fill_value = None):
@@ -8052,8 +8431,7 @@
 +            else:
 ```
 
-#### merge (task/105)
-
+#### solution 1
 ```diff
 -def merge(*args, fill_value = None):
 +def merge(*args, fill_value = None):
@@ -8065,8 +8443,7 @@
 +        raise
 ```
 
-#### merge (task/105)
-
+#### solution 2
 ```diff
 -def merge(*args, fill_value = None):
 +def merge(*args, fill_value = None):
@@ -8082,8 +8459,7 @@
 +        DataFrames that you want to merge
 ```
 
-#### merge (task/105)
-
+#### solution 3
 ```diff
 -def merge(*args, fill_value = None):
 +def merge(*args, fill_value = None):
@@ -8097,8 +8473,7 @@
 +    for df
 ```
 
-#### merge (task/105)
-
+#### solution 4
 ```diff
 -def merge(*args, fill_value = None):
 +def merge(*args, fill_value = None):
@@ -8112,8 +8487,14 @@
 +        if b is
 ```
 
-#### min_by (task/106)
+### min_by (task/106)
 
+#### canonical solution
+```python
+def min_by(lst, fn):  return min(map(fn, lst))
+```
+
+#### solution 0
 ```diff
 -def min_by(lst, fn):
 +def min_by(lst, fn):
@@ -8124,8 +8505,7 @@
 +    return reduce(lambda x, y: x
 ```
 
-#### min_by (task/106)
-
+#### solution 1
 ```diff
 -def min_by(lst, fn):
 +def min_by(lst, fn):
@@ -8137,8 +8517,7 @@
 +
 ```
 
-#### min_by (task/106)
-
+#### solution 2
 ```diff
 -def min_by(lst, fn):
 +def min_by(lst, fn):
@@ -8149,8 +8528,7 @@
 +    return min(range(len(lst)), key=lambda i: fn(lst[i]
 ```
 
-#### min_by (task/106)
-
+#### solution 3
 ```diff
 -def min_by(lst, fn):
 +def min_by(lst, fn):
@@ -8163,8 +8541,7 @@
 +            min_val
 ```
 
-#### min_by (task/106)
-
+#### solution 4
 ```diff
 -def min_by(lst, fn):
 +def min_by(lst, fn):
@@ -8179,8 +8556,16 @@
 +   
 ```
 
-#### add_days (task/107)
+### add_days (task/107)
 
+#### canonical solution
+```python
+from datetime import datetime, timedelta
+
+def add_days(n, d = datetime.today()):  return d + timedelta(n)
+```
+
+#### solution 0
 ```diff
 -from datetime import datetime, timedelta
 -
@@ -8197,8 +8582,7 @@
 +def add_hours(
 ```
 
-#### add_days (task/107)
-
+#### solution 1
 ```diff
 -from datetime import datetime, timedelta
 -
@@ -8215,8 +8599,7 @@
 +def format_date_time(d):
 ```
 
-#### add_days (task/107)
-
+#### solution 2
 ```diff
 -from datetime import datetime, timedelta
 -
@@ -8233,8 +8616,7 @@
 +def get_input():
 ```
 
-#### add_days (task/107)
-
+#### solution 3
 ```diff
 -from datetime import datetime, timedelta
 -
@@ -8251,8 +8633,7 @@
 +def string_to_datetime
 ```
 
-#### add_days (task/107)
-
+#### solution 4
 ```diff
 -from datetime import datetime, timedelta
 -
@@ -8270,8 +8651,17 @@
 +   
 ```
 
-#### palindrome (task/108)
+### palindrome (task/108)
 
+#### canonical solution
+```python
+from re import sub
+
+def palindrome(s):  s = sub('[\W_]', '', s.lower())
+  return s == s[::-1]
+```
+
+#### solution 0
 ```diff
 -from re import sub
 -
@@ -8290,8 +8680,7 @@
 +   
 ```
 
-#### palindrome (task/108)
-
+#### solution 1
 ```diff
 -from re import sub
 -
@@ -8306,8 +8695,7 @@
 +print(palindrome("Dammit, I'm mad!"
 ```
 
-#### palindrome (task/108)
-
+#### solution 2
 ```diff
 -from re import sub
 -
@@ -8323,8 +8711,7 @@
 +    s = input
 ```
 
-#### palindrome (task/108)
-
+#### solution 3
 ```diff
 -from re import sub
 -
@@ -8339,8 +8726,7 @@
 +print(palindrome("Test 5:1, a s!nt
 ```
 
-#### palindrome (task/108)
-
+#### solution 4
 ```diff
 -from re import sub
 -
@@ -8355,8 +8741,14 @@
 +print(palindrome("A man, a plan, a canal:
 ```
 
-#### none (task/109)
+### none (task/109)
 
+#### canonical solution
+```python
+def none(lst, fn = lambda x: x):  return all(not fn(x) for x in lst)
+```
+
+#### solution 0
 ```diff
 -def none(lst, fn = lambda x: x):
 +def none(lst, fn = lambda x: x):
@@ -8371,8 +8763,7 @@
 +    moves
 ```
 
-#### none (task/109)
-
+#### solution 1
 ```diff
 -def none(lst, fn = lambda x: x):
 +def none(lst, fn = lambda x: x):
@@ -8386,8 +8777,7 @@
 +    :param
 ```
 
-#### none (task/109)
-
+#### solution 2
 ```diff
 -def none(lst, fn = lambda x: x):
 +def none(lst, fn = lambda x: x):
@@ -8398,8 +8788,7 @@
 +    return [fn(x) for x in lst if x == 1
 ```
 
-#### none (task/109)
-
+#### solution 3
 ```diff
 -def none(lst, fn = lambda x: x):
 +def none(lst, fn = lambda x: x):
@@ -8412,8 +8801,7 @@
 +def all_not_none(lst):
 ```
 
-#### none (task/109)
-
+#### solution 4
 ```diff
 -def none(lst, fn = lambda x: x):
 +def none(lst, fn = lambda x: x):
@@ -8428,8 +8816,14 @@
 +    for x in l
 ```
 
-#### tail (task/110)
+### tail (task/110)
 
+#### canonical solution
+```python
+def tail(lst):  return lst[1:] if len(lst) > 1 else lst
+```
+
+#### solution 0
 ```diff
 -def tail(lst):
 +def tail(lst):
@@ -8443,8 +8837,7 @@
 +# The implementation of **
 ```
 
-#### tail (task/110)
-
+#### solution 1
 ```diff
 -def tail(lst):
 +def tail(lst):
@@ -8460,8 +8853,7 @@
 +def last(l
 ```
 
-#### tail (task/110)
-
+#### solution 2
 ```diff
 -def tail(lst):
 +def tail(lst):
@@ -8477,8 +8869,7 @@
 +def reverse(lst):
 ```
 
-#### tail (task/110)
-
+#### solution 3
 ```diff
 -def tail(lst):
 +def tail(lst):
@@ -8494,8 +8885,7 @@
 +def drop(lst, n
 ```
 
-#### tail (task/110)
-
+#### solution 4
 ```diff
 -def tail(lst):
 +def tail(lst):
@@ -8511,8 +8901,14 @@
 +def reverse(lst):
 ```
 
-#### has_duplicates (task/111)
+### has_duplicates (task/111)
 
+#### canonical solution
+```python
+def has_duplicates(lst):  return len(lst) != len(set(lst))
+```
+
+#### solution 0
 ```diff
 -def has_duplicates(lst):
 +def has_duplicates(lst):
@@ -8525,8 +8921,7 @@
 +        if i in seen:
 ```
 
-#### has_duplicates (task/111)
-
+#### solution 1
 ```diff
 -def has_duplicates(lst):
 +def has_duplicates(lst):
@@ -8538,8 +8933,7 @@
 +    >>> has_duplicates([1, 2
 ```
 
-#### has_duplicates (task/111)
-
+#### solution 2
 ```diff
 -def has_duplicates(lst):
 +def has_duplicates(lst):
@@ -8551,8 +8945,7 @@
 +   
 ```
 
-#### has_duplicates (task/111)
-
+#### solution 3
 ```diff
 -def has_duplicates(lst):
 +def has_duplicates(lst):
@@ -8565,8 +8958,7 @@
 +       
 ```
 
-#### has_duplicates (task/111)
-
+#### solution 4
 ```diff
 -def has_duplicates(lst):
 +def has_duplicates(lst):
@@ -8578,8 +8970,14 @@
 +    sorted_list = lst[:]
 ```
 
-#### map_dictionary (task/112)
+### map_dictionary (task/112)
 
+#### canonical solution
+```python
+def map_dictionary(itr, fn):  return dict(zip(itr, map(fn, itr)))
+```
+
+#### solution 0
 ```diff
 -def map_dictionary(itr, fn):
 +def map_dictionary(itr, fn):
@@ -8594,8 +8992,7 @@
 +def to
 ```
 
-#### map_dictionary (task/112)
-
+#### solution 1
 ```diff
 -def map_dictionary(itr, fn):
 +def map_dictionary(itr, fn):
@@ -8607,8 +9004,7 @@
 +    def __init__(self, result_dict, retval, duration
 ```
 
-#### map_dictionary (task/112)
-
+#### solution 2
 ```diff
 -def map_dictionary(itr, fn):
 +def map_dictionary(itr, fn):
@@ -8622,8 +9018,7 @@
 +    :param
 ```
 
-#### map_dictionary (task/112)
-
+#### solution 3
 ```diff
 -def map_dictionary(itr, fn):
 +def map_dictionary(itr, fn):
@@ -8637,8 +9032,7 @@
 +    d =
 ```
 
-#### map_dictionary (task/112)
-
+#### solution 4
 ```diff
 -def map_dictionary(itr, fn):
 +def map_dictionary(itr, fn):
@@ -8651,8 +9045,19 @@
 +        yield _mock_model
 ```
 
-#### count_by (task/113)
+### count_by (task/113)
 
+#### canonical solution
+```python
+from collections import defaultdict
+
+def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
+  for val in map(fn, lst):
+    count[val] += 1
+  return dict(count)
+```
+
+#### solution 0
 ```diff
 -from collections import defaultdict
 -
@@ -8673,8 +9078,7 @@
 +# Recursion happens when a function calls
 ```
 
-#### count_by (task/113)
-
+#### solution 1
 ```diff
 -from collections import defaultdict
 -
@@ -8691,8 +9095,7 @@
 +count_by([1,2,3,4,5], lambda x:
 ```
 
-#### count_by (task/113)
-
+#### solution 2
 ```diff
 -from collections import defaultdict
 -
@@ -8709,8 +9112,7 @@
 +def count_list(lst, fn = lambda x: x
 ```
 
-#### count_by (task/113)
-
+#### solution 3
 ```diff
 -from collections import defaultdict
 -
@@ -8728,8 +9130,7 @@
 +   
 ```
 
-#### count_by (task/113)
-
+#### solution 4
 ```diff
 -from collections import defaultdict
 -
@@ -8747,8 +9148,15 @@
 +def create_fn(name, args, body):
 ```
 
-#### difference_by (task/114)
+### difference_by (task/114)
 
+#### canonical solution
+```python
+def difference_by(a, b, fn):  _b = set(map(fn, b))
+  return [item for item in a if fn(item) not in _b]
+```
+
+#### solution 0
 ```diff
 -def difference_by(a, b, fn):
 +def difference_by(a, b, fn):
@@ -8760,8 +9168,7 @@
 +print(difference_by([2.1, 1.2], [2.
 ```
 
-#### difference_by (task/114)
-
+#### solution 1
 ```diff
 -def difference_by(a, b, fn):
 +def difference_by(a, b, fn):
@@ -8772,8 +9179,7 @@
 +assert difference_by([2.1, 1.2], [2.3,
 ```
 
-#### difference_by (task/114)
-
+#### solution 2
 ```diff
 -def difference_by(a, b, fn):
 +def difference_by(a, b, fn):
@@ -8785,8 +9191,7 @@
 +# The difference_of_squares function returns the difference between the square of the sum
 ```
 
-#### difference_by (task/114)
-
+#### solution 3
 ```diff
 -def difference_by(a, b, fn):
 +def difference_by(a, b, fn):
@@ -8798,8 +9203,7 @@
 +    return {k: a[k
 ```
 
-#### difference_by (task/114)
-
+#### solution 4
 ```diff
 -def difference_by(a, b, fn):
 +def difference_by(a, b, fn):
@@ -8812,8 +9216,16 @@
 +    """Returns
 ```
 
-#### from_iso_date (task/115)
+### from_iso_date (task/115)
 
+#### canonical solution
+```python
+from datetime import datetime
+
+def from_iso_date(d):  return datetime.fromisoformat(d)
+```
+
+#### solution 0
 ```diff
 -from datetime import datetime
 -
@@ -8828,8 +9240,7 @@
 +    return d.strftime("%Y-%m-%d")
 ```
 
-#### from_iso_date (task/115)
-
+#### solution 1
 ```diff
 -from datetime import datetime
 -
@@ -8844,8 +9255,7 @@
 +    return datetime.strptime(t, "%H:%M:
 ```
 
-#### from_iso_date (task/115)
-
+#### solution 2
 ```diff
 -from datetime import datetime
 -
@@ -8860,8 +9270,7 @@
 +    return d.strftime("%Y-%m-%d")
 ```
 
-#### from_iso_date (task/115)
-
+#### solution 3
 ```diff
 -from datetime import datetime
 -
@@ -8875,8 +9284,7 @@
 +    return datetime.strptime(d, "%Y-%m-%d")
 ```
 
-#### from_iso_date (task/115)
-
+#### solution 4
 ```diff
 -from datetime import datetime
 -
@@ -8888,8 +9296,16 @@
 +    return datetime.strptime(d, "%Y-%m-%d")
 ```
 
-#### filter_non_unique (task/116)
+### filter_non_unique (task/116)
 
+#### canonical solution
+```python
+from collections import Counter
+
+def filter_non_unique(lst):  return [item for item, count in Counter(lst).items() if count == 1]
+```
+
+#### solution 0
 ```diff
 -from collections import Counter
 -
@@ -8905,8 +9321,7 @@
 +    lst = [3,3,3,2,2,2,
 ```
 
-#### filter_non_unique (task/116)
-
+#### solution 1
 ```diff
 -from collections import Counter
 -
@@ -8922,8 +9337,7 @@
 +Given a list of integers, find the highest product you can get from three of the integers.
 ```
 
-#### filter_non_unique (task/116)
-
+#### solution 2
 ```diff
 -from collections import Counter
 -
@@ -8941,8 +9355,7 @@
 +        out.append
 ```
 
-#### filter_non_unique (task/116)
-
+#### solution 3
 ```diff
 -from collections import Counter
 -
@@ -8960,8 +9373,7 @@
 +    return
 ```
 
-#### filter_non_unique (task/116)
-
+#### solution 4
 ```diff
 -from collections import Counter
 -
@@ -8979,8 +9391,16 @@
 +def count_unique(lst
 ```
 
-#### symmetric_difference (task/117)
+### symmetric_difference (task/117)
 
+#### canonical solution
+```python
+def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
+  return [item for item in a if item not in _b] + [item for item in b
+          if item not in _a]
+```
+
+#### solution 0
 ```diff
 -def symmetric_difference(a, b):
 +def symmetric_difference(a, b):
@@ -8991,8 +9411,7 @@
 +    if not isinstance(b, Iter
 ```
 
-#### symmetric_difference (task/117)
-
+#### solution 1
 ```diff
 -def symmetric_difference(a, b):
 +def symmetric_difference(a, b):
@@ -9008,8 +9427,7 @@
 +def update(a, b
 ```
 
-#### symmetric_difference (task/117)
-
+#### solution 2
 ```diff
 -def symmetric_difference(a, b):
 +def symmetric_difference(a, b):
@@ -9039,8 +9457,7 @@
 +    
 ```
 
-#### symmetric_difference (task/117)
-
+#### solution 3
 ```diff
 -def symmetric_difference(a, b):
 +def symmetric_difference(a, b):
@@ -9053,8 +9470,7 @@
 +   
 ```
 
-#### symmetric_difference (task/117)
-
+#### solution 4
 ```diff
 -def symmetric_difference(a, b):
 +def symmetric_difference(a, b):
@@ -9070,8 +9486,19 @@
 +
 ```
 
-#### snake (task/118)
+### snake (task/118)
 
+#### canonical solution
+```python
+from re import sub
+
+def snake(s):  return '_'.join(
+    sub('([A-Z][a-z]+)', r' \1',
+    sub('([A-Z]+)', r' \1',
+    s.replace('-', ' '))).split()).lower()
+```
+
+#### solution 0
 ```diff
 -from re import sub
 -
@@ -9086,8 +9513,7 @@
 +    return sub(r'(?:^|
 ```
 
-#### snake (task/118)
-
+#### solution 1
 ```diff
 -from re import sub
 -
@@ -9102,8 +9528,7 @@
 +    return sub(r'(.)
 ```
 
-#### snake (task/118)
-
+#### solution 2
 ```diff
 -from re import sub
 -
@@ -9118,8 +9543,7 @@
 +    return sub(r'_([a-z])', lambda m: m.
 ```
 
-#### snake (task/118)
-
+#### solution 3
 ```diff
 -from re import sub
 -
@@ -9135,8 +9559,7 @@
 +    return
 ```
 
-#### snake (task/118)
-
+#### solution 4
 ```diff
 -from re import sub
 -
@@ -9153,8 +9576,14 @@
 +    print
 ```
 
-#### keys_only (task/119)
+### keys_only (task/119)
 
+#### canonical solution
+```python
+def keys_only(flat_dict):  return list(flat_dict.keys())
+```
+
+#### solution 0
 ```diff
 -def keys_only(flat_dict):
 +def keys_only(flat_dict):
@@ -9170,8 +9599,7 @@
 +@field_
 ```
 
-#### keys_only (task/119)
-
+#### solution 1
 ```diff
 -def keys_only(flat_dict):
 +def keys_only(flat_dict):
@@ -9186,8 +9614,7 @@
 +   
 ```
 
-#### keys_only (task/119)
-
+#### solution 2
 ```diff
 -def keys_only(flat_dict):
 +def keys_only(flat_dict):
@@ -9201,8 +9628,7 @@
 +    if not isinstance(
 ```
 
-#### keys_only (task/119)
-
+#### solution 3
 ```diff
 -def keys_only(flat_dict):
 +def keys_only(flat_dict):
@@ -9215,8 +9641,7 @@
 +    if not isinstance(flat_
 ```
 
-#### keys_only (task/119)
-
+#### solution 4
 ```diff
 -def keys_only(flat_dict):
 +def keys_only(flat_dict):
@@ -9229,8 +9654,14 @@
 +    return flat_
 ```
 
-#### is_odd (task/120)
+### is_odd (task/120)
 
+#### canonical solution
+```python
+def is_odd(num):  return num % 2 != 0
+```
+
+#### solution 0
 ```diff
 -def is_odd(num):
 +def is_odd(num):
@@ -9246,8 +9677,7 @@
 +    elif n == 1:
 ```
 
-#### is_odd (task/120)
-
+#### solution 1
 ```diff
 -def is_odd(num):
 +def is_odd(num):
@@ -9261,8 +9691,7 @@
 +    for divisor in range(2, int(math.sq
 ```
 
-#### is_odd (task/120)
-
+#### solution 2
 ```diff
 -def is_odd(num):
 +def is_odd(num):
@@ -9278,8 +9707,7 @@
 +        if is
 ```
 
-#### is_odd (task/120)
-
+#### solution 3
 ```diff
 -def is_odd(num):
 +def is_odd(num):
@@ -9294,8 +9722,7 @@
 +# 定义函数，判断
 ```
 
-#### is_odd (task/120)
-
+#### solution 4
 ```diff
 -def is_odd(num):
 +def is_odd(num):
@@ -9310,8 +9737,19 @@
 +    return
 ```
 
-#### group_by (task/121)
+### group_by (task/121)
 
+#### canonical solution
+```python
+from collections import defaultdict
+
+def group_by(lst, fn):  d = defaultdict(list)
+  for el in lst:
+    d[fn(el)].append(el)
+  return dict(d)
+```
+
+#### solution 0
 ```diff
 -from collections import defaultdict
 -
@@ -9330,8 +9768,7 @@
 +        return fn
 ```
 
-#### group_by (task/121)
-
+#### solution 1
 ```diff
 -from collections import defaultdict
 -
@@ -9349,8 +9786,7 @@
 +    animals = [{'species
 ```
 
-#### group_by (task/121)
-
+#### solution 2
 ```diff
 -from collections import defaultdict
 -
@@ -9368,8 +9804,7 @@
 +    return
 ```
 
-#### group_by (task/121)
-
+#### solution 3
 ```diff
 -from collections import defaultdict
 -
@@ -9386,8 +9821,7 @@
 +def group_by_centroid(restaurants, centroids
 ```
 
-#### group_by (task/121)
-
+#### solution 4
 ```diff
 -from collections import defaultdict
 -
@@ -9406,8 +9840,14 @@
 +   
 ```
 
-#### to_binary (task/122)
+### to_binary (task/122)
 
+#### canonical solution
+```python
+def to_binary(n):  return bin(n)
+```
+
+#### solution 0
 ```diff
 -def to_binary(n):
 +def to_binary(n):
@@ -9422,8 +9862,7 @@
 +    s =
 ```
 
-#### to_binary (task/122)
-
+#### solution 1
 ```diff
 -def to_binary(n):
 +def to_binary(n):
@@ -9439,8 +9878,7 @@
 +# 2.1.
 ```
 
-#### to_binary (task/122)
-
+#### solution 2
 ```diff
 -def to_binary(n):
 +def to_binary(n):
@@ -9452,8 +9890,7 @@
 +        string = str(n %
 ```
 
-#### to_binary (task/122)
-
+#### solution 3
 ```diff
 -def to_binary(n):
 +def to_binary(n):
@@ -9467,8 +9904,7 @@
 +    return s.lstrip('0')
 ```
 
-#### to_binary (task/122)
-
+#### solution 4
 ```diff
 -def to_binary(n):
 +def to_binary(n):
@@ -9479,8 +9915,14 @@
 +    return [to_binary(i) for i in range(n,
 ```
 
-#### compact (task/123)
+### compact (task/123)
 
+#### canonical solution
+```python
+def compact(lst):  return list(filter(None, lst))
+```
+
+#### solution 0
 ```diff
 -def compact(lst):
 +def compact(lst):
@@ -9493,8 +9935,7 @@
 +    :type cmd: str
 ```
 
-#### compact (task/123)
-
+#### solution 1
 ```diff
 -def compact(lst):
 +def compact(lst):
@@ -9506,8 +9947,7 @@
 +    return [lst[0]]
 ```
 
-#### compact (task/123)
-
+#### solution 2
 ```diff
 -def compact(lst):
 +def compact(lst):
@@ -9518,8 +9958,7 @@
 +        [1, 2, 'All
 ```
 
-#### compact (task/123)
-
+#### solution 3
 ```diff
 -def compact(lst):
 +def compact(lst):
@@ -9530,8 +9969,7 @@
 +        [1, 2, 'All
 ```
 
-#### compact (task/123)
-
+#### solution 4
 ```diff
 -def compact(lst):
 +def compact(lst):
@@ -9542,8 +9980,14 @@
 +        [1, 2, 'All
 ```
 
-#### in_range (task/124)
+### in_range (task/124)
 
+#### canonical solution
+```python
+def in_range(n, start, end = 0):  return start <= n <= end if end >= start else end <= n <= start
+```
+
+#### solution 0
 ```diff
 -def in_range(n, start, end = 0):
 +def in_range(n, start, end = 0):
@@ -9558,8 +10002,7 @@
 +#
 ```
 
-#### in_range (task/124)
-
+#### solution 1
 ```diff
 -def in_range(n, start, end = 0):
 +def in_range(n, start, end = 0):
@@ -9570,8 +10013,7 @@
 +	else:
 ```
 
-#### in_range (task/124)
-
+#### solution 2
 ```diff
 -def in_range(n, start, end = 0):
 +def in_range(n, start, end = 0):
@@ -9585,8 +10027,7 @@
 +    return traceback.extract_stack(None, 2)[0
 ```
 
-#### in_range (task/124)
-
+#### solution 3
 ```diff
 -def in_range(n, start, end = 0):
 +def in_range(n, start, end = 0):
@@ -9601,8 +10042,7 @@
 +   
 ```
 
-#### in_range (task/124)
-
+#### solution 4
 ```diff
 -def in_range(n, start, end = 0):
 +def in_range(n, start, end = 0):
@@ -9616,8 +10056,16 @@
 +    charRe = re.compile(
 ```
 
-#### daterange (task/125)
+### daterange (task/125)
 
+#### canonical solution
+```python
+from datetime import timedelta, date
+
+def daterange(start, end):  return [start + timedelta(n) for n in range(int((end - start).days))]
+```
+
+#### solution 0
 ```diff
 -from datetime import timedelta, date
 -
@@ -9633,8 +10081,7 @@
 +end_dt = date(2018, 6
 ```
 
-#### daterange (task/125)
-
+#### solution 1
 ```diff
 -from datetime import timedelta, date
 -
@@ -9651,8 +10098,7 @@
 +today = date.
 ```
 
-#### daterange (task/125)
-
+#### solution 2
 ```diff
 -from datetime import timedelta, date
 -
@@ -9670,8 +10116,7 @@
 +def day_has
 ```
 
-#### daterange (task/125)
-
+#### solution 3
 ```diff
 -from datetime import timedelta, date
 -
@@ -9687,8 +10132,7 @@
 +    users = []
 ```
 
-#### daterange (task/125)
-
+#### solution 4
 ```diff
 -from datetime import timedelta, date
 -
@@ -9703,8 +10147,18 @@
 +# This code is here to find the day when maximum number of new cases were recorded in a particular country.
 ```
 
-#### chunk (task/126)
+### chunk (task/126)
 
+#### canonical solution
+```python
+from math import ceil
+
+def chunk(lst, size):  return list(
+    map(lambda x: lst[x * size:x * size + size],
+      list(range(ceil(len(lst) / size)))))
+```
+
+#### solution 0
 ```diff
 -from math import ceil
 -
@@ -9719,8 +10173,7 @@
 +def get_progress_bar(current, total, length, prefix = '', suffix = '
 ```
 
-#### chunk (task/126)
-
+#### solution 1
 ```diff
 -from math import ceil
 -
@@ -9742,8 +10195,7 @@
 +    Returns
 ```
 
-#### chunk (task/126)
-
+#### solution 2
 ```diff
 -from math import ceil
 -
@@ -9758,8 +10210,7 @@
 +    return [chr(x) for x in xs]
 ```
 
-#### chunk (task/126)
-
+#### solution 3
 ```diff
 -from math import ceil
 -
@@ -9775,8 +10226,7 @@
 +import matplot
 ```
 
-#### chunk (task/126)
-
+#### solution 4
 ```diff
 -from math import ceil
 -
@@ -9792,8 +10242,17 @@
 +chunk([
 ```
 
-#### deep_flatten (task/127)
+### deep_flatten (task/127)
 
+#### canonical solution
+```python
+from collections.abc import Iterable
+
+def deep_flatten(lst):  return ([a for i in lst for a in
+          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
+```
+
+#### solution 0
 ```diff
 -from collections.abc import Iterable
 -
@@ -9811,8 +10270,7 @@
 +lst = [[[1, 2, 3
 ```
 
-#### deep_flatten (task/127)
-
+#### solution 1
 ```diff
 -from collections.abc import Iterable
 -
@@ -9827,8 +10285,7 @@
 +            yield from deep_fl
 ```
 
-#### deep_flatten (task/127)
-
+#### solution 2
 ```diff
 -from collections.abc import Iterable
 -
@@ -9844,8 +10301,7 @@
 +            yield
 ```
 
-#### deep_flatten (task/127)
-
+#### solution 3
 ```diff
 -from collections.abc import Iterable
 -
@@ -9860,8 +10316,7 @@
 +            yield from deep_fl
 ```
 
-#### deep_flatten (task/127)
-
+#### solution 4
 ```diff
 -from collections.abc import Iterable
 -
@@ -9878,8 +10333,14 @@
 +            result.append(x)
 ```
 
-#### initialize_list_with_values (task/128)
+### initialize_list_with_values (task/128)
 
+#### canonical solution
+```python
+def initialize_list_with_values(n, val = 0):  return [val for x in range(n)]
+```
+
+#### solution 0
 ```diff
 -def initialize_list_with_values(n, val = 0):
 +def initialize_list_with_values(n, val = 0):
@@ -9892,8 +10353,7 @@
 +def get_amount_of_memory_in_mb(input_string
 ```
 
-#### initialize_list_with_values (task/128)
-
+#### solution 1
 ```diff
 -def initialize_list_with_values(n, val = 0):
 +def initialize_list_with_values(n, val = 0):
@@ -9908,8 +10368,7 @@
 +    Returns
 ```
 
-#### initialize_list_with_values (task/128)
-
+#### solution 2
 ```diff
 -def initialize_list_with_values(n, val = 0):
 +def initialize_list_with_values(n, val = 0):
@@ -9924,8 +10383,7 @@
 +# initialize list with
 ```
 
-#### initialize_list_with_values (task/128)
-
+#### solution 3
 ```diff
 -def initialize_list_with_values(n, val = 0):
 +def initialize_list_with_values(n, val = 0):
@@ -9938,8 +10396,7 @@
 +def initialize_2d_list_with_
 ```
 
-#### initialize_list_with_values (task/128)
-
+#### solution 4
 ```diff
 -def initialize_list_with_values(n, val = 0):
 +def initialize_list_with_values(n, val = 0):
@@ -9953,8 +10410,14 @@
 +    mat =
 ```
 
-#### average_by (task/129)
+### average_by (task/129)
 
+#### canonical solution
+```python
+def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
+```
+
+#### solution 0
 ```diff
 -def average_by(lst, fn = lambda x: x):
 +def average_by(lst, fn = lambda x: x):
@@ -9968,8 +10431,7 @@
 +    if not isinstance(lst, list):
 ```
 
-#### average_by (task/129)
-
+#### solution 1
 ```diff
 -def average_by(lst, fn = lambda x: x):
 +def average_by(lst, fn = lambda x: x):
@@ -9981,8 +10443,7 @@
 +    """ Split
 ```
 
-#### average_by (task/129)
-
+#### solution 2
 ```diff
 -def average_by(lst, fn = lambda x: x):
 +def average_by(lst, fn = lambda x: x):
@@ -9994,8 +10455,7 @@
 +    >>> average_by([{ 'n': 4 }, { 'n': 2 },
 ```
 
-#### average_by (task/129)
-
+#### solution 3
 ```diff
 -def average_by(lst, fn = lambda x: x):
 +def average_by(lst, fn = lambda x: x):
@@ -10007,8 +10467,7 @@
 +    :return
 ```
 
-#### average_by (task/129)
-
+#### solution 4
 ```diff
 -def average_by(lst, fn = lambda x: x):
 +def average_by(lst, fn = lambda x: x):
@@ -10020,8 +10479,14 @@
 +def average_within_time(l
 ```
 
-#### key_of_max (task/130)
+### key_of_max (task/130)
 
+#### canonical solution
+```python
+def key_of_max(d):  return max(d, key = d.get)
+```
+
+#### solution 0
 ```diff
 -def key_of_max(d):
 +def key_of_max(d):
@@ -10034,8 +10499,7 @@
 +    #创建字
 ```
 
-#### key_of_max (task/130)
-
+#### solution 1
 ```diff
 -def key_of_max(d):
 +def key_of_max(d):
@@ -10047,8 +10511,7 @@
 +score={'aa
 ```
 
-#### key_of_max (task/130)
-
+#### solution 2
 ```diff
 -def key_of_max(d):
 +def key_of_max(d):
@@ -10065,8 +10528,7 @@
 +def test_
 ```
 
-#### key_of_max (task/130)
-
+#### solution 3
 ```diff
 -def key_of_max(d):
 +def key_of_max(d):
@@ -10079,8 +10541,7 @@
 +        accounts[snapshot[0]] = int(snapshot[
 ```
 
-#### key_of_max (task/130)
-
+#### solution 4
 ```diff
 -def key_of_max(d):
 +def key_of_max(d):
@@ -10091,8 +10552,14 @@
 +    >>> key_
 ```
 
-#### offset (task/131)
+### offset (task/131)
 
+#### canonical solution
+```python
+def offset(lst, offset):  return lst[offset:] + lst[:offset]
+```
+
+#### solution 0
 ```diff
 -def offset(lst, offset):
 +def offset(lst, offset):
@@ -10108,8 +10575,7 @@
 +def write_file
 ```
 
-#### offset (task/131)
-
+#### solution 1
 ```diff
 -def offset(lst, offset):
 +def offset(lst, offset):
@@ -10121,8 +10587,7 @@
 +    if node not in resolved_graph:
 ```
 
-#### offset (task/131)
-
+#### solution 2
 ```diff
 -def offset(lst, offset):
 +def offset(lst, offset):
@@ -10138,8 +10603,7 @@
 +    #:
 ```
 
-#### offset (task/131)
-
+#### solution 3
 ```diff
 -def offset(lst, offset):
 +def offset(lst, offset):
@@ -10153,8 +10617,7 @@
 +        self.options = options
 ```
 
-#### offset (task/131)
-
+#### solution 4
 ```diff
 -def offset(lst, offset):
 +def offset(lst, offset):
@@ -10167,8 +10630,15 @@
 +   
 ```
 
-#### intersection_by (task/132)
+### intersection_by (task/132)
 
+#### canonical solution
+```python
+def intersection_by(a, b, fn):  _b = set(map(fn, b))
+  return [item for item in a if fn(item) in _b]
+```
+
+#### solution 0
 ```diff
 -def intersection_by(a, b, fn):
 +def intersection_by(a, b, fn):
@@ -10185,8 +10655,7 @@
 +def union_by(
 ```
 
-#### intersection_by (task/132)
-
+#### solution 1
 ```diff
 -def intersection_by(a, b, fn):
 +def intersection_by(a, b, fn):
@@ -10196,8 +10665,7 @@
 +    return intersection(fn
 ```
 
-#### intersection_by (task/132)
-
+#### solution 2
 ```diff
 -def intersection_by(a, b, fn):
 +def intersection_by(a, b, fn):
@@ -10210,8 +10678,7 @@
 +    return [ x for x in a if fn(x, b
 ```
 
-#### intersection_by (task/132)
-
+#### solution 3
 ```diff
 -def intersection_by(a, b, fn):
 +def intersection_by(a, b, fn):
@@ -10224,8 +10691,7 @@
 +    Utility function used by update_daily_
 ```
 
-#### intersection_by (task/132)
-
+#### solution 4
 ```diff
 -def intersection_by(a, b, fn):
 +def intersection_by(a, b, fn):
@@ -10239,8 +10705,15 @@
 +    :param fn: function
 ```
 
-#### union_by (task/133)
+### union_by (task/133)
 
+#### canonical solution
+```python
+def union_by(a, b, fn):  _a = set(map(fn, a))
+  return list(set(a + [item for item in b if fn(item) not in _a]))
+```
+
+#### solution 0
 ```diff
 -def union_by(a, b, fn):
 +def union_by(a, b, fn):
@@ -10253,8 +10726,7 @@
 +    return [x for x in a
 ```
 
-#### union_by (task/133)
-
+#### solution 1
 ```diff
 -def union_by(a, b, fn):
 +def union_by(a, b, fn):
@@ -10271,8 +10743,7 @@
 +        The
 ```
 
-#### union_by (task/133)
-
+#### solution 2
 ```diff
 -def union_by(a, b, fn):
 +def union_by(a, b, fn):
@@ -10285,8 +10756,7 @@
 +    It uses a hash table to collect the results. The time complexity is
 ```
 
-#### union_by (task/133)
-
+#### solution 3
 ```diff
 -def union_by(a, b, fn):
 +def union_by(a, b, fn):
@@ -10299,8 +10769,7 @@
 +        union_by([1, 2, 3], [1, 2, 4], lambda
 ```
 
-#### union_by (task/133)
-
+#### solution 4
 ```diff
 -def union_by(a, b, fn):
 +def union_by(a, b, fn):
@@ -10312,8 +10781,14 @@
 +    from `a` if the same
 ```
 
-#### all_unique (task/134)
+### all_unique (task/134)
 
+#### canonical solution
+```python
+def all_unique(lst):  return len(lst) == len(set(lst))
+```
+
+#### solution 0
 ```diff
 -def all_unique(lst):
 +def all_unique(lst):
@@ -10326,8 +10801,7 @@
 +    """List that can only contain a given type or
 ```
 
-#### all_unique (task/134)
-
+#### solution 1
 ```diff
 -def all_unique(lst):
 +def all_unique(lst):
@@ -10341,8 +10815,7 @@
 +# print(
 ```
 
-#### all_unique (task/134)
-
+#### solution 2
 ```diff
 -def all_unique(lst):
 +def all_unique(lst):
@@ -10354,8 +10827,7 @@
 +        for j in range(i+
 ```
 
-#### all_unique (task/134)
-
+#### solution 3
 ```diff
 -def all_unique(lst):
 +def all_unique(lst):
@@ -10364,8 +10836,7 @@
 +    Написать функцию которая проверяет уник
 ```
 
-#### all_unique (task/134)
-
+#### solution 4
 ```diff
 -def all_unique(lst):
 +def all_unique(lst):
@@ -10378,8 +10849,14 @@
 +    '''Check that all items in a list
 ```
 
-#### pluck (task/135)
+### pluck (task/135)
 
+#### canonical solution
+```python
+def pluck(lst, key):  return [x.get(key) for x in lst]
+```
+
+#### solution 0
 ```diff
 -def pluck(lst, key):
 +def pluck(lst, key):
@@ -10394,8 +10871,7 @@
 +        return
 ```
 
-#### pluck (task/135)
-
+#### solution 1
 ```diff
 -def pluck(lst, key):
 +def pluck(lst, key):
@@ -10407,8 +10883,7 @@
 +    if is
 ```
 
-#### pluck (task/135)
-
+#### solution 2
 ```diff
 -def pluck(lst, key):
 +def pluck(lst, key):
@@ -10424,8 +10899,7 @@
 +    for req in _running
 ```
 
-#### pluck (task/135)
-
+#### solution 3
 ```diff
 -def pluck(lst, key):
 +def pluck(lst, key):
@@ -10442,8 +10916,7 @@
 +        return 'active
 ```
 
-#### pluck (task/135)
-
+#### solution 4
 ```diff
 -def pluck(lst, key):
 +def pluck(lst, key):
@@ -10456,8 +10929,15 @@
 +    header, data_types,
 ```
 
-#### for_each (task/136)
+### for_each (task/136)
 
+#### canonical solution
+```python
+def for_each(itr, fn):  for el in itr:
+    fn(el)
+```
+
+#### solution 0
 ```diff
 -def for_each(itr, fn):
 +def for_each(itr, fn):
@@ -10471,8 +10951,7 @@
 +            return elem
 ```
 
-#### for_each (task/136)
-
+#### solution 1
 ```diff
 -def for_each(itr, fn):
 +def for_each(itr, fn):
@@ -10485,8 +10964,7 @@
 +    lst_copy = copy.deep
 ```
 
-#### for_each (task/136)
-
+#### solution 2
 ```diff
 -def for_each(itr, fn):
 +def for_each(itr, fn):
@@ -10503,8 +10981,7 @@
 +    fn : function
 ```
 
-#### for_each (task/136)
-
+#### solution 3
 ```diff
 -def for_each(itr, fn):
 +def for_each(itr, fn):
@@ -10519,8 +10996,7 @@
 +    return
 ```
 
-#### for_each (task/136)
-
+#### solution 4
 ```diff
 -def for_each(itr, fn):
 +def for_each(itr, fn):
@@ -10535,8 +11011,14 @@
 +   
 ```
 
-#### every (task/137)
+### every (task/137)
 
+#### canonical solution
+```python
+def every(lst, fn = lambda x: x):  return all(map(fn, lst))
+```
+
+#### solution 0
 ```diff
 -def every(lst, fn = lambda x: x):
 +def every(lst, fn = lambda x: x):
@@ -10550,8 +11032,7 @@
 +	for x in lst:
 ```
 
-#### every (task/137)
-
+#### solution 1
 ```diff
 -def every(lst, fn = lambda x: x):
 +def every(lst, fn = lambda x: x):
@@ -10565,8 +11046,7 @@
 +#     for i in lst:
 ```
 
-#### every (task/137)
-
+#### solution 2
 ```diff
 -def every(lst, fn = lambda x: x):
 +def every(lst, fn = lambda x: x):
@@ -10580,8 +11060,7 @@
 +	for x in lst:
 ```
 
-#### every (task/137)
-
+#### solution 3
 ```diff
 -def every(lst, fn = lambda x: x):
 +def every(lst, fn = lambda x: x):
@@ -10596,8 +11075,7 @@
 +    for x in l
 ```
 
-#### every (task/137)
-
+#### solution 4
 ```diff
 -def every(lst, fn = lambda x: x):
 +def every(lst, fn = lambda x: x):
@@ -10608,8 +11086,14 @@
 +    return reduce(lambda x, y: x or fn(
 ```
 
-#### byte_size (task/138)
+### byte_size (task/138)
 
+#### canonical solution
+```python
+def byte_size(s):  return len(s.encode('utf-8'))
+```
+
+#### solution 0
 ```diff
 -def byte_size(s):
 +def byte_size(s):
@@ -10620,8 +11104,7 @@
 +    the string but returns a byte count instead of a character count
 ```
 
-#### byte_size (task/138)
-
+#### solution 1
 ```diff
 -def byte_size(s):
 +def byte_size(s):
@@ -10633,8 +11116,7 @@
 +    return filename.rsplit('.', 1)[1].lower()
 ```
 
-#### byte_size (task/138)
-
+#### solution 2
 ```diff
 -def byte_size(s):
 +def byte_size(s):
@@ -10650,8 +11132,7 @@
 +    get
 ```
 
-#### byte_size (task/138)
-
+#### solution 3
 ```diff
 -def byte_size(s):
 +def byte_size(s):
@@ -10664,8 +11145,7 @@
 +    """Return a slug string based on the
 ```
 
-#### byte_size (task/138)
-
+#### solution 4
 ```diff
 -def byte_size(s):
 +def byte_size(s):
@@ -10678,8 +11158,14 @@
 +    c
 ```
 
-#### pad_number (task/139)
+### pad_number (task/139)
 
+#### canonical solution
+```python
+def pad_number(n, l):  return str(n).zfill(l)
+```
+
+#### solution 0
 ```diff
 -def pad_number(n, l):
 +def pad_number(n, l):
@@ -10694,8 +11180,7 @@
 +    parser = argparse
 ```
 
-#### pad_number (task/139)
-
+#### solution 1
 ```diff
 -def pad_number(n, l):
 +def pad_number(n, l):
@@ -10709,8 +11194,7 @@
 +    return datetime.datetime.
 ```
 
-#### pad_number (task/139)
-
+#### solution 2
 ```diff
 -def pad_number(n, l):
 +def pad_number(n, l):
@@ -10722,8 +11206,7 @@
 +    return '{}s'.format(t) if t > 1 else '{}ms
 ```
 
-#### pad_number (task/139)
-
+#### solution 3
 ```diff
 -def pad_number(n, l):
 +def pad_number(n, l):
@@ -10737,8 +11220,7 @@
 +    return hashlib.sha256(hash
 ```
 
-#### pad_number (task/139)
-
+#### solution 4
 ```diff
 -def pad_number(n, l):
 +def pad_number(n, l):
@@ -10750,8 +11232,15 @@
 +   
 ```
 
-#### for_each_right (task/140)
+### for_each_right (task/140)
 
+#### canonical solution
+```python
+def for_each_right(itr, fn):  for el in itr[::-1]:
+    fn(el)
+```
+
+#### solution 0
 ```diff
 -def for_each_right(itr, fn):
 +def for_each_right(itr, fn):
@@ -10765,8 +11254,7 @@
 +        itr (
 ```
 
-#### for_each_right (task/140)
-
+#### solution 1
 ```diff
 -def for_each_right(itr, fn):
 +def for_each_right(itr, fn):
@@ -10780,8 +11268,7 @@
 +        fn (callable):
 ```
 
-#### for_each_right (task/140)
-
+#### solution 2
 ```diff
 -def for_each_right(itr, fn):
 +def for_each_right(itr, fn):
@@ -10794,8 +11281,7 @@
 +    :param fn: The function to apply.
 ```
 
-#### for_each_right (task/140)
-
+#### solution 3
 ```diff
 -def for_each_right(itr, fn):
 +def for_each_right(itr, fn):
@@ -10810,8 +11296,7 @@
 +        The iterable to call the function
 ```
 
-#### for_each_right (task/140)
-
+#### solution 4
 ```diff
 -def for_each_right(itr, fn):
 +def for_each_right(itr, fn):
@@ -10828,8 +11313,20 @@
 +def tap_all(itr
 ```
 
-#### is_anagram (task/141)
+### is_anagram (task/141)
 
+#### canonical solution
+```python
+from collections import Counter
+
+def is_anagram(s1, s2):  return Counter(
+    c.lower() for c in s1 if c.isalnum()
+  ) == Counter(
+    c.lower() for c in s2 if c.isalnum()
+  )
+```
+
+#### solution 0
 ```diff
 -from collections import Counter
 -
@@ -10844,8 +11341,7 @@
 +    return [candidate for candidate in candidates if is_anagram(word.lower(), candidate.lower
 ```
 
-#### is_anagram (task/141)
-
+#### solution 1
 ```diff
 -from collections import Counter
 -
@@ -10865,8 +11361,7 @@
 +def is
 ```
 
-#### is_anagram (task/141)
-
+#### solution 2
 ```diff
 -from collections import Counter
 -
@@ -10883,8 +11378,7 @@
 +def is_anagram
 ```
 
-#### is_anagram (task/141)
-
+#### solution 3
 ```diff
 -from collections import Counter
 -
@@ -10900,8 +11394,7 @@
 +def count_anagrams
 ```
 
-#### is_anagram (task/141)
-
+#### solution 4
 ```diff
 -from collections import Counter
 -
@@ -10916,8 +11409,14 @@
 +    E.
 ```
 
-#### decapitalize (task/142)
+### decapitalize (task/142)
 
+#### canonical solution
+```python
+def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
+```
+
+#### solution 0
 ```diff
 -def decapitalize(s, upper_rest = False):
 +def decapitalize(s, upper_rest = False):
@@ -10928,8 +11427,7 @@
 +    else
 ```
 
-#### decapitalize (task/142)
-
+#### solution 1
 ```diff
 -def decapitalize(s, upper_rest = False):
 +def decapitalize(s, upper_rest = False):
@@ -10940,8 +11438,7 @@
 +    else
 ```
 
-#### decapitalize (task/142)
-
+#### solution 2
 ```diff
 -def decapitalize(s, upper_rest = False):
 +def decapitalize(s, upper_rest = False):
@@ -10952,8 +11449,7 @@
 +    if ref.startswith('
 ```
 
-#### decapitalize (task/142)
-
+#### solution 3
 ```diff
 -def decapitalize(s, upper_rest = False):
 +def decapitalize(s, upper_rest = False):
@@ -10964,8 +11460,7 @@
 +    return s[:1].lower() +
 ```
 
-#### decapitalize (task/142)
-
+#### solution 4
 ```diff
 -def decapitalize(s, upper_rest = False):
 +def decapitalize(s, upper_rest = False):
@@ -10977,8 +11472,14 @@
 +    return s[0].lower() + s[1:] if upper_rest else
 ```
 
-#### unique_elements (task/143)
+### unique_elements (task/143)
 
+#### canonical solution
+```python
+def unique_elements(li):  return list(set(li))
+```
+
+#### solution 0
 ```diff
 -def unique_elements(li):
 +def unique_elements(li):
@@ -10992,8 +11493,7 @@
 +    for
 ```
 
-#### unique_elements (task/143)
-
+#### solution 1
 ```diff
 -def unique_elements(li):
 +def unique_elements(li):
@@ -11007,8 +11507,7 @@
 +# D. Given
 ```
 
-#### unique_elements (task/143)
-
+#### solution 2
 ```diff
 -def unique_elements(li):
 +def unique_elements(li):
@@ -11022,8 +11521,7 @@
 +# get a list of all files in
 ```
 
-#### unique_elements (task/143)
-
+#### solution 3
 ```diff
 -def unique_elements(li):
 +def unique_elements(li):
@@ -11037,8 +11535,7 @@
 +    seen =
 ```
 
-#### unique_elements (task/143)
-
+#### solution 4
 ```diff
 -def unique_elements(li):
 +def unique_elements(li):
@@ -11052,8 +11549,14 @@
 +def average_x(x_list
 ```
 
-#### rgb_to_hex (task/144)
+### rgb_to_hex (task/144)
 
+#### canonical solution
+```python
+def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
+```
+
+#### solution 0
 ```diff
 -def rgb_to_hex(r, g, b):
 +def rgb_to_hex(r, g, b):
@@ -11065,8 +11568,7 @@
 +    lv
 ```
 
-#### rgb_to_hex (task/144)
-
+#### solution 1
 ```diff
 -def rgb_to_hex(r, g, b):
 +def rgb_to_hex(r, g, b):
@@ -11080,8 +11582,7 @@
 +# print(red.
 ```
 
-#### rgb_to_hex (task/144)
-
+#### solution 2
 ```diff
 -def rgb_to_hex(r, g, b):
 +def rgb_to_hex(r, g, b):
@@ -11092,8 +11593,7 @@
 +def scale_rgb_tuple
 ```
 
-#### rgb_to_hex (task/144)
-
+#### solution 3
 ```diff
 -def rgb_to_hex(r, g, b):
 +def rgb_to_hex(r, g, b):
@@ -11105,8 +11605,7 @@
 +    lv
 ```
 
-#### rgb_to_hex (task/144)
-
+#### solution 4
 ```diff
 -def rgb_to_hex(r, g, b):
 +def rgb_to_hex(r, g, b):
@@ -11118,8 +11617,14 @@
 +    lv
 ```
 
-#### values_only (task/145)
+### values_only (task/145)
 
+#### canonical solution
+```python
+def values_only(flat_dict):  return list(flat_dict.values())
+```
+
+#### solution 0
 ```diff
 -def values_only(flat_dict):
 +def values_only(flat_dict):
@@ -11134,8 +11639,7 @@
 +# new code start
 ```
 
-#### values_only (task/145)
-
+#### solution 1
 ```diff
 -def values_only(flat_dict):
 +def values_only(flat_dict):
@@ -11149,8 +11653,7 @@
 +    print(40 * '=')
 ```
 
-#### values_only (task/145)
-
+#### solution 2
 ```diff
 -def values_only(flat_dict):
 +def values_only(flat_dict):
@@ -11162,8 +11665,7 @@
 +        else
 ```
 
-#### values_only (task/145)
-
+#### solution 3
 ```diff
 -def values_only(flat_dict):
 +def values_only(flat_dict):
@@ -11183,8 +11685,7 @@
 +def get_value(
 ```
 
-#### values_only (task/145)
-
+#### solution 4
 ```diff
 -def values_only(flat_dict):
 +def values_only(flat_dict):
@@ -11199,8 +11700,19 @@
 +def flat_
 ```
 
-#### unfold (task/146)
+### unfold (task/146)
 
+#### canonical solution
+```python
+def unfold(fn, seed):  def fn_generator(val):
+    while True: 
+      val = fn(val[1])
+      if val == False: break
+      yield val[0]
+  return [i for i in fn_generator([None, seed])]
+```
+
+#### solution 0
 ```diff
 -def unfold(fn, seed):
 +def unfold(fn, seed):
@@ -11216,8 +11728,7 @@
 +        yield (i, x
 ```
 
-#### unfold (task/146)
-
+#### solution 1
 ```diff
 -def unfold(fn, seed):
 +def unfold(fn, seed):
@@ -11229,8 +11740,7 @@
 +    while True:
 ```
 
-#### unfold (task/146)
-
+#### solution 2
 ```diff
 -def unfold(fn, seed):
 +def unfold(fn, seed):
@@ -11244,8 +11754,7 @@
 +            stack.extend
 ```
 
-#### unfold (task/146)
-
+#### solution 3
 ```diff
 -def unfold(fn, seed):
 +def unfold(fn, seed):
@@ -11258,8 +11767,7 @@
 +from operator import add
 ```
 
-#### unfold (task/146)
-
+#### solution 4
 ```diff
 -def unfold(fn, seed):
 +def unfold(fn, seed):
@@ -11271,8 +11779,14 @@
 +    >>> inc, add = lambda x: x + 1, lambda x, y: x + y
 ```
 
-#### reverse (task/147)
+### reverse (task/147)
 
+#### canonical solution
+```python
+def reverse(itr):  return itr[::-1]
+```
+
+#### solution 0
 ```diff
 -def reverse(itr):
 +def reverse(itr):
@@ -11286,8 +11800,7 @@
 +    return itr[:id
 ```
 
-#### reverse (task/147)
-
+#### solution 1
 ```diff
 -def reverse(itr):
 +def reverse(itr):
@@ -11302,8 +11815,7 @@
 +    for i in itr
 ```
 
-#### reverse (task/147)
-
+#### solution 2
 ```diff
 -def reverse(itr):
 +def reverse(itr):
@@ -11316,8 +11828,7 @@
 +    print(
 ```
 
-#### reverse (task/147)
-
+#### solution 3
 ```diff
 -def reverse(itr):
 +def reverse(itr):
@@ -11332,8 +11843,7 @@
 +def compose(*
 ```
 
-#### reverse (task/147)
-
+#### solution 4
 ```diff
 -def reverse(itr):
 +def reverse(itr):
@@ -11345,8 +11855,14 @@
 +    if os.path.exists(filename):
 ```
 
-#### is_divisible (task/148)
+### is_divisible (task/148)
 
+#### canonical solution
+```python
+def is_divisible(dividend, divisor):  return dividend % divisor == 0
+```
+
+#### solution 0
 ```diff
 -def is_divisible(dividend, divisor):
 +def is_divisible(dividend, divisor):
@@ -11360,8 +11876,7 @@
 +        if is_divisible(n
 ```
 
-#### is_divisible (task/148)
-
+#### solution 1
 ```diff
 -def is_divisible(dividend, divisor):
 +def is_divisible(dividend, divisor):
@@ -11376,8 +11891,7 @@
 +print(
 ```
 
-#### is_divisible (task/148)
-
+#### solution 2
 ```diff
 -def is_divisible(dividend, divisor):
 +def is_divisible(dividend, divisor):
@@ -11391,8 +11905,7 @@
 +#print(is_divisible(2, 3
 ```
 
-#### is_divisible (task/148)
-
+#### solution 3
 ```diff
 -def is_divisible(dividend, divisor):
 +def is_divisible(dividend, divisor):
@@ -11405,8 +11918,7 @@
 +            print("F
 ```
 
-#### is_divisible (task/148)
-
+#### solution 4
 ```diff
 -def is_divisible(dividend, divisor):
 +def is_divisible(dividend, divisor):
@@ -11419,8 +11931,16 @@
 +    if not isinstance(dividend, int) or not
 ```
 
-#### is_weekday (task/149)
+### is_weekday (task/149)
 
+#### canonical solution
+```python
+from datetime import datetime
+
+def is_weekday(d = datetime.today()):  return d.weekday() <= 4
+```
+
+#### solution 0
 ```diff
 -from datetime import datetime
 -
@@ -11439,8 +11959,7 @@
 +def is_leap_year(year = datetime.today().
 ```
 
-#### is_weekday (task/149)
-
+#### solution 1
 ```diff
 -from datetime import datetime
 -
@@ -11458,8 +11977,7 @@
 +def is_workday(d = datetime.today
 ```
 
-#### is_weekday (task/149)
-
+#### solution 2
 ```diff
 -from datetime import datetime
 -
@@ -11477,8 +11995,7 @@
 +
 ```
 
-#### is_weekday (task/149)
-
+#### solution 3
 ```diff
 -from datetime import datetime
 -
@@ -11496,8 +12013,7 @@
 +assert not is_weekday(datetime(2020, 7,
 ```
 
-#### is_weekday (task/149)
-
+#### solution 4
 ```diff
 -from datetime import datetime
 -
@@ -11516,8 +12032,14 @@
 +print is_weekday(datetime(2017,2,22))
 ```
 
-#### fahrenheit_to_celsius (task/150)
+### fahrenheit_to_celsius (task/150)
 
+#### canonical solution
+```python
+def fahrenheit_to_celsius(degrees):  return ((degrees - 32) * 5/9)
+```
+
+#### solution 0
 ```diff
 -def fahrenheit_to_celsius(degrees):
 +def fahrenheit_to_celsius(degrees):
@@ -11529,8 +12051,7 @@
 +    return round((degrees * (9/5)) + 32, 2
 ```
 
-#### fahrenheit_to_celsius (task/150)
-
+#### solution 1
 ```diff
 -def fahrenheit_to_celsius(degrees):
 +def fahrenheit_to_celsius(degrees):
@@ -11541,8 +12062,7 @@
 +def celsius_to_fahrenheit(degrees):
 ```
 
-#### fahrenheit_to_celsius (task/150)
-
+#### solution 2
 ```diff
 -def fahrenheit_to_celsius(degrees):
 +def fahrenheit_to_celsius(degrees):
@@ -11553,8 +12073,7 @@
 +print("Boiling point of water:", fah
 ```
 
-#### fahrenheit_to_celsius (task/150)
-
+#### solution 3
 ```diff
 -def fahrenheit_to_celsius(degrees):
 +def fahrenheit_to_celsius(degrees):
@@ -11571,8 +12090,7 @@
 +def c
 ```
 
-#### fahrenheit_to_celsius (task/150)
-
+#### solution 4
 ```diff
 -def fahrenheit_to_celsius(degrees):
 +def fahrenheit_to_celsius(degrees):
@@ -11586,8 +12104,14 @@
 +    """
 ```
 
-#### sum_by (task/151)
+### sum_by (task/151)
 
+#### canonical solution
+```python
+def sum_by(lst, fn):  return sum(map(fn, lst))
+```
+
+#### solution 0
 ```diff
 -def sum_by(lst, fn):
 +def sum_by(lst, fn):
@@ -11598,8 +12122,7 @@
 +    fn -- a function that takes an integer and returns True
 ```
 
-#### sum_by (task/151)
-
+#### solution 1
 ```diff
 -def sum_by(lst, fn):
 +def sum_by(lst, fn):
@@ -11613,8 +12136,7 @@
 +    fibon
 ```
 
-#### sum_by (task/151)
-
+#### solution 2
 ```diff
 -def sum_by(lst, fn):
 +def sum_by(lst, fn):
@@ -11625,8 +12147,7 @@
 +    return reduce(lambda a, b: a * b, map(fn
 ```
 
-#### sum_by (task/151)
-
+#### solution 3
 ```diff
 -def sum_by(lst, fn):
 +def sum_by(lst, fn):
@@ -11639,8 +12160,7 @@
 +        fn: a function to convert a number to
 ```
 
-#### sum_by (task/151)
-
+#### solution 4
 ```diff
 -def sum_by(lst, fn):
 +def sum_by(lst, fn):
@@ -11649,8 +12169,14 @@
 +    sum_by([{'name': 'joe', 'num': 3}, {'name': 'bob', 'num': 1}, {'name': 'tom', 'num': 4}], '
 ```
 
-#### find_key (task/152)
+### find_key (task/152)
 
+#### canonical solution
+```python
+def find_key(dict, val):  return next(key for key, value in dict.items() if value == val)
+```
+
+#### solution 0
 ```diff
 -def find_key(dict, val):
 +def find_key(dict, val):
@@ -11663,8 +12189,7 @@
 +   
 ```
 
-#### find_key (task/152)
-
+#### solution 1
 ```diff
 -def find_key(dict, val):
 +def find_key(dict, val):
@@ -11676,8 +12201,7 @@
 +    def __init
 ```
 
-#### find_key (task/152)
-
+#### solution 2
 ```diff
 -def find_key(dict, val):
 +def find_key(dict, val):
@@ -11688,8 +12212,7 @@
 +def p_value_matrix(df, col_
 ```
 
-#### find_key (task/152)
-
+#### solution 3
 ```diff
 -def find_key(dict, val):
 +def find_key(dict, val):
@@ -11706,8 +12229,7 @@
 +def download_data
 ```
 
-#### find_key (task/152)
-
+#### solution 4
 ```diff
 -def find_key(dict, val):
 +def find_key(dict, val):
@@ -11719,8 +12241,14 @@
 +# =========================
 ```
 
-#### to_hex (task/153)
+### to_hex (task/153)
 
+#### canonical solution
+```python
+def to_hex(dec):  return hex(dec)
+```
+
+#### solution 0
 ```diff
 -def to_hex(dec):
 +def to_hex(dec):
@@ -11734,8 +12262,7 @@
 +        raw = f.
 ```
 
-#### to_hex (task/153)
-
+#### solution 1
 ```diff
 -def to_hex(dec):
 +def to_hex(dec):
@@ -11746,8 +12273,7 @@
 +    return ':'.join(map(to_hex, start)) + '-' + ':
 ```
 
-#### to_hex (task/153)
-
+#### solution 2
 ```diff
 -def to_hex(dec):
 +def to_hex(dec):
@@ -11761,8 +12287,7 @@
 +    @type value: int|
 ```
 
-#### to_hex (task/153)
-
+#### solution 3
 ```diff
 -def to_hex(dec):
 +def to_hex(dec):
@@ -11775,8 +12300,7 @@
 +def xor_hex(hex_str1, hex_str2):
 ```
 
-#### to_hex (task/153)
-
+#### solution 4
 ```diff
 -def to_hex(dec):
 +def to_hex(dec):
@@ -11788,8 +12312,14 @@
 +        return hex_characters[int(dec / 16)] + hex_
 ```
 
-#### clamp_number (task/154)
+### clamp_number (task/154)
 
+#### canonical solution
+```python
+def clamp_number(num, a, b):  return max(min(num, max(a, b)), min(a, b))
+```
+
+#### solution 0
 ```diff
 -def clamp_number(num, a, b):
 +def clamp_number(num, a, b):
@@ -11806,8 +12336,7 @@
 +    def __init__(self, x,
 ```
 
-#### clamp_number (task/154)
-
+#### solution 1
 ```diff
 -def clamp_number(num, a, b):
 +def clamp_number(num, a, b):
@@ -11818,8 +12347,7 @@
 +    return x < SCREEN_WIDTH and y < SCREEN_
 ```
 
-#### clamp_number (task/154)
-
+#### solution 2
 ```diff
 -def clamp_number(num, a, b):
 +def clamp_number(num, a, b):
@@ -11832,8 +12360,7 @@
 +    """Calculates the distance
 ```
 
-#### clamp_number (task/154)
-
+#### solution 3
 ```diff
 -def clamp_number(num, a, b):
 +def clamp_number(num, a, b):
@@ -11844,8 +12371,7 @@
 +    return clamp_number(a + ((b - a) * (val - start
 ```
 
-#### clamp_number (task/154)
-
+#### solution 4
 ```diff
 -def clamp_number(num, a, b):
 +def clamp_number(num, a, b):
@@ -11861,8 +12387,16 @@
 +   
 ```
 
-#### compose_right (task/155)
+### compose_right (task/155)
 
+#### canonical solution
+```python
+from functools import reduce
+
+def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
+```
+
+#### solution 0
 ```diff
 -from functools import reduce
 -
@@ -11878,8 +12412,7 @@
 +    """
 ```
 
-#### compose_right (task/155)
-
+#### solution 1
 ```diff
 -from functools import reduce
 -
@@ -11895,8 +12428,7 @@
 +        return lambda f, g: lambda
 ```
 
-#### compose_right (task/155)
-
+#### solution 2
 ```diff
 -from functools import reduce
 -
@@ -11913,8 +12445,7 @@
 +   
 ```
 
-#### compose_right (task/155)
-
+#### solution 3
 ```diff
 -from functools import reduce
 -
@@ -11929,8 +12460,7 @@
 +    return reduce(lambda f, g: lambda x: g(f(x
 ```
 
-#### compose_right (task/155)
-
+#### solution 4
 ```diff
 -from functools import reduce
 -
@@ -11945,8 +12475,14 @@
 +    return reduce(lambda f, g: lambda *args,
 ```
 
-#### days_diff (task/156)
+### days_diff (task/156)
 
+#### canonical solution
+```python
+def days_diff(start, end):  return (end - start).days
+```
+
+#### solution 0
 ```diff
 -def days_diff(start, end):
 +def days_diff(start, end):
@@ -11956,8 +12492,7 @@
 +    diff = end_date - start_
 ```
 
-#### days_diff (task/156)
-
+#### solution 1
 ```diff
 -def days_diff(start, end):
 +def days_diff(start, end):
@@ -11967,8 +12502,7 @@
 +    end_date = datetime.strpt
 ```
 
-#### days_diff (task/156)
-
+#### solution 2
 ```diff
 -def days_diff(start, end):
 +def days_diff(start, end):
@@ -11978,8 +12512,7 @@
 +    end_datetime = datetime.datetime
 ```
 
-#### days_diff (task/156)
-
+#### solution 3
 ```diff
 -def days_diff(start, end):
 +def days_diff(start, end):
@@ -11991,8 +12524,7 @@
 +    start_date = datetime.str
 ```
 
-#### days_diff (task/156)
-
+#### solution 4
 ```diff
 -def days_diff(start, end):
 +def days_diff(start, end):
@@ -12003,8 +12535,17 @@
 +    return abs(delta
 ```
 
-#### is_contained_in (task/157)
+### is_contained_in (task/157)
 
+#### canonical solution
+```python
+def is_contained_in(a, b):  for v in set(a):
+    if a.count(v) > b.count(v):
+      return False
+  return True
+```
+
+#### solution 0
 ```diff
 -def is_contained_in(a, b):
 +def is_contained_in(a, b):
@@ -12015,8 +12556,7 @@
 +class Rectangle(object):
 ```
 
-#### is_contained_in (task/157)
-
+#### solution 1
 ```diff
 -def is_contained_in(a, b):
 +def is_contained_in(a, b):
@@ -12028,8 +12568,7 @@
 +
 ```
 
-#### is_contained_in (task/157)
-
+#### solution 2
 ```diff
 -def is_contained_in(a, b):
 +def is_contained_in(a, b):
@@ -12043,8 +12582,7 @@
 +    if not isinstance
 ```
 
-#### is_contained_in (task/157)
-
+#### solution 3
 ```diff
 -def is_contained_in(a, b):
 +def is_contained_in(a, b):
@@ -12055,8 +12593,7 @@
 +            if k not in b:
 ```
 
-#### is_contained_in (task/157)
-
+#### solution 4
 ```diff
 -def is_contained_in(a, b):
 +def is_contained_in(a, b):
@@ -12068,8 +12605,14 @@
 +    return (isinstance(a, b) or
 ```
 
-#### drop_right (task/158)
+### drop_right (task/158)
 
+#### canonical solution
+```python
+def drop_right(a, n = 1):  return a[:-n]
+```
+
+#### solution 0
 ```diff
 -def drop_right(a, n = 1):
 +def drop_right(a, n = 1):
@@ -12082,8 +12625,7 @@
 +def append_list(a, b):
 ```
 
-#### drop_right (task/158)
-
+#### solution 1
 ```diff
 -def drop_right(a, n = 1):
 +def drop_right(a, n = 1):
@@ -12096,8 +12638,7 @@
 +    """
 ```
 
-#### drop_right (task/158)
-
+#### solution 2
 ```diff
 -def drop_right(a, n = 1):
 +def drop_right(a, n = 1):
@@ -12114,8 +12655,7 @@
 +    return
 ```
 
-#### drop_right (task/158)
-
+#### solution 3
 ```diff
 -def drop_right(a, n = 1):
 +def drop_right(a, n = 1):
@@ -12128,8 +12668,7 @@
 +    :return: a new array with the last n elements dropped
 ```
 
-#### drop_right (task/158)
-
+#### solution 4
 ```diff
 -def drop_right(a, n = 1):
 +def drop_right(a, n = 1):
@@ -12141,8 +12680,17 @@
 +    a = np.asarray(a)
 ```
 
-#### gcd (task/159)
+### gcd (task/159)
 
+#### canonical solution
+```python
+from functools import reduce
+from math import gcd as _gcd
+
+def gcd(numbers):  return reduce(_gcd, numbers)
+```
+
+#### solution 0
 ```diff
 -from functools import reduce
 -from math import gcd as _gcd
@@ -12161,8 +12709,7 @@
 +T
 ```
 
-#### gcd (task/159)
-
+#### solution 1
 ```diff
 -from functools import reduce
 -from math import gcd as _gcd
@@ -12181,8 +12728,7 @@
 +def
 ```
 
-#### gcd (task/159)
-
+#### solution 2
 ```diff
 -from functools import reduce
 -from math import gcd as _gcd
@@ -12201,8 +12747,7 @@
 +def
 ```
 
-#### gcd (task/159)
-
+#### solution 3
 ```diff
 -from functools import reduce
 -from math import gcd as _gcd
@@ -12221,8 +12766,7 @@
 +n
 ```
 
-#### gcd (task/159)
-
+#### solution 4
 ```diff
 -from functools import reduce
 -from math import gcd as _gcd
