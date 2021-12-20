@@ -1,6 +1,7 @@
 import argparse
 import logging
 import os
+import re
 import sys
 
 import srsly
@@ -48,6 +49,10 @@ def parse_arguments():
     else:
         args.diff_file = None
 
+    args.language_name = re.search(
+        "30_seconds_of_(.+)_samples.jsonl", args.sample_file
+    ).group(1)
+
     return args
 
 
@@ -60,6 +65,10 @@ if __name__ == "__main__":
         datefmt='%Y-%m-%d %H:%M'
     )
 
+    samples = {}
+    for sample in srsly.read_jsonl(args.sample_file):
+        samples.setdefault(sample["task_id"], []).append(sample)
+
     problems = {
         task["task_id"]: task
         for task in srsly.read_jsonl(args.problem_file)
@@ -71,29 +80,26 @@ if __name__ == "__main__":
     else:
         out_file = sys.stdout
 
-    for sample in tqdm.tqdm(srsly.read_jsonl(args.sample_file)):
-        task_id = sample["task_id"]
-        completion = sample["completion"]
-        problem = problems[task_id]
+    for task_id, problem in tqdm.tqdm(problems.items()):
         prompt = problem["prompt"]
-        # completion = sample["completion"].replace("\n\n", "\n    ")
-        #
-        # try:
-        #     pos = completion.index("def ")
-        #     completion = completion[:pos]
-        # except ValueError:
-        #     pass
-        #
-        # completion = completion.rstrip()
+        canonical = problem["canonical_solution"]
 
-        if completion:
+        print(f"### {problem['entry_point']} ({problem['task_id']})", file=out_file)
+        print(file=out_file)
+        print("#### canonical solution", file=out_file)
+        print(f"```{args.language_name}", file=out_file)
+        print(f"{prompt}{canonical}", file=out_file)
+        print("```", file=out_file)
+        print(file=out_file)
+
+        for idx, sample in enumerate(samples[task_id]):
+            completion = sample.get("completion")
+
             if out_file == sys.stdout:
                 print(f"\033[1m{prompt}\033[0m{completion}", file=out_file)
                 print(file=out_file)
             else:
-                print(f"#### {problem['entry_point']} ({problem['task_id']})", file=out_file)
-                print(file=out_file)
-
+                print(f"#### solution {idx}", file=out_file)
                 print("```diff", file=out_file)
                 for line in prompt.splitlines():
                     print(f"-{line}", file=out_file)

@@ -1,5 +1,20 @@
-#### useUnload (task/1)
+### useUnload (task/1)
 
+#### canonical solution
+```react
+const useUnload = fn => {  const cb = React.useRef(fn);
+
+  React.useEffect(() => {
+    const onUnload = cb.current;
+    window.addEventListener('beforeunload', onUnload);
+    return () => {
+      window.removeEventListener('beforeunload', onUnload);
+    };
+  }, [cb]);
+};
+```
+
+#### solution 0
 ```diff
 -const useUnload = fn => {
 +const useUnload = fn => {
@@ -15,8 +30,7 @@
 +export default useUnload;
 ```
 
-#### useUnload (task/1)
-
+#### solution 1
 ```diff
 -const useUnload = fn => {
 +const useUnload = fn => {
@@ -33,8 +47,7 @@
 +export default useUnload;
 ```
 
-#### useUnload (task/1)
-
+#### solution 2
 ```diff
 -const useUnload = fn => {
 +const useUnload = fn => {
@@ -56,8 +69,7 @@
 +    window.addEventListener('beforeunload', listener.current)
 ```
 
-#### useUnload (task/1)
-
+#### solution 3
 ```diff
 -const useUnload = fn => {
 +const useUnload = fn => {
@@ -77,8 +89,7 @@
 +      document.title = initialTitle;
 ```
 
-#### useUnload (task/1)
-
+#### solution 4
 ```diff
 -const useUnload = fn => {
 +const useUnload = fn => {
@@ -98,8 +109,25 @@
 +export default useUnload;
 ```
 
-#### useClickOutside (task/2)
+### useClickOutside (task/2)
 
+#### canonical solution
+```react
+const useClickOutside = (ref, callback) => {  const handleClick = e => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  });
+};
+```
+
+#### solution 0
 ```diff
 -const useClickOutside = (ref, callback) => {
 +const useClickOutside = (ref, callback) => {
@@ -122,8 +150,7 @@
 +const DropdownMenu = ({ children
 ```
 
-#### useClickOutside (task/2)
-
+#### solution 1
 ```diff
 -const useClickOutside = (ref, callback) => {
 +const useClickOutside = (ref, callback) => {
@@ -145,8 +172,7 @@
 +const useCheckbox =
 ```
 
-#### useClickOutside (task/2)
-
+#### solution 2
 ```diff
 -const useClickOutside = (ref, callback) => {
 +const useClickOutside = (ref, callback) => {
@@ -169,8 +195,7 @@
 +const useModal = (initial
 ```
 
-#### useClickOutside (task/2)
-
+#### solution 3
 ```diff
 -const useClickOutside = (ref, callback) => {
 +const useClickOutside = (ref, callback) => {
@@ -189,8 +214,7 @@
 +    }, [ref, callback
 ```
 
-#### useClickOutside (task/2)
-
+#### solution 4
 ```diff
 -const useClickOutside = (ref, callback) => {
 +const useClickOutside = (ref, callback) => {
@@ -213,8 +237,37 @@
 +export default useClickOutside;
 ```
 
-#### useSessionStorage (task/3)
+### useSessionStorage (task/3)
 
+#### canonical solution
+```react
+const useSessionStorage = (keyName, defaultValue) => {  const [storedValue, setStoredValue] = React.useState(() => {
+    try {
+      const value = window.sessionStorage.getItem(keyName);
+
+      if (value) {
+        return JSON.parse(value);
+      } else {
+        window.sessionStorage.setItem(keyName, JSON.stringify(defaultValue));
+        return defaultValue;
+      }
+    } catch (err) {
+      return defaultValue;
+    }
+  });
+
+  const setValue = newValue => {
+    try {
+      window.sessionStorage.setItem(keyName, JSON.stringify(newValue));
+    } catch (err) {}
+    setStoredValue(newValue);
+  };
+
+  return [storedValue, setValue];
+};
+```
+
+#### solution 0
 ```diff
 -const useSessionStorage = (keyName, defaultValue) => {
 +const useSessionStorage = (keyName, defaultValue) => {
@@ -233,8 +286,7 @@
 +    window.sessionStorage.setItem(keyName, JSON
 ```
 
-#### useSessionStorage (task/3)
-
+#### solution 1
 ```diff
 -const useSessionStorage = (keyName, defaultValue) => {
 +const useSessionStorage = (keyName, defaultValue) => {
@@ -255,8 +307,7 @@
 +export const useM
 ```
 
-#### useSessionStorage (task/3)
-
+#### solution 2
 ```diff
 -const useSessionStorage = (keyName, defaultValue) => {
 +const useSessionStorage = (keyName, defaultValue) => {
@@ -275,8 +326,7 @@
 +};
 ```
 
-#### useSessionStorage (task/3)
-
+#### solution 3
 ```diff
 -const useSessionStorage = (keyName, defaultValue) => {
 +const useSessionStorage = (keyName, defaultValue) => {
@@ -296,8 +346,7 @@
 +export default useSession
 ```
 
-#### useSessionStorage (task/3)
-
+#### solution 4
 ```diff
 -const useSessionStorage = (keyName, defaultValue) => {
 +const useSessionStorage = (keyName, defaultValue) => {
@@ -315,8 +364,26 @@
 +  return [value, setValue
 ```
 
-#### useTitle (task/4)
+### useTitle (task/4)
 
+#### canonical solution
+```react
+const useTitle = title => {  const documentDefined = typeof document !== 'undefined';
+  const originalTitle = React.useRef(documentDefined ? document.title : null);
+
+  React.useEffect(() => {
+    if (!documentDefined) return;
+
+    if (document.title !== title) document.title = title;
+
+    return () => {
+      document.title = originalTitle.current;
+    };
+  }, []);
+};
+```
+
+#### solution 0
 ```diff
 -const useTitle = title => {
 +const useTitle = title => {
@@ -331,8 +398,7 @@
 +export default useTitle;
 ```
 
-#### useTitle (task/4)
-
+#### solution 1
 ```diff
 -const useTitle = title => {
 +const useTitle = title => {
@@ -345,8 +411,7 @@
 +export default useTitle;
 ```
 
-#### useTitle (task/4)
-
+#### solution 2
 ```diff
 -const useTitle = title => {
 +const useTitle = title => {
@@ -367,8 +432,7 @@
 +    document
 ```
 
-#### useTitle (task/4)
-
+#### solution 3
 ```diff
 -const useTitle = title => {
 +const useTitle = title => {
@@ -384,8 +448,7 @@
 +export default useTitle;
 ```
 
-#### useTitle (task/4)
-
+#### solution 4
 ```diff
 -const useTitle = title => {
 +const useTitle = title => {
@@ -407,8 +470,21 @@
 +export default Title;
 ```
 
-#### useEffectOnce (task/5)
+### useEffectOnce (task/5)
 
+#### canonical solution
+```react
+const useEffectOnce = (callback, when) => {  const hasRunOnce = React.useRef(false);
+  React.useEffect(() => {
+    if (when && !hasRunOnce.current) {
+      callback();
+      hasRunOnce.current = true;
+    }
+  }, [when]);
+};
+```
+
+#### solution 0
 ```diff
 -const useEffectOnce = (callback, when) => {
 +const useEffectOnce = (callback, when) => {
@@ -419,8 +495,7 @@
 +export default useEffectOnce;
 ```
 
-#### useEffectOnce (task/5)
-
+#### solution 1
 ```diff
 -const useEffectOnce = (callback, when) => {
 +const useEffectOnce = (callback, when) => {
@@ -431,8 +506,7 @@
 +export default useEffectOnce;
 ```
 
-#### useEffectOnce (task/5)
-
+#### solution 2
 ```diff
 -const useEffectOnce = (callback, when) => {
 +const useEffectOnce = (callback, when) => {
@@ -451,8 +525,7 @@
 +  const
 ```
 
-#### useEffectOnce (task/5)
-
+#### solution 3
 ```diff
 -const useEffectOnce = (callback, when) => {
 +const useEffectOnce = (callback, when) => {
@@ -474,8 +547,7 @@
 +  initialValue = null,
 ```
 
-#### useEffectOnce (task/5)
-
+#### solution 4
 ```diff
 -const useEffectOnce = (callback, when) => {
 +const useEffectOnce = (callback, when) => {
@@ -496,8 +568,50 @@
 +        height: window.
 ```
 
-#### Accordion (task/6)
+### Accordion (task/6)
 
+#### canonical solution
+```react
+const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {  return (
+    <>
+      <button className="accordion-button" onClick={handleClick}>
+        {label}
+      </button>
+      <div
+        className={`accordion-item ${isCollapsed ? 'collapsed' : 'expanded'}`}
+        aria-expanded={isCollapsed}
+      >
+        {children}
+      </div>
+    </>
+  );
+};
+
+const Accordion = ({ defaultIndex, onItemClick, children }) => {
+  const [bindIndex, setBindIndex] = React.useState(defaultIndex);
+
+  const changeItem = itemIndex => {
+    if (typeof onItemClick === 'function') onItemClick(itemIndex);
+    if (itemIndex !== bindIndex) setBindIndex(itemIndex);
+  };
+  const items = children.filter(item => item.type.name === 'AccordionItem');
+
+  return (
+    <>
+      {items.map(({ props }) => (
+        <AccordionItem
+          isCollapsed={bindIndex !== props.index}
+          label={props.label}
+          handleClick={() => changeItem(props.index)}
+          children={props.children}
+        />
+      ))}
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -519,8 +633,7 @@
 +       
 ```
 
-#### Accordion (task/6)
-
+#### solution 1
 ```diff
 -const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -535,8 +648,7 @@
 +    </
 ```
 
-#### Accordion (task/6)
-
+#### solution 2
 ```diff
 -const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -556,8 +668,7 @@
 +        <span
 ```
 
-#### Accordion (task/6)
-
+#### solution 3
 ```diff
 -const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -577,8 +688,7 @@
 +       
 ```
 
-#### Accordion (task/6)
-
+#### solution 4
 ```diff
 -const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
 +const AccordionItem = ({ label, isCollapsed, handleClick, children }) => {
@@ -597,8 +707,14 @@
 +        <div className="
 ```
 
-#### useIsomporphicEffect (task/7)
+### useIsomporphicEffect (task/7)
 
+#### canonical solution
+```react
+const useIsomorphicEffect =  typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+```
+
+#### solution 0
 ```diff
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
@@ -614,8 +730,7 @@
 +     
 ```
 
-#### useIsomporphicEffect (task/7)
-
+#### solution 1
 ```diff
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
@@ -639,8 +754,7 @@
 + 
 ```
 
-#### useIsomporphicEffect (task/7)
-
+#### solution 2
 ```diff
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
@@ -658,8 +772,7 @@
 +      return
 ```
 
-#### useIsomporphicEffect (task/7)
-
+#### solution 3
 ```diff
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
@@ -676,8 +789,7 @@
 +  const containerRef = React.useRef<HTML
 ```
 
-#### useIsomporphicEffect (task/7)
-
+#### solution 4
 ```diff
 -const useIsomorphicEffect =
 +const useIsomorphicEffect =
@@ -696,8 +808,27 @@
 +// https://github.com/gaearon/react-hot-loader/issues
 ```
 
-#### useGetSet (task/8)
+### useGetSet (task/8)
 
+#### canonical solution
+```react
+const useGetSet = initialState => {  const state = React.useRef(initialState);
+  const [, update] = React.useReducer(() => ({}));
+
+  return React.useMemo(
+    () => [
+      () => state.current,
+      newState => {
+        state.current = newState;
+        update();
+      },
+    ],
+    []
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const useGetSet = initialState => {
 +const useGetSet = initialState => {
@@ -710,8 +841,7 @@
 +export default useGetSet;
 ```
 
-#### useGetSet (task/8)
-
+#### solution 1
 ```diff
 -const useGetSet = initialState => {
 +const useGetSet = initialState => {
@@ -724,8 +854,7 @@
 +export default useGetSet;
 ```
 
-#### useGetSet (task/8)
-
+#### solution 2
 ```diff
 -const useGetSet = initialState => {
 +const useGetSet = initialState => {
@@ -738,8 +867,7 @@
 +export default useGetSet;
 ```
 
-#### useGetSet (task/8)
-
+#### solution 3
 ```diff
 -const useGetSet = initialState => {
 +const useGetSet = initialState => {
@@ -752,8 +880,7 @@
 +export default useGetSet;
 ```
 
-#### useGetSet (task/8)
-
+#### solution 4
 ```diff
 -const useGetSet = initialState => {
 +const useGetSet = initialState => {
@@ -770,8 +897,29 @@
 +export default useGetSet;
 ```
 
-#### useInterval (task/9)
+### useInterval (task/9)
 
+#### canonical solution
+```react
+const useInterval = (callback, delay) => {  const savedCallback = React.useRef();
+
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  React.useEffect(() => {
+    const tick = () => {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+};
+```
+
+#### solution 0
 ```diff
 -const useInterval = (callback, delay) => {
 +const useInterval = (callback, delay) => {
@@ -793,8 +941,7 @@
 +      return ()
 ```
 
-#### useInterval (task/9)
-
+#### solution 1
 ```diff
 -const useInterval = (callback, delay) => {
 +const useInterval = (callback, delay) => {
@@ -816,8 +963,7 @@
 +      return ()
 ```
 
-#### useInterval (task/9)
-
+#### solution 2
 ```diff
 -const useInterval = (callback, delay) => {
 +const useInterval = (callback, delay) => {
@@ -839,8 +985,7 @@
 +      return ()
 ```
 
-#### useInterval (task/9)
-
+#### solution 3
 ```diff
 -const useInterval = (callback, delay) => {
 +const useInterval = (callback, delay) => {
@@ -862,8 +1007,7 @@
 +      return ()
 ```
 
-#### useInterval (task/9)
-
+#### solution 4
 ```diff
 -const useInterval = (callback, delay) => {
 +const useInterval = (callback, delay) => {
@@ -885,8 +1029,30 @@
 +            return ()
 ```
 
-#### Loader (task/10)
+### Loader (task/10)
 
+#### canonical solution
+```react
+const Loader = ({ size }) => {  return (
+    <svg
+      className="loader"
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+    </svg>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Loader = ({ size }) => {
 +const Loader = ({ size }) => {
@@ -906,8 +1072,7 @@
 +export default Loader;
 ```
 
-#### Loader (task/10)
-
+#### solution 1
 ```diff
 -const Loader = ({ size }) => {
 +const Loader = ({ size }) => {
@@ -930,8 +1095,7 @@
 +export default Loader;
 ```
 
-#### Loader (task/10)
-
+#### solution 2
 ```diff
 -const Loader = ({ size }) => {
 +const Loader = ({ size }) => {
@@ -949,8 +1113,7 @@
 +        </div>
 ```
 
-#### Loader (task/10)
-
+#### solution 3
 ```diff
 -const Loader = ({ size }) => {
 +const Loader = ({ size }) => {
@@ -967,8 +1130,7 @@
 +         
 ```
 
-#### Loader (task/10)
-
+#### solution 4
 ```diff
 -const Loader = ({ size }) => {
 +const Loader = ({ size }) => {
@@ -991,8 +1153,44 @@
 +export default Loader;
 ```
 
-#### Modal (task/11)
+### Modal (task/11)
 
+#### canonical solution
+```react
+const Modal = ({ isVisible = false, title, content, footer, onClose }) => {  const keydownHandler = ({ key }) => {
+    switch (key) {
+      case 'Escape':
+        onClose();
+        break;
+      default:
+    }
+  };
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', keydownHandler);
+    return () => document.removeEventListener('keydown', keydownHandler);
+  });
+
+  return !isVisible ? null : (
+    <div className="modal" onClick={onClose}>
+      <div className="modal-dialog" onClick={e => e.stopPropagation()}>
+        <div className="modal-header">
+          <h3 className="modal-title">{title}</h3>
+          <span className="modal-close" onClick={onClose}>
+            &times;
+          </span>
+        </div>
+        <div className="modal-body">
+          <div className="modal-content">{content}</div>
+        </div>
+        {footer && <div className="modal-footer">{footer}</div>}
+      </div>
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 +const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
@@ -1012,8 +1210,7 @@
 +        <Footer>{footer
 ```
 
-#### Modal (task/11)
-
+#### solution 1
 ```diff
 -const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 +const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
@@ -1032,8 +1229,7 @@
 +          <span className="modal-title
 ```
 
-#### Modal (task/11)
-
+#### solution 2
 ```diff
 -const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 +const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
@@ -1050,8 +1246,7 @@
 +    <div className={`modal ${isVisibleClassName}`}
 ```
 
-#### Modal (task/11)
-
+#### solution 3
 ```diff
 -const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 +const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
@@ -1067,8 +1262,7 @@
 +              aria
 ```
 
-#### Modal (task/11)
-
+#### solution 4
 ```diff
 -const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
 +const Modal = ({ isVisible = false, title, content, footer, onClose }) => {
@@ -1083,8 +1277,31 @@
 +        <div className="
 ```
 
-#### useIntersectionObserver (task/12)
+### useIntersectionObserver (task/12)
 
+#### canonical solution
+```react
+const useIntersectionObserver = (ref, options) => {  const [isIntersecting, setIsIntersecting] = React.useState(false);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      setIsIntersecting(entry.isIntersecting);
+    }, options);
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      observer.unobserve(ref.current);
+    };
+  }, []);
+
+  return isIntersecting;
+};
+```
+
+#### solution 0
 ```diff
 -const useIntersectionObserver = (ref, options) => {
 +const useIntersectionObserver = (ref, options) => {
@@ -1103,8 +1320,7 @@
 +      observer
 ```
 
-#### useIntersectionObserver (task/12)
-
+#### solution 1
 ```diff
 -const useIntersectionObserver = (ref, options) => {
 +const useIntersectionObserver = (ref, options) => {
@@ -1122,8 +1338,7 @@
 +   
 ```
 
-#### useIntersectionObserver (task/12)
-
+#### solution 2
 ```diff
 -const useIntersectionObserver = (ref, options) => {
 +const useIntersectionObserver = (ref, options) => {
@@ -1143,8 +1358,7 @@
 +    if (ref.current) {
 ```
 
-#### useIntersectionObserver (task/12)
-
+#### solution 3
 ```diff
 -const useIntersectionObserver = (ref, options) => {
 +const useIntersectionObserver = (ref, options) => {
@@ -1164,8 +1378,7 @@
 +    observer.obser
 ```
 
-#### useIntersectionObserver (task/12)
-
+#### solution 4
 ```diff
 -const useIntersectionObserver = (ref, options) => {
 +const useIntersectionObserver = (ref, options) => {
@@ -1184,8 +1397,30 @@
 +    if (
 ```
 
-#### Slider (task/13)
+### Slider (task/13)
 
+#### canonical solution
+```react
+const Slider = ({   min = 0,
+  max = 100,
+  defaultValue,
+  onValueChange,
+  ...rest
+}) => {
+  return (
+    <input
+      type="range"
+      min={min}
+      max={max}
+      defaultValue={defaultValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    />
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Slider = ({ 
 +const Slider = ({ 
@@ -1205,8 +1440,7 @@
 +};
 ```
 
-#### Slider (task/13)
-
+#### solution 1
 ```diff
 -const Slider = ({ 
 +const Slider = ({ 
@@ -1226,8 +1460,7 @@
 +  const handleMouse
 ```
 
-#### Slider (task/13)
-
+#### solution 2
 ```diff
 -const Slider = ({ 
 +const Slider = ({ 
@@ -1247,8 +1480,7 @@
 +    <Grid container spacing={2} align
 ```
 
-#### Slider (task/13)
-
+#### solution 3
 ```diff
 -const Slider = ({ 
 +const Slider = ({ 
@@ -1267,8 +1499,7 @@
 +        max={
 ```
 
-#### Slider (task/13)
-
+#### solution 4
 ```diff
 -const Slider = ({ 
 +const Slider = ({ 
@@ -1291,8 +1522,19 @@
 +    </div>
 ```
 
-#### useToggler (task/14)
+### useToggler (task/14)
 
+#### canonical solution
+```react
+const useToggler = initialState => {  const [value, setValue] = React.useState(initialState);
+
+  const toggleValue = React.useCallback(() => setValue(prev => !prev), []);
+
+  return [value, toggleValue];
+};
+```
+
+#### solution 0
 ```diff
 -const useToggler = initialState => {
 +const useToggler = initialState => {
@@ -1312,8 +1554,7 @@
 +export default useToggler;
 ```
 
-#### useToggler (task/14)
-
+#### solution 1
 ```diff
 -const useToggler = initialState => {
 +const useToggler = initialState => {
@@ -1328,8 +1569,7 @@
 +export default useToggler;
 ```
 
-#### useToggler (task/14)
-
+#### solution 2
 ```diff
 -const useToggler = initialState => {
 +const useToggler = initialState => {
@@ -1344,8 +1584,7 @@
 +export default useToggler;
 ```
 
-#### useToggler (task/14)
-
+#### solution 3
 ```diff
 -const useToggler = initialState => {
 +const useToggler = initialState => {
@@ -1362,8 +1601,7 @@
 +export default useToggler;
 ```
 
-#### useToggler (task/14)
-
+#### solution 4
 ```diff
 -const useToggler = initialState => {
 +const useToggler = initialState => {
@@ -1378,8 +1616,39 @@
 +export default useToggler;
 ```
 
-#### useHover (task/15)
+### useHover (task/15)
 
+#### canonical solution
+```react
+const useHover = () => {  const [isHovering, setIsHovering] = React.useState(false);
+
+  const handleMouseOver = React.useCallback(() => setIsHovering(true), []);
+  const handleMouseOut = React.useCallback(() => setIsHovering(false), []);
+
+  const nodeRef = React.useRef();
+
+  const callbackRef = React.useCallback(
+    node => {
+      if (nodeRef.current) {
+        nodeRef.current.removeEventListener('mouseover', handleMouseOver);
+        nodeRef.current.removeEventListener('mouseout', handleMouseOut);
+      }
+
+      nodeRef.current = node;
+
+      if (nodeRef.current) {
+        nodeRef.current.addEventListener('mouseover', handleMouseOver);
+        nodeRef.current.addEventListener('mouseout', handleMouseOut);
+      }
+    },
+    [handleMouseOver, handleMouseOut]
+  );
+
+  return [callbackRef, isHovering];
+};
+```
+
+#### solution 0
 ```diff
 -const useHover = () => {
 +const useHover = () => {
@@ -1395,8 +1664,7 @@
 +  const animationStyles
 ```
 
-#### useHover (task/15)
-
+#### solution 1
 ```diff
 -const useHover = () => {
 +const useHover = () => {
@@ -1417,8 +1685,7 @@
 +    ref.current.addEventListener('
 ```
 
-#### useHover (task/15)
-
+#### solution 2
 ```diff
 -const useHover = () => {
 +const useHover = () => {
@@ -1438,8 +1705,7 @@
 +export default useHover;
 ```
 
-#### useHover (task/15)
-
+#### solution 3
 ```diff
 -const useHover = () => {
 +const useHover = () => {
@@ -1452,8 +1718,7 @@
 +export default useHover;
 ```
 
-#### useHover (task/15)
-
+#### solution 4
 ```diff
 -const useHover = () => {
 +const useHover = () => {
@@ -1474,8 +1739,19 @@
 +    if (node
 ```
 
-#### usePrevious (task/16)
+### usePrevious (task/16)
 
+#### canonical solution
+```react
+const usePrevious = value => {  const ref = React.useRef();
+  React.useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+};
+```
+
+#### solution 0
 ```diff
 -const usePrevious = value => {
 +const usePrevious = value => {
@@ -1497,8 +1773,7 @@
 +    if (isServer) {
 ```
 
-#### usePrevious (task/16)
-
+#### solution 1
 ```diff
 -const usePrevious = value => {
 +const usePrevious = value => {
@@ -1518,8 +1793,7 @@
 +      const content = [...
 ```
 
-#### usePrevious (task/16)
-
+#### solution 2
 ```diff
 -const usePrevious = value => {
 +const usePrevious = value => {
@@ -1539,8 +1813,7 @@
 +  useEffect(()
 ```
 
-#### usePrevious (task/16)
-
+#### solution 3
 ```diff
 -const usePrevious = value => {
 +const usePrevious = value => {
@@ -1555,8 +1828,7 @@
 +export default usePrevious;
 ```
 
-#### usePrevious (task/16)
-
+#### solution 4
 ```diff
 -const usePrevious = value => {
 +const usePrevious = value => {
@@ -1577,8 +1849,27 @@
 +            onSearch
 ```
 
-#### useMediaQuery (task/17)
+### useMediaQuery (task/17)
 
+#### canonical solution
+```react
+const useMediaQuery = (query, whenTrue, whenFalse) => {  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined')
+    return whenFalse;
+
+  const mediaQuery = window.matchMedia(query);
+  const [match, setMatch] = React.useState(!!mediaQuery.matches);
+
+  React.useEffect(() => {
+    const handler = () => setMatch(!!mediaQuery.matches);
+    mediaQuery.addListener(handler);
+    return () => mediaQuery.removeListener(handler);
+  }, []);
+
+  return match ? whenTrue : whenFalse;
+};
+```
+
+#### solution 0
 ```diff
 -const useMediaQuery = (query, whenTrue, whenFalse) => {
 +const useMediaQuery = (query, whenTrue, whenFalse) => {
@@ -1597,8 +1888,7 @@
 +    use
 ```
 
-#### useMediaQuery (task/17)
-
+#### solution 1
 ```diff
 -const useMediaQuery = (query, whenTrue, whenFalse) => {
 +const useMediaQuery = (query, whenTrue, whenFalse) => {
@@ -1619,8 +1909,7 @@
 +export default use
 ```
 
-#### useMediaQuery (task/17)
-
+#### solution 2
 ```diff
 -const useMediaQuery = (query, whenTrue, whenFalse) => {
 +const useMediaQuery = (query, whenTrue, whenFalse) => {
@@ -1638,8 +1927,7 @@
 +  return matches ? whenTrue : when
 ```
 
-#### useMediaQuery (task/17)
-
+#### solution 3
 ```diff
 -const useMediaQuery = (query, whenTrue, whenFalse) => {
 +const useMediaQuery = (query, whenTrue, whenFalse) => {
@@ -1654,8 +1942,7 @@
 +export { useMediaQuery, useMediaQueryWithContext };
 ```
 
-#### useMediaQuery (task/17)
-
+#### solution 4
 ```diff
 -const useMediaQuery = (query, whenTrue, whenFalse) => {
 +const useMediaQuery = (query, whenTrue, whenFalse) => {
@@ -1671,8 +1958,17 @@
 +export default useMediaQuery;
 ```
 
-#### useDefault (task/18)
+### useDefault (task/18)
 
+#### canonical solution
+```react
+const useDefault = (defaultState, initialState) => {  const [value, setValue] = React.useState(initialState);
+  const isValueEmpty = value === undefined || value === null;
+  return [isValueEmpty ? defaultState : value, setValue];
+};
+```
+
+#### solution 0
 ```diff
 -const useDefault = (defaultState, initialState) => {
 +const useDefault = (defaultState, initialState) => {
@@ -1687,8 +1983,7 @@
 +export default useDefault;
 ```
 
-#### useDefault (task/18)
-
+#### solution 1
 ```diff
 -const useDefault = (defaultState, initialState) => {
 +const useDefault = (defaultState, initialState) => {
@@ -1704,8 +1999,7 @@
 +    if (typeof reducers === 'function')
 ```
 
-#### useDefault (task/18)
-
+#### solution 2
 ```diff
 -const useDefault = (defaultState, initialState) => {
 +const useDefault = (defaultState, initialState) => {
@@ -1720,8 +2014,7 @@
 +export default useDefault;
 ```
 
-#### useDefault (task/18)
-
+#### solution 3
 ```diff
 -const useDefault = (defaultState, initialState) => {
 +const useDefault = (defaultState, initialState) => {
@@ -1740,8 +2033,7 @@
 +  const update = useCallback(() => setTick(tick => tick + 1
 ```
 
-#### useDefault (task/18)
-
+#### solution 4
 ```diff
 -const useDefault = (defaultState, initialState) => {
 +const useDefault = (defaultState, initialState) => {
@@ -1759,8 +2051,46 @@
 +export default useDefault;
 ```
 
-#### TagInput (task/19)
+### TagInput (task/19)
 
+#### canonical solution
+```react
+const TagInput = ({ tags }) => {  const [tagData, setTagData] = React.useState(tags);
+  const removeTagData = indexToRemove => {
+    setTagData([...tagData.filter((_, index) => index !== indexToRemove)]);
+  };
+  const addTagData = event => {
+    if (event.target.value !== '') {
+      setTagData([...tagData, event.target.value]);
+      event.target.value = '';
+    }
+  };
+  return (
+    <div className="tag-input">
+      <ul className="tags">
+        {tagData.map((tag, index) => (
+          <li key={index} className="tag">
+            <span className="tag-title">{tag}</span>
+            <span
+              className="tag-close-icon"
+              onClick={() => removeTagData(index)}
+            >
+              x
+            </span>
+          </li>
+        ))}
+      </ul>
+      <input
+        type="text"
+        onKeyUp={event => (event.key === 'Enter' ? addTagData(event) : null)}
+        placeholder="Press enter to add a tag"
+      />
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const TagInput = ({ tags }) => {
 +const TagInput = ({ tags }) => {
@@ -1774,8 +2104,7 @@
 +    setFilteredTags(se
 ```
 
-#### TagInput (task/19)
-
+#### solution 1
 ```diff
 -const TagInput = ({ tags }) => {
 +const TagInput = ({ tags }) => {
@@ -1794,8 +2123,7 @@
 +      add
 ```
 
-#### TagInput (task/19)
-
+#### solution 2
 ```diff
 -const TagInput = ({ tags }) => {
 +const TagInput = ({ tags }) => {
@@ -1814,8 +2142,7 @@
 +      set
 ```
 
-#### TagInput (task/19)
-
+#### solution 3
 ```diff
 -const TagInput = ({ tags }) => {
 +const TagInput = ({ tags }) => {
@@ -1834,8 +2161,7 @@
 +   
 ```
 
-#### TagInput (task/19)
-
+#### solution 4
 ```diff
 -const TagInput = ({ tags }) => {
 +const TagInput = ({ tags }) => {
@@ -1852,8 +2178,41 @@
 +  useEffect(
 ```
 
-#### MultiselectCheckbox (task/20)
+### MultiselectCheckbox (task/20)
 
+#### canonical solution
+```react
+const MultiselectCheckbox = ({ options, onChange }) => {  const [data, setData] = React.useState(options);
+
+  const toggle = index => {
+    const newData = [...data];
+    newData.splice(index, 1, {
+      label: data[index].label,
+      checked: !data[index].checked
+    });
+    setData(newData);
+    onChange(newData.filter(x => x.checked));
+  };
+
+  return (
+    <>
+      {data.map((item, index) => (
+        <label key={item.label}>
+          <input
+            readOnly
+            type="checkbox"
+            checked={item.checked || false}
+            onClick={() => toggle(index)}
+          />
+          {item.label}
+        </label>
+      ))}
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const MultiselectCheckbox = ({ options, onChange }) => {
 +const MultiselectCheckbox = ({ options, onChange }) => {
@@ -1874,8 +2233,7 @@
 +              color="primary"
 ```
 
-#### MultiselectCheckbox (task/20)
-
+#### solution 1
 ```diff
 -const MultiselectCheckbox = ({ options, onChange }) => {
 +const MultiselectCheckbox = ({ options, onChange }) => {
@@ -1896,8 +2254,7 @@
 +      onChange={handleSelect}
 ```
 
-#### MultiselectCheckbox (task/20)
-
+#### solution 2
 ```diff
 -const MultiselectCheckbox = ({ options, onChange }) => {
 +const MultiselectCheckbox = ({ options, onChange }) => {
@@ -1917,8 +2274,7 @@
 +       
 ```
 
-#### MultiselectCheckbox (task/20)
-
+#### solution 3
 ```diff
 -const MultiselectCheckbox = ({ options, onChange }) => {
 +const MultiselectCheckbox = ({ options, onChange }) => {
@@ -1940,8 +2296,7 @@
 +          label={
 ```
 
-#### MultiselectCheckbox (task/20)
-
+#### solution 4
 ```diff
 -const MultiselectCheckbox = ({ options, onChange }) => {
 +const MultiselectCheckbox = ({ options, onChange }) => {
@@ -1959,8 +2314,16 @@
 +        <div className="checkbox-group__item" key={value}>
 ```
 
-#### DataList (task/21)
+### DataList (task/21)
 
+#### canonical solution
+```react
+const DataList = ({ isOrdered = false, data }) => {  const list = data.map((val, i) => <li key={`${i}_${val}`}>{val}</li>);
+  return isOrdered ? <ol>{list}</ol> : <ul>{list}</ul>;
+};
+```
+
+#### solution 0
 ```diff
 -const DataList = ({ isOrdered = false, data }) => {
 +const DataList = ({ isOrdered = false, data }) => {
@@ -1979,8 +2342,7 @@
 +    <ul className={`data-list ${isOrdered ? 'data-list--ordered'
 ```
 
-#### DataList (task/21)
-
+#### solution 1
 ```diff
 -const DataList = ({ isOrdered = false, data }) => {
 +const DataList = ({ isOrdered = false, data }) => {
@@ -1998,8 +2360,7 @@
 +          </
 ```
 
-#### DataList (task/21)
-
+#### solution 2
 ```diff
 -const DataList = ({ isOrdered = false, data }) => {
 +const DataList = ({ isOrdered = false, data }) => {
@@ -2013,8 +2374,7 @@
 +      <li key={data
 ```
 
-#### DataList (task/21)
-
+#### solution 3
 ```diff
 -const DataList = ({ isOrdered = false, data }) => {
 +const DataList = ({ isOrdered = false, data }) => {
@@ -2028,8 +2388,7 @@
 +export default DataList;
 ```
 
-#### DataList (task/21)
-
+#### solution 4
 ```diff
 -const DataList = ({ isOrdered = false, data }) => {
 +const DataList = ({ isOrdered = false, data }) => {
@@ -2045,8 +2404,35 @@
 +      ))}
 ```
 
-#### Carousel (task/22)
+### Carousel (task/22)
 
+#### canonical solution
+```react
+const Carousel = ({ carouselItems, ...rest }) => {  const [active, setActive] = React.useState(0);
+  let scrollInterval = null;
+
+  React.useEffect(() => {
+    scrollInterval = setTimeout(() => {
+      setActive((active + 1) % carouselItems.length);
+    }, 2000);
+    return () => clearTimeout(scrollInterval);
+  });
+
+  return (
+    <div className="carousel">
+      {carouselItems.map((item, index) => {
+        const activeClass = active === index ? ' visible' : '';
+        return React.cloneElement(item, {
+          ...rest,
+          className: `carousel-item${activeClass}`
+        });
+      })}
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Carousel = ({ carouselItems, ...rest }) => {
 +const Carousel = ({ carouselItems, ...rest }) => {
@@ -2063,8 +2449,7 @@
 +    if (currentIdx ===
 ```
 
-#### Carousel (task/22)
-
+#### solution 1
 ```diff
 -const Carousel = ({ carouselItems, ...rest }) => {
 +const Carousel = ({ carouselItems, ...rest }) => {
@@ -2079,8 +2464,7 @@
 +    return car
 ```
 
-#### Carousel (task/22)
-
+#### solution 2
 ```diff
 -const Carousel = ({ carouselItems, ...rest }) => {
 +const Carousel = ({ carouselItems, ...rest }) => {
@@ -2093,8 +2477,7 @@
 +  const { theme } = useTheme
 ```
 
-#### Carousel (task/22)
-
+#### solution 3
 ```diff
 -const Carousel = ({ carouselItems, ...rest }) => {
 +const Carousel = ({ carouselItems, ...rest }) => {
@@ -2114,8 +2497,7 @@
 +  car
 ```
 
-#### Carousel (task/22)
-
+#### solution 4
 ```diff
 -const Carousel = ({ carouselItems, ...rest }) => {
 +const Carousel = ({ carouselItems, ...rest }) => {
@@ -2137,8 +2519,22 @@
 +          <div key={item.
 ```
 
-#### useMergeState (task/23)
+### useMergeState (task/23)
 
+#### canonical solution
+```react
+const useMergeState = (initialState = {}) => {  const [value, setValue] = React.useState(initialState);
+
+  const mergeState = newState => {
+    if (typeof newState === 'function') newState = newState(value);
+    setValue({ ...value, ...newState });
+  };
+
+  return [value, mergeState];
+};
+```
+
+#### solution 0
 ```diff
 -const useMergeState = (initialState = {}) => {
 +const useMergeState = (initialState = {}) => {
@@ -2156,8 +2552,7 @@
 +export default useMergeState;
 ```
 
-#### useMergeState (task/23)
-
+#### solution 1
 ```diff
 -const useMergeState = (initialState = {}) => {
 +const useMergeState = (initialState = {}) => {
@@ -2174,8 +2569,7 @@
 +export default useMergeState;
 ```
 
-#### useMergeState (task/23)
-
+#### solution 2
 ```diff
 -const useMergeState = (initialState = {}) => {
 +const useMergeState = (initialState = {}) => {
@@ -2192,8 +2586,7 @@
 +  const setSyncState = (newState
 ```
 
-#### useMergeState (task/23)
-
+#### solution 3
 ```diff
 -const useMergeState = (initialState = {}) => {
 +const useMergeState = (initialState = {}) => {
@@ -2205,8 +2598,7 @@
 +export default useMergeState;
 ```
 
-#### useMergeState (task/23)
-
+#### solution 4
 ```diff
 -const useMergeState = (initialState = {}) => {
 +const useMergeState = (initialState = {}) => {
@@ -2226,8 +2618,39 @@
 +export default useMergeState;
 ```
 
-#### useAsync (task/24)
+### useAsync (task/24)
 
+#### canonical solution
+```react
+const useAsync = fn => {  const initialState = { loading: false, error: null, value: null };
+  const stateReducer = (_, action) => {
+    switch (action.type) {
+      case 'start':
+        return { loading: true, error: null, value: null };
+      case 'finish':
+        return { loading: false, error: null, value: action.value };
+      case 'error':
+        return { loading: false, error: action.error, value: null };
+    }
+  };
+
+  const [state, dispatch] = React.useReducer(stateReducer, initialState);
+
+  const run = async (args = null) => {
+    try {
+      dispatch({ type: 'start' });
+      const value = await fn(args);
+      dispatch({ type: 'finish', value });
+    } catch (error) {
+      dispatch({ type: 'error', error });
+    }
+  };
+
+  return { ...state, run };
+};
+```
+
+#### solution 0
 ```diff
 -const useAsync = fn => {
 +const useAsync = fn => {
@@ -2252,8 +2675,7 @@
 +          loading: false,
 ```
 
-#### useAsync (task/24)
-
+#### solution 1
 ```diff
 -const useAsync = fn => {
 +const useAsync = fn => {
@@ -2272,8 +2694,7 @@
 +        set
 ```
 
-#### useAsync (task/24)
-
+#### solution 2
 ```diff
 -const useAsync = fn => {
 +const useAsync = fn => {
@@ -2287,8 +2708,7 @@
 +export default useAsync;
 ```
 
-#### useAsync (task/24)
-
+#### solution 3
 ```diff
 -const useAsync = fn => {
 +const useAsync = fn => {
@@ -2306,8 +2726,7 @@
 +  const [value, error]
 ```
 
-#### useAsync (task/24)
-
+#### solution 4
 ```diff
 -const useAsync = fn => {
 +const useAsync = fn => {
@@ -2329,8 +2748,19 @@
 +      });
 ```
 
-#### useBodyScrollLock (task/25)
+### useBodyScrollLock (task/25)
 
+#### canonical solution
+```react
+const useBodyScrollLock = () => {  React.useLayoutEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = 'hidden';
+    return () => (document.body.style.overflow = originalStyle);
+  }, []);
+};
+```
+
+#### solution 0
 ```diff
 -const useBodyScrollLock = () => {
 +const useBodyScrollLock = () => {
@@ -2345,8 +2775,7 @@
 +      } else {
 ```
 
-#### useBodyScrollLock (task/25)
-
+#### solution 1
 ```diff
 -const useBodyScrollLock = () => {
 +const useBodyScrollLock = () => {
@@ -2366,8 +2795,7 @@
 +  },
 ```
 
-#### useBodyScrollLock (task/25)
-
+#### solution 2
 ```diff
 -const useBodyScrollLock = () => {
 +const useBodyScrollLock = () => {
@@ -2385,8 +2813,7 @@
 +    if (ref && ref
 ```
 
-#### useBodyScrollLock (task/25)
-
+#### solution 3
 ```diff
 -const useBodyScrollLock = () => {
 +const useBodyScrollLock = () => {
@@ -2404,8 +2831,7 @@
 +    return {
 ```
 
-#### useBodyScrollLock (task/25)
-
+#### solution 4
 ```diff
 -const useBodyScrollLock = () => {
 +const useBodyScrollLock = () => {
@@ -2427,8 +2853,25 @@
 +        WebkitOverflowScrolling: 'touch
 ```
 
-#### useForm (task/26)
+### useForm (task/26)
 
+#### canonical solution
+```react
+const useForm = initialValues => {  const [values, setValues] = React.useState(initialValues);
+
+  return [
+    values,
+    e => {
+      setValues({
+        ...values,
+        [e.target.name]: e.target.value
+      });
+    }
+  ];
+};
+```
+
+#### solution 0
 ```diff
 -const useForm = initialValues => {
 +const useForm = initialValues => {
@@ -2452,8 +2895,7 @@
 +
 ```
 
-#### useForm (task/26)
-
+#### solution 1
 ```diff
 -const useForm = initialValues => {
 +const useForm = initialValues => {
@@ -2476,8 +2918,7 @@
 +    values
 ```
 
-#### useForm (task/26)
-
+#### solution 2
 ```diff
 -const useForm = initialValues => {
 +const useForm = initialValues => {
@@ -2501,8 +2942,7 @@
 +    handleSubmit,
 ```
 
-#### useForm (task/26)
-
+#### solution 3
 ```diff
 -const useForm = initialValues => {
 +const useForm = initialValues => {
@@ -2525,8 +2965,7 @@
 +    handleChange,
 ```
 
-#### useForm (task/26)
-
+#### solution 4
 ```diff
 -const useForm = initialValues => {
 +const useForm = initialValues => {
@@ -2546,8 +2985,33 @@
 +    setFormState(initial
 ```
 
-#### usePortal (task/27)
+### usePortal (task/27)
 
+#### canonical solution
+```react
+const usePortal = el => {  const [portal, setPortal] = React.useState({
+    render: () => null,
+    remove: () => null,
+  });
+
+  const createPortal = React.useCallback(el => {
+    const Portal = ({ children }) => ReactDOM.createPortal(children, el);
+    const remove = () => ReactDOM.unmountComponentAtNode(el);
+    return { render: Portal, remove };
+  }, []);
+
+  React.useEffect(() => {
+    if (el) portal.remove();
+    const newPortal = createPortal(el);
+    setPortal(newPortal);
+    return () => newPortal.remove(el);
+  }, [el]);
+
+  return portal.render;
+};
+```
+
+#### solution 0
 ```diff
 -const usePortal = el => {
 +const usePortal = el => {
@@ -2565,8 +3029,7 @@
 +      portal
 ```
 
-#### usePortal (task/27)
-
+#### solution 1
 ```diff
 -const usePortal = el => {
 +const usePortal = el => {
@@ -2585,8 +3048,7 @@
 +		return () =>
 ```
 
-#### usePortal (task/27)
-
+#### solution 2
 ```diff
 -const usePortal = el => {
 +const usePortal = el => {
@@ -2607,8 +3069,7 @@
 +export default
 ```
 
-#### usePortal (task/27)
-
+#### solution 3
 ```diff
 -const usePortal = el => {
 +const usePortal = el => {
@@ -2626,8 +3087,7 @@
 +   
 ```
 
-#### usePortal (task/27)
-
+#### solution 4
 ```diff
 -const usePortal = el => {
 +const usePortal = el => {
@@ -2645,8 +3105,19 @@
 +    };
 ```
 
-#### Mailto (task/28)
+### Mailto (task/28)
 
+#### canonical solution
+```react
+const Mailto = ({ email, subject = '', body = '', children }) => {  let params = subject || body ? '?' : '';
+  if (subject) params += `subject=${encodeURIComponent(subject)}`;
+  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+  return <a href={`mailto:${email}${params}`}>{children}</a>;
+};
+```
+
+#### solution 0
 ```diff
 -const Mailto = ({ email, subject = '', body = '', children }) => {
 +const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -2660,8 +3131,7 @@
 +    ...(tabIndex === undefined ? { tabIndex: '-1' } : { tabIndex }
 ```
 
-#### Mailto (task/28)
-
+#### solution 1
 ```diff
 -const Mailto = ({ email, subject = '', body = '', children }) => {
 +const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -2675,8 +3145,7 @@
 +    </a>
 ```
 
-#### Mailto (task/28)
-
+#### solution 2
 ```diff
 -const Mailto = ({ email, subject = '', body = '', children }) => {
 +const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -2694,8 +3163,7 @@
 +export default Mailto
 ```
 
-#### Mailto (task/28)
-
+#### solution 3
 ```diff
 -const Mailto = ({ email, subject = '', body = '', children }) => {
 +const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -2717,8 +3185,7 @@
 +  email
 ```
 
-#### Mailto (task/28)
-
+#### solution 4
 ```diff
 -const Mailto = ({ email, subject = '', body = '', children }) => {
 +const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -2739,8 +3206,35 @@
 +export default Mailto;
 ```
 
-#### useKeyPress (task/29)
+### useKeyPress (task/29)
 
+#### canonical solution
+```react
+const useKeyPress = targetKey => {  const [keyPressed, setKeyPressed] = React.useState(false);
+
+  const downHandler = ({ key }) => {
+    if (key === targetKey) setKeyPressed(true);
+  };
+
+  const upHandler = ({ key }) => {
+    if (key === targetKey) setKeyPressed(false);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener('keydown', downHandler);
+    window.addEventListener('keyup', upHandler);
+
+    return () => {
+      window.removeEventListener('keydown', downHandler);
+      window.removeEventListener('keyup', upHandler);
+    };
+  }, []);
+
+  return keyPressed;
+};
+```
+
+#### solution 0
 ```diff
 -const useKeyPress = targetKey => {
 +const useKeyPress = targetKey => {
@@ -2762,8 +3256,7 @@
 +export default useKeyPress;
 ```
 
-#### useKeyPress (task/29)
-
+#### solution 1
 ```diff
 -const useKeyPress = targetKey => {
 +const useKeyPress = targetKey => {
@@ -2785,8 +3278,7 @@
 +  useEffect(() => {
 ```
 
-#### useKeyPress (task/29)
-
+#### solution 2
 ```diff
 -const useKeyPress = targetKey => {
 +const useKeyPress = targetKey => {
@@ -2806,8 +3298,7 @@
 +	};
 ```
 
-#### useKeyPress (task/29)
-
+#### solution 3
 ```diff
 -const useKeyPress = targetKey => {
 +const useKeyPress = targetKey => {
@@ -2826,8 +3317,7 @@
 +  const upHandler =
 ```
 
-#### useKeyPress (task/29)
-
+#### solution 4
 ```diff
 -const useKeyPress = targetKey => {
 +const useKeyPress = targetKey => {
@@ -2849,8 +3339,53 @@
 +  useEffect(() => {
 ```
 
-#### CountDown (task/30)
+### CountDown (task/30)
 
+#### canonical solution
+```react
+const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {  const [paused, setPaused] = React.useState(false);
+  const [over, setOver] = React.useState(false);
+  const [[h, m, s], setTime] = React.useState([hours, minutes, seconds]);
+
+  const tick = () => {
+    if (paused || over) return;
+    if (h === 0 && m === 0 && s === 0) setOver(true);
+    else if (m === 0 && s === 0) {
+      setTime([h - 1, 59, 59]);
+    } else if (s == 0) {
+      setTime([h, m - 1, 59]);
+    } else {
+      setTime([h, m, s - 1]);
+    }
+  };
+
+  const reset = () => {
+    setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
+    setPaused(false);
+    setOver(false);
+  };
+
+  React.useEffect(() => {
+    const timerID = setInterval(() => tick(), 1000);
+    return () => clearInterval(timerID);
+  });
+
+  return (
+    <div>
+      <p>{`${h.toString().padStart(2, '0')}:${m
+        .toString()
+        .padStart(2, '0')}:${s.toString().padStart(2, '0')}`}</p>
+      <div>{over ? "Time's up!" : ''}</div>
+      <button onClick={() => setPaused(!paused)}>
+        {paused ? 'Resume' : 'Pause'}
+      </button>
+      <button onClick={() => reset()}>Restart</button>
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
@@ -2865,8 +3400,7 @@
 +          const newCountDown = { ...prevCountDown };
 ```
 
-#### CountDown (task/30)
-
+#### solution 1
 ```diff
 -const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
@@ -2885,8 +3419,7 @@
 +    return () => clearInterval(
 ```
 
-#### CountDown (task/30)
-
+#### solution 2
 ```diff
 -const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
@@ -2901,8 +3434,7 @@
 +        <span className="countdown-value">{minutes}</span>
 ```
 
-#### CountDown (task/30)
-
+#### solution 3
 ```diff
 -const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
@@ -2922,8 +3454,7 @@
 +  const time = timeLeft => {
 ```
 
-#### CountDown (task/30)
-
+#### solution 4
 ```diff
 -const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
 +const CountDown = ({ hours = 0, minutes = 0, seconds = 0 }) => {
@@ -2938,8 +3469,45 @@
 +export default CountDown;
 ```
 
-#### Alert (task/31)
+### Alert (task/31)
 
+#### canonical solution
+```react
+const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {  const [isShown, setIsShown] = React.useState(isDefaultShown);
+  const [isLeaving, setIsLeaving] = React.useState(false);
+
+  let timeoutId = null;
+
+  React.useEffect(() => {
+    setIsShown(true);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [isDefaultShown, timeout, timeoutId]);
+
+  const closeAlert = () => {
+    setIsLeaving(true);
+    timeoutId = setTimeout(() => {
+      setIsLeaving(false);
+      setIsShown(false);
+    }, timeout);
+  };
+
+  return (
+    isShown && (
+      <div
+        className={`alert ${type} ${isLeaving ? 'leaving' : ''}`}
+        role="alert"
+      >
+        <button className="close" onClick={closeAlert} />
+        {message}
+      </div>
+    )
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 +const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -2960,8 +3528,7 @@
 +      classes=
 ```
 
-#### Alert (task/31)
-
+#### solution 1
 ```diff
 -const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 +const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -2977,8 +3544,7 @@
 +     
 ```
 
-#### Alert (task/31)
-
+#### solution 2
 ```diff
 -const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 +const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -2997,8 +3563,7 @@
 +  use
 ```
 
-#### Alert (task/31)
-
+#### solution 3
 ```diff
 -const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 +const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -3018,8 +3583,7 @@
 +    set
 ```
 
-#### Alert (task/31)
-
+#### solution 4
 ```diff
 -const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
 +const Alert = ({ isDefaultShown = false, timeout = 250, type, message }) => {
@@ -3039,8 +3603,35 @@
 +        setTimeout(() =>
 ```
 
-#### useHash (task/32)
+### useHash (task/32)
 
+#### canonical solution
+```react
+const useHash = () => {  const [hash, setHash] = React.useState(() => window.location.hash);
+
+  const hashChangeHandler = React.useCallback(() => {
+    setHash(window.location.hash);
+  }, []);
+
+  React.useEffect(() => {
+    window.addEventListener('hashchange', hashChangeHandler);
+    return () => {
+      window.removeEventListener('hashchange', hashChangeHandler);
+    };
+  }, []);
+
+  const updateHash = React.useCallback(
+    newHash => {
+      if (newHash !== hash) window.location.hash = newHash;
+    },
+    [hash]
+  );
+
+  return [hash, updateHash];
+};
+```
+
+#### solution 0
 ```diff
 -const useHash = () => {
 +const useHash = () => {
@@ -3057,8 +3648,7 @@
 +  window.history.pushState({
 ```
 
-#### useHash (task/32)
-
+#### solution 1
 ```diff
 -const useHash = () => {
 +const useHash = () => {
@@ -3076,8 +3666,7 @@
 +export default useHash;
 ```
 
-#### useHash (task/32)
-
+#### solution 2
 ```diff
 -const useHash = () => {
 +const useHash = () => {
@@ -3097,8 +3686,7 @@
 +      window
 ```
 
-#### useHash (task/32)
-
+#### solution 3
 ```diff
 -const useHash = () => {
 +const useHash = () => {
@@ -3109,8 +3697,7 @@
 +export default useHash;
 ```
 
-#### useHash (task/32)
-
+#### solution 4
 ```diff
 -const useHash = () => {
 +const useHash = () => {
@@ -3129,8 +3716,29 @@
 + 
 ```
 
-#### useDelayedState (task/33)
+### useDelayedState (task/33)
 
+#### canonical solution
+```react
+const useDelayedState = (initialState, condition) => {  const [{ state, loaded }, setState] = React.useState({
+    state: null,
+    loaded: false,
+  });
+
+  React.useEffect(() => {
+    if (!loaded && condition) setState({ state: initialState, loaded: true });
+  }, [condition, loaded]);
+
+  const updateState = newState => {
+    if (!loaded) return;
+    setState({ state: newState, loaded });
+  };
+
+  return [state, updateState];
+};
+```
+
+#### solution 0
 ```diff
 -const useDelayedState = (initialState, condition) => {
 +const useDelayedState = (initialState, condition) => {
@@ -3149,8 +3757,7 @@
 +      setValue(delayedValue);
 ```
 
-#### useDelayedState (task/33)
-
+#### solution 1
 ```diff
 -const useDelayedState = (initialState, condition) => {
 +const useDelayedState = (initialState, condition) => {
@@ -3171,8 +3778,7 @@
 +   
 ```
 
-#### useDelayedState (task/33)
-
+#### solution 2
 ```diff
 -const useDelayedState = (initialState, condition) => {
 +const useDelayedState = (initialState, condition) => {
@@ -3193,8 +3799,7 @@
 +  return
 ```
 
-#### useDelayedState (task/33)
-
+#### solution 3
 ```diff
 -const useDelayedState = (initialState, condition) => {
 +const useDelayedState = (initialState, condition) => {
@@ -3214,8 +3819,7 @@
 +    }
 ```
 
-#### useDelayedState (task/33)
-
+#### solution 4
 ```diff
 -const useDelayedState = (initialState, condition) => {
 +const useDelayedState = (initialState, condition) => {
@@ -3234,8 +3838,38 @@
 +    setDelayedState(value);
 ```
 
-#### useSearchParam (task/34)
+### useSearchParam (task/34)
 
+#### canonical solution
+```react
+const useSearchParam = param => {  const getValue = React.useCallback(
+    () => new URLSearchParams(window.location.search).get(param),
+    [param]
+  );
+
+  const [value, setValue] = React.useState(getValue);
+
+  React.useEffect(() => {
+    const onChange = () => {
+      setValue(getValue());
+    };
+
+    window.addEventListener('popstate', onChange);
+    window.addEventListener('pushstate', onChange);
+    window.addEventListener('replacestate', onChange);
+
+    return () => {
+      window.removeEventListener('popstate', onChange);
+      window.removeEventListener('pushstate', onChange);
+      window.removeEventListener('replacestate', onChange);
+    };
+  }, []);
+
+  return value;
+};
+```
+
+#### solution 0
 ```diff
 -const useSearchParam = param => {
 +const useSearchParam = param => {
@@ -3251,8 +3885,7 @@
 +export default useSearchParam;
 ```
 
-#### useSearchParam (task/34)
-
+#### solution 1
 ```diff
 -const useSearchParam = param => {
 +const useSearchParam = param => {
@@ -3268,8 +3901,7 @@
 +        set
 ```
 
-#### useSearchParam (task/34)
-
+#### solution 2
 ```diff
 -const useSearchParam = param => {
 +const useSearchParam = param => {
@@ -3285,8 +3917,7 @@
 +        a[c[0
 ```
 
-#### useSearchParam (task/34)
-
+#### solution 3
 ```diff
 -const useSearchParam = param => {
 +const useSearchParam = param => {
@@ -3303,8 +3934,7 @@
 +      searchBy
 ```
 
-#### useSearchParam (task/34)
-
+#### solution 4
 ```diff
 -const useSearchParam = param => {
 +const useSearchParam = param => {
@@ -3319,8 +3949,16 @@
 +      const query = queryString.substring(1).split('&');
 ```
 
-#### useUpdate (task/35)
+### useUpdate (task/35)
 
+#### canonical solution
+```react
+const useUpdate = () => {  const [, update] = React.useReducer(() => ({}));
+  return update;
+};
+```
+
+#### solution 0
 ```diff
 -const useUpdate = () => {
 +const useUpdate = () => {
@@ -3339,8 +3977,7 @@
 +         
 ```
 
-#### useUpdate (task/35)
-
+#### solution 1
 ```diff
 -const useUpdate = () => {
 +const useUpdate = () => {
@@ -3352,8 +3989,7 @@
 +export default useUpdate;
 ```
 
-#### useUpdate (task/35)
-
+#### solution 2
 ```diff
 -const useUpdate = () => {
 +const useUpdate = () => {
@@ -3375,8 +4011,7 @@
 +      <p
 ```
 
-#### useUpdate (task/35)
-
+#### solution 3
 ```diff
 -const useUpdate = () => {
 +const useUpdate = () => {
@@ -3390,8 +4025,7 @@
 +    setIsLoading(true);
 ```
 
-#### useUpdate (task/35)
-
+#### solution 4
 ```diff
 -const useUpdate = () => {
 +const useUpdate = () => {
@@ -3413,8 +4047,27 @@
 +    useEffect(() => {
 ```
 
-#### Select (task/36)
+### Select (task/36)
 
+#### canonical solution
+```react
+const Select = ({ values, onValueChange, selectedValue, ...rest }) => {  return (
+    <select
+      defaultValue={selectedValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    >
+      {values.map(([value, text]) => (
+        <option key={value} value={value}>
+          {text}
+        </option>
+      ))}
+    </select>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
@@ -3437,8 +4090,7 @@
 +   
 ```
 
-#### Select (task/36)
-
+#### solution 1
 ```diff
 -const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
@@ -3458,8 +4110,7 @@
 +    </select
 ```
 
-#### Select (task/36)
-
+#### solution 2
 ```diff
 -const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
@@ -3479,8 +4130,7 @@
 +  );
 ```
 
-#### Select (task/36)
-
+#### solution 3
 ```diff
 -const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
@@ -3501,8 +4151,7 @@
 +  const
 ```
 
-#### Select (task/36)
-
+#### solution 4
 ```diff
 -const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
 +const Select = ({ values, onValueChange, selectedValue, ...rest }) => {
@@ -3528,8 +4177,51 @@
 +Select.
 ```
 
-#### LimitedWordTextarea (task/37)
+### LimitedWordTextarea (task/37)
 
+#### canonical solution
+```react
+const LimitedWordTextarea = ({ rows, cols, value, limit }) => {  const [{ content, wordCount }, setContent] = React.useState({
+    content: value,
+    wordCount: 0
+  });
+
+  const setFormattedContent = React.useCallback(
+    text => {
+      let words = text.split(' ').filter(Boolean);
+      if (words.length > limit) {
+        setContent({
+          content: words.slice(0, limit).join(' '),
+          wordCount: limit
+        });
+      } else {
+        setContent({ content: text, wordCount: words.length });
+      }
+    },
+    [limit, setContent]
+  );
+
+  React.useEffect(() => {
+    setFormattedContent(content);
+  }, []);
+
+  return (
+    <>
+      <textarea
+        rows={rows}
+        cols={cols}
+        onChange={event => setFormattedContent(event.target.value)}
+        value={content}
+      />
+      <p>
+        {wordCount}/{limit}
+      </p>
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
@@ -3551,8 +4243,7 @@
 +export default LimitedWordTextarea;
 ```
 
-#### LimitedWordTextarea (task/37)
-
+#### solution 1
 ```diff
 -const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
@@ -3572,8 +4263,7 @@
 +  const onBlur
 ```
 
-#### LimitedWordTextarea (task/37)
-
+#### solution 2
 ```diff
 -const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
@@ -3592,8 +4282,7 @@
 +      <Textarea
 ```
 
-#### LimitedWordTextarea (task/37)
-
+#### solution 3
 ```diff
 -const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
@@ -3608,8 +4297,7 @@
 +    setCount
 ```
 
-#### LimitedWordTextarea (task/37)
-
+#### solution 4
 ```diff
 -const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedWordTextarea = ({ rows, cols, value, limit }) => {
@@ -3624,8 +4312,24 @@
 +    setLength(new
 ```
 
-#### useOnWindowScroll (task/38)
+### useOnWindowScroll (task/38)
 
+#### canonical solution
+```react
+const useOnWindowScroll = callback => {  const listener = React.useRef(null);
+
+  React.useEffect(() => {
+    if (listener.current)
+      window.removeEventListener('scroll', listener.current);
+    listener.current = window.addEventListener('scroll', callback);
+    return () => {
+      window.removeEventListener('scroll', listener.current);
+    };
+  }, [callback]);
+};
+```
+
+#### solution 0
 ```diff
 -const useOnWindowScroll = callback => {
 +const useOnWindowScroll = callback => {
@@ -3644,8 +4348,7 @@
 +    window
 ```
 
-#### useOnWindowScroll (task/38)
-
+#### solution 1
 ```diff
 -const useOnWindowScroll = callback => {
 +const useOnWindowScroll = callback => {
@@ -3664,8 +4367,7 @@
 +  }, [win]);
 ```
 
-#### useOnWindowScroll (task/38)
-
+#### solution 2
 ```diff
 -const useOnWindowScroll = callback => {
 +const useOnWindowScroll = callback => {
@@ -3684,8 +4386,7 @@
 +
 ```
 
-#### useOnWindowScroll (task/38)
-
+#### solution 3
 ```diff
 -const useOnWindowScroll = callback => {
 +const useOnWindowScroll = callback => {
@@ -3705,8 +4406,7 @@
 +export default useOnWindowScroll;
 ```
 
-#### useOnWindowScroll (task/38)
-
+#### solution 4
 ```diff
 -const useOnWindowScroll = callback => {
 +const useOnWindowScroll = callback => {
@@ -3726,8 +4426,25 @@
 +      window.removeEventListener('scroll',
 ```
 
-#### useClickInside (task/39)
+### useClickInside (task/39)
 
+#### canonical solution
+```react
+const useClickInside = (ref, callback) => {  const handleClick = e => {
+    if (ref.current && ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+  React.useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  });
+};
+```
+
+#### solution 0
 ```diff
 -const useClickInside = (ref, callback) => {
 +const useClickInside = (ref, callback) => {
@@ -3750,8 +4467,7 @@
 +export const
 ```
 
-#### useClickInside (task/39)
-
+#### solution 1
 ```diff
 -const useClickInside = (ref, callback) => {
 +const useClickInside = (ref, callback) => {
@@ -3774,8 +4490,7 @@
 +export default useClickInside;
 ```
 
-#### useClickInside (task/39)
-
+#### solution 2
 ```diff
 -const useClickInside = (ref, callback) => {
 +const useClickInside = (ref, callback) => {
@@ -3796,8 +4511,7 @@
 +    const listener = event
 ```
 
-#### useClickInside (task/39)
-
+#### solution 3
 ```diff
 -const useClickInside = (ref, callback) => {
 +const useClickInside = (ref, callback) => {
@@ -3821,8 +4535,7 @@
 +  "
 ```
 
-#### useClickInside (task/39)
-
+#### solution 4
 ```diff
 -const useClickInside = (ref, callback) => {
 +const useClickInside = (ref, callback) => {
@@ -3845,8 +4558,44 @@
 +export default useClickInside
 ```
 
-#### useSSR (task/40)
+### useSSR (task/40)
 
+#### canonical solution
+```react
+const isDOMavailable = !!(  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
+
+const useSSR = () => {
+  const [inBrowser, setInBrowser] = React.useState(isDOMavailable);
+
+  React.useEffect(() => {
+    setInBrowser(isDOMavailable);
+    return () => {
+      setInBrowser(false);
+    };
+  }, []);
+
+  const useSSRObject = React.useMemo(
+    () => ({
+      isBrowser: inBrowser,
+      isServer: !inBrowser,
+      canUseWorkers: typeof Worker !== 'undefined',
+      canUseEventListeners: inBrowser && !!window.addEventListener,
+      canUseViewport: inBrowser && !!window.screen
+    }),
+    [inBrowser]
+  );
+
+  return React.useMemo(
+    () => Object.assign(Object.values(useSSRObject), useSSRObject),
+    [inBrowser]
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
@@ -3863,8 +4612,7 @@
 +export const isChrome
 ```
 
-#### useSSR (task/40)
-
+#### solution 1
 ```diff
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
@@ -3882,8 +4630,7 @@
 +  'invert': 5,
 ```
 
-#### useSSR (task/40)
-
+#### solution 2
 ```diff
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
@@ -3904,8 +4651,7 @@
 +    element.
 ```
 
-#### useSSR (task/40)
-
+#### solution 3
 ```diff
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
@@ -3922,8 +4668,7 @@
 +  if (meta &&
 ```
 
-#### useSSR (task/40)
-
+#### solution 4
 ```diff
 -const isDOMavailable = !!(
 +const isDOMavailable = !!(
@@ -3947,8 +4692,36 @@
 +  }
 ```
 
-#### LimitedTextarea (task/41)
+### LimitedTextarea (task/41)
 
+#### canonical solution
+```react
+const LimitedTextarea = ({ rows, cols, value, limit }) => {  const [content, setContent] = React.useState(value.slice(0, limit));
+
+  const setFormattedContent = React.useCallback(
+    text => {
+      setContent(text.slice(0, limit));
+    },
+    [limit, setContent]
+  );
+
+  return (
+    <>
+      <textarea
+        rows={rows}
+        cols={cols}
+        onChange={event => setFormattedContent(event.target.value)}
+        value={content}
+      />
+      <p>
+        {content.length}/{limit}
+      </p>
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const LimitedTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedTextarea = ({ rows, cols, value, limit }) => {
@@ -3967,8 +4740,7 @@
 +    setText(text.slice
 ```
 
-#### LimitedTextarea (task/41)
-
+#### solution 1
 ```diff
 -const LimitedTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedTextarea = ({ rows, cols, value, limit }) => {
@@ -3985,8 +4757,7 @@
 +     
 ```
 
-#### LimitedTextarea (task/41)
-
+#### solution 2
 ```diff
 -const LimitedTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedTextarea = ({ rows, cols, value, limit }) => {
@@ -4004,8 +4775,7 @@
 +    setTextCount(e.target.value.length)
 ```
 
-#### LimitedTextarea (task/41)
-
+#### solution 3
 ```diff
 -const LimitedTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedTextarea = ({ rows, cols, value, limit }) => {
@@ -4026,8 +4796,7 @@
 +  return (
 ```
 
-#### LimitedTextarea (task/41)
-
+#### solution 4
 ```diff
 -const LimitedTextarea = ({ rows, cols, value, limit }) => {
 +const LimitedTextarea = ({ rows, cols, value, limit }) => {
@@ -4045,8 +4814,17 @@
 +     
 ```
 
-#### useComponentDidMount (task/42)
+### useComponentDidMount (task/42)
 
+#### canonical solution
+```react
+const useComponentDidMount = onMountHandler => {  React.useEffect(() => {
+    onMountHandler();
+  }, []);
+};
+```
+
+#### solution 0
 ```diff
 -const useComponentDidMount = onMountHandler => {
 +const useComponentDidMount = onMountHandler => {
@@ -4071,8 +4849,7 @@
 +export const
 ```
 
-#### useComponentDidMount (task/42)
-
+#### solution 1
 ```diff
 -const useComponentDidMount = onMountHandler => {
 +const useComponentDidMount = onMountHandler => {
@@ -4085,8 +4862,7 @@
 +export default useComponentDidMount;
 ```
 
-#### useComponentDidMount (task/42)
-
+#### solution 2
 ```diff
 -const useComponentDidMount = onMountHandler => {
 +const useComponentDidMount = onMountHandler => {
@@ -4101,8 +4877,7 @@
 +export default useComponentDidMount
 ```
 
-#### useComponentDidMount (task/42)
-
+#### solution 3
 ```diff
 -const useComponentDidMount = onMountHandler => {
 +const useComponentDidMount = onMountHandler => {
@@ -4123,8 +4898,7 @@
 +export { useComponentDidMount, useComponentWillUnmount };
 ```
 
-#### useComponentDidMount (task/42)
-
+#### solution 4
 ```diff
 -const useComponentDidMount = onMountHandler => {
 +const useComponentDidMount = onMountHandler => {
@@ -4137,8 +4911,74 @@
 +export default useComponentDidMount;
 ```
 
-#### FileDrop (task/43)
+### FileDrop (task/43)
 
+#### canonical solution
+```react
+const FileDrop = ({ onDrop }) => {  const [drag, setDrag] = React.useState(false);
+  const [filename, setFilename] = React.useState('');
+  let dropRef = React.createRef();
+  let dragCounter = 0;
+
+  const handleDrag = e => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDragIn = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter++;
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) setDrag(true);
+  };
+
+  const handleDragOut = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter--;
+    if (dragCounter === 0) setDrag(false);
+  };
+
+  const handleDrop = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDrag(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      onDrop(e.dataTransfer.files[0]);
+      setFilename(e.dataTransfer.files[0].name);
+      e.dataTransfer.clearData();
+      dragCounter = 0;
+    }
+  };
+
+  React.useEffect(() => {
+    let div = dropRef.current;
+    div.addEventListener('dragenter', handleDragIn);
+    div.addEventListener('dragleave', handleDragOut);
+    div.addEventListener('dragover', handleDrag);
+    div.addEventListener('drop', handleDrop);
+    return () => {
+      div.removeEventListener('dragenter', handleDragIn);
+      div.removeEventListener('dragleave', handleDragOut);
+      div.removeEventListener('dragover', handleDrag);
+      div.removeEventListener('drop', handleDrop);
+    };
+  });
+
+  return (
+    <div
+      ref={dropRef}
+      className={
+        drag ? 'filedrop drag' : filename ? 'filedrop ready' : 'filedrop'
+      }
+    >
+      {filename && !drag ? <div>{filename}</div> : <div>Drop a file here!</div>}
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const FileDrop = ({ onDrop }) => {
 +const FileDrop = ({ onDrop }) => {
@@ -4161,8 +5001,7 @@
 +      onDrop={handleDrop
 ```
 
-#### FileDrop (task/43)
-
+#### solution 1
 ```diff
 -const FileDrop = ({ onDrop }) => {
 +const FileDrop = ({ onDrop }) => {
@@ -4183,8 +5022,7 @@
 +  const onDropHandler = useCallback
 ```
 
-#### FileDrop (task/43)
-
+#### solution 2
 ```diff
 -const FileDrop = ({ onDrop }) => {
 +const FileDrop = ({ onDrop }) => {
@@ -4207,8 +5045,7 @@
 +      <div class
 ```
 
-#### FileDrop (task/43)
-
+#### solution 3
 ```diff
 -const FileDrop = ({ onDrop }) => {
 +const FileDrop = ({ onDrop }) => {
@@ -4229,8 +5066,7 @@
 +    setDragOver
 ```
 
-#### FileDrop (task/43)
-
+#### solution 4
 ```diff
 -const FileDrop = ({ onDrop }) => {
 +const FileDrop = ({ onDrop }) => {
@@ -4247,8 +5083,62 @@
 +   
 ```
 
-#### TreeView (task/44)
+### TreeView (task/44)
 
+#### canonical solution
+```react
+const TreeView = ({  data,
+  toggled = true,
+  name = null,
+  isLast = true,
+  isChildElement = false,
+  isParentToggled = true
+}) => {
+  const [isToggled, setIsToggled] = React.useState(toggled);
+  const isDataArray = Array.isArray(data);
+
+  return (
+    <div
+      className={`tree-element ${isParentToggled && 'collapsed'} ${
+        isChildElement && 'is-child'
+      }`}
+    >
+      <span
+        className={isToggled ? 'toggler' : 'toggler closed'}
+        onClick={() => setIsToggled(!isToggled)}
+      />
+      {name ? <strong>&nbsp;&nbsp;{name}: </strong> : <span>&nbsp;&nbsp;</span>}
+      {isDataArray ? '[' : '{'}
+      {!isToggled && '...'}
+      {Object.keys(data).map((v, i, a) =>
+        typeof data[v] === 'object' ? (
+          <TreeView
+            key={`${name}-${v}-${i}`}
+            data={data[v]}
+            isLast={i === a.length - 1}
+            name={isDataArray ? null : v}
+            isChildElement
+            isParentToggled={isParentToggled && isToggled}
+          />
+        ) : (
+          <p
+            key={`${name}-${v}-${i}`}
+            className={isToggled ? 'tree-element' : 'tree-element collapsed'}
+          >
+            {isDataArray ? '' : <strong>{v}: </strong>}
+            {data[v]}
+            {i === a.length - 1 ? '' : ','}
+          </p>
+        )
+      )}
+      {isDataArray ? ']' : '}'}
+      {!isLast ? ',' : ''}
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const TreeView = ({
 +const TreeView = ({
@@ -4272,8 +5162,7 @@
 +   
 ```
 
-#### TreeView (task/44)
-
+#### solution 1
 ```diff
 -const TreeView = ({
 +const TreeView = ({
@@ -4298,8 +5187,7 @@
 +    autoFocus, disabled,
 ```
 
-#### TreeView (task/44)
-
+#### solution 2
 ```diff
 -const TreeView = ({
 +const TreeView = ({
@@ -4315,8 +5203,7 @@
 +      onDoubleClick(item,
 ```
 
-#### TreeView (task/44)
-
+#### solution 3
 ```diff
 -const TreeView = ({
 +const TreeView = ({
@@ -4327,8 +5214,7 @@
 +  const [expanded, setExpanded
 ```
 
-#### TreeView (task/44)
-
+#### solution 4
 ```diff
 -const TreeView = ({
 +const TreeView = ({
@@ -4346,8 +5232,45 @@
 +    const currentIndex = expanded.indexOf(value);
 ```
 
-#### usePersistedState (task/45)
+### usePersistedState (task/45)
 
+#### canonical solution
+```react
+const usePersistedState = (name, defaultValue) => {  const [value, setValue] = React.useState(defaultValue);
+  const nameRef = React.useRef(name);
+
+  React.useEffect(() => {
+    try {
+      const storedValue = localStorage.getItem(name);
+      if (storedValue !== null) setValue(storedValue);
+      else localStorage.setItem(name, defaultValue);
+    } catch {
+      setValue(defaultValue);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    try {
+      localStorage.setItem(nameRef.current, value);
+    } catch {}
+  }, [value]);
+
+  React.useEffect(() => {
+    const lastName = nameRef.current;
+    if (name !== lastName) {
+      try {
+        localStorage.setItem(name, value);
+        nameRef.current = name;
+        localStorage.removeItem(lastName);
+      } catch {}
+    }
+  }, [name]);
+
+  return [value, setValue];
+};
+```
+
+#### solution 0
 ```diff
 -const usePersistedState = (name, defaultValue) => {
 +const usePersistedState = (name, defaultValue) => {
@@ -4367,8 +5290,7 @@
 +  return [value
 ```
 
-#### usePersistedState (task/45)
-
+#### solution 1
 ```diff
 -const usePersistedState = (name, defaultValue) => {
 +const usePersistedState = (name, defaultValue) => {
@@ -4387,8 +5309,7 @@
 +};
 ```
 
-#### usePersistedState (task/45)
-
+#### solution 2
 ```diff
 -const usePersistedState = (name, defaultValue) => {
 +const usePersistedState = (name, defaultValue) => {
@@ -4407,8 +5328,7 @@
 +export default usePersistedState;
 ```
 
-#### usePersistedState (task/45)
-
+#### solution 3
 ```diff
 -const usePersistedState = (name, defaultValue) => {
 +const usePersistedState = (name, defaultValue) => {
@@ -4424,8 +5344,7 @@
 +  };
 ```
 
-#### usePersistedState (task/45)
-
+#### solution 4
 ```diff
 -const usePersistedState = (name, defaultValue) => {
 +const usePersistedState = (name, defaultValue) => {
@@ -4444,8 +5363,33 @@
 +      window.localStorage.setItem(name
 ```
 
-#### useWindowSize (task/46)
+### useWindowSize (task/46)
 
+#### canonical solution
+```react
+const useWindowSize = () => {  const [windowSize, setWindowSize] = React.useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  React.useEffect(() => {
+    const handleResize = () =>
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return windowSize;
+};
+```
+
+#### solution 0
 ```diff
 -const useWindowSize = () => {
 +const useWindowSize = () => {
@@ -4468,8 +5412,7 @@
 +        return () =>
 ```
 
-#### useWindowSize (task/46)
-
+#### solution 1
 ```diff
 -const useWindowSize = () => {
 +const useWindowSize = () => {
@@ -4492,8 +5435,7 @@
 +    return
 ```
 
-#### useWindowSize (task/46)
-
+#### solution 2
 ```diff
 -const useWindowSize = () => {
 +const useWindowSize = () => {
@@ -4514,8 +5456,7 @@
 +    window.addEventListener('resize', handleResize);
 ```
 
-#### useWindowSize (task/46)
-
+#### solution 3
 ```diff
 -const useWindowSize = () => {
 +const useWindowSize = () => {
@@ -4537,8 +5478,7 @@
 +    return
 ```
 
-#### useWindowSize (task/46)
-
+#### solution 4
 ```diff
 -const useWindowSize = () => {
 +const useWindowSize = () => {
@@ -4560,8 +5500,21 @@
 +   
 ```
 
-#### ControlledInput (task/47)
+### ControlledInput (task/47)
 
+#### canonical solution
+```react
+const ControlledInput = ({ value, onValueChange, ...rest }) => {  return (
+    <input
+      value={value}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    />
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
@@ -4578,8 +5531,7 @@
 +export default ControlledInput;
 ```
 
-#### ControlledInput (task/47)
-
+#### solution 1
 ```diff
 -const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
@@ -4600,8 +5552,7 @@
 +};
 ```
 
-#### ControlledInput (task/47)
-
+#### solution 2
 ```diff
 -const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
@@ -4623,8 +5574,7 @@
 +  return (
 ```
 
-#### ControlledInput (task/47)
-
+#### solution 3
 ```diff
 -const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
@@ -4649,8 +5599,7 @@
 +  value: PropTypes.string.isRequired,
 ```
 
-#### ControlledInput (task/47)
-
+#### solution 4
 ```diff
 -const ControlledInput = ({ value, onValueChange, ...rest }) => {
 +const ControlledInput = ({ value, onValueChange, ...rest }) => {
@@ -4671,8 +5620,32 @@
 +      {...rest}
 ```
 
-#### DataTable (task/48)
+### DataTable (task/48)
 
+#### canonical solution
+```react
+const DataTable = ({ data }) => {  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((val, i) => (
+          <tr key={`${i}_${val}`}>
+            <td>{i}</td>
+            <td>{val}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const DataTable = ({ data }) => {
 +const DataTable = ({ data }) => {
@@ -4691,8 +5664,7 @@
 +        </thead
 ```
 
-#### DataTable (task/48)
-
+#### solution 1
 ```diff
 -const DataTable = ({ data }) => {
 +const DataTable = ({ data }) => {
@@ -4712,8 +5684,7 @@
 +      <tbody
 ```
 
-#### DataTable (task/48)
-
+#### solution 2
 ```diff
 -const DataTable = ({ data }) => {
 +const DataTable = ({ data }) => {
@@ -4739,8 +5710,7 @@
 +      defaultPageSize={10}
 ```
 
-#### DataTable (task/48)
-
+#### solution 3
 ```diff
 -const DataTable = ({ data }) => {
 +const DataTable = ({ data }) => {
@@ -4759,8 +5729,7 @@
 +        <tr>
 ```
 
-#### DataTable (task/48)
-
+#### solution 4
 ```diff
 -const DataTable = ({ data }) => {
 +const DataTable = ({ data }) => {
@@ -4778,8 +5747,20 @@
 +        </
 ```
 
-#### useComponentWillUnmount (task/49)
+### useComponentWillUnmount (task/49)
 
+#### canonical solution
+```react
+const useComponentWillUnmount = onUnmountHandler => {  React.useEffect(
+    () => () => {
+      onUnmountHandler();
+    },
+    []
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const useComponentWillUnmount = onUnmountHandler => {
 +const useComponentWillUnmount = onUnmountHandler => {
@@ -4794,8 +5775,7 @@
 +export default useComponentWillUnmount
 ```
 
-#### useComponentWillUnmount (task/49)
-
+#### solution 1
 ```diff
 -const useComponentWillUnmount = onUnmountHandler => {
 +const useComponentWillUnmount = onUnmountHandler => {
@@ -4816,8 +5796,7 @@
 +export { useComponentDidMount, useComponentWillUnmount };
 ```
 
-#### useComponentWillUnmount (task/49)
-
+#### solution 2
 ```diff
 -const useComponentWillUnmount = onUnmountHandler => {
 +const useComponentWillUnmount = onUnmountHandler => {
@@ -4834,8 +5813,7 @@
 +export default useComponentWillUnmount;
 ```
 
-#### useComponentWillUnmount (task/49)
-
+#### solution 3
 ```diff
 -const useComponentWillUnmount = onUnmountHandler => {
 +const useComponentWillUnmount = onUnmountHandler => {
@@ -4853,8 +5831,7 @@
 +    }
 ```
 
-#### useComponentWillUnmount (task/49)
-
+#### solution 4
 ```diff
 -const useComponentWillUnmount = onUnmountHandler => {
 +const useComponentWillUnmount = onUnmountHandler => {
@@ -4874,8 +5851,49 @@
 +  }, []
 ```
 
-#### Tabs (task/50)
+### Tabs (task/50)
 
+#### canonical solution
+```react
+const TabItem = props => <div {...props} />;
+
+const Tabs = ({ defaultIndex = 0, onTabClick, children }) => {  const [bindIndex, setBindIndex] = React.useState(defaultIndex);
+  const changeTab = newIndex => {
+    if (typeof onTabClick === 'function') onTabClick(newIndex);
+    setBindIndex(newIndex);
+  };
+  const items = children.filter(item => item.type.name === 'TabItem');
+
+  return (
+    <div className="wrapper">
+      <div className="tab-menu">
+        {items.map(({ props: { index, label } }) => (
+          <button
+            key={`tab-btn-${index}`}
+            onClick={() => changeTab(index)}
+            className={bindIndex === index ? 'focus' : ''}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="tab-view">
+        {items.map(({ props }) => (
+          <div
+            {...props}
+            className={`tab-content ${
+              bindIndex === props.index ? 'selected' : ''
+            }`}
+            key={`tab-content-${props.index}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const TabItem = props => <div {...props} />;
 -
@@ -4898,8 +5916,7 @@
 +        const
 ```
 
-#### Tabs (task/50)
-
+#### solution 1
 ```diff
 -const TabItem = props => <div {...props} />;
 -
@@ -4922,8 +5939,7 @@
 +          return (
 ```
 
-#### Tabs (task/50)
-
+#### solution 2
 ```diff
 -const TabItem = props => <div {...props} />;
 -
@@ -4946,8 +5962,7 @@
 +          return null;
 ```
 
-#### Tabs (task/50)
-
+#### solution 3
 ```diff
 -const TabItem = props => <div {...props} />;
 -
@@ -4970,8 +5985,7 @@
 +      <TabItem onClick={() => onClick(0, children[0].props
 ```
 
-#### Tabs (task/50)
-
+#### solution 4
 ```diff
 -const TabItem = props => <div {...props} />;
 -
@@ -4994,8 +6008,35 @@
 +          const
 ```
 
-#### useNavigatorOnLine (task/51)
+### useNavigatorOnLine (task/51)
 
+#### canonical solution
+```react
+const getOnLineStatus = () =>  typeof navigator !== 'undefined' && typeof navigator.onLine === 'boolean'
+    ? navigator.onLine
+    : true;
+
+const useNavigatorOnLine = () => {
+  const [status, setStatus] = React.useState(getOnLineStatus());
+
+  const setOnline = () => setStatus(true);
+  const setOffline = () => setStatus(false);
+
+  React.useEffect(() => {
+    window.addEventListener('online', setOnline);
+    window.addEventListener('offline', setOffline);
+
+    return () => {
+      window.removeEventListener('online', setOnline);
+      window.removeEventListener('offline', setOffline);
+    };
+  }, []);
+
+  return status;
+};
+```
+
+#### solution 0
 ```diff
 -const getOnLineStatus = () =>
 +const getOnLineStatus = () =>
@@ -5015,8 +6056,7 @@
 +    const eventHandler =
 ```
 
-#### useNavigatorOnLine (task/51)
-
+#### solution 1
 ```diff
 -const getOnLineStatus = () =>
 +const getOnLineStatus = () =>
@@ -5041,8 +6081,7 @@
 +  if (is
 ```
 
-#### useNavigatorOnLine (task/51)
-
+#### solution 2
 ```diff
 -const getOnLineStatus = () =>
 +const getOnLineStatus = () =>
@@ -5064,8 +6103,7 @@
 +// getCurrentUrl
 ```
 
-#### useNavigatorOnLine (task/51)
-
+#### solution 3
 ```diff
 -const getOnLineStatus = () =>
 +const getOnLineStatus = () =>
@@ -5091,8 +6129,7 @@
 +
 ```
 
-#### useNavigatorOnLine (task/51)
-
+#### solution 4
 ```diff
 -const getOnLineStatus = () =>
 +const getOnLineStatus = () =>
@@ -5105,8 +6142,21 @@
 +        }
 ```
 
-#### PasswordRevealer (task/52)
+### PasswordRevealer (task/52)
 
+#### canonical solution
+```react
+const PasswordRevealer = ({ value }) => {  const [shown, setShown] = React.useState(false);
+  return (
+    <>
+      <input type={shown ? 'text' : 'password'} value={value} />
+      <button onClick={() => setShown(!shown)}>Show/Hide</button>
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const PasswordRevealer = ({ value }) => {
 +const PasswordRevealer = ({ value }) => {
@@ -5128,8 +6178,7 @@
 +              aria
 ```
 
-#### PasswordRevealer (task/52)
-
+#### solution 1
 ```diff
 -const PasswordRevealer = ({ value }) => {
 +const PasswordRevealer = ({ value }) => {
@@ -5148,8 +6197,7 @@
 +        className="w-full px-3 py-2 rounded-md text-sm
 ```
 
-#### PasswordRevealer (task/52)
-
+#### solution 2
 ```diff
 -const PasswordRevealer = ({ value }) => {
 +const PasswordRevealer = ({ value }) => {
@@ -5167,8 +6215,7 @@
 +  );
 ```
 
-#### PasswordRevealer (task/52)
-
+#### solution 3
 ```diff
 -const PasswordRevealer = ({ value }) => {
 +const PasswordRevealer = ({ value }) => {
@@ -5186,8 +6233,7 @@
 +      <Tool
 ```
 
-#### PasswordRevealer (task/52)
-
+#### solution 4
 ```diff
 -const PasswordRevealer = ({ value }) => {
 +const PasswordRevealer = ({ value }) => {
@@ -5207,8 +6253,46 @@
 +              on
 ```
 
-#### StarRating (task/53)
+### StarRating (task/53)
 
+#### canonical solution
+```react
+const Star = ({ marked, starId }) => {  return (
+    <span data-star-id={starId} className="star" role="button">
+      {marked ? '\u2605' : '\u2606'}
+    </span>
+  );
+};
+
+const StarRating = ({ value }) => {
+  const [rating, setRating] = React.useState(parseInt(value) || 0);
+  const [selection, setSelection] = React.useState(0);
+
+  const hoverOver = event => {
+    let val = 0;
+    if (event && event.target && event.target.getAttribute('data-star-id'))
+      val = event.target.getAttribute('data-star-id');
+    setSelection(val);
+  };
+  return (
+    <div
+      onMouseOut={() => hoverOver(null)}
+      onClick={e => setRating(e.target.getAttribute('data-star-id') || rating)}
+      onMouseOver={hoverOver}
+    >
+      {Array.from({ length: 5 }, (v, i) => (
+        <Star
+          starId={i + 1}
+          key={`star_${i + 1}`}
+          marked={selection ? selection >= i + 1 : rating >= i + 1}
+        />
+      ))}
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Star = ({ marked, starId }) => {
 +const Star = ({ marked, starId }) => {
@@ -5228,8 +6312,7 @@
 +export default Star;
 ```
 
-#### StarRating (task/53)
-
+#### solution 1
 ```diff
 -const Star = ({ marked, starId }) => {
 +const Star = ({ marked, starId }) => {
@@ -5244,8 +6327,7 @@
 +export default Star;
 ```
 
-#### StarRating (task/53)
-
+#### solution 2
 ```diff
 -const Star = ({ marked, starId }) => {
 +const Star = ({ marked, starId }) => {
@@ -5257,8 +6339,7 @@
 +export default Star;
 ```
 
-#### StarRating (task/53)
-
+#### solution 3
 ```diff
 -const Star = ({ marked, starId }) => {
 +const Star = ({ marked, starId }) => {
@@ -5271,8 +6352,7 @@
 +  const [description, setDescription] = useState
 ```
 
-#### StarRating (task/53)
-
+#### solution 4
 ```diff
 -const Star = ({ marked, starId }) => {
 +const Star = ({ marked, starId }) => {
@@ -5290,8 +6370,19 @@
 +export default Star;
 ```
 
-#### useComponentDidUpdate (task/54)
+### useComponentDidUpdate (task/54)
 
+#### canonical solution
+```react
+const useComponentDidUpdate = (callback, condition) => {  const mounted = React.useRef(false);
+  React.useEffect(() => {
+    if (mounted.current) callback();
+    else mounted.current = true;
+  }, condition);
+};
+```
+
+#### solution 0
 ```diff
 -const useComponentDidUpdate = (callback, condition) => {
 +const useComponentDidUpdate = (callback, condition) => {
@@ -5311,8 +6402,7 @@
 +        if (!condition || !condition()) return;
 ```
 
-#### useComponentDidUpdate (task/54)
-
+#### solution 1
 ```diff
 -const useComponentDidUpdate = (callback, condition) => {
 +const useComponentDidUpdate = (callback, condition) => {
@@ -5333,8 +6423,7 @@
 +export default useComponentDidUpdate;
 ```
 
-#### useComponentDidUpdate (task/54)
-
+#### solution 2
 ```diff
 -const useComponentDidUpdate = (callback, condition) => {
 +const useComponentDidUpdate = (callback, condition) => {
@@ -5349,8 +6438,7 @@
 +export default useComponentDidUpdate;
 ```
 
-#### useComponentDidUpdate (task/54)
-
+#### solution 3
 ```diff
 -const useComponentDidUpdate = (callback, condition) => {
 +const useComponentDidUpdate = (callback, condition) => {
@@ -5373,8 +6461,7 @@
 +export default useComponentDidUpdate;
 ```
 
-#### useComponentDidUpdate (task/54)
-
+#### solution 4
 ```diff
 -const useComponentDidUpdate = (callback, condition) => {
 +const useComponentDidUpdate = (callback, condition) => {
@@ -5395,8 +6482,26 @@
 +    prevState.
 ```
 
-#### Toggle (task/55)
+### Toggle (task/55)
 
+#### canonical solution
+```react
+const Toggle = ({ defaultToggled = false }) => {  const [isToggleOn, setIsToggleOn] = React.useState(defaultToggled);
+
+  return (
+    <label className={isToggleOn ? 'toggle on' : 'toggle off'}>
+      <input
+        type="checkbox"
+        checked={isToggleOn}
+        onChange={() => setIsToggleOn(!isToggleOn)}
+      />
+      {isToggleOn ? 'ON' : 'OFF'}
+    </label>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Toggle = ({ defaultToggled = false }) => {
 +const Toggle = ({ defaultToggled = false }) => {
@@ -5417,8 +6522,7 @@
 +export default Toggle;
 ```
 
-#### Toggle (task/55)
-
+#### solution 1
 ```diff
 -const Toggle = ({ defaultToggled = false }) => {
 +const Toggle = ({ defaultToggled = false }) => {
@@ -5433,8 +6537,7 @@
 +      <span className="toggle__label">{isToggled ? 'ON' : 'OFF'}
 ```
 
-#### Toggle (task/55)
-
+#### solution 2
 ```diff
 -const Toggle = ({ defaultToggled = false }) => {
 +const Toggle = ({ defaultToggled = false }) => {
@@ -5455,8 +6558,7 @@
 +        {toggled ?
 ```
 
-#### Toggle (task/55)
-
+#### solution 3
 ```diff
 -const Toggle = ({ defaultToggled = false }) => {
 +const Toggle = ({ defaultToggled = false }) => {
@@ -5474,8 +6576,7 @@
 +          <SwitchToggleText isT
 ```
 
-#### Toggle (task/55)
-
+#### solution 4
 ```diff
 -const Toggle = ({ defaultToggled = false }) => {
 +const Toggle = ({ defaultToggled = false }) => {
@@ -5494,8 +6595,39 @@
 +export default Toggle;
 ```
 
-#### MappedTable (task/56)
+### MappedTable (task/56)
 
+#### canonical solution
+```react
+const MappedTable = ({ data, propertyNames }) => {  let filteredData = data.map(v =>
+    Object.keys(v)
+      .filter(k => propertyNames.includes(k))
+      .reduce((acc, key) => ((acc[key] = v[key]), acc), {})
+  );
+  return (
+    <table>
+      <thead>
+        <tr>
+          {propertyNames.map(val => (
+            <th key={`h_${val}`}>{val}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {filteredData.map((val, i) => (
+          <tr key={`i_${i}`}>
+            {propertyNames.map(p => (
+              <td key={`i_${i}_${p}`}>{val[p]}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const MappedTable = ({ data, propertyNames }) => {
 +const MappedTable = ({ data, propertyNames }) => {
@@ -5514,8 +6646,7 @@
 +      dataIndex
 ```
 
-#### MappedTable (task/56)
-
+#### solution 1
 ```diff
 -const MappedTable = ({ data, propertyNames }) => {
 +const MappedTable = ({ data, propertyNames }) => {
@@ -5535,8 +6666,7 @@
 +export default M
 ```
 
-#### MappedTable (task/56)
-
+#### solution 2
 ```diff
 -const MappedTable = ({ data, propertyNames }) => {
 +const MappedTable = ({ data, propertyNames }) => {
@@ -5554,8 +6684,7 @@
 +      onRowClick={() => null}
 ```
 
-#### MappedTable (task/56)
-
+#### solution 3
 ```diff
 -const MappedTable = ({ data, propertyNames }) => {
 +const MappedTable = ({ data, propertyNames }) => {
@@ -5575,8 +6704,7 @@
 +            <tr key
 ```
 
-#### MappedTable (task/56)
-
+#### solution 4
 ```diff
 -const MappedTable = ({ data, propertyNames }) => {
 +const MappedTable = ({ data, propertyNames }) => {
@@ -5593,8 +6721,29 @@
 +export default MappedTable;
 ```
 
-#### useEventListener (task/57)
+### useEventListener (task/57)
 
+#### canonical solution
+```react
+const useEventListener = (type, handler, el = window) => {  const savedHandler = React.useRef();
+
+  React.useEffect(() => {
+    savedHandler.current = handler;
+  }, [handler]);
+
+  React.useEffect(() => {
+    const listener = e => savedHandler.current(e);
+
+    el.addEventListener(type, listener);
+
+    return () => {
+      el.removeEventListener(type, listener);
+    };
+  }, [type, el]);
+};
+```
+
+#### solution 0
 ```diff
 -const useEventListener = (type, handler, el = window) => {
 +const useEventListener = (type, handler, el = window) => {
@@ -5609,8 +6758,7 @@
 +export default useEventListener
 ```
 
-#### useEventListener (task/57)
-
+#### solution 1
 ```diff
 -const useEventListener = (type, handler, el = window) => {
 +const useEventListener = (type, handler, el = window) => {
@@ -5629,8 +6777,7 @@
 +  const toggle = () => set
 ```
 
-#### useEventListener (task/57)
-
+#### solution 2
 ```diff
 -const useEventListener = (type, handler, el = window) => {
 +const useEventListener = (type, handler, el = window) => {
@@ -5647,8 +6794,7 @@
 +export { useEventListener, useEventCallback };
 ```
 
-#### useEventListener (task/57)
-
+#### solution 3
 ```diff
 -const useEventListener = (type, handler, el = window) => {
 +const useEventListener = (type, handler, el = window) => {
@@ -5668,8 +6814,7 @@
 +           
 ```
 
-#### useEventListener (task/57)
-
+#### solution 4
 ```diff
 -const useEventListener = (type, handler, el = window) => {
 +const useEventListener = (type, handler, el = window) => {
@@ -5685,8 +6830,15 @@
 +  const [user, setUser] = useState({});
 ```
 
-#### Callto (task/58)
+### Callto (task/58)
 
+#### canonical solution
+```react
+const Callto = ({ phone, children }) => {  return <a href={`tel:${phone}`}>{children}</a>;
+};
+```
+
+#### solution 0
 ```diff
 -const Callto = ({ phone, children }) => {
 +const Callto = ({ phone, children }) => {
@@ -5706,8 +6858,7 @@
 +export default Callto;
 ```
 
-#### Callto (task/58)
-
+#### solution 1
 ```diff
 -const Callto = ({ phone, children }) => {
 +const Callto = ({ phone, children }) => {
@@ -5722,8 +6873,7 @@
 +export default Callto;
 ```
 
-#### Callto (task/58)
-
+#### solution 2
 ```diff
 -const Callto = ({ phone, children }) => {
 +const Callto = ({ phone, children }) => {
@@ -5738,8 +6888,7 @@
 +export default Callto;
 ```
 
-#### Callto (task/58)
-
+#### solution 3
 ```diff
 -const Callto = ({ phone, children }) => {
 +const Callto = ({ phone, children }) => {
@@ -5761,8 +6910,7 @@
 +export default Callto;
 ```
 
-#### Callto (task/58)
-
+#### solution 4
 ```diff
 -const Callto = ({ phone, children }) => {
 +const Callto = ({ phone, children }) => {
@@ -5777,8 +6925,24 @@
 +export default Callto;
 ```
 
-#### useOnWindowResize (task/59)
+### useOnWindowResize (task/59)
 
+#### canonical solution
+```react
+const useOnWindowResize = callback => {  const listener = React.useRef(null);
+
+  React.useEffect(() => {
+    if (listener.current)
+      window.removeEventListener('resize', listener.current);
+    listener.current = window.addEventListener('resize', callback);
+    return () => {
+      window.removeEventListener('resize', listener.current);
+    };
+  }, [callback]);
+};
+```
+
+#### solution 0
 ```diff
 -const useOnWindowResize = callback => {
 +const useOnWindowResize = callback => {
@@ -5800,8 +6964,7 @@
 +const Feed = () =>
 ```
 
-#### useOnWindowResize (task/59)
-
+#### solution 1
 ```diff
 -const useOnWindowResize = callback => {
 +const useOnWindowResize = callback => {
@@ -5821,8 +6984,7 @@
 +export default useOnWindowRes
 ```
 
-#### useOnWindowResize (task/59)
-
+#### solution 2
 ```diff
 -const useOnWindowResize = callback => {
 +const useOnWindowResize = callback => {
@@ -5846,8 +7008,7 @@
 +export default Window
 ```
 
-#### useOnWindowResize (task/59)
-
+#### solution 3
 ```diff
 -const useOnWindowResize = callback => {
 +const useOnWindowResize = callback => {
@@ -5867,8 +7028,7 @@
 +export default useOnWindowResize;
 ```
 
-#### useOnWindowResize (task/59)
-
+#### solution 4
 ```diff
 -const useOnWindowResize = callback => {
 +const useOnWindowResize = callback => {
@@ -5889,8 +7049,21 @@
 +  const isMobile = useMediaQuery(MOBILE_BRE
 ```
 
-#### UncontrolledInput (task/60)
+### UncontrolledInput (task/60)
 
+#### canonical solution
+```react
+const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {  return (
+    <input
+      defaultValue={defaultValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    />
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
@@ -5912,8 +7085,7 @@
 +     
 ```
 
-#### UncontrolledInput (task/60)
-
+#### solution 1
 ```diff
 -const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
@@ -5935,8 +7107,7 @@
 +  return <input onChange={onChange
 ```
 
-#### UncontrolledInput (task/60)
-
+#### solution 2
 ```diff
 -const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
@@ -5949,8 +7120,7 @@
 +export default UncontrolledInput;
 ```
 
-#### UncontrolledInput (task/60)
-
+#### solution 3
 ```diff
 -const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
@@ -5972,8 +7142,7 @@
 +export default
 ```
 
-#### UncontrolledInput (task/60)
-
+#### solution 4
 ```diff
 -const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
 +const UncontrolledInput = ({ defaultValue, onValueChange, ...rest }) => {
@@ -5996,8 +7165,29 @@
 +    <input {
 ```
 
-#### TextArea (task/61)
+### TextArea (task/61)
 
+#### canonical solution
+```react
+const TextArea = ({  cols = 20,
+  rows = 2,
+  defaultValue,
+  onValueChange,
+  ...rest
+}) => {
+  return (
+    <textarea
+      cols={cols}
+      rows={rows}
+      defaultValue={defaultValue}
+      onChange={({ target: { value } }) => onValueChange(value)}
+      {...rest}
+    />
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const TextArea = ({
 +const TextArea = ({
@@ -6012,8 +7202,7 @@
 +};
 ```
 
-#### TextArea (task/61)
-
+#### solution 1
 ```diff
 -const TextArea = ({
 +const TextArea = ({
@@ -6030,8 +7219,7 @@
 +        onBlur={on
 ```
 
-#### TextArea (task/61)
-
+#### solution 2
 ```diff
 -const TextArea = ({
 +const TextArea = ({
@@ -6050,8 +7238,7 @@
 +export default TextArea;
 ```
 
-#### TextArea (task/61)
-
+#### solution 3
 ```diff
 -const TextArea = ({
 +const TextArea = ({
@@ -6073,8 +7260,7 @@
 +      {error && <div className="alert alert-danger
 ```
 
-#### TextArea (task/61)
-
+#### solution 4
 ```diff
 -const TextArea = ({
 +const TextArea = ({
@@ -6092,8 +7278,59 @@
 +      {error && <div className="alert alert-danger">
 ```
 
-#### useScript (task/62)
+### useScript (task/62)
 
+#### canonical solution
+```react
+const useScript = src => {  const [status, setStatus] = React.useState(src ? 'loading' : 'idle');
+
+  React.useEffect(() => {
+    if (!src) {
+      setStatus('idle');
+      return;
+    }
+
+    let script = document.querySelector(`script[src="${src}"]`);
+
+    if (!script) {
+      script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.setAttribute('data-status', 'loading');
+      document.body.appendChild(script);
+
+      const setDataStatus = event => {
+        script.setAttribute(
+          'data-status',
+          event.type === 'load' ? 'ready' : 'error'
+        );
+      };
+      script.addEventListener('load', setDataStatus);
+      script.addEventListener('error', setDataStatus);
+    } else {
+      setStatus(script.getAttribute('data-status'));
+    }
+
+    const setStateStatus = event => {
+      setStatus(event.type === 'load' ? 'ready' : 'error');
+    };
+
+    script.addEventListener('load', setStateStatus);
+    script.addEventListener('error', setStateStatus);
+
+    return () => {
+      if (script) {
+        script.removeEventListener('load', setStateStatus);
+        script.removeEventListener('error', setStateStatus);
+      }
+    };
+  }, [src]);
+
+  return status;
+};
+```
+
+#### solution 0
 ```diff
 -const useScript = src => {
 +const useScript = src => {
@@ -6118,8 +7355,7 @@
 +        script
 ```
 
-#### useScript (task/62)
-
+#### solution 1
 ```diff
 -const useScript = src => {
 +const useScript = src => {
@@ -6144,8 +7380,7 @@
 +        script
 ```
 
-#### useScript (task/62)
-
+#### solution 2
 ```diff
 -const useScript = src => {
 +const useScript = src => {
@@ -6164,8 +7399,7 @@
 +    src.indexOf('http
 ```
 
-#### useScript (task/62)
-
+#### solution 3
 ```diff
 -const useScript = src => {
 +const useScript = src => {
@@ -6184,8 +7418,7 @@
 +    useScript('https://unpkg.com/@antv/data
 ```
 
-#### useScript (task/62)
-
+#### solution 4
 ```diff
 -const useScript = src => {
 +const useScript = src => {
@@ -6206,8 +7439,27 @@
 +  img
 ```
 
-#### useRequestAnimationFrame (task/63)
+### useRequestAnimationFrame (task/63)
 
+#### canonical solution
+```react
+const useRequestAnimationFrame = callback => {  const requestRef = React.useRef();
+  const previousTimeRef = React.useRef();
+
+  const animate = time => {
+    if (previousTimeRef.current) callback(time - previousTimeRef.current);
+    previousTimeRef.current = time;
+    requestRef.current = requestAnimationFrame(animate);
+  };
+
+  React.useEffect(() => {
+    requestRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestRef.current);
+  }, []);
+};
+```
+
+#### solution 0
 ```diff
 -const useRequestAnimationFrame = callback => {
 +const useRequestAnimationFrame = callback => {
@@ -6224,8 +7476,7 @@
 +      if (window.performance.now() >=
 ```
 
-#### useRequestAnimationFrame (task/63)
-
+#### solution 1
 ```diff
 -const useRequestAnimationFrame = callback => {
 +const useRequestAnimationFrame = callback => {
@@ -6245,8 +7496,7 @@
 +    const [mouseX, setMouseX
 ```
 
-#### useRequestAnimationFrame (task/63)
-
+#### solution 2
 ```diff
 -const useRequestAnimationFrame = callback => {
 +const useRequestAnimationFrame = callback => {
@@ -6261,8 +7511,7 @@
 +export default useRequestAnimationFrame;
 ```
 
-#### useRequestAnimationFrame (task/63)
-
+#### solution 3
 ```diff
 -const useRequestAnimationFrame = callback => {
 +const useRequestAnimationFrame = callback => {
@@ -6283,8 +7532,7 @@
 +      const id = setInterval(tick, 1000 / 60);
 ```
 
-#### useRequestAnimationFrame (task/63)
-
+#### solution 4
 ```diff
 -const useRequestAnimationFrame = callback => {
 +const useRequestAnimationFrame = callback => {
@@ -6306,8 +7554,27 @@
 +  }, [
 ```
 
-#### useSet (task/64)
+### useSet (task/64)
 
+#### canonical solution
+```react
+const useSet = initialValue => {  const [set, setSet] = React.useState(new Set(initialValue));
+
+  const actions = React.useMemo(
+    () => ({
+      add: item => setSet(prevSet => new Set([...prevSet, item])),
+      remove: item =>
+        setSet(prevSet => new Set([...prevSet].filter(i => i !== item))),
+      clear: () => setSet(new Set()),
+    }),
+    [setSet]
+  );
+
+  return [set, actions];
+};
+```
+
+#### solution 0
 ```diff
 -const useSet = initialValue => {
 +const useSet = initialValue => {
@@ -6319,8 +7586,7 @@
 +export default useSet;
 ```
 
-#### useSet (task/64)
-
+#### solution 1
 ```diff
 -const useSet = initialValue => {
 +const useSet = initialValue => {
@@ -6332,8 +7598,7 @@
 +export default useSet;
 ```
 
-#### useSet (task/64)
-
+#### solution 2
 ```diff
 -const useSet = initialValue => {
 +const useSet = initialValue => {
@@ -6354,8 +7619,7 @@
 +};
 ```
 
-#### useSet (task/64)
-
+#### solution 3
 ```diff
 -const useSet = initialValue => {
 +const useSet = initialValue => {
@@ -6367,8 +7631,7 @@
 +export default useSet;
 ```
 
-#### useSet (task/64)
-
+#### solution 4
 ```diff
 -const useSet = initialValue => {
 +const useSet = initialValue => {
@@ -6380,8 +7643,37 @@
 +export default useSet;
 ```
 
-#### useLocalStorage (task/65)
+### useLocalStorage (task/65)
 
+#### canonical solution
+```react
+const useLocalStorage = (keyName, defaultValue) => {  const [storedValue, setStoredValue] = React.useState(() => {
+    try {
+      const value = window.localStorage.getItem(keyName);
+
+      if (value) {
+        return JSON.parse(value);
+      } else {
+        window.localStorage.setItem(keyName, JSON.stringify(defaultValue));
+        return defaultValue;
+      }
+    } catch (err) {
+      return defaultValue;
+    }
+  });
+
+  const setValue = newValue => {
+    try {
+      window.localStorage.setItem(keyName, JSON.stringify(newValue));
+    } catch (err) {}
+    setStoredValue(newValue);
+  };
+
+  return [storedValue, setValue];
+};
+```
+
+#### solution 0
 ```diff
 -const useLocalStorage = (keyName, defaultValue) => {
 +const useLocalStorage = (keyName, defaultValue) => {
@@ -6401,8 +7693,7 @@
 +        const valString = JSON.stringify(val);
 ```
 
-#### useLocalStorage (task/65)
-
+#### solution 1
 ```diff
 -const useLocalStorage = (keyName, defaultValue) => {
 +const useLocalStorage = (keyName, defaultValue) => {
@@ -6421,8 +7712,7 @@
 +    try {
 ```
 
-#### useLocalStorage (task/65)
-
+#### solution 2
 ```diff
 -const useLocalStorage = (keyName, defaultValue) => {
 +const useLocalStorage = (keyName, defaultValue) => {
@@ -6442,8 +7732,7 @@
 +export default useLocalStorage;
 ```
 
-#### useLocalStorage (task/65)
-
+#### solution 3
 ```diff
 -const useLocalStorage = (keyName, defaultValue) => {
 +const useLocalStorage = (keyName, defaultValue) => {
@@ -6461,8 +7750,7 @@
 +    localStorage.setItem(keyName, JSON.stringify(data));
 ```
 
-#### useLocalStorage (task/65)
-
+#### solution 4
 ```diff
 -const useLocalStorage = (keyName, defaultValue) => {
 +const useLocalStorage = (keyName, defaultValue) => {
@@ -6481,8 +7769,32 @@
 +    localStorage.setItem
 ```
 
-#### Collapse (task/66)
+### Collapse (task/66)
 
+#### canonical solution
+```react
+const Collapse = ({ collapsed, children }) => {  const [isCollapsed, setIsCollapsed] = React.useState(collapsed);
+
+  return (
+    <>
+      <button
+        className="collapse-button"
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        {isCollapsed ? 'Show' : 'Hide'} content
+      </button>
+      <div
+        className={`collapse-content ${isCollapsed ? 'collapsed' : 'expanded'}`}
+        aria-expanded={isCollapsed}
+      >
+        {children}
+      </div>
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Collapse = ({ collapsed, children }) => {
 +const Collapse = ({ collapsed, children }) => {
@@ -6493,8 +7805,7 @@
 +export default Collapse;
 ```
 
-#### Collapse (task/66)
-
+#### solution 1
 ```diff
 -const Collapse = ({ collapsed, children }) => {
 +const Collapse = ({ collapsed, children }) => {
@@ -6516,8 +7827,7 @@
 +          width:
 ```
 
-#### Collapse (task/66)
-
+#### solution 2
 ```diff
 -const Collapse = ({ collapsed, children }) => {
 +const Collapse = ({ collapsed, children }) => {
@@ -6535,8 +7845,7 @@
 +    width: '75%
 ```
 
-#### Collapse (task/66)
-
+#### solution 3
 ```diff
 -const Collapse = ({ collapsed, children }) => {
 +const Collapse = ({ collapsed, children }) => {
@@ -6558,8 +7867,7 @@
 +  collapsed: false,
 ```
 
-#### Collapse (task/66)
-
+#### solution 4
 ```diff
 -const Collapse = ({ collapsed, children }) => {
 +const Collapse = ({ collapsed, children }) => {
@@ -6576,8 +7884,51 @@
 +export default Collapse;
 ```
 
-#### RippleButton (task/67)
+### RippleButton (task/67)
 
+#### canonical solution
+```react
+const RippleButton = ({ children, onClick }) => {  const [coords, setCoords] = React.useState({ x: -1, y: -1 });
+  const [isRippling, setIsRippling] = React.useState(false);
+
+  React.useEffect(() => {
+    if (coords.x !== -1 && coords.y !== -1) {
+      setIsRippling(true);
+      setTimeout(() => setIsRippling(false), 300);
+    } else setIsRippling(false);
+  }, [coords]);
+
+  React.useEffect(() => {
+    if (!isRippling) setCoords({ x: -1, y: -1 });
+  }, [isRippling]);
+
+  return (
+    <button
+      className="ripple-button"
+      onClick={e => {
+        const rect = e.target.getBoundingClientRect();
+        setCoords({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+        onClick && onClick(e);
+      }}
+    >
+      {isRippling ? (
+        <span
+          className="ripple"
+          style={{
+            left: coords.x,
+            top: coords.y
+          }}
+        />
+      ) : (
+        ''
+      )}
+      <span className="content">{children}</span>
+    </button>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const RippleButton = ({ children, onClick }) => {
 +const RippleButton = ({ children, onClick }) => {
@@ -6599,8 +7950,7 @@
 +      set
 ```
 
-#### RippleButton (task/67)
-
+#### solution 1
 ```diff
 -const RippleButton = ({ children, onClick }) => {
 +const RippleButton = ({ children, onClick }) => {
@@ -6622,8 +7972,7 @@
 +    </button>
 ```
 
-#### RippleButton (task/67)
-
+#### solution 2
 ```diff
 -const RippleButton = ({ children, onClick }) => {
 +const RippleButton = ({ children, onClick }) => {
@@ -6641,8 +7990,7 @@
 +      {
 ```
 
-#### RippleButton (task/67)
-
+#### solution 3
 ```diff
 -const RippleButton = ({ children, onClick }) => {
 +const RippleButton = ({ children, onClick }) => {
@@ -6661,8 +8009,7 @@
 +    set
 ```
 
-#### RippleButton (task/67)
-
+#### solution 4
 ```diff
 -const RippleButton = ({ children, onClick }) => {
 +const RippleButton = ({ children, onClick }) => {
@@ -6686,8 +8033,30 @@
 +  const
 ```
 
-#### useMutationObserver (task/68)
+### useMutationObserver (task/68)
 
+#### canonical solution
+```react
+const useMutationObserver = (  ref,
+  callback,
+  options = {
+    attributes: true,
+    characterData: true,
+    childList: true,
+    subtree: true,
+  }
+) => {
+  React.useEffect(() => {
+    if (ref.current) {
+      const observer = new MutationObserver(callback);
+      observer.observe(ref.current, options);
+      return () => observer.disconnect();
+    }
+  }, [callback, options]);
+};
+```
+
+#### solution 0
 ```diff
 -const useMutationObserver = (
 +const useMutationObserver = (
@@ -6706,8 +8075,7 @@
 +  const prefixes
 ```
 
-#### useMutationObserver (task/68)
-
+#### solution 1
 ```diff
 -const useMutationObserver = (
 +const useMutationObserver = (
@@ -6723,8 +8091,7 @@
 +            mutation.target.dispatchEvent(new Event
 ```
 
-#### useMutationObserver (task/68)
-
+#### solution 2
 ```diff
 -const useMutationObserver = (
 +const useMutationObserver = (
@@ -6741,8 +8108,7 @@
 +    return observer;
 ```
 
-#### useMutationObserver (task/68)
-
+#### solution 3
 ```diff
 -const useMutationObserver = (
 +const useMutationObserver = (
@@ -6760,8 +8126,7 @@
 +    on: (el, cb, options) => {
 ```
 
-#### useMutationObserver (task/68)
-
+#### solution 4
 ```diff
 -const useMutationObserver = (
 +const useMutationObserver = (
@@ -6780,8 +8145,31 @@
 +};
 ```
 
-#### Tooltip (task/69)
+### Tooltip (task/69)
 
+#### canonical solution
+```react
+const Tooltip = ({ children, text, ...rest }) => {  const [show, setShow] = React.useState(false);
+
+  return (
+    <div className="tooltip-container">
+      <div className={show ? 'tooltip-box visible' : 'tooltip-box'}>
+        {text}
+        <span className="tooltip-arrow" />
+      </div>
+      <div
+        onMouseEnter={() => setShow(true)}
+        onMouseLeave={() => setShow(false)}
+        {...rest}
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const Tooltip = ({ children, text, ...rest }) => {
 +const Tooltip = ({ children, text, ...rest }) => {
@@ -6804,8 +8192,7 @@
 +  children: PropTypes
 ```
 
-#### Tooltip (task/69)
-
+#### solution 1
 ```diff
 -const Tooltip = ({ children, text, ...rest }) => {
 +const Tooltip = ({ children, text, ...rest }) => {
@@ -6821,8 +8208,7 @@
 +export default Tooltip;
 ```
 
-#### Tooltip (task/69)
-
+#### solution 2
 ```diff
 -const Tooltip = ({ children, text, ...rest }) => {
 +const Tooltip = ({ children, text, ...rest }) => {
@@ -6843,8 +8229,7 @@
 +export default Tooltip;
 ```
 
-#### Tooltip (task/69)
-
+#### solution 3
 ```diff
 -const Tooltip = ({ children, text, ...rest }) => {
 +const Tooltip = ({ children, text, ...rest }) => {
@@ -6865,8 +8250,7 @@
 +export default Tooltip;
 ```
 
-#### Tooltip (task/69)
-
+#### solution 4
 ```diff
 -const Tooltip = ({ children, text, ...rest }) => {
 +const Tooltip = ({ children, text, ...rest }) => {
@@ -6890,8 +8274,29 @@
 +export default Tooltip;
 ```
 
-#### useTimeout (task/70)
+### useTimeout (task/70)
 
+#### canonical solution
+```react
+const useTimeout = (callback, delay) => {  const savedCallback = React.useRef();
+
+  React.useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  React.useEffect(() => {
+    const tick = () => {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setTimeout(tick, delay);
+      return () => clearTimeout(id);
+    }
+  }, [delay]);
+};
+```
+
+#### solution 0
 ```diff
 -const useTimeout = (callback, delay) => {
 +const useTimeout = (callback, delay) => {
@@ -6913,8 +8318,7 @@
 +      return ()
 ```
 
-#### useTimeout (task/70)
-
+#### solution 1
 ```diff
 -const useTimeout = (callback, delay) => {
 +const useTimeout = (callback, delay) => {
@@ -6936,8 +8340,7 @@
 +      return ()
 ```
 
-#### useTimeout (task/70)
-
+#### solution 2
 ```diff
 -const useTimeout = (callback, delay) => {
 +const useTimeout = (callback, delay) => {
@@ -6959,8 +8362,7 @@
 +      return ()
 ```
 
-#### useTimeout (task/70)
-
+#### solution 3
 ```diff
 -const useTimeout = (callback, delay) => {
 +const useTimeout = (callback, delay) => {
@@ -6982,8 +8384,7 @@
 +      return ()
 ```
 
-#### useTimeout (task/70)
-
+#### solution 4
 ```diff
 -const useTimeout = (callback, delay) => {
 +const useTimeout = (callback, delay) => {
@@ -7005,8 +8406,25 @@
 +      return ()
 ```
 
-#### useError (task/71)
+### useError (task/71)
 
+#### canonical solution
+```react
+const useError = err => {  const [error, setError] = React.useState(err);
+
+  React.useEffect(() => {
+    if (error) throw error;
+  }, [error]);
+
+  const dispatchError = React.useCallback(err => {
+    setError(err);
+  }, []);
+
+  return dispatchError;
+};
+```
+
+#### solution 0
 ```diff
 -const useError = err => {
 +const useError = err => {
@@ -7025,8 +8443,7 @@
 +};
 ```
 
-#### useError (task/71)
-
+#### solution 1
 ```diff
 -const useError = err => {
 +const useError = err => {
@@ -7043,8 +8460,7 @@
 +    const result = await response.
 ```
 
-#### useError (task/71)
-
+#### solution 2
 ```diff
 -const useError = err => {
 +const useError = err => {
@@ -7065,8 +8481,7 @@
 +export default useError;
 ```
 
-#### useError (task/71)
-
+#### solution 3
 ```diff
 -const useError = err => {
 +const useError = err => {
@@ -7078,8 +8493,7 @@
 +export default useError;
 ```
 
-#### useError (task/71)
-
+#### solution 4
 ```diff
 -const useError = err => {
 +const useError = err => {
@@ -7097,8 +8511,43 @@
 +  const [showSpinner, setShowSpinner] = useState<bo
 ```
 
-#### useCopyToClipboard (task/72)
+### useCopyToClipboard (task/72)
 
+#### canonical solution
+```react
+const useCopyToClipboard = text => {  const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    const selected =
+      document.getSelection().rangeCount > 0
+        ? document.getSelection().getRangeAt(0)
+        : false;
+    el.select();
+    const success = document.execCommand('copy');
+    document.body.removeChild(el);
+    if (selected) {
+      document.getSelection().removeAllRanges();
+      document.getSelection().addRange(selected);
+    }
+    return success;
+  };
+
+  const [copied, setCopied] = React.useState(false);
+
+  const copy = React.useCallback(() => {
+    if (!copied) setCopied(copyToClipboard(text));
+  }, [text]);
+  React.useEffect(() => () => setCopied(false), [text]);
+
+  return [copied, copy];
+};
+```
+
+#### solution 0
 ```diff
 -const useCopyToClipboard = text => {
 +const useCopyToClipboard = text => {
@@ -7116,8 +8565,7 @@
 +  const [copied, handleClick] = useCopyToClipboard(
 ```
 
-#### useCopyToClipboard (task/72)
-
+#### solution 1
 ```diff
 -const useCopyToClipboard = text => {
 +const useCopyToClipboard = text => {
@@ -7137,8 +8585,7 @@
 +
 ```
 
-#### useCopyToClipboard (task/72)
-
+#### solution 2
 ```diff
 -const useCopyToClipboard = text => {
 +const useCopyToClipboard = text => {
@@ -7157,8 +8604,7 @@
 +
 ```
 
-#### useCopyToClipboard (task/72)
-
+#### solution 3
 ```diff
 -const useCopyToClipboard = text => {
 +const useCopyToClipboard = text => {
@@ -7179,8 +8625,7 @@
 +  return [copyToClip
 ```
 
-#### useCopyToClipboard (task/72)
-
+#### solution 4
 ```diff
 -const useCopyToClipboard = text => {
 +const useCopyToClipboard = text => {
@@ -7198,8 +8643,36 @@
 +export default useCopyToClipboard;
 ```
 
-#### useMap (task/73)
+### useMap (task/73)
 
+#### canonical solution
+```react
+const useMap = initialValue => {  const [map, setMap] = React.useState(new Map(initialValue));
+
+  const actions = React.useMemo(
+    () => ({
+      set: (key, value) =>
+        setMap(prevMap => {
+          const nextMap = new Map(prevMap);
+          nextMap.set(key, value);
+          return nextMap;
+        }),
+      remove: (key, value) =>
+        setMap(prevMap => {
+          const nextMap = new Map(prevMap);
+          nextMap.delete(key, value);
+          return nextMap;
+        }),
+      clear: () => setMap(new Map()),
+    }),
+    [setMap]
+  );
+
+  return [map, actions];
+};
+```
+
+#### solution 0
 ```diff
 -const useMap = initialValue => {
 +const useMap = initialValue => {
@@ -7219,8 +8692,7 @@
 +export default useMap;
 ```
 
-#### useMap (task/73)
-
+#### solution 1
 ```diff
 -const useMap = initialValue => {
 +const useMap = initialValue => {
@@ -7236,8 +8708,7 @@
 +  const [gender
 ```
 
-#### useMap (task/73)
-
+#### solution 2
 ```diff
 -const useMap = initialValue => {
 +const useMap = initialValue => {
@@ -7252,8 +8723,7 @@
 +export default useMap;
 ```
 
-#### useMap (task/73)
-
+#### solution 3
 ```diff
 -const useMap = initialValue => {
 +const useMap = initialValue => {
@@ -7274,8 +8744,7 @@
 +  const keys
 ```
 
-#### useMap (task/73)
-
+#### solution 4
 ```diff
 -const useMap = initialValue => {
 +const useMap = initialValue => {
@@ -7290,8 +8759,30 @@
 +export default useMap;
 ```
 
-#### AutoLink (task/74)
+### AutoLink (task/74)
 
+#### canonical solution
+```react
+const AutoLink = ({ text }) => {  const delimiter = /((?:https?:\/\/)?(?:(?:[a-z0-9]?(?:[a-z0-9\-]{1,61}[a-z0-9])?\.[^\.|\s])+[a-z\.]*[a-z]+|(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3})(?::\d{1,5})*[a-z0-9.,_\/~#&=;%+?\-\\(\\)]*)/gi;
+
+  return (
+    <>
+      {text.split(delimiter).map(word => {
+        const match = word.match(delimiter);
+        if (match) {
+          const url = match[0];
+          return (
+            <a href={url.startsWith('http') ? url : `http://${url}`}>{url}</a>
+          );
+        }
+        return word;
+      })}
+    </>
+  );
+};
+```
+
+#### solution 0
 ```diff
 -const AutoLink = ({ text }) => {
 +const AutoLink = ({ text }) => {
@@ -7309,8 +8800,7 @@
 +  return <React.Fragment
 ```
 
-#### AutoLink (task/74)
-
+#### solution 1
 ```diff
 -const AutoLink = ({ text }) => {
 +const AutoLink = ({ text }) => {
@@ -7327,8 +8817,7 @@
 +export default AutoLink;
 ```
 
-#### AutoLink (task/74)
-
+#### solution 2
 ```diff
 -const AutoLink = ({ text }) => {
 +const AutoLink = ({ text }) => {
@@ -7340,8 +8829,7 @@
 +export default AutoLink;
 ```
 
-#### AutoLink (task/74)
-
+#### solution 3
 ```diff
 -const AutoLink = ({ text }) => {
 +const AutoLink = ({ text }) => {
@@ -7359,8 +8847,7 @@
 +      if
 ```
 
-#### AutoLink (task/74)
-
+#### solution 4
 ```diff
 -const AutoLink = ({ text }) => {
 +const AutoLink = ({ text }) => {
@@ -7374,8 +8861,27 @@
 +         
 ```
 
-#### useDebounce (task/75)
+### useDebounce (task/75)
 
+#### canonical solution
+```react
+const useDebounce = (value, delay) => {  const [debouncedValue, setDebouncedValue] = React.useState(value);
+
+  React.useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value]);
+
+  return debouncedValue;
+};
+```
+
+#### solution 0
 ```diff
 -const useDebounce = (value, delay) => {
 +const useDebounce = (value, delay) => {
@@ -7398,8 +8904,7 @@
 +export default useDebounce;
 ```
 
-#### useDebounce (task/75)
-
+#### solution 1
 ```diff
 -const useDebounce = (value, delay) => {
 +const useDebounce = (value, delay) => {
@@ -7422,8 +8927,7 @@
 +const Search = ({ searchUsers, clearUsers, showClear
 ```
 
-#### useDebounce (task/75)
-
+#### solution 2
 ```diff
 -const useDebounce = (value, delay) => {
 +const useDebounce = (value, delay) => {
@@ -7446,8 +8950,7 @@
 +export default useDebounce;
 ```
 
-#### useDebounce (task/75)
-
+#### solution 3
 ```diff
 -const useDebounce = (value, delay) => {
 +const useDebounce = (value, delay) => {
@@ -7470,8 +8973,7 @@
 +export default useDebounce;
 ```
 
-#### useDebounce (task/75)
-
+#### solution 4
 ```diff
 -const useDebounce = (value, delay) => {
 +const useDebounce = (value, delay) => {
@@ -7494,8 +8996,31 @@
 +export default useDebounce;
 ```
 
-#### useFetch (task/76)
+### useFetch (task/76)
 
+#### canonical solution
+```react
+const useFetch = (url, options) => {  const [response, setResponse] = React.useState(null);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(url, options);
+        const json = await res.json();
+        setResponse(json);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return { response, error };
+};
+```
+
+#### solution 0
 ```diff
 -const useFetch = (url, options) => {
 +const useFetch = (url, options) => {
@@ -7512,8 +9037,7 @@
 +        const json = await res.json();
 ```
 
-#### useFetch (task/76)
-
+#### solution 1
 ```diff
 -const useFetch = (url, options) => {
 +const useFetch = (url, options) => {
@@ -7532,8 +9056,7 @@
 +          throw new Error(res
 ```
 
-#### useFetch (task/76)
-
+#### solution 2
 ```diff
 -const useFetch = (url, options) => {
 +const useFetch = (url, options) => {
@@ -7551,8 +9074,7 @@
 +        set
 ```
 
-#### useFetch (task/76)
-
+#### solution 3
 ```diff
 -const useFetch = (url, options) => {
 +const useFetch = (url, options) => {
@@ -7570,8 +9092,7 @@
 +        setLoading
 ```
 
-#### useFetch (task/76)
-
+#### solution 4
 ```diff
 -const useFetch = (url, options) => {
 +const useFetch = (url, options) => {
@@ -7589,8 +9110,35 @@
 +                setLoading(
 ```
 
-#### useOnGlobalEvent (task/77)
+### useOnGlobalEvent (task/77)
 
+#### canonical solution
+```react
+const useOnGlobalEvent = (type, callback, options) => {  const listener = React.useRef(null);
+  const previousProps = React.useRef({ type, options });
+
+  React.useEffect(() => {
+    const { type: previousType, options: previousOptions } = previousProps;
+
+    if (listener.current) {
+      window.removeEventListener(
+        previousType,
+        listener.current,
+        previousOptions
+      );
+    }
+
+    listener.current = window.addEventListener(type, callback, options);
+    previousProps.current = { type, options };
+
+    return () => {
+      window.removeEventListener(type, listener.current, options);
+    };
+  }, [callback, type, options]);
+};
+```
+
+#### solution 0
 ```diff
 -const useOnGlobalEvent = (type, callback, options) => {
 +const useOnGlobalEvent = (type, callback, options) => {
@@ -7606,8 +9154,7 @@
 +export default useOnGlobalEvent;
 ```
 
-#### useOnGlobalEvent (task/77)
-
+#### solution 1
 ```diff
 -const useOnGlobalEvent = (type, callback, options) => {
 +const useOnGlobalEvent = (type, callback, options) => {
@@ -7625,8 +9172,7 @@
 +  }, [on
 ```
 
-#### useOnGlobalEvent (task/77)
-
+#### solution 2
 ```diff
 -const useOnGlobalEvent = (type, callback, options) => {
 +const useOnGlobalEvent = (type, callback, options) => {
@@ -7648,8 +9194,7 @@
 +      window.removeEventListener(
 ```
 
-#### useOnGlobalEvent (task/77)
-
+#### solution 3
 ```diff
 -const useOnGlobalEvent = (type, callback, options) => {
 +const useOnGlobalEvent = (type, callback, options) => {
@@ -7670,8 +9215,7 @@
 +  }, [type, listener, options]);
 ```
 
-#### useOnGlobalEvent (task/77)
-
+#### solution 4
 ```diff
 -const useOnGlobalEvent = (type, callback, options) => {
 +const useOnGlobalEvent = (type, callback, options) => {
