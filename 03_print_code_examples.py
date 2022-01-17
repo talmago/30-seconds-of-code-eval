@@ -45,6 +45,7 @@ def parse_arguments():
                 .replace("data", "examples")
                 .replace("samples", "problem")
                 .replace(".jsonl", ".md")
+                .replace("_problem", "")
         )
     else:
         args.diff_file = None

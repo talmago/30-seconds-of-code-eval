@@ -1,107 +1,75 @@
-# HumanEval: Hand-Written Evaluation Set 
+# 30-seconds-of-code-eval
 
-This is an evaluation harness for the HumanEval problem solving dataset
-described in the paper "[Evaluating Large Language Models Trained on
-Code](https://arxiv.org/abs/2107.03374)".
+An evaluation harness for [30-seconds-of-code](https://www.30secondsofcode.org/) snippets, in similar to HumanEval
+problem solving dataset described in the
+paper "[Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374)".
 
-## Installation
+In contrast to `HumanEval`, a dataset of 164 hand-written python programming problems, we
+use [30-seconds-of-code](https://www.30secondsofcode.org/)
+to build few short code snippets datasets, similar in structure to HumanEval,
+in [Python](https://github.com/talmago/30-seconds-of-code-eval/blob/master/examples/30_seconds_of_python.md)
+, [React](https://github.com/talmago/30-seconds-of-code-eval/blob/master/examples/30_seconds_of_react.md)
+, [Go](https://github.com/talmago/30-seconds-of-code-eval/blob/master/examples/30_seconds_of_golang.md)
+and [PHP](https://github.com/talmago/30-seconds-of-code-eval/blob/master/examples/30_seconds_of_php.md).
 
-Make sure to use python 3.7 or later:
-```
-$ conda create -n codex python=3.7
-$ conda activate codex
+## Quick Setup
+
+Clone project
+
+```sh
+$ git clone git@github.com:talmago/30-seconds-of-code-eval.git
 ```
 
-Check out and install this repository:
+Install dependencies
+
+```sh
+$ pip install -r requirements.txt
 ```
-$ git clone https://github.com/openai/human-eval
-$ pip install -e human-eval
-```
+
+> *Notice*: python 3.7 or later is a requirement.
+> If you use conda, follow these [instructions](https://github.com/openai/human-eval#installation).
 
 ## Usage
 
-**This program exists to run untrusted model-generated code. Users are strongly
-encouraged not to do so outside of a robust security sandbox. The [execution
-call](https://github.com/openai/human-eval/blob/master/human_eval/execution.py#L48-L58)
-in `execution.py` is deliberately commented out to ensure users read this
-disclaimer before running code in a potentially unsafe manner. See the comment in
-`execution.py` for more information and instructions.**
+##### Build a problem set
 
-After following the above instructions to enable execution, generate samples
-and save them in the following JSON Lines (jsonl) format, where each sample is
-formatted into a single line like so:
-```
-{"task_id": "Corresponding HumanEval task ID", "completion": "Completion only without the prompt"}
-```
-We provide `example_problem.jsonl` and `example_solutions.jsonl` under `data`
-to illustrate the format and help with debugging.
-
-Here is nearly functional example code (you just have to provide
-`generate_one_completion` to make it work) that saves generated completions to
-`samples.jsonl`.
-```
-from human_eval.data import write_jsonl, read_problems
-
-problems = read_problems()
-
-num_samples_per_task = 200
-samples = [
-    dict(task_id=task_id, completion=generate_one_completion(problems[task_id]["prompt"]))
-    for task_id in problems
-    for _ in range(num_samples_per_task)
-]
-write_jsonl("samples.jsonl", samples)
+```sh
+$ python 01_download_problem_set.py --language_name python
 ```
 
-To evaluate the samples, run
-```
-$ evaluate_functional_correctness samples.jsonl
-Reading samples...
-32800it [00:01, 23787.50it/s]
-Running test suites...
-100%|...| 32800/32800 [16:11<00:00, 33.76it/s]
-Writing results to samples.jsonl_results.jsonl...
-100%|...| 32800/32800 [00:00<00:00, 42876.84it/s]
-{'pass@1': ..., 'pass@10': ..., 'pass@100': ...}
-```
-This script provides more fine-grained information in a new file ending in
-`<input_path>_results.jsonl`. Each row now contains whether the completion
-`passed` along with the execution `result` which is one of "passed", "timed
-out", or "failed".
+Output will be saved
+to [data/30_seconds_of_python_problem.jsonl](https://github.com/talmago/30-seconds-of-code-eval/blob/master/data/30_seconds_of_python_problem.jsonl)
+.
 
-As a quick sanity-check, the example samples should yield 0.5 pass@1.
-```
-$ evaluate_functional_correctness data/example_samples.jsonl --problem_file=data/example_problem.jsonl
-Reading samples...
-6it [00:00, 3397.11it/s]
-Running example suites...
-100%|...| 6/6 [00:03<00:00,  1.96it/s]
-Writing results to data/example_samples.jsonl_results.jsonl...
-100%|...| 6/6 [00:00<00:00, 6148.50it/s]
-{'pass@1': 0.4999999999999999}
+#### Collect samples (via [Codex](https://openai.com/blog/openai-codex/))
+
+```sh
+$ OPENAI_API_KEY=XXXX python 02_get_completions_from_codex.py data/30_seconds_of_python_problem.jsonl \
+  --model_name davinci-codex \
+  --max_length 70 \
+  --temperature 0.8
 ```
 
-Because there is no unbiased way of estimating pass@k when there are fewer
-samples than k, the script does not evaluate pass@k for these cases. To
-evaluate with other k values, pass `--k=<comma-separated-values-here>`. For
-other options, see
-```
-$ evaluate_functional_correctness --help
-```
-However, we recommend that you use the default values for the rest.
+Output will be saved
+to [data/30_seconds_of_python_samples.jsonl](https://github.com/talmago/30-seconds-of-code-eval/blob/master/data/30_seconds_of_python_samples.jsonl)
+.
 
-## Known Issues
+#### Preview
 
-While evaluation uses very little memory, you might see the following error
-message when the system is running out of RAM. Since this may cause some
-correct programs to fail, we recommend that you free some memory and try again.
-```
-malloc: can't allocate region
+```sh
+$ python 03_print_code_examples.py data/30_seconds_of_python_samples.jsonl --diff
 ```
 
-## Citation
+Output will be saved
+to [examples/30_seconds_of_python.md](https://github.com/talmago/30-seconds-of-code-eval/blob/master/examples/30_seconds_of_python.md)
 
-Please cite using the following bibtex entry:
+#### Evaluation
+
+Coming soon ...
+
+## References
+
+[1] [Evaluating Large Language Models Trained on Code](https://arxiv.org/abs/2107.03374)
 
 ```
 @article{chen2021codex,

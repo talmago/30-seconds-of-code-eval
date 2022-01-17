@@ -242,7 +242,7 @@ if __name__ == "__main__":
         problems.append(problem_dict)
 
     problems_file = os.path.join(
-        os.path.dirname(__file__), os.pardir, "data",
+        os.path.dirname(__file__), "data",
         f"30_seconds_of_{args.language_name}_problem.jsonl"
     )
     LOG.info("Writing %d problems to %s", len(problems), problems_file)
