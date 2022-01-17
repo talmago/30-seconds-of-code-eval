@@ -1,9 +1,9 @@
 import argparse
+import difflib
 import logging
 import os
 import re
 import sys
-
 import srsly
 import tqdm
 
@@ -18,13 +18,6 @@ def parse_arguments():
     )
 
     parser.add_argument(
-        "--diff",
-        default=False,
-        action="store_true",
-        help="Output diff to file",
-    )
-
-    parser.add_argument(
         '-v', '--verbose',
         help="Log Verbose",
         action="store_const",
@@ -36,23 +29,20 @@ def parse_arguments():
     args = parser.parse_args()
 
     args.problem_file = args.sample_file.replace("samples", "problem")
+
     if not os.path.exists(args.problem_file):
         raise IOError(f"problem set does not exist at {args.problem_file}")
 
-    if args.diff:
-        args.diff_file = (
-            args.sample_file
-                .replace("data", "examples")
-                .replace("samples", "problem")
-                .replace(".jsonl", ".md")
-                .replace("_problem", "")
-        )
-    else:
-        args.diff_file = None
+    args.diff_file = (
+        args.sample_file
+            .replace("data", "examples")
+            .replace("samples", "problem")
+            .replace(".jsonl", ".md")
+            .replace("_problem", "")
+    )
 
     args.language_name = re.search(
-        "30_seconds_of_(.+)_samples.jsonl", args.sample_file
-    ).group(1)
+        "30_seconds_of_(.+)_samples.jsonl", args.sample_file).group(1)
 
     if args.language_name == "react":
         args.language_name = "javascript"
@@ -78,11 +68,8 @@ if __name__ == "__main__":
         for task in srsly.read_jsonl(args.problem_file)
     }
 
-    if args.diff_file:
-        os.makedirs(os.path.dirname(args.diff_file), exist_ok=True)
-        out_file = open(args.diff_file, "w")
-    else:
-        out_file = sys.stdout
+    os.makedirs(os.path.dirname(args.diff_file), exist_ok=True)
+    out_file = open(args.diff_file, "w")
 
     for task_id, problem in tqdm.tqdm(problems.items()):
         prompt = problem["prompt"]
@@ -90,25 +77,42 @@ if __name__ == "__main__":
 
         print(f"### {problem['entry_point']} ({problem['task_id']})", file=out_file)
         print(file=out_file)
+
         print("#### canonical solution", file=out_file)
+        print(file=out_file)
         print(f"```{args.language_name}", file=out_file)
-        print(f"{prompt}{canonical}", file=out_file)
+        print(f"{prompt}\n{canonical}", file=out_file)
         print("```", file=out_file)
         print(file=out_file)
 
         for idx, sample in enumerate(samples[task_id]):
             completion = sample.get("completion")
 
-            if out_file == sys.stdout:
-                print(f"\033[1m{prompt}\033[0m{completion}", file=out_file)
-                print(file=out_file)
+            if completion.startswith("\n") and not canonical.startswith("\n"):
+                canonical_solution = f"{prompt}\n{canonical}"
             else:
-                print(f"#### solution {idx}", file=out_file)
-                print("```diff", file=out_file)
-                for line in prompt.splitlines():
-                    print(f"-{line}", file=out_file)
-                for line in prompt.splitlines():
-                    print(f"+{line}", file=out_file)
-                for line in completion.splitlines():
-                    print(f"+{line}", file=out_file)
-                print("```\n", file=out_file)
+                canonical_solution = f"{prompt}{canonical}"
+            canonical_solution = canonical_solution.splitlines()
+            solution = (prompt + completion).splitlines()[:len(canonical_solution) + 5]
+
+            if args.language_name == "react":
+                ext = ".jsx"
+            elif args.language_name == "golang":
+                ext = ".go"
+            elif args.language_name == "php":
+                ext = ".php"
+            else:
+                ext = "py"
+
+            diff_gen = difflib.unified_diff(
+                canonical_solution, solution,
+                fromfile=f"canonical.{ext}",
+                tofile=f"solution{idx}.{ext}"
+            )
+
+            print(f"#### solution {idx}", file=out_file)
+            print(file=out_file)
+            print("```diff", file=out_file)
+            for diff_line in diff_gen:
+                print(diff_line, file=out_file)
+            print("```\n", file=out_file)

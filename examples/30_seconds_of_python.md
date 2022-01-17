@@ -1,15 +1,23 @@
 ### index_of_all (task/1)
 
 #### canonical solution
+
 ```python
-def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == value]
+def index_of_all(lst, value):
+  return [i for i, x in enumerate(lst) if x == value]
 ```
 
 #### solution 0
+
 ```diff
--def index_of_all(lst, value):
-+def index_of_all(lst, value):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def index_of_all(lst, value):
+-  return [i for i, x in enumerate(lst) if x == value]
 +    return [i for i, x in enumerate(lst) if x == value]
 +
 +if __name__ == '__main__':
@@ -17,10 +25,16 @@ def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == valu
 ```
 
 #### solution 1
+
 ```diff
--def index_of_all(lst, value):
-+def index_of_all(lst, value):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def index_of_all(lst, value):
+-  return [i for i, x in enumerate(lst) if x == value]
 +    return [i for i, v in enumerate(lst) if v == value]
 +
 +
@@ -30,10 +44,16 @@ def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == valu
 ```
 
 #### solution 2
+
 ```diff
--def index_of_all(lst, value):
-+def index_of_all(lst, value):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def index_of_all(lst, value):
+-  return [i for i, x in enumerate(lst) if x == value]
 +    """Returns a list of indexes in which value can be found in lst.
 +
 +    >>> index_of_all([2, 3, 5, 3], 3)
@@ -43,10 +63,16 @@ def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == valu
 ```
 
 #### solution 3
+
 ```diff
--def index_of_all(lst, value):
-+def index_of_all(lst, value):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def index_of_all(lst, value):
+-  return [i for i, x in enumerate(lst) if x == value]
 +    '''Finds the indexes of all occurences of value in lst'''
 +    return [i for i, x in enumerate(lst) if x == value]
 +
@@ -54,118 +80,148 @@ def index_of_all(lst, value):  return [i for i, x in enumerate(lst) if x == valu
 ```
 
 #### solution 4
+
 ```diff
--def index_of_all(lst, value):
-+def index_of_all(lst, value):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def index_of_all(lst, value):
+-  return [i for i, x in enumerate(lst) if x == value]
 +    res = []
 +    for i, x in enumerate(lst):
 +        if x == value:
 +            res.append(i)
 +    return res
 +
-+def find_sub_list(sl,l):
 ```
 
 ### head (task/2)
 
 #### canonical solution
+
 ```python
-def head(lst):  return lst[0]
+def head(lst):
+  return lst[0]
 ```
 
 #### solution 0
+
 ```diff
--def head(lst):
-+def head(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def head(lst):
+-  return lst[0]
 +    return lst[0]
 +
 +def tail(lst):
 +    return lst[1:]
 +
 +def transpose(lst):
-+    return list(map(list, zip(*lst)))
-+
-+def
 ```
 
 #### solution 1
+
 ```diff
--def head(lst):
-+def head(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def head(lst):
+-  return lst[0]
 +    return lst[0]
 +
 +def tail(lst):
 +    return lst[1:]
 +
 +def empty(lst):
-+    return lst == []
-+
-+def sum_list(lst):
 ```
 
 #### solution 2
+
 ```diff
--def head(lst):
-+def head(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def head(lst):
+-  return lst[0]
 +    """Returns the first element of a list."""
 +    return lst[0]
 +
 +
 +def tail(lst):
 +    """Returns the last element of a list."""
-+    return lst[-1]
-+
 ```
 
 #### solution 3
+
 ```diff
--def head(lst):
-+def head(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def head(lst):
+-  return lst[0]
 +    return lst[0]
 +
 +def tail(lst):
 +    return lst[1:]
 +
 +def init(lst):
-+    return lst[:-1]
-+
-+def last(lst):
 ```
 
 #### solution 4
+
 ```diff
--def head(lst):
-+def head(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def head(lst):
+-  return lst[0]
 +    return lst[0]
 +
 +def tail(lst):
 +    return lst[1:]
 +
 +def is_empty(lst):
-+    return not lst
-+
-+def length(lst):
-+   
 ```
 
 ### max_n (task/3)
 
 #### canonical solution
+
 ```python
-def max_n(lst, n = 1):  return sorted(lst, reverse = True)[:n]
+def max_n(lst, n = 1):
+  return sorted(lst, reverse = True)[:n]
 ```
 
 #### solution 0
+
 ```diff
--def max_n(lst, n = 1):
-+def max_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def max_n(lst, n = 1):
+-  return sorted(lst, reverse = True)[:n]
 +    """Returns the n maximum elements from the provided list. 
 +    If n is greater than or equal to the provided list's length, 
 +    then return the original list (sorted in descending order).
@@ -174,40 +230,54 @@ def max_n(lst, n = 1):  return sorted(lst, reverse = True)[:n]
 ```
 
 #### solution 1
+
 ```diff
--def max_n(lst, n = 1):
-+def max_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def max_n(lst, n = 1):
+-  return sorted(lst, reverse = True)[:n]
 +    '''
 +    return the n max elements in a list
 +    Parameters:
 +        lst: list
 +            list of numerical values
 +        n: int
-+            number of max elements to return
-+    '''
-+    return
 ```
 
 #### solution 2
+
 ```diff
--def max_n(lst, n = 1):
-+def max_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def max_n(lst, n = 1):
+-  return sorted(lst, reverse = True)[:n]
 +    """Returns the n maximum elements from the provided list. 
 +
 +    Keyword arguments:
 +    lst -- the list to check
 +    n -- the number of elements to return (default 1)
 +    """
-+    return heap
 ```
 
 #### solution 3
+
 ```diff
--def max_n(lst, n = 1):
-+def max_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def max_n(lst, n = 1):
+-  return sorted(lst, reverse = True)[:n]
 +    """
 +    >>> max_n([1,2,3,4,5])
 +    5
@@ -217,10 +287,16 @@ def max_n(lst, n = 1):  return sorted(lst, reverse = True)[:n]
 ```
 
 #### solution 4
+
 ```diff
--def max_n(lst, n = 1):
-+def max_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def max_n(lst, n = 1):
+-  return sorted(lst, reverse = True)[:n]
 +    max_n = []
 +    for i in range(0, n):
 +        max_n.append(max(lst))
@@ -231,21 +307,27 @@ def max_n(lst, n = 1):  return sorted(lst, reverse = True)[:n]
 ### to_iso_date (task/4)
 
 #### canonical solution
+
 ```python
 from datetime import datetime
 
-def to_iso_date(d):  return d.isoformat()
+def to_iso_date(d):
+  return d.isoformat()
 ```
 
 #### solution 0
+
 ```diff
--from datetime import datetime
--
--def to_iso_date(d):
-+from datetime import datetime
-+
-+def to_iso_date(d):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ from datetime import datetime
+ 
+ def to_iso_date(d):
+-  return d.isoformat()
 +    return datetime.strftime(d, "%Y-%m-%d")
 +
 +def get_soup(url):
@@ -254,14 +336,18 @@ def to_iso_date(d):  return d.isoformat()
 ```
 
 #### solution 1
+
 ```diff
--from datetime import datetime
--
--def to_iso_date(d):
-+from datetime import datetime
-+
-+def to_iso_date(d):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def to_iso_date(d):
+-  return d.isoformat()
 +    """Convert the given date to the ISO 8601 format, unless it is None, in
 +    which case None is returned."""
 +    if d is None:
@@ -271,14 +357,18 @@ def to_iso_date(d):  return d.isoformat()
 ```
 
 #### solution 2
+
 ```diff
--from datetime import datetime
--
--def to_iso_date(d):
-+from datetime import datetime
-+
-+def to_iso_date(d):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def to_iso_date(d):
+-  return d.isoformat()
 +    return datetime.strftime(d, "%Y-%m-%d")
 +
 +def get_link(link):
@@ -288,14 +378,18 @@ def to_iso_date(d):  return d.isoformat()
 ```
 
 #### solution 3
+
 ```diff
--from datetime import datetime
--
--def to_iso_date(d):
-+from datetime import datetime
-+
-+def to_iso_date(d):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import datetime
+ 
+ def to_iso_date(d):
+-  return d.isoformat()
 +    return d.strftime('%Y-%m-%d')
 +
 +def from_iso_date(s):
@@ -303,14 +397,18 @@ def to_iso_date(d):  return d.isoformat()
 ```
 
 #### solution 4
+
 ```diff
--from datetime import datetime
--
--def to_iso_date(d):
-+from datetime import datetime
-+
-+def to_iso_date(d):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def to_iso_date(d):
+-  return d.isoformat()
 +    if not d:
 +        return None
 +    if d == 'None':
@@ -322,8 +420,10 @@ def to_iso_date(d):  return d.isoformat()
 ### median (task/5)
 
 #### canonical solution
+
 ```python
-def median(list):  list.sort()
+def median(list):
+  list.sort()
   list_length = len(list)
   if list_length % 2 == 0:
     return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
@@ -331,10 +431,20 @@ def median(list):  list.sort()
 ```
 
 #### solution 0
+
 ```diff
--def median(list):
-+def median(list):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,6 +1,5 @@
+
+ def median(list):
+-  list.sort()
+-  list_length = len(list)
+-  if list_length % 2 == 0:
+-    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+-  return float(list[int(list_length / 2)])
 +    list = sorted(list)
 +    if len(list)%2 == 0:
 +        return (list[len(list)/2]+list[len(list)/2-1])/2.0
@@ -342,10 +452,20 @@ def median(list):  list.sort()
 ```
 
 #### solution 1
+
 ```diff
--def median(list):
-+def median(list):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,6 +1,8 @@
+
+ def median(list):
+-  list.sort()
+-  list_length = len(list)
+-  if list_length % 2 == 0:
+-    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+-  return float(list[int(list_length / 2)])
 +    sortedList = sorted(list)
 +    listLen = len(list)
 +    index = (listLen - 1) // 2
@@ -356,10 +476,20 @@ def median(list):  list.sort()
 ```
 
 #### solution 2
+
 ```diff
--def median(list):
-+def median(list):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,6 +1,8 @@
+
+ def median(list):
+-  list.sort()
+-  list_length = len(list)
+-  if list_length % 2 == 0:
+-    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+-  return float(list[int(list_length / 2)])
 +    """
 +    Args: list (list): list of numbers.
 +    Returns: median value (float)
@@ -370,10 +500,20 @@ def median(list):  list.sort()
 ```
 
 #### solution 3
+
 ```diff
--def median(list):
-+def median(list):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,6 +1,7 @@
+
+ def median(list):
+-  list.sort()
+-  list_length = len(list)
+-  if list_length % 2 == 0:
+-    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+-  return float(list[int(list_length / 2)])
 +    median = 0
 +    length = len(list)
 +    if (length % 2 == 0):
@@ -383,10 +523,20 @@ def median(list):  list.sort()
 ```
 
 #### solution 4
+
 ```diff
--def median(list):
-+def median(list):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,6 +1,5 @@
+
+ def median(list):
+-  list.sort()
+-  list_length = len(list)
+-  if list_length % 2 == 0:
+-    return (list[int(list_length / 2) - 1] + list[int(list_length / 2)]) / 2
+-  return float(list[int(list_length / 2)])
 +    list.sort()
 +    if len(list) % 2 == 0:
 +        return (list[len(list)//2] + list[len(list)//2 - 1]) / 2
@@ -396,75 +546,99 @@ def median(list):  list.sort()
 ### longest_item (task/6)
 
 #### canonical solution
+
 ```python
-def longest_item(*args):  return max(args, key = len)
+def longest_item(*args):
+  return max(args, key = len)
 ```
 
 #### solution 0
+
 ```diff
--def longest_item(*args):
-+def longest_item(*args):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def longest_item(*args):
+-  return max(args, key = len)
 +    longest = 0
 +    for i in args:
 +        if len(i) > longest:
 +            longest = len(i)
 +    return longest
 +
-+def longest_item_re(*args):
-+    return max(
 ```
 
 #### solution 1
+
 ```diff
--def longest_item(*args):
-+def longest_item(*args):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def longest_item(*args):
+-  return max(args, key = len)
 +    longest = ""
 +    for i in args:
 +        if len(i) > len(longest):
 +            longest = i
 +    return longest
 +
-+print(longest_item("one", "two", "three
 ```
 
 #### solution 2
+
 ```diff
--def longest_item(*args):
-+def longest_item(*args):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def longest_item(*args):
+-  return max(args, key = len)
 +    res = []
 +    for arg in args:
 +        res.append(len(arg))
 +    return res
 +
 +# >>> longest_item("one", "two", "three")
-+# [3, 3, 5
 ```
 
 #### solution 3
+
 ```diff
--def longest_item(*args):
-+def longest_item(*args):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def longest_item(*args):
+-  return max(args, key = len)
 +    """
 +    :param args:
 +    :return:
 +    """
 +    return max(args, key=len)
 +
-+
-+def get_common_part(a, b):
-+    """
-+    :param a:
 ```
 
 #### solution 4
+
 ```diff
--def longest_item(*args):
-+def longest_item(*args):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def longest_item(*args):
+-  return max(args, key = len)
 +    print(max(args, key=len))
 +longest_item('this', 'is', 'a', 'test', 'case')
 +# another solution
@@ -475,22 +649,29 @@ def longest_item(*args):  return max(args, key = len)
 ### powerset (task/7)
 
 #### canonical solution
+
 ```python
 from itertools import chain, combinations
 
-def powerset(iterable):  s = list(iterable)
+def powerset(iterable):
+  s = list(iterable)
   return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 ```
 
 #### solution 0
+
 ```diff
--from itertools import chain, combinations
--
--def powerset(iterable):
-+from itertools import chain, combinations
-+
-+def powerset(iterable):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,8 @@
+
+ from itertools import chain, combinations
+ 
+ def powerset(iterable):
+-  s = list(iterable)
+-  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 +    s = list(iterable)
 +    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 +
@@ -499,27 +680,37 @@ def powerset(iterable):  s = list(iterable)
 ```
 
 #### solution 1
+
 ```diff
--from itertools import chain, combinations
--
--def powerset(iterable):
-+from itertools import chain, combinations
-+
-+def powerset(iterable):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,5 @@
+
+ from itertools import chain, combinations
+ 
+ def powerset(iterable):
+-  s = list(iterable)
+-  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 +    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
 +    s = list
 ```
 
 #### solution 2
+
 ```diff
--from itertools import chain, combinations
--
--def powerset(iterable):
-+from itertools import chain, combinations
-+
-+def powerset(iterable):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,7 @@
+
+ from itertools import chain, combinations
+ 
+ def powerset(iterable):
+-  s = list(iterable)
+-  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 +    s = list(iterable)
 +    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 +
@@ -527,14 +718,19 @@ def powerset(iterable):  s = list(iterable)
 ```
 
 #### solution 3
+
 ```diff
--from itertools import chain, combinations
--
--def powerset(iterable):
-+from itertools import chain, combinations
-+
-+def powerset(iterable):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,9 @@
+
+ from itertools import chain, combinations
+ 
+ def powerset(iterable):
+-  s = list(iterable)
+-  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 +    s = list(iterable)
 +    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 +
@@ -544,14 +740,19 @@ def powerset(iterable):  s = list(iterable)
 ```
 
 #### solution 4
+
 ```diff
--from itertools import chain, combinations
--
--def powerset(iterable):
-+from itertools import chain, combinations
-+
-+def powerset(iterable):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,7 @@
+
+ from itertools import chain, combinations
+ 
+ def powerset(iterable):
+-  s = list(iterable)
+-  return list(chain.from_iterable(combinations(s, r) for r in range(len(s)+1)))
 +    s = list(iterable)
 +    return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 +
@@ -561,15 +762,23 @@ def powerset(iterable):  s = list(iterable)
 ### find_index_of_all (task/8)
 
 #### canonical solution
+
 ```python
-def find_index_of_all(lst, fn):  return [i for i, x in enumerate(lst) if fn(x)]
+def find_index_of_all(lst, fn):
+  return [i for i, x in enumerate(lst) if fn(x)]
 ```
 
 #### solution 0
+
 ```diff
--def find_index_of_all(lst, fn):
-+def find_index_of_all(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def find_index_of_all(lst, fn):
+-  return [i for i, x in enumerate(lst) if fn(x)]
 +    """Finds the indices of all elements in lst where fn is True."""
 +    indices = []
 +    for i, elem in enumerate(lst):
@@ -578,10 +787,16 @@ def find_index_of_all(lst, fn):  return [i for i, x in enumerate(lst) if fn(x)]
 ```
 
 #### solution 1
+
 ```diff
--def find_index_of_all(lst, fn):
-+def find_index_of_all(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def find_index_of_all(lst, fn):
+-  return [i for i, x in enumerate(lst) if fn(x)]
 +    """Return the indices of all items in lst where fn(item) is True."""
 +    return [i for i, x in enumerate(lst) if fn(x)]
 +
@@ -590,61 +805,82 @@ def find_index_of_all(lst, fn):  return [i for i, x in enumerate(lst) if fn(x)]
 ```
 
 #### solution 2
+
 ```diff
--def find_index_of_all(lst, fn):
-+def find_index_of_all(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index_of_all(lst, fn):
+-  return [i for i, x in enumerate(lst) if fn(x)]
 +    """
 +    Find the index of all items in the list
 +    that satisfies the given predicate.
 +    """
 +    return [i for i, e in enumerate(lst) if fn(e)]
 +
-+
-+def all
 ```
 
 #### solution 3
+
 ```diff
--def find_index_of_all(lst, fn):
-+def find_index_of_all(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index_of_all(lst, fn):
+-  return [i for i, x in enumerate(lst) if fn(x)]
 +    """Finds all indices in a list where a predicate is true.
 +
 +    Args:
 +        lst: A list.
 +        fn: A function taking an element and returning a bool.
 +
-+    Returns:
-+        A
 ```
 
 #### solution 4
+
 ```diff
--def find_index_of_all(lst, fn):
-+def find_index_of_all(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index_of_all(lst, fn):
+-  return [i for i, x in enumerate(lst) if fn(x)]
 +    idx = []
 +    for i, x in enumerate(lst):
 +        if fn(x):
 +            idx.append(i)
 +    return idx
 +
-+def iif(condition, true_
 ```
 
 ### take (task/9)
 
 #### canonical solution
+
 ```python
-def take(itr, n = 1):  return itr[:n]
+def take(itr, n = 1):
+  return itr[:n]
 ```
 
 #### solution 0
+
 ```diff
--def take(itr, n = 1):
-+def take(itr, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def take(itr, n = 1):
+-  return itr[:n]
 +    return list(islice(itr, n))
 +
 +def take_nth(itr, n = 1):
@@ -654,10 +890,16 @@ def take(itr, n = 1):  return itr[:n]
 ```
 
 #### solution 1
+
 ```diff
--def take(itr, n = 1):
-+def take(itr, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def take(itr, n = 1):
+-  return itr[:n]
 +    """
 +    This function returns the first n elements of an iterator as a list.
 +    :param itr: The iterator.
@@ -666,24 +908,35 @@ def take(itr, n = 1):  return itr[:n]
 ```
 
 #### solution 2
+
 ```diff
--def take(itr, n = 1):
-+def take(itr, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def take(itr, n = 1):
+-  return itr[:n]
 +    return itr[0:n]
 +
 +def read_int(file):
 +    return int(file.readline())
 +
 +def read_int_array(file, sep = ' '):
-+    return [int
 ```
 
 #### solution 3
+
 ```diff
--def take(itr, n = 1):
-+def take(itr, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def take(itr, n = 1):
+-  return itr[:n]
 +    if n < 0:
 +        raise ValueError('Cannot take a negative number of elements from the iterable')
 +    return itr[:n]
@@ -692,31 +945,44 @@ def take(itr, n = 1):  return itr[:n]
 ```
 
 #### solution 4
+
 ```diff
--def take(itr, n = 1):
-+def take(itr, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def take(itr, n = 1):
+-  return itr[:n]
 +    for i in range(n):
 +        yield next(itr)
 +
 +def get(itr, k = 0):
 +    return next(take(itr, k))
 +
-+def nth(itr,
 ```
 
 ### last (task/10)
 
 #### canonical solution
+
 ```python
-def last(lst):  return lst[-1]
+def last(lst):
+  return lst[-1]
 ```
 
 #### solution 0
+
 ```diff
--def last(lst):
-+def last(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def last(lst):
+-  return lst[-1]
 +    return lst[-1]
 +
 +
@@ -726,85 +992,107 @@ def last(lst):  return lst[-1]
 ```
 
 #### solution 1
+
 ```diff
--def last(lst):
-+def last(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def last(lst):
+-  return lst[-1]
 +    if lst:
 +        return lst[-1]
 +    else:
 +        return None
 +
 +def merge(result, op):
-+    def insert(key, value):
-+        if not result.has_key
 ```
 
 #### solution 2
+
 ```diff
--def last(lst):
-+def last(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def last(lst):
+-  return lst[-1]
 +    if lst == []:
 +        return None
 +    else:
 +        return lst[-1]
 +
 +def assign(x, y):
-+    globals()[x] = y
-+
-+def isa(
 ```
 
 #### solution 3
+
 ```diff
--def last(lst):
-+def last(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def last(lst):
+-  return lst[-1]
 +    return lst[-1]
 +
 +def second(lst):
 +    return lst[1]
 +
 +def key(lst):
-+    return last(lst)
-+
-+def is_number(x):
 ```
 
 #### solution 4
+
 ```diff
--def last(lst):
-+def last(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def last(lst):
+-  return lst[-1]
 +    """Returns the last element of a list"""
 +    return lst[-1]
 +
 +
 +def before_last(lst):
 +    """Returns the element before the last of a list"""
-+    return lst[-
 ```
 
 ### delay (task/11)
 
 #### canonical solution
+
 ```python
 from time import sleep
 
-def delay(fn, ms, *args):  sleep(ms / 1000)
+def delay(fn, ms, *args):
+  sleep(ms / 1000)
   return fn(*args)
 ```
 
 #### solution 0
+
 ```diff
--from time import sleep
--
--def delay(fn, ms, *args):
-+from time import sleep
-+
-+def delay(fn, ms, *args):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,10 @@
+
+ from time import sleep
+ 
+ def delay(fn, ms, *args):
+-  sleep(ms / 1000)
+-  return fn(*args)
 +    t = Thread(target=fn, args=args)
 +    t.start()
 +    sleep(ms/1000)
@@ -815,14 +1103,19 @@ def delay(fn, ms, *args):  sleep(ms / 1000)
 ```
 
 #### solution 1
+
 ```diff
--from time import sleep
--
--def delay(fn, ms, *args):
-+from time import sleep
-+
-+def delay(fn, ms, *args):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,9 @@
+
+ from time import sleep
+ 
+ def delay(fn, ms, *args):
+-  sleep(ms / 1000)
+-  return fn(*args)
 +    """
 +    This function allows you to delay the execution of a function.
 +
@@ -832,14 +1125,19 @@ def delay(fn, ms, *args):  sleep(ms / 1000)
 ```
 
 #### solution 2
+
 ```diff
--from time import sleep
--
--def delay(fn, ms, *args):
-+from time import sleep
-+
-+def delay(fn, ms, *args):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,10 @@
+
+ from time import sleep
+ 
+ def delay(fn, ms, *args):
+-  sleep(ms / 1000)
+-  return fn(*args)
 +    def wrapper():
 +        sleep(ms/1000)
 +        return fn(*args)
@@ -847,20 +1145,22 @@ def delay(fn, ms, *args):  sleep(ms / 1000)
 +
 +@delay
 +def hello(name):
-+    print("Hello, {}!".format(name))
-+
-+# hello
 ```
 
 #### solution 3
+
 ```diff
--from time import sleep
--
--def delay(fn, ms, *args):
-+from time import sleep
-+
-+def delay(fn, ms, *args):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,10 @@
+
+ from time import sleep
+ 
+ def delay(fn, ms, *args):
+-  sleep(ms / 1000)
+-  return fn(*args)
 +    def wrap(*args):
 +        sleep(ms/1000)
 +        return fn(*args)
@@ -868,18 +1168,22 @@ def delay(fn, ms, *args):  sleep(ms / 1000)
 +
 +def my_decorator(func):
 +    def wrapper():
-+        print("Something is happening before
 ```
 
 #### solution 4
+
 ```diff
--from time import sleep
--
--def delay(fn, ms, *args):
-+from time import sleep
-+
-+def delay(fn, ms, *args):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,10 @@
+
+ from time import sleep
+ 
+ def delay(fn, ms, *args):
+-  sleep(ms / 1000)
+-  return fn(*args)
 +    sleep(ms / 1000)
 +    return fn(*args)
 +
@@ -887,86 +1191,95 @@ def delay(fn, ms, *args):  sleep(ms / 1000)
 +    return item[1]
 +
 +def sort_dict(d):
-+    return sorted(d.items
 ```
 
 ### curry (task/12)
 
 #### canonical solution
+
 ```python
 from functools import partial
 
-def curry(fn, *args):  return partial(fn, *args)
+def curry(fn, *args):
+  return partial(fn, *args)
 ```
 
 #### solution 0
+
 ```diff
--from functools import partial
--
--def curry(fn, *args):
-+from functools import partial
-+
-+def curry(fn, *args):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import partial
+ 
+ def curry(fn, *args):
+-  return partial(fn, *args)
 +    def _fn(*_args):
 +        return fn(*(args + _args))
 +    return _fn
 +
 +class Tee:
 +    def __init__(self, file):
-+        self.file = file
-+   
 ```
 
 #### solution 1
+
 ```diff
--from functools import partial
--
--def curry(fn, *args):
-+from functools import partial
-+
-+def curry(fn, *args):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import partial
+ 
+ def curry(fn, *args):
+-  return partial(fn, *args)
 +    return partial(fn, *args)
 +
 +
 +class Person:
 +    def __init__(self, name, age):
 +        self.name = name
-+        self.age = age
-+
-+    def __repr__(
 ```
 
 #### solution 2
+
 ```diff
--from functools import partial
--
--def curry(fn, *args):
-+from functools import partial
-+
-+def curry(fn, *args):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import partial
+ 
+ def curry(fn, *args):
+-  return partial(fn, *args)
 +    def curried(*more_args):
 +        return fn(*(args + more_args))
 +    return curried
 +
 +def uppercase(s):
 +    return s.upper()
-+
-+def test():
-+   
 ```
 
 #### solution 3
+
 ```diff
--from functools import partial
--
--def curry(fn, *args):
-+from functools import partial
-+
-+def curry(fn, *args):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,8 @@
+
+ from functools import partial
+ 
+ def curry(fn, *args):
+-  return partial(fn, *args)
 +    def curried(*more_args):
 +        return fn(*(args + more_args))
 +    return curried
@@ -975,122 +1288,150 @@ def curry(fn, *args):  return partial(fn, *args)
 ```
 
 #### solution 4
+
 ```diff
--from functools import partial
--
--def curry(fn, *args):
-+from functools import partial
-+
-+def curry(fn, *args):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import partial
+ 
+ def curry(fn, *args):
+-  return partial(fn, *args)
 +    """
 +    Return a curried version of the given function,
 +    in the style of `functools.partial`
 +
 +    Example
 +    -------
-+    def add(x, y):
-+        return x + y
-+
 ```
 
 ### find (task/13)
 
 #### canonical solution
+
 ```python
-def find(lst, fn):  return next(x for x in lst if fn(x))
+def find(lst, fn):
+  return next(x for x in lst if fn(x))
 ```
 
 #### solution 0
+
 ```diff
--def find(lst, fn):
-+def find(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def find(lst, fn):
+-  return next(x for x in lst if fn(x))
 +    for l in lst:
 +        if fn(l):
 +            return l
 +    return None
 +
 +def get_thread_id(i3con):
-+    tree = i3con.get_tree()
-+   
 ```
 
 #### solution 1
+
 ```diff
--def find(lst, fn):
-+def find(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def find(lst, fn):
+-  return next(x for x in lst if fn(x))
 +    """
 +    Return the first item in lst that returns True in fn.
 +    """
 +    for item in lst:
 +        if fn(item):
 +            return item
-+    return None
-+
-+def rev(l
 ```
 
 #### solution 2
+
 ```diff
--def find(lst, fn):
-+def find(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def find(lst, fn):
+-  return next(x for x in lst if fn(x))
 +    for item in lst:
 +        if fn(item):
 +            return item
 +    return None
 +
 +def main():
-+    results = []
-+    for case in xrange(input()):
-+        C, D,
 ```
 
 #### solution 3
+
 ```diff
--def find(lst, fn):
-+def find(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find(lst, fn):
+-  return next(x for x in lst if fn(x))
 +    for l in lst:
 +        if fn(l):
 +            return l
 +    return None
 +
 +def isValid(p):
-+    if p.parachute:
-+        return True
-+    elif p.
 ```
 
 #### solution 4
+
 ```diff
--def find(lst, fn):
-+def find(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def find(lst, fn):
+-  return next(x for x in lst if fn(x))
 +    for el in lst:
 +        if fn(el):
 +            return el
 +    return None
 +
 +def find_index(lst, fn):
-+    for i, el in enumerate(lst):
-+       
 ```
 
 ### capitalize_every_word (task/14)
 
 #### canonical solution
+
 ```python
-def capitalize_every_word(s):  return s.title()
+def capitalize_every_word(s):
+  return s.title()
 ```
 
 #### solution 0
+
 ```diff
--def capitalize_every_word(s):
-+def capitalize_every_word(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize_every_word(s):
+-  return s.title()
 +    return ' '.join([word.capitalize() for word in s.split(' ')])
 +
 +def levenshtein(s1, s2):
@@ -1098,10 +1439,16 @@ def capitalize_every_word(s):  return s.title()
 ```
 
 #### solution 1
+
 ```diff
--def capitalize_every_word(s):
-+def capitalize_every_word(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def capitalize_every_word(s):
+-  return s.title()
 +    return ' '.join([x.capitalize() for x in s.split(' ')])
 +
 +class Command(BaseCommand):
@@ -1110,10 +1457,16 @@ def capitalize_every_word(s):  return s.title()
 ```
 
 #### solution 2
+
 ```diff
--def capitalize_every_word(s):
-+def capitalize_every_word(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def capitalize_every_word(s):
+-  return s.title()
 +    s = s.split(' ')
 +    s = map(lambda x: x.capitalize(), s)
 +    return ' '.join(s)
@@ -1123,10 +1476,16 @@ def capitalize_every_word(s):  return s.title()
 ```
 
 #### solution 3
+
 ```diff
--def capitalize_every_word(s):
-+def capitalize_every_word(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def capitalize_every_word(s):
+-  return s.title()
 +    return ' '.join([w.capitalize() for w in s.split(' ')])
 +
 +
@@ -1135,10 +1494,16 @@ def capitalize_every_word(s):  return s.title()
 ```
 
 #### solution 4
+
 ```diff
--def capitalize_every_word(s):
-+def capitalize_every_word(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize_every_word(s):
+-  return s.title()
 +    return ' '.join([w.capitalize() for w in s.split(' ')])
 +
 +def is_same_full_name(name1, name2):
@@ -1148,23 +1513,31 @@ def capitalize_every_word(s):  return s.title()
 ### is_prime (task/15)
 
 #### canonical solution
+
 ```python
 from math import sqrt
 
-def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2): 
+def is_prime(n):
+  if n <= 1 or (n % 2 == 0 and n > 2): 
     return False
   return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 ```
 
 #### solution 0
+
 ```diff
--from math import sqrt
--
--def is_prime(n):
-+from math import sqrt
-+
-+def is_prime(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,6 +1,10 @@
+
+ from math import sqrt
+ 
+ def is_prime(n):
+-  if n <= 1 or (n % 2 == 0 and n > 2): 
+-    return False
+-  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 +    for i in range(2, int(sqrt(n))+1):
 +        if n % i == 0:
 +            return False
@@ -1175,14 +1548,20 @@ def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2):
 ```
 
 #### solution 1
+
 ```diff
--from math import sqrt
--
--def is_prime(n):
-+from math import sqrt
-+
-+def is_prime(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,6 +1,8 @@
+
+ from math import sqrt
+ 
+ def is_prime(n):
+-  if n <= 1 or (n % 2 == 0 and n > 2): 
+-    return False
+-  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 +    if n % 2 == 0 and n > 2: 
 +        return False
 +    for i in range(3, int(sqrt(n)) + 1, 2):
@@ -1191,14 +1570,20 @@ def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2):
 ```
 
 #### solution 2
+
 ```diff
--from math import sqrt
--
--def is_prime(n):
-+from math import sqrt
-+
-+def is_prime(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,6 +1,11 @@
+
+ from math import sqrt
+ 
+ def is_prime(n):
+-  if n <= 1 or (n % 2 == 0 and n > 2): 
+-    return False
+-  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 +    if n < 2:
 +        return False
 +    if n == 2:
@@ -1210,14 +1595,20 @@ def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2):
 ```
 
 #### solution 3
+
 ```diff
--from math import sqrt
--
--def is_prime(n):
-+from math import sqrt
-+
-+def is_prime(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,6 +1,10 @@
+
+ from math import sqrt
+ 
+ def is_prime(n):
+-  if n <= 1 or (n % 2 == 0 and n > 2): 
+-    return False
+-  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 +    for i in range(2, int(sqrt(n)) + 1):
 +        if n % i == 0:
 +            return False
@@ -1228,14 +1619,20 @@ def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2):
 ```
 
 #### solution 4
+
 ```diff
--from math import sqrt
--
--def is_prime(n):
-+from math import sqrt
-+
-+def is_prime(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,6 +1,11 @@
+
+ from math import sqrt
+ 
+ def is_prime(n):
+-  if n <= 1 or (n % 2 == 0 and n > 2): 
+-    return False
+-  return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 +    if n < 2:
 +        return False
 +    for i in range(2, int(sqrt(n)) + 1):
@@ -1249,18 +1646,29 @@ def is_prime(n):  if n <= 1 or (n % 2 == 0 and n > 2):
 ### includes_all (task/16)
 
 #### canonical solution
+
 ```python
-def includes_all(lst, values):  for v in values:
+def includes_all(lst, values):
+  for v in values:
     if v not in lst:
       return False
   return True
 ```
 
 #### solution 0
+
 ```diff
--def includes_all(lst, values):
-+def includes_all(lst, values):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,10 @@
+
+ def includes_all(lst, values):
+-  for v in values:
+-    if v not in lst:
+-      return False
+-  return True
 +    for value in values:
 +        if value not in lst:
 +            return False
@@ -1273,10 +1681,19 @@ def includes_all(lst, values):  for v in values:
 ```
 
 #### solution 1
+
 ```diff
--def includes_all(lst, values):
-+def includes_all(lst, values):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,8 @@
+
+ def includes_all(lst, values):
+-  for v in values:
+-    if v not in lst:
+-      return False
+-  return True
 +    for value in values:
 +        if value not in lst:
 +            return False
@@ -1287,10 +1704,19 @@ def includes_all(lst, values):  for v in values:
 ```
 
 #### solution 2
+
 ```diff
--def includes_all(lst, values):
-+def includes_all(lst, values):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,9 @@
+
+ def includes_all(lst, values):
+-  for v in values:
+-    if v not in lst:
+-      return False
+-  return True
 +    """Returns true if all of the strings in values are in lst."""
 +    for v in values:
 +        if v not in lst:
@@ -1302,10 +1728,19 @@ def includes_all(lst, values):  for v in values:
 ```
 
 #### solution 3
+
 ```diff
--def includes_all(lst, values):
-+def includes_all(lst, values):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,10 @@
+
+ def includes_all(lst, values):
+-  for v in values:
+-    if v not in lst:
+-      return False
+-  return True
 +    """Check that the list contains all the values."""
 +    for value in values:
 +        if value not in lst:
@@ -1318,10 +1753,19 @@ def includes_all(lst, values):  for v in values:
 ```
 
 #### solution 4
+
 ```diff
--def includes_all(lst, values):
-+def includes_all(lst, values):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,10 @@
+
+ def includes_all(lst, values):
+-  for v in values:
+-    if v not in lst:
+-      return False
+-  return True
 +    return all(item in lst for item in values)
 +
 +
@@ -1331,63 +1775,74 @@ def includes_all(lst, values):  for v in values:
 +
 +
 +def get_name():
-+    from .__
 ```
 
 ### is_weekend (task/17)
 
 #### canonical solution
+
 ```python
 from datetime import datetime
 
-def is_weekend(d = datetime.today()):  return d.weekday() > 4
+def is_weekend(d = datetime.today()):
+  return d.weekday() > 4
 ```
 
 #### solution 0
+
 ```diff
--from datetime import datetime
--
--def is_weekend(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekend(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekend(d = datetime.today()):
+-  return d.weekday() > 4
 +    if d.weekday() == 5 or d.weekday() == 6:
 +        return True
 +    else:
 +        return False
 +
 +def get_last_date(filename):
-+    df = pd.read
 ```
 
 #### solution 1
+
 ```diff
--from datetime import datetime
--
--def is_weekend(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekend(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekend(d = datetime.today()):
+-  return d.weekday() > 4
 +    if d.weekday() == 5 or d.weekday() == 6:
 +        return True
 +    else:
 +        return False
 +
 +def is_workday(d = datetime.today()):
-+    if
 ```
 
 #### solution 2
+
 ```diff
--from datetime import datetime
--
--def is_weekend(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekend(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import datetime
+ 
+ def is_weekend(d = datetime.today()):
+-  return d.weekday() > 4
 +    return d.weekday() in [5, 6]
 +
 +def is_weekday(d = datetime.today()):
@@ -1395,56 +1850,73 @@ def is_weekend(d = datetime.today()):  return d.weekday() > 4
 ```
 
 #### solution 3
+
 ```diff
--from datetime import datetime
--
--def is_weekend(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekend(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekend(d = datetime.today()):
+-  return d.weekday() > 4
 +    if d.weekday() == 5 or d.weekday() == 6:
 +        return True
 +    else:
 +        return False
 +
 +if __name__ == '__main__':
-+    print(is_week
 ```
 
 #### solution 4
+
 ```diff
--from datetime import datetime
--
--def is_weekend(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekend(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekend(d = datetime.today()):
+-  return d.weekday() > 4
 +    if d.weekday() == 5 or d.weekday() == 6:
 +        return True
 +    else:
 +        return False
 +
 +def is_leap(year):
-+    if (year % 4 == 0
 ```
 
 ### spread (task/18)
 
 #### canonical solution
+
 ```python
-def spread(arg):  ret = []
+def spread(arg):
+  ret = []
   for i in arg:
     ret.extend(i) if isinstance(i, list) else ret.append(i)
   return ret
 ```
 
 #### solution 0
+
 ```diff
--def spread(arg):
-+def spread(arg):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,10 @@
+
+ def spread(arg):
+-  ret = []
+-  for i in arg:
+-    ret.extend(i) if isinstance(i, list) else ret.append(i)
+-  return ret
 +    return 'spread({})'.format(arg)
 +
 +
@@ -1457,10 +1929,19 @@ def spread(arg):  ret = []
 ```
 
 #### solution 1
+
 ```diff
--def spread(arg):
-+def spread(arg):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,7 @@
+
+ def spread(arg):
+-  ret = []
+-  for i in arg:
+-    ret.extend(i) if isinstance(i, list) else ret.append(i)
+-  return ret
 +    return abs(min(arg)) + max(arg)
 +
 +def flatten(lst):
@@ -1470,10 +1951,19 @@ def spread(arg):  ret = []
 ```
 
 #### solution 2
+
 ```diff
--def spread(arg):
-+def spread(arg):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,8 @@
+
+ def spread(arg):
+-  ret = []
+-  for i in arg:
+-    ret.extend(i) if isinstance(i, list) else ret.append(i)
+-  return ret
 +    """spread(iterable) -> iterator
 +
 +    Runs the iterable and executes every returned value as a function argument
@@ -1484,10 +1974,19 @@ def spread(arg):  ret = []
 ```
 
 #### solution 3
+
 ```diff
--def spread(arg):
-+def spread(arg):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,8 @@
+
+ def spread(arg):
+-  ret = []
+-  for i in arg:
+-    ret.extend(i) if isinstance(i, list) else ret.append(i)
+-  return ret
 +    """
 +    Given a string of a Gimp color palette file, it will return a list
 +    of the colors in that file.
@@ -1498,10 +1997,19 @@ def spread(arg):  ret = []
 ```
 
 #### solution 4
+
 ```diff
--def spread(arg):
-+def spread(arg):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,9 @@
+
+ def spread(arg):
+-  ret = []
+-  for i in arg:
+-    ret.extend(i) if isinstance(i, list) else ret.append(i)
+-  return ret
 +    '''
 +    Return the aggregation by spreading values of the given sequence.
 +    '''
@@ -1515,57 +2023,69 @@ def spread(arg):  ret = []
 ### reverse_number (task/19)
 
 #### canonical solution
+
 ```python
 from math import copysign
 
-def reverse_number(n):  return copysign(float(str(n)[::-1].replace('-', '')), n)
+def reverse_number(n):
+  return copysign(float(str(n)[::-1].replace('-', '')), n)
 ```
 
 #### solution 0
+
 ```diff
--from math import copysign
--
--def reverse_number(n):
-+from math import copysign
-+
-+def reverse_number(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import copysign
+ 
+ def reverse_number(n):
+-  return copysign(float(str(n)[::-1].replace('-', '')), n)
 +    return int(str(n)[::-1])
 +
 +def is_palindrome(n):
 +    return n == reverse_number(n)
 +
 +def is_lychrel(n):
-+    for i
 ```
 
 #### solution 1
+
 ```diff
--from math import copysign
--
--def reverse_number(n):
-+from math import copysign
-+
-+def reverse_number(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import copysign
+ 
+ def reverse_number(n):
+-  return copysign(float(str(n)[::-1].replace('-', '')), n)
 +    return int(str(n)[::-1])
 +
 +def is_palindrome(n):
 +    return n == reverse_number(n)
 +
 +def is_lychrel(n):
-+    for i
 ```
 
 #### solution 2
+
 ```diff
--from math import copysign
--
--def reverse_number(n):
-+from math import copysign
-+
-+def reverse_number(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from math import copysign
+ 
+ def reverse_number(n):
+-  return copysign(float(str(n)[::-1].replace('-', '')), n)
 +    return int(str(n)[::-1])
 +
 +def is_lychrel(n):
@@ -1575,33 +2095,39 @@ def reverse_number(n):  return copysign(float(str(n)[::-1].replace('-', '')), n)
 ```
 
 #### solution 3
+
 ```diff
--from math import copysign
--
--def reverse_number(n):
-+from math import copysign
-+
-+def reverse_number(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from math import copysign
+ 
+ def reverse_number(n):
+-  return copysign(float(str(n)[::-1].replace('-', '')), n)
 +    return int(str(n)[::-1])
 +
 +def is_palindrome(n):
 +    if reverse_number(n) == n:
 +        return True
 +    else:
-+        return False
-+
 ```
 
 #### solution 4
+
 ```diff
--from math import copysign
--
--def reverse_number(n):
-+from math import copysign
-+
-+def reverse_number(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from math import copysign
+ 
+ def reverse_number(n):
+-  return copysign(float(str(n)[::-1].replace('-', '')), n)
 +    return int(str(n)[::-1])
 +
 +def reverse_signed_number(n):
@@ -1613,21 +2139,27 @@ def reverse_number(n):  return copysign(float(str(n)[::-1].replace('-', '')), n)
 ### words (task/20)
 
 #### canonical solution
+
 ```python
 import re
 
-def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
+def words(s, pattern = '[a-zA-Z-]+'):
+  return re.findall(pattern, s)
 ```
 
 #### solution 0
+
 ```diff
--import re
--
--def words(s, pattern = '[a-zA-Z-]+'):
-+import re
-+
-+def words(s, pattern = '[a-zA-Z-]+'):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ import re
+ 
+ def words(s, pattern = '[a-zA-Z-]+'):
+-  return re.findall(pattern, s)
 +    for word in re.findall(pattern, s):
 +        yield word
 +
@@ -1637,14 +2169,18 @@ def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
 ```
 
 #### solution 1
+
 ```diff
--import re
--
--def words(s, pattern = '[a-zA-Z-]+'):
-+import re
-+
-+def words(s, pattern = '[a-zA-Z-]+'):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,8 @@
+
+ import re
+ 
+ def words(s, pattern = '[a-zA-Z-]+'):
+-  return re.findall(pattern, s)
 +    return re.findall(pattern, s)
 +
 +def phone_number(s):
@@ -1653,14 +2189,18 @@ def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
 ```
 
 #### solution 2
+
 ```diff
--import re
--
--def words(s, pattern = '[a-zA-Z-]+'):
-+import re
-+
-+def words(s, pattern = '[a-zA-Z-]+'):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,7 @@
+
+ import re
+ 
+ def words(s, pattern = '[a-zA-Z-]+'):
+-  return re.findall(pattern, s)
 +    return re.findall(pattern, s)
 +
 +def phone_number(s):
@@ -1668,14 +2208,18 @@ def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
 ```
 
 #### solution 3
+
 ```diff
--import re
--
--def words(s, pattern = '[a-zA-Z-]+'):
-+import re
-+
-+def words(s, pattern = '[a-zA-Z-]+'):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ import re
+ 
+ def words(s, pattern = '[a-zA-Z-]+'):
+-  return re.findall(pattern, s)
 +    return re.findall(pattern, s)
 +
 +def phone_number(s):
@@ -1683,14 +2227,18 @@ def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
 ```
 
 #### solution 4
+
 ```diff
--import re
--
--def words(s, pattern = '[a-zA-Z-]+'):
-+import re
-+
-+def words(s, pattern = '[a-zA-Z-]+'):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,7 @@
+
+ import re
+ 
+ def words(s, pattern = '[a-zA-Z-]+'):
+-  return re.findall(pattern, s)
 +    for word in re.findall(pattern, s):
 +        yield word.lower()
 +
@@ -1700,39 +2248,48 @@ def words(s, pattern = '[a-zA-Z-]+'):  return re.findall(pattern, s)
 ### sample (task/21)
 
 #### canonical solution
+
 ```python
 from random import choice
 
-def sample(lst):  return choice(lst)
+def sample(lst):
+  return choice(lst)
 ```
 
 #### solution 0
+
 ```diff
--from random import choice
--
--def sample(lst):
-+from random import choice
-+
-+def sample(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from random import choice
+ 
+ def sample(lst):
+-  return choice(lst)
 +    return choice(lst)
 +
 +def get_index(lst, word):
 +    return lst.index(word)
 +
 +def get_index_sequence(lst, word_list):
-+    index_
 ```
 
 #### solution 1
+
 ```diff
--from random import choice
--
--def sample(lst):
-+from random import choice
-+
-+def sample(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from random import choice
+ 
+ def sample(lst):
+-  return choice(lst)
 +    return choice(lst)
 +
 +def generate_model(cfdist, word, num=15):
@@ -1742,53 +2299,60 @@ def sample(lst):  return choice(lst)
 ```
 
 #### solution 2
+
 ```diff
--from random import choice
--
--def sample(lst):
-+from random import choice
-+
-+def sample(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from random import choice
+ 
+ def sample(lst):
+-  return choice(lst)
 +    """
 +    Sample one element from the list.
 +    """
 +    return choice(lst)
 +
 +
-+def gen_sentence(word1, word2, max_len):
-+    """
-+    Generate a sentence
 ```
 
 #### solution 3
+
 ```diff
--from random import choice
--
--def sample(lst):
-+from random import choice
-+
-+def sample(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from random import choice
+ 
+ def sample(lst):
+-  return choice(lst)
 +    return choice(lst)
 +
 +def calculate_frequency(list, word):
 +    return list.count(word)
 +
 +def calculate_degree(list):
-+    return (len(list) - 1)
-+
 ```
 
 #### solution 4
+
 ```diff
--from random import choice
--
--def sample(lst):
-+from random import choice
-+
-+def sample(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from random import choice
+ 
+ def sample(lst):
+-  return choice(lst)
 +    return choice(lst)
 +
 +def shuffle(lst):
@@ -1800,128 +2364,158 @@ def sample(lst):  return choice(lst)
 ### days_ago (task/22)
 
 #### canonical solution
+
 ```python
 from datetime import timedelta, date
 
-def days_ago(n):  return date.today() - timedelta(n)
+def days_ago(n):
+  return date.today() - timedelta(n)
 ```
 
 #### solution 0
+
 ```diff
--from datetime import timedelta, date
--
--def days_ago(n):
-+from datetime import timedelta, date
-+
-+def days_ago(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def days_ago(n):
+-  return date.today() - timedelta(n)
 +    return date.today() - timedelta(days=n)
 +
 +class Command(BaseCommand):
 +    help = 'Closes the specified poll for voting'
 +
 +    def add_arguments(self, parser):
-+       
 ```
 
 #### solution 1
+
 ```diff
--from datetime import timedelta, date
--
--def days_ago(n):
-+from datetime import timedelta, date
-+
-+def days_ago(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def days_ago(n):
+-  return date.today() - timedelta(n)
 +    return date.today() - timedelta(days=n)
 +
 +# default
 +default_args = {
 +    'owner': 'airflow',
 +    'depends_on_past': False,
-+    'start
 ```
 
 #### solution 2
+
 ```diff
--from datetime import timedelta, date
--
--def days_ago(n):
-+from datetime import timedelta, date
-+
-+def days_ago(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def days_ago(n):
+-  return date.today() - timedelta(n)
 +    return date.today() - timedelta(days=n)
 +
 +print(days_ago(5))
 +#2018-11-29
 +
 +"""
-+可见，如果
 ```
 
 #### solution 3
+
 ```diff
--from datetime import timedelta, date
--
--def days_ago(n):
-+from datetime import timedelta, date
-+
-+def days_ago(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def days_ago(n):
+-  return date.today() - timedelta(n)
 +    return date.today() - timedelta(days=n)
 +
 +def argparse_date(date_string):
 +    """ Convert datetime string to datetime object.
 +
 +    Arguments:
-+        date_string {
 ```
 
 #### solution 4
+
 ```diff
--from datetime import timedelta, date
--
--def days_ago(n):
-+from datetime import timedelta, date
-+
-+def days_ago(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def days_ago(n):
+-  return date.today() - timedelta(n)
 +    return date.today() - timedelta(days=n)
 +
 +def build_query(lst):
 +    return (lst)
 +
 +def assign_trending(post):
-+    from django.db
 ```
 
 ### key_in_dict (task/23)
 
 #### canonical solution
+
 ```python
-def key_in_dict(d, key):  return (key in d)
+def key_in_dict(d, key):
+  return (key in d)
 ```
 
 #### solution 0
+
 ```diff
--def key_in_dict(d, key):
-+def key_in_dict(d, key):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def key_in_dict(d, key):
+-  return (key in d)
 +    return key in d.keys()
 +
 +
 +def has_same_shape(d, dicts):
 +    for dict in dicts:
 +        for key in d.keys():
-+            if key not in dict.keys():
 ```
 
 #### solution 1
+
 ```diff
--def key_in_dict(d, key):
-+def key_in_dict(d, key):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def key_in_dict(d, key):
+-  return (key in d)
 +    return key in d and d[key] is not None
 +
 +
@@ -1931,43 +2525,54 @@ def key_in_dict(d, key):  return (key in d)
 ```
 
 #### solution 2
+
 ```diff
--def key_in_dict(d, key):
-+def key_in_dict(d, key):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def key_in_dict(d, key):
+-  return (key in d)
 +    """
 +    Check if key is in dict, but do not raise error
 +    """
 +    if key in d:
 +        return True
 +    else:
-+        return False
-+
-+
-+def read_dict_data(path):
 ```
 
 #### solution 3
+
 ```diff
--def key_in_dict(d, key):
-+def key_in_dict(d, key):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def key_in_dict(d, key):
+-  return (key in d)
 +    if key in d:
 +        return True
 +    else:
 +        return False
 +    
 +def dict_to_list(d):
-+    l = []
-+    for item in d:
-+        l.append(item
 ```
 
 #### solution 4
+
 ```diff
--def key_in_dict(d, key):
-+def key_in_dict(d, key):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def key_in_dict(d, key):
+-  return (key in d)
 +    return key in d and d[key] is not None
 +
 +
@@ -1978,17 +2583,27 @@ def key_in_dict(d, key):  return (key in d)
 ### factorial (task/24)
 
 #### canonical solution
+
 ```python
-def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
+def factorial(num):
+  if not ((num >= 0) and (num % 1 == 0)):
     raise Exception("Number can't be floating point or negative.")
   return 1 if num == 0 else num * factorial(num - 1)
 ```
 
 #### solution 0
+
 ```diff
--def factorial(num):
-+def factorial(num):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ def factorial(num):
+-  if not ((num >= 0) and (num % 1 == 0)):
+-    raise Exception("Number can't be floating point or negative.")
+-  return 1 if num == 0 else num * factorial(num - 1)
 +    if num == 0:
 +        return 1
 +    else:
@@ -1999,10 +2614,18 @@ def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
 ```
 
 #### solution 1
+
 ```diff
--def factorial(num):
-+def factorial(num):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,6 @@
+
+ def factorial(num):
+-  if not ((num >= 0) and (num % 1 == 0)):
+-    raise Exception("Number can't be floating point or negative.")
+-  return 1 if num == 0 else num * factorial(num - 1)
 +    return 1 if num == 1 else num * factorial(num - 1)
 +
 +
@@ -2011,10 +2634,18 @@ def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
 ```
 
 #### solution 2
+
 ```diff
--def factorial(num):
-+def factorial(num):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,7 @@
+
+ def factorial(num):
+-  if not ((num >= 0) and (num % 1 == 0)):
+-    raise Exception("Number can't be floating point or negative.")
+-  return 1 if num == 0 else num * factorial(num - 1)
 +    if num == 1:
 +        return 1
 +    else:
@@ -2024,10 +2655,18 @@ def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
 ```
 
 #### solution 3
+
 ```diff
--def factorial(num):
-+def factorial(num):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,8 @@
+
+ def factorial(num):
+-  if not ((num >= 0) and (num % 1 == 0)):
+-    raise Exception("Number can't be floating point or negative.")
+-  return 1 if num == 0 else num * factorial(num - 1)
 +    if num == 0:
 +        return 1
 +    else:
@@ -2038,10 +2677,18 @@ def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
 ```
 
 #### solution 4
+
 ```diff
--def factorial(num):
-+def factorial(num):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,8 @@
+
+ def factorial(num):
+-  if not ((num >= 0) and (num % 1 == 0)):
+-    raise Exception("Number can't be floating point or negative.")
+-  return 1 if num == 0 else num * factorial(num - 1)
 +    if num == 1:
 +        return 1
 +    else:
@@ -2054,15 +2701,23 @@ def factorial(num):  if not ((num >= 0) and (num % 1 == 0)):
 ### initial (task/25)
 
 #### canonical solution
+
 ```python
-def initial(lst):  return lst[:-1]
+def initial(lst):
+  return lst[:-1]
 ```
 
 #### solution 0
+
 ```diff
--def initial(lst):
-+def initial(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def initial(lst):
+-  return lst[:-1]
 +    for i in range(len(lst)):
 +        for j in range(len(lst[i])):
 +            lst[i][j] = random.randint(0, 1)
@@ -2070,10 +2725,16 @@ def initial(lst):  return lst[:-1]
 ```
 
 #### solution 1
+
 ```diff
--def initial(lst):
-+def initial(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def initial(lst):
+-  return lst[:-1]
 +    for i in range(0,len(lst)):
 +        lst[i] = " "
 +    return lst
@@ -2083,10 +2744,16 @@ def initial(lst):  return lst[:-1]
 ```
 
 #### solution 2
+
 ```diff
--def initial(lst):
-+def initial(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def initial(lst):
+-  return lst[:-1]
 +    for i in range(len(lst)):
 +        lst[i] = 0
 +        
@@ -2096,10 +2763,16 @@ def initial(lst):  return lst[:-1]
 ```
 
 #### solution 3
+
 ```diff
--def initial(lst):
-+def initial(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def initial(lst):
+-  return lst[:-1]
 +    """
 +    Returns the initial of a string.
 +    """
@@ -2109,10 +2782,16 @@ def initial(lst):  return lst[:-1]
 ```
 
 #### solution 4
+
 ```diff
--def initial(lst):
-+def initial(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def initial(lst):
+-  return lst[:-1]
 +    for i in range(1, len(lst)):
 +        temp = lst[i]
 +        j = i - 1
@@ -2123,21 +2802,27 @@ def initial(lst):  return lst[:-1]
 ### pad (task/26)
 
 #### canonical solution
+
 ```python
 from math import floor
 
-def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
+def pad(s, length, char = ' '):
+  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 ```
 
 #### solution 0
+
 ```diff
--from math import floor
--
--def pad(s, length, char = ' '):
-+from math import floor
-+
-+def pad(s, length, char = ' '):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import floor
+ 
+ def pad(s, length, char = ' '):
+-  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 +    return s + (char * (length - len(s)))
 +
 +def main():
@@ -2147,14 +2832,18 @@ def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char
 ```
 
 #### solution 1
+
 ```diff
--from math import floor
--
--def pad(s, length, char = ' '):
-+from math import floor
-+
-+def pad(s, length, char = ' '):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import floor
+ 
+ def pad(s, length, char = ' '):
+-  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 +    assert(length >= len(s))
 +    r = length - len(s)
 +    return s + (char * r)
@@ -2164,14 +2853,18 @@ def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char
 ```
 
 #### solution 2
+
 ```diff
--from math import floor
--
--def pad(s, length, char = ' '):
-+from math import floor
-+
-+def pad(s, length, char = ' '):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from math import floor
+ 
+ def pad(s, length, char = ' '):
+-  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 +    if length <= len(s):
 +        return s
 +    return s + (char * (length - len(s)))
@@ -2181,34 +2874,39 @@ def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char
 ```
 
 #### solution 3
+
 ```diff
--from math import floor
--
--def pad(s, length, char = ' '):
-+from math import floor
-+
-+def pad(s, length, char = ' '):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from math import floor
+ 
+ def pad(s, length, char = ' '):
+-  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 +	while len(s) < length:
 +		s = s + char
 +	return s
 +
 +def hex_dump(data, length = 16):
 +	'''
-+	Dump data in hex format.
-+
-+	
 ```
 
 #### solution 4
+
 ```diff
--from math import floor
--
--def pad(s, length, char = ' '):
-+from math import floor
-+
-+def pad(s, length, char = ' '):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from math import floor
+ 
+ def pad(s, length, char = ' '):
+-  return s.rjust(floor((len(s) + length)/2), char).ljust(length, char)
 +	if len(s) < length:
 +		return s + (char * (length - len(s)))
 +	else:
@@ -2220,21 +2918,27 @@ def pad(s, length, char = ' '):  return s.rjust(floor((len(s) + length)/2), char
 ### degrees_to_rads (task/27)
 
 #### canonical solution
+
 ```python
 from math import pi
 
-def degrees_to_rads(deg):  return (deg * pi) / 180.0
+def degrees_to_rads(deg):
+  return (deg * pi) / 180.0
 ```
 
 #### solution 0
+
 ```diff
--from math import pi
--
--def degrees_to_rads(deg):
-+from math import pi
-+
-+def degrees_to_rads(deg):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def degrees_to_rads(deg):
+-  return (deg * pi) / 180.0
 +    return deg*pi/180
 +
 +def polygon_area(n, side_length):
@@ -2244,33 +2948,39 @@ def degrees_to_rads(deg):  return (deg * pi) / 180.0
 ```
 
 #### solution 1
+
 ```diff
--from math import pi
--
--def degrees_to_rads(deg):
-+from math import pi
-+
-+def degrees_to_rads(deg):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def degrees_to_rads(deg):
+-  return (deg * pi) / 180.0
 +    return deg * pi / 180
 +
 +def log(msg):
 +    print("\n" + msg)
 +
 +def build_distance_matrix(locations):
-+    """
-+    This method calculates the great circle distance
 ```
 
 #### solution 2
+
 ```diff
--from math import pi
--
--def degrees_to_rads(deg):
-+from math import pi
-+
-+def degrees_to_rads(deg):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,8 @@
+
+ from math import pi
+ 
+ def degrees_to_rads(deg):
+-  return (deg * pi) / 180.0
 +    return deg*pi/180
 +
 +def distance(lat1, lat2, lon1, lon2):
@@ -2279,32 +2989,39 @@ def degrees_to_rads(deg):  return (deg * pi) / 180.0
 ```
 
 #### solution 3
+
 ```diff
--from math import pi
--
--def degrees_to_rads(deg):
-+from math import pi
-+
-+def degrees_to_rads(deg):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def degrees_to_rads(deg):
+-  return (deg * pi) / 180.0
 +    return deg*pi/180
 +
 +def rads_to_degrees(rads):
 +    return rads*180/pi
 +
 +def get_ref_ellipsoid_vector():
-+    return (6
 ```
 
 #### solution 4
+
 ```diff
--from math import pi
--
--def degrees_to_rads(deg):
-+from math import pi
-+
-+def degrees_to_rads(deg):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def degrees_to_rads(deg):
+-  return (deg * pi) / 180.0
 +    return deg * pi / 180
 +
 +def main():
@@ -2316,24 +3033,28 @@ def degrees_to_rads(deg):  return (deg * pi) / 180.0
 ### lcm (task/28)
 
 #### canonical solution
+
 ```python
 from functools import reduce
 from math import gcd
 
-def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
+def lcm(numbers):
+  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ```
 
 #### solution 0
+
 ```diff
--from functools import reduce
--from math import gcd
--
--def lcm(numbers):
-+from functools import reduce
-+from math import gcd
-+
-+def lcm(numbers):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -2,4 +2,7 @@
+
+ from math import gcd
+ 
+ def lcm(numbers):
+-  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 +    return reduce(lambda x, y: (x*y)//gcd(x,y), numbers, 1)
 +
 +def answer(dimensions, captain_position, badguy_position, distance):
@@ -2341,16 +3062,18 @@ def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ```
 
 #### solution 1
+
 ```diff
--from functools import reduce
--from math import gcd
--
--def lcm(numbers):
-+from functools import reduce
-+from math import gcd
-+
-+def lcm(numbers):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd
+ 
+ def lcm(numbers):
+-  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 +    return reduce(lambda x, y: (x*y)//gcd(x,y), numbers, 1)
 +
 +def gcd_list(L):
@@ -2360,32 +3083,36 @@ def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ```
 
 #### solution 2
+
 ```diff
--from functools import reduce
--from math import gcd
--
--def lcm(numbers):
-+from functools import reduce
-+from math import gcd
-+
-+def lcm(numbers):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -2,4 +2,6 @@
+
+ from math import gcd
+ 
+ def lcm(numbers):
+-  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 +    return reduce(lambda x, y: (x*y)//gcd(x,y), numbers, 1)
 +
 +print(lcm([3, 6, 8]))
 ```
 
 #### solution 3
+
 ```diff
--from functools import reduce
--from math import gcd
--
--def lcm(numbers):
-+from functools import reduce
-+from math import gcd
-+
-+def lcm(numbers):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -2,4 +2,8 @@
+
+ from math import gcd
+ 
+ def lcm(numbers):
+-  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 +    return reduce(lambda x, y: (x*y)//gcd(x,y), numbers, 1)
 +
 +def find_in_grid(grid, pattern):
@@ -2394,16 +3121,18 @@ def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ```
 
 #### solution 4
+
 ```diff
--from functools import reduce
--from math import gcd
--
--def lcm(numbers):
-+from functools import reduce
-+from math import gcd
-+
-+def lcm(numbers):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -2,4 +2,7 @@
+
+ from math import gcd
+ 
+ def lcm(numbers):
+-  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 +    return reduce(lambda x, y: (x*y)//gcd(x,y), numbers, 1)
 +
 +def lcm_for_range(start, end):
@@ -2413,45 +3142,61 @@ def lcm(numbers):  return reduce((lambda x, y: int(x * y / gcd(x, y))), numbers)
 ### most_frequent (task/29)
 
 #### canonical solution
+
 ```python
-def most_frequent(lst):  return max(set(lst), key = lst.count)
+def most_frequent(lst):
+  return max(set(lst), key = lst.count)
 ```
 
 #### solution 0
+
 ```diff
--def most_frequent(lst):
-+def most_frequent(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def most_frequent(lst):
+-  return max(set(lst), key = lst.count)
 +    return max(set(lst), key=lst.count)
 +    
 +    
 +def random_subset(lst,m):
 +    return random.sample(lst,m)
 +
-+def random_
 ```
 
 #### solution 1
+
 ```diff
--def most_frequent(lst):
-+def most_frequent(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def most_frequent(lst):
+-  return max(set(lst), key = lst.count)
 +    """
 +    Returns the element of the list that is the most frequent.
 +    """
 +    return max(set(lst), key=lst.count)
 +
 +
-+def main():
-+    """
-+    Main program.
 ```
 
 #### solution 2
+
 ```diff
--def most_frequent(lst):
-+def most_frequent(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def most_frequent(lst):
+-  return max(set(lst), key = lst.count)
 +    return max(set(lst), key=lst.count)
 +
 +def get_center(area):
@@ -2459,146 +3204,179 @@ def most_frequent(lst):  return max(set(lst), key = lst.count)
 ```
 
 #### solution 3
+
 ```diff
--def most_frequent(lst):
-+def most_frequent(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def most_frequent(lst):
+-  return max(set(lst), key = lst.count)
 +    """
 +    Find the most frequent element in a list.
 +    """
 +    return max(set(lst), key=lst.count)
 +    
 +    
-+def get_q_table(mdp, states
 ```
 
 #### solution 4
+
 ```diff
--def most_frequent(lst):
-+def most_frequent(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def most_frequent(lst):
+-  return max(set(lst), key = lst.count)
 +    """
 +    :param lst: list of integers
 +    :return: integer - the most frequent number in the list
 +    """
 +    return max(set(lst), key=lst.count)
 +
-+
-+def
 ```
 
 ### rads_to_degrees (task/30)
 
 #### canonical solution
+
 ```python
 from math import pi
 
-def rads_to_degrees(rad):  return (rad * 180.0) / pi
+def rads_to_degrees(rad):
+  return (rad * 180.0) / pi
 ```
 
 #### solution 0
+
 ```diff
--from math import pi
--
--def rads_to_degrees(rad):
-+from math import pi
-+
-+def rads_to_degrees(rad):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def rads_to_degrees(rad):
+-  return (rad * 180.0) / pi
 +    return rad*180/pi
 +
 +def main():
 +    degree = rads_to_degrees(pi/2)
 +    print(degree)
 +
-+if __name__ == "__main__":
-+    main
 ```
 
 #### solution 1
+
 ```diff
--from math import pi
--
--def rads_to_degrees(rad):
-+from math import pi
-+
-+def rads_to_degrees(rad):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def rads_to_degrees(rad):
+-  return (rad * 180.0) / pi
 +    return (rad * 180) / pi
 +
 +def degrees_to_rads(deg):
 +    return (deg * pi) / 180
 +
 +class Vechicle():
-+    def __init__(self, x,
 ```
 
 #### solution 2
+
 ```diff
--from math import pi
--
--def rads_to_degrees(rad):
-+from math import pi
-+
-+def rads_to_degrees(rad):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def rads_to_degrees(rad):
+-  return (rad * 180.0) / pi
 +    return rad * 180.0 / pi
 +
 +def degrees_to_rads(deg):
 +    return deg * pi / 180.0
 +
 +class Vector:
-+    def __init__(self, x=0,
 ```
 
 #### solution 3
+
 ```diff
--from math import pi
--
--def rads_to_degrees(rad):
-+from math import pi
-+
-+def rads_to_degrees(rad):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def rads_to_degrees(rad):
+-  return (rad * 180.0) / pi
 +    return rad * 180.0 / pi
 +
 +def degrees_to_rads(deg):
 +    return deg * pi / 180.0
 +
 +def get_sim_time_seconds(s):
-+    return s.
 ```
 
 #### solution 4
+
 ```diff
--from math import pi
--
--def rads_to_degrees(rad):
-+from math import pi
-+
-+def rads_to_degrees(rad):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from math import pi
+ 
+ def rads_to_degrees(rad):
+-  return (rad * 180.0) / pi
 +    return rad * 180 / pi
 +
 +def degrees_to_rads(deg):
 +    return deg * pi / 180
 +
 +def tuple_to_list(points):
-+    return [[i[0], i[1
 ```
 
 ### n_times_string (task/31)
 
 #### canonical solution
+
 ```python
-def n_times_string(s, n):  return (s * n)
+def n_times_string(s, n):
+  return (s * n)
 ```
 
 #### solution 0
+
 ```diff
--def n_times_string(s, n):
-+def n_times_string(s, n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def n_times_string(s, n):
+-  return (s * n)
 +    s_n = s * n
 +    return s_n
 +
@@ -2606,25 +3384,35 @@ def n_times_string(s, n):  return (s * n)
 ```
 
 #### solution 1
+
 ```diff
--def n_times_string(s, n):
-+def n_times_string(s, n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def n_times_string(s, n):
+-  return (s * n)
 +    return s * n
 +
 +print(n_times_string('ja', 2))
 +print(n_times_string('ja', 0))
 +
 +# Optional arguments
-+# 
-+# Arguments can be made optional by
 ```
 
 #### solution 2
+
 ```diff
--def n_times_string(s, n):
-+def n_times_string(s, n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def n_times_string(s, n):
+-  return (s * n)
 +    return s * n
 +
 +print(n_times_string('abc', 3))
@@ -2634,81 +3422,101 @@ def n_times_string(s, n):  return (s * n)
 ```
 
 #### solution 3
+
 ```diff
--def n_times_string(s, n):
-+def n_times_string(s, n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def n_times_string(s, n):
+-  return (s * n)
 +    return s * n
 +
 +def print_string(s):
 +    print(s)
 +
 +def print_sum(a, b):
-+    print(a + b)
-+
-+def repeat_string(s, n
 ```
 
 #### solution 4
+
 ```diff
--def n_times_string(s, n):
-+def n_times_string(s, n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def n_times_string(s, n):
+-  return (s * n)
 +    return n * s
 +
 +# # 3.2
 +def list_length(l):
 +    length = 0
 +    for i in l:
-+        length += 1
-+    return length
-+
-+# # 3.3
 ```
 
 ### map_values (task/32)
 
 #### canonical solution
+
 ```python
-def map_values(obj, fn):  return dict((k, fn(v)) for k, v in obj.items())
+def map_values(obj, fn):
+  return dict((k, fn(v)) for k, v in obj.items())
 ```
 
 #### solution 0
+
 ```diff
--def map_values(obj, fn):
-+def map_values(obj, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def map_values(obj, fn):
+-  return dict((k, fn(v)) for k, v in obj.items())
 +    for key, value in obj.items():
 +        obj[key] = fn(value)
 +    return obj
 +
 +
 +def get_path_class(path):
-+    if path in ALL_CLASSES:
-+        return
 ```
 
 #### solution 1
+
 ```diff
--def map_values(obj, fn):
-+def map_values(obj, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def map_values(obj, fn):
+-  return dict((k, fn(v)) for k, v in obj.items())
 +    """Map values of an object to new values using a function.
 +
 +    Args:
 +        obj (dict):
 +        fn (function): Function to map with.
 +
-+    Returns:
-+        obj (dict):
-+    """
 ```
 
 #### solution 2
+
 ```diff
--def map_values(obj, fn):
-+def map_values(obj, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def map_values(obj, fn):
+-  return dict((k, fn(v)) for k, v in obj.items())
 +    if isinstance(obj, dict):
 +        return {key: map_values(value, fn) for key, value in obj.items()}
 +    if isinstance(obj, list):
@@ -2716,10 +3524,16 @@ def map_values(obj, fn):  return dict((k, fn(v)) for k, v in obj.items())
 ```
 
 #### solution 3
+
 ```diff
--def map_values(obj, fn):
-+def map_values(obj, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def map_values(obj, fn):
+-  return dict((k, fn(v)) for k, v in obj.items())
 +    """
 +    Maps all values in a collection using a given function
 +    """
@@ -2729,10 +3543,16 @@ def map_values(obj, fn):  return dict((k, fn(v)) for k, v in obj.items())
 ```
 
 #### solution 4
+
 ```diff
--def map_values(obj, fn):
-+def map_values(obj, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def map_values(obj, fn):
+-  return dict((k, fn(v)) for k, v in obj.items())
 +    """
 +    Apply a function to every element in an object
 +
@@ -2743,15 +3563,23 @@ def map_values(obj, fn):  return dict((k, fn(v)) for k, v in obj.items())
 ### hex_to_rgb (task/33)
 
 #### canonical solution
+
 ```python
-def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
+def hex_to_rgb(hex):
+  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 ```
 
 #### solution 0
+
 ```diff
--def hex_to_rgb(hex):
-+def hex_to_rgb(hex):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def hex_to_rgb(hex):
+-  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +    return [int(hex[i:i+2], 16) for i in range(1,6,2)]
 +
 +def rgb_to_hex(rgb):
@@ -2759,10 +3587,16 @@ def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 ```
 
 #### solution 1
+
 ```diff
--def hex_to_rgb(hex):
-+def hex_to_rgb(hex):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def hex_to_rgb(hex):
+-  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +    return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +
 +def get_dominant_color(image):
@@ -2770,20 +3604,32 @@ def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 ```
 
 #### solution 2
+
 ```diff
--def hex_to_rgb(hex):
-+def hex_to_rgb(hex):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,4 @@
+
+ def hex_to_rgb(hex):
+-  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +    hex = hex.lstrip('#')
 +    hlen = len(hex)
 +    return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen,
 ```
 
 #### solution 3
+
 ```diff
--def hex_to_rgb(hex):
-+def hex_to_rgb(hex):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def hex_to_rgb(hex):
+-  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +    h = hex.lstrip('#')
 +    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
 +
@@ -2791,10 +3637,16 @@ def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 ```
 
 #### solution 4
+
 ```diff
--def hex_to_rgb(hex):
-+def hex_to_rgb(hex):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,4 @@
+
+ def hex_to_rgb(hex):
+-  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 +    hex = hex.lstrip('#')
 +    hlen = len(hex)
 +    return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen,
@@ -2803,11 +3655,13 @@ def hex_to_rgb(hex):  return tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
 ### shuffle (task/34)
 
 #### canonical solution
+
 ```python
 from copy import deepcopy
 from random import randint
 
-def shuffle(lst):  temp_lst = deepcopy(lst)
+def shuffle(lst):
+  temp_lst = deepcopy(lst)
   m = len(temp_lst)
   while (m):
     m -= 1
@@ -2817,16 +3671,24 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ```
 
 #### solution 0
+
 ```diff
--from copy import deepcopy
--from random import randint
--
--def shuffle(lst):
-+from copy import deepcopy
-+from random import randint
-+
-+def shuffle(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -2,10 +2,8 @@
+
+ from random import randint
+ 
+ def shuffle(lst):
+-  temp_lst = deepcopy(lst)
+-  m = len(temp_lst)
+-  while (m):
+-    m -= 1
+-    i = randint(0, m)
+-    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+-  return temp_lst
 +    for i in range(len(lst)):
 +        r = randint(0, i)
 +        tmp = lst[i]
@@ -2835,16 +3697,24 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ```
 
 #### solution 1
+
 ```diff
--from copy import deepcopy
--from random import randint
--
--def shuffle(lst):
-+from copy import deepcopy
-+from random import randint
-+
-+def shuffle(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -2,10 +2,10 @@
+
+ from random import randint
+ 
+ def shuffle(lst):
+-  temp_lst = deepcopy(lst)
+-  m = len(temp_lst)
+-  while (m):
+-    m -= 1
+-    i = randint(0, m)
+-    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+-  return temp_lst
 +    """Returns a copy of lst that has been shuffled.
 +    shuffle(list) -> list
 +    """
@@ -2855,16 +3725,24 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ```
 
 #### solution 2
+
 ```diff
--from copy import deepcopy
--from random import randint
--
--def shuffle(lst):
-+from copy import deepcopy
-+from random import randint
-+
-+def shuffle(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -2,10 +2,10 @@
+
+ from random import randint
+ 
+ def shuffle(lst):
+-  temp_lst = deepcopy(lst)
+-  m = len(temp_lst)
+-  while (m):
+-    m -= 1
+-    i = randint(0, m)
+-    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+-  return temp_lst
 +    """
 +    Shuffles a list in random order
 +    """
@@ -2875,16 +3753,24 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ```
 
 #### solution 3
+
 ```diff
--from copy import deepcopy
--from random import randint
--
--def shuffle(lst):
-+from copy import deepcopy
-+from random import randint
-+
-+def shuffle(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -2,10 +2,10 @@
+
+ from random import randint
+ 
+ def shuffle(lst):
+-  temp_lst = deepcopy(lst)
+-  m = len(temp_lst)
+-  while (m):
+-    m -= 1
+-    i = randint(0, m)
+-    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+-  return temp_lst
 +    """
 +    Returns a randomly shuffled copy of a list.
 +    """
@@ -2895,16 +3781,24 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ```
 
 #### solution 4
+
 ```diff
--from copy import deepcopy
--from random import randint
--
--def shuffle(lst):
-+from copy import deepcopy
-+from random import randint
-+
-+def shuffle(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -2,10 +2,7 @@
+
+ from random import randint
+ 
+ def shuffle(lst):
+-  temp_lst = deepcopy(lst)
+-  m = len(temp_lst)
+-  while (m):
+-    m -= 1
+-    i = randint(0, m)
+-    temp_lst[m], temp_lst[i] = temp_lst[i], temp_lst[m]
+-  return temp_lst
 +    new_lst = deepcopy(lst)
 +    for i in range(0, len(new_lst)):
 +        while new_lst[i] != i + 1:
@@ -2914,96 +3808,129 @@ def shuffle(lst):  temp_lst = deepcopy(lst)
 ### find_index (task/35)
 
 #### canonical solution
+
 ```python
-def find_index(lst, fn):  return next(i for i, x in enumerate(lst) if fn(x))
+def find_index(lst, fn):
+  return next(i for i, x in enumerate(lst) if fn(x))
 ```
 
 #### solution 0
+
 ```diff
--def find_index(lst, fn):
-+def find_index(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index(lst, fn):
+-  return next(i for i, x in enumerate(lst) if fn(x))
 +    for i, e in enumerate(lst):
 +        if fn(e):
 +            return i
 +    return None
 +
 +class Dictionary:
-+    def __init__(self, words):
-+        self.by_
 ```
 
 #### solution 1
+
 ```diff
--def find_index(lst, fn):
-+def find_index(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index(lst, fn):
+-  return next(i for i, x in enumerate(lst) if fn(x))
 +    for i, e in enumerate(lst):
 +        if fn(e):
 +            return i
 +    return None
 +
 +def load_images():
-+    res = {}
-+    for path in glob.glob(
 ```
 
 #### solution 2
+
 ```diff
--def find_index(lst, fn):
-+def find_index(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index(lst, fn):
+-  return next(i for i, x in enumerate(lst) if fn(x))
 +    for i, value in enumerate(lst):
 +        if fn(value):
 +            return i
 +    return None
 +
 +def first_true(lst, pred):
-+    for value in lst:
-+       
 ```
 
 #### solution 3
+
 ```diff
--def find_index(lst, fn):
-+def find_index(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index(lst, fn):
+-  return next(i for i, x in enumerate(lst) if fn(x))
 +    for i, value in enumerate(lst):
 +        if fn(value):
 +            return i
 +    return None
 +
 +def find_index_left(lst, fn):
-+    for i, value in enumer
 ```
 
 #### solution 4
+
 ```diff
--def find_index(lst, fn):
-+def find_index(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def find_index(lst, fn):
+-  return next(i for i, x in enumerate(lst) if fn(x))
 +    for i, value in enumerate(lst):
 +        if fn(value):
 +            return i
 +    return None
 +
 +def load_data(file_name):
-+    with open(file_name, 'r
 ```
 
 ### num_to_range (task/36)
 
 #### canonical solution
+
 ```python
-def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+def num_to_range(num, inMin, inMax, outMin, outMax):
+  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
                   - outMin))
 ```
 
 #### solution 0
+
 ```diff
--def num_to_range(num, inMin, inMax, outMin, outMax):
-+def num_to_range(num, inMin, inMax, outMin, outMax):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,6 @@
+
+ def num_to_range(num, inMin, inMax, outMin, outMax):
+-  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+-                  - outMin))
 +    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
 +
 +def _handle_led_all(option):
@@ -3012,10 +3939,17 @@ def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num
 ```
 
 #### solution 1
+
 ```diff
--def num_to_range(num, inMin, inMax, outMin, outMax):
-+def num_to_range(num, inMin, inMax, outMin, outMax):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,6 @@
+
+ def num_to_range(num, inMin, inMax, outMin, outMax):
+-  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+-                  - outMin))
 +    """
 +    Convert a number from one range to another.
 +    See: http://arduino.cc/en/Reference/Map
@@ -3024,20 +3958,34 @@ def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num
 ```
 
 #### solution 2
+
 ```diff
--def num_to_range(num, inMin, inMax, outMin, outMax):
-+def num_to_range(num, inMin, inMax, outMin, outMax):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,4 @@
+
+ def num_to_range(num, inMin, inMax, outMin, outMax):
+-  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+-                  - outMin))
 +    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
 +
 +def map_range(value, from_min, from_max, to_min, to
 ```
 
 #### solution 3
+
 ```diff
--def num_to_range(num, inMin, inMax, outMin, outMax):
-+def num_to_range(num, inMin, inMax, outMin, outMax):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,6 @@
+
+ def num_to_range(num, inMin, inMax, outMin, outMax):
+-  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+-                  - outMin))
 +    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 +
 +def clamp(num, min, max):
@@ -3046,10 +3994,17 @@ def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num
 ```
 
 #### solution 4
+
 ```diff
--def num_to_range(num, inMin, inMax, outMin, outMax):
-+def num_to_range(num, inMin, inMax, outMin, outMax):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,5 @@
+
+ def num_to_range(num, inMin, inMax, outMin, outMax):
+-  return outMin + (float(num - inMin) / float(inMax - inMin) * (outMax
+-                  - outMin))
 +    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
 +
 +# def read_temp_raw():
@@ -3059,15 +4014,23 @@ def num_to_range(num, inMin, inMax, outMin, outMax):  return outMin + (float(num
 ### transpose (task/37)
 
 #### canonical solution
+
 ```python
-def transpose(lst):  return list(zip(*lst))
+def transpose(lst):
+  return list(zip(*lst))
 ```
 
 #### solution 0
+
 ```diff
--def transpose(lst):
-+def transpose(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def transpose(lst):
+-  return list(zip(*lst))
 +    return [list(x) for x in zip(*lst)]
 +
 +def main():
@@ -3077,24 +4040,35 @@ def transpose(lst):  return list(zip(*lst))
 ```
 
 #### solution 1
+
 ```diff
--def transpose(lst):
-+def transpose(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def transpose(lst):
+-  return list(zip(*lst))
 +    """Swap the rows and columns in a list of lists representing a 2D matrix.
 +
 +    Args:
 +        lst: list of lists representing a 2D matrix
 +
 +    Returns:
-+        transposed list of lists
 ```
 
 #### solution 2
+
 ```diff
--def transpose(lst):
-+def transpose(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def transpose(lst):
+-  return list(zip(*lst))
 +    for i in range(len(lst)):
 +        for j in range(i):
 +            if len(lst[i]) <= len(lst[j]):
@@ -3104,20 +4078,32 @@ def transpose(lst):  return list(zip(*lst))
 ```
 
 #### solution 3
+
 ```diff
--def transpose(lst):
-+def transpose(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,4 @@
+
+ def transpose(lst):
+-  return list(zip(*lst))
 +    lst = list(lst)
 +    lst = [[lst[j][i] for j in range(len(lst))] for i in range(len(lst[0]))]
 +   
 ```
 
 #### solution 4
+
 ```diff
--def transpose(lst):
-+def transpose(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def transpose(lst):
+-  return list(zip(*lst))
 +    return list(map(list, zip(*lst)))
 +
 +def multiple_matrix_multiply(matrix_lst):
@@ -3128,29 +4114,42 @@ def transpose(lst):  return list(zip(*lst))
 ### is_even (task/38)
 
 #### canonical solution
+
 ```python
-def is_even(num):  return num % 2 == 0
+def is_even(num):
+  return num % 2 == 0
 ```
 
 #### solution 0
+
 ```diff
--def is_even(num):
-+def is_even(num):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def is_even(num):
+-  return num % 2 == 0
 +    if num % 2 == 0:
 +        return True
 +    else:
 +        return False
 +
 +if __name__ == "__main__":
-+    number = int(input("Enter a number to check if it is even
 ```
 
 #### solution 1
+
 ```diff
--def is_even(num):
-+def is_even(num):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def is_even(num):
+-  return num % 2 == 0
 +    return num % 2 == 0
 +#filter will pass only the values that returns true from the function.
 +nums = [3,2,6,8,4,6,2,9]
@@ -3158,64 +4157,82 @@ def is_even(num):  return num % 2 == 0
 ```
 
 #### solution 2
+
 ```diff
--def is_even(num):
-+def is_even(num):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def is_even(num):
+-  return num % 2 == 0
 +    return num % 2 == 0
 +
 +def print_string(txt):
 +    print(txt)
 +
 +def return_true():
-+    return True
-+
-+print(is_even(5))
-+print(is_even
 ```
 
 #### solution 3
+
 ```diff
--def is_even(num):
-+def is_even(num):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def is_even(num):
+-  return num % 2 == 0
 +    if num % 2 == 0:
 +        return True
 +    else:
 +        return False
 +def is_odd(num):
 +    if num % 2 == 1:
-+        return True
-+    else:
-+        return False
 ```
 
 #### solution 4
+
 ```diff
--def is_even(num):
-+def is_even(num):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def is_even(num):
+-  return num % 2 == 0
 +    if num % 2 == 0:
 +        return True
 +    else:
 +        return False
 +
 +# 2. Write a function that accepts a number as an argument and returns a Boolean indicating whether the number is odd.
-+def is
 ```
 
 ### max_element_index (task/39)
 
 #### canonical solution
+
 ```python
-def max_element_index(arr):  return arr.index(max(arr))
+def max_element_index(arr):
+  return arr.index(max(arr))
 ```
 
 #### solution 0
+
 ```diff
--def max_element_index(arr):
-+def max_element_index(arr):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def max_element_index(arr):
+-  return arr.index(max(arr))
 +    max_val = arr[0]
 +    max_idx = 0
 +    for i in range(1, len(arr)):
@@ -3224,10 +4241,16 @@ def max_element_index(arr):  return arr.index(max(arr))
 ```
 
 #### solution 1
+
 ```diff
--def max_element_index(arr):
-+def max_element_index(arr):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def max_element_index(arr):
+-  return arr.index(max(arr))
 +    if len(arr) == 0:
 +        return None
 +    current_max = arr[0]
@@ -3237,10 +4260,16 @@ def max_element_index(arr):  return arr.index(max(arr))
 ```
 
 #### solution 2
+
 ```diff
--def max_element_index(arr):
-+def max_element_index(arr):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def max_element_index(arr):
+-  return arr.index(max(arr))
 +    max_element = arr[0]
 +    max_index = 0
 +    for i in range(1, len(arr)):
@@ -3249,10 +4278,16 @@ def max_element_index(arr):  return arr.index(max(arr))
 ```
 
 #### solution 3
+
 ```diff
--def max_element_index(arr):
-+def max_element_index(arr):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def max_element_index(arr):
+-  return arr.index(max(arr))
 +    max_index = 0
 +    max_value = arr[0]
 +    for i in range(1, len(arr)):
@@ -3261,10 +4296,16 @@ def max_element_index(arr):  return arr.index(max(arr))
 ```
 
 #### solution 4
+
 ```diff
--def max_element_index(arr):
-+def max_element_index(arr):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def max_element_index(arr):
+-  return arr.index(max(arr))
 +    max_element = arr[0]
 +    max_index = 0
 +    for i in range(1, len(arr)):
@@ -3275,15 +4316,23 @@ def max_element_index(arr):  return arr.index(max(arr))
 ### min_n (task/40)
 
 #### canonical solution
+
 ```python
-def min_n(lst, n = 1):  return sorted(lst, reverse = False)[:n]
+def min_n(lst, n = 1):
+  return sorted(lst, reverse = False)[:n]
 ```
 
 #### solution 0
+
 ```diff
--def min_n(lst, n = 1):
-+def min_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def min_n(lst, n = 1):
+-  return sorted(lst, reverse = False)[:n]
 +    lst = list(set(lst))
 +    lst.sort()
 +    return lst[:n]
@@ -3293,38 +4342,54 @@ def min_n(lst, n = 1):  return sorted(lst, reverse = False)[:n]
 ```
 
 #### solution 1
+
 ```diff
--def min_n(lst, n = 1):
-+def min_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def min_n(lst, n = 1):
+-  return sorted(lst, reverse = False)[:n]
 +    min = lst[0]
 +    for x in range(1, n):
 +        if min > lst[x]:
 +            min = lst[x]
 +    return min
 +
-+def max_n(
 ```
 
 #### solution 2
+
 ```diff
--def min_n(lst, n = 1):
-+def min_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def min_n(lst, n = 1):
+-  return sorted(lst, reverse = False)[:n]
 +    if len(lst) < n:
 +        return lst
 +    lst.sort()
 +    return lst[:n]
 +
 +def med_n(lst, n = 1):
-+    if len
 ```
 
 #### solution 3
+
 ```diff
--def min_n(lst, n = 1):
-+def min_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def min_n(lst, n = 1):
+-  return sorted(lst, reverse = False)[:n]
 +    return heapq.nsmallest(n, lst)
 +
 +def max_n(lst, n = 1):
@@ -3334,10 +4399,16 @@ def min_n(lst, n = 1):  return sorted(lst, reverse = False)[:n]
 ```
 
 #### solution 4
+
 ```diff
--def min_n(lst, n = 1):
-+def min_n(lst, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def min_n(lst, n = 1):
+-  return sorted(lst, reverse = False)[:n]
 +    if lst == []:
 +        return None
 +    for i in range(n):
@@ -3349,30 +4420,42 @@ def min_n(lst, n = 1):  return sorted(lst, reverse = False)[:n]
 ### take_right (task/41)
 
 #### canonical solution
+
 ```python
-def take_right(itr, n = 1):  return itr[-n:]
+def take_right(itr, n = 1):
+  return itr[-n:]
 ```
 
 #### solution 0
+
 ```diff
--def take_right(itr, n = 1):
-+def take_right(itr, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def take_right(itr, n = 1):
+-  return itr[-n:]
 +    """ 
 +    Return the last n elements of an iterator. 
 +    """
 +    return itr[-n:]
 +
 +def take_left(itr, n = 1):
-+    """ 
-+    Return the
 ```
 
 #### solution 1
+
 ```diff
--def take_right(itr, n = 1):
-+def take_right(itr, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def take_right(itr, n = 1):
+-  return itr[-n:]
 +    '''returns the last n elements from the iterable'''
 +    #TODO: use itertools.islice
 +    assert n >= 0
@@ -3381,10 +4464,16 @@ def take_right(itr, n = 1):  return itr[-n:]
 ```
 
 #### solution 2
+
 ```diff
--def take_right(itr, n = 1):
-+def take_right(itr, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def take_right(itr, n = 1):
+-  return itr[-n:]
 +    '''
 +    itr : iterator to take right
 +    n : number of elements to take
@@ -3394,10 +4483,16 @@ def take_right(itr, n = 1):  return itr[-n:]
 ```
 
 #### solution 3
+
 ```diff
--def take_right(itr, n = 1):
-+def take_right(itr, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def take_right(itr, n = 1):
+-  return itr[-n:]
 +    if n < 1:
 +        raise ValueError("The number of elements to return must be > 0")
 +    return itr[-n:]
@@ -3407,40 +4502,48 @@ def take_right(itr, n = 1):  return itr[-n:]
 ```
 
 #### solution 4
+
 ```diff
--def take_right(itr, n = 1):
-+def take_right(itr, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def take_right(itr, n = 1):
+-  return itr[-n:]
 +    """
 +    This function takes the right side of an iterable and returns
 +    it as a new iterable.
 +    """
 +    return itr[-n:]
 +
-+
-+# -----------------------------------------------------------------------------
-+# TESTING
-+# ----------------------------------------------------------------
 ```
 
 ### filter_unique (task/42)
 
 #### canonical solution
+
 ```python
 from collections import Counter
 
-def filter_unique(lst):  return [item for item, count in Counter(lst).items() if count > 1]
+def filter_unique(lst):
+  return [item for item, count in Counter(lst).items() if count > 1]
 ```
 
 #### solution 0
+
 ```diff
--from collections import Counter
--
--def filter_unique(lst):
-+from collections import Counter
-+
-+def filter_unique(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count > 1]
 +    return [l for l, _ in Counter(lst).most_common()]
 +
 +class Controller:
@@ -3450,14 +4553,18 @@ def filter_unique(lst):  return [item for item, count in Counter(lst).items() if
 ```
 
 #### solution 1
+
 ```diff
--from collections import Counter
--
--def filter_unique(lst):
-+from collections import Counter
-+
-+def filter_unique(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,8 @@
+
+ from collections import Counter
+ 
+ def filter_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count > 1]
 +    seen = set()
 +    seen_add = seen.add
 +    return [x for x in lst if not (x in seen or seen_add(x))]
@@ -3466,14 +4573,18 @@ def filter_unique(lst):  return [item for item, count in Counter(lst).items() if
 ```
 
 #### solution 2
+
 ```diff
--from collections import Counter
--
--def filter_unique(lst):
-+from collections import Counter
-+
-+def filter_unique(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count > 1]
 +    """
 +    filter out non-unique elements in the list, order of elements should not change
 +    :param lst: List[Int]
@@ -3483,14 +4594,18 @@ def filter_unique(lst):  return [item for item, count in Counter(lst).items() if
 ```
 
 #### solution 3
+
 ```diff
--from collections import Counter
--
--def filter_unique(lst):
-+from collections import Counter
-+
-+def filter_unique(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ from collections import Counter
+ 
+ def filter_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count > 1]
 +    return [item for item, count in Counter(lst).items() if count == 1]
 +
 +def filter_non_unique(lst):
@@ -3498,14 +4613,18 @@ def filter_unique(lst):  return [item for item, count in Counter(lst).items() if
 ```
 
 #### solution 4
+
 ```diff
--from collections import Counter
--
--def filter_unique(lst):
-+from collections import Counter
-+
-+def filter_unique(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count > 1]
 +    counts = Counter(lst)
 +    return [x for x in lst if counts[x] == 1]
 +
@@ -3517,15 +4636,23 @@ def filter_unique(lst):  return [item for item, count in Counter(lst).items() if
 ### arithmetic_progression (task/43)
 
 #### canonical solution
+
 ```python
-def arithmetic_progression(n, lim):  return list(range(n, lim + 1, n))
+def arithmetic_progression(n, lim):
+  return list(range(n, lim + 1, n))
 ```
 
 #### solution 0
+
 ```diff
--def arithmetic_progression(n, lim):
-+def arithmetic_progression(n, lim):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def arithmetic_progression(n, lim):
+-  return list(range(n, lim + 1, n))
 +    if n == 1:
 +        return lim
 +    return lim + (n - 1) * lim
@@ -3535,27 +4662,35 @@ def arithmetic_progression(n, lim):  return list(range(n, lim + 1, n))
 ```
 
 #### solution 1
+
 ```diff
--def arithmetic_progression(n, lim):
-+def arithmetic_progression(n, lim):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def arithmetic_progression(n, lim):
+-  return list(range(n, lim + 1, n))
 +    last = 0
 +    cur = 1
 +    yield 0
 +    while last + cur < lim:
 +        yield last + cur
 +        last, cur = cur, last + cur
-+    yield lim
-+
-+
-+def pentagonal_
 ```
 
 #### solution 2
+
 ```diff
--def arithmetic_progression(n, lim):
-+def arithmetic_progression(n, lim):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def arithmetic_progression(n, lim):
+-  return list(range(n, lim + 1, n))
 +    for i in range(1, lim+1):
 +        if n % i == 0:
 +            print(i)
@@ -3564,51 +4699,69 @@ def arithmetic_progression(n, lim):  return list(range(n, lim + 1, n))
 ```
 
 #### solution 3
+
 ```diff
--def arithmetic_progression(n, lim):
-+def arithmetic_progression(n, lim):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def arithmetic_progression(n, lim):
+-  return list(range(n, lim + 1, n))
 +    # 公差
 +    d = (lim - n) / (n - 1)
 +    # 等差数列
 +    a = n - 1
 +    return a, d
 +
-+
 ```
 
 #### solution 4
+
 ```diff
--def arithmetic_progression(n, lim):
-+def arithmetic_progression(n, lim):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def arithmetic_progression(n, lim):
+-  return list(range(n, lim + 1, n))
 +    ls = []
 +    start = 1
 +    while start <= lim:
 +        ls.append(start)
 +        start += n
 +    return ls
-+
-+
-+def geometric_progression(n, lim):
-+    ls =
 ```
 
 ### merge_dictionaries (task/44)
 
 #### canonical solution
+
 ```python
-def merge_dictionaries(*dicts):  res = dict()
+def merge_dictionaries(*dicts):
+  res = dict()
   for d in dicts:
     res.update(d)
   return res
 ```
 
 #### solution 0
+
 ```diff
--def merge_dictionaries(*dicts):
-+def merge_dictionaries(*dicts):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,6 @@
+
+ def merge_dictionaries(*dicts):
+-  res = dict()
+-  for d in dicts:
+-    res.update(d)
+-  return res
 +    """
 +    Return a new dictionary that contains all the keys and values of the
 +    dictionaries passed as arguments. In case of conflicts, values
@@ -3617,10 +4770,19 @@ def merge_dictionaries(*dicts):  res = dict()
 ```
 
 #### solution 1
+
 ```diff
--def merge_dictionaries(*dicts):
-+def merge_dictionaries(*dicts):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,8 @@
+
+ def merge_dictionaries(*dicts):
+-  res = dict()
+-  for d in dicts:
+-    res.update(d)
+-  return res
 +    '''
 +    Merge the input dictionaries.
 +    Only the first layer will be merged and the deep copy will be returned.
@@ -3631,10 +4793,19 @@ def merge_dictionaries(*dicts):  res = dict()
 ```
 
 #### solution 2
+
 ```diff
--def merge_dictionaries(*dicts):
-+def merge_dictionaries(*dicts):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,9 @@
+
+ def merge_dictionaries(*dicts):
+-  res = dict()
+-  for d in dicts:
+-    res.update(d)
+-  return res
 +    """Merge dictionaries into a new dictionary"""
 +    merged = {}
 +    for dict in dicts:
@@ -3646,10 +4817,19 @@ def merge_dictionaries(*dicts):  res = dict()
 ```
 
 #### solution 3
+
 ```diff
--def merge_dictionaries(*dicts):
-+def merge_dictionaries(*dicts):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,7 @@
+
+ def merge_dictionaries(*dicts):
+-  res = dict()
+-  for d in dicts:
+-    res.update(d)
+-  return res
 +    return dict(chain(*[d.iteritems() for d in dicts]))
 +
 +
@@ -3659,10 +4839,19 @@ def merge_dictionaries(*dicts):  res = dict()
 ```
 
 #### solution 4
+
 ```diff
--def merge_dictionaries(*dicts):
-+def merge_dictionaries(*dicts):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,10 @@
+
+ def merge_dictionaries(*dicts):
+-  res = dict()
+-  for d in dicts:
+-    res.update(d)
+-  return res
 +    """
 +    Merges dictionaries in *dicts argument into one
 +    """
@@ -3672,22 +4861,30 @@ def merge_dictionaries(*dicts):  res = dict()
 +    return result
 +
 +
-+def random_
 ```
 
 ### sort_by_indexes (task/45)
 
 #### canonical solution
+
 ```python
-def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+def sort_by_indexes(lst, indexes, reverse=False):
+  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
           x[0], reverse=reverse)]
 ```
 
 #### solution 0
+
 ```diff
--def sort_by_indexes(lst, indexes, reverse=False):
-+def sort_by_indexes(lst, indexes, reverse=False):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,6 @@
+
+ def sort_by_indexes(lst, indexes, reverse=False):
+-  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+-          x[0], reverse=reverse)]
 +    indexes_map = {idx: i for i, idx in enumerate(indexes)}
 +    return sorted(lst, key=lambda x: indexes_map[x], reverse=reverse)
 +
@@ -3696,10 +4893,17 @@ def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in s
 ```
 
 #### solution 1
+
 ```diff
--def sort_by_indexes(lst, indexes, reverse=False):
-+def sort_by_indexes(lst, indexes, reverse=False):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,6 @@
+
+ def sort_by_indexes(lst, indexes, reverse=False):
+-  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+-          x[0], reverse=reverse)]
 +    return [lst[i] for i in indexes]
 +
 +def sort_lists_by_first_list(lists, reverse=False):
@@ -3708,10 +4912,17 @@ def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in s
 ```
 
 #### solution 2
+
 ```diff
--def sort_by_indexes(lst, indexes, reverse=False):
-+def sort_by_indexes(lst, indexes, reverse=False):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,7 @@
+
+ def sort_by_indexes(lst, indexes, reverse=False):
+-  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+-          x[0], reverse=reverse)]
 +    return [lst[i] for i in indexes]
 +
 +
@@ -3721,10 +4932,17 @@ def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in s
 ```
 
 #### solution 3
+
 ```diff
--def sort_by_indexes(lst, indexes, reverse=False):
-+def sort_by_indexes(lst, indexes, reverse=False):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,6 @@
+
+ def sort_by_indexes(lst, indexes, reverse=False):
+-  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+-          x[0], reverse=reverse)]
 +    '''
 +    Sort the list `lst` by indexes in the list `indexes`
 +    '''
@@ -3733,10 +4951,17 @@ def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in s
 ```
 
 #### solution 4
+
 ```diff
--def sort_by_indexes(lst, indexes, reverse=False):
-+def sort_by_indexes(lst, indexes, reverse=False):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,7 @@
+
+ def sort_by_indexes(lst, indexes, reverse=False):
+-  return [val for (_, val) in sorted(zip(indexes, lst), key=lambda x: \
+-          x[0], reverse=reverse)]
 +    return [x for _, x in sorted(zip(indexes, lst), reverse=reverse)]
 +
 +
@@ -3748,24 +4973,28 @@ def sort_by_indexes(lst, indexes, reverse=False):  return [val for (_, val) in s
 ### get (task/46)
 
 #### canonical solution
+
 ```python
 from functools import reduce 
 from operator import getitem
 
-def get(d, selectors):  return reduce(getitem, selectors, d)
+def get(d, selectors):
+  return reduce(getitem, selectors, d)
 ```
 
 #### solution 0
+
 ```diff
--from functools import reduce 
--from operator import getitem
--
--def get(d, selectors):
-+from functools import reduce 
-+from operator import getitem
-+
-+def get(d, selectors):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -2,4 +2,9 @@
+
+ from operator import getitem
+ 
+ def get(d, selectors):
+-  return reduce(getitem, selectors, d)
 +    if not isinstance(selectors, list):
 +        selectors = [selectors]
 +    return reduce(getitem, selectors, d)
@@ -3775,16 +5004,18 @@ def get(d, selectors):  return reduce(getitem, selectors, d)
 ```
 
 #### solution 1
+
 ```diff
--from functools import reduce 
--from operator import getitem
--
--def get(d, selectors):
-+from functools import reduce 
-+from operator import getitem
-+
-+def get(d, selectors):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -2,4 +2,9 @@
+
+ from operator import getitem
+ 
+ def get(d, selectors):
+-  return reduce(getitem, selectors, d)
 +    return reduce(getitem, selectors, d)
 +
 +def set(d, selectors, value):
@@ -3794,16 +5025,18 @@ def get(d, selectors):  return reduce(getitem, selectors, d)
 ```
 
 #### solution 2
+
 ```diff
--from functools import reduce 
--from operator import getitem
--
--def get(d, selectors):
-+from functools import reduce 
-+from operator import getitem
-+
-+def get(d, selectors):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -2,4 +2,9 @@
+
+ from operator import getitem
+ 
+ def get(d, selectors):
+-  return reduce(getitem, selectors, d)
 +    return reduce(getitem, selectors, d)
 +
 +def set(d, selectors, value):
@@ -3813,16 +5046,18 @@ def get(d, selectors):  return reduce(getitem, selectors, d)
 ```
 
 #### solution 3
+
 ```diff
--from functools import reduce 
--from operator import getitem
--
--def get(d, selectors):
-+from functools import reduce 
-+from operator import getitem
-+
-+def get(d, selectors):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -2,4 +2,8 @@
+
+ from operator import getitem
+ 
+ def get(d, selectors):
+-  return reduce(getitem, selectors, d)
 +    """
 +    >>> d = {1: {2: {3: {4: {5: 6}}}}}
 +    >>> get(d, [1, 2, 3, 4, 5])
@@ -3831,41 +5066,52 @@ def get(d, selectors):  return reduce(getitem, selectors, d)
 ```
 
 #### solution 4
+
 ```diff
--from functools import reduce 
--from operator import getitem
--
--def get(d, selectors):
-+from functools import reduce 
-+from operator import getitem
-+
-+def get(d, selectors):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -2,4 +2,9 @@
+
+ from operator import getitem
+ 
+ def get(d, selectors):
+-  return reduce(getitem, selectors, d)
 +    """
 +    Return a value from a nested dict.
 +
 +    This function is an alternative to the dict method `get`.
 +    `get` returns a default value if a key is not found.
 +
-+    Parameters
-+    ----------
 ```
 
 ### bifurcate_by (task/47)
 
 #### canonical solution
+
 ```python
-def bifurcate_by(lst, fn):  return [
+def bifurcate_by(lst, fn):
+  return [
     [x for x in lst if fn(x)],
     [x for x in lst if not fn(x)]
   ]
 ```
 
 #### solution 0
+
 ```diff
--def bifurcate_by(lst, fn):
-+def bifurcate_by(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,8 @@
+
+ def bifurcate_by(lst, fn):
+-  return [
+-    [x for x in lst if fn(x)],
+-    [x for x in lst if not fn(x)]
+-  ]
 +    return [
 +        [x for x in lst if fn(x)],
 +        [x for x in lst if not fn(x)]
@@ -3876,10 +5122,19 @@ def bifurcate_by(lst, fn):  return [
 ```
 
 #### solution 1
+
 ```diff
--def bifurcate_by(lst, fn):
-+def bifurcate_by(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,8 @@
+
+ def bifurcate_by(lst, fn):
+-  return [
+-    [x for x in lst if fn(x)],
+-    [x for x in lst if not fn(x)]
+-  ]
 +    return [
 +        [x for x in lst if fn(x)],
 +        [x for x in lst if not fn(x)]
@@ -3890,10 +5145,19 @@ def bifurcate_by(lst, fn):  return [
 ```
 
 #### solution 2
+
 ```diff
--def bifurcate_by(lst, fn):
-+def bifurcate_by(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,7 @@
+
+ def bifurcate_by(lst, fn):
+-  return [
+-    [x for x in lst if fn(x)],
+-    [x for x in lst if not fn(x)]
+-  ]
 +    return [
 +        [x for x in lst if fn(x)],
 +        [x for x in lst if not fn(x)]
@@ -3903,10 +5167,19 @@ def bifurcate_by(lst, fn):  return [
 ```
 
 #### solution 3
+
 ```diff
--def bifurcate_by(lst, fn):
-+def bifurcate_by(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,9 @@
+
+ def bifurcate_by(lst, fn):
+-  return [
+-    [x for x in lst if fn(x)],
+-    [x for x in lst if not fn(x)]
+-  ]
 +    return [
 +        [x for x in lst if fn(x)],
 +        [x for x in lst if not fn(x)]
@@ -3918,10 +5191,19 @@ def bifurcate_by(lst, fn):  return [
 ```
 
 #### solution 4
+
 ```diff
--def bifurcate_by(lst, fn):
-+def bifurcate_by(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,7 @@
+
+ def bifurcate_by(lst, fn):
+-  return [
+-    [x for x in lst if fn(x)],
+-    [x for x in lst if not fn(x)]
+-  ]
 +    return [
 +        [x for x in lst if fn(x)],
 +        [x for x in lst if not fn(x)]
@@ -3933,8 +5215,10 @@ def bifurcate_by(lst, fn):  return [
 ### fibonacci (task/48)
 
 #### canonical solution
+
 ```python
-def fibonacci(n):  if n <= 0:
+def fibonacci(n):
+  if n <= 0:
     return [0]
   sequence = [0, 1]
   while len(sequence) <= n:
@@ -3944,10 +5228,22 @@ def fibonacci(n):  if n <= 0:
 ```
 
 #### solution 0
+
 ```diff
--def fibonacci(n):
-+def fibonacci(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,9 @@
+
+ def fibonacci(n):
+-  if n <= 0:
+-    return [0]
+-  sequence = [0, 1]
+-  while len(sequence) <= n:
+-    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+-    sequence.append(next_value)
+-  return sequence
 +    if n == 0:
 +        return 0
 +    elif n == 1:
@@ -3959,10 +5255,22 @@ def fibonacci(n):  if n <= 0:
 ```
 
 #### solution 1
+
 ```diff
--def fibonacci(n):
-+def fibonacci(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,8 @@
+
+ def fibonacci(n):
+-  if n <= 0:
+-    return [0]
+-  sequence = [0, 1]
+-  while len(sequence) <= n:
+-    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+-    sequence.append(next_value)
+-  return sequence
 +    if n <= 1:
 +        return n
 +    else:
@@ -3973,10 +5281,22 @@ def fibonacci(n):  if n <= 0:
 ```
 
 #### solution 2
+
 ```diff
--def fibonacci(n):
-+def fibonacci(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,8 @@
+
+ def fibonacci(n):
+-  if n <= 0:
+-    return [0]
+-  sequence = [0, 1]
+-  while len(sequence) <= n:
+-    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+-    sequence.append(next_value)
+-  return sequence
 +    """Fibonacci series."""
 +    if n == 0:
 +        return 0
@@ -3987,10 +5307,22 @@ def fibonacci(n):  if n <= 0:
 ```
 
 #### solution 3
+
 ```diff
--def fibonacci(n):
-+def fibonacci(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,12 @@
+
+ def fibonacci(n):
+-  if n <= 0:
+-    return [0]
+-  sequence = [0, 1]
+-  while len(sequence) <= n:
+-    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+-    sequence.append(next_value)
+-  return sequence
 +    a = 0
 +    b = 1
 +    for i in range(n):
@@ -4005,10 +5337,22 @@ def fibonacci(n):  if n <= 0:
 ```
 
 #### solution 4
+
 ```diff
--def fibonacci(n):
-+def fibonacci(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,8 @@
+
+ def fibonacci(n):
+-  if n <= 0:
+-    return [0]
+-  sequence = [0, 1]
+-  while len(sequence) <= n:
+-    next_value = sequence[len(sequence) - 1] + sequence[len(sequence) - 2]
+-    sequence.append(next_value)
+-  return sequence
 +    a, b = 0, 1
 +    while a < n:
 +        print(a, end=' ')
@@ -4021,30 +5365,42 @@ def fibonacci(n):  if n <= 0:
 ### invert_dictionary (task/49)
 
 #### canonical solution
+
 ```python
-def invert_dictionary(obj):  return { value: key for key, value in obj.items() }
+def invert_dictionary(obj):
+  return { value: key for key, value in obj.items() }
 ```
 
 #### solution 0
+
 ```diff
--def invert_dictionary(obj):
-+def invert_dictionary(obj):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def invert_dictionary(obj):
+-  return { value: key for key, value in obj.items() }
 +    out = {}
 +    for k, v in obj.items():
 +        out[v] = k
 +    return out
 +
 +
-+def string_to_array(string):
-+    return np.array(string.split('
 ```
 
 #### solution 1
+
 ```diff
--def invert_dictionary(obj):
-+def invert_dictionary(obj):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def invert_dictionary(obj):
+-  return { value: key for key, value in obj.items() }
 +    """
 +    Inverts a dictionary that maps keys to sets.
 +
@@ -4054,86 +5410,106 @@ def invert_dictionary(obj):  return { value: key for key, value in obj.items() }
 ```
 
 #### solution 2
+
 ```diff
--def invert_dictionary(obj):
-+def invert_dictionary(obj):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def invert_dictionary(obj):
+-  return { value: key for key, value in obj.items() }
 +    """
 +    Inverts a dictionary object.
 +
 +    :param obj: Dictionary to invert.
 +    :return: Dictionary with the keys and values swapped.
 +    """
-+    return {v: k for k, v in
 ```
 
 #### solution 3
+
 ```diff
--def invert_dictionary(obj):
-+def invert_dictionary(obj):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def invert_dictionary(obj):
+-  return { value: key for key, value in obj.items() }
 +    """
 +    Inverts a dictionary.
 +
 +    :param obj: Dictionary to invert.
 +    :return: Reversed dictionary.
 +    """
-+    return {v: k for k, v in obj.items()
 ```
 
 #### solution 4
+
 ```diff
--def invert_dictionary(obj):
-+def invert_dictionary(obj):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def invert_dictionary(obj):
+-  return { value: key for key, value in obj.items() }
 +    """
 +    Inverts a dictionary.
 +
 +    Parameters
 +    ----------
 +    obj : dict
-+        Dictionary to invert.
-+
-+    Returns
-+    -------
-+    dict
-+        Inverted dictionary.
-+    """
-+    return
 ```
 
 ### camel (task/50)
 
 #### canonical solution
+
 ```python
 from re import sub
 
-def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+def camel(s):
+  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
   return ''.join([s[0].lower(), s[1:]])
 ```
 
 #### solution 0
+
 ```diff
--from re import sub
--
--def camel(s):
-+from re import sub
-+
-+def camel(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,5 @@
+
+ from re import sub
+ 
+ def camel(s):
+-  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+-  return ''.join([s[0].lower(), s[1:]])
 +    a = sub('(.)([A-Z][a-z]+)', r'\1 \2', s)
 +    return sub('([a-z0-9])([A-Z])', r'
 ```
 
 #### solution 1
+
 ```diff
--from re import sub
--
--def camel(s):
-+from re import sub
-+
-+def camel(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def camel(s):
+-  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+-  return ''.join([s[0].lower(), s[1:]])
 +    return sub(r'(?:^|_)(.)', lambda m: m.group(1).upper(), s)
 +
 +def dasherize(s):
@@ -4141,14 +5517,19 @@ def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
 ```
 
 #### solution 2
+
 ```diff
--from re import sub
--
--def camel(s):
-+from re import sub
-+
-+def camel(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def camel(s):
+-  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+-  return ''.join([s[0].lower(), s[1:]])
 +    # Replace dash with space and then capitalize the first letter of each word.
 +    # If the first letter is a number capitalize that as well.
 +    # Remove dashes and slashes.
@@ -4156,14 +5537,19 @@ def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
 ```
 
 #### solution 3
+
 ```diff
--from re import sub
--
--def camel(s):
-+from re import sub
-+
-+def camel(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,8 @@
+
+ from re import sub
+ 
+ def camel(s):
+-  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+-  return ''.join([s[0].lower(), s[1:]])
 +    '''
 +    Convert string to camelCase
 +    s: string
@@ -4172,14 +5558,19 @@ def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
 ```
 
 #### solution 4
+
 ```diff
--from re import sub
--
--def camel(s):
-+from re import sub
-+
-+def camel(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def camel(s):
+-  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
+-  return ''.join([s[0].lower(), s[1:]])
 +    return sub(r'([^A-Z])([A-Z])', r'\1_\2', s).lower()
 +
 +def setup(app):
@@ -4189,15 +5580,23 @@ def camel(s):  s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
 ### key_of_min (task/51)
 
 #### canonical solution
+
 ```python
-def key_of_min(d):  return min(d, key = d.get)
+def key_of_min(d):
+  return min(d, key = d.get)
 ```
 
 #### solution 0
+
 ```diff
--def key_of_min(d):
-+def key_of_min(d):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_min(d):
+-  return min(d, key = d.get)
 +    v = list(d.values())
 +    k = list(d.keys())
 +    return k[v.index(min(v))]
@@ -4207,43 +5606,54 @@ def key_of_min(d):  return min(d, key = d.get)
 ```
 
 #### solution 1
+
 ```diff
--def key_of_min(d):
-+def key_of_min(d):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_min(d):
+-  return min(d, key = d.get)
 +    """
 +    Returns the key of the minimum value of a dictionary
 +
 +    Parameters
 +    ----------
 +    d : dict
-+        Dictionary of numerical values
-+
-+    Returns
-+    -------
-+    key : hashable
-+        The key of
 ```
 
 #### solution 2
+
 ```diff
--def key_of_min(d):
-+def key_of_min(d):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_min(d):
+-  return min(d, key = d.get)
 +    d_copy = d.copy()
 +    m = min(d_copy.values())
 +    for k in d_copy:
 +        if d_copy[k] == m:
 +            return k
 +
-+def
 ```
 
 #### solution 3
+
 ```diff
--def key_of_min(d):
-+def key_of_min(d):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_min(d):
+-  return min(d, key = d.get)
 +    v = list(d.values())
 +    k = list(d.keys())
 +    return k[v.index(min(v))]
@@ -4253,10 +5663,16 @@ def key_of_min(d):  return min(d, key = d.get)
 ```
 
 #### solution 4
+
 ```diff
--def key_of_min(d):
-+def key_of_min(d):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_min(d):
+-  return min(d, key = d.get)
 +    """Return key of a dict d that corresponds to its minimum value.
 +    Assumes that d has at least one value.
 +    """
@@ -4268,15 +5684,23 @@ def key_of_min(d):  return min(d, key = d.get)
 ### capitalize (task/52)
 
 #### canonical solution
+
 ```python
-def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
+def capitalize(s, lower_rest = False):
+  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 ```
 
 #### solution 0
+
 ```diff
--def capitalize(s, lower_rest = False):
-+def capitalize(s, lower_rest = False):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize(s, lower_rest = False):
+-  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 +    """Capitalize a string, optionally leaving the rest of the string alone"""
 +    return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 +
@@ -4284,10 +5708,16 @@ def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lo
 ```
 
 #### solution 1
+
 ```diff
--def capitalize(s, lower_rest = False):
-+def capitalize(s, lower_rest = False):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize(s, lower_rest = False):
+-  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 +    return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 +
 +def full_folder_path(local_path):
@@ -4295,10 +5725,16 @@ def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lo
 ```
 
 #### solution 2
+
 ```diff
--def capitalize(s, lower_rest = False):
-+def capitalize(s, lower_rest = False):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize(s, lower_rest = False):
+-  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 +    return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 +
 +def check_isinstance(obj, cls):
@@ -4306,10 +5742,16 @@ def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lo
 ```
 
 #### solution 3
+
 ```diff
--def capitalize(s, lower_rest = False):
-+def capitalize(s, lower_rest = False):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize(s, lower_rest = False):
+-  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 +    return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 +
 +def get_readme_dev_changed_files():
@@ -4317,10 +5759,16 @@ def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lo
 ```
 
 #### solution 4
+
 ```diff
--def capitalize(s, lower_rest = False):
-+def capitalize(s, lower_rest = False):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def capitalize(s, lower_rest = False):
+-  return ''.join([s[:1].upper(), (s[1:].lower() if lower_rest else s[1:])])
 +    return s[:1].upper() + (s[1:].lower() if lower_rest else s[1:])
 +
 +def get_class( kls ):
@@ -4330,30 +5778,42 @@ def capitalize(s, lower_rest = False):  return ''.join([s[:1].upper(), (s[1:].lo
 ### celsius_to_fahrenheit (task/53)
 
 #### canonical solution
+
 ```python
-def celsius_to_fahrenheit(degrees):  return ((degrees * 1.8) + 32)
+def celsius_to_fahrenheit(degrees):
+  return ((degrees * 1.8) + 32)
 ```
 
 #### solution 0
+
 ```diff
--def celsius_to_fahrenheit(degrees):
-+def celsius_to_fahrenheit(degrees):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def celsius_to_fahrenheit(degrees):
+-  return ((degrees * 1.8) + 32)
 +    """Convert celsius to fahrenheit."""
 +    return degrees * 9.0 / 5 + 32
 +
 +
 +class Thermostat(object):
 +    """Class to represent a thermostat."""
-+
-+    def __
 ```
 
 #### solution 1
+
 ```diff
--def celsius_to_fahrenheit(degrees):
-+def celsius_to_fahrenheit(degrees):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def celsius_to_fahrenheit(degrees):
+-  return ((degrees * 1.8) + 32)
 +    return degrees * 1.8 + 32
 +
 +if __name__ == '__main__':
@@ -4362,10 +5822,16 @@ def celsius_to_fahrenheit(degrees):  return ((degrees * 1.8) + 32)
 ```
 
 #### solution 2
+
 ```diff
--def celsius_to_fahrenheit(degrees):
-+def celsius_to_fahrenheit(degrees):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def celsius_to_fahrenheit(degrees):
+-  return ((degrees * 1.8) + 32)
 +    return degrees * 9 / 5 + 32
 +
 +# converts fahrenheit to celsius
@@ -4374,97 +5840,133 @@ def celsius_to_fahrenheit(degrees):  return ((degrees * 1.8) + 32)
 ```
 
 #### solution 3
+
 ```diff
--def celsius_to_fahrenheit(degrees):
-+def celsius_to_fahrenheit(degrees):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def celsius_to_fahrenheit(degrees):
+-  return ((degrees * 1.8) + 32)
 +    return degrees * 1.8 + 32
 +
 +
 +def fahrenheit_to_celsius(degrees):
 +    return (degrees - 32) / 1.8
 +
-+
-+def main():
-+    user_input =
 ```
 
 #### solution 4
+
 ```diff
--def celsius_to_fahrenheit(degrees):
-+def celsius_to_fahrenheit(degrees):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def celsius_to_fahrenheit(degrees):
+-  return ((degrees * 1.8) + 32)
 +    '''Returns the input temperature in degrees Fahrenheit
 +
 +    Takes a temperature in degrees Celsius, converts it to degrees Fahrenheit,
 +    and returns the result.
 +    '''
 +    return degrees * 1.8 + 32.0
-+
 ```
 
 ### every_nth (task/54)
 
 #### canonical solution
+
 ```python
-def every_nth(lst, nth):  return lst[nth - 1::nth]
+def every_nth(lst, nth):
+  return lst[nth - 1::nth]
 ```
 
 #### solution 0
+
 ```diff
--def every_nth(lst, nth):
-+def every_nth(lst, nth):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,4 @@
+
+ def every_nth(lst, nth):
+-  return lst[nth - 1::nth]
 +    return [lst[i] for i in range(0, len(lst), nth)]
 +
 +def make_sublattice_z(atom_type, atom_x, atom_y, data_
 ```
 
 #### solution 1
+
 ```diff
--def every_nth(lst, nth):
-+def every_nth(lst, nth):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,4 @@
+
+ def every_nth(lst, nth):
+-  return lst[nth - 1::nth]
 +    return lst[::nth]
 +every_nth([1,2,3,4,5,6,7,8,9], 2)
 +def every_nth(lst, nth):
 ```
 
 #### solution 2
+
 ```diff
--def every_nth(lst, nth):
-+def every_nth(lst, nth):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def every_nth(lst, nth):
+-  return lst[nth - 1::nth]
 +    """Return every nth item in list"""
 +    return lst[::nth]
 +
 +
 +def every_second(lst):
 +    """Return every second item in list"""
-+    return lst[::2]
 ```
 
 #### solution 3
+
 ```diff
--def every_nth(lst, nth):
-+def every_nth(lst, nth):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def every_nth(lst, nth):
+-  return lst[nth - 1::nth]
 +    out = []
 +    i = 0
 +    while i < len(lst):
 +        out.append(lst[i])
 +        i += nth
 +    return out
-+
-+# Slicing
-+# 
 ```
 
 #### solution 4
+
 ```diff
--def every_nth(lst, nth):
-+def every_nth(lst, nth):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def every_nth(lst, nth):
+-  return lst[nth - 1::nth]
 +    """
 +    >>> lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 +    >>> every_nth(lst, 3)
@@ -4474,15 +5976,23 @@ def every_nth(lst, nth):  return lst[nth - 1::nth]
 ### union (task/55)
 
 #### canonical solution
+
 ```python
-def union(a, b):  return list(set(a + b))
+def union(a, b):
+  return list(set(a + b))
 ```
 
 #### solution 0
+
 ```diff
--def union(a, b):
-+def union(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def union(a, b):
+-  return list(set(a + b))
 +    """ return the union of two lists """
 +    return list(set(a) | set(b))
 +
@@ -4490,10 +6000,16 @@ def union(a, b):  return list(set(a + b))
 ```
 
 #### solution 1
+
 ```diff
--def union(a, b):
-+def union(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def union(a, b):
+-  return list(set(a + b))
 +    return max(a[0], b[0]), min(a[1], b[1])
 +
 +
@@ -4502,10 +6018,16 @@ def union(a, b):  return list(set(a + b))
 ```
 
 #### solution 2
+
 ```diff
--def union(a, b):
-+def union(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def union(a, b):
+-  return list(set(a + b))
 +    return [e for e in a] + [e for e in b if e not in a]
 +
 +# To do a union we just need to use the function union that we defined above.
@@ -4513,95 +6035,120 @@ def union(a, b):  return list(set(a + b))
 ```
 
 #### solution 3
+
 ```diff
--def union(a, b):
-+def union(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def union(a, b):
+-  return list(set(a + b))
 +    a = np.asarray(a)
 +    b = np.asarray(b)
 +    c = np.unique(np.concatenate((a, b)))
 +    return c
 +
 +
-+def intersection(
 ```
 
 #### solution 4
+
 ```diff
--def union(a, b):
-+def union(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def union(a, b):
+-  return list(set(a + b))
 +    return a | b
 +
 +
 +def intersection(a, b):
 +    return a & b
 +
-+
-+def difference(a, b):
-+    return a - b
-+
-+
-+def symmetric_difference(a, b):
 ```
 
 ### drop (task/56)
 
 #### canonical solution
+
 ```python
-def drop(a, n = 1):  return a[n:]
+def drop(a, n = 1):
+  return a[n:]
 ```
 
 #### solution 0
+
 ```diff
--def drop(a, n = 1):
-+def drop(a, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def drop(a, n = 1):
+-  return a[n:]
 +    return a[n:]
 +
 +def bind(f, *args):
 +    return lambda x: f(x, *args)
 +
 +def compose(f, g):
-+    return lambda x: f(g(x
 ```
 
 #### solution 1
+
 ```diff
--def drop(a, n = 1):
-+def drop(a, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def drop(a, n = 1):
+-  return a[n:]
 +    return a[n:]
 +
 +def cut(a, n = 1):
 +    return a[:-n]
 +
 +def rev(a):
-+    return a[::-1]
-+
-+def lwr(a):
 ```
 
 #### solution 2
+
 ```diff
--def drop(a, n = 1):
-+def drop(a, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def drop(a, n = 1):
+-  return a[n:]
 +    for _ in range(n):
 +        a.pop()
 +    return a
 +
 +def roll(a, n = 1):
 +    for _ in range(n):
-+        b = a.pop()
-+        a
 ```
 
 #### solution 3
+
 ```diff
--def drop(a, n = 1):
-+def drop(a, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def drop(a, n = 1):
+-  return a[n:]
 +    """Return the rest of the elements of a sequence when n elements are removed."""
 +    for i in range(n):
 +        a.pop(0)
@@ -4611,41 +6158,54 @@ def drop(a, n = 1):  return a[n:]
 ```
 
 #### solution 4
+
 ```diff
--def drop(a, n = 1):
-+def drop(a, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def drop(a, n = 1):
+-  return a[n:]
 +    a = list(a)
 +    return a[n:] + a[:n]
 +
 +def mod(a, b):
 +    return a % b
 +
-+def gcd(a, b):
-+    while b
 ```
 
 ### frequencies (task/57)
 
 #### canonical solution
+
 ```python
 from collections import defaultdict
 
-def frequencies(lst):  freq = defaultdict(int)
+def frequencies(lst):
+  freq = defaultdict(int)
   for val in lst:
     freq[val] += 1
   return dict(freq)
 ```
 
 #### solution 0
+
 ```diff
--from collections import defaultdict
--
--def frequencies(lst):
-+from collections import defaultdict
-+
-+def frequencies(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def frequencies(lst):
+-  freq = defaultdict(int)
+-  for val in lst:
+-    freq[val] += 1
+-  return dict(freq)
 +    freq = defaultdict(int)
 +    for v in lst:
 +        freq[v] += 1
@@ -4656,14 +6216,21 @@ def frequencies(lst):  freq = defaultdict(int)
 ```
 
 #### solution 1
+
 ```diff
--from collections import defaultdict
--
--def frequencies(lst):
-+from collections import defaultdict
-+
-+def frequencies(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,12 @@
+
+ from collections import defaultdict
+ 
+ def frequencies(lst):
+-  freq = defaultdict(int)
+-  for val in lst:
+-    freq[val] += 1
+-  return dict(freq)
 +    d = defaultdict(int)
 +    for el in lst:
 +        d[el] += 1
@@ -4676,14 +6243,21 @@ def frequencies(lst):  freq = defaultdict(int)
 ```
 
 #### solution 2
+
 ```diff
--from collections import defaultdict
--
--def frequencies(lst):
-+from collections import defaultdict
-+
-+def frequencies(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def frequencies(lst):
+-  freq = defaultdict(int)
+-  for val in lst:
+-    freq[val] += 1
+-  return dict(freq)
 +    freq = defaultdict(int)
 +    for elem in lst:
 +        freq[elem] += 1
@@ -4694,14 +6268,21 @@ def frequencies(lst):  freq = defaultdict(int)
 ```
 
 #### solution 3
+
 ```diff
--from collections import defaultdict
--
--def frequencies(lst):
-+from collections import defaultdict
-+
-+def frequencies(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,11 @@
+
+ from collections import defaultdict
+ 
+ def frequencies(lst):
+-  freq = defaultdict(int)
+-  for val in lst:
+-    freq[val] += 1
+-  return dict(freq)
 +    d = defaultdict(int)
 +    for x in lst:
 +        d[x] += 1
@@ -4713,14 +6294,21 @@ def frequencies(lst):  freq = defaultdict(int)
 ```
 
 #### solution 4
+
 ```diff
--from collections import defaultdict
--
--def frequencies(lst):
-+from collections import defaultdict
-+
-+def frequencies(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def frequencies(lst):
+-  freq = defaultdict(int)
+-  for val in lst:
+-    freq[val] += 1
+-  return dict(freq)
 +    freq = defaultdict(int)
 +    for l in lst:
 +        freq[l] += 1
@@ -4733,15 +6321,23 @@ def frequencies(lst):  freq = defaultdict(int)
 ### initialize_list_with_range (task/58)
 
 #### canonical solution
+
 ```python
-def initialize_list_with_range(end, start = 0, step = 1):  return list(range(start, end + 1, step))
+def initialize_list_with_range(end, start = 0, step = 1):
+  return list(range(start, end + 1, step))
 ```
 
 #### solution 0
+
 ```diff
--def initialize_list_with_range(end, start = 0, step = 1):
-+def initialize_list_with_range(end, start = 0, step = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_range(end, start = 0, step = 1):
+-  return list(range(start, end + 1, step))
 +    """Return a list that has the value of start and goes up to the number
 +    before end in increments of step."""
 +    l = []
@@ -4751,27 +6347,35 @@ def initialize_list_with_range(end, start = 0, step = 1):  return list(range(sta
 ```
 
 #### solution 1
+
 ```diff
--def initialize_list_with_range(end, start = 0, step = 1):
-+def initialize_list_with_range(end, start = 0, step = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_range(end, start = 0, step = 1):
+-  return list(range(start, end + 1, step))
 +    """
 +    Initialize a list with a given range
 +
 +    :param end:
 +    :param start:
 +    :param step:
-+    :return:
-+    """
-+    my_list = []
-+    while start
 ```
 
 #### solution 2
+
 ```diff
--def initialize_list_with_range(end, start = 0, step = 1):
-+def initialize_list_with_range(end, start = 0, step = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def initialize_list_with_range(end, start = 0, step = 1):
+-  return list(range(start, end + 1, step))
 +    """
 +    Function to initialize a list from a range.
 +    :param end: The upper bound of the range
@@ -4780,52 +6384,67 @@ def initialize_list_with_range(end, start = 0, step = 1):  return list(range(sta
 ```
 
 #### solution 3
+
 ```diff
--def initialize_list_with_range(end, start = 0, step = 1):
-+def initialize_list_with_range(end, start = 0, step = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_range(end, start = 0, step = 1):
+-  return list(range(start, end + 1, step))
 +    l = []
 +    for i in range(start, end, step):
 +        l.append(i)
 +    return l
 +
 +print initialize_list_with_range(20)
-+print initialize_list_with
 ```
 
 #### solution 4
+
 ```diff
--def initialize_list_with_range(end, start = 0, step = 1):
-+def initialize_list_with_range(end, start = 0, step = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_range(end, start = 0, step = 1):
+-  return list(range(start, end + 1, step))
 +    list = []
 +    i = start
 +    while i < end:
 +        list.append(i)
 +        i += step
 +    return list
-+
-+def initialize_dict_with_pairs(pairs):
 ```
 
 ### cumsum (task/59)
 
 #### canonical solution
+
 ```python
 from itertools import accumulate
 
-def cumsum(lst):  return list(accumulate(lst))
+def cumsum(lst):
+  return list(accumulate(lst))
 ```
 
 #### solution 0
+
 ```diff
--from itertools import accumulate
--
--def cumsum(lst):
-+from itertools import accumulate
-+
-+def cumsum(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ from itertools import accumulate
+ 
+ def cumsum(lst):
+-  return list(accumulate(lst))
 +    return list(accumulate(lst))
 +
 +def cumsum2(lst):
@@ -4834,52 +6453,60 @@ def cumsum(lst):  return list(accumulate(lst))
 ```
 
 #### solution 1
+
 ```diff
--from itertools import accumulate
--
--def cumsum(lst):
-+from itertools import accumulate
-+
-+def cumsum(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from itertools import accumulate
+ 
+ def cumsum(lst):
+-  return list(accumulate(lst))
 +    return list(accumulate(lst))
 +
 +N = int(input())
 +
 +div = 10**9 + 7
 +
-+# 文字列をリスト化する
-+a = list
 ```
 
 #### solution 2
+
 ```diff
--from itertools import accumulate
--
--def cumsum(lst):
-+from itertools import accumulate
-+
-+def cumsum(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from itertools import accumulate
+ 
+ def cumsum(lst):
+-  return list(accumulate(lst))
 +    accum = 0
 +    for i in lst:
 +        accum += i
 +        yield accum
 +
 +def chunk(lst, n):
-+    for i in range(0, len(lst), n):
-+       
 ```
 
 #### solution 3
+
 ```diff
--from itertools import accumulate
--
--def cumsum(lst):
-+from itertools import accumulate
-+
-+def cumsum(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from itertools import accumulate
+ 
+ def cumsum(lst):
+-  return list(accumulate(lst))
 +    return list(accumulate(lst))
 +
 +def main():
@@ -4889,14 +6516,18 @@ def cumsum(lst):  return list(accumulate(lst))
 ```
 
 #### solution 4
+
 ```diff
--from itertools import accumulate
--
--def cumsum(lst):
-+from itertools import accumulate
-+
-+def cumsum(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,7 @@
+
+ from itertools import accumulate
+ 
+ def cumsum(lst):
+-  return list(accumulate(lst))
 +    return [0] + list(accumulate(lst))
 +
 +lst = [0,1,2,3,4,5,6,7,8,9]
@@ -4906,58 +6537,69 @@ def cumsum(lst):  return list(accumulate(lst))
 ### months_diff (task/60)
 
 #### canonical solution
+
 ```python
 from math import ceil
 
-def months_diff(start, end):  return ceil((end - start).days / 30)
+def months_diff(start, end):
+  return ceil((end - start).days / 30)
 ```
 
 #### solution 0
+
 ```diff
--from math import ceil
--
--def months_diff(start, end):
-+from math import ceil
-+
-+def months_diff(start, end):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import ceil
+ 
+ def months_diff(start, end):
+-  return ceil((end - start).days / 30)
 +    """
 +    Number of months between two dates.
 +    :param start: Start date
 +    :param end: End date
 +    :return: Int with number of months
 +    """
-+    # TODO: implement
-+   
 ```
 
 #### solution 1
+
 ```diff
--from math import ceil
--
--def months_diff(start, end):
-+from math import ceil
-+
-+def months_diff(start, end):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import ceil
+ 
+ def months_diff(start, end):
+-  return ceil((end - start).days / 30)
 +    if start == end:
 +        return 0
 +    if start[0] == end[0]:
 +        return 0
 +    if start[1] == end[1]:
 +        return 0
-+    return 12 * (end
 ```
 
 #### solution 2
+
 ```diff
--from math import ceil
--
--def months_diff(start, end):
-+from math import ceil
-+
-+def months_diff(start, end):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,8 @@
+
+ from math import ceil
+ 
+ def months_diff(start, end):
+-  return ceil((end - start).days / 30)
 +    result = end.year - start.year
 +    if end.month < start.month:
 +        result -= 1
@@ -4966,14 +6608,18 @@ def months_diff(start, end):  return ceil((end - start).days / 30)
 ```
 
 #### solution 3
+
 ```diff
--from math import ceil
--
--def months_diff(start, end):
-+from math import ceil
-+
-+def months_diff(start, end):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,8 @@
+
+ from math import ceil
+ 
+ def months_diff(start, end):
+-  return ceil((end - start).days / 30)
 +    """
 +    Number of months between two dates
 +    """
@@ -4982,14 +6628,18 @@ def months_diff(start, end):  return ceil((end - start).days / 30)
 ```
 
 #### solution 4
+
 ```diff
--from math import ceil
--
--def months_diff(start, end):
-+from math import ceil
-+
-+def months_diff(start, end):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,8 @@
+
+ from math import ceil
+ 
+ def months_diff(start, end):
+-  return ceil((end - start).days / 30)
 +    return (end.year - start.year) * 12 + end.month - start.month + 1
 +
 +def main():
@@ -5000,24 +6650,33 @@ def months_diff(start, end):  return ceil((end - start).days / 30)
 ### collect_dictionary (task/61)
 
 #### canonical solution
+
 ```python
 from collections import defaultdict
 
-def collect_dictionary(obj):  inv_obj = defaultdict(list)
+def collect_dictionary(obj):
+  inv_obj = defaultdict(list)
   for key, value in obj.items():
     inv_obj[value].append(key)
   return dict(inv_obj)
 ```
 
 #### solution 0
+
 ```diff
--from collections import defaultdict
--
--def collect_dictionary(obj):
-+from collections import defaultdict
-+
-+def collect_dictionary(obj):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import defaultdict
+ 
+ def collect_dictionary(obj):
+-  inv_obj = defaultdict(list)
+-  for key, value in obj.items():
+-    inv_obj[value].append(key)
+-  return dict(inv_obj)
 +    words = set()
 +    word_freq = defaultdict(int)
 +    def do_collect(obj):
@@ -5026,14 +6685,21 @@ def collect_dictionary(obj):  inv_obj = defaultdict(list)
 ```
 
 #### solution 1
+
 ```diff
--from collections import defaultdict
--
--def collect_dictionary(obj):
-+from collections import defaultdict
-+
-+def collect_dictionary(obj):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import defaultdict
+ 
+ def collect_dictionary(obj):
+-  inv_obj = defaultdict(list)
+-  for key, value in obj.items():
+-    inv_obj[value].append(key)
+-  return dict(inv_obj)
 +    if isinstance(obj, list):
 +        return collect_dictionary_list(obj)
 +    elif isinstance(obj, dict):
@@ -5042,14 +6708,21 @@ def collect_dictionary(obj):  inv_obj = defaultdict(list)
 ```
 
 #### solution 2
+
 ```diff
--from collections import defaultdict
--
--def collect_dictionary(obj):
-+from collections import defaultdict
-+
-+def collect_dictionary(obj):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,7 @@
+
+ from collections import defaultdict
+ 
+ def collect_dictionary(obj):
+-  inv_obj = defaultdict(list)
+-  for key, value in obj.items():
+-    inv_obj[value].append(key)
+-  return dict(inv_obj)
 +    return {key: value for key, value in obj.__dict__.items() if not key.startswith('__')}
 +
 +def make_action_list(action_list):
@@ -5057,14 +6730,21 @@ def collect_dictionary(obj):  inv_obj = defaultdict(list)
 ```
 
 #### solution 3
+
 ```diff
--from collections import defaultdict
--
--def collect_dictionary(obj):
-+from collections import defaultdict
-+
-+def collect_dictionary(obj):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import defaultdict
+ 
+ def collect_dictionary(obj):
+-  inv_obj = defaultdict(list)
+-  for key, value in obj.items():
+-    inv_obj[value].append(key)
+-  return dict(inv_obj)
 +    """
 +    Given a dictionary or list of dictionaries, this method flattens it to a
 +    single dictionary. This method will also sort the keys in the dictionary.
@@ -5073,14 +6753,21 @@ def collect_dictionary(obj):  inv_obj = defaultdict(list)
 ```
 
 #### solution 4
+
 ```diff
--from collections import defaultdict
--
--def collect_dictionary(obj):
-+from collections import defaultdict
-+
-+def collect_dictionary(obj):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def collect_dictionary(obj):
+-  inv_obj = defaultdict(list)
+-  for key, value in obj.items():
+-    inv_obj[value].append(key)
+-  return dict(inv_obj)
 +    """Collect attributes and methods for object.
 +
 +    Args:
@@ -5093,21 +6780,27 @@ def collect_dictionary(obj):  inv_obj = defaultdict(list)
 ### binomial_coefficient (task/62)
 
 #### canonical solution
+
 ```python
 from math import comb
 
-def binomial_coefficient(n, k):  return comb(n, k)
+def binomial_coefficient(n, k):
+  return comb(n, k)
 ```
 
 #### solution 0
+
 ```diff
--from math import comb
--
--def binomial_coefficient(n, k):
-+from math import comb
-+
-+def binomial_coefficient(n, k):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from math import comb
+ 
+ def binomial_coefficient(n, k):
+-  return comb(n, k)
 +    return comb(n, k, exact=True)
 +
 +# binomial_coefficient(5, 2)
@@ -5117,32 +6810,39 @@ def binomial_coefficient(n, k):  return comb(n, k)
 ```
 
 #### solution 1
+
 ```diff
--from math import comb
--
--def binomial_coefficient(n, k):
-+from math import comb
-+
-+def binomial_coefficient(n, k):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from math import comb
+ 
+ def binomial_coefficient(n, k):
+-  return comb(n, k)
 +    return comb(n, k, exact=True)
 +
 +def pascals_triangle(rows):
 +    result = []
 +    for count in range(rows):
 +        row = []
-+        for element in range
 ```
 
 #### solution 2
+
 ```diff
--from math import comb
--
--def binomial_coefficient(n, k):
-+from math import comb
-+
-+def binomial_coefficient(n, k):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,8 @@
+
+ from math import comb
+ 
+ def binomial_coefficient(n, k):
+-  return comb(n, k)
 +    return comb(n, k, exact=True)
 +
 +n = 5
@@ -5151,14 +6851,18 @@ def binomial_coefficient(n, k):  return comb(n, k)
 ```
 
 #### solution 3
+
 ```diff
--from math import comb
--
--def binomial_coefficient(n, k):
-+from math import comb
-+
-+def binomial_coefficient(n, k):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,8 @@
+
+ from math import comb
+ 
+ def binomial_coefficient(n, k):
+-  return comb(n, k)
 +    return comb(n, k, exact=True)
 +
 +n = [100, 1000, 10000, 100000, 1000000]
@@ -5167,14 +6871,18 @@ def binomial_coefficient(n, k):  return comb(n, k)
 ```
 
 #### solution 4
+
 ```diff
--from math import comb
--
--def binomial_coefficient(n, k):
-+from math import comb
-+
-+def binomial_coefficient(n, k):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,8 @@
+
+ from math import comb
+ 
+ def binomial_coefficient(n, k):
+-  return comb(n, k)
 +    return comb(n, k, exact=True)
 +
 +n = int(input())
@@ -5185,15 +6893,23 @@ def binomial_coefficient(n, k):  return comb(n, k)
 ### find_keys (task/63)
 
 #### canonical solution
+
 ```python
-def find_keys(dict, val):  return list(key for key, value in dict.items() if value == val)
+def find_keys(dict, val):
+  return list(key for key, value in dict.items() if value == val)
 ```
 
 #### solution 0
+
 ```diff
--def find_keys(dict, val):
-+def find_keys(dict, val):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def find_keys(dict, val):
+-  return list(key for key, value in dict.items() if value == val)
 +    return [k for k, v in dict.items() if v == val]
 +
 +
@@ -5203,10 +6919,16 @@ def find_keys(dict, val):  return list(key for key, value in dict.items() if val
 ```
 
 #### solution 1
+
 ```diff
--def find_keys(dict, val):
-+def find_keys(dict, val):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def find_keys(dict, val):
+-  return list(key for key, value in dict.items() if value == val)
 +    """
 +    Returns the key of the dict element with the given value.
 +
@@ -5216,10 +6938,16 @@ def find_keys(dict, val):  return list(key for key, value in dict.items() if val
 ```
 
 #### solution 2
+
 ```diff
--def find_keys(dict, val):
-+def find_keys(dict, val):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def find_keys(dict, val):
+-  return list(key for key, value in dict.items() if value == val)
 +    """Return list of keys where the value is val."""
 +    return [k for k, v in dict.items() if v == val]
 +
@@ -5229,10 +6957,16 @@ def find_keys(dict, val):  return list(key for key, value in dict.items() if val
 ```
 
 #### solution 3
+
 ```diff
--def find_keys(dict, val):
-+def find_keys(dict, val):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def find_keys(dict, val):
+-  return list(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    try:
 +        return [k for k, v in dict.iteritems() if v == val][0]
@@ -5241,10 +6975,16 @@ def find_keys(dict, val):  return list(key for key, value in dict.items() if val
 ```
 
 #### solution 4
+
 ```diff
--def find_keys(dict, val):
-+def find_keys(dict, val):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def find_keys(dict, val):
+-  return list(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    return [k for k, v in dict.iteritems() if v == val]
 +
@@ -5255,15 +6995,23 @@ def find_keys(dict, val):  return list(key for key, value in dict.items() if val
 ### when (task/64)
 
 #### canonical solution
+
 ```python
-def when(predicate, when_true):  return lambda x: when_true(x) if predicate(x) else x
+def when(predicate, when_true):
+  return lambda x: when_true(x) if predicate(x) else x
 ```
 
 #### solution 0
+
 ```diff
--def when(predicate, when_true):
-+def when(predicate, when_true):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def when(predicate, when_true):
+-  return lambda x: when_true(x) if predicate(x) else x
 +    return lambda x: when_true(x) if predicate(x) else x
 +
 +def nested_when(predicate, list_of_when_true):
@@ -5271,10 +7019,16 @@ def when(predicate, when_true):  return lambda x: when_true(x) if predicate(x) e
 ```
 
 #### solution 1
+
 ```diff
--def when(predicate, when_true):
-+def when(predicate, when_true):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def when(predicate, when_true):
+-  return lambda x: when_true(x) if predicate(x) else x
 +    def wrapper(fn):
 +        def inner(*args, **kwargs):
 +            if predicate(*args, **kwargs):
@@ -5284,10 +7038,16 @@ def when(predicate, when_true):  return lambda x: when_true(x) if predicate(x) e
 ```
 
 #### solution 2
+
 ```diff
--def when(predicate, when_true):
-+def when(predicate, when_true):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def when(predicate, when_true):
+-  return lambda x: when_true(x) if predicate(x) else x
 +    """
 +    This function is like :meth:`itertools.compress()` where *when_true* is
 +    the selector sequence and *predicate* filters the values.
@@ -5295,45 +7055,52 @@ def when(predicate, when_true):  return lambda x: when_true(x) if predicate(x) e
 ```
 
 #### solution 3
+
 ```diff
--def when(predicate, when_true):
-+def when(predicate, when_true):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def when(predicate, when_true):
+-  return lambda x: when_true(x) if predicate(x) else x
 +    return when_true() if predicate else None
 +
 +
 +def unless(predicate, when_false):
 +    return when_false() if not predicate else None
 +
-+
-+def is_char(data):
-+    """
-+    Return
 ```
 
 #### solution 4
+
 ```diff
--def when(predicate, when_true):
-+def when(predicate, when_true):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def when(predicate, when_true):
+-  return lambda x: when_true(x) if predicate(x) else x
 +    if predicate():
 +        return when_true()
 +    return None
 +
 +# @when(menu_choice == 'p', prepare_meal)
 +
-+def menu_choice():
-+    return input("""
-+    What would
 ```
 
 ### chunk_into_n (task/65)
 
 #### canonical solution
+
 ```python
 from math import ceil
 
-def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
+def chunk_into_n(lst, n):
+  size = ceil(len(lst) / n)
   return list(
     map(lambda x: lst[x * size:x * size + size],
     list(range(n)))
@@ -5341,14 +7108,22 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ```
 
 #### solution 0
+
 ```diff
--from math import ceil
--
--def chunk_into_n(lst, n):
-+from math import ceil
-+
-+def chunk_into_n(lst, n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,10 @@
+
+ from math import ceil
+ 
+ def chunk_into_n(lst, n):
+-  size = ceil(len(lst) / n)
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-    list(range(n)))
+-  )
 +    """
 +    Yield successive n-sized chunks from lst.
 +    """
@@ -5359,14 +7134,22 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ```
 
 #### solution 1
+
 ```diff
--from math import ceil
--
--def chunk_into_n(lst, n):
-+from math import ceil
-+
-+def chunk_into_n(lst, n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,7 @@
+
+ from math import ceil
+ 
+ def chunk_into_n(lst, n):
+-  size = ceil(len(lst) / n)
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-    list(range(n)))
+-  )
 +    return [lst[i:i + n] for i in range(0, len(lst), n)]
 +
 +def crop_to_n(lst, n):
@@ -5374,14 +7157,22 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ```
 
 #### solution 2
+
 ```diff
--from math import ceil
--
--def chunk_into_n(lst, n):
-+from math import ceil
-+
-+def chunk_into_n(lst, n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,10 @@
+
+ from math import ceil
+ 
+ def chunk_into_n(lst, n):
+-  size = ceil(len(lst) / n)
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-    list(range(n)))
+-  )
 +    '''
 +    Splits a list into n sublists.
 +    '''
@@ -5392,14 +7183,22 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ```
 
 #### solution 3
+
 ```diff
--from math import ceil
--
--def chunk_into_n(lst, n):
-+from math import ceil
-+
-+def chunk_into_n(lst, n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,7 @@
+
+ from math import ceil
+ 
+ def chunk_into_n(lst, n):
+-  size = ceil(len(lst) / n)
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-    list(range(n)))
+-  )
 +    return [lst[i:i + n] for i in range(0, len(lst), n)]
 +
 +def list_to_str(lst):
@@ -5407,14 +7206,22 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ```
 
 #### solution 4
+
 ```diff
--from math import ceil
--
--def chunk_into_n(lst, n):
-+from math import ceil
-+
-+def chunk_into_n(lst, n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,10 @@
+
+ from math import ceil
+ 
+ def chunk_into_n(lst, n):
+-  size = ceil(len(lst) / n)
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-    list(range(n)))
+-  )
 +    """
 +    Splits a list into n smaller lists of roughly equal size.
 +    Returns a list of lists.
@@ -5427,15 +7234,23 @@ def chunk_into_n(lst, n):  size = ceil(len(lst) / n)
 ### km_to_miles (task/66)
 
 #### canonical solution
+
 ```python
-def km_to_miles(km):  return km * 0.621371
+def km_to_miles(km):
+  return km * 0.621371
 ```
 
 #### solution 0
+
 ```diff
--def km_to_miles(km):
-+def km_to_miles(km):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def km_to_miles(km):
+-  return km * 0.621371
 +    return km * 0.621371
 +
 +def main():
@@ -5445,57 +7260,73 @@ def km_to_miles(km):  return km * 0.621371
 ```
 
 #### solution 1
+
 ```diff
--def km_to_miles(km):
-+def km_to_miles(km):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def km_to_miles(km):
+-  return km * 0.621371
 +    return km * 0.621371192
 +
 +
 +def miles_to_km(miles):
 +    return miles / 0.621371192
 +
-+
-+def lbs_to_kg(lbs):
-+    return lbs *
 ```
 
 #### solution 2
+
 ```diff
--def km_to_miles(km):
-+def km_to_miles(km):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def km_to_miles(km):
+-  return km * 0.621371
 +    """
 +    Function that converts km to miles
 +    :param km:
 +    :return:
 +    """
 +    miles = km / 1.609
-+    return miles
-+
-+
-+def miles_to_km(miles):
 ```
 
 #### solution 3
+
 ```diff
--def km_to_miles(km):
-+def km_to_miles(km):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def km_to_miles(km):
+-  return km * 0.621371
 +    return km * 0.621371
 +
 +def miles_to_km(miles):
 +    return miles / 0.621371
 +
 +def kmh_to_ms(kmh):
-+    return kmh
 ```
 
 #### solution 4
+
 ```diff
--def km_to_miles(km):
-+def km_to_miles(km):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def km_to_miles(km):
+-  return km * 0.621371
 +    return km * 0.621371
 +
 +if __name__ == '__main__':
@@ -5505,15 +7336,23 @@ def km_to_miles(km):  return km * 0.621371
 ### max_by (task/67)
 
 #### canonical solution
+
 ```python
-def max_by(lst, fn):  return max(map(fn, lst))
+def max_by(lst, fn):
+  return max(map(fn, lst))
 ```
 
 #### solution 0
+
 ```diff
--def max_by(lst, fn):
-+def max_by(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def max_by(lst, fn):
+-  return max(map(fn, lst))
 +    max_result = None
 +    max_value = None
 +    for i in lst:
@@ -5522,10 +7361,16 @@ def max_by(lst, fn):  return max(map(fn, lst))
 ```
 
 #### solution 1
+
 ```diff
--def max_by(lst, fn):
-+def max_by(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def max_by(lst, fn):
+-  return max(map(fn, lst))
 +    if lst == []:
 +        return None
 +    return_val = lst[0]
@@ -5535,10 +7380,16 @@ def max_by(lst, fn):  return max(map(fn, lst))
 ```
 
 #### solution 2
+
 ```diff
--def max_by(lst, fn):
-+def max_by(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def max_by(lst, fn):
+-  return max(map(fn, lst))
 +    """
 +    Return the largest item in an iterable or the largest of two or more args.
 +    """
@@ -5547,10 +7398,16 @@ def max_by(lst, fn):  return max(map(fn, lst))
 ```
 
 #### solution 3
+
 ```diff
--def max_by(lst, fn):
-+def max_by(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def max_by(lst, fn):
+-  return max(map(fn, lst))
 +    """Return the element of a list that gives the maximum value from a function.
 +
 +    >>> square = lambda x: x * x
@@ -5559,10 +7416,16 @@ def max_by(lst, fn):  return max(map(fn, lst))
 ```
 
 #### solution 4
+
 ```diff
--def max_by(lst, fn):
-+def max_by(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def max_by(lst, fn):
+-  return max(map(fn, lst))
 +    """
 +    returns the maximum element of a list,
 +    determined by a function.
@@ -5573,43 +7436,61 @@ def max_by(lst, fn):  return max(map(fn, lst))
 ### min_element_index (task/68)
 
 #### canonical solution
+
 ```python
-def min_element_index(arr):  return arr.index(min(arr))
+def min_element_index(arr):
+  return arr.index(min(arr))
 ```
 
 #### solution 0
+
 ```diff
--def min_element_index(arr):
-+def min_element_index(arr):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def min_element_index(arr):
+-  return arr.index(min(arr))
 +    min_index = 0
 +    for i in range(1, len(arr)):
 +        if arr[i] < arr[min_index]:
 +            min_index = i
 +    return min_index
-+
 +
 ```
 
 #### solution 1
+
 ```diff
--def min_element_index(arr):
-+def min_element_index(arr):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def min_element_index(arr):
+-  return arr.index(min(arr))
 +    min_index = 0
 +    for i in range(1, len(arr)):
 +        if arr[i] < arr[min_index]:
 +            min_index = i
 +    return min_index
 +
-+
 ```
 
 #### solution 2
+
 ```diff
--def min_element_index(arr):
-+def min_element_index(arr):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def min_element_index(arr):
+-  return arr.index(min(arr))
 +    min_idx = 0
 +    for i in range(1, len(arr)):
 +        if arr[i] < arr[min_idx]:
@@ -5618,10 +7499,16 @@ def min_element_index(arr):  return arr.index(min(arr))
 ```
 
 #### solution 3
+
 ```diff
--def min_element_index(arr):
-+def min_element_index(arr):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def min_element_index(arr):
+-  return arr.index(min(arr))
 +    min_elem = arr[0]
 +    min_index = 0
 +    for i in range(1, len(arr)):
@@ -5630,10 +7517,16 @@ def min_element_index(arr):  return arr.index(min(arr))
 ```
 
 #### solution 4
+
 ```diff
--def min_element_index(arr):
-+def min_element_index(arr):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def min_element_index(arr):
+-  return arr.index(min(arr))
 +    """Find minimum value in array"""
 +    min_index = 0
 +    for i in range(1, len(arr)):
@@ -5644,15 +7537,23 @@ def min_element_index(arr):  return arr.index(min(arr))
 ### initialize_2d_list (task/69)
 
 #### canonical solution
+
 ```python
-def initialize_2d_list(w, h, val = None):  return [[val for x in range(w)] for y in range(h)]
+def initialize_2d_list(w, h, val = None):
+  return [[val for x in range(w)] for y in range(h)]
 ```
 
 #### solution 0
+
 ```diff
--def initialize_2d_list(w, h, val = None):
-+def initialize_2d_list(w, h, val = None):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def initialize_2d_list(w, h, val = None):
+-  return [[val for x in range(w)] for y in range(h)]
 +    if val == None:
 +        val = []
 +    return [[val for x in range(w)] for y in range(h)]
@@ -5661,10 +7562,16 @@ def initialize_2d_list(w, h, val = None):  return [[val for x in range(w)] for y
 ```
 
 #### solution 1
+
 ```diff
--def initialize_2d_list(w, h, val = None):
-+def initialize_2d_list(w, h, val = None):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def initialize_2d_list(w, h, val = None):
+-  return [[val for x in range(w)] for y in range(h)]
 +    list = [[val for x in range(w)] for y in range(h)]
 +    return list
 +
@@ -5673,25 +7580,35 @@ def initialize_2d_list(w, h, val = None):  return [[val for x in range(w)] for y
 ```
 
 #### solution 2
+
 ```diff
--def initialize_2d_list(w, h, val = None):
-+def initialize_2d_list(w, h, val = None):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_2d_list(w, h, val = None):
+-  return [[val for x in range(w)] for y in range(h)]
 +    l = []
 +    for i in range(h):
 +        l.append([val] * w)
 +    return l
 +
 +#-----------------------------------------------------------------------
-+#
-+#   get_chunks_indexes_to_remove
 ```
 
 #### solution 3
+
 ```diff
--def initialize_2d_list(w, h, val = None):
-+def initialize_2d_list(w, h, val = None):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def initialize_2d_list(w, h, val = None):
+-  return [[val for x in range(w)] for y in range(h)]
 +    return [[val for i in range(w)] for j in range(h)]
 +
 +def initialize_2d_array(w, h, val = None):
@@ -5699,32 +7616,44 @@ def initialize_2d_list(w, h, val = None):  return [[val for x in range(w)] for y
 ```
 
 #### solution 4
+
 ```diff
--def initialize_2d_list(w, h, val = None):
-+def initialize_2d_list(w, h, val = None):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_2d_list(w, h, val = None):
+-  return [[val for x in range(w)] for y in range(h)]
 +    """
 +    Returns a 2d list of width w and height h, initialized with value val
 +    """
 +    if val == None:
 +        val = 0
 +    # Default value is 0
-+    ans = []
-+   
 ```
 
 ### dict_to_list (task/70)
 
 #### canonical solution
+
 ```python
-def dict_to_list(d):  return list(d.items())
+def dict_to_list(d):
+  return list(d.items())
 ```
 
 #### solution 0
+
 ```diff
--def dict_to_list(d):
-+def dict_to_list(d):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def dict_to_list(d):
+-  return list(d.items())
 +    return sorted(d.items(), key=lambda x: x[1], reverse=True)
 +
 +
@@ -5733,10 +7662,16 @@ def dict_to_list(d):  return list(d.items())
 ```
 
 #### solution 1
+
 ```diff
--def dict_to_list(d):
-+def dict_to_list(d):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def dict_to_list(d):
+-  return list(d.items())
 +    ''' Return a list of (key, value) tuples, sorted by key '''
 +    return sorted(d.items(), key=lambda x: x[0])
 +
@@ -5745,148 +7680,188 @@ def dict_to_list(d):  return list(d.items())
 ```
 
 #### solution 2
+
 ```diff
--def dict_to_list(d):
-+def dict_to_list(d):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def dict_to_list(d):
+-  return list(d.items())
 +    return [v for _, v in d.items()]
 +
 +
 +def sum_dicts(dicts):
 +    sum_dict = defaultdict(float)
 +    for d in dicts:
-+        for k,
 ```
 
 #### solution 3
+
 ```diff
--def dict_to_list(d):
-+def dict_to_list(d):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def dict_to_list(d):
+-  return list(d.items())
 +    l = []
 +    for i in d:
 +        l.append((i, d[i]))
 +    return l
 +
 +def get_reg_ex(string):
-+    reg_ex = r'^%
 ```
 
 #### solution 4
+
 ```diff
--def dict_to_list(d):
-+def dict_to_list(d):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def dict_to_list(d):
+-  return list(d.items())
 +    ret = []
 +    for k, v in d.items():
 +        ret.append(v)
 +    return ret
 +
 +
-+# In[ ]:
-+
-+
-+def list_to_dict(l):
-+    ret =
 ```
 
 ### average (task/71)
 
 #### canonical solution
+
 ```python
-def average(*args):  return sum(args, 0.0) / len(args)
+def average(*args):
+  return sum(args, 0.0) / len(args)
 ```
 
 #### solution 0
+
 ```diff
--def average(*args):
-+def average(*args):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def average(*args):
+-  return sum(args, 0.0) / len(args)
 +    """
 +    A function that takes an arbitrary number of arguments and returns their average.
 +    """
 +    return sum(args) / len(args)
 +
 +
-+def square_root(n):
-+    """
-+    A function
 ```
 
 #### solution 1
+
 ```diff
--def average(*args):
-+def average(*args):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def average(*args):
+-  return sum(args, 0.0) / len(args)
 +    sum = 0
 +    for i in args:
 +        sum += i
 +    return sum / len(args)
 +
 +
-+print(average(1, 2, 3, 4, 5))
-+print(average(1, 2
 ```
 
 #### solution 2
+
 ```diff
--def average(*args):
-+def average(*args):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def average(*args):
+-  return sum(args, 0.0) / len(args)
 +    '''
 +    Returns the average of args
 +    '''
 +    return sum(args) / len(args)
 +
 +print(average(1, 2, 3, 4))
-+
-+# If a function does not explicitly
 ```
 
 #### solution 3
+
 ```diff
--def average(*args):
-+def average(*args):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def average(*args):
+-  return sum(args, 0.0) / len(args)
 +    return sum(args) / len(args)
 +
 +def absolute_value(x):
 +    return abs(x)
 +
 +def squre(x):
-+    return x ** 2
-+
-+print(average(1,
 ```
 
 #### solution 4
+
 ```diff
--def average(*args):
-+def average(*args):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def average(*args):
+-  return sum(args, 0.0) / len(args)
 +    a = 0
 +    b = 0
 +    n = 0
 +    for arg in args:
 +        a += arg[0]
 +        b += arg[1]
-+        n += 1
-+    return a/n,
 ```
 
 ### intersection (task/72)
 
 #### canonical solution
+
 ```python
-def intersection(a, b):  _a, _b = set(a), set(b)
+def intersection(a, b):
+  _a, _b = set(a), set(b)
   return list(_a & _b)
 ```
 
 #### solution 0
+
 ```diff
--def intersection(a, b):
-+def intersection(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,5 @@
+
+ def intersection(a, b):
+-  _a, _b = set(a), set(b)
+-  return list(_a & _b)
 +    return list(set(a) & set(b))
 +
 +# Which of the following two arrays contains all the unique values?
@@ -5894,20 +7869,34 @@ def intersection(a, b):  _a, _b = set(a), set(b)
 ```
 
 #### solution 1
+
 ```diff
--def intersection(a, b):
-+def intersection(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,4 @@
+
+ def intersection(a, b):
+-  _a, _b = set(a), set(b)
+-  return list(_a & _b)
 +    if a.x > b.x:
 +        a, b = b, a
 +    return (b.x-a.x)*(a.y-b.y)/(a.y*b.x-
 ```
 
 #### solution 2
+
 ```diff
--def intersection(a, b):
-+def intersection(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,5 @@
+
+ def intersection(a, b):
+-  _a, _b = set(a), set(b)
+-  return list(_a & _b)
 +    """Determine the intersection of two rectangles"""
 +    # Return a dictionary with the keys lo, hi
 +    lo = max(a['lo'], b['lo'])
@@ -5915,10 +7904,17 @@ def intersection(a, b):  _a, _b = set(a), set(b)
 ```
 
 #### solution 3
+
 ```diff
--def intersection(a, b):
-+def intersection(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,6 @@
+
+ def intersection(a, b):
+-  _a, _b = set(a), set(b)
+-  return list(_a & _b)
 +    """
 +    Determine if two rectangles intersect and return the intersecting rectangle.
 +    """
@@ -5927,10 +7923,17 @@ def intersection(a, b):  _a, _b = set(a), set(b)
 ```
 
 #### solution 4
+
 ```diff
--def intersection(a, b):
-+def intersection(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,7 @@
+
+ def intersection(a, b):
+-  _a, _b = set(a), set(b)
+-  return list(_a & _b)
 +    return list(set(a) & set(b))
 +
 +def getData(filenames):
@@ -5942,15 +7945,23 @@ def intersection(a, b):  _a, _b = set(a), set(b)
 ### hamming_distance (task/73)
 
 #### canonical solution
+
 ```python
-def hamming_distance(a, b):  return bin(a ^ b).count('1')
+def hamming_distance(a, b):
+  return bin(a ^ b).count('1')
 ```
 
 #### solution 0
+
 ```diff
--def hamming_distance(a, b):
-+def hamming_distance(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def hamming_distance(a, b):
+-  return bin(a ^ b).count('1')
 +    return sum(c1 != c2 for c1, c2 in zip(a, b))
 +
 +def decrypt(ciphertext, key):
@@ -5959,10 +7970,16 @@ def hamming_distance(a, b):  return bin(a ^ b).count('1')
 ```
 
 #### solution 1
+
 ```diff
--def hamming_distance(a, b):
-+def hamming_distance(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def hamming_distance(a, b):
+-  return bin(a ^ b).count('1')
 +    assert len(a) == len(b)
 +    return sum(c1 != c2 for c1, c2 in zip(a, b))
 +
@@ -5971,10 +7988,16 @@ def hamming_distance(a, b):  return bin(a ^ b).count('1')
 ```
 
 #### solution 2
+
 ```diff
--def hamming_distance(a, b):
-+def hamming_distance(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def hamming_distance(a, b):
+-  return bin(a ^ b).count('1')
 +    '''
 +    Calculate the hamming distance of two equal-length strings.
 +    The strings should be the same length, or bad things will happen.
@@ -5983,10 +8006,16 @@ def hamming_distance(a, b):  return bin(a ^ b).count('1')
 ```
 
 #### solution 3
+
 ```diff
--def hamming_distance(a, b):
-+def hamming_distance(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def hamming_distance(a, b):
+-  return bin(a ^ b).count('1')
 +    return np.sum(a != b)
 +
 +
@@ -5995,10 +8024,16 @@ def hamming_distance(a, b):  return bin(a ^ b).count('1')
 ```
 
 #### solution 4
+
 ```diff
--def hamming_distance(a, b):
-+def hamming_distance(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def hamming_distance(a, b):
+-  return bin(a ^ b).count('1')
 +    ''' Return the Hamming distance between equal-length sequences '''
 +    if len(a) != len(b):
 +        raise ValueError("Undefined for sequences of unequal length")
@@ -6008,79 +8043,99 @@ def hamming_distance(a, b):  return bin(a ^ b).count('1')
 ### digitize (task/74)
 
 #### canonical solution
+
 ```python
-def digitize(n):  return list(map(int, str(n)))
+def digitize(n):
+  return list(map(int, str(n)))
 ```
 
 #### solution 0
+
 ```diff
--def digitize(n):
-+def digitize(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def digitize(n):
+-  return list(map(int, str(n)))
 +    if n <= 9:
 +        return n
 +    else:
 +        n = n % 9
 +        if n == 0:
 +            return 9
-+        else:
-+            return n
-+
-+if __name__ == '__
 ```
 
 #### solution 1
+
 ```diff
--def digitize(n):
-+def digitize(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def digitize(n):
+-  return list(map(int, str(n)))
 +    if (n <= 9):
 +        return n
 +    digit = 1
 +    while(n>= 10):
 +        n = n/10
 +        digit += 1
-+    return digit
-+
-+def get_sum_of
 ```
 
 #### solution 2
+
 ```diff
--def digitize(n):
-+def digitize(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def digitize(n):
+-  return list(map(int, str(n)))
 +    digits = []
 +    while n > 0:
 +        digits.append(n % 10)
 +        n = n // 10
 +    return digits
 +
-+# Solution
-+
-+def persistence(n):
-+    s = 0
 ```
 
 #### solution 3
+
 ```diff
--def digitize(n):
-+def digitize(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def digitize(n):
+-  return list(map(int, str(n)))
 +    return map(int, str(n))
 +
 +
 +def unfold_list(list_of_list):
 +    """
 +    >>> from random import randint
-+    >>> l = [[randint(1,10) for i
 ```
 
 #### solution 4
+
 ```diff
--def digitize(n):
-+def digitize(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def digitize(n):
+-  return list(map(int, str(n)))
 +    n = str(n)
 +    n = n[::-1]
 +    n = list(n)
@@ -6091,15 +8146,23 @@ def digitize(n):  return list(map(int, str(n)))
 ### roll (task/75)
 
 #### canonical solution
+
 ```python
-def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
+def roll(lst, offset):
+  return lst[-offset:] + lst[:-offset]
 ```
 
 #### solution 0
+
 ```diff
--def roll(lst, offset):
-+def roll(lst, offset):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def roll(lst, offset):
+-  return lst[-offset:] + lst[:-offset]
 +    return lst[offset:] + lst[:offset]
 +
 +def create_new_deck():
@@ -6109,10 +8172,16 @@ def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
 ```
 
 #### solution 1
+
 ```diff
--def roll(lst, offset):
-+def roll(lst, offset):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def roll(lst, offset):
+-  return lst[-offset:] + lst[:-offset]
 +    """Returns a copy of lst rolled forward by offset elements"""
 +    return lst[offset:] + lst[:offset]
 +
@@ -6121,10 +8190,16 @@ def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
 ```
 
 #### solution 2
+
 ```diff
--def roll(lst, offset):
-+def roll(lst, offset):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def roll(lst, offset):
+-  return lst[-offset:] + lst[:-offset]
 +    return lst[offset:] + lst[:offset]
 +
 +def rotate(lst, offset):
@@ -6134,10 +8209,16 @@ def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
 ```
 
 #### solution 3
+
 ```diff
--def roll(lst, offset):
-+def roll(lst, offset):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def roll(lst, offset):
+-  return lst[-offset:] + lst[:-offset]
 +    return lst[offset:] + lst[:offset]
 +
 +# print(roll([1,2,3,4,5], 2))
@@ -6147,47 +8228,63 @@ def roll(lst, offset):  return lst[-offset:] + lst[:-offset]
 ```
 
 #### solution 4
+
 ```diff
--def roll(lst, offset):
-+def roll(lst, offset):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def roll(lst, offset):
+-  return lst[-offset:] + lst[:-offset]
 +    return lst[offset:] + lst[:offset]
 +
 +#Returns the ID of the given chip
 +def id(chip):
 +    return chip >> 2
 +
-+#Returns the floor number of the given chip
-+def
 ```
 
 ### some (task/76)
 
 #### canonical solution
+
 ```python
-def some(lst, fn = lambda x: x):  return any(map(fn, lst))
+def some(lst, fn = lambda x: x):
+  return any(map(fn, lst))
 ```
 
 #### solution 0
+
 ```diff
--def some(lst, fn = lambda x: x):
-+def some(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def some(lst, fn = lambda x: x):
+-  return any(map(fn, lst))
 +    i = 0
 +    while i < len(lst):
 +        if fn(lst[i]):
 +            return True
 +        i += 1
 +    return False
-+
-+def every(lst, fn = lambda
 ```
 
 #### solution 1
+
 ```diff
--def some(lst, fn = lambda x: x):
-+def some(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def some(lst, fn = lambda x: x):
+-  return any(map(fn, lst))
 +    """
 +    Returns a predicate that returns true iff fn(x) is true for some element
 +    in lst.
@@ -6197,10 +8294,16 @@ def some(lst, fn = lambda x: x):  return any(map(fn, lst))
 ```
 
 #### solution 2
+
 ```diff
--def some(lst, fn = lambda x: x):
-+def some(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def some(lst, fn = lambda x: x):
+-  return any(map(fn, lst))
 +    filtered = filter(fn, lst)
 +    return len(filtered) > 0
 +
@@ -6210,25 +8313,35 @@ def some(lst, fn = lambda x: x):  return any(map(fn, lst))
 ```
 
 #### solution 3
+
 ```diff
--def some(lst, fn = lambda x: x):
-+def some(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def some(lst, fn = lambda x: x):
+-  return any(map(fn, lst))
 +    for x in lst:
 +        if fn(x):
 +            return x
 +    return None
 +
 +class App:
-+    def __init__(self, stdscr):
-+        self.wc = Wc
 ```
 
 #### solution 4
+
 ```diff
--def some(lst, fn = lambda x: x):
-+def some(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def some(lst, fn = lambda x: x):
+-  return any(map(fn, lst))
 +    return [x for x in lst if fn(x)]
 +
 +def any(lst, fn = lambda x: x):
@@ -6240,10 +8353,12 @@ def some(lst, fn = lambda x: x):  return any(map(fn, lst))
 ### combine_values (task/77)
 
 #### canonical solution
+
 ```python
 from collections import defaultdict
 
-def combine_values(*dicts):  res = defaultdict(list)
+def combine_values(*dicts):
+  res = defaultdict(list)
   for d in dicts:
     for key in d:
       res[key].append(d[key])
@@ -6251,14 +8366,22 @@ def combine_values(*dicts):  res = defaultdict(list)
 ```
 
 #### solution 0
+
 ```diff
--from collections import defaultdict
--
--def combine_values(*dicts):
-+from collections import defaultdict
-+
-+def combine_values(*dicts):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,9 @@
+
+ from collections import defaultdict
+ 
+ def combine_values(*dicts):
+-  res = defaultdict(list)
+-  for d in dicts:
+-    for key in d:
+-      res[key].append(d[key])
+-  return dict(res)
 +    if len(dicts) == 0:
 +        return {}
 +    if len(dicts) == 1:
@@ -6268,14 +8391,22 @@ def combine_values(*dicts):  res = defaultdict(list)
 ```
 
 #### solution 1
+
 ```diff
--from collections import defaultdict
--
--def combine_values(*dicts):
-+from collections import defaultdict
-+
-+def combine_values(*dicts):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def combine_values(*dicts):
+-  res = defaultdict(list)
+-  for d in dicts:
+-    for key in d:
+-      res[key].append(d[key])
+-  return dict(res)
 +    """
 +    Combine values of multiple dictionaries
 +    """
@@ -6286,14 +8417,22 @@ def combine_values(*dicts):  res = defaultdict(list)
 ```
 
 #### solution 2
+
 ```diff
--from collections import defaultdict
--
--def combine_values(*dicts):
-+from collections import defaultdict
-+
-+def combine_values(*dicts):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,7 @@
+
+ from collections import defaultdict
+ 
+ def combine_values(*dicts):
+-  res = defaultdict(list)
+-  for d in dicts:
+-    for key in d:
+-      res[key].append(d[key])
+-  return dict(res)
 +    """
 +    Combines multiple values into a single dictionary.
 +    """
@@ -6301,14 +8440,22 @@ def combine_values(*dicts):  res = defaultdict(list)
 ```
 
 #### solution 3
+
 ```diff
--from collections import defaultdict
--
--def combine_values(*dicts):
-+from collections import defaultdict
-+
-+def combine_values(*dicts):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def combine_values(*dicts):
+-  res = defaultdict(list)
+-  for d in dicts:
+-    for key in d:
+-      res[key].append(d[key])
+-  return dict(res)
 +    result = defaultdict(list)
 +    for dictionary in dicts:
 +        for key, value in dictionary.items():
@@ -6319,14 +8466,22 @@ def combine_values(*dicts):  res = defaultdict(list)
 ```
 
 #### solution 4
+
 ```diff
--from collections import defaultdict
--
--def combine_values(*dicts):
-+from collections import defaultdict
-+
-+def combine_values(*dicts):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,11 @@
+
+ from collections import defaultdict
+ 
+ def combine_values(*dicts):
+-  res = defaultdict(list)
+-  for d in dicts:
+-    for key in d:
+-      res[key].append(d[key])
+-  return dict(res)
 +    """Combine the given dictionaries into a single dictionary.
 +
 +    Each given dictionary will either overwrite or be added to the
@@ -6340,29 +8495,42 @@ def combine_values(*dicts):  res = defaultdict(list)
 ### flatten (task/78)
 
 #### canonical solution
+
 ```python
-def flatten(lst):  return [x for y in lst for x in y]
+def flatten(lst):
+  return [x for y in lst for x in y]
 ```
 
 #### solution 0
+
 ```diff
--def flatten(lst):
-+def flatten(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def flatten(lst):
+-  return [x for y in lst for x in y]
 +    for el in lst:
 +        if isinstance(el, Iterable) and not isinstance(el, str):
 +            yield from flatten(el)
 +        else:
 +            yield el
 +
-+def flatten
 ```
 
 #### solution 1
+
 ```diff
--def flatten(lst):
-+def flatten(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def flatten(lst):
+-  return [x for y in lst for x in y]
 +    return sum(([x] if not isinstance(x, list) else flatten(x) for x in lst), [])
 +
 +def p_system(p):
@@ -6370,10 +8538,16 @@ def flatten(lst):  return [x for y in lst for x in y]
 ```
 
 #### solution 2
+
 ```diff
--def flatten(lst):
-+def flatten(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def flatten(lst):
+-  return [x for y in lst for x in y]
 +    '''Takes a list of lists and returns a list of the elements'''
 +    new_list = []
 +    for i in lst:
@@ -6382,10 +8556,16 @@ def flatten(lst):  return [x for y in lst for x in y]
 ```
 
 #### solution 3
+
 ```diff
--def flatten(lst):
-+def flatten(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def flatten(lst):
+-  return [x for y in lst for x in y]
 +    """Returns a flattened version of lst.
 +
 +    >>> flatten([1, 2, 3])     # normal list
@@ -6394,10 +8574,16 @@ def flatten(lst):  return [x for y in lst for x in y]
 ```
 
 #### solution 4
+
 ```diff
--def flatten(lst):
-+def flatten(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def flatten(lst):
+-  return [x for y in lst for x in y]
 +    for x in lst:
 +        if isinstance(x, Iterable) and not isinstance(x, str):
 +            for y in flatten(x):
@@ -6409,17 +8595,27 @@ def flatten(lst):  return [x for y in lst for x in y]
 ### symmetric_difference_by (task/79)
 
 #### canonical solution
+
 ```python
-def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+def symmetric_difference_by(a, b, fn):
+  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
   return [item for item in a if fn(item) not in _b] + [item
           for item in b if fn(item) not in _a]
 ```
 
 #### solution 0
+
 ```diff
--def symmetric_difference_by(a, b, fn):
-+def symmetric_difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ def symmetric_difference_by(a, b, fn):
+-  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+-  return [item for item in a if fn(item) not in _b] + [item
+-          for item in b if fn(item) not in _a]
 +    pass
 +
 +def symmetric_difference_with(a, b, fn):
@@ -6428,17 +8624,21 @@ def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn,
 +def tail(a):
 +    pass
 +
-+def take(a, n):
-+    pass
-+
-+def take_
 ```
 
 #### solution 1
+
 ```diff
--def symmetric_difference_by(a, b, fn):
-+def symmetric_difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,6 @@
+
+ def symmetric_difference_by(a, b, fn):
+-  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+-  return [item for item in a if fn(item) not in _b] + [item
+-          for item in b if fn(item) not in _a]
 +    diff1 = difference_by(a, b, fn)
 +    diff2 = difference_by(b, a, fn)
 +    return diff1.concat(diff2)
@@ -6447,10 +8647,18 @@ def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn,
 ```
 
 #### solution 2
+
 ```diff
--def symmetric_difference_by(a, b, fn):
-+def symmetric_difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,6 @@
+
+ def symmetric_difference_by(a, b, fn):
+-  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+-  return [item for item in a if fn(item) not in _b] + [item
+-          for item in b if fn(item) not in _a]
 +    diff1 = difference_by(a, b, fn)
 +    diff2 = difference_by(b, a, fn)
 +    return concat([diff1, diff2])
@@ -6459,10 +8667,18 @@ def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn,
 ```
 
 #### solution 3
+
 ```diff
--def symmetric_difference_by(a, b, fn):
-+def symmetric_difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ def symmetric_difference_by(a, b, fn):
+-  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+-  return [item for item in a if fn(item) not in _b] + [item
+-          for item in b if fn(item) not in _a]
 +    """
 +    Returns a new set with elements in either the set or
 +    the second set but not both.
@@ -6472,10 +8688,18 @@ def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn,
 ```
 
 #### solution 4
+
 ```diff
--def symmetric_difference_by(a, b, fn):
-+def symmetric_difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,5 @@
+
+ def symmetric_difference_by(a, b, fn):
+-  (_a, _b) = (set(map(fn, a)), set(map(fn, b)))
+-  return [item for item in a if fn(item) not in _b] + [item
+-          for item in b if fn(item) not in _a]
 +    return symmetric_difference(a, b).sort_by(fn)
 +
 +def symmetric_difference_with(a, b, fn):
@@ -6485,73 +8709,99 @@ def symmetric_difference_by(a, b, fn):  (_a, _b) = (set(map(fn, a)), set(map(fn,
 ### find_last_index (task/80)
 
 #### canonical solution
+
 ```python
-def find_last_index(lst, fn):  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
+def find_last_index(lst, fn):
+  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 ```
 
 #### solution 0
+
 ```diff
--def find_last_index(lst, fn):
-+def find_last_index(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last_index(lst, fn):
+-  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 +    """
 +    like list.find() but return the index of the last item found
 +    """
 +    res = None
 +    for i, v in enumerate(lst):
 +        if fn(v):
-+            res
 ```
 
 #### solution 1
+
 ```diff
--def find_last_index(lst, fn):
-+def find_last_index(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last_index(lst, fn):
+-  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 +    last_index = 0
 +    for i, val in enumerate(lst):
 +        if fn(val):
 +            last_index = i
 +    return last_index
 +
-+
-+def find_last_number(l
 ```
 
 #### solution 2
+
 ```diff
--def find_last_index(lst, fn):
-+def find_last_index(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last_index(lst, fn):
+-  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 +    for idx, val in enumerate(reversed(lst)):
 +        if fn(val):
 +            return len(lst) - idx - 1
 +    return None
 +
 +
-+def get_parser():
 ```
 
 #### solution 3
+
 ```diff
--def find_last_index(lst, fn):
-+def find_last_index(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last_index(lst, fn):
+-  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 +    last_index = -1
 +    result = False
 +    while True:
 +        try:
 +            index = lst.index(fn, last_index + 1)
 +        except ValueError:
-+            break
-+       
 ```
 
 #### solution 4
+
 ```diff
--def find_last_index(lst, fn):
-+def find_last_index(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last_index(lst, fn):
+-  return len(lst) - 1 - next(i for i, x in enumerate(lst[::-1]) if fn(x))
 +    reversed_list = lst[::-1]
 +    return len(lst) - 1 - reversed_list.index(fn)
 +
@@ -6563,15 +8813,23 @@ def find_last_index(lst, fn):  return len(lst) - 1 - next(i for i, x in enumerat
 ### weighted_average (task/81)
 
 #### canonical solution
+
 ```python
-def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
+def weighted_average(nums, weights):
+  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 ```
 
 #### solution 0
+
 ```diff
--def weighted_average(nums, weights):
-+def weighted_average(nums, weights):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def weighted_average(nums, weights):
+-  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 +    return (sum(nums * weights) / sum(weights))
 +
 +def lmap(func, *iterables):
@@ -6581,10 +8839,16 @@ def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, wei
 ```
 
 #### solution 1
+
 ```diff
--def weighted_average(nums, weights):
-+def weighted_average(nums, weights):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def weighted_average(nums, weights):
+-  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 +    assert len(nums) == len(weights)
 +    return sum(num * weight for num, weight in zip(nums, weights)) / sum(weights)
 +
@@ -6592,10 +8856,16 @@ def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, wei
 ```
 
 #### solution 2
+
 ```diff
--def weighted_average(nums, weights):
-+def weighted_average(nums, weights):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def weighted_average(nums, weights):
+-  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 +    assert len(nums) == len(weights)
 +    return sum(num * weight for num, weight in zip(nums, weights)) / sum(weights)
 +
@@ -6604,10 +8874,16 @@ def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, wei
 ```
 
 #### solution 3
+
 ```diff
--def weighted_average(nums, weights):
-+def weighted_average(nums, weights):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def weighted_average(nums, weights):
+-  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 +    return sum(n * w for n, w in zip(nums, weights)) / sum(weights)
 +
 +def get_error(ans, pred):
@@ -6615,10 +8891,16 @@ def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, wei
 ```
 
 #### solution 4
+
 ```diff
--def weighted_average(nums, weights):
-+def weighted_average(nums, weights):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def weighted_average(nums, weights):
+-  return sum(x * y for x, y in zip(nums, weights)) / sum(weights)
 +    numerator = sum([nums[i] * weights[i] for i in range(len(nums))])
 +    denominator = sum(weights)
 +    return numerator / denominator
@@ -6629,38 +8911,67 @@ def weighted_average(nums, weights):  return sum(x * y for x, y in zip(nums, wei
 ### bifurcate (task/82)
 
 #### canonical solution
+
 ```python
-def bifurcate(lst, filter):  return [
+def bifurcate(lst, filter):
+  return [
     [x for x, flag in zip(lst, filter) if flag],
     [x for x, flag in zip(lst, filter) if not flag]
   ]
 ```
 
 #### solution 0
+
 ```diff
--def bifurcate(lst, filter):
-+def bifurcate(lst, filter):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,4 @@
+
+ def bifurcate(lst, filter):
+-  return [
+-    [x for x, flag in zip(lst, filter) if flag],
+-    [x for x, flag in zip(lst, filter) if not flag]
+-  ]
 +    return [
 +        [x for i, x in enumerate(lst) if filter[i] == True],
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
 #### solution 1
+
 ```diff
--def bifurcate(lst, filter):
-+def bifurcate(lst, filter):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,4 @@
+
+ def bifurcate(lst, filter):
+-  return [
+-    [x for x, flag in zip(lst, filter) if flag],
+-    [x for x, flag in zip(lst, filter) if not flag]
+-  ]
 +    return [
 +        [x for i, x in enumerate(lst) if filter[i] == True],
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
 #### solution 2
+
 ```diff
--def bifurcate(lst, filter):
-+def bifurcate(lst, filter):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,9 @@
+
+ def bifurcate(lst, filter):
+-  return [
+-    [x for x, flag in zip(lst, filter) if flag],
+-    [x for x, flag in zip(lst, filter) if not flag]
+-  ]
 +    """
 +    Bifurcate list based on filter
 +    :param lst:
@@ -6672,20 +8983,38 @@ def bifurcate(lst, filter):  return [
 ```
 
 #### solution 3
+
 ```diff
--def bifurcate(lst, filter):
-+def bifurcate(lst, filter):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,4 @@
+
+ def bifurcate(lst, filter):
+-  return [
+-    [x for x, flag in zip(lst, filter) if flag],
+-    [x for x, flag in zip(lst, filter) if not flag]
+-  ]
 +    return [
 +        [x for i, x in enumerate(lst) if filter[i] == True],
 +        [x for i, x in enumerate(lst) if filter[i] == False]
 ```
 
 #### solution 4
+
 ```diff
--def bifurcate(lst, filter):
-+def bifurcate(lst, filter):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,4 @@
+
+ def bifurcate(lst, filter):
+-  return [
+-    [x for x, flag in zip(lst, filter) if flag],
+-    [x for x, flag in zip(lst, filter) if not flag]
+-  ]
 +    return [
 +        [x for i, x in enumerate(lst) if filter[i] == True],
 +        [x for i, x in enumerate(lst) if filter[i] == False]
@@ -6694,15 +9023,23 @@ def bifurcate(lst, filter):  return [
 ### all_equal (task/83)
 
 #### canonical solution
+
 ```python
-def all_equal(lst):  return len(set(lst)) == 1
+def all_equal(lst):
+  return len(set(lst)) == 1
 ```
 
 #### solution 0
+
 ```diff
--def all_equal(lst):
-+def all_equal(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def all_equal(lst):
+-  return len(set(lst)) == 1
 +    return all(elem == lst[0] for elem in lst)
 +def get_mask_from_range_list(ranges):
 +    """
@@ -6711,10 +9048,16 @@ def all_equal(lst):  return len(set(lst)) == 1
 ```
 
 #### solution 1
+
 ```diff
--def all_equal(lst):
-+def all_equal(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def all_equal(lst):
+-  return len(set(lst)) == 1
 +    return not lst or lst.count(lst[0]) == len(lst)
 +
 +def all_unique(lst):
@@ -6722,10 +9065,16 @@ def all_equal(lst):  return len(set(lst)) == 1
 ```
 
 #### solution 2
+
 ```diff
--def all_equal(lst):
-+def all_equal(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def all_equal(lst):
+-  return len(set(lst)) == 1
 +    return all(x == lst[0] for x in lst)
 +
 +# If a singleton is requested, try to return the first value from the iterator,
@@ -6733,10 +9082,16 @@ def all_equal(lst):  return len(set(lst)) == 1
 ```
 
 #### solution 3
+
 ```diff
--def all_equal(lst):
-+def all_equal(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def all_equal(lst):
+-  return len(set(lst)) == 1
 +    return all(x == lst[0] for x in lst)
 +
 +def concat_bits(list_of_bit_list):
@@ -6745,43 +9100,63 @@ def all_equal(lst):  return len(set(lst)) == 1
 ```
 
 #### solution 4
+
 ```diff
--def all_equal(lst):
-+def all_equal(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def all_equal(lst):
+-  return len(set(lst)) == 1
 +    return lst[1:] == lst[:-1]
 +
 +def all_same(lst):
 +    return len(set(lst)) == 1
 +
 +# Refine Data
-+
-+# Drop rows with missing
 ```
 
 ### difference (task/84)
 
 #### canonical solution
+
 ```python
-def difference(a, b):  _b = set(b)
+def difference(a, b):
+  _b = set(b)
   return [item for item in a if item not in _b]
 ```
 
 #### solution 0
+
 ```diff
--def difference(a, b):
-+def difference(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,4 @@
+
+ def difference(a, b):
+-  _b = set(b)
+-  return [item for item in a if item not in _b]
 +    return [item for item in a if item not in b]
 +
 +# -- end code --
 ```
 
 #### solution 1
+
 ```diff
--def difference(a, b):
-+def difference(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,8 @@
+
+ def difference(a, b):
+-  _b = set(b)
+-  return [item for item in a if item not in _b]
 +    return list(set(a) - set(b))
 +
 +
@@ -6789,15 +9164,20 @@ def difference(a, b):  _b = set(b)
 +def index():
 +    return render_template('index.html')
 +
-+
-+@app.route('/', methods=['
 ```
 
 #### solution 2
+
 ```diff
--def difference(a, b):
-+def difference(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,8 @@
+
+ def difference(a, b):
+-  _b = set(b)
+-  return [item for item in a if item not in _b]
 +    return min(a, b)
 +
 +
@@ -6805,15 +9185,20 @@ def difference(a, b):  _b = set(b)
 +    n = len(array)
 +    # Initialize result
 +    res = 0
-+    i = 0
-+    while i < n -
 ```
 
 #### solution 3
+
 ```diff
--def difference(a, b):
-+def difference(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,8 @@
+
+ def difference(a, b):
+-  _b = set(b)
+-  return [item for item in a if item not in _b]
 +    c = []
 +    for i in a:
 +        if i not in b:
@@ -6824,10 +9209,17 @@ def difference(a, b):  _b = set(b)
 ```
 
 #### solution 4
+
 ```diff
--def difference(a, b):
-+def difference(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,8 @@
+
+ def difference(a, b):
+-  _b = set(b)
+-  return [item for item in a if item not in _b]
 +    return abs(a - b)
 +
 +# F1-score
@@ -6840,75 +9232,112 @@ def difference(a, b):  _b = set(b)
 ### kebab (task/85)
 
 #### canonical solution
+
 ```python
 from re import sub
 
-def kebab(s):  return '-'.join(
+def kebab(s):
+  return '-'.join(
     sub(r"(\s|_|-)+"," ",
     sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
     lambda mo: ' ' + mo.group(0).lower(), s)).split())
 ```
 
 #### solution 0
+
 ```diff
--from re import sub
--
--def kebab(s):
-+from re import sub
-+
-+def kebab(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,5 @@
+
+ from re import sub
+ 
+ def kebab(s):
+-  return '-'.join(
+-    sub(r"(\s|_|-)+"," ",
+-    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+-    lambda mo: ' ' + mo.group(0).lower(), s)).split())
 +    return sub(r"(\s|_|-)+","-",
 +               sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\
 ```
 
 #### solution 1
+
 ```diff
--from re import sub
--
--def kebab(s):
-+from re import sub
-+
-+def kebab(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,5 @@
+
+ from re import sub
+ 
+ def kebab(s):
+-  return '-'.join(
+-    sub(r"(\s|_|-)+"," ",
+-    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+-    lambda mo: ' ' + mo.group(0).lower(), s)).split())
 +    # your code here
 +    return ''.join(x.lower() if i == 0 else ('-' + x.lower() if x.isupper() else x) for i, x in enumerate(sub('[A
 ```
 
 #### solution 2
+
 ```diff
--from re import sub
--
--def kebab(s):
-+from re import sub
-+
-+def kebab(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,5 @@
+
+ from re import sub
+ 
+ def kebab(s):
+-  return '-'.join(
+-    sub(r"(\s|_|-)+"," ",
+-    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+-    lambda mo: ' ' + mo.group(0).lower(), s)).split())
 +    s = sub(r"(\s|_|-)+","-",s)
 +    s = sub(r"[A-Z]",lambda m: "_" + m.group(0).lower(),s)
 ```
 
 #### solution 3
+
 ```diff
--from re import sub
--
--def kebab(s):
-+from re import sub
-+
-+def kebab(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,4 @@
+
+ from re import sub
+ 
+ def kebab(s):
+-  return '-'.join(
+-    sub(r"(\s|_|-)+"," ",
+-    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+-    lambda mo: ' ' + mo.group(0).lower(), s)).split())
 +    return sub(r"(\s|_|-)+","-",sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|
 ```
 
 #### solution 4
+
 ```diff
--from re import sub
--
--def kebab(s):
-+from re import sub
-+
-+def kebab(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,6 @@
+
+ from re import sub
+ 
+ def kebab(s):
+-  return '-'.join(
+-    sub(r"(\s|_|-)+"," ",
+-    sub(r"[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+",
+-    lambda mo: ' ' + mo.group(0).lower(), s)).split())
 +    if isinstance(s, basestring):
 +        s = sub(r'[^a-zA-Z0-9]+', '-', s)
 +        s = sub(r'\-+', '
@@ -6917,30 +9346,42 @@ def kebab(s):  return '-'.join(
 ### miles_to_km (task/86)
 
 #### canonical solution
+
 ```python
-def miles_to_km(miles):  return miles * 1.609344
+def miles_to_km(miles):
+  return miles * 1.609344
 ```
 
 #### solution 0
+
 ```diff
--def miles_to_km(miles):
-+def miles_to_km(miles):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def miles_to_km(miles):
+-  return miles * 1.609344
 +    km = 1.6 * miles
 +    return km
 +
 +miles = 10
 +km = miles_to_km(miles)
 +print(miles, 'miles equals', km, 'km')
-+
-+m
 ```
 
 #### solution 1
+
 ```diff
--def miles_to_km(miles):
-+def miles_to_km(miles):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def miles_to_km(miles):
+-  return miles * 1.609344
 +    km = miles * 1.60934
 +    return km
 +
@@ -6950,77 +9391,101 @@ def miles_to_km(miles):  return miles * 1.609344
 ```
 
 #### solution 2
+
 ```diff
--def miles_to_km(miles):
-+def miles_to_km(miles):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def miles_to_km(miles):
+-  return miles * 1.609344
 +    return miles * 1.609
 +
 +print(miles_to_km(10))
 +
 +print(miles_to_km(0))
 +
-+print(miles_to_km(13))
-+
-+print
 ```
 
 #### solution 3
+
 ```diff
--def miles_to_km(miles):
-+def miles_to_km(miles):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def miles_to_km(miles):
+-  return miles * 1.609344
 +    km = miles * 1.60934
 +    return km
 +
 +print(miles_to_km(12))
 +
 +#OUTPUT:
-+#18.619788802909413
 ```
 
 #### solution 4
+
 ```diff
--def miles_to_km(miles):
-+def miles_to_km(miles):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def miles_to_km(miles):
+-  return miles * 1.609344
 +    km = 1.6 * miles
 +    return km
 +
 +# km to miles function
 +def km_to_miles(km):
 +    miles = km / 1.6
-+    return miles
-+
-+# convert function
 ```
 
 ### sum_of_powers (task/87)
 
 #### canonical solution
+
 ```python
-def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in range(start, end + 1)])
+def sum_of_powers(end, power = 2, start = 1):
+  return sum([(i) ** power for i in range(start, end + 1)])
 ```
 
 #### solution 0
+
 ```diff
--def sum_of_powers(end, power = 2, start = 1):
-+def sum_of_powers(end, power = 2, start = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def sum_of_powers(end, power = 2, start = 1):
+-  return sum([(i) ** power for i in range(start, end + 1)])
 +    """
 +    This function takes an end and start value and returns the sum of
 +    powers of 'power' that are between start and end.
 +
 +    sum_of_powers(end, power, start)
 +
-+    end:
 ```
 
 #### solution 1
+
 ```diff
--def sum_of_powers(end, power = 2, start = 1):
-+def sum_of_powers(end, power = 2, start = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def sum_of_powers(end, power = 2, start = 1):
+-  return sum([(i) ** power for i in range(start, end + 1)])
 +    '''
 +    This function sums all numbers between start and end that
 +    are some power of two. For example, if start is 1 and end is 8,
@@ -7028,10 +9493,16 @@ def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in
 ```
 
 #### solution 2
+
 ```diff
--def sum_of_powers(end, power = 2, start = 1):
-+def sum_of_powers(end, power = 2, start = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def sum_of_powers(end, power = 2, start = 1):
+-  return sum([(i) ** power for i in range(start, end + 1)])
 +    return sum(map(lambda x: x**power, range(start, end+1)))
 +
 +# no need to actually go over all numbers for this, but the option to go over the entire set is there
@@ -7039,10 +9510,16 @@ def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in
 ```
 
 #### solution 3
+
 ```diff
--def sum_of_powers(end, power = 2, start = 1):
-+def sum_of_powers(end, power = 2, start = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def sum_of_powers(end, power = 2, start = 1):
+-  return sum([(i) ** power for i in range(start, end + 1)])
 +    """Return the sum of all numbers less than end which are a power of start
 +    """
 +    return sum(i for i in range(start, end) if i**power == start)
@@ -7052,10 +9529,16 @@ def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in
 ```
 
 #### solution 4
+
 ```diff
--def sum_of_powers(end, power = 2, start = 1):
-+def sum_of_powers(end, power = 2, start = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def sum_of_powers(end, power = 2, start = 1):
+-  return sum([(i) ** power for i in range(start, end + 1)])
 +    if (start <= end):
 +        if (start == end):
 +            return start ** power
@@ -7067,40 +9550,48 @@ def sum_of_powers(end, power = 2, start = 1):  return sum([(i) ** power for i in
 ### compose (task/88)
 
 #### canonical solution
+
 ```python
 from functools import reduce
 
-def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
+def compose(*fns):
+  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 ```
 
 #### solution 0
+
 ```diff
--from functools import reduce
--
--def compose(*fns):
-+from functools import reduce
-+
-+def compose(*fns):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose(*fns):
+-  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 +    def inner(arg):
 +        return reduce(lambda acc, f: f(acc), reversed(fns), arg)
 +    return inner
 +
 +import numpy as np
 +
-+def load_image(fp):
-+   
 ```
 
 #### solution 1
+
 ```diff
--from functools import reduce
--
--def compose(*fns):
-+from functools import reduce
-+
-+def compose(*fns):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose(*fns):
+-  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 +    if len(fns) == 0:
 +        return lambda x: x
 +    elif len(fns) == 1:
@@ -7110,14 +9601,18 @@ def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 ```
 
 #### solution 2
+
 ```diff
--from functools import reduce
--
--def compose(*fns):
-+from functools import reduce
-+
-+def compose(*fns):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose(*fns):
+-  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 +    if len(fns) == 0:
 +        return lambda x: x
 +    elif len(fns) == 1:
@@ -7127,14 +9622,18 @@ def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 ```
 
 #### solution 3
+
 ```diff
--from functools import reduce
--
--def compose(*fns):
-+from functools import reduce
-+
-+def compose(*fns):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose(*fns):
+-  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 +    return reduce(lambda f, g: lambda x: f(g(x)), fns, lambda x: x)
 +
 +from functools import partial
@@ -7144,14 +9643,18 @@ def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 ```
 
 #### solution 4
+
 ```diff
--from functools import reduce
--
--def compose(*fns):
-+from functools import reduce
-+
-+def compose(*fns):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose(*fns):
+-  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 +    if len(fns) == 0:
 +        return lambda x: x
 +    elif len(fns) == 1:
@@ -7163,25 +9666,39 @@ def compose(*fns):  return reduce(lambda f, g: lambda *args: f(g(*args)), fns)
 ### similarity (task/89)
 
 #### canonical solution
+
 ```python
-def similarity(a, b):  return [item for item in a if item in b]
+def similarity(a, b):
+  return [item for item in a if item in b]
 ```
 
 #### solution 0
+
 ```diff
--def similarity(a, b):
-+def similarity(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,4 @@
+
+ def similarity(a, b):
+-  return [item for item in a if item in b]
 +    return dot(a, b) / (norm(a) * norm(b))
 +
 +# X = np.array([[0, 0, 0], [0, 1, 1], [1, 0, 1],
 ```
 
 #### solution 1
+
 ```diff
--def similarity(a, b):
-+def similarity(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def similarity(a, b):
+-  return [item for item in a if item in b]
 +    return SequenceMatcher(None, a, b).ratio()
 +
 +if __name__ == '__main__':
@@ -7189,20 +9706,32 @@ def similarity(a, b):  return [item for item in a if item in b]
 ```
 
 #### solution 2
+
 ```diff
--def similarity(a, b):
-+def similarity(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,4 @@
+
+ def similarity(a, b):
+-  return [item for item in a if item in b]
 +    return len(a & b) / len(a | b)
 +
 +assert similarity({'x', 'y', 'z'}, {'w', 'x', 'y', 'z'}) == 1.0
 ```
 
 #### solution 3
+
 ```diff
--def similarity(a, b):
-+def similarity(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def similarity(a, b):
+-  return [item for item in a if item in b]
 +    return SequenceMatcher(None, a, b).ratio()
 +
 +# Download image and show contour
@@ -7212,10 +9741,16 @@ def similarity(a, b):  return [item for item in a if item in b]
 ```
 
 #### solution 4
+
 ```diff
--def similarity(a, b):
-+def similarity(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def similarity(a, b):
+-  return [item for item in a if item in b]
 +    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
 +
 +def similarity_cosine(a, b):
@@ -7225,18 +9760,29 @@ def similarity(a, b):  return [item for item in a if item in b]
 ### have_same_contents (task/90)
 
 #### canonical solution
+
 ```python
-def have_same_contents(a, b):  for v in set(a + b):
+def have_same_contents(a, b):
+  for v in set(a + b):
     if a.count(v) != b.count(v):
       return False
   return True
 ```
 
 #### solution 0
+
 ```diff
--def have_same_contents(a, b):
-+def have_same_contents(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,9 @@
+
+ def have_same_contents(a, b):
+-  for v in set(a + b):
+-    if a.count(v) != b.count(v):
+-      return False
+-  return True
 +    """
 +    Check that two files have the same contents
 +    """
@@ -7248,10 +9794,19 @@ def have_same_contents(a, b):  for v in set(a + b):
 ```
 
 #### solution 1
+
 ```diff
--def have_same_contents(a, b):
-+def have_same_contents(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,8 @@
+
+ def have_same_contents(a, b):
+-  for v in set(a + b):
+-    if a.count(v) != b.count(v):
+-      return False
+-  return True
 +    """
 +    Return True if two files have the same contents.
 +    """
@@ -7262,10 +9817,19 @@ def have_same_contents(a, b):  for v in set(a + b):
 ```
 
 #### solution 2
+
 ```diff
--def have_same_contents(a, b):
-+def have_same_contents(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,8 @@
+
+ def have_same_contents(a, b):
+-  for v in set(a + b):
+-    if a.count(v) != b.count(v):
+-      return False
+-  return True
 +    return a == b
 +
 +def make_immutable(value):
@@ -7276,10 +9840,19 @@ def have_same_contents(a, b):  for v in set(a + b):
 ```
 
 #### solution 3
+
 ```diff
--def have_same_contents(a, b):
-+def have_same_contents(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,9 @@
+
+ def have_same_contents(a, b):
+-  for v in set(a + b):
+-    if a.count(v) != b.count(v):
+-      return False
+-  return True
 +    """Returns true if two files have the same contents."""
 +    try:
 +        return filecmp.cmp(a, b, shallow=False)
@@ -7291,10 +9864,19 @@ def have_same_contents(a, b):  for v in set(a + b):
 ```
 
 #### solution 4
+
 ```diff
--def have_same_contents(a, b):
-+def have_same_contents(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,8 @@
+
+ def have_same_contents(a, b):
+-  for v in set(a + b):
+-    if a.count(v) != b.count(v):
+-      return False
+-  return True
 +    return open(a, 'rb').read() == open(b, 'rb').read()
 +
 +def is_iterable(x):
@@ -7307,72 +9889,94 @@ def have_same_contents(a, b):  for v in set(a + b):
 ### days_from_now (task/91)
 
 #### canonical solution
+
 ```python
 from datetime import timedelta, date
 
-def days_from_now(n):  return date.today() + timedelta(n)
+def days_from_now(n):
+  return date.today() + timedelta(n)
 ```
 
 #### solution 0
+
 ```diff
--from datetime import timedelta, date
--
--def days_from_now(n):
-+from datetime import timedelta, date
-+
-+def days_from_now(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,5 @@
+
+ from datetime import timedelta, date
+ 
+ def days_from_now(n):
+-  return date.today() + timedelta(n)
 +    d = date.today() + timedelta(days=n)
 +    return d.strftime("%Y-%m-%d")
 ```
 
 #### solution 1
+
 ```diff
--from datetime import timedelta, date
--
--def days_from_now(n):
-+from datetime import timedelta, date
-+
-+def days_from_now(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,4 @@
+
+ from datetime import timedelta, date
+ 
+ def days_from_now(n):
+-  return date.today() + timedelta(n)
 +    return date.today() + timedelta(days=n)
 ```
 
 #### solution 2
+
 ```diff
--from datetime import timedelta, date
--
--def days_from_now(n):
-+from datetime import timedelta, date
-+
-+def days_from_now(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,4 @@
+
+ from datetime import timedelta, date
+ 
+ def days_from_now(n):
+-  return date.today() + timedelta(n)
 +    return date.today() + timedelta(days=n)
 ```
 
 #### solution 3
+
 ```diff
--from datetime import timedelta, date
--
--def days_from_now(n):
-+from datetime import timedelta, date
-+
-+def days_from_now(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,6 @@
+
+ from datetime import timedelta, date
+ 
+ def days_from_now(n):
+-  return date.today() + timedelta(n)
 +    return date.today() + timedelta(days=n)
 +
 +# In case you need dates that fall on a particular weekday in the next n days, replace the timedelta with a TimeDelta that uses one of the constants in
 ```
 
 #### solution 4
+
 ```diff
--from datetime import timedelta, date
--
--def days_from_now(n):
-+from datetime import timedelta, date
-+
-+def days_from_now(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,8 @@
+
+ from datetime import timedelta, date
+ 
+ def days_from_now(n):
+-  return date.today() + timedelta(n)
 +    d = date.today() + timedelta(days=n)
 +    return d.strftime("%Y-%m-%d")
 +
@@ -7383,79 +9987,99 @@ def days_from_now(n):  return date.today() + timedelta(n)
 ### cast_list (task/92)
 
 #### canonical solution
+
 ```python
-def cast_list(val):  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
+def cast_list(val):
+  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 ```
 
 #### solution 0
+
 ```diff
--def cast_list(val):
-+def cast_list(val):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def cast_list(val):
+-  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 +    if isinstance(val, list):
 +        return val
 +    return [val]
 +
 +
 +def _open_for_csv(path):
-+    """
-+    Open a file with flags suitable for csv.reader.
-+
 ```
 
 #### solution 1
+
 ```diff
--def cast_list(val):
-+def cast_list(val):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def cast_list(val):
+-  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 +    return val if isinstance(val, list) else [val]
 +
 +
 +def _check_files(files):
 +    success = True
 +    for filename in files:
-+        if not path.exists(filename):
 ```
 
 #### solution 2
+
 ```diff
--def cast_list(val):
-+def cast_list(val):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def cast_list(val):
+-  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 +    if ',' in val:
 +        val = val.split(',')
 +    else:
 +        val = [val]
 +    return val
 +
-+
-+def cast_bool(val):
-+    if isinstance(val,
 ```
 
 #### solution 3
+
 ```diff
--def cast_list(val):
-+def cast_list(val):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def cast_list(val):
+-  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 +    if not val:
 +        return None
 +    else:
 +        return [val]
 +
 +
-+def _convert_str(val):
-+    if val is None:
-+        return None
-+    return str(val)
-+
 ```
 
 #### solution 4
+
 ```diff
--def cast_list(val):
-+def cast_list(val):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def cast_list(val):
+-  return list(val) if isinstance(val, (tuple, list, set, dict)) else [val]
 +    return [v.strip() for v in val.split(',')]
 +
 +def gen_secret(length=32):
@@ -7467,25 +10091,39 @@ def cast_list(val):  return list(val) if isinstance(val, (tuple, list, set, dict
 ### sort_dict_by_value (task/93)
 
 #### canonical solution
+
 ```python
-def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
+def sort_dict_by_value(d, reverse = False):
+  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 ```
 
 #### solution 0
+
 ```diff
--def sort_dict_by_value(d, reverse = False):
-+def sort_dict_by_value(d, reverse = False):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,4 @@
+
+ def sort_dict_by_value(d, reverse = False):
+-  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 +    """Return list of key-value pairs in d, sorted by values"""
 +    kv_list = d.items()
 +    sort_kv_list = sorted(kv_list, key = lambda kv:
 ```
 
 #### solution 1
+
 ```diff
--def sort_dict_by_value(d, reverse = False):
-+def sort_dict_by_value(d, reverse = False):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def sort_dict_by_value(d, reverse = False):
+-  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 +    sorted_keys = sorted(d, key = d.get, reverse = reverse)
 +    return sorted_keys
 +
@@ -7494,10 +10132,16 @@ def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key =
 ```
 
 #### solution 2
+
 ```diff
--def sort_dict_by_value(d, reverse = False):
-+def sort_dict_by_value(d, reverse = False):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def sort_dict_by_value(d, reverse = False):
+-  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 +    return sorted(d.items(), key = lambda x: x[1], reverse = reverse)
 +
 +def sort_dict_by_key(d, reverse = False):
@@ -7505,10 +10149,16 @@ def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key =
 ```
 
 #### solution 3
+
 ```diff
--def sort_dict_by_value(d, reverse = False):
-+def sort_dict_by_value(d, reverse = False):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def sort_dict_by_value(d, reverse = False):
+-  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 +    """
 +    Sort a dict by value.
 +    """
@@ -7518,10 +10168,16 @@ def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key =
 ```
 
 #### solution 4
+
 ```diff
--def sort_dict_by_value(d, reverse = False):
-+def sort_dict_by_value(d, reverse = False):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def sort_dict_by_value(d, reverse = False):
+-  return dict(sorted(d.items(), key = lambda x: x[1], reverse = reverse))
 +    '''
 +    Sorts a dictionary by value
 +    '''
@@ -7533,10 +10189,12 @@ def sort_dict_by_value(d, reverse = False):  return dict(sorted(d.items(), key =
 ### slugify (task/94)
 
 #### canonical solution
+
 ```python
 import re
 
-def slugify(s):  s = s.lower().strip()
+def slugify(s):
+  s = s.lower().strip()
   s = re.sub(r'[^\w\s-]', '', s)
   s = re.sub(r'[\s_-]+', '-', s)
   s = re.sub(r'^-+|-+$', '', s)
@@ -7544,14 +10202,22 @@ def slugify(s):  s = s.lower().strip()
 ```
 
 #### solution 0
+
 ```diff
--import re
--
--def slugify(s):
-+import re
-+
-+def slugify(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,7 @@
+
+ import re
+ 
+ def slugify(s):
+-  s = s.lower().strip()
+-  s = re.sub(r'[^\w\s-]', '', s)
+-  s = re.sub(r'[\s_-]+', '-', s)
+-  s = re.sub(r'^-+|-+$', '', s)
+-  return s
 +    return re.sub('[^a-zA-Z0-9]+', '-', s)
 +
 +def add_link(doc, rel, url, title=None, mimetype=None):
@@ -7559,14 +10225,22 @@ def slugify(s):  s = s.lower().strip()
 ```
 
 #### solution 1
+
 ```diff
--import re
--
--def slugify(s):
-+import re
-+
-+def slugify(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,7 @@
+
+ import re
+ 
+ def slugify(s):
+-  s = s.lower().strip()
+-  s = re.sub(r'[^\w\s-]', '', s)
+-  s = re.sub(r'[\s_-]+', '-', s)
+-  s = re.sub(r'^-+|-+$', '', s)
+-  return s
 +    s = s.lower()
 +    for c in [' ', '-', '.', '/']:
 +        s = s.replace(c, '_')
@@ -7574,28 +10248,44 @@ def slugify(s):  s = s.lower().strip()
 ```
 
 #### solution 2
+
 ```diff
--import re
--
--def slugify(s):
-+import re
-+
-+def slugify(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,6 @@
+
+ import re
+ 
+ def slugify(s):
+-  s = s.lower().strip()
+-  s = re.sub(r'[^\w\s-]', '', s)
+-  s = re.sub(r'[\s_-]+', '-', s)
+-  s = re.sub(r'^-+|-+$', '', s)
+-  return s
 +    """Generates an ASCII-only slug."""
 +    s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode('ascii')
 +    s =
 ```
 
 #### solution 3
+
 ```diff
--import re
--
--def slugify(s):
-+import re
-+
-+def slugify(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,7 @@
+
+ import re
+ 
+ def slugify(s):
+-  s = s.lower().strip()
+-  s = re.sub(r'[^\w\s-]', '', s)
+-  s = re.sub(r'[\s_-]+', '-', s)
+-  s = re.sub(r'^-+|-+$', '', s)
+-  return s
 +    return re.sub('[^a-zA-Z0-9_\-]+', '-', s)
 +
 +def safe_string(s):
@@ -7603,14 +10293,22 @@ def slugify(s):  s = s.lower().strip()
 ```
 
 #### solution 4
+
 ```diff
--import re
--
--def slugify(s):
-+import re
-+
-+def slugify(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,8 @@
+
+ import re
+ 
+ def slugify(s):
+-  s = s.lower().strip()
+-  s = re.sub(r'[^\w\s-]', '', s)
+-  s = re.sub(r'[\s_-]+', '-', s)
+-  s = re.sub(r'^-+|-+$', '', s)
+-  return s
 +    s = re.sub('[^a-zA-Z0-9_\.]', '', s)
 +    s = re.sub(' ', '_', s)
 +    return s
@@ -7621,8 +10319,10 @@ def slugify(s):  s = s.lower().strip()
 ### to_roman_numeral (task/95)
 
 #### canonical solution
+
 ```python
-def to_roman_numeral(num):  lookup = [
+def to_roman_numeral(num):
+  lookup = [
     (1000, 'M'),
     (900, 'CM'),
     (500, 'D'),
@@ -7645,10 +10345,35 @@ def to_roman_numeral(num):  lookup = [
 ```
 
 #### solution 0
+
 ```diff
--def to_roman_numeral(num):
-+def to_roman_numeral(num):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,21 +1,7 @@
+
+ def to_roman_numeral(num):
+-  lookup = [
+-    (1000, 'M'),
+-    (900, 'CM'),
+-    (500, 'D'),
+-    (400, 'CD'),
+-    (100, 'C'),
+-    (90, 'XC'),
+-    (50, 'L'),
+-    (40, 'XL'),
+-    (10, 'X'),
+-    (9, 'IX'),
+-    (5, 'V'),
+-    (4, 'IV'),
+-    (1, 'I'),
+-  ]
+-  res = ''
+-  for (n, roman) in lookup:
+-    (d, num) = divmod(num, n)
+-    res += roman * d
+-  return res
 +    """
 +    Converts integer to Roman numeral.
 +    :param num: integer
@@ -7658,10 +10383,35 @@ def to_roman_numeral(num):  lookup = [
 ```
 
 #### solution 1
+
 ```diff
--def to_roman_numeral(num):
-+def to_roman_numeral(num):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,21 +1,8 @@
+
+ def to_roman_numeral(num):
+-  lookup = [
+-    (1000, 'M'),
+-    (900, 'CM'),
+-    (500, 'D'),
+-    (400, 'CD'),
+-    (100, 'C'),
+-    (90, 'XC'),
+-    (50, 'L'),
+-    (40, 'XL'),
+-    (10, 'X'),
+-    (9, 'IX'),
+-    (5, 'V'),
+-    (4, 'IV'),
+-    (1, 'I'),
+-  ]
+-  res = ''
+-  for (n, roman) in lookup:
+-    (d, num) = divmod(num, n)
+-    res += roman * d
+-  return res
 +    numerals = {
 +        1000: 'M',
 +        900: 'CM',
@@ -7672,19 +10422,69 @@ def to_roman_numeral(num):  lookup = [
 ```
 
 #### solution 2
+
 ```diff
--def to_roman_numeral(num):
-+def to_roman_numeral(num):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,21 +1,3 @@
+
+ def to_roman_numeral(num):
+-  lookup = [
+-    (1000, 'M'),
+-    (900, 'CM'),
+-    (500, 'D'),
+-    (400, 'CD'),
+-    (100, 'C'),
+-    (90, 'XC'),
+-    (50, 'L'),
+-    (40, 'XL'),
+-    (10, 'X'),
+-    (9, 'IX'),
+-    (5, 'V'),
+-    (4, 'IV'),
+-    (1, 'I'),
+-  ]
+-  res = ''
+-  for (n, roman) in lookup:
+-    (d, num) = divmod(num, n)
+-    res += roman * d
+-  return res
 +    arabic_list = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
 +    roman_list = ["M", "CM", "D
 ```
 
 #### solution 3
+
 ```diff
--def to_roman_numeral(num):
-+def to_roman_numeral(num):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,21 +1,5 @@
+
+ def to_roman_numeral(num):
+-  lookup = [
+-    (1000, 'M'),
+-    (900, 'CM'),
+-    (500, 'D'),
+-    (400, 'CD'),
+-    (100, 'C'),
+-    (90, 'XC'),
+-    (50, 'L'),
+-    (40, 'XL'),
+-    (10, 'X'),
+-    (9, 'IX'),
+-    (5, 'V'),
+-    (4, 'IV'),
+-    (1, 'I'),
+-  ]
+-  res = ''
+-  for (n, roman) in lookup:
+-    (d, num) = divmod(num, n)
+-    res += roman * d
+-  return res
 +    '''Returns the Roman numeral version of an integer'''
 +    if num <= 0 or num >= 4000:
 +        raise OutOfRangeError('number out of range (must be less than 4000)')
@@ -7692,10 +10492,35 @@ def to_roman_numeral(num):  lookup = [
 ```
 
 #### solution 4
+
 ```diff
--def to_roman_numeral(num):
-+def to_roman_numeral(num):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,21 +1,7 @@
+
+ def to_roman_numeral(num):
+-  lookup = [
+-    (1000, 'M'),
+-    (900, 'CM'),
+-    (500, 'D'),
+-    (400, 'CD'),
+-    (100, 'C'),
+-    (90, 'XC'),
+-    (50, 'L'),
+-    (40, 'XL'),
+-    (10, 'X'),
+-    (9, 'IX'),
+-    (5, 'V'),
+-    (4, 'IV'),
+-    (1, 'I'),
+-  ]
+-  res = ''
+-  for (n, roman) in lookup:
+-    (d, num) = divmod(num, n)
+-    res += roman * d
+-  return res
 +    """
 +    Convert an integer to a Roman numeral.
 +    """
@@ -7707,41 +10532,58 @@ def to_roman_numeral(num):  lookup = [
 ### check_prop (task/96)
 
 #### canonical solution
+
 ```python
-def check_prop(fn, prop):  return lambda obj: fn(obj[prop])
+def check_prop(fn, prop):
+  return lambda obj: fn(obj[prop])
 ```
 
 #### solution 0
+
 ```diff
--def check_prop(fn, prop):
-+def check_prop(fn, prop):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,4 @@
+
+ def check_prop(fn, prop):
+-  return lambda obj: fn(obj[prop])
 +    def f(self, *args, **kwargs):
 +        if prop not in self.__dict__:
 +            raise ValueError('%s is not defined on %s' % (prop, self.__class__
 ```
 
 #### solution 1
+
 ```diff
--def check_prop(fn, prop):
-+def check_prop(fn, prop):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def check_prop(fn, prop):
+-  return lambda obj: fn(obj[prop])
 +    if prop is None:
 +        return True
 +    if not fn in prop:
 +        return False
 +    return True
 +
-+def check_labels(fn, labels):
-+    if labels is None:
-+        return True
 ```
 
 #### solution 2
+
 ```diff
--def check_prop(fn, prop):
-+def check_prop(fn, prop):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def check_prop(fn, prop):
+-  return lambda obj: fn(obj[prop])
 +    if fn.endswith('.dts'):
 +        expr = prop.tokens[1].value
 +        val = prop.tokens[3].value
@@ -7749,77 +10591,101 @@ def check_prop(fn, prop):  return lambda obj: fn(obj[prop])
 ```
 
 #### solution 3
+
 ```diff
--def check_prop(fn, prop):
-+def check_prop(fn, prop):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def check_prop(fn, prop):
+-  return lambda obj: fn(obj[prop])
 +    """Return the value of a property for the given function
 +    """
 +    for p in fn.props:
 +        if p.prop == prop:
 +            return p.value
 +    return None
-+
-+
-+def check_
 ```
 
 #### solution 4
+
 ```diff
--def check_prop(fn, prop):
-+def check_prop(fn, prop):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def check_prop(fn, prop):
+-  return lambda obj: fn(obj[prop])
 +    for i in range(0, 10):
 +        r = random.randint(0, 1024)
 +        fn(r)
 +        assert r in prop
 +
 +def test_set_prop():
-+    prop = set
 ```
 
 ### count_occurrences (task/97)
 
 #### canonical solution
+
 ```python
-def count_occurrences(lst, val):  return lst.count(val)
+def count_occurrences(lst, val):
+  return lst.count(val)
 ```
 
 #### solution 0
+
 ```diff
--def count_occurrences(lst, val):
-+def count_occurrences(lst, val):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def count_occurrences(lst, val):
+-  return lst.count(val)
 +    """ (list, object) -> int
 +
 +    Return the number of times val occurs in lst.
 +
 +    >>> count_occurrences([2, 3, 3, 3, 2], 2)
 +    2
-+    >>>
 ```
 
 #### solution 1
+
 ```diff
--def count_occurrences(lst, val):
-+def count_occurrences(lst, val):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def count_occurrences(lst, val):
+-  return lst.count(val)
 +    count = 0
 +    for item in lst:
 +        if item == val:
 +            count += 1
 +    return count
 +
-+def max_occurrences(lst):
-+    counts = []
-+    for item
 ```
 
 #### solution 2
+
 ```diff
--def count_occurrences(lst, val):
-+def count_occurrences(lst, val):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def count_occurrences(lst, val):
+-  return lst.count(val)
 +    ''' (list, object) -> int
 +
 +    Return the number of times val occurs in lst.
@@ -7828,10 +10694,16 @@ def count_occurrences(lst, val):  return lst.count(val)
 ```
 
 #### solution 3
+
 ```diff
--def count_occurrences(lst, val):
-+def count_occurrences(lst, val):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def count_occurrences(lst, val):
+-  return lst.count(val)
 +    if lst is None:
 +        return 0
 +    return count_occurrences_rec(lst, val)
@@ -7841,41 +10713,54 @@ def count_occurrences(lst, val):  return lst.count(val)
 ```
 
 #### solution 4
+
 ```diff
--def count_occurrences(lst, val):
-+def count_occurrences(lst, val):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def count_occurrences(lst, val):
+-  return lst.count(val)
 +    # Your code here
 +    return lst.count(val)
 +
 +# Should be 3
 +print(count_occurrences([True, False, True, True], True))
 +
-+# Should be 1
-+print(
 ```
 
 ### find_parity_outliers (task/98)
 
 #### canonical solution
+
 ```python
 from collections import Counter
 
-def find_parity_outliers(nums):  return [
+def find_parity_outliers(nums):
+  return [
     x for x in nums
     if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
   ]
 ```
 
 #### solution 0
+
 ```diff
--from collections import Counter
--
--def find_parity_outliers(nums):
-+from collections import Counter
-+
-+def find_parity_outliers(nums):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import Counter
+ 
+ def find_parity_outliers(nums):
+-  return [
+-    x for x in nums
+-    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+-  ]
 +    counts = Counter(nums)
 +    return [x for x in counts if counts[x] % 2 == 1]
 +
@@ -7884,14 +10769,21 @@ def find_parity_outliers(nums):  return [
 ```
 
 #### solution 1
+
 ```diff
--from collections import Counter
--
--def find_parity_outliers(nums):
-+from collections import Counter
-+
-+def find_parity_outliers(nums):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import Counter
+ 
+ def find_parity_outliers(nums):
+-  return [
+-    x for x in nums
+-    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+-  ]
 +    """Given list of ints, return list of values at odd indices"""
 +    out = []
 +    for i in range(len(nums)):
@@ -7900,14 +10792,21 @@ def find_parity_outliers(nums):  return [
 ```
 
 #### solution 2
+
 ```diff
--from collections import Counter
--
--def find_parity_outliers(nums):
-+from collections import Counter
-+
-+def find_parity_outliers(nums):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,8 @@
+
+ from collections import Counter
+ 
+ def find_parity_outliers(nums):
+-  return [
+-    x for x in nums
+-    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+-  ]
 +    # first find the mode
 +    # if mode is even, return all elements that are odd
 +    # if mode is odd, return all elements that are even
@@ -7916,27 +10815,41 @@ def find_parity_outliers(nums):  return [
 ```
 
 #### solution 3
+
 ```diff
--from collections import Counter
--
--def find_parity_outliers(nums):
-+from collections import Counter
-+
-+def find_parity_outliers(nums):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,5 @@
+
+ from collections import Counter
+ 
+ def find_parity_outliers(nums):
+-  return [
+-    x for x in nums
+-    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+-  ]
 +    c = Counter(nums)
 +    return [k for k, v in c.items() if v % 2 != 0]
 ```
 
 #### solution 4
+
 ```diff
--from collections import Counter
--
--def find_parity_outliers(nums):
-+from collections import Counter
-+
-+def find_parity_outliers(nums):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,7 @@
+
+ from collections import Counter
+ 
+ def find_parity_outliers(nums):
+-  return [
+-    x for x in nums
+-    if x % 2 != Counter([n % 2 for n in nums]).most_common()[0][0]
+-  ]
 +    parity = [i % 2 for i in nums]
 +    return [nums[i] for i in range(len(nums)) if parity[i] != parity[0]]
 +
@@ -7946,45 +10859,61 @@ def find_parity_outliers(nums):  return [
 ### to_dictionary (task/99)
 
 #### canonical solution
+
 ```python
-def to_dictionary(keys, values):  return dict(zip(keys, values))
+def to_dictionary(keys, values):
+  return dict(zip(keys, values))
 ```
 
 #### solution 0
+
 ```diff
--def to_dictionary(keys, values):
-+def to_dictionary(keys, values):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def to_dictionary(keys, values):
+-  return dict(zip(keys, values))
 +    """
 +    :param keys: a list of strings
 +    :param values: a list of ints
 +    :return: dictionary with keys and values
 +    """
 +    dictionary = {}
-+    for i in range(len
 ```
 
 #### solution 1
+
 ```diff
--def to_dictionary(keys, values):
-+def to_dictionary(keys, values):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def to_dictionary(keys, values):
+-  return dict(zip(keys, values))
 +    """
 +    Return a dictionary of keys and values
 +
 +    Args:
 +        keys (list): keys to be returned in dictionary
 +        values (list): values to be returned in dictionary
-+
-+    Returns:
-+        dict: dictionary
 ```
 
 #### solution 2
+
 ```diff
--def to_dictionary(keys, values):
-+def to_dictionary(keys, values):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def to_dictionary(keys, values):
+-  return dict(zip(keys, values))
 +    """
 +    takes a list of keys and a list of values, and makes a dictionary out of them
 +    :param keys: list of keys
@@ -7994,10 +10923,16 @@ def to_dictionary(keys, values):  return dict(zip(keys, values))
 ```
 
 #### solution 3
+
 ```diff
--def to_dictionary(keys, values):
-+def to_dictionary(keys, values):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def to_dictionary(keys, values):
+-  return dict(zip(keys, values))
 +    """
 +    Given a list of keys and a list of values, make a dictionary matching these keys to these values.
 +
@@ -8005,50 +10940,67 @@ def to_dictionary(keys, values):  return dict(zip(keys, values))
 ```
 
 #### solution 4
+
 ```diff
--def to_dictionary(keys, values):
-+def to_dictionary(keys, values):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def to_dictionary(keys, values):
+-  return dict(zip(keys, values))
 +    return dict(zip(keys, values))
 +
 +
 +def main():
 +    keys = ['name', 'age', 'height']
 +    values = ['John', '24', '5.5']
-+    print(to_
 ```
 
 ### geometric_progression (task/100)
 
 #### canonical solution
+
 ```python
 from math import floor, log
 
-def geometric_progression(end, start=1, step=2):  return [start * step ** i for i in range(floor(log(end / start)
+def geometric_progression(end, start=1, step=2):
+  return [start * step ** i for i in range(floor(log(end / start)
           / log(step)) + 1)]
 ```
 
 #### solution 0
+
 ```diff
--from math import floor, log
--
--def geometric_progression(end, start=1, step=2):
-+from math import floor, log
-+
-+def geometric_progression(end, start=1, step=2):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,4 @@
+
+ from math import floor, log
+ 
+ def geometric_progression(end, start=1, step=2):
+-  return [start * step ** i for i in range(floor(log(end / start)
+-          / log(step)) + 1)]
 +    return [start * step ** k for k in range(0, floor(log(end, step)) + 1)]
 ```
 
 #### solution 1
+
 ```diff
--from math import floor, log
--
--def geometric_progression(end, start=1, step=2):
-+from math import floor, log
-+
-+def geometric_progression(end, start=1, step=2):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,9 @@
+
+ from math import floor, log
+ 
+ def geometric_progression(end, start=1, step=2):
+-  return [start * step ** i for i in range(floor(log(end / start)
+-          / log(step)) + 1)]
 +    n = floor(log(end + 1 - start, step))
 +    return int(step ** n) - 1
 +
@@ -8058,27 +11010,37 @@ def geometric_progression(end, start=1, step=2):  return [start * step ** i for 
 ```
 
 #### solution 2
+
 ```diff
--from math import floor, log
--
--def geometric_progression(end, start=1, step=2):
-+from math import floor, log
-+
-+def geometric_progression(end, start=1, step=2):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,5 @@
+
+ from math import floor, log
+ 
+ def geometric_progression(end, start=1, step=2):
+-  return [start * step ** i for i in range(floor(log(end / start)
+-          / log(step)) + 1)]
 +    # return a geometric progression with the specified starting value and step
 +    return [start * (step ** n) for n in range(0, floor(log(end, step)) + 1)]
 ```
 
 #### solution 3
+
 ```diff
--from math import floor, log
--
--def geometric_progression(end, start=1, step=2):
-+from math import floor, log
-+
-+def geometric_progression(end, start=1, step=2):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,10 @@
+
+ from math import floor, log
+ 
+ def geometric_progression(end, start=1, step=2):
+-  return [start * step ** i for i in range(floor(log(end / start)
+-          / log(step)) + 1)]
 +    i = start
 +    while i < end:
 +        yield i
@@ -8086,19 +11048,22 @@ def geometric_progression(end, start=1, step=2):  return [start * step ** i for 
 +
 +def is_prime(n):
 +    if n == 2:
-+        return True
-+    elif n < 2 or
 ```
 
 #### solution 4
+
 ```diff
--from math import floor, log
--
--def geometric_progression(end, start=1, step=2):
-+from math import floor, log
-+
-+def geometric_progression(end, start=1, step=2):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,8 @@
+
+ from math import floor, log
+ 
+ def geometric_progression(end, start=1, step=2):
+-  return [start * step ** i for i in range(floor(log(end / start)
+-          / log(step)) + 1)]
 +    if not isinstance(end, int):
 +        raise ValueError('Geometric Progression must end with an integer.')
 +    return int(floor(log(end) / log(step))) + 1
@@ -8109,15 +11074,23 @@ def geometric_progression(end, start=1, step=2):  return [start * step ** i for 
 ### find_last (task/101)
 
 #### canonical solution
+
 ```python
-def find_last(lst, fn):  return next(x for x in lst[::-1] if fn(x))
+def find_last(lst, fn):
+  return next(x for x in lst[::-1] if fn(x))
 ```
 
 #### solution 0
+
 ```diff
--def find_last(lst, fn):
-+def find_last(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def find_last(lst, fn):
+-  return next(x for x in lst[::-1] if fn(x))
 +    return next(iter(reversed(list(filter(fn, lst)))))
 +
 +def find_first(lst, fn):
@@ -8125,24 +11098,35 @@ def find_last(lst, fn):  return next(x for x in lst[::-1] if fn(x))
 ```
 
 #### solution 1
+
 ```diff
--def find_last(lst, fn):
-+def find_last(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last(lst, fn):
+-  return next(x for x in lst[::-1] if fn(x))
 +    """Find the last item in a list that satisfies a predicate.
 +
 +    Returns the item and the next index in the list where the item occurs.
 +
 +    """
 +    idx = len(lst) - 1
-+    while
 ```
 
 #### solution 2
+
 ```diff
--def find_last(lst, fn):
-+def find_last(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def find_last(lst, fn):
+-  return next(x for x in lst[::-1] if fn(x))
 +    return next(reversed(filter(fn, reversed(lst))))
 +
 +
@@ -8151,48 +11135,63 @@ def find_last(lst, fn):  return next(x for x in lst[::-1] if fn(x))
 ```
 
 #### solution 3
+
 ```diff
--def find_last(lst, fn):
-+def find_last(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last(lst, fn):
+-  return next(x for x in lst[::-1] if fn(x))
 +    last = None
 +    for val in lst:
 +        if fn(val):
 +            last = val
 +    return last
 +
-+
-+def find_first(lst, fn):
-+    first = None
-+    for val
 ```
 
 #### solution 4
+
 ```diff
--def find_last(lst, fn):
-+def find_last(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def find_last(lst, fn):
+-  return next(x for x in lst[::-1] if fn(x))
 +    for x in reversed(lst):
 +        if fn(x):
 +            return x
 +    return None
 +
 +def prepend_line(filepath, line):
-+    """Rewrite a file adding a line to its
 ```
 
 ### sort_dict_by_key (task/102)
 
 #### canonical solution
+
 ```python
-def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse = reverse))
+def sort_dict_by_key(d, reverse = False):
+  return dict(sorted(d.items(), reverse = reverse))
 ```
 
 #### solution 0
+
 ```diff
--def sort_dict_by_key(d, reverse = False):
-+def sort_dict_by_key(d, reverse = False):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def sort_dict_by_key(d, reverse = False):
+-  return dict(sorted(d.items(), reverse = reverse))
 +    sorted_keys = sorted(d.keys(), reverse = reverse)
 +    return [(key, d[key]) for key in sorted_keys]
 +
@@ -8201,10 +11200,16 @@ def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse
 ```
 
 #### solution 1
+
 ```diff
--def sort_dict_by_key(d, reverse = False):
-+def sort_dict_by_key(d, reverse = False):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def sort_dict_by_key(d, reverse = False):
+-  return dict(sorted(d.items(), reverse = reverse))
 +    return sorted(d.items(), key=operator.itemgetter(0), reverse = reverse)
 +
 +def sort_dict_by_value(d, reverse = False):
@@ -8212,10 +11217,16 @@ def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse
 ```
 
 #### solution 2
+
 ```diff
--def sort_dict_by_key(d, reverse = False):
-+def sort_dict_by_key(d, reverse = False):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def sort_dict_by_key(d, reverse = False):
+-  return dict(sorted(d.items(), reverse = reverse))
 +    """
 +    Given a dictionary, return sorted (key, value) list.
 +    """
@@ -8224,10 +11235,16 @@ def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse
 ```
 
 #### solution 3
+
 ```diff
--def sort_dict_by_key(d, reverse = False):
-+def sort_dict_by_key(d, reverse = False):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def sort_dict_by_key(d, reverse = False):
+-  return dict(sorted(d.items(), reverse = reverse))
 +    return sorted(d.items(), key=lambda x: x[0], reverse=reverse)
 +
 +def sort_dict_by_value(d, reverse = False):
@@ -8235,10 +11252,16 @@ def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse
 ```
 
 #### solution 4
+
 ```diff
--def sort_dict_by_key(d, reverse = False):
-+def sort_dict_by_key(d, reverse = False):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def sort_dict_by_key(d, reverse = False):
+-  return dict(sorted(d.items(), reverse = reverse))
 +    return sorted(d.items(), key=lambda item: item[0], reverse=reverse)
 +
 +def sort_dict_by_value(d, reverse = False):
@@ -8248,45 +11271,61 @@ def sort_dict_by_key(d, reverse = False):  return dict(sorted(d.items(), reverse
 ### split_lines (task/103)
 
 #### canonical solution
+
 ```python
-def split_lines(s):  return s.split('\n')
+def split_lines(s):
+  return s.split('\n')
 ```
 
 #### solution 0
+
 ```diff
--def split_lines(s):
-+def split_lines(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def split_lines(s):
+-  return s.split('\n')
 +    """
 +    split s in lines, dealing correctly with parentheses
 +    """
 +    result = []
 +    parens = 0
 +    start = 0
-+    for i, c in enumerate(s):
-+        if c
 ```
 
 #### solution 1
+
 ```diff
--def split_lines(s):
-+def split_lines(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def split_lines(s):
+-  return s.split('\n')
 +    """Split lines in a multiline string.
 +
 +    This is the counter part of join_lines.
 +    """
 +    return [line for line in s.splitlines() if line]
 +
-+
-+def remove_whites
 ```
 
 #### solution 2
+
 ```diff
--def split_lines(s):
-+def split_lines(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def split_lines(s):
+-  return s.split('\n')
 +    s = s.strip()
 +    lines = []
 +    while len(s) > 0:
@@ -8296,24 +11335,35 @@ def split_lines(s):  return s.split('\n')
 ```
 
 #### solution 3
+
 ```diff
--def split_lines(s):
-+def split_lines(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def split_lines(s):
+-  return s.split('\n')
 +    return re.split(r'[\r\n]+', s)
 +
 +
 +class HelpFormatter(object):
 +    """Formatter for generating usage messages and argument help strings.
 +
-+    Only the name of this class is
 ```
 
 #### solution 4
+
 ```diff
--def split_lines(s):
-+def split_lines(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def split_lines(s):
+-  return s.split('\n')
 +    """Split a block of text into lines.
 +
 +    This method is smart about trimming whitespace from the right hand side of
@@ -8324,18 +11374,29 @@ def split_lines(s):  return s.split('\n')
 ### includes_any (task/104)
 
 #### canonical solution
+
 ```python
-def includes_any(lst, values):  for v in values:
+def includes_any(lst, values):
+  for v in values:
     if v in lst:
       return True
   return False
 ```
 
 #### solution 0
+
 ```diff
--def includes_any(lst, values):
-+def includes_any(lst, values):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,9 @@
+
+ def includes_any(lst, values):
+-  for v in values:
+-    if v in lst:
+-      return True
+-  return False
 +    for value in values:
 +        if value in lst:
 +            return True
@@ -8347,10 +11408,19 @@ def includes_any(lst, values):  for v in values:
 ```
 
 #### solution 1
+
 ```diff
--def includes_any(lst, values):
-+def includes_any(lst, values):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,10 @@
+
+ def includes_any(lst, values):
+-  for v in values:
+-    if v in lst:
+-      return True
+-  return False
 +    for v in values:
 +        if v in lst:
 +            return True
@@ -8363,10 +11433,19 @@ def includes_any(lst, values):  for v in values:
 ```
 
 #### solution 2
+
 ```diff
--def includes_any(lst, values):
-+def includes_any(lst, values):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,6 @@
+
+ def includes_any(lst, values):
+-  for v in values:
+-    if v in lst:
+-      return True
+-  return False
 +    """Returns true if any value in lst is in values.
 +
 +    :param lst: list of values
@@ -8375,10 +11454,19 @@ def includes_any(lst, values):  for v in values:
 ```
 
 #### solution 3
+
 ```diff
--def includes_any(lst, values):
-+def includes_any(lst, values):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,10 @@
+
+ def includes_any(lst, values):
+-  for v in values:
+-    if v in lst:
+-      return True
+-  return False
 +    for value in values:
 +        if value in lst:
 +            return True
@@ -8391,10 +11479,19 @@ def includes_any(lst, values):  for v in values:
 ```
 
 #### solution 4
+
 ```diff
--def includes_any(lst, values):
-+def includes_any(lst, values):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,9 @@
+
+ def includes_any(lst, values):
+-  for v in values:
+-    if v in lst:
+-      return True
+-  return False
 +    for value in values:
 +        if value in lst:
 +            return True
@@ -8408,8 +11505,10 @@ def includes_any(lst, values):  for v in values:
 ### merge (task/105)
 
 #### canonical solution
+
 ```python
-def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args])
+def merge(*args, fill_value = None):
+  max_length = max([len(lst) for lst in args])
   result = []
   for i in range(max_length):
     result.append([
@@ -8419,10 +11518,22 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ```
 
 #### solution 0
+
 ```diff
--def merge(*args, fill_value = None):
-+def merge(*args, fill_value = None):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,7 @@
+
+ def merge(*args, fill_value = None):
+-  max_length = max([len(lst) for lst in args])
+-  result = []
+-  for i in range(max_length):
+-    result.append([
+-      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+-    ])
+-  return result
 +    new_data = {}
 +    for data in args:
 +        for key, value in data.items():
@@ -8432,10 +11543,22 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ```
 
 #### solution 1
+
 ```diff
--def merge(*args, fill_value = None):
-+def merge(*args, fill_value = None):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,6 @@
+
+ def merge(*args, fill_value = None):
+-  max_length = max([len(lst) for lst in args])
+-  result = []
+-  for i in range(max_length):
+-    result.append([
+-      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+-    ])
+-  return result
 +    lengths = [len(i) for i in args]
 +    min_length = min(lengths)
 +    max_length = max(lengths)
@@ -8444,10 +11567,22 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ```
 
 #### solution 2
+
 ```diff
--def merge(*args, fill_value = None):
-+def merge(*args, fill_value = None):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,10 @@
+
+ def merge(*args, fill_value = None):
+-  max_length = max([len(lst) for lst in args])
+-  result = []
+-  for i in range(max_length):
+-    result.append([
+-      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+-    ])
+-  return result
 +    """
 +    Merge together values that were separated by a groupby operation
 +
@@ -8460,10 +11595,22 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ```
 
 #### solution 3
+
 ```diff
--def merge(*args, fill_value = None):
-+def merge(*args, fill_value = None):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,8 @@
+
+ def merge(*args, fill_value = None):
+-  max_length = max([len(lst) for lst in args])
+-  result = []
+-  for i in range(max_length):
+-    result.append([
+-      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+-    ])
+-  return result
 +    """
 +    Merge dataframes column-wise. 
 +    Uses union of all indices in order to merge.
@@ -8474,10 +11621,22 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ```
 
 #### solution 4
+
 ```diff
--def merge(*args, fill_value = None):
-+def merge(*args, fill_value = None):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,8 @@
+
+ def merge(*args, fill_value = None):
+-  max_length = max([len(lst) for lst in args])
+-  result = []
+-  for i in range(max_length):
+-    result.append([
+-      args[k][i] if i < len(args[k]) else fill_value for k in range(len(args))
+-    ])
+-  return result
 +    if len(args) == 1:
 +        return args[0]
 +    if len(args) == 2:
@@ -8490,15 +11649,23 @@ def merge(*args, fill_value = None):  max_length = max([len(lst) for lst in args
 ### min_by (task/106)
 
 #### canonical solution
+
 ```python
-def min_by(lst, fn):  return min(map(fn, lst))
+def min_by(lst, fn):
+  return min(map(fn, lst))
 ```
 
 #### solution 0
+
 ```diff
--def min_by(lst, fn):
-+def min_by(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def min_by(lst, fn):
+-  return min(map(fn, lst))
 +    return reduce(lambda x, y: x if fn(x) < fn(y) else y, lst)
 +
 +def max_by(lst, fn):
@@ -8506,10 +11673,16 @@ def min_by(lst, fn):  return min(map(fn, lst))
 ```
 
 #### solution 1
+
 ```diff
--def min_by(lst, fn):
-+def min_by(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def min_by(lst, fn):
+-  return min(map(fn, lst))
 +    if not lst:
 +        return None
 +    fn = maybe_unary(fn)
@@ -8518,10 +11691,16 @@ def min_by(lst, fn):  return min(map(fn, lst))
 ```
 
 #### solution 2
+
 ```diff
--def min_by(lst, fn):
-+def min_by(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def min_by(lst, fn):
+-  return min(map(fn, lst))
 +    return min(lst, key=fn)
 +
 +def min_index_by(lst, fn):
@@ -8529,10 +11708,16 @@ def min_by(lst, fn):  return min(map(fn, lst))
 ```
 
 #### solution 3
+
 ```diff
--def min_by(lst, fn):
-+def min_by(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def min_by(lst, fn):
+-  return min(map(fn, lst))
 +    min_fn = None
 +    min_val = None
 +    for e in lst:
@@ -8542,38 +11727,48 @@ def min_by(lst, fn):  return min(map(fn, lst))
 ```
 
 #### solution 4
+
 ```diff
--def min_by(lst, fn):
-+def min_by(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def min_by(lst, fn):
+-  return min(map(fn, lst))
 +    """
 +    Returns the element in the list that gives the minimum value when passed to the function.
 +    """
 +    return min(lst, key=fn)
 +
 +
-+def inverse_signal(signal):
-+   
 ```
 
 ### add_days (task/107)
 
 #### canonical solution
+
 ```python
 from datetime import datetime, timedelta
 
-def add_days(n, d = datetime.today()):  return d + timedelta(n)
+def add_days(n, d = datetime.today()):
+  return d + timedelta(n)
 ```
 
 #### solution 0
+
 ```diff
--from datetime import datetime, timedelta
--
--def add_days(n, d = datetime.today()):
-+from datetime import datetime, timedelta
-+
-+def add_days(n, d = datetime.today()):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime, timedelta
+ 
+ def add_days(n, d = datetime.today()):
+-  return d + timedelta(n)
 +    return d + timedelta(days = n)
 +
 +def add_years(n, d = datetime.today()):
@@ -8583,14 +11778,18 @@ def add_days(n, d = datetime.today()):  return d + timedelta(n)
 ```
 
 #### solution 1
+
 ```diff
--from datetime import datetime, timedelta
--
--def add_days(n, d = datetime.today()):
-+from datetime import datetime, timedelta
-+
-+def add_days(n, d = datetime.today()):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime, timedelta
+ 
+ def add_days(n, d = datetime.today()):
+-  return d + timedelta(n)
 +    return d + timedelta(days = n)
 +
 +def format_date(d):
@@ -8600,14 +11799,18 @@ def add_days(n, d = datetime.today()):  return d + timedelta(n)
 ```
 
 #### solution 2
+
 ```diff
--from datetime import datetime, timedelta
--
--def add_days(n, d = datetime.today()):
-+from datetime import datetime, timedelta
-+
-+def add_days(n, d = datetime.today()):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime, timedelta
+ 
+ def add_days(n, d = datetime.today()):
+-  return d + timedelta(n)
 +    return d + timedelta(days = n)
 +
 +def list_to_dict(li):
@@ -8617,14 +11820,18 @@ def add_days(n, d = datetime.today()):  return d + timedelta(n)
 ```
 
 #### solution 3
+
 ```diff
--from datetime import datetime, timedelta
--
--def add_days(n, d = datetime.today()):
-+from datetime import datetime, timedelta
-+
-+def add_days(n, d = datetime.today()):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime, timedelta
+ 
+ def add_days(n, d = datetime.today()):
+-  return d + timedelta(n)
 +    return d + timedelta(days = n)
 +
 +def sub_days(n, d = datetime.today()):
@@ -8634,42 +11841,52 @@ def add_days(n, d = datetime.today()):  return d + timedelta(n)
 ```
 
 #### solution 4
+
 ```diff
--from datetime import datetime, timedelta
--
--def add_days(n, d = datetime.today()):
-+from datetime import datetime, timedelta
-+
-+def add_days(n, d = datetime.today()):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime, timedelta
+ 
+ def add_days(n, d = datetime.today()):
+-  return d + timedelta(n)
 +    delta = timedelta(days = n)
 +    d += delta
 +    return d
 +
 +def find_nth(haystack, needle, n):
 +    start = haystack.find(needle)
-+   
 ```
 
 ### palindrome (task/108)
 
 #### canonical solution
+
 ```python
 from re import sub
 
-def palindrome(s):  s = sub('[\W_]', '', s.lower())
+def palindrome(s):
+  s = sub('[\W_]', '', s.lower())
   return s == s[::-1]
 ```
 
 #### solution 0
+
 ```diff
--from re import sub
--
--def palindrome(s):
-+from re import sub
-+
-+def palindrome(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,10 @@
+
+ from re import sub
+ 
+ def palindrome(s):
+-  s = sub('[\W_]', '', s.lower())
+-  return s == s[::-1]
 +    s = sub('[^A-Za-z]', '', s).lower()
 +    return s == s[::-1]
 +
@@ -8677,18 +11894,22 @@ def palindrome(s):  s = sub('[\W_]', '', s.lower())
 +import re
 +
 +def palindrome(s):
-+   
 ```
 
 #### solution 1
+
 ```diff
--from re import sub
--
--def palindrome(s):
-+from re import sub
-+
-+def palindrome(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def palindrome(s):
+-  s = sub('[\W_]', '', s.lower())
+-  return s == s[::-1]
 +	s = sub(r'[^A-Za-z]', '', s).lower()
 +	return s == s[::-1]
 +
@@ -8696,14 +11917,19 @@ def palindrome(s):  s = sub('[\W_]', '', s.lower())
 ```
 
 #### solution 2
+
 ```diff
--from re import sub
--
--def palindrome(s):
-+from re import sub
-+
-+def palindrome(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,8 @@
+
+ from re import sub
+ 
+ def palindrome(s):
+-  s = sub('[\W_]', '', s.lower())
+-  return s == s[::-1]
 +    s = sub('[^A-Za-z]', '', s).lower()
 +    return s == s[::-1]
 +
@@ -8712,14 +11938,19 @@ def palindrome(s):  s = sub('[\W_]', '', s.lower())
 ```
 
 #### solution 3
+
 ```diff
--from re import sub
--
--def palindrome(s):
-+from re import sub
-+
-+def palindrome(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def palindrome(s):
+-  s = sub('[\W_]', '', s.lower())
+-  return s == s[::-1]
 +    s = sub('[^A-Za-z]', '', s).lower()
 +    return s == s[::-1]
 +
@@ -8727,14 +11958,19 @@ def palindrome(s):  s = sub('[\W_]', '', s.lower())
 ```
 
 #### solution 4
+
 ```diff
--from re import sub
--
--def palindrome(s):
-+from re import sub
-+
-+def palindrome(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,7 @@
+
+ from re import sub
+ 
+ def palindrome(s):
+-  s = sub('[\W_]', '', s.lower())
+-  return s == s[::-1]
 +    s = sub('[^A-Za-z]', '', s.lower())
 +    return s == s[::-1]
 +
@@ -8744,44 +11980,61 @@ def palindrome(s):  s = sub('[\W_]', '', s.lower())
 ### none (task/109)
 
 #### canonical solution
+
 ```python
-def none(lst, fn = lambda x: x):  return all(not fn(x) for x in lst)
+def none(lst, fn = lambda x: x):
+  return all(not fn(x) for x in lst)
 ```
 
 #### solution 0
+
 ```diff
--def none(lst, fn = lambda x: x):
-+def none(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def none(lst, fn = lambda x: x):
+-  return all(not fn(x) for x in lst)
 +    for i in lst:
 +        if fn(i):
 +            return False
 +    return True
 +
 +def find_optimal_move(board, player):
-+    t_start = time.time()
-+    moves
 ```
 
 #### solution 1
+
 ```diff
--def none(lst, fn = lambda x: x):
-+def none(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def none(lst, fn = lambda x: x):
+-  return all(not fn(x) for x in lst)
 +    """
 +    Passes over an iterator exactly once.
 +
 +    This is a more efficient version of [fn(x) for x in lst].
 +
 +    :param lst: The list to pass over.
-+    :param
 ```
 
 #### solution 2
+
 ```diff
--def none(lst, fn = lambda x: x):
-+def none(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def none(lst, fn = lambda x: x):
+-  return all(not fn(x) for x in lst)
 +    return [fn(x) for x in lst if x != None]
 +
 +def one(lst, fn = lambda x: x):
@@ -8789,10 +12042,16 @@ def none(lst, fn = lambda x: x):  return all(not fn(x) for x in lst)
 ```
 
 #### solution 3
+
 ```diff
--def none(lst, fn = lambda x: x):
-+def none(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def none(lst, fn = lambda x: x):
+-  return all(not fn(x) for x in lst)
 +    return [fn(x) for x in lst if x is not None]
 +
 +def all_none(lst):
@@ -8802,117 +12061,148 @@ def none(lst, fn = lambda x: x):  return all(not fn(x) for x in lst)
 ```
 
 #### solution 4
+
 ```diff
--def none(lst, fn = lambda x: x):
-+def none(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def none(lst, fn = lambda x: x):
+-  return all(not fn(x) for x in lst)
 +    for x in lst:
 +        if fn(x):
 +            return False
 +    return True
 +
 +def one(lst, fn = lambda x: x):
-+    cnt = 0
-+    for x in l
 ```
 
 ### tail (task/110)
 
 #### canonical solution
+
 ```python
-def tail(lst):  return lst[1:] if len(lst) > 1 else lst
+def tail(lst):
+  return lst[1:] if len(lst) > 1 else lst
 ```
 
 #### solution 0
+
 ```diff
--def tail(lst):
-+def tail(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def tail(lst):
+-  return lst[1:] if len(lst) > 1 else lst
 +    return lst[1:]
 +
 +# Some tests.
 +from doctest import run_docstring_examples as dtest
 +dtest(tail, globals(), verbose=True)
 +
-+# The implementation of **
 ```
 
 #### solution 1
+
 ```diff
--def tail(lst):
-+def tail(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def tail(lst):
+-  return lst[1:] if len(lst) > 1 else lst
 +    return lst[1:]
 +
 +def nth(lst, n):
 +    return lst[n]
 +
 +def init(lst):
-+    return lst[:-1]
-+
-+def last(l
 ```
 
 #### solution 2
+
 ```diff
--def tail(lst):
-+def tail(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def tail(lst):
+-  return lst[1:] if len(lst) > 1 else lst
 +    return lst[1:]
 +
 +def last(lst):
 +    return lst[-1]
 +
 +def init(lst):
-+    return lst[:-1]
-+
-+def reverse(lst):
 ```
 
 #### solution 3
+
 ```diff
--def tail(lst):
-+def tail(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def tail(lst):
+-  return lst[1:] if len(lst) > 1 else lst
 +    return lst[1:]
 +
 +def last(lst):
 +    return lst[-1]
 +
 +def first(lst):
-+    return lst[0]
-+
-+def drop(lst, n
 ```
 
 #### solution 4
+
 ```diff
--def tail(lst):
-+def tail(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def tail(lst):
+-  return lst[1:] if len(lst) > 1 else lst
 +    return lst[1:]
 +
 +def last(lst):
 +    return lst[-1]
 +
 +def init(lst):
-+    return lst[:-1]
-+
-+def reverse(lst):
 ```
 
 ### has_duplicates (task/111)
 
 #### canonical solution
+
 ```python
-def has_duplicates(lst):  return len(lst) != len(set(lst))
+def has_duplicates(lst):
+  return len(lst) != len(set(lst))
 ```
 
 #### solution 0
+
 ```diff
--def has_duplicates(lst):
-+def has_duplicates(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def has_duplicates(lst):
+-  return len(lst) != len(set(lst))
 +    return len(lst) != len(set(lst))
 +
 +def has_duplicates2(lst):
@@ -8922,10 +12212,16 @@ def has_duplicates(lst):  return len(lst) != len(set(lst))
 ```
 
 #### solution 1
+
 ```diff
--def has_duplicates(lst):
-+def has_duplicates(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def has_duplicates(lst):
+-  return len(lst) != len(set(lst))
 +    """Returns True if there is any element that appears more than once.
 +
 +    >>> has_duplicates([1, 2, 3, 4, 5])
@@ -8934,10 +12230,16 @@ def has_duplicates(lst):  return len(lst) != len(set(lst))
 ```
 
 #### solution 2
+
 ```diff
--def has_duplicates(lst):
-+def has_duplicates(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def has_duplicates(lst):
+-  return len(lst) != len(set(lst))
 +    for i in range(len(lst)):
 +        for j in range(i+1, len(lst)):
 +            if lst[i] == lst[j]:
@@ -8946,10 +12248,16 @@ def has_duplicates(lst):  return len(lst) != len(set(lst))
 ```
 
 #### solution 3
+
 ```diff
--def has_duplicates(lst):
-+def has_duplicates(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def has_duplicates(lst):
+-  return len(lst) != len(set(lst))
 +    """ Return True if lst has any duplicates, False if it does not.
 +    """
 +    # replace the pass below with your code
@@ -8959,10 +12267,16 @@ def has_duplicates(lst):  return len(lst) != len(set(lst))
 ```
 
 #### solution 4
+
 ```diff
--def has_duplicates(lst):
-+def has_duplicates(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def has_duplicates(lst):
+-  return len(lst) != len(set(lst))
 +    ''' (list) -> bool
 +    Return True iff the items in lst are not unique
 +    '''
@@ -8973,30 +12287,42 @@ def has_duplicates(lst):  return len(lst) != len(set(lst))
 ### map_dictionary (task/112)
 
 #### canonical solution
+
 ```python
-def map_dictionary(itr, fn):  return dict(zip(itr, map(fn, itr)))
+def map_dictionary(itr, fn):
+  return dict(zip(itr, map(fn, itr)))
 ```
 
 #### solution 0
+
 ```diff
--def map_dictionary(itr, fn):
-+def map_dictionary(itr, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def map_dictionary(itr, fn):
+-  return dict(zip(itr, map(fn, itr)))
 +    return {fn(x): x for x in itr}
 +
 +
 +def map_to_array(itr, fn):
 +    return np.array([fn(x) for x in itr])
 +
-+
-+def to
 ```
 
 #### solution 1
+
 ```diff
--def map_dictionary(itr, fn):
-+def map_dictionary(itr, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def map_dictionary(itr, fn):
+-  return dict(zip(itr, map(fn, itr)))
 +    return dict(map(lambda item: (item[0], fn(item[1])), itr))
 +
 +
@@ -9005,38 +12331,54 @@ def map_dictionary(itr, fn):  return dict(zip(itr, map(fn, itr)))
 ```
 
 #### solution 2
+
 ```diff
--def map_dictionary(itr, fn):
-+def map_dictionary(itr, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def map_dictionary(itr, fn):
+-  return dict(zip(itr, map(fn, itr)))
 +    """
 +    Maps a dictionary of iterables by applying a function to each element
 +    of the iterable and collecting the results in a dictionary.
 +
 +    This is what you would usually use on a dictionary comprehension.
 +
-+    :param
 ```
 
 #### solution 3
+
 ```diff
--def map_dictionary(itr, fn):
-+def map_dictionary(itr, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def map_dictionary(itr, fn):
+-  return dict(zip(itr, map(fn, itr)))
 +    d = {}
 +    for k, v in itr:
 +        d[k] = fn(v)
 +    return d
 +
 +def zip_dictionary(dict_a, dict_b):
-+    d =
 ```
 
 #### solution 4
+
 ```diff
--def map_dictionary(itr, fn):
-+def map_dictionary(itr, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def map_dictionary(itr, fn):
+-  return dict(zip(itr, map(fn, itr)))
 +    return {key: fn(value) for key, value in itr}
 +
 +
@@ -9048,24 +12390,33 @@ def map_dictionary(itr, fn):  return dict(zip(itr, map(fn, itr)))
 ### count_by (task/113)
 
 #### canonical solution
+
 ```python
 from collections import defaultdict
 
-def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
+def count_by(lst, fn = lambda x: x):
+  count = defaultdict(int)
   for val in map(fn, lst):
     count[val] += 1
   return dict(count)
 ```
 
 #### solution 0
+
 ```diff
--from collections import defaultdict
--
--def count_by(lst, fn = lambda x: x):
-+from collections import defaultdict
-+
-+def count_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,12 @@
+
+ from collections import defaultdict
+ 
+ def count_by(lst, fn = lambda x: x):
+-  count = defaultdict(int)
+-  for val in map(fn, lst):
+-    count[val] += 1
+-  return dict(count)
 +    counter = defaultdict(int)
 +    for item in lst:
 +        counter[fn(item)] += 1
@@ -9075,18 +12426,24 @@ def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
 +
 +# Introduction
 +
-+# Recursion happens when a function calls
 ```
 
 #### solution 1
+
 ```diff
--from collections import defaultdict
--
--def count_by(lst, fn = lambda x: x):
-+from collections import defaultdict
-+
-+def count_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,9 @@
+
+ from collections import defaultdict
+ 
+ def count_by(lst, fn = lambda x: x):
+-  count = defaultdict(int)
+-  for val in map(fn, lst):
+-    count[val] += 1
+-  return dict(count)
 +    counts = defaultdict(int)
 +    for item in lst:
 +        counts[fn(item)] += 1
@@ -9096,14 +12453,21 @@ def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
 ```
 
 #### solution 2
+
 ```diff
--from collections import defaultdict
--
--def count_by(lst, fn = lambda x: x):
-+from collections import defaultdict
-+
-+def count_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,9 @@
+
+ from collections import defaultdict
+ 
+ def count_by(lst, fn = lambda x: x):
+-  count = defaultdict(int)
+-  for val in map(fn, lst):
+-    count[val] += 1
+-  return dict(count)
 +	counts = defaultdict(int)
 +	for v in lst:
 +		counts[fn(v)] += 1
@@ -9113,14 +12477,21 @@ def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
 ```
 
 #### solution 3
+
 ```diff
--from collections import defaultdict
--
--def count_by(lst, fn = lambda x: x):
-+from collections import defaultdict
-+
-+def count_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def count_by(lst, fn = lambda x: x):
+-  count = defaultdict(int)
+-  for val in map(fn, lst):
+-    count[val] += 1
+-  return dict(count)
 +    out = defaultdict(int)
 +    for x in lst:
 +        out[fn(x)] += 1
@@ -9131,14 +12502,21 @@ def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
 ```
 
 #### solution 4
+
 ```diff
--from collections import defaultdict
--
--def count_by(lst, fn = lambda x: x):
-+from collections import defaultdict
-+
-+def count_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def count_by(lst, fn = lambda x: x):
+-  count = defaultdict(int)
+-  for val in map(fn, lst):
+-    count[val] += 1
+-  return dict(count)
 +    d = defaultdict(int)
 +    for item in lst:
 +        key = fn(item)
@@ -9151,16 +12529,25 @@ def count_by(lst, fn = lambda x: x):  count = defaultdict(int)
 ### difference_by (task/114)
 
 #### canonical solution
+
 ```python
-def difference_by(a, b, fn):  _b = set(map(fn, b))
+def difference_by(a, b, fn):
+  _b = set(map(fn, b))
   return [item for item in a if fn(item) not in _b]
 ```
 
 #### solution 0
+
 ```diff
--def difference_by(a, b, fn):
-+def difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,6 @@
+
+ def difference_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) not in _b]
 +    b = set(map(fn, b))
 +    return [item for item in a if fn(item) not in b]
 +
@@ -9169,10 +12556,17 @@ def difference_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 1
+
 ```diff
--def difference_by(a, b, fn):
-+def difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,5 @@
+
+ def difference_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) not in _b]
 +    b = set(map(fn, b))
 +    return [item for item in a if fn(item) not in b]
 +
@@ -9180,10 +12574,17 @@ def difference_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 2
+
 ```diff
--def difference_by(a, b, fn):
-+def difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,6 @@
+
+ def difference_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) not in _b]
 +    b = set(map(fn, b))
 +    return [item for item in a if fn(item) not in b]
 +
@@ -9192,10 +12593,17 @@ def difference_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 3
+
 ```diff
--def difference_by(a, b, fn):
-+def difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,6 @@
+
+ def difference_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) not in _b]
 +    """
 +    a - b, after applying fn to keys of b
 +    """
@@ -9204,10 +12612,17 @@ def difference_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 4
+
 ```diff
--def difference_by(a, b, fn):
-+def difference_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,7 @@
+
+ def difference_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) not in _b]
 +    """Returns the difference of both lists (A - B)"""
 +    return [item for item in a if fn(item) not in map(fn, b)]
 +
@@ -9219,21 +12634,27 @@ def difference_by(a, b, fn):  _b = set(map(fn, b))
 ### from_iso_date (task/115)
 
 #### canonical solution
+
 ```python
 from datetime import datetime
 
-def from_iso_date(d):  return datetime.fromisoformat(d)
+def from_iso_date(d):
+  return datetime.fromisoformat(d)
 ```
 
 #### solution 0
+
 ```diff
--from datetime import datetime
--
--def from_iso_date(d):
-+from datetime import datetime
-+
-+def from_iso_date(d):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import datetime
+ 
+ def from_iso_date(d):
+-  return datetime.fromisoformat(d)
 +    return datetime.strptime(d, "%Y-%m-%d")
 +
 +def to_iso_date(d):
@@ -9241,14 +12662,18 @@ def from_iso_date(d):  return datetime.fromisoformat(d)
 ```
 
 #### solution 1
+
 ```diff
--from datetime import datetime
--
--def from_iso_date(d):
-+from datetime import datetime
-+
-+def from_iso_date(d):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import datetime
+ 
+ def from_iso_date(d):
+-  return datetime.fromisoformat(d)
 +    return datetime.strptime(d, "%Y-%m-%d")
 +
 +def from_iso_time(t):
@@ -9256,14 +12681,18 @@ def from_iso_date(d):  return datetime.fromisoformat(d)
 ```
 
 #### solution 2
+
 ```diff
--from datetime import datetime
--
--def from_iso_date(d):
-+from datetime import datetime
-+
-+def from_iso_date(d):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import datetime
+ 
+ def from_iso_date(d):
+-  return datetime.fromisoformat(d)
 +    return datetime.strptime(d, "%Y-%m-%d")
 +
 +def to_iso_date(d):
@@ -9271,49 +12700,63 @@ def from_iso_date(d):  return datetime.fromisoformat(d)
 ```
 
 #### solution 3
+
 ```diff
--from datetime import datetime
--
--def from_iso_date(d):
-+from datetime import datetime
-+
-+def from_iso_date(d):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,6 @@
+
+ from datetime import datetime
+ 
+ def from_iso_date(d):
+-  return datetime.fromisoformat(d)
 +    """Convert an ISO-8601 date string to a datetime object.
 +    """
 +    return datetime.strptime(d, "%Y-%m-%d")
 ```
 
 #### solution 4
+
 ```diff
--from datetime import datetime
--
--def from_iso_date(d):
-+from datetime import datetime
-+
-+def from_iso_date(d):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,4 @@
+
+ from datetime import datetime
+ 
+ def from_iso_date(d):
+-  return datetime.fromisoformat(d)
 +    return datetime.strptime(d, "%Y-%m-%d")
 ```
 
 ### filter_non_unique (task/116)
 
 #### canonical solution
+
 ```python
 from collections import Counter
 
-def filter_non_unique(lst):  return [item for item, count in Counter(lst).items() if count == 1]
+def filter_non_unique(lst):
+  return [item for item, count in Counter(lst).items() if count == 1]
 ```
 
 #### solution 0
+
 ```diff
--from collections import Counter
--
--def filter_non_unique(lst):
-+from collections import Counter
-+
-+def filter_non_unique(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ from collections import Counter
+ 
+ def filter_non_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count == 1]
 +    counts = Counter(lst)
 +    return [x for x in lst if counts[x] == 1]
 +
@@ -9322,14 +12765,18 @@ def filter_non_unique(lst):  return [item for item, count in Counter(lst).items(
 ```
 
 #### solution 1
+
 ```diff
--from collections import Counter
--
--def filter_non_unique(lst):
-+from collections import Counter
-+
-+def filter_non_unique(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,8 @@
+
+ from collections import Counter
+ 
+ def filter_non_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count == 1]
 +    c = Counter(lst)
 +    return [x for x in lst if c[x] == 1]
 +
@@ -9338,73 +12785,92 @@ def filter_non_unique(lst):  return [item for item, count in Counter(lst).items(
 ```
 
 #### solution 2
+
 ```diff
--from collections import Counter
--
--def filter_non_unique(lst):
-+from collections import Counter
-+
-+def filter_non_unique(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_non_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count == 1]
 +    return list(set(lst))
 +
 +def collect_data(lst):
 +    counter = Counter(lst)
 +    out = []
 +    for key,value in counter.items():
-+        out.append
 ```
 
 #### solution 3
+
 ```diff
--from collections import Counter
--
--def filter_non_unique(lst):
-+from collections import Counter
-+
-+def filter_non_unique(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_non_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count == 1]
 +    """ Function that removes duplicate elements from a list.
 +    Args:
 +        lst: The list that we want to filter.
 +    Returns:
 +        A new list with only unique elements.
 +    """
-+    return
 ```
 
 #### solution 4
+
 ```diff
--from collections import Counter
--
--def filter_non_unique(lst):
-+from collections import Counter
-+
-+def filter_non_unique(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from collections import Counter
+ 
+ def filter_non_unique(lst):
+-  return [item for item, count in Counter(lst).items() if count == 1]
 +    duplicates = []
 +    for item in lst:
 +        if lst.count(item) > 1:
 +            duplicates.append(item)
 +    return duplicates
 +
-+def count_unique(lst
 ```
 
 ### symmetric_difference (task/117)
 
 #### canonical solution
+
 ```python
-def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
+def symmetric_difference(a, b):
+  (_a, _b) = (set(a), set(b))
   return [item for item in a if item not in _b] + [item for item in b
           if item not in _a]
 ```
 
 #### solution 0
+
 ```diff
--def symmetric_difference(a, b):
-+def symmetric_difference(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,5 @@
+
+ def symmetric_difference(a, b):
+-  (_a, _b) = (set(a), set(b))
+-  return [item for item in a if item not in _b] + [item for item in b
+-          if item not in _a]
 +    """The difference between the two iterables a and b, making sure that no
 +    duplicates are returned. This is the set version of the binary XOR operator.
 +    """
@@ -9412,10 +12878,18 @@ def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
 ```
 
 #### solution 1
+
 ```diff
--def symmetric_difference(a, b):
-+def symmetric_difference(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ def symmetric_difference(a, b):
+-  (_a, _b) = (set(a), set(b))
+-  return [item for item in a if item not in _b] + [item for item in b
+-          if item not in _a]
 +    return a ^ b
 +
 +def symmetric_difference_update(a, b):
@@ -9424,30 +12898,22 @@ def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
 +def union(a, b):
 +    return a | b
 +
-+def update(a, b
 ```
 
 #### solution 2
+
 ```diff
--def symmetric_difference(a, b):
-+def symmetric_difference(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ def symmetric_difference(a, b):
+-  (_a, _b) = (set(a), set(b))
+-  return [item for item in a if item not in _b] + [item for item in b
+-          if item not in _a]
 +    return a ^ b
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
-+    
 +    
 +    
 +    
@@ -9458,10 +12924,18 @@ def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
 ```
 
 #### solution 3
+
 ```diff
--def symmetric_difference(a, b):
-+def symmetric_difference(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ def symmetric_difference(a, b):
+-  (_a, _b) = (set(a), set(b))
+-  return [item for item in a if item not in _b] + [item for item in b
+-          if item not in _a]
 +    '''(set, set) -> set
 +    Return a new set that contains all the elements that are in exactly
 +    one of the sets a and b.
@@ -9471,10 +12945,18 @@ def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
 ```
 
 #### solution 4
+
 ```diff
--def symmetric_difference(a, b):
-+def symmetric_difference(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ def symmetric_difference(a, b):
+-  (_a, _b) = (set(a), set(b))
+-  return [item for item in a if item not in _b] + [item for item in b
+-          if item not in _a]
 +    return a ^ b
 +
 +
@@ -9483,30 +12965,38 @@ def symmetric_difference(a, b):  (_a, _b) = (set(a), set(b))
 +        op = op.encode()
 +    return base64.b16decode(op)
 +
-+
 ```
 
 ### snake (task/118)
 
 #### canonical solution
+
 ```python
 from re import sub
 
-def snake(s):  return '_'.join(
+def snake(s):
+  return '_'.join(
     sub('([A-Z][a-z]+)', r' \1',
     sub('([A-Z]+)', r' \1',
     s.replace('-', ' '))).split()).lower()
 ```
 
 #### solution 0
+
 ```diff
--from re import sub
--
--def snake(s):
-+from re import sub
-+
-+def snake(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,7 @@
+
+ from re import sub
+ 
+ def snake(s):
+-  return '_'.join(
+-    sub('([A-Z][a-z]+)', r' \1',
+-    sub('([A-Z]+)', r' \1',
+-    s.replace('-', ' '))).split()).lower()
 +    return sub(r'(.)([A-Z][a-z]+)', r'\1_\2', s).lower()
 +
 +def camel(s):
@@ -9514,14 +13004,21 @@ def snake(s):  return '_'.join(
 ```
 
 #### solution 1
+
 ```diff
--from re import sub
--
--def snake(s):
-+from re import sub
-+
-+def snake(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,7 @@
+
+ from re import sub
+ 
+ def snake(s):
+-  return '_'.join(
+-    sub('([A-Z][a-z]+)', r' \1',
+-    sub('([A-Z]+)', r' \1',
+-    s.replace('-', ' '))).split()).lower()
 +    return sub(r'(.)([A-Z][a-z]+)', r'\1_\2', s).lower()
 +
 +def lcamel(s):
@@ -9529,14 +13026,21 @@ def snake(s):  return '_'.join(
 ```
 
 #### solution 2
+
 ```diff
--from re import sub
--
--def snake(s):
-+from re import sub
-+
-+def snake(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,7 @@
+
+ from re import sub
+ 
+ def snake(s):
+-  return '_'.join(
+-    sub('([A-Z][a-z]+)', r' \1',
+-    sub('([A-Z]+)', r' \1',
+-    s.replace('-', ' '))).split()).lower()
 +    return sub(r'([A-Z])', r'_\1', s).lower()
 +
 +def pascal(s):
@@ -9544,14 +13048,21 @@ def snake(s):  return '_'.join(
 ```
 
 #### solution 3
+
 ```diff
--from re import sub
--
--def snake(s):
-+from re import sub
-+
-+def snake(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,8 @@
+
+ from re import sub
+ 
+ def snake(s):
+-  return '_'.join(
+-    sub('([A-Z][a-z]+)', r' \1',
+-    sub('([A-Z]+)', r' \1',
+-    s.replace('-', ' '))).split()).lower()
 +    return sub(r'([A-Z])', r'_\1', s).lower()
 +
 +def get_key(dictionary, val):
@@ -9560,14 +13071,21 @@ def snake(s):  return '_'.join(
 ```
 
 #### solution 4
+
 ```diff
--from re import sub
--
--def snake(s):
-+from re import sub
-+
-+def snake(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,9 @@
+
+ from re import sub
+ 
+ def snake(s):
+-  return '_'.join(
+-    sub('([A-Z][a-z]+)', r' \1',
+-    sub('([A-Z]+)', r' \1',
+-    s.replace('-', ' '))).split()).lower()
 +    return sub(r'[A-Z][a-z]*',
 +               lambda mo: mo.group(0).lower(),
 +               s)
@@ -9579,60 +13097,80 @@ def snake(s):  return '_'.join(
 ### keys_only (task/119)
 
 #### canonical solution
+
 ```python
-def keys_only(flat_dict):  return list(flat_dict.keys())
+def keys_only(flat_dict):
+  return list(flat_dict.keys())
 ```
 
 #### solution 0
+
 ```diff
--def keys_only(flat_dict):
-+def keys_only(flat_dict):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def keys_only(flat_dict):
+-  return list(flat_dict.keys())
 +    return flat_dict.keys()
 +
 +
 +@field_filter_fn
 +def get_names(flat_dict):
 +    return [flat_dict[k].name for k in flat_dict]
-+
-+
-+@field_
 ```
 
 #### solution 1
+
 ```diff
--def keys_only(flat_dict):
-+def keys_only(flat_dict):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def keys_only(flat_dict):
+-  return list(flat_dict.keys())
 +    """Returns only the keys of a flat dictionary.
 +
 +    Args:
 +        flat_dict (dict): the flat dictionary to get the keys of.
 +
 +    Returns:
-+        list: the keys of the dictionary.
-+   
 ```
 
 #### solution 2
+
 ```diff
--def keys_only(flat_dict):
-+def keys_only(flat_dict):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def keys_only(flat_dict):
+-  return list(flat_dict.keys())
 +    if not isinstance(flat_dict, dict):
 +        return flat_dict
 +    else:
 +        return flat_dict.keys()
 +
 +def values_only(flat_dict):
-+    if not isinstance(
 ```
 
 #### solution 3
+
 ```diff
--def keys_only(flat_dict):
-+def keys_only(flat_dict):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def keys_only(flat_dict):
+-  return list(flat_dict.keys())
 +    """
 +    Returns a tuple of all the keys of the dictionary
 +    :param flat_dict: dictionary
@@ -9642,10 +13180,16 @@ def keys_only(flat_dict):  return list(flat_dict.keys())
 ```
 
 #### solution 4
+
 ```diff
--def keys_only(flat_dict):
-+def keys_only(flat_dict):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def keys_only(flat_dict):
+-  return list(flat_dict.keys())
 +    for key, val in flat_dict.items():
 +        if isinstance(val, dict):
 +            keys_only(val)
@@ -9657,107 +13201,137 @@ def keys_only(flat_dict):  return list(flat_dict.keys())
 ### is_odd (task/120)
 
 #### canonical solution
+
 ```python
-def is_odd(num):  return num % 2 != 0
+def is_odd(num):
+  return num % 2 != 0
 ```
 
 #### solution 0
+
 ```diff
--def is_odd(num):
-+def is_odd(num):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def is_odd(num):
+-  return num % 2 != 0
 +    if num % 2 == 0:
 +        return False
 +    else:
 +        return True
 +
 +def fib_num(n):
-+    if n == 0:
-+        return 0
-+    elif n == 1:
 ```
 
 #### solution 1
+
 ```diff
--def is_odd(num):
-+def is_odd(num):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def is_odd(num):
+-  return num % 2 != 0
 +    return num % 2 == 1
 +
 +def is_even(num):
 +    return num % 2 == 0
 +
 +def is_prime(num):
-+    for divisor in range(2, int(math.sq
 ```
 
 #### solution 2
+
 ```diff
--def is_odd(num):
-+def is_odd(num):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def is_odd(num):
+-  return num % 2 != 0
 +    if num % 2 == 0:
 +        return False
 +    else:
 +        return True
 +
 +def remove_odd(lst):
-+    lst1 = []
-+    for i in lst:
-+        if is
 ```
 
 #### solution 3
+
 ```diff
--def is_odd(num):
-+def is_odd(num):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def is_odd(num):
+-  return num % 2 != 0
 +    if num % 2 == 0:
 +        return True
 +    else:
 +        return False
 +
 +print(is_odd(5))
-+
-+# 定义函数，判断
 ```
 
 #### solution 4
+
 ```diff
--def is_odd(num):
-+def is_odd(num):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def is_odd(num):
+-  return num % 2 != 0
 +    return num % 2 == 1
 +
 +def sum_odd_numbers(numbers):
 +    total = 0
 +    for num in numbers:
 +        if is_odd(num):
-+            total += num
-+    return
 ```
 
 ### group_by (task/121)
 
 #### canonical solution
+
 ```python
 from collections import defaultdict
 
-def group_by(lst, fn):  d = defaultdict(list)
+def group_by(lst, fn):
+  d = defaultdict(list)
   for el in lst:
     d[fn(el)].append(el)
   return dict(d)
 ```
 
 #### solution 0
+
 ```diff
--from collections import defaultdict
--
--def group_by(lst, fn):
-+from collections import defaultdict
-+
-+def group_by(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,11 @@
+
+ from collections import defaultdict
+ 
+ def group_by(lst, fn):
+-  d = defaultdict(list)
+-  for el in lst:
+-    d[fn(el)].append(el)
+-  return dict(d)
 +    d = defaultdict(list)
 +    for e in lst:
 +        d[fn(e)].append(e)
@@ -9769,14 +13343,21 @@ def group_by(lst, fn):  d = defaultdict(list)
 ```
 
 #### solution 1
+
 ```diff
--from collections import defaultdict
--
--def group_by(lst, fn):
-+from collections import defaultdict
-+
-+def group_by(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def group_by(lst, fn):
+-  d = defaultdict(list)
+-  for el in lst:
+-    d[fn(el)].append(el)
+-  return dict(d)
 +    groups = defaultdict(list)
 +    for x in lst:
 +        groups[fn(x)].append(x)
@@ -9787,14 +13368,21 @@ def group_by(lst, fn):  d = defaultdict(list)
 ```
 
 #### solution 2
+
 ```diff
--from collections import defaultdict
--
--def group_by(lst, fn):
-+from collections import defaultdict
-+
-+def group_by(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,10 @@
+
+ from collections import defaultdict
+ 
+ def group_by(lst, fn):
+-  d = defaultdict(list)
+-  for el in lst:
+-    d[fn(el)].append(el)
+-  return dict(d)
 +    grouped = defaultdict(list)
 +    for l in lst:
 +        grouped[fn(l)].append(l)
@@ -9805,14 +13393,21 @@ def group_by(lst, fn):  d = defaultdict(list)
 ```
 
 #### solution 3
+
 ```diff
--from collections import defaultdict
--
--def group_by(lst, fn):
-+from collections import defaultdict
-+
-+def group_by(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,9 @@
+
+ from collections import defaultdict
+ 
+ def group_by(lst, fn):
+-  d = defaultdict(list)
+-  for el in lst:
+-    d[fn(el)].append(el)
+-  return dict(d)
 +    d = defaultdict(list)
 +    for x in lst:
 +        d[fn(x)].append(x)
@@ -9822,14 +13417,21 @@ def group_by(lst, fn):  d = defaultdict(list)
 ```
 
 #### solution 4
+
 ```diff
--from collections import defaultdict
--
--def group_by(lst, fn):
-+from collections import defaultdict
-+
-+def group_by(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,11 @@
+
+ from collections import defaultdict
+ 
+ def group_by(lst, fn):
+-  d = defaultdict(list)
+-  for el in lst:
+-    d[fn(el)].append(el)
+-  return dict(d)
 +    groups = defaultdict(list)
 +    for el in lst:
 +        key = fn(el)
@@ -9843,46 +13445,61 @@ def group_by(lst, fn):  d = defaultdict(list)
 ### to_binary (task/122)
 
 #### canonical solution
+
 ```python
-def to_binary(n):  return bin(n)
+def to_binary(n):
+  return bin(n)
 ```
 
 #### solution 0
+
 ```diff
--def to_binary(n):
-+def to_binary(n):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def to_binary(n):
+-  return bin(n)
 +    s = ''
 +    while n > 0:
 +        s = str(n % 2) + s
 +        n = n // 2
 +    return s
 +
-+def to_base(n, b):
-+    s =
 ```
 
 #### solution 1
+
 ```diff
--def to_binary(n):
-+def to_binary(n):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def to_binary(n):
+-  return bin(n)
 +    if n > 1:
 +        to_binary(n//2)
 +    print(n % 2, end = '')
 +
 +to_binary(10)
 +print()
-+
-+#%%
-+# 2.1.
 ```
 
 #### solution 2
+
 ```diff
--def to_binary(n):
-+def to_binary(n):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def to_binary(n):
+-  return bin(n)
 +    #returns binary string of n, MSB first
 +    #for example, to_binary(14) returns '1110'
 +    string = ''
@@ -9891,24 +13508,35 @@ def to_binary(n):  return bin(n)
 ```
 
 #### solution 3
+
 ```diff
--def to_binary(n):
-+def to_binary(n):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def to_binary(n):
+-  return bin(n)
 +    return "{0:b}".format(n)
 +
 +def sum_weights(weights):
 +    return sum(weights)
 +
 +def trim_zeros(s):
-+    return s.lstrip('0')
 ```
 
 #### solution 4
+
 ```diff
--def to_binary(n):
-+def to_binary(n):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def to_binary(n):
+-  return bin(n)
 +    return [int(i) for i in list(bin(n)[2:])]
 +
 +def generate_numbers(n, m):
@@ -9918,15 +13546,23 @@ def to_binary(n):  return bin(n)
 ### compact (task/123)
 
 #### canonical solution
+
 ```python
-def compact(lst):  return list(filter(None, lst))
+def compact(lst):
+  return list(filter(None, lst))
 ```
 
 #### solution 0
+
 ```diff
--def compact(lst):
-+def compact(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def compact(lst):
+-  return list(filter(None, lst))
 +    return [item for item in lst if item]
 +
 +def check_if_installed(cmd):
@@ -9936,10 +13572,16 @@ def compact(lst):  return list(filter(None, lst))
 ```
 
 #### solution 1
+
 ```diff
--def compact(lst):
-+def compact(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def compact(lst):
+-  return list(filter(None, lst))
 +    if len(lst) <= 1:
 +        return lst
 +    if lst[0] == lst[1]:
@@ -9948,10 +13590,16 @@ def compact(lst):  return list(filter(None, lst))
 ```
 
 #### solution 2
+
 ```diff
--def compact(lst):
-+def compact(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def compact(lst):
+-  return list(filter(None, lst))
 +    """Return a copy of lst with non-true elements removed.
 +
 +        >>> compact([0, 1, 2, '', [], False, (), None, 'All done'])
@@ -9959,10 +13607,16 @@ def compact(lst):  return list(filter(None, lst))
 ```
 
 #### solution 3
+
 ```diff
--def compact(lst):
-+def compact(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def compact(lst):
+-  return list(filter(None, lst))
 +    """Return a copy of lst with non-true elements removed.
 +
 +        >>> compact([0, 1, 2, '', [], False, (), None, 'All done'])
@@ -9970,10 +13624,16 @@ def compact(lst):  return list(filter(None, lst))
 ```
 
 #### solution 4
+
 ```diff
--def compact(lst):
-+def compact(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def compact(lst):
+-  return list(filter(None, lst))
 +    """Return a copy of lst with non-true elements removed.
 +
 +        >>> compact([0, 1, 2, '', [], False, (), None, 'All done'])
@@ -9983,30 +13643,42 @@ def compact(lst):  return list(filter(None, lst))
 ### in_range (task/124)
 
 #### canonical solution
+
 ```python
-def in_range(n, start, end = 0):  return start <= n <= end if end >= start else end <= n <= start
+def in_range(n, start, end = 0):
+  return start <= n <= end if end >= start else end <= n <= start
 ```
 
 #### solution 0
+
 ```diff
--def in_range(n, start, end = 0):
-+def in_range(n, start, end = 0):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def in_range(n, start, end = 0):
+-  return start <= n <= end if end >= start else end <= n <= start
 +    if start < end:
 +        return start <= n <= end
 +    else:
 +        return start <= n or n <= end
 +
 +# def sum_of_squares(n):
-+#     s = 0
-+#
 ```
 
 #### solution 1
+
 ```diff
--def in_range(n, start, end = 0):
-+def in_range(n, start, end = 0):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def in_range(n, start, end = 0):
+-  return start <= n <= end if end >= start else end <= n <= start
 +	"""Returns True if n is between start and end. If end is not provided, it will return True if n is equal to start."""
 +	if end == 0:
 +		return n == start
@@ -10014,66 +13686,86 @@ def in_range(n, start, end = 0):  return start <= n <= end if end >= start else 
 ```
 
 #### solution 2
+
 ```diff
--def in_range(n, start, end = 0):
-+def in_range(n, start, end = 0):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def in_range(n, start, end = 0):
+-  return start <= n <= end if end >= start else end <= n <= start
 +    if end == 0:
 +        end = start
 +        start = 0
 +    return start <= n <= end
 +
 +def get_function_name():
-+    return traceback.extract_stack(None, 2)[0
 ```
 
 #### solution 3
+
 ```diff
--def in_range(n, start, end = 0):
-+def in_range(n, start, end = 0):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def in_range(n, start, end = 0):
+-  return start <= n <= end if end >= start else end <= n <= start
 +    if end == 0:
 +        end = start
 +        start = 0
 +    return n >= start and n < end
 +
 +# 计算阶乘
-+def factorial(n):
-+   
 ```
 
 #### solution 4
+
 ```diff
--def in_range(n, start, end = 0):
-+def in_range(n, start, end = 0):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def in_range(n, start, end = 0):
+-  return start <= n <= end if end >= start else end <= n <= start
 +    if end == 0:
 +        end = start
 +        start = 0
 +    return n >= start and n < end
 +
 +def is_allowed_specific_char(string):
-+    charRe = re.compile(
 ```
 
 ### daterange (task/125)
 
 #### canonical solution
+
 ```python
 from datetime import timedelta, date
 
-def daterange(start, end):  return [start + timedelta(n) for n in range(int((end - start).days))]
+def daterange(start, end):
+  return [start + timedelta(n) for n in range(int((end - start).days))]
 ```
 
 #### solution 0
+
 ```diff
--from datetime import timedelta, date
--
--def daterange(start, end):
-+from datetime import timedelta, date
-+
-+def daterange(start, end):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ from datetime import timedelta, date
+ 
+ def daterange(start, end):
+-  return [start + timedelta(n) for n in range(int((end - start).days))]
 +    for n in range(int ((end - start).days)):
 +        yield start + timedelta(n)
 +
@@ -10082,14 +13774,18 @@ def daterange(start, end):  return [start + timedelta(n) for n in range(int((end
 ```
 
 #### solution 1
+
 ```diff
--from datetime import timedelta, date
--
--def daterange(start, end):
-+from datetime import timedelta, date
-+
-+def daterange(start, end):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def daterange(start, end):
+-  return [start + timedelta(n) for n in range(int((end - start).days))]
 +    for n in range(int ((end - start).days)):
 +        yield start + timedelta(n)
 +
@@ -10099,32 +13795,39 @@ def daterange(start, end):  return [start + timedelta(n) for n in range(int((end
 ```
 
 #### solution 2
+
 ```diff
--from datetime import timedelta, date
--
--def daterange(start, end):
-+from datetime import timedelta, date
-+
-+def daterange(start, end):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import timedelta, date
+ 
+ def daterange(start, end):
+-  return [start + timedelta(n) for n in range(int((end - start).days))]
 +    """
 +    Generator that yields a date range between two dates.
 +    """
 +    for n in range(int ((end - start).days)):
 +        yield start + timedelta(n)
 +
-+def day_has
 ```
 
 #### solution 3
+
 ```diff
--from datetime import timedelta, date
--
--def daterange(start, end):
-+from datetime import timedelta, date
-+
-+def daterange(start, end):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,8 @@
+
+ from datetime import timedelta, date
+ 
+ def daterange(start, end):
+-  return [start + timedelta(n) for n in range(int((end - start).days))]
 +    for n in range(int ((end - start).days)):
 +        yield start + timedelta(n)
 +
@@ -10133,14 +13836,18 @@ def daterange(start, end):  return [start + timedelta(n) for n in range(int((end
 ```
 
 #### solution 4
+
 ```diff
--from datetime import timedelta, date
--
--def daterange(start, end):
-+from datetime import timedelta, date
-+
-+def daterange(start, end):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,7 @@
+
+ from datetime import timedelta, date
+ 
+ def daterange(start, end):
+-  return [start + timedelta(n) for n in range(int((end - start).days))]
 +    for n in range(int ((end - start).days)):
 +        yield start + timedelta(n)
 +
@@ -10150,23 +13857,31 @@ def daterange(start, end):  return [start + timedelta(n) for n in range(int((end
 ### chunk (task/126)
 
 #### canonical solution
+
 ```python
 from math import ceil
 
-def chunk(lst, size):  return list(
+def chunk(lst, size):
+  return list(
     map(lambda x: lst[x * size:x * size + size],
       list(range(ceil(len(lst) / size)))))
 ```
 
 #### solution 0
+
 ```diff
--from math import ceil
--
--def chunk(lst, size):
-+from math import ceil
-+
-+def chunk(lst, size):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,6 +1,7 @@
+
+ from math import ceil
+ 
+ def chunk(lst, size):
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-      list(range(ceil(len(lst) / size)))))
 +    for i in range(0, len(lst), size):
 +        yield lst[i:i + size]
 +
@@ -10174,14 +13889,20 @@ def chunk(lst, size):  return list(
 ```
 
 #### solution 1
+
 ```diff
--from math import ceil
--
--def chunk(lst, size):
-+from math import ceil
-+
-+def chunk(lst, size):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,6 +1,11 @@
+
+ from math import ceil
+ 
+ def chunk(lst, size):
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-      list(range(ceil(len(lst) / size)))))
 +    """
 +    Chunks a list into sublists of given size.
 +
@@ -10190,20 +13911,23 @@ def chunk(lst, size):  return list(
 +    lst : list
 +        The list to chunk.
 +    size : int
-+        The chunk size.
-+
-+    Returns
 ```
 
 #### solution 2
+
 ```diff
--from math import ceil
--
--def chunk(lst, size):
-+from math import ceil
-+
-+def chunk(lst, size):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,6 +1,7 @@
+
+ from math import ceil
+ 
+ def chunk(lst, size):
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-      list(range(ceil(len(lst) / size)))))
 +    return list(lst[i:i+size] for i in range(0, len(lst), size))
 +
 +def decode(xs):
@@ -10211,14 +13935,20 @@ def chunk(lst, size):  return list(
 ```
 
 #### solution 3
+
 ```diff
--from math import ceil
--
--def chunk(lst, size):
-+from math import ceil
-+
-+def chunk(lst, size):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,6 +1,8 @@
+
+ from math import ceil
+ 
+ def chunk(lst, size):
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-      list(range(ceil(len(lst) / size)))))
 +    return list(
 +        map(lambda x: lst[x * size:x * size + size],
 +            list(range(0, ceil(len(lst) / size)))))
@@ -10227,14 +13957,20 @@ def chunk(lst, size):  return list(
 ```
 
 #### solution 4
+
 ```diff
--from math import ceil
--
--def chunk(lst, size):
-+from math import ceil
-+
-+def chunk(lst, size):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,6 +1,8 @@
+
+ from math import ceil
+ 
+ def chunk(lst, size):
+-  return list(
+-    map(lambda x: lst[x * size:x * size + size],
+-      list(range(ceil(len(lst) / size)))))
 +    return list(
 +        map(lambda x: lst[x * size:x * size + size],
 +            list(range(0, ceil(len(lst) / size)))))
@@ -10245,22 +13981,29 @@ def chunk(lst, size):  return list(
 ### deep_flatten (task/127)
 
 #### canonical solution
+
 ```python
 from collections.abc import Iterable
 
-def deep_flatten(lst):  return ([a for i in lst for a in
+def deep_flatten(lst):
+  return ([a for i in lst for a in
           deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 ```
 
 #### solution 0
+
 ```diff
--from collections.abc import Iterable
--
--def deep_flatten(lst):
-+from collections.abc import Iterable
-+
-+def deep_flatten(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,10 @@
+
+ from collections.abc import Iterable
+ 
+ def deep_flatten(lst):
+-  return ([a for i in lst for a in
+-          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 +    for item in lst:
 +        if isinstance(item, Iterable):
 +            yield from deep_flatten(item)
@@ -10271,14 +14014,19 @@ def deep_flatten(lst):  return ([a for i in lst for a in
 ```
 
 #### solution 1
+
 ```diff
--from collections.abc import Iterable
--
--def deep_flatten(lst):
-+from collections.abc import Iterable
-+
-+def deep_flatten(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,7 @@
+
+ from collections.abc import Iterable
+ 
+ def deep_flatten(lst):
+-  return ([a for i in lst for a in
+-          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 +    """Recursively flatten a list"""
 +    for el in lst:
 +        if isinstance(el, Iterable) and not isinstance(el, (str, bytes)):
@@ -10286,14 +14034,19 @@ def deep_flatten(lst):  return ([a for i in lst for a in
 ```
 
 #### solution 2
+
 ```diff
--from collections.abc import Iterable
--
--def deep_flatten(lst):
-+from collections.abc import Iterable
-+
-+def deep_flatten(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,8 @@
+
+ from collections.abc import Iterable
+ 
+ def deep_flatten(lst):
+-  return ([a for i in lst for a in
+-          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 +    for el in lst:
 +        if isinstance(el, Iterable) and not isinstance(el, (str, bytes)):
 +            yield from deep_flatten(el)
@@ -10302,14 +14055,19 @@ def deep_flatten(lst):  return ([a for i in lst for a in
 ```
 
 #### solution 3
+
 ```diff
--from collections.abc import Iterable
--
--def deep_flatten(lst):
-+from collections.abc import Iterable
-+
-+def deep_flatten(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,7 @@
+
+ from collections.abc import Iterable
+ 
+ def deep_flatten(lst):
+-  return ([a for i in lst for a in
+-          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 +    """Flatten an iterable deeply."""
 +    for el in lst:
 +        if isinstance(el, Iterable) and not isinstance(el, (str, bytes)):
@@ -10317,14 +14075,19 @@ def deep_flatten(lst):  return ([a for i in lst for a in
 ```
 
 #### solution 4
+
 ```diff
--from collections.abc import Iterable
--
--def deep_flatten(lst):
-+from collections.abc import Iterable
-+
-+def deep_flatten(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,9 @@
+
+ from collections.abc import Iterable
+ 
+ def deep_flatten(lst):
+-  return ([a for i in lst for a in
+-          deep_flatten(i)] if isinstance(lst, Iterable) else [lst])
 +    result = []
 +    for x in lst:
 +        if isinstance(x, Iterable):
@@ -10336,15 +14099,23 @@ def deep_flatten(lst):  return ([a for i in lst for a in
 ### initialize_list_with_values (task/128)
 
 #### canonical solution
+
 ```python
-def initialize_list_with_values(n, val = 0):  return [val for x in range(n)]
+def initialize_list_with_values(n, val = 0):
+  return [val for x in range(n)]
 ```
 
 #### solution 0
+
 ```diff
--def initialize_list_with_values(n, val = 0):
-+def initialize_list_with_values(n, val = 0):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_values(n, val = 0):
+-  return [val for x in range(n)]
 +    new_list = []
 +    for i in range(n):
 +        new_list.append(val)
@@ -10354,40 +14125,54 @@ def initialize_list_with_values(n, val = 0):  return [val for x in range(n)]
 ```
 
 #### solution 1
+
 ```diff
--def initialize_list_with_values(n, val = 0):
-+def initialize_list_with_values(n, val = 0):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_values(n, val = 0):
+-  return [val for x in range(n)]
 +    """
 +    Creates a list of length n initialized with the value val.
 +    """
 +    return [val for i in range(n)]
 +
 +def get_vector_sum(vector):
-+    """
-+    Returns
 ```
 
 #### solution 2
+
 ```diff
--def initialize_list_with_values(n, val = 0):
-+def initialize_list_with_values(n, val = 0):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_values(n, val = 0):
+-  return [val for x in range(n)]
 +    for i in range(n):
 +        l.append(val)
 +
 +# add value v to position i
 +def add_value(i, v):
 +    l[i] += v
-+
-+# initialize list with
 ```
 
 #### solution 3
+
 ```diff
--def initialize_list_with_values(n, val = 0):
-+def initialize_list_with_values(n, val = 0):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_values(n, val = 0):
+-  return [val for x in range(n)]
 +    list_with_values = []
 +    for i in range(n):
 +        list_with_values.append(val)
@@ -10397,45 +14182,63 @@ def initialize_list_with_values(n, val = 0):  return [val for x in range(n)]
 ```
 
 #### solution 4
+
 ```diff
--def initialize_list_with_values(n, val = 0):
-+def initialize_list_with_values(n, val = 0):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def initialize_list_with_values(n, val = 0):
+-  return [val for x in range(n)]
 +    l = []
 +    for i in range(n):
 +        l.append(val)
 +    return l
 +
 +def initialize_matrix_with_values(n, m, val = 0):
-+    mat =
 ```
 
 ### average_by (task/129)
 
 #### canonical solution
+
 ```python
-def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
+def average_by(lst, fn = lambda x: x):
+  return sum(map(fn, lst), 0.0) / len(lst)
 ```
 
 #### solution 0
+
 ```diff
--def average_by(lst, fn = lambda x: x):
-+def average_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def average_by(lst, fn = lambda x: x):
+-  return sum(map(fn, lst), 0.0) / len(lst)
 +    """
 +    Returns the average of list items that match the selector function
 +    :param lst:
 +    :param fn:
 +    :return:
 +    """
-+    if not isinstance(lst, list):
 ```
 
 #### solution 1
+
 ```diff
--def average_by(lst, fn = lambda x: x):
-+def average_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def average_by(lst, fn = lambda x: x):
+-  return sum(map(fn, lst), 0.0) / len(lst)
 +    return sum(map(fn, lst)) / len(lst)
 +
 +#TODO: maybe use itertools.tee
@@ -10444,10 +14247,16 @@ def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
 ```
 
 #### solution 2
+
 ```diff
--def average_by(lst, fn = lambda x: x):
-+def average_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def average_by(lst, fn = lambda x: x):
+-  return sum(map(fn, lst), 0.0) / len(lst)
 +    """
 +    Return the average value of the elements in the given list, after mapping
 +    each element to a value using the given function.
@@ -10456,10 +14265,16 @@ def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
 ```
 
 #### solution 3
+
 ```diff
--def average_by(lst, fn = lambda x: x):
-+def average_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def average_by(lst, fn = lambda x: x):
+-  return sum(map(fn, lst), 0.0) / len(lst)
 +    """ Returns the average of a list (lst) of numbers.
 +
 +    :param lst: a list of numbers
@@ -10468,10 +14283,16 @@ def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
 ```
 
 #### solution 4
+
 ```diff
--def average_by(lst, fn = lambda x: x):
-+def average_by(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def average_by(lst, fn = lambda x: x):
+-  return sum(map(fn, lst), 0.0) / len(lst)
 +    """Return the average of lst, using fn to get values.
 +    """
 +    return sum(fn(x) for x in lst) / len(lst)
@@ -10482,15 +14303,23 @@ def average_by(lst, fn = lambda x: x):  return sum(map(fn, lst), 0.0) / len(lst)
 ### key_of_max (task/130)
 
 #### canonical solution
+
 ```python
-def key_of_max(d):  return max(d, key = d.get)
+def key_of_max(d):
+  return max(d, key = d.get)
 ```
 
 #### solution 0
+
 ```diff
--def key_of_max(d):
-+def key_of_max(d):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_max(d):
+-  return max(d, key = d.get)
 +    return key_of_max_value(d)
 +
 +def main():
@@ -10500,10 +14329,16 @@ def key_of_max(d):  return max(d, key = d.get)
 ```
 
 #### solution 1
+
 ```diff
--def key_of_max(d):
-+def key_of_max(d):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def key_of_max(d):
+-  return max(d, key = d.get)
 +    v=list(d.values())
 +    k=list(d.keys())
 +    return k[v.index(max(v))]
@@ -10512,27 +14347,35 @@ def key_of_max(d):  return max(d, key = d.get)
 ```
 
 #### solution 2
+
 ```diff
--def key_of_max(d):
-+def key_of_max(d):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_max(d):
+-  return max(d, key = d.get)
 +    key = None
 +    max = -1
 +    for k in d:
 +        if d[k] > max:
 +            max = d[k]
 +            key = k
-+    return key
-+
-+
-+def test_
 ```
 
 #### solution 3
+
 ```diff
--def key_of_max(d):
-+def key_of_max(d):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def key_of_max(d):
+-  return max(d, key = d.get)
 +    return max(d, key=d.get)
 +
 +def answer(snapshots, transactions):
@@ -10542,10 +14385,16 @@ def key_of_max(d):  return max(d, key = d.get)
 ```
 
 #### solution 4
+
 ```diff
--def key_of_max(d):
-+def key_of_max(d):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def key_of_max(d):
+-  return max(d, key = d.get)
 +    """Returns the key in a dict d that corresponds to the maximum value of d.
 +
 +    >>> letters = {'a': 6, 'b': 5, 'c': 4, 'd': 5}
@@ -10555,31 +14404,42 @@ def key_of_max(d):  return max(d, key = d.get)
 ### offset (task/131)
 
 #### canonical solution
+
 ```python
-def offset(lst, offset):  return lst[offset:] + lst[:offset]
+def offset(lst, offset):
+  return lst[offset:] + lst[:offset]
 ```
 
 #### solution 0
+
 ```diff
--def offset(lst, offset):
-+def offset(lst, offset):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def offset(lst, offset):
+-  return lst[offset:] + lst[:offset]
 +    return lst[offset:] + lst[:offset]
 +
 +
 +def read_file(filename):
 +    with open(filename, 'r') as f:
 +        return f.read()
-+
-+
-+def write_file
 ```
 
 #### solution 1
+
 ```diff
--def offset(lst, offset):
-+def offset(lst, offset):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def offset(lst, offset):
+-  return lst[offset:] + lst[:offset]
 +    return lst[offset:] + lst[:offset]
 +
 +
@@ -10588,40 +14448,54 @@ def offset(lst, offset):  return lst[offset:] + lst[:offset]
 ```
 
 #### solution 2
+
 ```diff
--def offset(lst, offset):
-+def offset(lst, offset):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def offset(lst, offset):
+-  return lst[offset:] + lst[:offset]
 +    return lst[offset:] + lst[:offset]
 +
 +
 +class PlaybackMode(object):
 +    """
 +    Enum-like class that defines the playback modes for the playlist.
-+    """
-+
-+    #:
 ```
 
 #### solution 3
+
 ```diff
--def offset(lst, offset):
-+def offset(lst, offset):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def offset(lst, offset):
+-  return lst[offset:] + lst[:offset]
 +    return lst[offset:] + lst[:offset]
 +
 +
 +class TestRunner(object):
 +    def __init__(self, bot, options):
 +        self.bot = bot
-+        self.options = options
 ```
 
 #### solution 4
+
 ```diff
--def offset(lst, offset):
-+def offset(lst, offset):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def offset(lst, offset):
+-  return lst[offset:] + lst[:offset]
 +    return lst[offset:] + lst[:offset]
 +
 +
@@ -10633,16 +14507,25 @@ def offset(lst, offset):  return lst[offset:] + lst[:offset]
 ### intersection_by (task/132)
 
 #### canonical solution
+
 ```python
-def intersection_by(a, b, fn):  _b = set(map(fn, b))
+def intersection_by(a, b, fn):
+  _b = set(map(fn, b))
   return [item for item in a if fn(item) in _b]
 ```
 
 #### solution 0
+
 ```diff
--def intersection_by(a, b, fn):
-+def intersection_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,8 @@
+
+ def intersection_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) in _b]
 +    result = []
 +    for x in a:
 +        for y in b:
@@ -10650,26 +14533,37 @@ def intersection_by(a, b, fn):  _b = set(map(fn, b))
 +                result.append(x)
 +                break
 +    return result
-+
-+
-+def union_by(
 ```
 
 #### solution 1
+
 ```diff
--def intersection_by(a, b, fn):
-+def intersection_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,4 @@
+
+ def intersection_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) in _b]
 +    fn1 = lambda o: [ x for x in a if fn(o, x) ]
 +    fn2 = lambda o: [ x for x in b if fn(o, x) ]
 +    return intersection(fn
 ```
 
 #### solution 2
+
 ```diff
--def intersection_by(a, b, fn):
-+def intersection_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,7 @@
+
+ def intersection_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) in _b]
 +    '''
 +    @param a list of objects
 +    @param b list of objects
@@ -10679,10 +14573,17 @@ def intersection_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 3
+
 ```diff
--def intersection_by(a, b, fn):
-+def intersection_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,7 @@
+
+ def intersection_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) in _b]
 +    return dict([(x, x) for x in a if x in b and fn(x)])
 +
 +
@@ -10692,10 +14593,17 @@ def intersection_by(a, b, fn):  _b = set(map(fn, b))
 ```
 
 #### solution 4
+
 ```diff
--def intersection_by(a, b, fn):
-+def intersection_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,8 @@
+
+ def intersection_by(a, b, fn):
+-  _b = set(map(fn, b))
+-  return [item for item in a if fn(item) in _b]
 +    """
 +    Returns the intersection of both iterables, where the intersection is defined
 +    by the `fn` function.
@@ -10708,16 +14616,25 @@ def intersection_by(a, b, fn):  _b = set(map(fn, b))
 ### union_by (task/133)
 
 #### canonical solution
+
 ```python
-def union_by(a, b, fn):  _a = set(map(fn, a))
+def union_by(a, b, fn):
+  _a = set(map(fn, a))
   return list(set(a + [item for item in b if fn(item) not in _a]))
 ```
 
 #### solution 0
+
 ```diff
--def union_by(a, b, fn):
-+def union_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,7 @@
+
+ def union_by(a, b, fn):
+-  _a = set(map(fn, a))
+-  return list(set(a + [item for item in b if fn(item) not in _a]))
 +    """
 +    Returns the union of two lists, after applying the provided function
 +    to each list element of both.
@@ -10727,10 +14644,17 @@ def union_by(a, b, fn):  _a = set(map(fn, a))
 ```
 
 #### solution 1
+
 ```diff
--def union_by(a, b, fn):
-+def union_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,8 @@
+
+ def union_by(a, b, fn):
+-  _a = set(map(fn, a))
+-  return list(set(a + [item for item in b if fn(item) not in _a]))
 +    """Union the two sets of objects by the key function.
 +
 +    The source order is preserved.
@@ -10738,16 +14662,20 @@ def union_by(a, b, fn):  _a = set(map(fn, a))
 +    Parameters
 +    ----------
 +    a : list
-+        The first set of objects.
-+    b : list
-+        The
 ```
 
 #### solution 2
+
 ```diff
--def union_by(a, b, fn):
-+def union_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,7 @@
+
+ def union_by(a, b, fn):
+-  _a = set(map(fn, a))
+-  return list(set(a + [item for item in b if fn(item) not in _a]))
 +    """Return the union of two lists, after applying the provided function
 +    to each list element of both.
 +
@@ -10757,10 +14685,17 @@ def union_by(a, b, fn):  _a = set(map(fn, a))
 ```
 
 #### solution 3
+
 ```diff
--def union_by(a, b, fn):
-+def union_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,7 @@
+
+ def union_by(a, b, fn):
+-  _a = set(map(fn, a))
+-  return list(set(a + [item for item in b if fn(item) not in _a]))
 +    """
 +    Returns the union of two lists, after applying the provided function
 +    to each list element of both.
@@ -10770,10 +14705,17 @@ def union_by(a, b, fn):  _a = set(map(fn, a))
 ```
 
 #### solution 4
+
 ```diff
--def union_by(a, b, fn):
-+def union_by(a, b, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,6 @@
+
+ def union_by(a, b, fn):
+-  _a = set(map(fn, a))
+-  return list(set(a + [item for item in b if fn(item) not in _a]))
 +    """Combine two lists of dictionaries with different keys.
 +
 +    Each item in the result contains all the keys from
@@ -10784,15 +14726,23 @@ def union_by(a, b, fn):  _a = set(map(fn, a))
 ### all_unique (task/134)
 
 #### canonical solution
+
 ```python
-def all_unique(lst):  return len(lst) == len(set(lst))
+def all_unique(lst):
+  return len(lst) == len(set(lst))
 ```
 
 #### solution 0
+
 ```diff
--def all_unique(lst):
-+def all_unique(lst):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def all_unique(lst):
+-  return len(lst) == len(set(lst))
 +    """Are all the elements in the list unique?"""
 +    return len(lst) == len(set(lst))
 +
@@ -10802,24 +14752,35 @@ def all_unique(lst):  return len(lst) == len(set(lst))
 ```
 
 #### solution 1
+
 ```diff
--def all_unique(lst):
-+def all_unique(lst):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def all_unique(lst):
+-  return len(lst) == len(set(lst))
 +    lst.sort()
 +    for i in range(len(lst)-1):
 +        if lst[i] == lst[i+1]:
 +            return False
 +    return True
 +
-+# print(
 ```
 
 #### solution 2
+
 ```diff
--def all_unique(lst):
-+def all_unique(lst):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def all_unique(lst):
+-  return len(lst) == len(set(lst))
 +    return len(lst) == len(set(lst))
 +
 +def sum_index_same(lst):
@@ -10828,19 +14789,31 @@ def all_unique(lst):  return len(lst) == len(set(lst))
 ```
 
 #### solution 3
+
 ```diff
--def all_unique(lst):
-+def all_unique(lst):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,3 @@
+
+ def all_unique(lst):
+-  return len(lst) == len(set(lst))
 +    '''
 +    Написать функцию которая проверяет уник
 ```
 
 #### solution 4
+
 ```diff
--def all_unique(lst):
-+def all_unique(lst):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def all_unique(lst):
+-  return len(lst) == len(set(lst))
 +    '''Check all items are unique'''
 +    return len(lst) == len(set(lst))
 +
@@ -10852,30 +14825,42 @@ def all_unique(lst):  return len(lst) == len(set(lst))
 ### pluck (task/135)
 
 #### canonical solution
+
 ```python
-def pluck(lst, key):  return [x.get(key) for x in lst]
+def pluck(lst, key):
+  return [x.get(key) for x in lst]
 ```
 
 #### solution 0
+
 ```diff
--def pluck(lst, key):
-+def pluck(lst, key):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def pluck(lst, key):
+-  return [x.get(key) for x in lst]
 +    return [item[key] for item in lst]
 +
 +def is_valid_json(text):
 +    try:
 +        json.loads(text)
 +        return True
-+    except ValueError:
-+        return
 ```
 
 #### solution 1
+
 ```diff
--def pluck(lst, key):
-+def pluck(lst, key):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def pluck(lst, key):
+-  return [x.get(key) for x in lst]
 +    "return a list of the given key in all the dicts in the list"
 +    return [d[key] for d in lst]
 +
@@ -10884,43 +14869,54 @@ def pluck(lst, key):  return [x.get(key) for x in lst]
 ```
 
 #### solution 2
+
 ```diff
--def pluck(lst, key):
-+def pluck(lst, key):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def pluck(lst, key):
+-  return [x.get(key) for x in lst]
 +    return [val[key] for val in lst]
 +
 +
 +def stop():
 +    """
 +    Stop all current requests and stop the reactor
-+    """
-+    global _running_requests
-+    for req in _running
 ```
 
 #### solution 3
+
 ```diff
--def pluck(lst, key):
-+def pluck(lst, key):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def pluck(lst, key):
+-  return [x.get(key) for x in lst]
 +    return [
 +        elem[key]
 +        for elem in lst
 +    ]
 +
 +
-+@register.simple_tag
-+def active(request, pattern):
-+    if pattern == '/':
-+        return 'active
 ```
 
 #### solution 4
+
 ```diff
--def pluck(lst, key):
-+def pluck(lst, key):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def pluck(lst, key):
+-  return [x.get(key) for x in lst]
 +    return [d[key] for d in lst]
 +
 +def process_file(filename):
@@ -10932,16 +14928,25 @@ def pluck(lst, key):  return [x.get(key) for x in lst]
 ### for_each (task/136)
 
 #### canonical solution
+
 ```python
-def for_each(itr, fn):  for el in itr:
+def for_each(itr, fn):
+  for el in itr:
     fn(el)
 ```
 
 #### solution 0
+
 ```diff
--def for_each(itr, fn):
-+def for_each(itr, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each(itr, fn):
+-  for el in itr:
+-    fn(el)
 +    for elem in itr:
 +        fn(elem)
 +
@@ -10952,10 +14957,17 @@ def for_each(itr, fn):  for el in itr:
 ```
 
 #### solution 1
+
 ```diff
--def for_each(itr, fn):
-+def for_each(itr, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,7 @@
+
+ def for_each(itr, fn):
+-  for el in itr:
+-    fn(el)
 +    return [fn(e) for e in itr]
 +
 +
@@ -10965,10 +14977,17 @@ def for_each(itr, fn):  for el in itr:
 ```
 
 #### solution 2
+
 ```diff
--def for_each(itr, fn):
-+def for_each(itr, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each(itr, fn):
+-  for el in itr:
+-    fn(el)
 +    """
 +    Iterate over an iterator and call a function on each element. Return a
 +    list of the results.
@@ -10976,16 +14995,20 @@ def for_each(itr, fn):  for el in itr:
 +    Parameters
 +    ----------
 +    itr : iterator
-+        The iterator.
-+
-+    fn : function
 ```
 
 #### solution 3
+
 ```diff
--def for_each(itr, fn):
-+def for_each(itr, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each(itr, fn):
+-  for el in itr:
+-    fn(el)
 +    for item in itr:
 +        fn(item)
 +
@@ -10993,14 +15016,20 @@ def for_each(itr, fn):  for el in itr:
 +def as_iterator(itr):
 +    if not isinstance(itr, Iterator):
 +        itr = iter(itr)
-+    return
 ```
 
 #### solution 4
+
 ```diff
--def for_each(itr, fn):
-+def for_each(itr, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each(itr, fn):
+-  for el in itr:
+-    fn(el)
 +    for value in itr:
 +        fn(value)
 +
@@ -11008,78 +15037,104 @@ def for_each(itr, fn):  for el in itr:
 +    return [fn(v) for v in itr]
 +
 +def filter(itr, fn):
-+   
 ```
 
 ### every (task/137)
 
 #### canonical solution
+
 ```python
-def every(lst, fn = lambda x: x):  return all(map(fn, lst))
+def every(lst, fn = lambda x: x):
+  return all(map(fn, lst))
 ```
 
 #### solution 0
+
 ```diff
--def every(lst, fn = lambda x: x):
-+def every(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def every(lst, fn = lambda x: x):
+-  return all(map(fn, lst))
 +	for x in lst:
 +		if not fn(x):
 +			return False
 +	return True
 +
 +def any(lst, fn = lambda x: x):
-+	for x in lst:
 ```
 
 #### solution 1
+
 ```diff
--def every(lst, fn = lambda x: x):
-+def every(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def every(lst, fn = lambda x: x):
+-  return all(map(fn, lst))
 +    for i in lst:
 +        if not fn(i):
 +            return False
 +    return True
 +
 +# def except_(lst, fn = lambda x: x):
-+#     for i in lst:
 ```
 
 #### solution 2
+
 ```diff
--def every(lst, fn = lambda x: x):
-+def every(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def every(lst, fn = lambda x: x):
+-  return all(map(fn, lst))
 +	for x in lst:
 +		if not fn(x):
 +			return False
 +	return True
 +
 +def any(lst, fn = lambda x: x):
-+	for x in lst:
 ```
 
 #### solution 3
+
 ```diff
--def every(lst, fn = lambda x: x):
-+def every(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def every(lst, fn = lambda x: x):
+-  return all(map(fn, lst))
 +    for i in lst:
 +        if not fn(i):
 +            return False
 +    return True
 +
 +def single(lst, fn = lambda x: x):
-+    i = 0
-+    for x in l
 ```
 
 #### solution 4
+
 ```diff
--def every(lst, fn = lambda x: x):
-+def every(lst, fn = lambda x: x):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def every(lst, fn = lambda x: x):
+-  return all(map(fn, lst))
 +    return reduce(lambda x, y: x and fn(y), lst, True)
 +
 +def any(lst, fn = lambda x: x):
@@ -11089,15 +15144,23 @@ def every(lst, fn = lambda x: x):  return all(map(fn, lst))
 ### byte_size (task/138)
 
 #### canonical solution
+
 ```python
-def byte_size(s):  return len(s.encode('utf-8'))
+def byte_size(s):
+  return len(s.encode('utf-8'))
 ```
 
 #### solution 0
+
 ```diff
--def byte_size(s):
-+def byte_size(s):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def byte_size(s):
+-  return len(s.encode('utf-8'))
 +    """
 +    Calculates the number of bytes necessary to encode the given string. This
 +    method uses the same logic as the base64 module to determine the size of
@@ -11105,10 +15168,16 @@ def byte_size(s):  return len(s.encode('utf-8'))
 ```
 
 #### solution 1
+
 ```diff
--def byte_size(s):
-+def byte_size(s):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def byte_size(s):
+-  return len(s.encode('utf-8'))
 +    return len(s.encode('utf-8'))
 +
 +
@@ -11117,26 +15186,35 @@ def byte_size(s):  return len(s.encode('utf-8'))
 ```
 
 #### solution 2
+
 ```diff
--def byte_size(s):
-+def byte_size(s):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def byte_size(s):
+-  return len(s.encode('utf-8'))
 +    try:
 +        return len(s.encode('utf-8'))
 +    except UnicodeDecodeError:
 +        return len(s)
 +
 +
-+def get_terminal_size():
-+    """
-+    get
 ```
 
 #### solution 3
+
 ```diff
--def byte_size(s):
-+def byte_size(s):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def byte_size(s):
+-  return len(s.encode('utf-8'))
 +    """Return the length of s in bytes."""
 +    return len(s.encode('utf-8'))
 +
@@ -11146,10 +15224,16 @@ def byte_size(s):  return len(s.encode('utf-8'))
 ```
 
 #### solution 4
+
 ```diff
--def byte_size(s):
-+def byte_size(s):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def byte_size(s):
+-  return len(s.encode('utf-8'))
 +    return len(s.encode('utf-8'))
 +
 +
@@ -11161,44 +15245,61 @@ def byte_size(s):  return len(s.encode('utf-8'))
 ### pad_number (task/139)
 
 #### canonical solution
+
 ```python
-def pad_number(n, l):  return str(n).zfill(l)
+def pad_number(n, l):
+  return str(n).zfill(l)
 ```
 
 #### solution 0
+
 ```diff
--def pad_number(n, l):
-+def pad_number(n, l):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def pad_number(n, l):
+-  return str(n).zfill(l)
 +    """
 +    Pad the number n with zeros in order to get a string of length l.
 +    """
 +    return str(n).zfill(l)
 +
 +
-+def parse_args():
-+    parser = argparse
 ```
 
 #### solution 1
+
 ```diff
--def pad_number(n, l):
-+def pad_number(n, l):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def pad_number(n, l):
+-  return str(n).zfill(l)
 +    s = str(n)
 +    while len(s) < l:
 +        s = '0' + s
 +    return s
 +
 +def get_time_stamp():
-+    return datetime.datetime.
 ```
 
 #### solution 2
+
 ```diff
--def pad_number(n, l):
-+def pad_number(n, l):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def pad_number(n, l):
+-  return str(n).zfill(l)
 +    return ' ' * (l - len(str(n))) + str(n)
 +
 +
@@ -11207,24 +15308,35 @@ def pad_number(n, l):  return str(n).zfill(l)
 ```
 
 #### solution 3
+
 ```diff
--def pad_number(n, l):
-+def pad_number(n, l):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def pad_number(n, l):
+-  return str(n).zfill(l)
 +    t = str(n)
 +    while len(t) < l:
 +        t = '0' + t
 +    return t
 +
 +def double_hash(s):
-+    return hashlib.sha256(hash
 ```
 
 #### solution 4
+
 ```diff
--def pad_number(n, l):
-+def pad_number(n, l):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def pad_number(n, l):
+-  return str(n).zfill(l)
 +    """
 +    takes an integer n and returns a string of length l (l >= len(str(n)))
 +    representing n, so that lexicographic sorting of the string repr. leads to
@@ -11235,16 +15347,25 @@ def pad_number(n, l):  return str(n).zfill(l)
 ### for_each_right (task/140)
 
 #### canonical solution
+
 ```python
-def for_each_right(itr, fn):  for el in itr[::-1]:
+def for_each_right(itr, fn):
+  for el in itr[::-1]:
     fn(el)
 ```
 
 #### solution 0
+
 ```diff
--def for_each_right(itr, fn):
-+def for_each_right(itr, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each_right(itr, fn):
+-  for el in itr[::-1]:
+-    fn(el)
 +    """
 +    Call `fn` with each element of `itr` as the first arg and return `itr`.
 +
@@ -11255,10 +15376,17 @@ def for_each_right(itr, fn):  for el in itr[::-1]:
 ```
 
 #### solution 1
+
 ```diff
--def for_each_right(itr, fn):
-+def for_each_right(itr, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each_right(itr, fn):
+-  for el in itr[::-1]:
+-    fn(el)
 +    """
 +    Iterates over the iterable right-to-left, passing each result to a
 +    callback.
@@ -11269,10 +15397,17 @@ def for_each_right(itr, fn):  for el in itr[::-1]:
 ```
 
 #### solution 2
+
 ```diff
--def for_each_right(itr, fn):
-+def for_each_right(itr, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,3 +1,7 @@
+
+ def for_each_right(itr, fn):
+-  for el in itr[::-1]:
+-    fn(el)
 +    """
 +    Performs a right-handed, fold-like iteration over the elements of an
 +    iterable.
@@ -11282,10 +15417,17 @@ def for_each_right(itr, fn):  for el in itr[::-1]:
 ```
 
 #### solution 3
+
 ```diff
--def for_each_right(itr, fn):
-+def for_each_right(itr, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each_right(itr, fn):
+-  for el in itr[::-1]:
+-    fn(el)
 +    """
 +    Calls the given function with each element in the given iterable, and then
 +    returns the iterable.
@@ -11293,14 +15435,20 @@ def for_each_right(itr, fn):  for el in itr[::-1]:
 +    Parameters
 +    ----------
 +    itr : iterable
-+        The iterable to call the function
 ```
 
 #### solution 4
+
 ```diff
--def for_each_right(itr, fn):
-+def for_each_right(itr, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,3 +1,8 @@
+
+ def for_each_right(itr, fn):
+-  for el in itr[::-1]:
+-    fn(el)
 +    itr = reversed(itr)
 +    return for_each(itr, fn)
 +
@@ -11308,18 +15456,17 @@ def for_each_right(itr, fn):  for el in itr[::-1]:
 +def tap(val, fn):
 +    fn(val)
 +    return val
-+
-+
-+def tap_all(itr
 ```
 
 ### is_anagram (task/141)
 
 #### canonical solution
+
 ```python
 from collections import Counter
 
-def is_anagram(s1, s2):  return Counter(
+def is_anagram(s1, s2):
+  return Counter(
     c.lower() for c in s1 if c.isalnum()
   ) == Counter(
     c.lower() for c in s2 if c.isalnum()
@@ -11327,14 +15474,22 @@ def is_anagram(s1, s2):  return Counter(
 ```
 
 #### solution 0
+
 ```diff
--from collections import Counter
--
--def is_anagram(s1, s2):
-+from collections import Counter
-+
-+def is_anagram(s1, s2):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,8 +1,7 @@
+
+ from collections import Counter
+ 
+ def is_anagram(s1, s2):
+-  return Counter(
+-    c.lower() for c in s1 if c.isalnum()
+-  ) == Counter(
+-    c.lower() for c in s2 if c.isalnum()
+-  )
 +    return Counter(s1) == Counter(s2)
 +
 +def detect_anagrams(word, candidates):
@@ -11342,14 +15497,22 @@ def is_anagram(s1, s2):  return Counter(
 ```
 
 #### solution 1
+
 ```diff
--from collections import Counter
--
--def is_anagram(s1, s2):
-+from collections import Counter
-+
-+def is_anagram(s1, s2):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,8 +1,12 @@
+
+ from collections import Counter
+ 
+ def is_anagram(s1, s2):
+-  return Counter(
+-    c.lower() for c in s1 if c.isalnum()
+-  ) == Counter(
+-    c.lower() for c in s2 if c.isalnum()
+-  )
 +    return Counter(s1) == Counter(s2)
 +
 +a = "fairy tales"
@@ -11362,14 +15525,22 @@ def is_anagram(s1, s2):  return Counter(
 ```
 
 #### solution 2
+
 ```diff
--from collections import Counter
--
--def is_anagram(s1, s2):
-+from collections import Counter
-+
-+def is_anagram(s1, s2):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,8 +1,9 @@
+
+ from collections import Counter
+ 
+ def is_anagram(s1, s2):
+-  return Counter(
+-    c.lower() for c in s1 if c.isalnum()
+-  ) == Counter(
+-    c.lower() for c in s2 if c.isalnum()
+-  )
 +    return Counter(s1) == Counter(s2)
 +
 +def is_anagram2(s1, s2):
@@ -11379,14 +15550,22 @@ def is_anagram(s1, s2):  return Counter(
 ```
 
 #### solution 3
+
 ```diff
--from collections import Counter
--
--def is_anagram(s1, s2):
-+from collections import Counter
-+
-+def is_anagram(s1, s2):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,8 +1,8 @@
+
+ from collections import Counter
+ 
+ def is_anagram(s1, s2):
+-  return Counter(
+-    c.lower() for c in s1 if c.isalnum()
+-  ) == Counter(
+-    c.lower() for c in s2 if c.isalnum()
+-  )
 +    s1 = ''.join(sorted(s1)).strip()
 +    s2 = ''.join(sorted(s2)).strip()
 +    return s1 == s2
@@ -11395,14 +15574,22 @@ def is_anagram(s1, s2):  return Counter(
 ```
 
 #### solution 4
+
 ```diff
--from collections import Counter
--
--def is_anagram(s1, s2):
-+from collections import Counter
-+
-+def is_anagram(s1, s2):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,8 +1,7 @@
+
+ from collections import Counter
+ 
+ def is_anagram(s1, s2):
+-  return Counter(
+-    c.lower() for c in s1 if c.isalnum()
+-  ) == Counter(
+-    c.lower() for c in s2 if c.isalnum()
+-  )
 +    """
 +    Write an algorithm that returns whether s1 and s2 are anagrams of each other, i.e.
 +    if s1 and s2 contain the same letters in a possibly different order.
@@ -11412,15 +15599,23 @@ def is_anagram(s1, s2):  return Counter(
 ### decapitalize (task/142)
 
 #### canonical solution
+
 ```python
-def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
+def decapitalize(s, upper_rest = False):
+  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 ```
 
 #### solution 0
+
 ```diff
--def decapitalize(s, upper_rest = False):
-+def decapitalize(s, upper_rest = False):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def decapitalize(s, upper_rest = False):
+-  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 +    """Decapitalize the first letter of s."""
 +    if s:
 +        return s[0].lower() + (s[1:].upper() if upper_rest else s[1:])
@@ -11428,10 +15623,16 @@ def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].
 ```
 
 #### solution 1
+
 ```diff
--def decapitalize(s, upper_rest = False):
-+def decapitalize(s, upper_rest = False):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def decapitalize(s, upper_rest = False):
+-  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 +    ''' Lowercases the first letter of s. '''
 +    if s:
 +        return s[0].lower() + (s[1:].upper() if upper_rest else s[1:])
@@ -11439,10 +15640,16 @@ def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].
 ```
 
 #### solution 2
+
 ```diff
--def decapitalize(s, upper_rest = False):
-+def decapitalize(s, upper_rest = False):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def decapitalize(s, upper_rest = False):
+-  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 +    return s[:1].lower() + (s[1:].upper() if upper_rest else s[1:])
 +
 +def get_anchor_format(ref):
@@ -11450,10 +15657,16 @@ def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].
 ```
 
 #### solution 3
+
 ```diff
--def decapitalize(s, upper_rest = False):
-+def decapitalize(s, upper_rest = False):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def decapitalize(s, upper_rest = False):
+-  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 +    """decapitalize('FooBar') -> 'fooBar'
 +    decapitalize('FooBar', True) -> 'fOOBAR'
 +    """
@@ -11461,10 +15674,16 @@ def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].
 ```
 
 #### solution 4
+
 ```diff
--def decapitalize(s, upper_rest = False):
-+def decapitalize(s, upper_rest = False):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def decapitalize(s, upper_rest = False):
+-  return ''.join([s[:1].lower(), (s[1:].upper() if upper_rest else s[1:])])
 +    if len(s) == 0:
 +        return s
 +    if len(s) == 1:
@@ -11475,92 +15694,127 @@ def decapitalize(s, upper_rest = False):  return ''.join([s[:1].lower(), (s[1:].
 ### unique_elements (task/143)
 
 #### canonical solution
+
 ```python
-def unique_elements(li):  return list(set(li))
+def unique_elements(li):
+  return list(set(li))
 ```
 
 #### solution 0
+
 ```diff
--def unique_elements(li):
-+def unique_elements(li):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def unique_elements(li):
+-  return list(set(li))
 +    return list(set(li))
 +
 +# Function to find the frequency of each element in a list
 +def unique_frequency(li):
 +    unique = unique_elements(li)
 +    frequency = {}
-+    for
 ```
 
 #### solution 1
+
 ```diff
--def unique_elements(li):
-+def unique_elements(li):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def unique_elements(li):
+-  return list(set(li))
 +    uniq_li = []
 +    for element in li:
 +        if element not in uniq_li:
 +            uniq_li.append(element)
 +    return uniq_li
 +
-+# D. Given
 ```
 
 #### solution 2
+
 ```diff
--def unique_elements(li):
-+def unique_elements(li):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def unique_elements(li):
+-  return list(set(li))
 +    new_li = []
 +    for element in li:
 +        if element not in new_li:
 +            new_li.append(element)
 +    return new_li
 +
-+# get a list of all files in
 ```
 
 #### solution 3
+
 ```diff
--def unique_elements(li):
-+def unique_elements(li):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def unique_elements(li):
+-  return list(set(li))
 +    return list(set(li))
 +
 +def remove_duplicates(li):
 +    return list(set(li))
 +
 +def remove_duplicates_while_keeping_order(li):
-+    seen =
 ```
 
 #### solution 4
+
 ```diff
--def unique_elements(li):
-+def unique_elements(li):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def unique_elements(li):
+-  return list(set(li))
 +    new_li = []
 +    for ele in li:
 +        if ele not in new_li:
 +            new_li.append(ele)
 +    return new_li
 +
-+def average_x(x_list
 ```
 
 ### rgb_to_hex (task/144)
 
 #### canonical solution
+
 ```python
-def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
+def rgb_to_hex(r, g, b):
+  return ('{:02X}' * 3).format(r, g, b)
 ```
 
 #### solution 0
+
 ```diff
--def rgb_to_hex(r, g, b):
-+def rgb_to_hex(r, g, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def rgb_to_hex(r, g, b):
+-  return ('{:02X}' * 3).format(r, g, b)
 +    return '#%02x%02x%02x' % (r, g, b)
 +
 +def hex_to_rgb(value):
@@ -11569,24 +15823,35 @@ def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
 ```
 
 #### solution 1
+
 ```diff
--def rgb_to_hex(r, g, b):
-+def rgb_to_hex(r, g, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def rgb_to_hex(r, g, b):
+-  return ('{:02X}' * 3).format(r, g, b)
 +    return '#%02x%02x%02x' % (r, g, b)
 +
 +#COLORS
 +# from colour import Color
 +#
 +# red = Color("red")
-+# print(red.
 ```
 
 #### solution 2
+
 ```diff
--def rgb_to_hex(r, g, b):
-+def rgb_to_hex(r, g, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def rgb_to_hex(r, g, b):
+-  return ('{:02X}' * 3).format(r, g, b)
 +    """Return color as #rrggbb for the given color values."""
 +    return '#%02x%02x%02x' % (r, g, b)
 +
@@ -11594,10 +15859,16 @@ def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
 ```
 
 #### solution 3
+
 ```diff
--def rgb_to_hex(r, g, b):
-+def rgb_to_hex(r, g, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def rgb_to_hex(r, g, b):
+-  return ('{:02X}' * 3).format(r, g, b)
 +    return '#%02x%02x%02x' % (r, g, b)
 +
 +def hex_to_rgb(value):
@@ -11606,10 +15877,16 @@ def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
 ```
 
 #### solution 4
+
 ```diff
--def rgb_to_hex(r, g, b):
-+def rgb_to_hex(r, g, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def rgb_to_hex(r, g, b):
+-  return ('{:02X}' * 3).format(r, g, b)
 +    return '#%02x%02x%02x' % (r, g, b)
 +
 +def hex_to_rgb(value):
@@ -11620,44 +15897,61 @@ def rgb_to_hex(r, g, b):  return ('{:02X}' * 3).format(r, g, b)
 ### values_only (task/145)
 
 #### canonical solution
+
 ```python
-def values_only(flat_dict):  return list(flat_dict.values())
+def values_only(flat_dict):
+  return list(flat_dict.values())
 ```
 
 #### solution 0
+
 ```diff
--def values_only(flat_dict):
-+def values_only(flat_dict):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def values_only(flat_dict):
+-  return list(flat_dict.values())
 +    for key, value in flat_dict.items():
 +        if isinstance(value, dict):
 +            yield from values_only(value)
 +        else:
 +            yield value
 +
-+#
-+# new code start
 ```
 
 #### solution 1
+
 ```diff
--def values_only(flat_dict):
-+def values_only(flat_dict):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def values_only(flat_dict):
+-  return list(flat_dict.values())
 +    return [item[1] for item in flat_dict]
 +
 +
 +def print_model_params(model):
 +    print(40 * '=')
 +    print(model)
-+    print(40 * '=')
 ```
 
 #### solution 2
+
 ```diff
--def values_only(flat_dict):
-+def values_only(flat_dict):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,6 @@
+
+ def values_only(flat_dict):
+-  return list(flat_dict.values())
 +    for key, value in flat_dict.items():
 +        if isinstance(value, dict):
 +            for k, v in value.items():
@@ -11666,45 +15960,50 @@ def values_only(flat_dict):  return list(flat_dict.values())
 ```
 
 #### solution 3
+
 ```diff
--def values_only(flat_dict):
-+def values_only(flat_dict):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def values_only(flat_dict):
+-  return list(flat_dict.values())
 +    for key, value in flat_dict.items():
 +        yield value
 +
 +
 +def get_index(index):
 +    return index
-+
-+
-+def get_item(item):
-+    return item
-+
-+
-+def get_value(
 ```
 
 #### solution 4
+
 ```diff
--def values_only(flat_dict):
-+def values_only(flat_dict):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def values_only(flat_dict):
+-  return list(flat_dict.values())
 +    return [item[1] for item in flat_dict]
 +
 +
 +def first_values_only(flat_dict):
 +    return [item[1] for item in flat_dict][0]
 +
-+
-+def flat_
 ```
 
 ### unfold (task/146)
 
 #### canonical solution
+
 ```python
-def unfold(fn, seed):  def fn_generator(val):
+def unfold(fn, seed):
+  def fn_generator(val):
     while True: 
       val = fn(val[1])
       if val == False: break
@@ -11713,10 +16012,21 @@ def unfold(fn, seed):  def fn_generator(val):
 ```
 
 #### solution 0
+
 ```diff
--def unfold(fn, seed):
-+def unfold(fn, seed):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,7 +1,10 @@
+
+ def unfold(fn, seed):
+-  def fn_generator(val):
+-    while True: 
+-      val = fn(val[1])
+-      if val == False: break
+-      yield val[0]
+-  return [i for i in fn_generator([None, seed])]
 +    value = seed
 +    while True:
 +        yield value
@@ -11729,10 +16039,21 @@ def unfold(fn, seed):  def fn_generator(val):
 ```
 
 #### solution 1
+
 ```diff
--def unfold(fn, seed):
-+def unfold(fn, seed):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,7 +1,6 @@
+
+ def unfold(fn, seed):
+-  def fn_generator(val):
+-    while True: 
+-      val = fn(val[1])
+-      if val == False: break
+-      yield val[0]
+-  return [i for i in fn_generator([None, seed])]
 +    """
 +    >>> list(unfold(lambda x: [x + 1], 1))
 +    [2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -11741,10 +16062,21 @@ def unfold(fn, seed):  def fn_generator(val):
 ```
 
 #### solution 2
+
 ```diff
--def unfold(fn, seed):
-+def unfold(fn, seed):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,7 +1,8 @@
+
+ def unfold(fn, seed):
+-  def fn_generator(val):
+-    while True: 
+-      val = fn(val[1])
+-      if val == False: break
+-      yield val[0]
+-  return [i for i in fn_generator([None, seed])]
 +    stack = deque([seed])
 +    seen = set()
 +    while stack:
@@ -11755,10 +16087,21 @@ def unfold(fn, seed):  def fn_generator(val):
 ```
 
 #### solution 3
+
 ```diff
--def unfold(fn, seed):
-+def unfold(fn, seed):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,7 +1,7 @@
+
+ def unfold(fn, seed):
+-  def fn_generator(val):
+-    while True: 
+-      val = fn(val[1])
+-      if val == False: break
+-      yield val[0]
+-  return [i for i in fn_generator([None, seed])]
 +    return accumulate(fn, seed, identity)
 +
 +def unfold(fn, seed):
@@ -11768,10 +16111,21 @@ def unfold(fn, seed):  def fn_generator(val):
 ```
 
 #### solution 4
+
 ```diff
--def unfold(fn, seed):
-+def unfold(fn, seed):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,7 +1,6 @@
+
+ def unfold(fn, seed):
+-  def fn_generator(val):
+-    while True: 
+-      val = fn(val[1])
+-      if val == False: break
+-      yield val[0]
+-  return [i for i in fn_generator([None, seed])]
 +    """
 +    Recursively perform (f . g) to the input until a non-function
 +    value is found.
@@ -11782,44 +16136,61 @@ def unfold(fn, seed):  def fn_generator(val):
 ### reverse (task/147)
 
 #### canonical solution
+
 ```python
-def reverse(itr):  return itr[::-1]
+def reverse(itr):
+  return itr[::-1]
 ```
 
 #### solution 0
+
 ```diff
--def reverse(itr):
-+def reverse(itr):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def reverse(itr):
+-  return itr[::-1]
 +    res = []
 +    for i in itr:
 +        res.insert(0, i)
 +    return res
 +
 +def replace_at(itr, idx, val):
-+    return itr[:id
 ```
 
 #### solution 1
+
 ```diff
--def reverse(itr):
-+def reverse(itr):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def reverse(itr):
+-  return itr[::-1]
 +    lst = []
 +    for i in itr:
 +        lst.append(i)
 +    return lst
 +
 +def reverse1(itr):
-+    lst = []
-+    for i in itr
 ```
 
 #### solution 2
+
 ```diff
--def reverse(itr):
-+def reverse(itr):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def reverse(itr):
+-  return itr[::-1]
 +    for i in range(len(itr)-1,-1,-1):
 +        yield itr[i]
 +
@@ -11829,25 +16200,35 @@ def reverse(itr):  return itr[::-1]
 ```
 
 #### solution 3
+
 ```diff
--def reverse(itr):
-+def reverse(itr):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def reverse(itr):
+-  return itr[::-1]
 +    return reversed(list(itr))
 +
 +
 +def pipe(*funcs):
 +    return functools.reduce(lambda f, g: lambda x: f(g(x)), funcs)
 +
-+
-+def compose(*
 ```
 
 #### solution 4
+
 ```diff
--def reverse(itr):
-+def reverse(itr):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def reverse(itr):
+-  return itr[::-1]
 +    return itr[::-1]
 +
 +def main():
@@ -11858,58 +16239,80 @@ def reverse(itr):  return itr[::-1]
 ### is_divisible (task/148)
 
 #### canonical solution
+
 ```python
-def is_divisible(dividend, divisor):  return dividend % divisor == 0
+def is_divisible(dividend, divisor):
+  return dividend % divisor == 0
 ```
 
 #### solution 0
+
 ```diff
--def is_divisible(dividend, divisor):
-+def is_divisible(dividend, divisor):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def is_divisible(dividend, divisor):
+-  return dividend % divisor == 0
 +    return dividend % divisor == 0
 +
 +def is_prime(n):
 +    if n < 2:
 +        return False
 +    for i in range(2,n):
-+        if is_divisible(n
 ```
 
 #### solution 1
+
 ```diff
--def is_divisible(dividend, divisor):
-+def is_divisible(dividend, divisor):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def is_divisible(dividend, divisor):
+-  return dividend % divisor == 0
 +    if dividend % divisor == 0:
 +        return True
 +    else:
 +        return False
 +
 +# Let's test the function
-+print(is_divisible(8, 2)) # Should be True
-+print(
 ```
 
 #### solution 2
+
 ```diff
--def is_divisible(dividend, divisor):
-+def is_divisible(dividend, divisor):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def is_divisible(dividend, divisor):
+-  return dividend % divisor == 0
 +    if dividend % divisor == 0:
 +        return True
 +    else:
 +        return False
 +    
 +#print(is_divisible(1, 3))
-+#print(is_divisible(2, 3
 ```
 
 #### solution 3
+
 ```diff
--def is_divisible(dividend, divisor):
-+def is_divisible(dividend, divisor):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def is_divisible(dividend, divisor):
+-  return dividend % divisor == 0
 +    return dividend % divisor == 0
 +
 +def fizzbuzz(start, end):
@@ -11919,10 +16322,16 @@ def is_divisible(dividend, divisor):  return dividend % divisor == 0
 ```
 
 #### solution 4
+
 ```diff
--def is_divisible(dividend, divisor):
-+def is_divisible(dividend, divisor):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def is_divisible(dividend, divisor):
+-  return dividend % divisor == 0
 +    """
 +    This is an optional function to validate the
 +    divisibility. You can write your own function
@@ -11934,116 +16343,139 @@ def is_divisible(dividend, divisor):  return dividend % divisor == 0
 ### is_weekday (task/149)
 
 #### canonical solution
+
 ```python
 from datetime import datetime
 
-def is_weekday(d = datetime.today()):  return d.weekday() <= 4
+def is_weekday(d = datetime.today()):
+  return d.weekday() <= 4
 ```
 
 #### solution 0
+
 ```diff
--from datetime import datetime
--
--def is_weekday(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekday(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekday(d = datetime.today()):
+-  return d.weekday() <= 4
 +    if d.weekday() in [5,6]:
 +        return False
 +    return True
 +
 +is_weekday()
 +
-+# Problem 9
-+def is_leap_year(year = datetime.today().
 ```
 
 #### solution 1
+
 ```diff
--from datetime import datetime
--
--def is_weekday(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekday(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekday(d = datetime.today()):
+-  return d.weekday() <= 4
 +    if d.weekday() == 5 or d.weekday() == 6:
 +        return False
 +    return True
 +
 +print(is_weekday())
 +
-+def is_workday(d = datetime.today
 ```
 
 #### solution 2
+
 ```diff
--from datetime import datetime
--
--def is_weekday(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekday(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekday(d = datetime.today()):
+-  return d.weekday() <= 4
 +    return d.weekday() < 5
 +
 +print is_weekday()
 +print is_weekday(datetime(2015, 8, 26))
 +
 +# lambda(匿名函数)
-+
 ```
 
 #### solution 3
+
 ```diff
--from datetime import datetime
--
--def is_weekday(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekday(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekday(d = datetime.today()):
+-  return d.weekday() <= 4
 +    return d.weekday() < 5
 +
 +# Test if today is a weekday
 +assert is_weekday()
 +
 +# Test if today is a weekend
-+assert not is_weekday(datetime(2020, 7,
 ```
 
 #### solution 4
+
 ```diff
--from datetime import datetime
--
--def is_weekday(d = datetime.today()):
-+from datetime import datetime
-+
-+def is_weekday(d = datetime.today()):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,9 @@
+
+ from datetime import datetime
+ 
+ def is_weekday(d = datetime.today()):
+-  return d.weekday() <= 4
 +    if (d.weekday() < 5):
 +        return True
 +    else:
 +        return False
 +
 +print is_weekday()
-+
-+print is_weekday(datetime(2017,2,22))
 ```
 
 ### fahrenheit_to_celsius (task/150)
 
 #### canonical solution
+
 ```python
-def fahrenheit_to_celsius(degrees):  return ((degrees - 32) * 5/9)
+def fahrenheit_to_celsius(degrees):
+  return ((degrees - 32) * 5/9)
 ```
 
 #### solution 0
+
 ```diff
--def fahrenheit_to_celsius(degrees):
-+def fahrenheit_to_celsius(degrees):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,6 @@
+
+ def fahrenheit_to_celsius(degrees):
+-  return ((degrees - 32) * 5/9)
 +    return round((degrees - 32) * (5/9), 2)
 +
 +
@@ -12052,10 +16484,16 @@ def fahrenheit_to_celsius(degrees):  return ((degrees - 32) * 5/9)
 ```
 
 #### solution 1
+
 ```diff
--def fahrenheit_to_celsius(degrees):
-+def fahrenheit_to_celsius(degrees):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def fahrenheit_to_celsius(degrees):
+-  return ((degrees - 32) * 5/9)
 +    celsius = (degrees - 32) * (5/9)
 +    return celsius
 +fahrenheit_to_celsius(55)
@@ -12063,10 +16501,16 @@ def fahrenheit_to_celsius(degrees):  return ((degrees - 32) * 5/9)
 ```
 
 #### solution 2
+
 ```diff
--def fahrenheit_to_celsius(degrees):
-+def fahrenheit_to_celsius(degrees):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def fahrenheit_to_celsius(degrees):
+-  return ((degrees - 32) * 5/9)
 +    return (degrees - 32) * (5 / 9)
 +
 +print("Freezing point of water:", fahrenheit_to_celsius(32))
@@ -12074,48 +16518,63 @@ def fahrenheit_to_celsius(degrees):  return ((degrees - 32) * 5/9)
 ```
 
 #### solution 3
+
 ```diff
--def fahrenheit_to_celsius(degrees):
-+def fahrenheit_to_celsius(degrees):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def fahrenheit_to_celsius(degrees):
+-  return ((degrees - 32) * 5/9)
 +    """
 +    Convert Fahrenheit temperature to Celsius.
 +
 +    :param degrees: degrees Fahrenheit
 +    :return: degrees Celsius
 +    """
-+    return round((degrees - 32) * 5 / 9, 1)
-+
-+
-+def c
 ```
 
 #### solution 4
+
 ```diff
--def fahrenheit_to_celsius(degrees):
-+def fahrenheit_to_celsius(degrees):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def fahrenheit_to_celsius(degrees):
+-  return ((degrees - 32) * 5/9)
 +    """
 +    Converts temperature in degrees Fahrenheit to degrees Celsius.
 +    """
 +    return (degrees - 32) * 5 / 9
 +
 +def fahrenheit_to_kelvin(degrees):
-+    """
 ```
 
 ### sum_by (task/151)
 
 #### canonical solution
+
 ```python
-def sum_by(lst, fn):  return sum(map(fn, lst))
+def sum_by(lst, fn):
+  return sum(map(fn, lst))
 ```
 
 #### solution 0
+
 ```diff
--def sum_by(lst, fn):
-+def sum_by(lst, fn):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,5 @@
+
+ def sum_by(lst, fn):
+-  return sum(map(fn, lst))
 +    """
 +    Returns the sum of lst[i] for each i where fn(lst[i]) is True.
 +    lst -- a list of integers
@@ -12123,24 +16582,35 @@ def sum_by(lst, fn):  return sum(map(fn, lst))
 ```
 
 #### solution 1
+
 ```diff
--def sum_by(lst, fn):
-+def sum_by(lst, fn):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def sum_by(lst, fn):
+-  return sum(map(fn, lst))
 +    return reduce(lambda x, y: x + y, map(fn, lst))
 +
 +
 +def get_fibonacci_numbers(n):
 +    first = 0
 +    second = 1
-+    fibon
 ```
 
 #### solution 2
+
 ```diff
--def sum_by(lst, fn):
-+def sum_by(lst, fn):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def sum_by(lst, fn):
+-  return sum(map(fn, lst))
 +    return reduce(lambda a, b: a + b, map(fn, lst))
 +
 +def product_by(lst, fn):
@@ -12148,10 +16618,16 @@ def sum_by(lst, fn):  return sum(map(fn, lst))
 ```
 
 #### solution 3
+
 ```diff
--def sum_by(lst, fn):
-+def sum_by(lst, fn):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def sum_by(lst, fn):
+-  return sum(map(fn, lst))
 +    """Returns the sum of a list of numbers that is converted to a single key
 +    with the provided function.
 +
@@ -12161,10 +16637,16 @@ def sum_by(lst, fn):  return sum(map(fn, lst))
 ```
 
 #### solution 4
+
 ```diff
--def sum_by(lst, fn):
-+def sum_by(lst, fn):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,3 @@
+
+ def sum_by(lst, fn):
+-  return sum(map(fn, lst))
 +    '''
 +    sum_by([{'name': 'joe', 'num': 3}, {'name': 'bob', 'num': 1}, {'name': 'tom', 'num': 4}], '
 ```
@@ -12172,15 +16654,23 @@ def sum_by(lst, fn):  return sum(map(fn, lst))
 ### find_key (task/152)
 
 #### canonical solution
+
 ```python
-def find_key(dict, val):  return next(key for key, value in dict.items() if value == val)
+def find_key(dict, val):
+  return next(key for key, value in dict.items() if value == val)
 ```
 
 #### solution 0
+
 ```diff
--def find_key(dict, val):
-+def find_key(dict, val):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def find_key(dict, val):
+-  return next(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    return [k for k, v in dict.iteritems() if v == val][0]
 +
@@ -12190,10 +16680,16 @@ def find_key(dict, val):  return next(key for key, value in dict.items() if valu
 ```
 
 #### solution 1
+
 ```diff
--def find_key(dict, val):
-+def find_key(dict, val):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,6 @@
+
+ def find_key(dict, val):
+-  return next(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    return [k for k, v in dict.iteritems() if v == val][0]
 +
@@ -12202,10 +16698,16 @@ def find_key(dict, val):  return next(key for key, value in dict.items() if valu
 ```
 
 #### solution 2
+
 ```diff
--def find_key(dict, val):
-+def find_key(dict, val):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,5 @@
+
+ def find_key(dict, val):
+-  return next(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    return [k for k, v in dict.iteritems() if v == val][0]
 +
@@ -12213,27 +16715,35 @@ def find_key(dict, val):  return next(key for key, value in dict.items() if valu
 ```
 
 #### solution 3
+
 ```diff
--def find_key(dict, val):
-+def find_key(dict, val):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def find_key(dict, val):
+-  return next(key for key, value in dict.items() if value == val)
 +    for key, value in dict.items():
 +        if val == value:
 +            return key
 +    return "key doesn't exist"
 +
 +# =============================================================================
-+# Additional functions
-+# =============================================================================
-+
-+def download_data
 ```
 
 #### solution 4
+
 ```diff
--def find_key(dict, val):
-+def find_key(dict, val):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def find_key(dict, val):
+-  return next(key for key, value in dict.items() if value == val)
 +    """return the key of dictionary dic given the value"""
 +    return [k for k, v in dict.iteritems() if v == val][0]
 +# ===========================
@@ -12244,29 +16754,42 @@ def find_key(dict, val):  return next(key for key, value in dict.items() if valu
 ### to_hex (task/153)
 
 #### canonical solution
+
 ```python
-def to_hex(dec):  return hex(dec)
+def to_hex(dec):
+  return hex(dec)
 ```
 
 #### solution 0
+
 ```diff
--def to_hex(dec):
-+def to_hex(dec):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def to_hex(dec):
+-  return hex(dec)
 +    dec = int(dec)
 +    return str(hex(dec)[2:]).upper()
 +
 +
 +def read_file(path):
 +    with open(path, 'rb') as f:
-+        raw = f.
 ```
 
 #### solution 1
+
 ```diff
--def to_hex(dec):
-+def to_hex(dec):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def to_hex(dec):
+-  return hex(dec)
 +    return '{0:02x}'.format(dec)
 +
 +def to_mac_range(start, end):
@@ -12274,24 +16797,35 @@ def to_hex(dec):  return hex(dec)
 ```
 
 #### solution 2
+
 ```diff
--def to_hex(dec):
-+def to_hex(dec):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def to_hex(dec):
+-  return hex(dec)
 +    return "%x" % dec
 +
 +def to_ascii(value):
 +    """
 +    Converts specified value to ASCII string.
 +    @param value: value to be converted
-+    @type value: int|
 ```
 
 #### solution 3
+
 ```diff
--def to_hex(dec):
-+def to_hex(dec):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def to_hex(dec):
+-  return hex(dec)
 +    return hex(dec)[2:]
 +
 +def from_hex(hex_str):
@@ -12301,10 +16835,16 @@ def to_hex(dec):  return hex(dec)
 ```
 
 #### solution 4
+
 ```diff
--def to_hex(dec):
-+def to_hex(dec):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def to_hex(dec):
+-  return hex(dec)
 +    hex_characters = '0123456789abcdef'
 +    if dec > 255:
 +        return 'ff'
@@ -12315,32 +16855,42 @@ def to_hex(dec):  return hex(dec)
 ### clamp_number (task/154)
 
 #### canonical solution
+
 ```python
-def clamp_number(num, a, b):  return max(min(num, max(a, b)), min(a, b))
+def clamp_number(num, a, b):
+  return max(min(num, max(a, b)), min(a, b))
 ```
 
 #### solution 0
+
 ```diff
--def clamp_number(num, a, b):
-+def clamp_number(num, a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def clamp_number(num, a, b):
+-  return max(min(num, max(a, b)), min(a, b))
 +    if num < a:
 +        return a
 +    elif num > b:
 +        return b
 +    else:
 +        return num
-+
-+
-+class PositionPlayer(Player):
-+    def __init__(self, x,
 ```
 
 #### solution 1
+
 ```diff
--def clamp_number(num, a, b):
-+def clamp_number(num, a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,5 @@
+
+ def clamp_number(num, a, b):
+-  return max(min(num, max(a, b)), min(a, b))
 +    return max(a, min(b, num))
 +
 +def _should_run_key_press_event(x, y):
@@ -12348,10 +16898,16 @@ def clamp_number(num, a, b):  return max(min(num, max(a, b)), min(a, b))
 ```
 
 #### solution 2
+
 ```diff
--def clamp_number(num, a, b):
-+def clamp_number(num, a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def clamp_number(num, a, b):
+-  return max(min(num, max(a, b)), min(a, b))
 +    """Clamps number between two other numbers."""
 +    return max(a, min(b, num))
 +
@@ -12361,10 +16917,16 @@ def clamp_number(num, a, b):  return max(min(num, max(a, b)), min(a, b))
 ```
 
 #### solution 3
+
 ```diff
--def clamp_number(num, a, b):
-+def clamp_number(num, a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,5 @@
+
+ def clamp_number(num, a, b):
+-  return max(min(num, max(a, b)), min(a, b))
 +    return max(a, min(b, num))
 +
 +def interp_number(val, start, end, a, b):
@@ -12372,39 +16934,48 @@ def clamp_number(num, a, b):  return max(min(num, max(a, b)), min(a, b))
 ```
 
 #### solution 4
+
 ```diff
--def clamp_number(num, a, b):
-+def clamp_number(num, a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,7 @@
+
+ def clamp_number(num, a, b):
+-  return max(min(num, max(a, b)), min(a, b))
 +    if num < a:
 +        return a
 +    elif num > b:
 +        return b
 +    else:
 +        return num
-+
-+def clamp_char(char, min_char, max_char):
-+   
 ```
 
 ### compose_right (task/155)
 
 #### canonical solution
+
 ```python
 from functools import reduce
 
-def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
+def compose_right(*fns):
+  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 ```
 
 #### solution 0
+
 ```diff
--from functools import reduce
--
--def compose_right(*fns):
-+from functools import reduce
-+
-+def compose_right(*fns):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,4 +1,8 @@
+
+ from functools import reduce
+ 
+ def compose_right(*fns):
+-  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 +    """
 +    Compose the given functions, where the arguments are applied from right to left.
 +    :param fns: The functions to compose.
@@ -12413,14 +16984,18 @@ def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), 
 ```
 
 #### solution 1
+
 ```diff
--from functools import reduce
--
--def compose_right(*fns):
-+from functools import reduce
-+
-+def compose_right(*fns):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,4 +1,8 @@
+
+ from functools import reduce
+ 
+ def compose_right(*fns):
+-  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 +    return reduce(lambda f, g: lambda x: f(g(x)), fns)
 +
 +def make_compose_n(n):
@@ -12429,14 +17004,18 @@ def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), 
 ```
 
 #### solution 2
+
 ```diff
--from functools import reduce
--
--def compose_right(*fns):
-+from functools import reduce
-+
-+def compose_right(*fns):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,4 +1,9 @@
+
+ from functools import reduce
+ 
+ def compose_right(*fns):
+-  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 +    # Right to left function composition
 +    return reduce(lambda f, g: lambda x: f(g(x)), fns)
 +
@@ -12446,14 +17025,18 @@ def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), 
 ```
 
 #### solution 3
+
 ```diff
--from functools import reduce
--
--def compose_right(*fns):
-+from functools import reduce
-+
-+def compose_right(*fns):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,4 +1,7 @@
+
+ from functools import reduce
+ 
+ def compose_right(*fns):
+-  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 +    return reduce(lambda f, g: lambda x: f(g(x)), fns)
 +
 +def compose_left(*fns):
@@ -12461,14 +17044,18 @@ def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), 
 ```
 
 #### solution 4
+
 ```diff
--from functools import reduce
--
--def compose_right(*fns):
-+from functools import reduce
-+
-+def compose_right(*fns):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,4 +1,7 @@
+
+ from functools import reduce
+ 
+ def compose_right(*fns):
+-  return reduce(lambda f, g: lambda *args: g(f(*args)), fns)
 +    """Returns a function that is the right-to-left composition of the given functions.
 +    The returned function is called with the arguments it expects.
 +    """
@@ -12478,45 +17065,71 @@ def compose_right(*fns):  return reduce(lambda f, g: lambda *args: g(f(*args)), 
 ### days_diff (task/156)
 
 #### canonical solution
+
 ```python
-def days_diff(start, end):  return (end - start).days
+def days_diff(start, end):
+  return (end - start).days
 ```
 
 #### solution 0
+
 ```diff
--def days_diff(start, end):
-+def days_diff(start, end):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,4 @@
+
+ def days_diff(start, end):
+-  return (end - start).days
 +    start_date = date(start[0], start[1], start[2])
 +    end_date = date(end[0], end[1], end[2])
 +    diff = end_date - start_
 ```
 
 #### solution 1
+
 ```diff
--def days_diff(start, end):
-+def days_diff(start, end):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,4 @@
+
+ def days_diff(start, end):
+-  return (end - start).days
 +    """Calculates the number of days between two days"""
 +    start_date = datetime.strptime(start, '%Y-%m-%d')
 +    end_date = datetime.strpt
 ```
 
 #### solution 2
+
 ```diff
--def days_diff(start, end):
-+def days_diff(start, end):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,4 @@
+
+ def days_diff(start, end):
+-  return (end - start).days
 +    # convert dates to datetime format
 +    start_datetime = datetime.datetime.strptime(start, '%Y-%m-%d')
 +    end_datetime = datetime.datetime
 ```
 
 #### solution 3
+
 ```diff
--def days_diff(start, end):
-+def days_diff(start, end):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,6 @@
+
+ def days_diff(start, end):
+-  return (end - start).days
 +    """
 +        Find absolute diff in days between dates
 +    """
@@ -12525,10 +17138,16 @@ def days_diff(start, end):  return (end - start).days
 ```
 
 #### solution 4
+
 ```diff
--def days_diff(start, end):
-+def days_diff(start, end):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,5 @@
+
+ def days_diff(start, end):
+-  return (end - start).days
 +    start = date(start[0], start[1], start[2])
 +    end = date(end[0], end[1], end[2])
 +    delta = end - start
@@ -12538,18 +17157,29 @@ def days_diff(start, end):  return (end - start).days
 ### is_contained_in (task/157)
 
 #### canonical solution
+
 ```python
-def is_contained_in(a, b):  for v in set(a):
+def is_contained_in(a, b):
+  for v in set(a):
     if a.count(v) > b.count(v):
       return False
   return True
 ```
 
 #### solution 0
+
 ```diff
--def is_contained_in(a, b):
-+def is_contained_in(a, b):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,5 +1,5 @@
+
+ def is_contained_in(a, b):
+-  for v in set(a):
+-    if a.count(v) > b.count(v):
+-      return False
+-  return True
 +    return a[0] >= b[0] and a[1] >= b[1] and a[2] <= b[2] and a[3] <= b[3]
 +
 +
@@ -12557,10 +17187,19 @@ def is_contained_in(a, b):  for v in set(a):
 ```
 
 #### solution 1
+
 ```diff
--def is_contained_in(a, b):
-+def is_contained_in(a, b):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,5 +1,6 @@
+
+ def is_contained_in(a, b):
+-  for v in set(a):
+-    if a.count(v) > b.count(v):
+-      return False
+-  return True
 +    a_ = np.array(a)
 +    b_ = np.array(b)
 +    return np.all(a_ >= b_) and np.all(a_ <= b_ + 1)
@@ -12569,10 +17208,19 @@ def is_contained_in(a, b):  for v in set(a):
 ```
 
 #### solution 2
+
 ```diff
--def is_contained_in(a, b):
-+def is_contained_in(a, b):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,5 +1,8 @@
+
+ def is_contained_in(a, b):
+-  for v in set(a):
+-    if a.count(v) > b.count(v):
+-      return False
+-  return True
 +    """
 +    Checks whether polygon A is contained in polygon B
 +
@@ -12583,10 +17231,19 @@ def is_contained_in(a, b):  for v in set(a):
 ```
 
 #### solution 3
+
 ```diff
--def is_contained_in(a, b):
-+def is_contained_in(a, b):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,5 +1,5 @@
+
+ def is_contained_in(a, b):
+-  for v in set(a):
+-    if a.count(v) > b.count(v):
+-      return False
+-  return True
 +    """Return True if a is contained in b"""
 +    if isinstance(a, dict) and isinstance(b, dict):
 +        for k, v in a.items():
@@ -12594,10 +17251,19 @@ def is_contained_in(a, b):  for v in set(a):
 ```
 
 #### solution 4
+
 ```diff
--def is_contained_in(a, b):
-+def is_contained_in(a, b):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,5 +1,6 @@
+
+ def is_contained_in(a, b):
+-  for v in set(a):
+-    if a.count(v) > b.count(v):
+-      return False
+-  return True
 +    return is_type_of(a, b) and not is_type_of(b, a)
 +
 +
@@ -12608,15 +17274,23 @@ def is_contained_in(a, b):  for v in set(a):
 ### drop_right (task/158)
 
 #### canonical solution
+
 ```python
-def drop_right(a, n = 1):  return a[:-n]
+def drop_right(a, n = 1):
+  return a[:-n]
 ```
 
 #### solution 0
+
 ```diff
--def drop_right(a, n = 1):
-+def drop_right(a, n = 1):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -1,2 +1,7 @@
+
+ def drop_right(a, n = 1):
+-  return a[:-n]
 +    return a[:len(a) - n]
 +
 +def drop_list(a, b):
@@ -12626,10 +17300,16 @@ def drop_right(a, n = 1):  return a[:-n]
 ```
 
 #### solution 1
+
 ```diff
--def drop_right(a, n = 1):
-+def drop_right(a, n = 1):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -1,2 +1,7 @@
+
+ def drop_right(a, n = 1):
+-  return a[:-n]
 +    """
 +    Drops the last n elements from a list.
 +    Example:
@@ -12639,27 +17319,35 @@ def drop_right(a, n = 1):  return a[:-n]
 ```
 
 #### solution 2
+
 ```diff
--def drop_right(a, n = 1):
-+def drop_right(a, n = 1):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -1,2 +1,7 @@
+
+ def drop_right(a, n = 1):
+-  return a[:-n]
 +    return a[:-n]
 +
 +def to_upper(a):
 +    return a.upper()
 +
 +def to_lower(a):
-+    return a.lower()
-+
-+def trim(a):
-+    return
 ```
 
 #### solution 3
+
 ```diff
--def drop_right(a, n = 1):
-+def drop_right(a, n = 1):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -1,2 +1,7 @@
+
+ def drop_right(a, n = 1):
+-  return a[:-n]
 +    """
 +    drop the last n elements of an array
 +
@@ -12669,10 +17357,16 @@ def drop_right(a, n = 1):  return a[:-n]
 ```
 
 #### solution 4
+
 ```diff
--def drop_right(a, n = 1):
-+def drop_right(a, n = 1):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -1,2 +1,6 @@
+
+ def drop_right(a, n = 1):
+-  return a[:-n]
 +    a = np.asarray(a)
 +    return a[:a.shape[0] - n]
 +
@@ -12683,24 +17377,28 @@ def drop_right(a, n = 1):  return a[:-n]
 ### gcd (task/159)
 
 #### canonical solution
+
 ```python
 from functools import reduce
 from math import gcd as _gcd
 
-def gcd(numbers):  return reduce(_gcd, numbers)
+def gcd(numbers):
+  return reduce(_gcd, numbers)
 ```
 
 #### solution 0
+
 ```diff
--from functools import reduce
--from math import gcd as _gcd
--
--def gcd(numbers):
-+from functools import reduce
-+from math import gcd as _gcd
-+
-+def gcd(numbers):
-+
+--- canonical.py
+
++++ solution0.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd as _gcd
+ 
+ def gcd(numbers):
+-  return reduce(_gcd, numbers)
 +    return reduce(_gcd, numbers)
 +
 +def lcm(numbers):
@@ -12710,16 +17408,18 @@ def gcd(numbers):  return reduce(_gcd, numbers)
 ```
 
 #### solution 1
+
 ```diff
--from functools import reduce
--from math import gcd as _gcd
--
--def gcd(numbers):
-+from functools import reduce
-+from math import gcd as _gcd
-+
-+def gcd(numbers):
-+
+--- canonical.py
+
++++ solution1.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd as _gcd
+ 
+ def gcd(numbers):
+-  return reduce(_gcd, numbers)
 +    return reduce(_gcd, numbers)
 +
 +def lcm(numbers):
@@ -12729,16 +17429,18 @@ def gcd(numbers):  return reduce(_gcd, numbers)
 ```
 
 #### solution 2
+
 ```diff
--from functools import reduce
--from math import gcd as _gcd
--
--def gcd(numbers):
-+from functools import reduce
-+from math import gcd as _gcd
-+
-+def gcd(numbers):
-+
+--- canonical.py
+
++++ solution2.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd as _gcd
+ 
+ def gcd(numbers):
+-  return reduce(_gcd, numbers)
 +    return reduce(_gcd, numbers)
 +
 +def lcm(numbers):
@@ -12748,16 +17450,18 @@ def gcd(numbers):  return reduce(_gcd, numbers)
 ```
 
 #### solution 3
+
 ```diff
--from functools import reduce
--from math import gcd as _gcd
--
--def gcd(numbers):
-+from functools import reduce
-+from math import gcd as _gcd
-+
-+def gcd(numbers):
-+
+--- canonical.py
+
++++ solution3.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd as _gcd
+ 
+ def gcd(numbers):
+-  return reduce(_gcd, numbers)
 +    return reduce(_gcd, numbers)
 +
 +def lcm(numbers):
@@ -12767,16 +17471,18 @@ def gcd(numbers):  return reduce(_gcd, numbers)
 ```
 
 #### solution 4
+
 ```diff
--from functools import reduce
--from math import gcd as _gcd
--
--def gcd(numbers):
-+from functools import reduce
-+from math import gcd as _gcd
-+
-+def gcd(numbers):
-+
+--- canonical.py
+
++++ solution4.py
+
+@@ -2,4 +2,9 @@
+
+ from math import gcd as _gcd
+ 
+ def gcd(numbers):
+-  return reduce(_gcd, numbers)
 +    return reduce(_gcd, numbers)
 +
 +def lcm(numbers):

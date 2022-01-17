@@ -57,7 +57,7 @@ to [data/30_seconds_of_python_samples.jsonl](https://github.com/talmago/30-secon
 #### Preview
 
 ```sh
-$ python 03_print_code_examples.py data/30_seconds_of_python_samples.jsonl --diff
+$ python 03_preview.py data/30_seconds_of_python_samples.jsonl
 ```
 
 Output will be saved
